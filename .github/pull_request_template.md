@@ -2,7 +2,7 @@
 issue에 대한 상세 내용을 적어주세요.
 
 
-### ✔ ToDo
+### ✔ Progress
 [] todo1
 [] todo2
 
