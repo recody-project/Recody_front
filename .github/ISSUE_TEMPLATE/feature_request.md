@@ -12,8 +12,8 @@ issue에 대한 상세 내용을 적어주세요.
 
 
 ### ✔ Todo
-[] todo1. 
-[] todo2
+- [ ] todo1
+- [ ] todo2
 
 
 ### 🔴 ETC
