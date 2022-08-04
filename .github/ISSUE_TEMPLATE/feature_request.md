@@ -7,14 +7,15 @@ assignees: akrudal
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+### 📃 Description
+issue에 대한 상세 내용을 적어주세요.
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+### ✔ Todo
+[] todo1. 
+[] todo2
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+
+### 🔴 ETC
+기타 사항을 적어주세요.
+예상 개발 기간:
