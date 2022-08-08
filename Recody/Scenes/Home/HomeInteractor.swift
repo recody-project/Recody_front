@@ -12,30 +12,36 @@
 
 import UIKit
 
-protocol HomeBusinessLogic
-{
-  func doSomething(request: Home.Something.Request)
+protocol HomeBusinessLogic {
+    func doTestCategory(request: Home.TestCategory.Request)
+    func doTestWork(request: Home.TestWork.Request)
 }
 
-protocol HomeDataStore
-{
-  //var name: String { get set }
+protocol HomeDataStore {
+  // var name: String { get set }
 }
 
-class HomeInteractor: HomeBusinessLogic, HomeDataStore
-{
-  var presenter: HomePresentationLogic?
-  var worker: HomeWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Home.Something.Request)
-  {
-    worker = HomeWorker()
-    worker?.doSomeWork()
-    
-    let response = Home.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+class HomeInteractor: HomeBusinessLogic, HomeDataStore {
+    var presenter: HomePresentationLogic?
+    var worker: HomeWorker?
+    // var name: String = ""
+
+    var categoryLists: [Category]?
+    var worksLists: [Work]?
+
+    func doTestCategory(request: Home.TestCategory.Request) {
+        worker = HomeWorker()
+        worker?.doSomeWork()
+
+        let response = Home.TestCategory.Response(categoryList: categoryLists!)
+        presenter?.presentCategory(response: response)
+    }
+
+    func doTestWork(request: Home.TestWork.Request) {
+        worker = HomeWorker()
+        worker?.doSomeWork()
+
+        let response = Home.TestWork.Response(workList: worksLists!)
+        presenter?.presentWork(response: response)
+    }
 }
