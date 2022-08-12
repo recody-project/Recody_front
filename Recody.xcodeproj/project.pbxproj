@@ -27,6 +27,11 @@
 		3A8D1766289BBEA100B260D1 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D1760289BBEA100B260D1 /* HomeInteractor.swift */; };
 		3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D176B289BC12200B260D1 /* .swiftlint.yml */; };
 		3A8D176E289BC21400B260D1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D176D289BC21400B260D1 /* .gitignore */; };
+		3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA9B6F28A534B300EB39F3 /* HomeViewController+.swift */; };
+		3ADA9B7228A5355500EB39F3 /* WorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA9B7128A5355500EB39F3 /* WorkCell.swift */; };
+		3ADA9B7528A56AA800EB39F3 /* CustomCategory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADA9B7428A56AA800EB39F3 /* CustomCategory.xib */; };
+		3ADA9B7728A56AB600EB39F3 /* CustomCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA9B7628A56AB600EB39F3 /* CustomCategory.swift */; };
+		3ADA9B7B28A5810C00EB39F3 /* Designables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA9B7A28A5810C00EB39F3 /* Designables.swift */; };
 		8039EA3DBDB039D00B51DDDA /* Pods_Recody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5CFE8C6C0E7F279F04902E /* Pods_Recody.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +58,11 @@
 		3A8D1760289BBEA100B260D1 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		3A8D176B289BC12200B260D1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3A8D176D289BC21400B260D1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3ADA9B6F28A534B300EB39F3 /* HomeViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+.swift"; sourceTree = "<group>"; };
+		3ADA9B7128A5355500EB39F3 /* WorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCell.swift; sourceTree = "<group>"; };
+		3ADA9B7428A56AA800EB39F3 /* CustomCategory.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCategory.xib; sourceTree = "<group>"; };
+		3ADA9B7628A56AB600EB39F3 /* CustomCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategory.swift; sourceTree = "<group>"; };
+		3ADA9B7A28A5810C00EB39F3 /* Designables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Designables.swift; sourceTree = "<group>"; };
 		4B2B2FA8C103E15BA2F28873 /* Pods-Recody.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recody.debug.xcconfig"; path = "Target Support Files/Pods-Recody/Pods-Recody.debug.xcconfig"; sourceTree = "<group>"; };
 		CF5CFE8C6C0E7F279F04902E /* Pods_Recody.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C90FA0A29800679FEAD91C /* Pods-Recody.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recody.release.xcconfig"; path = "Target Support Files/Pods-Recody/Pods-Recody.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +134,7 @@
 		3A8D172A289BBC7700B260D1 /* Recody */ = {
 			isa = PBXGroup;
 			children = (
+				3ADA9B7828A580F500EB39F3 /* Utils */,
 				3A8D1769289BBEC300B260D1 /* Workers */,
 				3A8D1768289BBEB900B260D1 /* Services */,
 				3A8D1767289BBEAF00B260D1 /* Models */,
@@ -154,6 +165,7 @@
 		3A8D175A289BBE9500B260D1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3ADA9B7328A5355B00EB39F3 /* Cell */,
 				3A8D175B289BBEA100B260D1 /* HomePresenter.swift */,
 				3A8D175C289BBEA100B260D1 /* HomeWorker.swift */,
 				3A8D175D289BBEA100B260D1 /* HomeRouter.swift */,
@@ -186,6 +198,33 @@
 			children = (
 			);
 			path = Workers;
+			sourceTree = "<group>";
+		};
+		3ADA9B7328A5355B00EB39F3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3ADA9B6F28A534B300EB39F3 /* HomeViewController+.swift */,
+				3ADA9B7128A5355500EB39F3 /* WorkCell.swift */,
+				3ADA9B7428A56AA800EB39F3 /* CustomCategory.xib */,
+				3ADA9B7628A56AB600EB39F3 /* CustomCategory.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3ADA9B7828A580F500EB39F3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3ADA9B7928A580FA00EB39F3 /* Designable */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3ADA9B7928A580FA00EB39F3 /* Designable */ = {
+			isa = PBXGroup;
+			children = (
+				3ADA9B7A28A5810C00EB39F3 /* Designables.swift */,
+			);
+			path = Designable;
 			sourceTree = "<group>";
 		};
 		4A925B789139013FD519C155 /* Frameworks */ = {
@@ -269,6 +308,7 @@
 				3A8D176E289BC21400B260D1 /* .gitignore in Resources */,
 				3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */,
 				3A75DBFA28A0F5E100084DB1 /* Insight.storyboard in Resources */,
+				3ADA9B7528A56AA800EB39F3 /* CustomCategory.xib in Resources */,
 				3A8D1738289BBC7A00B260D1 /* LaunchScreen.storyboard in Resources */,
 				3A75DBBC28A0EA5700084DB1 /* Home.storyboard in Resources */,
 				3A8D1735289BBC7A00B260D1 /* Assets.xcassets in Resources */,
@@ -326,6 +366,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ADA9B7728A56AB600EB39F3 /* CustomCategory.swift in Sources */,
+				3ADA9B7B28A5810C00EB39F3 /* Designables.swift in Sources */,
 				3A75DBBE28A0F07F00084DB1 /* Category.swift in Sources */,
 				3A75DBC028A0F09400084DB1 /* Work.swift in Sources */,
 				3A75DBEE28A0F41000084DB1 /* TabBarController.swift in Sources */,
@@ -334,9 +376,11 @@
 				3A8D1765289BBEA100B260D1 /* HomeViewController.swift in Sources */,
 				3A8D172E289BBC7700B260D1 /* SceneDelegate.swift in Sources */,
 				3A8D1762289BBEA100B260D1 /* HomeWorker.swift in Sources */,
+				3ADA9B7228A5355500EB39F3 /* WorkCell.swift in Sources */,
 				3A8D1766289BBEA100B260D1 /* HomeInteractor.swift in Sources */,
 				3A8D1761289BBEA100B260D1 /* HomePresenter.swift in Sources */,
 				3A8D1764289BBEA100B260D1 /* HomeModels.swift in Sources */,
+				3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

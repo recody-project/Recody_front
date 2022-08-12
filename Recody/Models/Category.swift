@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Cateogry {
-    let name: String
-    let image: String
+struct Category {
+    var name: String
+    var image: String
 }
