@@ -12,77 +12,96 @@
 
 import UIKit
 
-protocol HomeDisplayLogic: class {
+protocol HomeDisplayLogic: AnyObject {
     func displayTestCategory(viewModel: Home.TestCategory.ViewModel)
     func displayTestWork(viewModel: Home.TestWork.ViewModel)
 }
 
 class HomeViewController: UIViewController, HomeDisplayLogic {
-  var interactor: HomeBusinessLogic?
-  var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
+    var interactor: HomeBusinessLogic?
+    var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
+    let works: [Work] = [
+        Work(id: "1", name: "HUNT", image: "common"),
+        Work(id: "2", name: "EMERGENCY", image: "common (1)"),
+        Work(id: "3", name: "HANSAN", image: "common (2)"),
+        Work(id: "4", name: "TOPGUN", image: "common (3)"),
+        Work(id: "5", name: "MINIUNZ", image: "common (4)")
+    ]
 
-  // MARK: Object lifecycle
+    let categories: [Category] = [
+        Category(name: "책", image: "book"),
+        Category(name: "영화", image: "movie"),
+        Category(name: "드라마", image: "drama"),
+        Category(name: "음악", image: "music"),
+        Category(name: "공연", image: "show")
+    ]
 
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
+    // MARK: Object lifecycle
 
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    setup()
-  }
-
-  // MARK: Setup
-
-  private func setup() {
-    let viewController = self
-    let interactor = HomeInteractor()
-    let presenter = HomePresenter()
-    let router = HomeRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-
-  // MARK: Routing
-
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
 
-  // MARK: View lifecycle
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-//    doSomething()
-  }
+    // MARK: Setup
+    
+    private func setup() {
+        let viewController = self
+        let interactor = HomeInteractor()
+        let presenter = HomePresenter()
+        let router = HomeRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
 
-  // MARK: Do something
+    // MARK: Routing
 
-  // @IBOutlet weak var nameTextField: UITextField!
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
 
-//  func doSomething()
-//  {
-//    let request = Home.Something.Request()
-//    interactor?.doSomething(request: request)
-//  }
-//
-//  func displaySomething(viewModel: Home.Something.ViewModel)
-//  {
-//    //nameTextField.text = viewModel.name
-//  }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        makeCategoryStackView()
+    }
+
+    @IBOutlet weak var categoryStackView: UIStackView!
+    // @IBOutlet weak var nameTextField: UITextField!
+
+    func makeCategoryStackView() {
+        var index = 0
+        for value in categoryStackView.arrangedSubviews as [CustomCategory] {
+            value.setData(with: categories[index])
+            index += 1
+        }
+    }
+    //  func doSomething()
+    //  {
+    //    let request = Home.Something.Request()
+    //    interactor?.doSomething(request: request)
+    //  }
+    //
+    //  func displaySomething(viewModel: Home.Something.ViewModel)
+    //  {
+    //    //nameTextField.text = viewModel.name
+    //  }
 
     func displayTestCategory(viewModel: Home.TestCategory.ViewModel) {
-        //
+
     }
 
     func displayTestWork(viewModel: Home.TestWork.ViewModel) {

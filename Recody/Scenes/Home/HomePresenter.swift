@@ -13,7 +13,7 @@
 import UIKit
 
 protocol HomePresentationLogic {
-  func presentCategory(response: Home.TestCategory.Response)
+    func presentCategory(response: Home.TestCategory.Response)
     func presentWork(response: Home.TestWork.Response)
 }
 
