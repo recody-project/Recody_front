@@ -49,7 +49,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     }
 
     // MARK: Setup
-    
     private func setup() {
         let viewController = self
         let interactor = HomeInteractor()
@@ -80,7 +79,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     }
 
     @IBOutlet weak var categoryStackView: UIStackView!
-    // @IBOutlet weak var nameTextField: UITextField!
 
     func makeCategoryStackView() {
         var index = 0
