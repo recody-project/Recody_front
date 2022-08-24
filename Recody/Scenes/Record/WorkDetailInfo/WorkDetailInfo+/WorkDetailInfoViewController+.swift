@@ -1,19 +1,20 @@
 //
-//  HomeViewController+.swift
+//  WorkDetailInfoViewController+.swift
 //  Recody
 //
-//  Created by 마경미 on 2022/08/11.
+//  Created by 마경미 on 2022/08/24.
 //
 
-import UIKit
 import Foundation
+import UIKit
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension WorkDetailInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return works.count
     }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "worksCell", for: indexPath) as? WorkCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "workCollectionViewCell", for: indexPath) as? WorkCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.setData(with: works[indexPath.row])
@@ -21,9 +22,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
+extension WorkDetailInfoViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 99, height: 146)
+        return CGSize(width: 100, height: 140)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
