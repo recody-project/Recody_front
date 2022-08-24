@@ -5,22 +5,23 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Item-->
         <scene sceneID="bUF-FS-upH">
             <objects>
-                <viewController storyboardIdentifier="home" modalPresentationStyle="fullScreen" id="M7q-gp-fHv" customClass="HomeViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="M7q-gp-fHv" customClass="HomeViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bzX-Rh-l5A">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="817"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="ixp-Lb-Fc5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="817"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbz-20-4g3">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="911"/>
@@ -404,38 +405,13 @@ df</string>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="worksCell" id="zok-vs-o5R" customClass="WorkCell" customModule="Recody" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="workCollectionViewCell" id="ncL-kG-IHS" customClass="WorkCollectionViewCell" customModule="Recody" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="332" height="146"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="p0i-GL-4UZ">
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nTJ-Dg-dhm">
                                                             <rect key="frame" x="0.0" y="0.0" width="332" height="146"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gPq-UO-i1K">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="99" height="146"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="146" id="Hh9-b4-WRr"/>
-                                                                        <constraint firstAttribute="width" constant="99" id="vc0-5m-C7m"/>
-                                                                    </constraints>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="2"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </imageView>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="gPq-UO-i1K" firstAttribute="top" secondItem="p0i-GL-4UZ" secondAttribute="top" id="Gi0-qs-epW"/>
-                                                                <constraint firstItem="gPq-UO-i1K" firstAttribute="leading" secondItem="p0i-GL-4UZ" secondAttribute="leading" id="ak5-A6-2R1"/>
-                                                            </constraints>
+                                                            <autoresizingMask key="autoresizingMask"/>
                                                         </collectionViewCellContentView>
-                                                        <size key="customSize" width="332" height="146"/>
-                                                        <connections>
-                                                            <outlet property="workImage" destination="gPq-UO-i1K" id="Gpc-rd-OEt"/>
-                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                                 <connections>
@@ -484,6 +460,7 @@ df</string>
                                 <viewLayoutGuide key="frameLayoutGuide" id="NE4-K7-gwy"/>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="cnk-wx-SE4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ixp-Lb-Fc5" firstAttribute="top" secondItem="bzX-Rh-l5A" secondAttribute="top" id="4PZ-98-bCP"/>
@@ -492,8 +469,8 @@ df</string>
                             <constraint firstAttribute="trailing" secondItem="ixp-Lb-Fc5" secondAttribute="trailing" id="qKG-dO-WIE"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="qFQ-Wb-DeA"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="categoryStackView" destination="qaM-JR-fwh" id="e2f-pw-FcH"/>

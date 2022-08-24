@@ -10,16 +10,17 @@
         <!--Tab Bar Controller-->
         <scene sceneID="tku-bQ-Bbp">
             <objects>
-                <tabBarController id="CaL-ya-8pY" customClass="TabBarController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="CaL-ya-8pY" customClass="TabBarController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="QAm-wx-ghf"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vzf-VP-4Oc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tabBar>
                     <connections>
-                        <segue destination="fHa-fo-NZj" kind="relationship" relationship="viewControllers" id="372-XP-khp"/>
-                        <segue destination="9JG-Yd-4Qo" kind="relationship" relationship="viewControllers" id="XNT-dd-SOg"/>
-                        <segue destination="ngO-pG-uBm" kind="relationship" relationship="viewControllers" id="Sft-iu-mEE"/>
-                        <segue destination="Cix-aH-EyG" kind="relationship" relationship="viewControllers" id="a0x-eZ-yWi"/>
+                        <segue destination="fHa-fo-NZj" kind="relationship" relationship="viewControllers" id="7po-w5-xTj"/>
+                        <segue destination="9JG-Yd-4Qo" kind="relationship" relationship="viewControllers" id="QIX-Kn-FXM"/>
+                        <segue destination="ngO-pG-uBm" kind="relationship" relationship="viewControllers" id="LSs-uT-ctc"/>
+                        <segue destination="Cix-aH-EyG" kind="relationship" relationship="viewControllers" id="J3h-ij-b3a"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9b-WR-F9J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -56,11 +57,12 @@
             </objects>
             <point key="canvasLocation" x="259" y="136"/>
         </scene>
-        <!--record-->
+        <!--recordNavigation-->
         <scene sceneID="v1D-zd-2Fr">
             <objects>
-                <viewControllerPlaceholder storyboardName="Record" referencedIdentifier="record" id="9JG-Yd-4Qo" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="WorkDetailInfo" referencedIdentifier="recordNavigation" id="9JG-Yd-4Qo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="jeR-a4-v1H"/>
+                    <navigationItem key="navigationItem" id="uSd-vy-xRL"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Icx-UR-EsY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
