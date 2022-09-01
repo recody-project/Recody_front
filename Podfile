@@ -6,7 +6,7 @@ target 'Recody' do
   use_frameworks!
 
   pod 'SwiftLint'
-
+  pod 'DropDown'
   # Pods for Recody
 
 end

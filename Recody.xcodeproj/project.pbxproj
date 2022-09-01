@@ -30,6 +30,16 @@
 		3A8D1766289BBEA100B260D1 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D1760289BBEA100B260D1 /* HomeInteractor.swift */; };
 		3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D176B289BC12200B260D1 /* .swiftlint.yml */; };
 		3A8D176E289BC21400B260D1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D176D289BC21400B260D1 /* .gitignore */; };
+		3AA56CF928BDDDE000FB66F5 /* RecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56CF328BDDDE000FB66F5 /* RecordPresenter.swift */; };
+		3AA56CFA28BDDDE000FB66F5 /* RecordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56CF428BDDDE000FB66F5 /* RecordWorker.swift */; };
+		3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56CF528BDDDE000FB66F5 /* RecordRouter.swift */; };
+		3AA56CFC28BDDDE000FB66F5 /* RecordModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56CF628BDDDE000FB66F5 /* RecordModels.swift */; };
+		3AA56CFD28BDDDE000FB66F5 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56CF728BDDDE000FB66F5 /* RecordViewController.swift */; };
+		3AA56CFE28BDDDE000FB66F5 /* RecordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56CF828BDDDE000FB66F5 /* RecordInteractor.swift */; };
+		3AA56D0128BDE7A600FB66F5 /* RecordViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56D0028BDE7A600FB66F5 /* RecordViewController+.swift */; };
+		3AA56D0328BE580000FB66F5 /* WorkListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56D0228BE580000FB66F5 /* WorkListCollectionViewCell.swift */; };
+		3AA56D0528BE627300FB66F5 /* WorkTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56D0428BE627300FB66F5 /* WorkTabCollectionViewCell.swift */; };
+		3AA56D0728BE743400FB66F5 /* WorkListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA56D0628BE743400FB66F5 /* WorkListCollectionViewCell.xib */; };
 		3AB9CFBC28B4E84300A600DB /* WorkDetailInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFB628B4E84300A600DB /* WorkDetailInfoPresenter.swift */; };
 		3AB9CFBD28B4E84300A600DB /* WorkDetailInfoWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFB728B4E84300A600DB /* WorkDetailInfoWorker.swift */; };
 		3AB9CFBE28B4E84300A600DB /* WorkDetailInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFB828B4E84300A600DB /* WorkDetailInfoRouter.swift */; };
@@ -37,6 +47,9 @@
 		3AB9CFC028B4E84300A600DB /* WorkDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFBA28B4E84300A600DB /* WorkDetailInfoViewController.swift */; };
 		3AB9CFC128B4E84300A600DB /* WorkDetailInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFBB28B4E84300A600DB /* WorkDetailInfoInteractor.swift */; };
 		3AB9CFC328B4E86100A600DB /* WorkDetailInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB9CFC228B4E86100A600DB /* WorkDetailInfo.storyboard */; };
+		3AD4F11D28C0808200598D28 /* DropDownHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4F11C28C0808200598D28 /* DropDownHeader.swift */; };
+		3AD4F11F28C08BA800598D28 /* TapHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4F11E28C08BA800598D28 /* TapHeader.swift */; };
+		3AD4F12128C08C7E00598D28 /* DropDownHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD4F12028C08C7E00598D28 /* DropDownHeader.xib */; };
 		3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA9B6F28A534B300EB39F3 /* HomeViewController+.swift */; };
 		3ADA9B7228A5355500EB39F3 /* WorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA9B7128A5355500EB39F3 /* WorkCell.swift */; };
 		3ADA9B7528A56AA800EB39F3 /* CustomCategory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADA9B7428A56AA800EB39F3 /* CustomCategory.xib */; };
@@ -71,6 +84,16 @@
 		3A8D1760289BBEA100B260D1 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		3A8D176B289BC12200B260D1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3A8D176D289BC21400B260D1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3AA56CF328BDDDE000FB66F5 /* RecordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPresenter.swift; sourceTree = "<group>"; };
+		3AA56CF428BDDDE000FB66F5 /* RecordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWorker.swift; sourceTree = "<group>"; };
+		3AA56CF528BDDDE000FB66F5 /* RecordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordRouter.swift; sourceTree = "<group>"; };
+		3AA56CF628BDDDE000FB66F5 /* RecordModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModels.swift; sourceTree = "<group>"; };
+		3AA56CF728BDDDE000FB66F5 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		3AA56CF828BDDDE000FB66F5 /* RecordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInteractor.swift; sourceTree = "<group>"; };
+		3AA56D0028BDE7A600FB66F5 /* RecordViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecordViewController+.swift"; sourceTree = "<group>"; };
+		3AA56D0228BE580000FB66F5 /* WorkListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkListCollectionViewCell.swift; sourceTree = "<group>"; };
+		3AA56D0428BE627300FB66F5 /* WorkTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTabCollectionViewCell.swift; sourceTree = "<group>"; };
+		3AA56D0628BE743400FB66F5 /* WorkListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkListCollectionViewCell.xib; sourceTree = "<group>"; };
 		3AB9CFB628B4E84300A600DB /* WorkDetailInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoPresenter.swift; sourceTree = "<group>"; };
 		3AB9CFB728B4E84300A600DB /* WorkDetailInfoWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoWorker.swift; sourceTree = "<group>"; };
 		3AB9CFB828B4E84300A600DB /* WorkDetailInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoRouter.swift; sourceTree = "<group>"; };
@@ -78,6 +101,9 @@
 		3AB9CFBA28B4E84300A600DB /* WorkDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoViewController.swift; sourceTree = "<group>"; };
 		3AB9CFBB28B4E84300A600DB /* WorkDetailInfoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoInteractor.swift; sourceTree = "<group>"; };
 		3AB9CFC228B4E86100A600DB /* WorkDetailInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkDetailInfo.storyboard; sourceTree = "<group>"; };
+		3AD4F11C28C0808200598D28 /* DropDownHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownHeader.swift; sourceTree = "<group>"; };
+		3AD4F11E28C08BA800598D28 /* TapHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapHeader.swift; sourceTree = "<group>"; };
+		3AD4F12028C08C7E00598D28 /* DropDownHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownHeader.xib; sourceTree = "<group>"; };
 		3ADA9B6F28A534B300EB39F3 /* HomeViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+.swift"; sourceTree = "<group>"; };
 		3ADA9B7128A5355500EB39F3 /* WorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCell.swift; sourceTree = "<group>"; };
 		3ADA9B7428A56AA800EB39F3 /* CustomCategory.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCategory.xib; sourceTree = "<group>"; };
@@ -112,8 +138,14 @@
 		3A75DBF228A0F5A000084DB1 /* Record */ = {
 			isa = PBXGroup;
 			children = (
-				3AB9CFB528B4E81500A600DB /* WorkDetailInfo */,
+				3AA56CFF28BDE79800FB66F5 /* Record+ */,
 				3A75DBF528A0F5CE00084DB1 /* Record.storyboard */,
+				3AA56CF328BDDDE000FB66F5 /* RecordPresenter.swift */,
+				3AA56CF428BDDDE000FB66F5 /* RecordWorker.swift */,
+				3AA56CF528BDDDE000FB66F5 /* RecordRouter.swift */,
+				3AA56CF628BDDDE000FB66F5 /* RecordModels.swift */,
+				3AA56CF728BDDDE000FB66F5 /* RecordViewController.swift */,
+				3AA56CF828BDDDE000FB66F5 /* RecordInteractor.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -145,6 +177,7 @@
 		3A8D171F289BBC7700B260D1 = {
 			isa = PBXGroup;
 			children = (
+				3A8D176B289BC12200B260D1 /* .swiftlint.yml */,
 				3A8D172A289BBC7700B260D1 /* Recody */,
 				3A8D1729289BBC7700B260D1 /* Products */,
 				D9142FC7474BE90F07FC44D7 /* Pods */,
@@ -173,7 +206,6 @@
 				3A8D1734289BBC7A00B260D1 /* Assets.xcassets */,
 				3A8D1736289BBC7A00B260D1 /* LaunchScreen.storyboard */,
 				3A8D1739289BBC7A00B260D1 /* Info.plist */,
-				3A8D176B289BC12200B260D1 /* .swiftlint.yml */,
 				3A8D176D289BC21400B260D1 /* .gitignore */,
 			);
 			path = Recody;
@@ -182,6 +214,7 @@
 		3A8D1759289BBE7E00B260D1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3AB9CFB528B4E81500A600DB /* WorkDetailInfo */,
 				3AB9CFC528B4F05F00A600DB /* Common */,
 				3A75DBDF28A0F3D400084DB1 /* Tab */,
 				3A8D175A289BBE9500B260D1 /* Home */,
@@ -230,6 +263,29 @@
 			path = Workers;
 			sourceTree = "<group>";
 		};
+		3AA56CE628BDDD9800FB66F5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3ADA9B7428A56AA800EB39F3 /* CustomCategory.xib */,
+				3ADA9B7628A56AB600EB39F3 /* CustomCategory.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		3AA56CFF28BDE79800FB66F5 /* Record+ */ = {
+			isa = PBXGroup;
+			children = (
+				3AA56D0028BDE7A600FB66F5 /* RecordViewController+.swift */,
+				3AA56D0228BE580000FB66F5 /* WorkListCollectionViewCell.swift */,
+				3AA56D0428BE627300FB66F5 /* WorkTabCollectionViewCell.swift */,
+				3AD4F11C28C0808200598D28 /* DropDownHeader.swift */,
+				3AD4F11E28C08BA800598D28 /* TapHeader.swift */,
+				3AA56D0628BE743400FB66F5 /* WorkListCollectionViewCell.xib */,
+				3AD4F12028C08C7E00598D28 /* DropDownHeader.xib */,
+			);
+			path = "Record+";
+			sourceTree = "<group>";
+		};
 		3AB9CFB528B4E81500A600DB /* WorkDetailInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +304,7 @@
 		3AB9CFC528B4F05F00A600DB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3AA56CE628BDDD9800FB66F5 /* Category */,
 				3AB9CFC628B4F06700A600DB /* WorkCollectionViewCell */,
 			);
 			path = Common;
@@ -267,8 +324,6 @@
 			children = (
 				3ADA9B6F28A534B300EB39F3 /* HomeViewController+.swift */,
 				3ADA9B7128A5355500EB39F3 /* WorkCell.swift */,
-				3ADA9B7428A56AA800EB39F3 /* CustomCategory.xib */,
-				3ADA9B7628A56AB600EB39F3 /* CustomCategory.swift */,
 			);
 			path = "Home+";
 			sourceTree = "<group>";
@@ -318,6 +373,7 @@
 				3A8D1725289BBC7700B260D1 /* Frameworks */,
 				3A8D1726289BBC7700B260D1 /* Resources */,
 				3A8D176A289BC04500B260D1 /* ShellScript */,
+				4F4BA75BA571D0913FD041C3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -371,9 +427,11 @@
 				3A8D176E289BC21400B260D1 /* .gitignore in Resources */,
 				3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */,
 				3A75DBFA28A0F5E100084DB1 /* Insight.storyboard in Resources */,
+				3AA56D0728BE743400FB66F5 /* WorkListCollectionViewCell.xib in Resources */,
 				3ADA9B7528A56AA800EB39F3 /* CustomCategory.xib in Resources */,
 				3A8D1738289BBC7A00B260D1 /* LaunchScreen.storyboard in Resources */,
 				3A75DBBC28A0EA5700084DB1 /* Home.storyboard in Resources */,
+				3AD4F12128C08C7E00598D28 /* DropDownHeader.xib in Resources */,
 				3A8D1735289BBC7A00B260D1 /* Assets.xcassets in Resources */,
 				3A75DBF128A0F41D00084DB1 /* TabBar.storyboard in Resources */,
 				3A75DBF628A0F5CE00084DB1 /* Record.storyboard in Resources */,
@@ -423,6 +481,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4F4BA75BA571D0913FD041C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Recody/Pods-Recody-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Recody/Pods-Recody-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Recody/Pods-Recody-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -433,11 +508,17 @@
 				3ADA9B7728A56AB600EB39F3 /* CustomCategory.swift in Sources */,
 				3ADA9B7B28A5810C00EB39F3 /* Designables.swift in Sources */,
 				3AB9CFC028B4E84300A600DB /* WorkDetailInfoViewController.swift in Sources */,
+				3AA56CFD28BDDDE000FB66F5 /* RecordViewController.swift in Sources */,
 				3AB9CFBE28B4E84300A600DB /* WorkDetailInfoRouter.swift in Sources */,
 				3AB9CFC128B4E84300A600DB /* WorkDetailInfoInteractor.swift in Sources */,
+				3AA56CFE28BDDDE000FB66F5 /* RecordInteractor.swift in Sources */,
+				3AA56CFC28BDDDE000FB66F5 /* RecordModels.swift in Sources */,
+				3AA56CFA28BDDDE000FB66F5 /* RecordWorker.swift in Sources */,
 				3A79684F28B4FDFB0054DF5A /* WorkCollectionViewCell.swift in Sources */,
+				3AA56D0328BE580000FB66F5 /* WorkListCollectionViewCell.swift in Sources */,
 				3AB9CFBC28B4E84300A600DB /* WorkDetailInfoPresenter.swift in Sources */,
 				3A75DBBE28A0F07F00084DB1 /* Category.swift in Sources */,
+				3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */,
 				3A75DBC028A0F09400084DB1 /* Work.swift in Sources */,
 				3A75DBEE28A0F41000084DB1 /* TabBarController.swift in Sources */,
 				3A8D1763289BBEA100B260D1 /* HomeRouter.swift in Sources */,
@@ -445,12 +526,17 @@
 				3A8D1765289BBEA100B260D1 /* HomeViewController.swift in Sources */,
 				3A8D172E289BBC7700B260D1 /* SceneDelegate.swift in Sources */,
 				3A8D1762289BBEA100B260D1 /* HomeWorker.swift in Sources */,
+				3AA56CF928BDDDE000FB66F5 /* RecordPresenter.swift in Sources */,
 				3ADA9B7228A5355500EB39F3 /* WorkCell.swift in Sources */,
 				3A8D1766289BBEA100B260D1 /* HomeInteractor.swift in Sources */,
 				3A8D1761289BBEA100B260D1 /* HomePresenter.swift in Sources */,
+				3AD4F11D28C0808200598D28 /* DropDownHeader.swift in Sources */,
+				3AD4F11F28C08BA800598D28 /* TapHeader.swift in Sources */,
 				3A8D1764289BBEA100B260D1 /* HomeModels.swift in Sources */,
 				3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */,
+				3AA56D0528BE627300FB66F5 /* WorkTabCollectionViewCell.swift in Sources */,
 				3AB9CFBF28B4E84300A600DB /* WorkDetailInfoModels.swift in Sources */,
+				3AA56D0128BDE7A600FB66F5 /* RecordViewController+.swift in Sources */,
 				3A79685428B5DAA20054DF5A /* WorkDetailInfoViewController+.swift in Sources */,
 				3AB9CFBD28B4E84300A600DB /* WorkDetailInfoWorker.swift in Sources */,
 			);

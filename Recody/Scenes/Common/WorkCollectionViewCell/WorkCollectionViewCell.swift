@@ -14,7 +14,7 @@ class WorkCollectionViewCell: UICollectionViewCell {
     func setData(with data: Work) {
         workImage.image = UIImage(named: data.image)
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
