@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabHeader" customModule="Recody" customModuleProvider="target">
+            <connections>
+                <outlet property="genreStackView" destination="GTQ-af-ale" id="GxA-0X-2m9"/>
+                <outlet property="scrollView" destination="7kH-V6-X7a" id="znu-wi-4jv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tXu-bQ-8Xx">
+            <rect key="frame" x="0.0" y="0.0" width="810" height="139"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kH-V6-X7a">
+                    <rect key="frame" x="0.0" y="0.0" width="810" height="139"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GTQ-af-ale">
+                            <rect key="frame" x="0.0" y="0.0" width="101" height="139"/>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="GTQ-af-ale" firstAttribute="trailing" secondItem="cuB-bj-d92" secondAttribute="trailing" id="DbV-qR-l4V"/>
+                        <constraint firstItem="GTQ-af-ale" firstAttribute="height" secondItem="snS-GF-Vaa" secondAttribute="height" id="bYR-Qp-uMo"/>
+                        <constraint firstItem="GTQ-af-ale" firstAttribute="leading" secondItem="cuB-bj-d92" secondAttribute="leading" id="hFM-9m-sfw"/>
+                        <constraint firstItem="GTQ-af-ale" firstAttribute="bottom" secondItem="cuB-bj-d92" secondAttribute="bottom" id="qgx-az-Kb4"/>
+                        <constraint firstItem="GTQ-af-ale" firstAttribute="top" secondItem="cuB-bj-d92" secondAttribute="top" id="u2u-tT-AYr"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="cuB-bj-d92"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="snS-GF-Vaa"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="e0I-8q-iBr"/>
+            <constraints>
+                <constraint firstItem="e0I-8q-iBr" firstAttribute="trailing" secondItem="7kH-V6-X7a" secondAttribute="trailing" id="OWg-e7-mSS"/>
+                <constraint firstAttribute="bottom" secondItem="7kH-V6-X7a" secondAttribute="bottom" id="acz-oB-ctB"/>
+                <constraint firstItem="7kH-V6-X7a" firstAttribute="leading" secondItem="e0I-8q-iBr" secondAttribute="leading" id="bro-tI-Etd"/>
+                <constraint firstItem="7kH-V6-X7a" firstAttribute="top" secondItem="tXu-bQ-8Xx" secondAttribute="top" id="dCt-WM-i6G"/>
+            </constraints>
+            <point key="canvasLocation" x="-119" y="18"/>
+        </collectionReusableView>
+    </objects>
+</document>
