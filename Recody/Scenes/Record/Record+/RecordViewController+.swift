@@ -32,7 +32,9 @@ extension RecordViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if collectionView == workTabCollectionView {
-            guard let headerview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "tapHeader", for: indexPath) as? TapHeader else { return UICollectionReusableView() }
+            guard let headerview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "tabHeader", for: indexPath) as? TabHeader else { return UICollectionReusableView() }
+            headerview.setStackView(with: self.genre)
+            headerview.setInitButton()
             return headerview
         } else {
             guard let headerview = collectionView

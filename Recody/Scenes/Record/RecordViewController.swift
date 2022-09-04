@@ -33,7 +33,7 @@ class RecordViewController: UIViewController, RecordDisplayLogic {
         Work(id: "8", name: "After Like", image: "afterLike")
     ]
     let genre = [
-        "전체", "로맨틱 코미디", "스릴러", "액션", "S/F", "애니메이셔"
+        "전체", "로맨틱 코미디", "스릴러", "액션", "S/F", "애니메이션"
     ]
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -84,6 +84,7 @@ class RecordViewController: UIViewController, RecordDisplayLogic {
     @IBOutlet weak var workTabCollectionView: UICollectionView! {
         didSet {
             workTabCollectionView.collectionViewLayout = createLayout()
+            workTabCollectionView.register(TabHeader.self, forSupplementaryViewOfKind: "header1", withReuseIdentifier: "tabHeader")
         }
     }
 
@@ -98,8 +99,9 @@ class RecordViewController: UIViewController, RecordDisplayLogic {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .paging
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(40)), elementKind: "header1", alignment: . topLeading)
         section.boundarySupplementaryItems = [
-            .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
+            header
         ]
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
