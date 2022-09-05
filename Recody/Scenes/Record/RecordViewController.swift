@@ -87,10 +87,12 @@ class RecordViewController: UIViewController, RecordDisplayLogic {
             workTabCollectionView.register(TabHeader.self, forSupplementaryViewOfKind: "header1", withReuseIdentifier: "tabHeader")
         }
     }
+    @IBOutlet var searchBar: UISearchBar!
 
     func doSomething() {
         let request = Record.Something.Request()
         interactor?.doSomething(request: request)
+        navigationItem.titleView = searchBar
     }
 
     func createLayout() -> UICollectionViewCompositionalLayout {

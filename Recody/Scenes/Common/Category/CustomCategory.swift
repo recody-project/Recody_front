@@ -18,34 +18,42 @@ class CustomCategory: UIView {
         categoryImage.image = UIImage(named: data.image)
         categoryName.text = data.name
         categoryImage.isUserInteractionEnabled = true
-        categoryImage.addGestureRecognizer(tapGesture)
+//        categoryImage.addGestureRecognizer(tapGesture)
+    }
+
+    func setDataForAdd() {
+        categoryImage.image = UIImage(named: "plus")
+        categoryImage.layer.borderWidth = 1.0
+        categoryImage.layer.borderColor = UIColor(hexString: "#51453D").cgColor
+        categoryImage.contentMode = .center
+        categoryName.text = "추가하기"
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+//        commonInit()
         xibSetup()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        commonInit()
+//        commonInit()
         xibSetup()
     }
 
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        commonInit()
+//        commonInit()
         xibSetup()
     }
-
-    func commonInit() {
-        tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchToPickPhoto))
-    }
-
-    @objc func touchToPickPhoto() {
-        print("hi")
-    }
+//
+//    func commonInit() {
+//        tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchToPickPhoto))
+//    }
+//
+//    @objc func touchToPickPhoto() {
+//        print("hi")
+//    }
 
     func xibSetup() {
         guard let view = loadViewFromNib(nib: "CustomCategory") else {
