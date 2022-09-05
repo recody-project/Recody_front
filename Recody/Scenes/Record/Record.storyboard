@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OWD-AH-gJs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,6 +12,24 @@
     </dependencies>
     <scenes>
         <!--기록추가-->
+        <scene sceneID="dD5-Bq-ZOH">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OsK-2a-lL9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="recordNavigation" id="OWD-AH-gJs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="기록추가" id="A96-Lj-niY"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bgi-ts-dWw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="854-ie-0SR"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-607" y="106"/>
+        </scene>
+        <!--Record View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="record" id="Y6W-OH-hqX" customClass="RecordViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,30 +37,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="작품을 검색해 보세요" translatesAutoresizingMaskIntoConstraints="NO" id="5E7-1o-JAe">
-                                <rect key="frame" x="20" y="44" width="309" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="CEL-xG-iLU"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9S-Ug-T47">
-                                <rect key="frame" x="349" y="56.5" width="45" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="ILP-p4-hYb"/>
-                                    <constraint firstAttribute="height" constant="17" id="Mmf-XC-cEx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="14"/>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="편집"/>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mPB-1k-SAQ">
-                                <rect key="frame" x="20" y="114" width="374" height="81"/>
+                                <rect key="frame" x="20" y="118" width="374" height="81"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KTD-Pd-1sl" customClass="CustomCategory" customModule="Recody" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="57" height="81"/>
@@ -85,37 +81,37 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3U9-FM-qyP">
-                                <rect key="frame" x="0.0" y="235" width="414" height="578"/>
+                                <rect key="frame" x="0.0" y="239" width="414" height="574"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xo3-bP-Yfw">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="414" height="575"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="workTabCollectionViewCell" id="uwA-PZ-KJ6" customClass="WorkTabCollectionViewCell" customModule="Recody" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="525"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="575"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6kf-br-80W">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="525"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="575"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ7-Wo-uer">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="525"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="575"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1yR-Ic-pKL">
-                                                        <size key="itemSize" width="373" height="471"/>
+                                                        <size key="itemSize" width="373" height="573"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="workListCollectionViewCell" id="O9x-U9-q9J" customClass="WorkListCollectionViewCell" customModule="Recody" customModuleProvider="target">
-                                                            <rect key="frame" x="20.5" y="0.0" width="373" height="471"/>
+                                                            <rect key="frame" x="20.5" y="0.0" width="373" height="573"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="P6l-kN-odO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="373" height="471"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="373" height="573"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wTs-tU-Z37">
@@ -154,7 +150,7 @@
                                                                     <constraint firstItem="Kof-OP-pIP" firstAttribute="leading" secondItem="wTs-tU-Z37" secondAttribute="leading" id="riX-pR-laN"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
-                                                            <size key="customSize" width="373" height="471"/>
+                                                            <size key="customSize" width="373" height="573"/>
                                                             <connections>
                                                                 <outlet property="imageView" destination="wTs-tU-Z37" id="9Xy-v6-Uaq"/>
                                                                 <outlet property="name" destination="Kof-OP-pIP" id="NEh-wj-huE"/>
@@ -175,7 +171,7 @@
                                                 <constraint firstItem="ZJ7-Wo-uer" firstAttribute="top" secondItem="6kf-br-80W" secondAttribute="top" id="X7k-kq-frr"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="414" height="525"/>
+                                        <size key="customSize" width="414" height="575"/>
                                         <connections>
                                             <outlet property="workListCollectionView" destination="ZJ7-Wo-uer" id="sDr-1z-qUH"/>
                                         </connections>
@@ -193,26 +189,56 @@
                             <constraint firstAttribute="trailing" secondItem="3U9-FM-qyP" secondAttribute="trailing" id="93Z-1m-evA"/>
                             <constraint firstItem="3U9-FM-qyP" firstAttribute="top" secondItem="mPB-1k-SAQ" secondAttribute="bottom" constant="40" id="9Il-Ne-KQH"/>
                             <constraint firstItem="3U9-FM-qyP" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="F3B-eL-KaD"/>
-                            <constraint firstItem="5E7-1o-JAe" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="20" id="IDq-dt-HZS"/>
-                            <constraint firstItem="5E7-1o-JAe" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="MI2-kV-EOZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3U9-FM-qyP" secondAttribute="bottom" id="NQ1-8t-Xn5"/>
-                            <constraint firstItem="p9S-Ug-T47" firstAttribute="leading" secondItem="5E7-1o-JAe" secondAttribute="trailing" constant="20" id="QQO-tV-gC9"/>
                             <constraint firstItem="mPB-1k-SAQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="SCW-Fa-PSh"/>
-                            <constraint firstItem="p9S-Ug-T47" firstAttribute="centerY" secondItem="5E7-1o-JAe" secondAttribute="centerY" id="ZMU-1G-n03"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mPB-1k-SAQ" secondAttribute="trailing" constant="20" id="ih9-P6-PsA"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="p9S-Ug-T47" secondAttribute="trailing" constant="20" id="r4o-Om-GhQ"/>
-                            <constraint firstItem="mPB-1k-SAQ" firstAttribute="top" secondItem="5E7-1o-JAe" secondAttribute="bottom" constant="28" id="w0M-mc-Ovj"/>
+                            <constraint firstItem="mPB-1k-SAQ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="lYW-dM-pCq"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="기록추가" id="A96-Lj-niY"/>
+                    <navigationItem key="navigationItem" id="DcW-8l-wFa">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="k6m-Ad-p2i">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="p9S-Ug-T47">
+                                <rect key="frame" x="364" y="7.5" width="30" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="ILP-p4-hYb"/>
+                                    <constraint firstAttribute="height" constant="17" id="Mmf-XC-cEx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="편집"/>
+                                <connections>
+                                    <segue destination="tv1-ut-bfB" kind="push" id="6DI-i4-fZO"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
+                        <outlet property="searchBar" destination="eKD-MB-Oop" id="m7b-XY-SYf"/>
                         <outlet property="workTabCollectionView" destination="3U9-FM-qyP" id="LtE-da-rIB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <searchBar contentMode="redraw" placeholder="작품을 검색해 보세요." id="eKD-MB-Oop">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </objects>
             <point key="canvasLocation" x="60.869565217391312" y="105.80357142857143"/>
+        </scene>
+        <!--editCategory-->
+        <scene sceneID="SZo-00-Oef">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditCategory" referencedIdentifier="editCategory" id="tv1-ut-bfB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="j8k-yJ-q9l"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WWN-eI-Zia" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="775" y="-35"/>
         </scene>
     </scenes>
     <resources>

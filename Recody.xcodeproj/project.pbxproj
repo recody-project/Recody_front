@@ -30,6 +30,13 @@
 		3A8D1766289BBEA100B260D1 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D1760289BBEA100B260D1 /* HomeInteractor.swift */; };
 		3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D176B289BC12200B260D1 /* .swiftlint.yml */; };
 		3A8D176E289BC21400B260D1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D176D289BC21400B260D1 /* .gitignore */; };
+		3A8F862D28C625210028B45C /* EditGenre.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F862C28C625210028B45C /* EditGenre.storyboard */; };
+		3A8F863528C6277D0028B45C /* EditGenrePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F862F28C6277D0028B45C /* EditGenrePresenter.swift */; };
+		3A8F863628C6277D0028B45C /* EditGenreWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863028C6277D0028B45C /* EditGenreWorker.swift */; };
+		3A8F863728C6277D0028B45C /* EditGenreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863128C6277D0028B45C /* EditGenreRouter.swift */; };
+		3A8F863828C6277D0028B45C /* EditGenreModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863228C6277D0028B45C /* EditGenreModels.swift */; };
+		3A8F863928C6277D0028B45C /* EditGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863328C6277D0028B45C /* EditGenreViewController.swift */; };
+		3A8F863A28C6277D0028B45C /* EditGenreInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863428C6277D0028B45C /* EditGenreInteractor.swift */; };
 		3AA56CF928BDDDE000FB66F5 /* RecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56CF328BDDDE000FB66F5 /* RecordPresenter.swift */; };
 		3AA56CFA28BDDDE000FB66F5 /* RecordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56CF428BDDDE000FB66F5 /* RecordWorker.swift */; };
 		3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56CF528BDDDE000FB66F5 /* RecordRouter.swift */; };
@@ -41,6 +48,15 @@
 		3AA56D0528BE627300FB66F5 /* WorkTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56D0428BE627300FB66F5 /* WorkTabCollectionViewCell.swift */; };
 		3AA56D0728BE743400FB66F5 /* WorkListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA56D0628BE743400FB66F5 /* WorkListCollectionViewCell.xib */; };
 		3AAEE3E328C4E30D00B28582 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3E228C4E30D00B28582 /* UIView+.swift */; };
+		3AAEE3EB28C5CF3900B28582 /* EditCategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3E528C5CF3900B28582 /* EditCategoryPresenter.swift */; };
+		3AAEE3EC28C5CF3900B28582 /* EditCategoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3E628C5CF3900B28582 /* EditCategoryWorker.swift */; };
+		3AAEE3ED28C5CF3900B28582 /* EditCategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3E728C5CF3900B28582 /* EditCategoryRouter.swift */; };
+		3AAEE3EE28C5CF3900B28582 /* EditCategoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3E828C5CF3900B28582 /* EditCategoryModels.swift */; };
+		3AAEE3EF28C5CF3900B28582 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3E928C5CF3900B28582 /* EditCategoryViewController.swift */; };
+		3AAEE3F028C5CF3900B28582 /* EditCategoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3EA28C5CF3900B28582 /* EditCategoryInteractor.swift */; };
+		3AAEE3F228C5CF4500B28582 /* EditCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AAEE3F128C5CF4500B28582 /* EditCategory.storyboard */; };
+		3AAEE3F528C5D10100B28582 /* EditCategoryViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3F428C5D10100B28582 /* EditCategoryViewController+.swift */; };
+		3AAEE3F928C5DA9900B28582 /* EditCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3F828C5DA9900B28582 /* EditCategoryCollectionViewCell.swift */; };
 		3AB9CFBC28B4E84300A600DB /* WorkDetailInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFB628B4E84300A600DB /* WorkDetailInfoPresenter.swift */; };
 		3AB9CFBD28B4E84300A600DB /* WorkDetailInfoWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFB728B4E84300A600DB /* WorkDetailInfoWorker.swift */; };
 		3AB9CFBE28B4E84300A600DB /* WorkDetailInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFB828B4E84300A600DB /* WorkDetailInfoRouter.swift */; };
@@ -88,6 +104,13 @@
 		3A8D1760289BBEA100B260D1 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		3A8D176B289BC12200B260D1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3A8D176D289BC21400B260D1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3A8F862C28C625210028B45C /* EditGenre.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditGenre.storyboard; sourceTree = "<group>"; };
+		3A8F862F28C6277D0028B45C /* EditGenrePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenrePresenter.swift; sourceTree = "<group>"; };
+		3A8F863028C6277D0028B45C /* EditGenreWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreWorker.swift; sourceTree = "<group>"; };
+		3A8F863128C6277D0028B45C /* EditGenreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreRouter.swift; sourceTree = "<group>"; };
+		3A8F863228C6277D0028B45C /* EditGenreModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreModels.swift; sourceTree = "<group>"; };
+		3A8F863328C6277D0028B45C /* EditGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreViewController.swift; sourceTree = "<group>"; };
+		3A8F863428C6277D0028B45C /* EditGenreInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreInteractor.swift; sourceTree = "<group>"; };
 		3AA56CF328BDDDE000FB66F5 /* RecordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPresenter.swift; sourceTree = "<group>"; };
 		3AA56CF428BDDDE000FB66F5 /* RecordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWorker.swift; sourceTree = "<group>"; };
 		3AA56CF528BDDDE000FB66F5 /* RecordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordRouter.swift; sourceTree = "<group>"; };
@@ -99,6 +122,15 @@
 		3AA56D0428BE627300FB66F5 /* WorkTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AA56D0628BE743400FB66F5 /* WorkListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkListCollectionViewCell.xib; sourceTree = "<group>"; };
 		3AAEE3E228C4E30D00B28582 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		3AAEE3E528C5CF3900B28582 /* EditCategoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryPresenter.swift; sourceTree = "<group>"; };
+		3AAEE3E628C5CF3900B28582 /* EditCategoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryWorker.swift; sourceTree = "<group>"; };
+		3AAEE3E728C5CF3900B28582 /* EditCategoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryRouter.swift; sourceTree = "<group>"; };
+		3AAEE3E828C5CF3900B28582 /* EditCategoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryModels.swift; sourceTree = "<group>"; };
+		3AAEE3E928C5CF3900B28582 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
+		3AAEE3EA28C5CF3900B28582 /* EditCategoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryInteractor.swift; sourceTree = "<group>"; };
+		3AAEE3F128C5CF4500B28582 /* EditCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditCategory.storyboard; sourceTree = "<group>"; };
+		3AAEE3F428C5D10100B28582 /* EditCategoryViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditCategoryViewController+.swift"; sourceTree = "<group>"; };
+		3AAEE3F828C5DA9900B28582 /* EditCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AB9CFB628B4E84300A600DB /* WorkDetailInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoPresenter.swift; sourceTree = "<group>"; };
 		3AB9CFB728B4E84300A600DB /* WorkDetailInfoWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoWorker.swift; sourceTree = "<group>"; };
 		3AB9CFB828B4E84300A600DB /* WorkDetailInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoRouter.swift; sourceTree = "<group>"; };
@@ -222,6 +254,8 @@
 		3A8D1759289BBE7E00B260D1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3A8F862B28C6250C0028B45C /* EditGenre */,
+				3AAEE3E428C5CF1400B28582 /* EditCategory */,
 				3AB9CFB528B4E81500A600DB /* WorkDetailInfo */,
 				3AB9CFC528B4F05F00A600DB /* Common */,
 				3A75DBDF28A0F3D400084DB1 /* Tab */,
@@ -271,6 +305,28 @@
 			path = Workers;
 			sourceTree = "<group>";
 		};
+		3A8F862B28C6250C0028B45C /* EditGenre */ = {
+			isa = PBXGroup;
+			children = (
+				3A8F862E28C6276C0028B45C /* EditGenre+ */,
+				3A8F862F28C6277D0028B45C /* EditGenrePresenter.swift */,
+				3A8F863028C6277D0028B45C /* EditGenreWorker.swift */,
+				3A8F863128C6277D0028B45C /* EditGenreRouter.swift */,
+				3A8F863228C6277D0028B45C /* EditGenreModels.swift */,
+				3A8F863328C6277D0028B45C /* EditGenreViewController.swift */,
+				3A8F863428C6277D0028B45C /* EditGenreInteractor.swift */,
+				3A8F862C28C625210028B45C /* EditGenre.storyboard */,
+			);
+			path = EditGenre;
+			sourceTree = "<group>";
+		};
+		3A8F862E28C6276C0028B45C /* EditGenre+ */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "EditGenre+";
+			sourceTree = "<group>";
+		};
 		3AA56CE628BDDD9800FB66F5 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +349,30 @@
 				3AD4F12028C08C7E00598D28 /* DropDownHeader.xib */,
 			);
 			path = "Record+";
+			sourceTree = "<group>";
+		};
+		3AAEE3E428C5CF1400B28582 /* EditCategory */ = {
+			isa = PBXGroup;
+			children = (
+				3AAEE3F328C5D0DF00B28582 /* EditCategory+ */,
+				3AAEE3E528C5CF3900B28582 /* EditCategoryPresenter.swift */,
+				3AAEE3E628C5CF3900B28582 /* EditCategoryWorker.swift */,
+				3AAEE3E728C5CF3900B28582 /* EditCategoryRouter.swift */,
+				3AAEE3E828C5CF3900B28582 /* EditCategoryModels.swift */,
+				3AAEE3E928C5CF3900B28582 /* EditCategoryViewController.swift */,
+				3AAEE3EA28C5CF3900B28582 /* EditCategoryInteractor.swift */,
+				3AAEE3F128C5CF4500B28582 /* EditCategory.storyboard */,
+			);
+			path = EditCategory;
+			sourceTree = "<group>";
+		};
+		3AAEE3F328C5D0DF00B28582 /* EditCategory+ */ = {
+			isa = PBXGroup;
+			children = (
+				3AAEE3F428C5D10100B28582 /* EditCategoryViewController+.swift */,
+				3AAEE3F828C5DA9900B28582 /* EditCategoryCollectionViewCell.swift */,
+			);
+			path = "EditCategory+";
 			sourceTree = "<group>";
 		};
 		3AB9CFB528B4E81500A600DB /* WorkDetailInfo */ = {
@@ -444,6 +524,7 @@
 			files = (
 				3A75DBF828A0F5D900084DB1 /* Calendar.storyboard in Resources */,
 				3A79685128B4FE0C0054DF5A /* WorkCollectionViewCell.xib in Resources */,
+				3AAEE3F228C5CF4500B28582 /* EditCategory.storyboard in Resources */,
 				3A8D176E289BC21400B260D1 /* .gitignore in Resources */,
 				3AD4F12328C09EB700598D28 /* TabHeader.xib in Resources */,
 				3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */,
@@ -455,6 +536,7 @@
 				3AD4F12128C08C7E00598D28 /* DropDownHeader.xib in Resources */,
 				3A8D1735289BBC7A00B260D1 /* Assets.xcassets in Resources */,
 				3A75DBF128A0F41D00084DB1 /* TabBar.storyboard in Resources */,
+				3A8F862D28C625210028B45C /* EditGenre.storyboard in Resources */,
 				3A75DBF628A0F5CE00084DB1 /* Record.storyboard in Resources */,
 				3AB9CFC328B4E86100A600DB /* WorkDetailInfo.storyboard in Resources */,
 			);
@@ -526,8 +608,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8F863928C6277D0028B45C /* EditGenreViewController.swift in Sources */,
+				3AAEE3EB28C5CF3900B28582 /* EditCategoryPresenter.swift in Sources */,
 				3ADA9B7728A56AB600EB39F3 /* CustomCategory.swift in Sources */,
 				3ADA9B7B28A5810C00EB39F3 /* Designables.swift in Sources */,
+				3AAEE3EE28C5CF3900B28582 /* EditCategoryModels.swift in Sources */,
 				3AB9CFC028B4E84300A600DB /* WorkDetailInfoViewController.swift in Sources */,
 				3AA56CFD28BDDDE000FB66F5 /* RecordViewController.swift in Sources */,
 				3AB9CFBE28B4E84300A600DB /* WorkDetailInfoRouter.swift in Sources */,
@@ -535,12 +620,15 @@
 				3AA56CFE28BDDDE000FB66F5 /* RecordInteractor.swift in Sources */,
 				3AA56CFC28BDDDE000FB66F5 /* RecordModels.swift in Sources */,
 				3AA56CFA28BDDDE000FB66F5 /* RecordWorker.swift in Sources */,
+				3AAEE3F928C5DA9900B28582 /* EditCategoryCollectionViewCell.swift in Sources */,
 				3A79684F28B4FDFB0054DF5A /* WorkCollectionViewCell.swift in Sources */,
+				3AAEE3EF28C5CF3900B28582 /* EditCategoryViewController.swift in Sources */,
 				3AA56D0328BE580000FB66F5 /* WorkListCollectionViewCell.swift in Sources */,
 				3AB9CFBC28B4E84300A600DB /* WorkDetailInfoPresenter.swift in Sources */,
 				3A75DBBE28A0F07F00084DB1 /* Category.swift in Sources */,
 				3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */,
 				3A75DBC028A0F09400084DB1 /* Work.swift in Sources */,
+				3AAEE3ED28C5CF3900B28582 /* EditCategoryRouter.swift in Sources */,
 				3A75DBEE28A0F41000084DB1 /* TabBarController.swift in Sources */,
 				3A8D1763289BBEA100B260D1 /* HomeRouter.swift in Sources */,
 				3A8D172C289BBC7700B260D1 /* AppDelegate.swift in Sources */,
@@ -548,20 +636,28 @@
 				3A8D172E289BBC7700B260D1 /* SceneDelegate.swift in Sources */,
 				3A8D1762289BBEA100B260D1 /* HomeWorker.swift in Sources */,
 				3AA56CF928BDDDE000FB66F5 /* RecordPresenter.swift in Sources */,
+				3A8F863628C6277D0028B45C /* EditGenreWorker.swift in Sources */,
 				3ADA9B7228A5355500EB39F3 /* WorkCell.swift in Sources */,
 				3A8D1766289BBEA100B260D1 /* HomeInteractor.swift in Sources */,
 				3AAEE3E328C4E30D00B28582 /* UIView+.swift in Sources */,
+				3A8F863828C6277D0028B45C /* EditGenreModels.swift in Sources */,
+				3AAEE3F528C5D10100B28582 /* EditCategoryViewController+.swift in Sources */,
 				3A8D1761289BBEA100B260D1 /* HomePresenter.swift in Sources */,
 				3AD4F12828C0AFF900598D28 /* CALayer+.swift in Sources */,
 				3AD4F11D28C0808200598D28 /* DropDownHeader.swift in Sources */,
+				3AAEE3EC28C5CF3900B28582 /* EditCategoryWorker.swift in Sources */,
 				3AD4F11F28C08BA800598D28 /* TabHeader.swift in Sources */,
 				3A8D1764289BBEA100B260D1 /* HomeModels.swift in Sources */,
 				3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */,
 				3AA56D0528BE627300FB66F5 /* WorkTabCollectionViewCell.swift in Sources */,
+				3A8F863728C6277D0028B45C /* EditGenreRouter.swift in Sources */,
 				3AB9CFBF28B4E84300A600DB /* WorkDetailInfoModels.swift in Sources */,
 				3AA56D0128BDE7A600FB66F5 /* RecordViewController+.swift in Sources */,
 				3A79685428B5DAA20054DF5A /* WorkDetailInfoViewController+.swift in Sources */,
+				3A8F863528C6277D0028B45C /* EditGenrePresenter.swift in Sources */,
 				3AB9CFBD28B4E84300A600DB /* WorkDetailInfoWorker.swift in Sources */,
+				3AAEE3F028C5CF3900B28582 /* EditCategoryInteractor.swift in Sources */,
+				3A8F863A28C6277D0028B45C /* EditGenreInteractor.swift in Sources */,
 				3AD4F12628C0A66600598D28 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

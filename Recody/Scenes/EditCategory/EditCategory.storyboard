@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--편집-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="editCategory" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="EditCategoryViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lwz-gq-Tmo">
+                                <rect key="frame" x="20" y="118" width="374" height="744"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gZG-1U-kJt">
+                                    <size key="itemSize" width="77" height="87"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="editCategoryCollectionViewCell" id="fQN-PS-bqO" customClass="EditCategoryCollectionViewCell" customModule="Recody" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="57" height="81"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yTF-nN-tT4">
+                                            <rect key="frame" x="0.0" y="0.0" width="57" height="81"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GI9-kB-WNv" customClass="CustomCategory" customModule="Recody" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="57" height="81"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GI9-kB-WNv" firstAttribute="top" secondItem="yTF-nN-tT4" secondAttribute="top" id="Fn1-Qe-60q"/>
+                                                <constraint firstItem="GI9-kB-WNv" firstAttribute="leading" secondItem="yTF-nN-tT4" secondAttribute="leading" id="Haa-Dk-J8M"/>
+                                                <constraint firstAttribute="trailing" secondItem="GI9-kB-WNv" secondAttribute="trailing" id="J4v-Z6-Mxb"/>
+                                                <constraint firstAttribute="bottom" secondItem="GI9-kB-WNv" secondAttribute="bottom" id="TgB-n7-A9z"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="57" height="81"/>
+                                        <connections>
+                                            <outlet property="view" destination="GI9-kB-WNv" id="VZZ-m3-iH3"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="O5N-Fa-iRA"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="iEd-D7-GY3"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lwz-gq-Tmo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="4dn-Ox-AcB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lwz-gq-Tmo" secondAttribute="bottom" id="ADq-8h-LvB"/>
+                            <constraint firstItem="lwz-gq-Tmo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="ZJb-qW-EJ7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lwz-gq-Tmo" secondAttribute="trailing" constant="20" id="mNy-rD-ap8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="편집" id="26s-1n-km9">
+                        <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" style="plain" id="aH1-Lm-ODU">
+                            <color key="tintColor" systemColor="labelColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
