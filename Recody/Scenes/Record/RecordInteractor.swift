@@ -12,29 +12,25 @@
 
 import UIKit
 
-protocol RecordBusinessLogic
-{
+protocol RecordBusinessLogic {
   func doSomething(request: Record.Something.Request)
 }
 
-protocol RecordDataStore
-{
-  //var name: String { get set }
+protocol RecordDataStore {
+  // var name: String { get set }
 }
 
-class RecordInteractor: RecordBusinessLogic, RecordDataStore
-{
+class RecordInteractor: RecordBusinessLogic, RecordDataStore {
   var presenter: RecordPresentationLogic?
   var worker: RecordWorker?
-  //var name: String = ""
-  
+  // var name: String = ""
+
   // MARK: Do something
-  
-  func doSomething(request: Record.Something.Request)
-  {
+
+  func doSomething(request: Record.Something.Request) {
     worker = RecordWorker()
     worker?.doSomeWork()
-    
+
     let response = Record.Something.Response()
     presenter?.presentSomething(response: response)
   }

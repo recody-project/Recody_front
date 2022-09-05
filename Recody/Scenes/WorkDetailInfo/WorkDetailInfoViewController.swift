@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol WorkDetailInfoDisplayLogic: class {
+protocol WorkDetailInfoDisplayLogic: AnyObject {
     func displaySomething(viewModel: WorkDetailInfo.Something.ViewModel)
 }
 

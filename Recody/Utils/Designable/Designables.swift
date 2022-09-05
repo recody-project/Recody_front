@@ -49,7 +49,7 @@ import UIKit
              layer.shadowOffset = newValue
          }
      }
-    
+
     @IBInspectable
     var shadowColor: UIColor? {
         get {
