@@ -12,9 +12,7 @@
 
 import UIKit
 
-class WorkDetailInfoWorker
-{
-  func doSomeWork()
-  {
+class WorkDetailInfoWorker {
+  func doSomeWork() {
   }
 }

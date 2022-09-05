@@ -12,29 +12,25 @@
 
 import UIKit
 
-protocol WorkDetailInfoBusinessLogic
-{
+protocol WorkDetailInfoBusinessLogic {
   func doSomething(request: WorkDetailInfo.Something.Request)
 }
 
-protocol WorkDetailInfoDataStore
-{
-  //var name: String { get set }
+protocol WorkDetailInfoDataStore {
+  // var name: String { get set }
 }
 
-class WorkDetailInfoInteractor: WorkDetailInfoBusinessLogic, WorkDetailInfoDataStore
-{
+class WorkDetailInfoInteractor: WorkDetailInfoBusinessLogic, WorkDetailInfoDataStore {
   var presenter: WorkDetailInfoPresentationLogic?
   var worker: WorkDetailInfoWorker?
-  //var name: String = ""
-  
+  // var name: String = ""
+
   // MARK: Do something
-  
-  func doSomething(request: WorkDetailInfo.Something.Request)
-  {
+
+  func doSomething(request: WorkDetailInfo.Something.Request) {
     worker = WorkDetailInfoWorker()
     worker?.doSomeWork()
-    
+
     let response = WorkDetailInfo.Something.Response()
     presenter?.presentSomething(response: response)
   }

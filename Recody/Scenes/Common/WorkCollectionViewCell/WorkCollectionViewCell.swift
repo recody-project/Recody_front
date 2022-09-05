@@ -29,7 +29,7 @@ class WorkCollectionViewCell: UICollectionViewCell {
         super.prepareForInterfaceBuilder()
         xibSetup()
     }
-    
+
     func xibSetup() {
         guard let view = loadViewFromNib(nib: "WorkCollectionViewCell") else {
             return

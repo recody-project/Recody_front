@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol RecordDisplayLogic: class {
+protocol RecordDisplayLogic: AnyObject {
     func displaySomething(viewModel: Record.Something.ViewModel)
 }
 

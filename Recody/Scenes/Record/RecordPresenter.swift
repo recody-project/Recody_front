@@ -12,19 +12,16 @@
 
 import UIKit
 
-protocol RecordPresentationLogic
-{
+protocol RecordPresentationLogic {
   func presentSomething(response: Record.Something.Response)
 }
 
-class RecordPresenter: RecordPresentationLogic
-{
+class RecordPresenter: RecordPresentationLogic {
   weak var viewController: RecordDisplayLogic?
-  
+
   // MARK: Do something
-  
-  func presentSomething(response: Record.Something.Response)
-  {
+
+  func presentSomething(response: Record.Something.Response) {
     let viewModel = Record.Something.ViewModel()
     viewController?.displaySomething(viewModel: viewModel)
   }

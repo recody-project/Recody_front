@@ -4,3 +4,5 @@ disabled_rules:
 included:
 excluded:
 - Pods
+- Recody/AppDelegate.swift
+- Recody/SceneDelegate.swift

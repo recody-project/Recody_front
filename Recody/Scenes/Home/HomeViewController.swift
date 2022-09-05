@@ -82,7 +82,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
 
     func makeCategoryStackView() {
         var index = 0
-        for value in categoryStackView.arrangedSubviews as [CustomCategory] {
+        guard let tempArray = categoryStackView.arrangedSubviews as? [CustomCategory] else { return }
+        for value in tempArray {
             value.setData(with: categories[index])
             index += 1
         }

@@ -12,49 +12,15 @@
 
 import UIKit
 
-@objc protocol RecordRoutingLogic
-{
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+@objc protocol RecordRoutingLogic {
+  // func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol RecordDataPassing
-{
+protocol RecordDataPassing {
   var dataStore: RecordDataStore? { get }
 }
 
-class RecordRouter: NSObject, RecordRoutingLogic, RecordDataPassing
-{
+class RecordRouter: NSObject, RecordRoutingLogic, RecordDataPassing {
   weak var viewController: RecordViewController?
   var dataStore: RecordDataStore?
-  
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: RecordViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: RecordDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
 }

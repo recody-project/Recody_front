@@ -12,9 +12,7 @@
 
 import UIKit
 
-class RecordWorker
-{
-  func doSomeWork()
-  {
+class RecordWorker {
+  func doSomeWork() {
   }
 }
