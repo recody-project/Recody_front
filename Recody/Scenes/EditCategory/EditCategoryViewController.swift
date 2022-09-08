@@ -29,6 +29,7 @@ class EditCategoryViewController: UIViewController, EditCategoryDisplayLogic {
         Category(name: "음악", image: "book"),
         Category(name: "공연", image: "book")
     ]
+    var countCheck = 0
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -80,11 +81,10 @@ class EditCategoryViewController: UIViewController, EditCategoryDisplayLogic {
         interactor?.doSomething(request: request)
     }
 
-    func addLongpressEvent(view: UIImageView) {
+    func addLongpressEvent(view: UIView) {
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
         longPressRecognizer.minimumPressDuration = 0.5
         view.addGestureRecognizer(longPressRecognizer)
-        print("hi")
     }
 
     @objc func longPressed(sender: UILongPressGestureRecognizer) {

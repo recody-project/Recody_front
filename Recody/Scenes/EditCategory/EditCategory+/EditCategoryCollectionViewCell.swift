@@ -12,6 +12,7 @@ class EditCategoryCollectionViewCell: UICollectionViewCell {
 
     func addAllView() {
         view.setData(with: Category(name: "전체", image: "book"))
+        view.addBorder()
     }
 
     func addAddView() {
@@ -20,6 +21,10 @@ class EditCategoryCollectionViewCell: UICollectionViewCell {
 
     func setData(with data: Category) {
         view.setData(with: data)
+    }
+    
+    func addBorder() {
+        view.addBorder()
     }
 
     override init(frame: CGRect) {
