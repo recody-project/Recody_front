@@ -17,16 +17,38 @@ extension EditCategoryViewController: UICollectionViewDelegate, UICollectionView
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "editCategoryCollectionViewCell", for: indexPath) as? EditCategoryCollectionViewCell else {
             return UICollectionViewCell()
         }
-
         if indexPath.row == 0 {
             cell.addAllView()
-        } else if indexPath.row == 7 {
+        } else if indexPath.row == myCategoryList.count + 1 {
             cell.addAddView()
         } else {
             cell.setData(with: myCategoryList[indexPath.row - 1])
-            addLongpressEvent(view: cell.view.categoryImage)
+            addLongpressEvent(view: cell.view)
         }
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row > 0 && indexPath.row < myCategoryList.count + 1 {
+            guard let cell = collectionView.cellForItem(at: indexPath) as? EditCategoryCollectionViewCell else {
+                return
+            }
+            if cell.view.returnIsBorder() {
+                if countCheck >= 2 {
+                    countCheck -= 1
+                    cell.view.removeBorder()
+                } else {
+                    print("더 이상 뺄 수 없다.")
+                }
+            } else {
+                if countCheck <= 3 {
+                    countCheck += 1
+                    cell.view.addBorder()
+                } else {
+                    print("더 이상 추가할 수 없다.")
+                }
+            }
+        }
     }
 }
 
