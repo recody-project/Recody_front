@@ -12,6 +12,7 @@ class CustomCategory: UIView {
 
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryName: UILabel!
+    @IBOutlet weak var editButton: UIButton!
     var isBorder = false
 
     func setData(with data: Category) {
@@ -32,14 +33,18 @@ class CustomCategory: UIView {
         categoryImage.layer.borderColor = UIColor(hexString: "#51453D").cgColor
         isBorder = true
     }
-    
+
     func removeBorder() {
         categoryImage.layer.borderWidth = 0
         isBorder = false
     }
-    
+
     func returnIsBorder() -> Bool {
         return isBorder
+    }
+
+    func toggleEditButtonHidden() {
+        editButton.isHidden = false
     }
 
     override init(frame: CGRect) {
