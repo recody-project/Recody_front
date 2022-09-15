@@ -79,7 +79,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     }
 
     @IBOutlet weak var categoryStackView: UIStackView!
-
+    @IBOutlet weak var workCategoryStackView: UIStackView!
+    
     func makeCategoryStackView() {
         var index = 0
         guard let tempArray = categoryStackView.arrangedSubviews as? [CustomCategory] else { return }
@@ -88,16 +89,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
             index += 1
         }
     }
-    //  func doSomething()
-    //  {
-    //    let request = Home.Something.Request()
-    //    interactor?.doSomething(request: request)
-    //  }
-    //
-    //  func displaySomething(viewModel: Home.Something.ViewModel)
-    //  {
-    //    //nameTextField.text = viewModel.name
-    //  }
 
     func displayTestCategory(viewModel: Home.TestCategory.ViewModel) {
 

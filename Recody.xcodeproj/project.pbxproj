@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */; };
+		3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346028D01E0F00C417CB /* UIScrollView+.swift */; };
+		3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */; };
 		3A75DBBC28A0EA5700084DB1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A75DBBB28A0EA5700084DB1 /* Home.storyboard */; };
 		3A75DBBE28A0F07F00084DB1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A75DBBD28A0F07F00084DB1 /* Category.swift */; };
 		3A75DBC028A0F09400084DB1 /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A75DBBF28A0F09400084DB1 /* Work.swift */; };
@@ -79,6 +82,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditGenreViewController+.swift"; sourceTree = "<group>"; };
+		3A20346028D01E0F00C417CB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
+		3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A75DBBB28A0EA5700084DB1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3A75DBBD28A0F07F00084DB1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3A75DBBF28A0F09400084DB1 /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
@@ -323,6 +329,8 @@
 		3A8F862E28C6276C0028B45C /* EditGenre+ */ = {
 			isa = PBXGroup;
 			children = (
+				3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */,
+				3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */,
 			);
 			path = "EditGenre+";
 			sourceTree = "<group>";
@@ -414,6 +422,7 @@
 				3AD4F12528C0A66600598D28 /* UIColor+.swift */,
 				3AD4F12728C0AFF900598D28 /* CALayer+.swift */,
 				3AAEE3E228C4E30D00B28582 /* UIView+.swift */,
+				3A20346028D01E0F00C417CB /* UIScrollView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -612,6 +621,7 @@
 				3AAEE3EB28C5CF3900B28582 /* EditCategoryPresenter.swift in Sources */,
 				3ADA9B7728A56AB600EB39F3 /* CustomCategory.swift in Sources */,
 				3ADA9B7B28A5810C00EB39F3 /* Designables.swift in Sources */,
+				3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */,
 				3AAEE3EE28C5CF3900B28582 /* EditCategoryModels.swift in Sources */,
 				3AB9CFC028B4E84300A600DB /* WorkDetailInfoViewController.swift in Sources */,
 				3AA56CFD28BDDDE000FB66F5 /* RecordViewController.swift in Sources */,
@@ -634,6 +644,7 @@
 				3A8D172C289BBC7700B260D1 /* AppDelegate.swift in Sources */,
 				3A8D1765289BBEA100B260D1 /* HomeViewController.swift in Sources */,
 				3A8D172E289BBC7700B260D1 /* SceneDelegate.swift in Sources */,
+				3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */,
 				3A8D1762289BBEA100B260D1 /* HomeWorker.swift in Sources */,
 				3AA56CF928BDDDE000FB66F5 /* RecordPresenter.swift in Sources */,
 				3A8F863628C6277D0028B45C /* EditGenreWorker.swift in Sources */,
@@ -651,6 +662,7 @@
 				3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */,
 				3AA56D0528BE627300FB66F5 /* WorkTabCollectionViewCell.swift in Sources */,
 				3A8F863728C6277D0028B45C /* EditGenreRouter.swift in Sources */,
+				3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */,
 				3AB9CFBF28B4E84300A600DB /* WorkDetailInfoModels.swift in Sources */,
 				3AA56D0128BDE7A600FB66F5 /* RecordViewController+.swift in Sources */,
 				3A79685428B5DAA20054DF5A /* WorkDetailInfoViewController+.swift in Sources */,
