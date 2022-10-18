@@ -13,7 +13,7 @@
 import UIKit
 
 protocol RecordBusinessLogic {
-  func doSomething(request: Record.Something.Request)
+  func doSomething(request: Record.API.Request)
 }
 
 protocol RecordDataStore {
@@ -27,11 +27,11 @@ class RecordInteractor: RecordBusinessLogic, RecordDataStore {
 
   // MARK: Do something
 
-  func doSomething(request: Record.Something.Request) {
+  func doSomething(request: Record.API.Request) {
     worker = RecordWorker()
     worker?.doSomeWork()
-
-    let response = Record.Something.Response()
-    presenter?.presentSomething(response: response)
+//
+//    let response = Record.API.Response()
+//    presenter?.presentSomething(response: response)
   }
 }

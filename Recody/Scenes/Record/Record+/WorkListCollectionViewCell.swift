@@ -12,7 +12,7 @@ class WorkListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var owner: UILabel!
 
-    func setData(with data: Work) {
+    func setData(with data: Record.Work) {
         imageView.image = UIImage(named: data.image)
         name.text = data.name
     }

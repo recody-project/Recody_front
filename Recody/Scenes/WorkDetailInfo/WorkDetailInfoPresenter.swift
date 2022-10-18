@@ -13,7 +13,7 @@
 import UIKit
 
 protocol WorkDetailInfoPresentationLogic {
-  func presentSomething(response: WorkDetailInfo.Something.Response)
+  func presentSomething(response: WorkDetailInfo.API.Response)
 }
 
 class WorkDetailInfoPresenter: WorkDetailInfoPresentationLogic {
@@ -21,8 +21,8 @@ class WorkDetailInfoPresenter: WorkDetailInfoPresentationLogic {
 
   // MARK: Do something
 
-  func presentSomething(response: WorkDetailInfo.Something.Response) {
-    let viewModel = WorkDetailInfo.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
+  func presentSomething(response: WorkDetailInfo.API.Response) {
+//    let viewModel = WorkDetailInfo.API.ViewModel()
+//    viewController?.displaySomething(viewModel: viewModel)
   }
 }

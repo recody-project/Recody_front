@@ -25,7 +25,6 @@ class TabHeader: UICollectionReusableView {
 
     func setInitButton() {
         guard let initButton = genreStackView.arrangedSubviews[0] as? UIButton else { return }
-        print(initButton)
         initButton.setTitleColor(UIColor(hexString: "#51453D"), for: .normal)
         initButton.addBottomBorderWithColor(color: UIColor(hexString: "#51453D"), width: 1.0)
     }
