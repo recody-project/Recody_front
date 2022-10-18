@@ -80,7 +80,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
 
     @IBOutlet weak var categoryStackView: UIStackView!
     @IBOutlet weak var workCategoryStackView: UIStackView!
-    
+
     func makeCategoryStackView() {
         var index = 0
         guard let tempArray = categoryStackView.arrangedSubviews as? [CustomCategory] else { return }

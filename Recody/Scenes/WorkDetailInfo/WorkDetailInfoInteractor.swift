@@ -13,7 +13,7 @@
 import UIKit
 
 protocol WorkDetailInfoBusinessLogic {
-  func doSomething(request: WorkDetailInfo.Something.Request)
+  func doSomething(request: WorkDetailInfo.API.Request)
 }
 
 protocol WorkDetailInfoDataStore {
@@ -27,11 +27,11 @@ class WorkDetailInfoInteractor: WorkDetailInfoBusinessLogic, WorkDetailInfoDataS
 
   // MARK: Do something
 
-  func doSomething(request: WorkDetailInfo.Something.Request) {
+  func doSomething(request: WorkDetailInfo.API.Request) {
     worker = WorkDetailInfoWorker()
     worker?.doSomeWork()
 
-    let response = WorkDetailInfo.Something.Response()
-    presenter?.presentSomething(response: response)
+//      let response = WorkDetailInfo.API.Response(mesage: "", data: WorkDetailInfo.Data(personalizedUserId: <#Int#>, contentId: <#String#>, tmbId: <#Int#>, originalLanguage: <#String#>, title: <#String#>, originalTitle: <#String#>, overview: <#String#>, popularity: <#Float#>, posterPath: <#URL#>, genres: <#[WorkDetailInfo.Genre]#>, releaseDate: <#String#>, runtime: <#Int#>, revenue: <#Int#>, status: <#String#>, voteAverage: <#Float#>, voteCount: <#Int#>))
+//    presenter?.presentSomething(response: response)
   }
 }

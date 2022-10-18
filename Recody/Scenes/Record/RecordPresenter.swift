@@ -13,7 +13,7 @@
 import UIKit
 
 protocol RecordPresentationLogic {
-  func presentSomething(response: Record.Something.Response)
+  func presentSomething(response: Record.API.Response)
 }
 
 class RecordPresenter: RecordPresentationLogic {
@@ -21,8 +21,8 @@ class RecordPresenter: RecordPresentationLogic {
 
   // MARK: Do something
 
-  func presentSomething(response: Record.Something.Response) {
-    let viewModel = Record.Something.ViewModel()
+  func presentSomething(response: Record.API.Response) {
+    let viewModel = Record.API.ViewModel()
     viewController?.displaySomething(viewModel: viewModel)
   }
 }
