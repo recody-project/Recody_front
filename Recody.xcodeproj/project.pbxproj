@@ -10,6 +10,13 @@
 		3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */; };
 		3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346028D01E0F00C417CB /* UIScrollView+.swift */; };
 		3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */; };
+		3A34165528FF5CF000C4D698 /* MyPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34164F28FF5CF000C4D698 /* MyPagePresenter.swift */; };
+		3A34165628FF5CF000C4D698 /* MyPageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34165028FF5CF000C4D698 /* MyPageWorker.swift */; };
+		3A34165728FF5CF000C4D698 /* MyPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34165128FF5CF000C4D698 /* MyPageRouter.swift */; };
+		3A34165828FF5CF000C4D698 /* MyPageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34165228FF5CF000C4D698 /* MyPageModels.swift */; };
+		3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34165328FF5CF000C4D698 /* MyPageViewController.swift */; };
+		3A34165A28FF5CF000C4D698 /* MyPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34165428FF5CF000C4D698 /* MyPageInteractor.swift */; };
+		3A34165C28FF5CF900C4D698 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A34165B28FF5CF900C4D698 /* MyPage.storyboard */; };
 		3A75DBBC28A0EA5700084DB1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A75DBBB28A0EA5700084DB1 /* Home.storyboard */; };
 		3A75DBEE28A0F41000084DB1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A75DBEC28A0F41000084DB1 /* TabBarController.swift */; };
 		3A75DBF128A0F41D00084DB1 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A75DBF028A0F41D00084DB1 /* TabBar.storyboard */; };
@@ -108,6 +115,13 @@
 		3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditGenreViewController+.swift"; sourceTree = "<group>"; };
 		3A20346028D01E0F00C417CB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreCollectionViewCell.swift; sourceTree = "<group>"; };
+		3A34164F28FF5CF000C4D698 /* MyPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePresenter.swift; sourceTree = "<group>"; };
+		3A34165028FF5CF000C4D698 /* MyPageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorker.swift; sourceTree = "<group>"; };
+		3A34165128FF5CF000C4D698 /* MyPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRouter.swift; sourceTree = "<group>"; };
+		3A34165228FF5CF000C4D698 /* MyPageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageModels.swift; sourceTree = "<group>"; };
+		3A34165328FF5CF000C4D698 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		3A34165428FF5CF000C4D698 /* MyPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageInteractor.swift; sourceTree = "<group>"; };
+		3A34165B28FF5CF900C4D698 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		3A75DBBB28A0EA5700084DB1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3A75DBEC28A0F41000084DB1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3A75DBF028A0F41D00084DB1 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
@@ -218,6 +232,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A34164E28FF5CD200C4D698 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				3A34164F28FF5CF000C4D698 /* MyPagePresenter.swift */,
+				3A34165028FF5CF000C4D698 /* MyPageWorker.swift */,
+				3A34165128FF5CF000C4D698 /* MyPageRouter.swift */,
+				3A34165228FF5CF000C4D698 /* MyPageModels.swift */,
+				3A34165328FF5CF000C4D698 /* MyPageViewController.swift */,
+				3A34165428FF5CF000C4D698 /* MyPageInteractor.swift */,
+				3A34165B28FF5CF900C4D698 /* MyPage.storyboard */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 		3A75DBDF28A0F3D400084DB1 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +333,7 @@
 		3A8D1759289BBE7E00B260D1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3A34164E28FF5CD200C4D698 /* MyPage */,
 				3AB1431128F767E40041C9CC /* MySearch */,
 				3AEDB70428DE07DD00C3DB8D /* PreReview */,
 				3A8F862B28C6250C0028B45C /* EditGenre */,
@@ -637,6 +666,7 @@
 				3AAEE3F228C5CF4500B28582 /* EditCategory.storyboard in Resources */,
 				3A8D176E289BC21400B260D1 /* .gitignore in Resources */,
 				3AEDB70128DD86B100C3DB8D /* WorkInfo.xib in Resources */,
+				3A34165C28FF5CF900C4D698 /* MyPage.storyboard in Resources */,
 				3AD4F12328C09EB700598D28 /* TabHeader.xib in Resources */,
 				3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */,
 				3AB1432428F76FBC0041C9CC /* MySearchTableViewCell.xib in Resources */,
@@ -734,6 +764,7 @@
 				3AA56CFD28BDDDE000FB66F5 /* RecordViewController.swift in Sources */,
 				3AB9CFBE28B4E84300A600DB /* WorkDetailInfoRouter.swift in Sources */,
 				3AEDB70328DE03D100C3DB8D /* WorkInfo.swift in Sources */,
+				3A34165A28FF5CF000C4D698 /* MyPageInteractor.swift in Sources */,
 				3AB1431B28F767FC0041C9CC /* MySearchModels.swift in Sources */,
 				3AB9CFC128B4E84300A600DB /* WorkDetailInfoInteractor.swift in Sources */,
 				3AA56CFE28BDDDE000FB66F5 /* RecordInteractor.swift in Sources */,
@@ -761,6 +792,7 @@
 				3A8D1766289BBEA100B260D1 /* HomeInteractor.swift in Sources */,
 				3AB1431A28F767FC0041C9CC /* MySearchRouter.swift in Sources */,
 				3AAEE3E328C4E30D00B28582 /* UIView+.swift in Sources */,
+				3A34165728FF5CF000C4D698 /* MyPageRouter.swift in Sources */,
 				3AB1432628F88F860041C9CC /* MySearchViewController+.swift in Sources */,
 				3AEDB70C28DE07FC00C3DB8D /* PreReviewWorker.swift in Sources */,
 				3A8F863828C6277D0028B45C /* EditGenreModels.swift in Sources */,
@@ -773,9 +805,12 @@
 				3AEDB70E28DE07FC00C3DB8D /* PreReviewModels.swift in Sources */,
 				3AAEE3EC28C5CF3900B28582 /* EditCategoryWorker.swift in Sources */,
 				3AD4F11F28C08BA800598D28 /* TabHeader.swift in Sources */,
+				3A34165528FF5CF000C4D698 /* MyPagePresenter.swift in Sources */,
 				3AEDB70B28DE07FC00C3DB8D /* PreReviewPresenter.swift in Sources */,
+				3A34165628FF5CF000C4D698 /* MyPageWorker.swift in Sources */,
 				3A8D1764289BBEA100B260D1 /* HomeModels.swift in Sources */,
 				3AB1431828F767FC0041C9CC /* MySearchPresenter.swift in Sources */,
+				3A34165828FF5CF000C4D698 /* MyPageModels.swift in Sources */,
 				3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */,
 				3AB1431928F767FC0041C9CC /* MySearchWorker.swift in Sources */,
 				3AA56D0528BE627300FB66F5 /* WorkTabCollectionViewCell.swift in Sources */,
@@ -791,6 +826,7 @@
 				3AEDB71028DE07FC00C3DB8D /* PreReviewInteractor.swift in Sources */,
 				3AB9CFBD28B4E84300A600DB /* WorkDetailInfoWorker.swift in Sources */,
 				3AAEE3F028C5CF3900B28582 /* EditCategoryInteractor.swift in Sources */,
+				3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */,
 				3AB1431C28F767FC0041C9CC /* MySearchViewController.swift in Sources */,
 				3A8F863A28C6277D0028B45C /* EditGenreInteractor.swift in Sources */,
 				3AD4F12628C0A66600598D28 /* UIColor+.swift in Sources */,
