@@ -1,30 +1,30 @@
+////
+////  ProtocolEx3.swift
+////  Recody
+////
+////  Created by Glory Kim on 2022/10/20.
+////
 //
-//  ProtocolEx3.swift
-//  Recody
+//import Foundation
 //
-//  Created by Glory Kim on 2022/10/20.
+//protocol P3 {
+//    mutating func toggle()
+//}
 //
-
-import Foundation
-
-protocol P3 {
-    mutating func toggle()
-}
-
-enum P3Switch: P3 {
-    case off,on
-    mutating func toggle() {
-        switch self {
-        case .off:
-            self = .on
-        case .on:
-            self = .off
-        }
-    }
-}
-
-//var switchItem = P3Switch.on
-//switchItem.toggle()
-
-
-
+//enum P3Switch: P3 {
+//    case off,on
+//    mutating func toggle() {
+//        switch self {
+//        case .off:
+//            self = .on
+//        case .on:
+//            self = .off
+//        }
+//    }
+//}
+//
+////var switchItem = P3Switch.on
+////switchItem.toggle()
+//
+//
+//
