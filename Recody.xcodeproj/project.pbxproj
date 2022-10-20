@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201098762900D21E00C1B4CE /* ProtocolEx1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010986C2900C8FD00C1B4CE /* ProtocolEx1.swift */; };
+		201098772900D22100C1B4CE /* ProtocolEx2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010986E2900CC3B00C1B4CE /* ProtocolEx2.swift */; };
+		201098782900D22300C1B4CE /* ProtocolEx3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201098702900CD5300C1B4CE /* ProtocolEx3.swift */; };
+		201098792900D22600C1B4CE /* ProtocolEx4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201098722900CF5300C1B4CE /* ProtocolEx4.swift */; };
+		2010987A2900D22800C1B4CE /* ProtocolEx5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201098742900D03700C1B4CE /* ProtocolEx5.swift */; };
+		2010987C2900D23100C1B4CE /* ProtocolEx6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010987B2900D23100C1B4CE /* ProtocolEx6.swift */; };
+		201098802900D43500C1B4CE /* Suggest1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010987F2900D43500C1B4CE /* Suggest1.swift */; };
 		3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */; };
 		3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346028D01E0F00C417CB /* UIScrollView+.swift */; };
 		3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */; };
@@ -105,6 +112,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2010986C2900C8FD00C1B4CE /* ProtocolEx1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolEx1.swift; sourceTree = "<group>"; };
+		2010986E2900CC3B00C1B4CE /* ProtocolEx2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolEx2.swift; sourceTree = "<group>"; };
+		201098702900CD5300C1B4CE /* ProtocolEx3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolEx3.swift; sourceTree = "<group>"; };
+		201098722900CF5300C1B4CE /* ProtocolEx4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolEx4.swift; sourceTree = "<group>"; };
+		201098742900D03700C1B4CE /* ProtocolEx5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolEx5.swift; sourceTree = "<group>"; };
+		2010987B2900D23100C1B4CE /* ProtocolEx6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolEx6.swift; sourceTree = "<group>"; };
+		2010987F2900D43500C1B4CE /* Suggest1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggest1.swift; sourceTree = "<group>"; };
 		3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditGenreViewController+.swift"; sourceTree = "<group>"; };
 		3A20346028D01E0F00C417CB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -218,6 +232,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2010986B2900C8EC00C1B4CE /* TestGroup */ = {
+			isa = PBXGroup;
+			children = (
+				2010987E2900D41500C1B4CE /* Suggest */,
+				2010987D2900D40800C1B4CE /* Ex */,
+			);
+			path = TestGroup;
+			sourceTree = "<group>";
+		};
+		2010987D2900D40800C1B4CE /* Ex */ = {
+			isa = PBXGroup;
+			children = (
+				2010986C2900C8FD00C1B4CE /* ProtocolEx1.swift */,
+				2010986E2900CC3B00C1B4CE /* ProtocolEx2.swift */,
+				201098702900CD5300C1B4CE /* ProtocolEx3.swift */,
+				201098722900CF5300C1B4CE /* ProtocolEx4.swift */,
+				201098742900D03700C1B4CE /* ProtocolEx5.swift */,
+				2010987B2900D23100C1B4CE /* ProtocolEx6.swift */,
+			);
+			path = Ex;
+			sourceTree = "<group>";
+		};
+		2010987E2900D41500C1B4CE /* Suggest */ = {
+			isa = PBXGroup;
+			children = (
+				2010987F2900D43500C1B4CE /* Suggest1.swift */,
+			);
+			path = Suggest;
+			sourceTree = "<group>";
+		};
 		3A75DBDF28A0F3D400084DB1 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +332,7 @@
 		3A8D172A289BBC7700B260D1 /* Recody */ = {
 			isa = PBXGroup;
 			children = (
+				2010986B2900C8EC00C1B4CE /* TestGroup */,
 				3ADA9B7828A580F500EB39F3 /* Utils */,
 				3A8D1769289BBEC300B260D1 /* Workers */,
 				3A8D1768289BBEB900B260D1 /* Services */,
@@ -772,9 +817,12 @@
 				3AD4F11D28C0808200598D28 /* DropDownHeader.swift in Sources */,
 				3AEDB70E28DE07FC00C3DB8D /* PreReviewModels.swift in Sources */,
 				3AAEE3EC28C5CF3900B28582 /* EditCategoryWorker.swift in Sources */,
+				201098802900D43500C1B4CE /* Suggest1.swift in Sources */,
+				201098772900D22100C1B4CE /* ProtocolEx2.swift in Sources */,
 				3AD4F11F28C08BA800598D28 /* TabHeader.swift in Sources */,
 				3AEDB70B28DE07FC00C3DB8D /* PreReviewPresenter.swift in Sources */,
 				3A8D1764289BBEA100B260D1 /* HomeModels.swift in Sources */,
+				2010987C2900D23100C1B4CE /* ProtocolEx6.swift in Sources */,
 				3AB1431828F767FC0041C9CC /* MySearchPresenter.swift in Sources */,
 				3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */,
 				3AB1431928F767FC0041C9CC /* MySearchWorker.swift in Sources */,
@@ -782,14 +830,18 @@
 				3AE6A55828ED9B08008ED7DB /* WorkCollectionViewCellModels.swift in Sources */,
 				3A8F863728C6277D0028B45C /* EditGenreRouter.swift in Sources */,
 				3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */,
+				201098762900D21E00C1B4CE /* ProtocolEx1.swift in Sources */,
 				3A77BE7828F57B33005AFCAD /* PreReviewCollectionViewCell.swift in Sources */,
+				201098782900D22300C1B4CE /* ProtocolEx3.swift in Sources */,
 				3AB9CFBF28B4E84300A600DB /* WorkDetailInfoModels.swift in Sources */,
 				3AEDB70D28DE07FC00C3DB8D /* PreReviewRouter.swift in Sources */,
 				3AA56D0128BDE7A600FB66F5 /* RecordViewController+.swift in Sources */,
 				3A79685428B5DAA20054DF5A /* WorkDetailInfoViewController+.swift in Sources */,
+				201098792900D22600C1B4CE /* ProtocolEx4.swift in Sources */,
 				3A8F863528C6277D0028B45C /* EditGenrePresenter.swift in Sources */,
 				3AEDB71028DE07FC00C3DB8D /* PreReviewInteractor.swift in Sources */,
 				3AB9CFBD28B4E84300A600DB /* WorkDetailInfoWorker.swift in Sources */,
+				2010987A2900D22800C1B4CE /* ProtocolEx5.swift in Sources */,
 				3AAEE3F028C5CF3900B28582 /* EditCategoryInteractor.swift in Sources */,
 				3AB1431C28F767FC0041C9CC /* MySearchViewController.swift in Sources */,
 				3A8F863A28C6277D0028B45C /* EditGenreInteractor.swift in Sources */,
@@ -934,6 +986,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y9Q6SAFX32;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -964,6 +1017,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y9Q6SAFX32;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
