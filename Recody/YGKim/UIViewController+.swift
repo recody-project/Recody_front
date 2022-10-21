@@ -13,7 +13,7 @@ protocol CommonVC {
     associatedtype Presenter
     var interactor : Interactor { get set }
     var presneter : Presenter { get set }
-    var router : SimpleRouter { get set }
+    var router : RouterType { get set }
 }
 extension UIViewController {
     var name : String { String(describing: Self.self) }
@@ -40,6 +40,7 @@ extension UIViewController {
             let swizzleMethod = class_getInstanceMethod(UIViewController.self, swizzleSelector)
         else { return }
         method_exchangeImplementations(originMethod, swizzleMethod)
+        
     }
     @objc public func swizzleViewDidLoad() {
         

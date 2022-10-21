@@ -1,5 +1,5 @@
 //
-//  RoutingWork.swift
+//  RouterType.swift
 //  Recody
 //
 //  Created by Glory Kim on 2022/10/19.
@@ -11,51 +11,65 @@ import UIKit
 protocol RouterType {
     init(context : UIViewController)
     var context:UIViewController { get }
-    func present(_ navigation: RoutingLogic.Navigation ,_ dataStore : Any?) //UIViewController 에서 직접 Present
-    func perform(_ segment: RoutingLogic.Segment ,_ dataStore : Any?) // 세그먼트를 이용한 화면이동
-    func pushViewController(_ navigation: RoutingLogic.Navigation ,_ dataStore : Any?) //UINavigationController
+    func present(_ navigation: NavigationType ,_ dataStore : Any?) //UIViewController 에서 직접 Present
+    func perform(_ segment: SegmentType ,_ dataStore : Any?) // 세그먼트를 이용한 화면이동
+    func pushViewController(_ navigation: NavigationType ,_ dataStore : Any?) //UINavigationController
 }
+
+protocol DataPassingType {
+    func bind(_ data:Any)
+}
+
+protocol NavigationType {
+    var viewcontroller:UIViewController? { get }
+}
+protocol SegmentType {
+    var segue:UIStoryboardSegue? { get }
+}
+protocol RoutingLogicType {
+    associatedtype Navigation:NavigationType
+    associatedtype Segment:SegmentType
+}
+
 
 class SimpleRouter : RouterType {
     var context: UIViewController
     required init(context:UIViewController){
         self.context = context
     }
-    func present(_ navigation:RoutingLogic.Navigation, _ dataStore: Any? = nil){
+    func present(_ navigation:NavigationType, _ dataStore: Any? = nil){
         if check(navigation) {
             let next = navigation.viewcontroller!
             if let data = dataStore {
-                // 데이터 바인딩
-                // 강제 언랩핑 -> ! 가능
+                (next as? DataPassingType)?.bind(data)
             }
             context.present(next, animated: true)
         }
     }
-    func perform(_ segment: RoutingLogic.Segment,_ dataStore: Any? = nil) {
+    func perform(_ segment: SegmentType,_ dataStore: Any? = nil) {
         if check(segment) {
             let segue = segment.segue!
         }
     }
-    func pushViewController(_ navigation:RoutingLogic.Navigation, _ dataStore: Any? = nil) {
+    func pushViewController(_ navigation:NavigationType, _ dataStore: Any? = nil) {
         if check(navigation) {
             let next = navigation.viewcontroller!
             if let data = dataStore {
-                // 데이터 바인딩
-                // 강제 언랩핑 -> ! 가능
+                (next as? DataPassingType)?.bind(data)
             }
             if let context = serachNavigationController() {
                 context.pushViewController(next, animated: true)
             }
         }
     }
-    private func check(_ next:RoutingLogic.Navigation) -> Bool {
+    private func check(_ next:NavigationType) -> Bool {
         if next.viewcontroller != nil {
             return true
         }
         print("\(next) :: viewcontroller is nil  ")
         return false
     }
-    private func check(_ next:RoutingLogic.Segment) -> Bool {
+    private func check(_ next:SegmentType) -> Bool {
         if next.segue != nil {
             return true
         }
