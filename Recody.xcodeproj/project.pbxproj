@@ -336,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				3A8D176B289BC12200B260D1 /* .swiftlint.yml */,
+				3A8D176D289BC21400B260D1 /* .gitignore */,
 				3A8D172A289BBC7700B260D1 /* Recody */,
 				3A8D1729289BBC7700B260D1 /* Products */,
 				D9142FC7474BE90F07FC44D7 /* Pods */,
@@ -365,7 +366,6 @@
 				3A8D1734289BBC7A00B260D1 /* Assets.xcassets */,
 				3A8D1736289BBC7A00B260D1 /* LaunchScreen.storyboard */,
 				3A8D1739289BBC7A00B260D1 /* Info.plist */,
-				3A8D176D289BC21400B260D1 /* .gitignore */,
 			);
 			path = Recody;
 			sourceTree = "<group>";
