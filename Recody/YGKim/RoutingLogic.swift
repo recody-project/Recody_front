@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-enum RoutingLogic {
-    enum Navigation {
+enum RoutingLogic:RoutingLogicType {
+    enum Navigation:NavigationType {
         case home
         case record
         case workDetailInfo
-        var viewcontroller : UIViewController? {
+        var viewcontroller:UIViewController? {
             switch self {
                 case .home:
                     return HomeViewController()
@@ -26,11 +26,11 @@ enum RoutingLogic {
             }
         }
     }
-    enum Segment {
+    enum Segment:SegmentType {
         case home
         case record
         case workDetailInfo
-        var segue : UIStoryboardSegue? {
+        var segue:UIStoryboardSegue? {
             switch self {
                 default:
                     return nil
