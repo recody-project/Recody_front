@@ -12,8 +12,7 @@
 
 import UIKit
 
-protocol MyPageDisplayLogic: class
-{
+protocol MyPageDisplayLogic: class {
     func displaySomething(viewModel: MyPage.Something.ViewModel)
 }
 
@@ -23,9 +22,9 @@ class MyPageViewController: UIViewController, MyPageDisplayLogic
     var router: (NSObjectProtocol & MyPageRoutingLogic & MyPageDataPassing)?
     
     var reviewingWorks: [Work] = [
-        Work(id: <#T##String#>, name: <#T##String#>, image: <#T##String#>),
-        Work(id: <#T##String#>, name: <#T##String#>, image: <#T##String#>),
-        Work(id: <#T##String#>, name: <#T##String#>, image: <#T##String#>)
+        Work(id: "1", name: "1", image: "1"),
+        Work(id: "2", name: "2", image: "2"),
+        Work(id: "3", name: "3", image: "3")
     ]
     
     var favoriteWorks: [Work] = [
