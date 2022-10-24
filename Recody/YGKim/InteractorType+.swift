@@ -45,7 +45,9 @@ protocol DataStoreType {
 }
 
 class TestInteractor : InteractorType {
+
     var worker : WorkerType
+    
     required init(_ worker: WorkerType) {
         self.worker = worker
         self.worker.delegate = self
@@ -54,12 +56,9 @@ class TestInteractor : InteractorType {
         return self.worker.recept(orderNumber.number)
     }
     
-    func completeWork(orderNumber: Int, reulst: Any) {
-        
+    func completeWork(orderNumber: Int, reulst: WorkResult) {
+//        let data =
+        // data store
+        //        _ = reulst.fetch(ChildDataModel.self)
     }
 }
-//
-//let interactor1 = TestInteractor(SimpleWoker())
-//func t(){
-//    interactor1.just(SomeOrder.new).send(["A" : ""])
-//}

@@ -36,7 +36,23 @@
    4)SimpleWoker
    WorkerType의 샘플입니다. 아직 사용하지마세요!
    
+   5)WorkResult
+   result : 작업의 결과 혹은 통신의 성공 실패 여부 Bool값
+   obj : api 통신후 리스폰 받는 JSON으로 Dictionary<String,Any>? 원시형태로 1차저장
+   
+   5-1)WorkResult.fetch(DefaultDataModelType.Type) 
+   DefaultDataModelType을 다운 캐스팅 하기위한 제네릭함수
+   func completeWork(orderNumber: Int, reulst: WorkResult) {
+        let d = reulst.fetch(ChildDataModel.self)
+   }
+   
    추가 - 아직 Api 통신 외의 케이스 외 작업케이스가 있는경우는 알려주세요!
+# DefaultDataModel
+  데이터 모델의 최상위 객체로 class타입
+  init 함수시 Dictionary<String,Any> 형태로 변환된 JSON데이터를 dic 변수에 저장 후 
+  build() 함수를 호출함.
+  따라서 DefaultDataModel 상속받은 모델클래스 내에 Build() 함수내에서 개별적인 
+  변수할당을 하면됨. DefaultDataModel.swift를 직접 보고 판단해주세요~  
    
 # InteractorType
  작업중
