@@ -55,7 +55,7 @@
 /* Begin PBXFileReference section */
 		000DD67BFF58DBFA14E37EFC306ABCE3 /* Pods-Recody.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Recody.modulemap"; sourceTree = "<group>"; };
 		010E3E5E385A3F245DBFAFB7DFA88A5E /* DropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDown.swift; path = DropDown/src/DropDown.swift; sourceTree = "<group>"; };
-		251FCC46207E607BDDB5E96A176E67EF /* Pods_Recody.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		251FCC46207E607BDDB5E96A176E67EF /* Pods-Recody */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Recody"; path = Pods_Recody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C458AF78DFCF11D2E97B77CDFE3A9F /* Pods-Recody-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Recody-Info.plist"; sourceTree = "<group>"; };
 		37EE00017792260EBBEAA9C0F8253811 /* DropDown+Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DropDown+Appearance.swift"; path = "DropDown/src/DropDown+Appearance.swift"; sourceTree = "<group>"; };
 		456F1F6019CAC2BD1E20191C8EB56791 /* Pods-Recody-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Recody-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				9B6725B782188F18CB76A740433F14E4 /* DropDown.framework */,
-				251FCC46207E607BDDB5E96A176E67EF /* Pods_Recody.framework */,
+				251FCC46207E607BDDB5E96A176E67EF /* Pods-Recody */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -269,7 +269,7 @@
 			);
 			name = "Pods-Recody";
 			productName = Pods_Recody;
-			productReference = 251FCC46207E607BDDB5E96A176E67EF /* Pods_Recody.framework */;
+			productReference = 251FCC46207E607BDDB5E96A176E67EF /* Pods-Recody */;
 			productType = "com.apple.product-type.framework";
 		};
 		E9F9401E9C74C0C393164FD8D86D0068 /* DropDown */ = {
@@ -576,7 +576,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/DropDown/DropDown-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/DropDown/DropDown-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -648,7 +648,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/DropDown/DropDown-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/DropDown/DropDown-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
