@@ -84,3 +84,7 @@ class SimpleRouter : RouterType {
         return nil
     }
 }
+
+class TwoRouter : SimpleRouter {
+    
+}

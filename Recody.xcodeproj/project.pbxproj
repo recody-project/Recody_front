@@ -14,6 +14,7 @@
 		2010987A2900D22800C1B4CE /* ProtocolEx5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201098742900D03700C1B4CE /* ProtocolEx5.swift */; };
 		2010987C2900D23100C1B4CE /* ProtocolEx6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010987B2900D23100C1B4CE /* ProtocolEx6.swift */; };
 		201098802900D43500C1B4CE /* Suggest1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010987F2900D43500C1B4CE /* Suggest1.swift */; };
+		20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */; };
 		20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFAFA29029366009CEF76 /* InteractorType+.swift */; };
 		20DBFB0229029366009CEF76 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFAFB29029366009CEF76 /* UIViewController+.swift */; };
 		20DBFB0329029366009CEF76 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFAFC29029366009CEF76 /* DependencyContainer.swift */; };
@@ -126,6 +127,7 @@
 		201098742900D03700C1B4CE /* ProtocolEx5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolEx5.swift; sourceTree = "<group>"; };
 		2010987B2900D23100C1B4CE /* ProtocolEx6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolEx6.swift; sourceTree = "<group>"; };
 		2010987F2900D43500C1B4CE /* Suggest1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggest1.swift; sourceTree = "<group>"; };
+		20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDataModel.swift; sourceTree = "<group>"; };
 		20DBFAFA29029366009CEF76 /* InteractorType+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InteractorType+.swift"; sourceTree = "<group>"; };
 		20DBFAFB29029366009CEF76 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		20DBFAFC29029366009CEF76 /* DependencyContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				20DBFAFE29029366009CEF76 /* RoutingLogic.swift */,
 				20DBFAFB29029366009CEF76 /* UIViewController+.swift */,
 				20DBFAFF29029366009CEF76 /* WorkerType+.swift */,
+				20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */,
 			);
 			path = YGKim;
 			sourceTree = "<group>";
@@ -819,6 +822,7 @@
 				3AE6A55A28ED9D0D008ED7DB /* CategoryModels.swift in Sources */,
 				3A79684F28B4FDFB0054DF5A /* WorkCollectionViewCell.swift in Sources */,
 				3AAEE3EF28C5CF3900B28582 /* EditCategoryViewController.swift in Sources */,
+				20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */,
 				3AA56D0328BE580000FB66F5 /* WorkListCollectionViewCell.swift in Sources */,
 				3AB9CFBC28B4E84300A600DB /* WorkDetailInfoPresenter.swift in Sources */,
 				3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */,
