@@ -13,15 +13,45 @@ class DependencyContainer {
 
     private var vcArr = [String:[Any]]()
 
-    func bind<T : UIViewController & CommonVC >(vc : T,
-                                                interactor:T.Interactor,
-                                                router:SimpleRouter,
-                                                presenter:T.Presenter){
+    func ready<T:CommonVC>(vc:T,interactor:InteractorType,router:SimpleRouter,presenter:PresenterType){
         let name = vc.name
         if vcArr.contains(where: {$0.key == name}){ return }
         vcArr[name] = [interactor,
                        router,
                        presenter]
+        print("DependencyContainer.ready() :: \(vc.name)")
+    }
+    private func checkArr<T:CommonVC >(vc:T)->[Any]?{
+        if let itemArr = self.vcArr[vc.name] {
+            if itemArr.count == 3 {
+                return itemArr
+            }
+        }
+        return nil
+    }
+    func bindInteractor<T:CommonVC>(vc:T)->InteractorType?{
+        if let itemArr = self.checkArr(vc: vc) {
+            if let item = itemArr.filter({ $0 is InteractorType }).first as? InteractorType {
+                return item
+            }
+        }
+        return nil
+    }
+    func bindRouter<T:CommonVC>(vc:T)->SimpleRouter?{
+        if let itemArr = self.checkArr(vc: vc) {
+            if let item = itemArr.filter({ $0 is SimpleRouter }).first as? SimpleRouter {
+                return item
+            }
+        }
+        return nil
+    }
+    func bindPresenter<T:CommonVC>(vc:T)->PresenterType?{
+        if let itemArr = self.checkArr(vc: vc) {
+            if let item = itemArr.filter({ $0 is PresenterType }).first as? PresenterType{
+                return item
+            }
+        }
+        return nil
     }
     func unbind(_ vcName : String){
         if vcArr.contains(where: {$0.key == vcName}) {
@@ -29,6 +59,5 @@ class DependencyContainer {
         }
     }
 }
-
 
 
