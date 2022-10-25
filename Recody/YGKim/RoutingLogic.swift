@@ -8,34 +8,33 @@
 import Foundation
 import UIKit
 
-enum RoutingLogic:RoutingLogicType {
-    enum Navigation:NavigationType {
+enum RoutingLogic: RoutingLogicType {
+    enum Navigation: NavigationType {
         case home
         case record
         case workDetailInfo
-        var viewcontroller:UIViewController? {
+        var viewcontroller: UIViewController? {
             switch self {
-                case .home:
-                    return HomeViewController()
-                case .record:
-                    return RecordViewController()
-                case .workDetailInfo:
-                    return WorkDetailInfoViewController()
-                default:
-                    return nil
+            case .home:
+                return HomeViewController()
+            case .record:
+                return RecordViewController()
+            case .workDetailInfo:
+                return WorkDetailInfoViewController()
             }
         }
     }
-    enum Segment:SegmentType {
+
+    enum Segment: SegmentType {
         case home
         case record
         case workDetailInfo
         var segue:UIStoryboardSegue? {
             switch self {
-                default:
-                    return nil
+            default:
+                return nil
             }
         }
-       
+        
     }
 }

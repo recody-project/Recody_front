@@ -4,7 +4,6 @@
 //
 //  Created by Glory Kim on 2022/10/17.
 //
-
 import Foundation
 import UIKit
 
@@ -75,4 +74,3 @@ extension CommonVC {
         DependencyContainer.shared.ready(vc: self, interactor: interactor, router: router, presenter: presenter)
     }
 }
-

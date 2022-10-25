@@ -7,6 +7,9 @@ target 'Recody' do
 
   pod 'SwiftLint'
   pod 'DropDown'
+  pod 'Charts', '~> 3.4.0'
+  pod 'SnapKit'
+  pod 'Alamofire'
   # Pods for Recody
 
 end
