@@ -7,13 +7,11 @@
 
 import Foundation
 import UIKit
-protocol PresneterType {
-        
-}
 // Interactor는 무조건 just 함수로 커맨드를 받음
 protocol InteractorType : WorkerDelegate {
-    init(_ worker : WorkerType)
+    init(_ worker : WorkerType, presenter : PresenterType)
     func just(_ orderNumber : OrderType) -> WorkerType
+    var presenter : PresenterType { get set }
 }
 //Worker -> 서비스를 들고있다 Api, 로딩 등등
 //
@@ -25,6 +23,7 @@ enum SomeOrder : OrderType {
             case .new: return 100
         }
     }
+    
 }
 // 화면별로 정의
 protocol BusinessLogicType {
@@ -37,28 +36,49 @@ protocol OrderType {
     var number : Int { get }
 }
 
-protocol ViewModel {
-    
-}
 protocol DataStoreType {
-    var data : Any { get }
+    var dataStoreArr : Dictionary<Int,WorkResult> { get set }
+    func data(_ order : OrderType) -> WorkResult?
 }
 
-class TestInteractor : InteractorType {
-
+class SimpleInteractor : InteractorType,DataStoreType {
+ 
+    var presenter: PresenterType
     var worker : WorkerType
     
-    required init(_ worker: WorkerType) {
+    required init(_ worker: WorkerType, presenter : PresenterType) {
         self.worker = worker
+        self.presenter = presenter
         self.worker.delegate = self
     }
     func just(_ orderNumber : OrderType) -> WorkerType{
         return self.worker.recept(orderNumber.number)
     }
     
-    func completeWork(orderNumber: Int, reulst: WorkResult) {
-//        let data =
-        // data store
-        //        _ = reulst.fetch(ChildDataModel.self)
+    var dataStoreArr: Dictionary<Int, WorkResult> = Dictionary<Int, WorkResult>()
+    private func checkData(_ order: OrderType) -> Bool {
+          return self.dataStoreArr.contains(where: {$0.key == order.number})
     }
+      
+    func data(_ order: OrderType) -> WorkResult? {
+          if self.checkData(order) {
+              return self.dataStoreArr[order.number]
+          }
+          return nil
+    }
+
+    func complete(orderNumber: Int, result: WorkResult) {
+        if let _ = result.obj {
+            self.dataStoreArr[orderNumber] = result
+            //Presenter에게 알리기 -> orderNumber ,DataStoreType
+            self.presenter.responseSuccess(orderNumber: orderNumber, dataStore: self)
+        } else {
+            self.presenter.responseSuccess(orderNumber: orderNumber, dataStore: nil)
+        }
+    }
+    func failed(orderNumber: Int) {
+        //Presenter에게 알리기 - >orderNumber
+        self.presenter.responseErorr(orderNumber: orderNumber)
+    }
+    
 }

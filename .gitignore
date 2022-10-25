@@ -49,6 +49,9 @@ Temporary Items
 
 ## User settings
 xcuserdata/
+xcuserdata/*
+*xcworkspace/xcuserdata/*
+*/xcuserdata/*
 xcworkspace/xcuserdata/
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)

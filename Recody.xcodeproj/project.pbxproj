@@ -14,6 +14,8 @@
 		2010987A2900D22800C1B4CE /* ProtocolEx5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201098742900D03700C1B4CE /* ProtocolEx5.swift */; };
 		2010987C2900D23100C1B4CE /* ProtocolEx6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010987B2900D23100C1B4CE /* ProtocolEx6.swift */; };
 		201098802900D43500C1B4CE /* Suggest1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010987F2900D43500C1B4CE /* Suggest1.swift */; };
+		20C6F9FE29077B6C009296E3 /* PresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6F9FD29077B6C009296E3 /* PresenterType.swift */; };
+		20C6FA012907996E009296E3 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6FA002907996E009296E3 /* SampleViewController.swift */; };
 		20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */; };
 		20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFAFA29029366009CEF76 /* InteractorType+.swift */; };
 		20DBFB0229029366009CEF76 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFAFB29029366009CEF76 /* UIViewController+.swift */; };
@@ -134,6 +136,8 @@
 		201098742900D03700C1B4CE /* ProtocolEx5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolEx5.swift; sourceTree = "<group>"; };
 		2010987B2900D23100C1B4CE /* ProtocolEx6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolEx6.swift; sourceTree = "<group>"; };
 		2010987F2900D43500C1B4CE /* Suggest1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggest1.swift; sourceTree = "<group>"; };
+		20C6F9FD29077B6C009296E3 /* PresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterType.swift; sourceTree = "<group>"; };
+		20C6FA002907996E009296E3 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDataModel.swift; sourceTree = "<group>"; };
 		20DBFAFA29029366009CEF76 /* InteractorType+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InteractorType+.swift"; sourceTree = "<group>"; };
 		20DBFAFB29029366009CEF76 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -314,11 +318,21 @@
 				20DBFAFD29029366009CEF76 /* README.md */,
 				20DBFB0029029366009CEF76 /* RouterType+.swift */,
 				20DBFAFE29029366009CEF76 /* RoutingLogic.swift */,
+				20C6F9FD29077B6C009296E3 /* PresenterType.swift */,
 				20DBFAFB29029366009CEF76 /* UIViewController+.swift */,
+				20C6F9FF2907995F009296E3 /* SampleViewConrtoller */,
 				20DBFAFF29029366009CEF76 /* WorkerType+.swift */,
 				20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */,
 			);
 			path = YGKim;
+			sourceTree = "<group>";
+		};
+		20C6F9FF2907995F009296E3 /* SampleViewConrtoller */ = {
+			isa = PBXGroup;
+			children = (
+				20C6FA002907996E009296E3 /* SampleViewController.swift */,
+			);
+			path = SampleViewConrtoller;
 			sourceTree = "<group>";
 		};
 		3A75DBDF28A0F3D400084DB1 /* Tab */ = {
@@ -854,6 +868,7 @@
 				3A79684F28B4FDFB0054DF5A /* WorkCollectionViewCell.swift in Sources */,
 				3AAEE3EF28C5CF3900B28582 /* EditCategoryViewController.swift in Sources */,
 				20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */,
+				20C6FA012907996E009296E3 /* SampleViewController.swift in Sources */,
 				3AA56D0328BE580000FB66F5 /* WorkListCollectionViewCell.swift in Sources */,
 				3AB9CFBC28B4E84300A600DB /* WorkDetailInfoPresenter.swift in Sources */,
 				3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */,
@@ -885,6 +900,7 @@
 				3AD4F11D28C0808200598D28 /* DropDownHeader.swift in Sources */,
 				3AEDB70E28DE07FC00C3DB8D /* PreReviewModels.swift in Sources */,
 				3AAEE3EC28C5CF3900B28582 /* EditCategoryWorker.swift in Sources */,
+				20C6F9FE29077B6C009296E3 /* PresenterType.swift in Sources */,
 				201098802900D43500C1B4CE /* Suggest1.swift in Sources */,
 				201098772900D22100C1B4CE /* ProtocolEx2.swift in Sources */,
 				3AD4F11F28C08BA800598D28 /* TabHeader.swift in Sources */,

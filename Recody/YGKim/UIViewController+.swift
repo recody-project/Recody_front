@@ -4,34 +4,58 @@
 //
 //  Created by Glory Kim on 2022/10/17.
 //
-
 import Foundation
 import UIKit
 
-protocol CommonVC {
-    associatedtype Interactor
-    associatedtype Presenter
-    var interactor : Interactor { get set }
-    var presneter : Presenter { get set }
-    var router : RouterType { get set }
+protocol CommonVCType {
+    var interactor : InteractorType? { get }
+    var presenter : PresenterType? { get }
+    var router : RouterType? { get }
+    
 }
-extension UIViewController {
+class SomeVC : CommonVC {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
+        
+    }
+    override func displayErorr(orderNumber: Int) {
+        
+    }
+}
+class CommonVC : UIViewController,CommonVCType, PresentationLogicType {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
+    
+    }
+    
+    func displayErorr(orderNumber: Int) {
+        
+    }
+}
+extension CommonVC {
+    var interactor: InteractorType? {
+        get {
+            return DependencyContainer.shared.bindInteractor(vc: self)
+        }
+    }
+    var presenter: PresenterType? {
+        get {
+            return DependencyContainer.shared.bindPresenter(vc: self)
+        }
+    }
+    var router: RouterType? {
+        get {
+            return DependencyContainer.shared.bindRouter(vc: self)
+        }
+    }
+}
+extension CommonVC {
+    static var name : String { String(describing: Self.self) }
     var name : String { String(describing: Self.self) }
-}
-
-//private func setup() {
-//    let viewController = self
-//    let interactor = HomeInteractor()
-//    let presenter = HomePresenter()
-//    let router = HomeRouter()
-//    viewController.interactor = interactor
-//    viewController.router = router
-//    interactor.presenter = presenter
-//    presenter.viewController = viewController
-//    router.viewController = viewController
-//    router.dataStore = interactor
-//}
-extension UIViewController {
     class func swizzleMethod() {
         let originalSelector = #selector(viewDidLoad)
         let swizzleSelector = #selector(swizzleViewDidLoad)
@@ -39,16 +63,14 @@ extension UIViewController {
             let originMethod = class_getInstanceMethod(UIViewController.self, originalSelector),
             let swizzleMethod = class_getInstanceMethod(UIViewController.self, swizzleSelector)
         else { return }
-        method_exchangeImplementations(originMethod, swizzleMethod)        
+        method_exchangeImplementations(originMethod, swizzleMethod)
     }
     @objc public func swizzleViewDidLoad() {
-
-//        if !(self is UIViewController & any CommonVC) { return }
-         
-//        if self is any TestViewController & CommonVC {
-//            (self as! TestViewController & any CommonVC).interactor = HomeInteractor()
-//            (self as! TestViewController & any CommonVC).presneter = HomePresenter()
-//            (self as! TestViewController & any CommonVC).router = HomeRouter()
-//        }
+        let router = SimpleRouter(context: self)
+        let presenter = SimplePresenter()
+        presenter.delegate = self
+        let worker = SimpleWoker()
+        let interactor = SimpleInteractor(worker, presenter: presenter)
+        DependencyContainer.shared.ready(vc: self, interactor: interactor, router: router, presenter: presenter)
     }
 }
