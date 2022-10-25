@@ -8,7 +8,8 @@
 import Foundation
 
 protocol WorkerDelegate {
-    func completeWork( orderNumber : Int , reulst:WorkResult)
+    func complete( orderNumber : Int , result:WorkResult)
+    func failed( orderNumber : Int)
 }
 protocol WorkerType {
     var delegate : WorkerDelegate? { get set }
@@ -28,13 +29,12 @@ class SimpleWoker : WorkerType {
     
     func send(_ param : Dictionary<String, String>) {
         // API 호출
-        
         //완료후
         var data : Dictionary<String,Any>?
         if let dic = data {
-            self.delegate?.completeWork(orderNumber: self.order, reulst: WorkResult(result: true,obj: dic))
+            self.delegate?.complete(orderNumber: self.order, result: WorkResult(dic))
         }
-        self.delegate?.completeWork(orderNumber: self.order, reulst: WorkResult(result: false))
+        self.delegate?.failed(orderNumber: self.order)
     }
     
     func send(_ param : Dictionary<String, String>, _ header: Dictionary<String, String>) {
@@ -42,18 +42,15 @@ class SimpleWoker : WorkerType {
         //완료후
         var data : Dictionary<String,Any>?
         if let dic = data {
-            self.delegate?.completeWork(orderNumber: self.order, reulst: WorkResult(result: true,obj: dic))
+            self.delegate?.complete(orderNumber: self.order, result: WorkResult(dic))
         }
-        self.delegate?.completeWork(orderNumber: self.order, reulst: WorkResult(result: false))
-        
+        self.delegate?.failed(orderNumber: self.order)
     }
 }
 
 struct WorkResult {
-    var result : Bool
     var obj : Dictionary<String,Any>?
-    init(result: Bool, obj: Dictionary<String,Any>? = nil) {
-        self.result = result
+    init(_ obj: Dictionary<String,Any>? = nil) {
         self.obj = obj
     }
 //    DefaultDataModelType을 다운 캐스팅 하기위한 제네릭함수
