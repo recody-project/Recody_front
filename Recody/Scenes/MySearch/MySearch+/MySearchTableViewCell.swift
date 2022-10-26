@@ -14,6 +14,7 @@ protocol TableViewCellDelegate {
 class MySearchTableViewCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
+
     var delegate: TableViewCellDelegate?
     var indexPath = -1
 

@@ -12,8 +12,7 @@
 
 import UIKit
 
-enum MySearch
-{
+enum MySearch {
   // MARK: Use cases
   enum API {
     struct Request {

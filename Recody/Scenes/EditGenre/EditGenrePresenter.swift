@@ -12,20 +12,16 @@
 
 import UIKit
 
-protocol EditGenrePresentationLogic
-{
-  func presentSomething(response: EditGenre.Something.Response)
+protocol EditGenrePresentationLogic {
+    func presentSomething(response: EditGenre.Something.Response)
 }
 
-class EditGenrePresenter: EditGenrePresentationLogic
-{
-  weak var viewController: EditGenreDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: EditGenre.Something.Response)
-  {
-    let viewModel = EditGenre.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+class EditGenrePresenter: EditGenrePresentationLogic {
+    weak var viewController: EditGenreDisplayLogic?
+
+    // MARK: Do something
+    func presentSomething(response: EditGenre.Something.Response) {
+        let viewModel = EditGenre.Something.ViewModel()
+        viewController?.displaySomething(viewModel: viewModel)
+    }
 }

@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol MySearchDisplayLogic: class {
+protocol MySearchDisplayLogic: AnyObject {
     func displaySomething(viewModel: MySearch.API.ViewModel)
 }
 
@@ -89,9 +89,9 @@ class MySearchViewController: UIViewController, MySearchDisplayLogic {
         let textFieldCell = UINib(nibName: "MySearchTableViewCell", bundle: nil)
         self.tableView.register(textFieldCell, forCellReuseIdentifier: "mySearchTableViewCell")
     }
-    
+
     func removeCell() {
-        
+
     }
 
     func displaySomething(viewModel: MySearch.API.ViewModel) {

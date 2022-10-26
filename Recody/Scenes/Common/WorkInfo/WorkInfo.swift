@@ -16,7 +16,7 @@ class WorkInfo: UIView {
     @IBOutlet weak var workDirector: UILabel!
     @IBOutlet weak var workActors: UILabel!
     @IBOutlet weak var workRunningTime: UILabel!
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()

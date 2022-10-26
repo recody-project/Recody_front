@@ -29,12 +29,11 @@ enum RoutingLogic: RoutingLogicType {
         case home
         case record
         case workDetailInfo
-        var segue:UIStoryboardSegue? {
+        var segue: UIStoryboardSegue? {
             switch self {
             default:
                 return nil
             }
         }
-        
     }
 }

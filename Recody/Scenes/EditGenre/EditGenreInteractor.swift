@@ -12,29 +12,25 @@
 
 import UIKit
 
-protocol EditGenreBusinessLogic
-{
+protocol EditGenreBusinessLogic {
   func doSomething(request: EditGenre.Something.Request)
 }
 
-protocol EditGenreDataStore
-{
-  //var name: String { get set }
+protocol EditGenreDataStore {
+  // var name: String { get set }
 }
 
-class EditGenreInteractor: EditGenreBusinessLogic, EditGenreDataStore
-{
+class EditGenreInteractor: EditGenreBusinessLogic, EditGenreDataStore {
   var presenter: EditGenrePresentationLogic?
   var worker: EditGenreWorker?
-  //var name: String = ""
-  
+  // var name: String = ""
+
   // MARK: Do something
-  
-  func doSomething(request: EditGenre.Something.Request)
-  {
+
+  func doSomething(request: EditGenre.Something.Request) {
     worker = EditGenreWorker()
     worker?.doSomeWork()
-    
+
     let response = EditGenre.Something.Response()
     presenter?.presentSomething(response: response)
   }

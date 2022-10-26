@@ -12,49 +12,46 @@
 
 import UIKit
 
-@objc protocol MySearchRoutingLogic
-{
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+@objc protocol MySearchRoutingLogic {
+    // func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol MySearchDataPassing
-{
-  var dataStore: MySearchDataStore? { get }
+protocol MySearchDataPassing {
+    var dataStore: MySearchDataStore? { get }
 }
 
-class MySearchRouter: NSObject, MySearchRoutingLogic, MySearchDataPassing
-{
-  weak var viewController: MySearchViewController?
-  var dataStore: MySearchDataStore?
-  
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
+class MySearchRouter: NSObject, MySearchRoutingLogic, MySearchDataPassing {
+    weak var viewController: MySearchViewController?
+    var dataStore: MySearchDataStore?
 
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: MySearchViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: MySearchDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+    // MARK: Routing
+
+    //  func routeToSomewhere(segue: UIStoryboardSegue?)
+    //  {
+    //    if let segue = segue {
+    //      let destinationVC = segue.destination as! SomewhereViewController
+    //      var destinationDS = destinationVC.router!.dataStore!
+    //      passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+    //    } else {
+    //      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    //      let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
+    //      var destinationDS = destinationVC.router!.dataStore!
+    //      passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+    //      navigateToSomewhere(source: viewController!, destination: destinationVC)
+    //    }
+    //  }
+
+    // MARK: Navigation
+
+//    func navigateToSomewhere(source: MySearchViewController, destination: SomewhereViewController)
+//    {
+//      source.show(destination, sender: nil)
+//    }
+//
+    // MARK: Passing data
+//
+//    func passDataToSomewhere(source: MySearchDataStore, destination: inout SomewhereDataStore)
+//    {
+//      destination.name = source.name
+//    }
 }

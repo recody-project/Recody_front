@@ -14,7 +14,6 @@ import UIKit
 
 enum Record {
   // MARK: Use cases
-    
     struct Work {
         let id: String
         let name: String
