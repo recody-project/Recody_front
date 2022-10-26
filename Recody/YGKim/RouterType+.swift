@@ -8,36 +8,35 @@ import Foundation
 import UIKit
 
 protocol RouterType {
-    init(context : UIViewController)
-    var context:UIViewController { get }
-    func present(_ navigation: NavigationType ,_ dataStore : DataStoreType?) //UIViewController 에서 직접 Present
-    func perform(_ segment: SegmentType ,_ dataStore : DataStoreType?) // 세그먼트를 이용한 화면이동
-    func pushViewController(_ navigation: NavigationType ,_ dataStore : DataStoreType?) //UINavigationController
+    init(context: UIViewController)
+    var context: UIViewController { get }
+    func present(_ navigation: NavigationType, _ dataStore: DataStoreType?) // UIViewController 에서 직접 Present
+    func perform(_ segment: SegmentType, _ dataStore: DataStoreType?) // 세그먼트를 이용한 화면이동
+    func pushViewController(_ navigation: NavigationType, dataStore: DataStoreType?) // UINavigationController
 }
 
 protocol DataPassingType {
-    func bind(_ data:DataStoreType)
+    func bind(_ data: DataStoreType)
 }
 
 protocol NavigationType {
-    var viewcontroller:UIViewController? { get }
+    var viewcontroller: UIViewController? { get }
 }
 protocol SegmentType {
-    var segue:UIStoryboardSegue? { get }
+    var segue: UIStoryboardSegue? { get }
 }
 protocol RoutingLogicType {
-    associatedtype Navigation:NavigationType
-    associatedtype Segment:SegmentType
+    associatedtype Navigation: NavigationType
+    associatedtype Segment: SegmentType
 }
 
-
-class SimpleRouter : RouterType {
+class SimpleRouter: RouterType {
     var context: UIViewController
-    
-    required init(context:UIViewController){
+
+    required init(context: UIViewController) {
         self.context = context
     }
-    func present(_ navigation:NavigationType, _ dataStore: DataStoreType? = nil){
+    func present(_ navigation: NavigationType, _ dataStore: DataStoreType? = nil) {
         if check(navigation) {
             let next = navigation.viewcontroller!
             if let data = dataStore {
@@ -46,12 +45,12 @@ class SimpleRouter : RouterType {
             context.present(next, animated: true)
         }
     }
-    func perform(_ segment: SegmentType,_ dataStore: DataStoreType? = nil) {
+    func perform(_ segment: SegmentType, _ dataStore: DataStoreType? = nil) {
         if check(segment) {
             let segue = segment.segue!
         }
     }
-    func pushViewController(_ navigation:NavigationType, _ dataStore: DataStoreType? = nil) {
+    func pushViewController(_ navigation: NavigationType, dataStore: DataStoreType? = nil) {
         if check(navigation) {
             let next = navigation.viewcontroller!
             if let data = dataStore {
@@ -62,14 +61,14 @@ class SimpleRouter : RouterType {
             }
         }
     }
-    private func check(_ next:NavigationType) -> Bool {
+    private func check(_ next: NavigationType) -> Bool {
         if next.viewcontroller != nil {
             return true
         }
         print("\(next) :: viewcontroller is nil  ")
         return false
     }
-    private func check(_ next:SegmentType) -> Bool {
+    private func check(_ next: SegmentType) -> Bool {
         if next.segue != nil {
             return true
         }

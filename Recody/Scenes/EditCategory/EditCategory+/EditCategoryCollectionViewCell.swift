@@ -22,7 +22,7 @@ class EditCategoryCollectionViewCell: UICollectionViewCell {
     func setData(with data: Category) {
         view.setData(with: data)
     }
-    
+
     func addBorder() {
         view.addBorder()
     }

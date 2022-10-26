@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol PreReviewDisplayLogic: class {
+protocol PreReviewDisplayLogic: AnyObject {
     func displaySomething(viewModel: PreReview.API.ViewModel)
 }
 
@@ -71,7 +71,7 @@ class PreReviewViewController: UIViewController, PreReviewDisplayLogic {
     @IBOutlet weak var rateScore: UILabel!
     @IBOutlet weak var rateExpression: UILabel!
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
-    
+
     var preReviews: [PreReview.PreReview] = [
         PreReview.PreReview(recordCount: 1, date: Date(), note: "hi1"),
         PreReview.PreReview(recordCount: 2, date: Date(), note: "hi2"),

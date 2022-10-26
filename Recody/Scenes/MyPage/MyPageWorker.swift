@@ -12,9 +12,7 @@
 
 import UIKit
 
-class MyPageWorker
-{
-  func doSomeWork()
-  {
+class MyPageWorker {
+  func doSomeWork() {
   }
 }

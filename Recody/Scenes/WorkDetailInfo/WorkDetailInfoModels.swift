@@ -20,7 +20,7 @@ enum WorkDetailInfo {
         let source: String
         let category: String
     }
-    
+
     struct Data {
         let personalizedUserId: Int
         let contentId: String
@@ -35,7 +35,7 @@ enum WorkDetailInfo {
         // let productionCountries
         let releaseDate: String
         let runtime: Int
-        let revenue : Int
+        let revenue: Int
         let status: String
         let voteAverage: Float
         let voteCount: Int

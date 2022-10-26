@@ -12,9 +12,7 @@
 
 import UIKit
 
-class EditGenreWorker
-{
-  func doSomeWork()
-  {
+class EditGenreWorker {
+  func doSomeWork() {
   }
 }

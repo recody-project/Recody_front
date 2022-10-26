@@ -11,53 +11,51 @@ import UIKit
 class DependencyContainer {
     static let shared = DependencyContainer()
 
-    private var vcArr = [String:[Any]]()
+    private var vcArr = [String: [Any]]()
 
-    func ready<T:CommonVC>(vc:T,interactor:InteractorType,router:SimpleRouter,presenter:PresenterType){
-        let name = vc.name
-        if vcArr.contains(where: {$0.key == name}){ return }
+    func ready<T: CommonVC> (viewController: T, interactor: InteractorType, router: SimpleRouter, presenter: PresenterType) {
+        let name = viewController.name
+        if vcArr.contains(where: {$0.key == name}) { return }
         vcArr[name] = [interactor,
                        router,
                        presenter]
-        print("DependencyContainer.ready() :: \(vc.name)")
+        print("DependencyContainer.ready() :: \(viewController.name)")
     }
-    private func checkArr<T:CommonVC >(vc:T)->[Any]?{
-        if let itemArr = self.vcArr[vc.name] {
+    private func checkArr<T: CommonVC >(viewController: T)->[Any]? {
+        if let itemArr = self.vcArr[viewController.name] {
             if itemArr.count == 3 {
                 return itemArr
             }
         }
         return nil
     }
-    func bindInteractor<T:CommonVC>(vc:T)->InteractorType?{
-        if let itemArr = self.checkArr(vc: vc) {
+    func bindInteractor<T: CommonVC>(viewController: T) -> InteractorType? {
+        if let itemArr = self.checkArr(viewController: viewController) {
             if let item = itemArr.filter({ $0 is InteractorType }).first as? InteractorType {
                 return item
             }
         }
         return nil
     }
-    func bindRouter<T:CommonVC>(vc:T)->SimpleRouter?{
-        if let itemArr = self.checkArr(vc: vc) {
+    func bindRouter<T: CommonVC>(viewController: T) -> SimpleRouter? {
+        if let itemArr = self.checkArr(viewController: viewController) {
             if let item = itemArr.filter({ $0 is SimpleRouter }).first as? SimpleRouter {
                 return item
             }
         }
         return nil
     }
-    func bindPresenter<T:CommonVC>(vc:T)->PresenterType?{
-        if let itemArr = self.checkArr(vc: vc) {
-            if let item = itemArr.filter({ $0 is PresenterType }).first as? PresenterType{
+    func bindPresenter<T: CommonVC>(viewController: T) -> PresenterType? {
+        if let itemArr = self.checkArr(viewController: viewController) {
+            if let item = itemArr.filter({ $0 is PresenterType }).first as? PresenterType {
                 return item
             }
         }
         return nil
     }
-    func unbind(_ vcName : String){
+    func unbind(_ vcName: String) {
         if vcArr.contains(where: {$0.key == vcName}) {
            vcArr.removeValue(forKey: vcName)
         }
     }
 }
-
-

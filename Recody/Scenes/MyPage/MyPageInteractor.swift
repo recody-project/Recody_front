@@ -12,30 +12,25 @@
 
 import UIKit
 
-protocol MyPageBusinessLogic
-{
-  func doSomething(request: MyPage.Something.Request)
+protocol MyPageBusinessLogic {
+    func doSomething(request: MyPage.Something.Request)
 }
 
-protocol MyPageDataStore
-{
-  //var name: String { get set }
+protocol MyPageDataStore {
+    // var name: String { get set }
 }
 
-class MyPageInteractor: MyPageBusinessLogic, MyPageDataStore
-{
-  var presenter: MyPagePresentationLogic?
-  var worker: MyPageWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: MyPage.Something.Request)
-  {
-    worker = MyPageWorker()
-    worker?.doSomeWork()
-    
-    let response = MyPage.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+class MyPageInteractor: MyPageBusinessLogic, MyPageDataStore {
+    var presenter: MyPagePresentationLogic?
+    var worker: MyPageWorker?
+    // var name: String = ""
+
+    // MARK: Do something
+    func doSomething(request: MyPage.Something.Request) {
+        worker = MyPageWorker()
+        worker?.doSomeWork()
+
+        let response = MyPage.Something.Response()
+        presenter?.presentSomething(response: response)
+    }
 }

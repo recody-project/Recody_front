@@ -12,20 +12,17 @@
 
 import UIKit
 
-protocol MySearchPresentationLogic
-{
-  func presentSomething(response: MySearch.API.Response)
+protocol MySearchPresentationLogic {
+    func presentSomething(response: MySearch.API.Response)
 }
 
-class MySearchPresenter: MySearchPresentationLogic
-{
-  weak var viewController: MySearchDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: MySearch.API.Response)
-  {
-    let viewModel = MySearch.API.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+class MySearchPresenter: MySearchPresentationLogic {
+    weak var viewController: MySearchDisplayLogic?
+
+    // MARK: Do something
+
+    func presentSomething(response: MySearch.API.Response) {
+        let viewModel = MySearch.API.ViewModel()
+        viewController?.displaySomething(viewModel: viewModel)
+    }
 }

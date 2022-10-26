@@ -12,19 +12,16 @@
 
 import UIKit
 
-protocol MyPagePresentationLogic
-{
+protocol MyPagePresentationLogic {
   func presentSomething(response: MyPage.Something.Response)
 }
 
-class MyPagePresenter: MyPagePresentationLogic
-{
+class MyPagePresenter: MyPagePresentationLogic {
   weak var viewController: MyPageDisplayLogic?
-  
+
   // MARK: Do something
-  
-  func presentSomething(response: MyPage.Something.Response)
-  {
+
+  func presentSomething(response: MyPage.Something.Response) {
     let viewModel = MyPage.Something.ViewModel()
     viewController?.displaySomething(viewModel: viewModel)
   }

@@ -12,30 +12,26 @@
 
 import UIKit
 
-protocol MySearchBusinessLogic
-{
-  func doSomething(request: MySearch.API.Request)
+protocol MySearchBusinessLogic {
+    func doSomething(request: MySearch.API.Request)
 }
 
-protocol MySearchDataStore
-{
-  //var name: String { get set }
+protocol MySearchDataStore {
+    // var name: String { get set }
 }
 
-class MySearchInteractor: MySearchBusinessLogic, MySearchDataStore
-{
-  var presenter: MySearchPresentationLogic?
-  var worker: MySearchWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: MySearch.API.Request)
-  {
-    worker = MySearchWorker()
-    worker?.doSomeWork()
-    
-    let response = MySearch.API.Response()
-    presenter?.presentSomething(response: response)
-  }
+class MySearchInteractor: MySearchBusinessLogic, MySearchDataStore {
+    var presenter: MySearchPresentationLogic?
+    var worker: MySearchWorker?
+    // var name: String = ""
+
+    // MARK: Do something
+
+    func doSomething(request: MySearch.API.Request) {
+        worker = MySearchWorker()
+        worker?.doSomeWork()
+
+        let response = MySearch.API.Response()
+        presenter?.presentSomething(response: response)
+    }
 }

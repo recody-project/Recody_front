@@ -8,54 +8,56 @@ import Foundation
 import UIKit
 
 protocol CommonVCType {
-    var interactor : InteractorType? { get }
-    var presenter : PresenterType? { get }
-    var router : RouterType? { get }
-    
+    var interactor: InteractorType? { get }
+    var presenter: PresenterType? { get }
+    var router: RouterType? { get }
 }
-class SomeVC : CommonVC {
+
+class SomeVC: CommonVC {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-        
+
     }
     override func displayErorr(orderNumber: Int) {
-        
+
     }
 }
-class CommonVC : UIViewController,CommonVCType, PresentationLogicType {
+
+class CommonVC: UIViewController, CommonVCType, PresentationLogicType {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-    
+
     }
-    
     func displayErorr(orderNumber: Int) {
-        
+
     }
 }
+
 extension CommonVC {
     var interactor: InteractorType? {
         get {
-            return DependencyContainer.shared.bindInteractor(vc: self)
+            return DependencyContainer.shared.bindInteractor(viewController: self)
         }
     }
     var presenter: PresenterType? {
         get {
-            return DependencyContainer.shared.bindPresenter(vc: self)
+            return DependencyContainer.shared.bindPresenter(viewController: self)
         }
     }
     var router: RouterType? {
         get {
-            return DependencyContainer.shared.bindRouter(vc: self)
+            return DependencyContainer.shared.bindRouter(viewController: self)
         }
     }
 }
+
 extension CommonVC {
-    static var name : String { String(describing: Self.self) }
-    var name : String { String(describing: Self.self) }
+    static var name: String { String(describing: Self.self) }
+    var name: String { String(describing: Self.self) }
     class func swizzleMethod() {
         let originalSelector = #selector(viewDidLoad)
         let swizzleSelector = #selector(swizzleViewDidLoad)
@@ -71,6 +73,6 @@ extension CommonVC {
         presenter.delegate = self
         let worker = SimpleWoker()
         let interactor = SimpleInteractor(worker, presenter: presenter)
-        DependencyContainer.shared.ready(vc: self, interactor: interactor, router: router, presenter: presenter)
+        DependencyContainer.shared.ready(viewController: self, interactor: interactor, router: router, presenter: presenter)
     }
 }
