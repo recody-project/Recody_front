@@ -21,16 +21,16 @@ class RecordViewController: UIViewController, RecordDisplayLogic {
     var router: (NSObjectProtocol & RecordRoutingLogic & RecordDataPassing)?
 
     // MARK: Object lifecycle
-    let works: [Record.Work] = [
-        Record.Work(id: "0", name: "Attention", image: "attention"),
-        Record.Work(id: "1", name: "1987", image: "1987"),
-        Record.Work(id: "2", name: "CallMeByYourName", image: "callMeByYourName"),
-        Record.Work(id: "3", name: "her", image: "her"),
-        Record.Work(id: "4", name: "Pink Venom", image: "pinkVenom"),
-        Record.Work(id: "5", name: "마더", image: "mother"),
-        Record.Work(id: "6", name: "블랙 팬서", image: "blackPanther"),
-        Record.Work(id: "7", name: "스파이더맨", image: "spiderman"),
-        Record.Work(id: "8", name: "After Like", image: "afterLike")
+    let works: [Work] = [
+        Work(id: "0", name: "Attention", image: "attention"),
+        Work(id: "1", name: "1987", image: "1987"),
+        Work(id: "2", name: "CallMeByYourName", image: "callMeByYourName"),
+        Work(id: "3", name: "her", image: "her"),
+        Work(id: "4", name: "Pink Venom", image: "pinkVenom"),
+        Work(id: "5", name: "마더", image: "mother"),
+        Work(id: "6", name: "블랙 팬서", image: "blackPanther"),
+        Work(id: "7", name: "스파이더맨", image: "spiderman"),
+        Work(id: "8", name: "After Like", image: "afterLike")
     ]
     let genre = [
         "전체", "로맨틱 코미디", "스릴러", "액션", "S/F", "애니메이션"
