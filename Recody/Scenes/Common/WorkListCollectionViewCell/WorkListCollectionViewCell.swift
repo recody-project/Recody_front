@@ -12,9 +12,15 @@ class WorkListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var owner: UILabel!
 
-    func setData(with data: Record.Work) {
+    func setData(with data: Work) {
         imageView.image = UIImage(named: data.image)
         name.text = data.name
+    }
+
+    func setMyReviewData(with data: Work) {
+        imageView.image = UIImage(named: data.image)
+        name.text = data.name
+        owner.text = data.id
     }
 
     override init(frame: CGRect) {
