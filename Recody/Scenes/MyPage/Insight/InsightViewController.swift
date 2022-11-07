@@ -8,8 +8,7 @@
 import Foundation
 import UIKit
 
-class InsiteViewController : CommonVC,DataPassingType, ObservingTableCellEvent {
-    
+class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent {
     func eventFromTableCell(code: Int) {
         //셀 내의 개별적 제스쳐 이벤트를 처리하는 공간
         //interactor를 통해서 처리
@@ -40,25 +39,25 @@ class InsiteViewController : CommonVC,DataPassingType, ObservingTableCellEvent {
         var name : String {
             switch self {
             case .statistics:
-                return InsiteStatisticsCell.Name
+                return InsightStatisticsCell.Name
             case .statisticsGraph:
-                return InsiteStatisticsGraphCell.Name
+                return InsightStatisticsGraphCell.Name
             case .mostImpressive:
-                return InsiteMostImpressiveCell.Name
+                return InsightMostImpressiveCell.Name
             case .top3Genre:
-                return InsiteTop3GenreCell.Name
+                return InsightTop3GenreCell.Name
             case .firstRecord:
-                return InsiteFirstRecordCell.Name
+                return InsightFirstRecordCell.Name
             case .hallOfFame:
-                return InsiteHallOfFameCell.Name
+                return InsightHallOfFameCell.Name
             case .myRank:
-                return InsiteMyRankCell.Name
+                return InsightMyRankCell.Name
             case .mostAppreciation:
-                return InsiteMostAppreciationCell.Name
+                return InsightMostAppreciationCell.Name
             case .mostAppreciationAll:
-                return InsiteAllUserMostAppreciationCell.Name
+                return InsightAllUserMostAppreciationCell.Name
             case .share:
-                return InsiteShareCell.Name
+                return InsightShareCell.Name
             }
         }
     }
@@ -109,26 +108,26 @@ class InsiteViewController : CommonVC,DataPassingType, ObservingTableCellEvent {
     func setUpTableView(){
         tableView.delegate = self
         tableView.dataSource = self
-        let registerCellList = [(InsiteStatisticsCell.Xib,
-                                 InsiteStatisticsCell.Name),
-                                (InsiteStatisticsGraphCell.Xib,
-                                 InsiteStatisticsGraphCell.Name),
-                                (InsiteMostImpressiveCell.Xib,
-                                 InsiteMostImpressiveCell.Name),
-                                (InsiteTop3GenreCell.Xib,
-                                 InsiteTop3GenreCell.Name),
-                                (InsiteFirstRecordCell.Xib,
-                                 InsiteFirstRecordCell.Name),
-                                (InsiteHallOfFameCell.Xib,
-                                 InsiteHallOfFameCell.Name),
-                                (InsiteMyRankCell.Xib,
-                                 InsiteMyRankCell.Name),
-                                (InsiteMostAppreciationCell.Xib,
-                                 InsiteMostAppreciationCell.Name),
-                                (InsiteAllUserMostAppreciationCell.Xib,
-                                 InsiteAllUserMostAppreciationCell.Name),
-                                (InsiteShareCell.Xib,
-                                 InsiteShareCell.Name)]
+        let registerCellList = [(InsightStatisticsCell.Xib,
+                                 InsightStatisticsCell.Name),
+                                (InsightStatisticsGraphCell.Xib,
+                                 InsightStatisticsGraphCell.Name),
+                                (InsightMostImpressiveCell.Xib,
+                                 InsightMostImpressiveCell.Name),
+                                (InsightTop3GenreCell.Xib,
+                                 InsightTop3GenreCell.Name),
+                                (InsightFirstRecordCell.Xib,
+                                 InsightFirstRecordCell.Name),
+                                (InsightHallOfFameCell.Xib,
+                                 InsightHallOfFameCell.Name),
+                                (InsightMyRankCell.Xib,
+                                 InsightMyRankCell.Name),
+                                (InsightMostAppreciationCell.Xib,
+                                 InsightMostAppreciationCell.Name),
+                                (InsightAllUserMostAppreciationCell.Xib,
+                                 InsightAllUserMostAppreciationCell.Name),
+                                (InsightShareCell.Xib,
+                                 InsightShareCell.Name)]
         self.tableView.register(cells:registerCellList)
         tableList.append(TableCellViewModel(type: InsiteCellType.statistics.rawValue,
                                             data: ["nickName":"닉네임",
@@ -171,7 +170,7 @@ class InsiteViewController : CommonVC,DataPassingType, ObservingTableCellEvent {
     }
 }
 
-extension InsiteViewController : UITableViewDelegate,UITableViewDataSource {
+extension InsightViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let list = tableList.filter{ $0.visible }.count
         return list

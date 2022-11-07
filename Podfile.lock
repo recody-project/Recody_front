@@ -1,10 +1,12 @@
 PODS:
   - Alamofire (5.6.2)
-  - Charts (3.4.0):
-    - Charts/Core (= 3.4.0)
-  - Charts/Core (3.4.0)
+  - Charts (4.1.0):
+    - Charts/Core (= 4.1.0)
+  - Charts/Core (4.1.0):
+    - SwiftAlgorithms (~> 1.0)
   - DropDown (2.3.13)
   - SnapKit (5.6.0)
+  - SwiftAlgorithms (1.0.0)
   - SwiftLint (0.49.1)
 
 DEPENDENCIES:
@@ -20,13 +22,15 @@ SPEC REPOS:
     - Charts
     - DropDown
     - SnapKit
+    - SwiftAlgorithms
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
-  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  Charts: 354f86803d11d9c35de280587fef50d1af063978
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
 
 PODFILE CHECKSUM: 61c6f52b91c7a5bfd095d47124247e7406427626

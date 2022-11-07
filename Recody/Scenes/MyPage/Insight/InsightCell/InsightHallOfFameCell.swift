@@ -1,5 +1,5 @@
 //
-//  InsiteHallOfFameCell.swift
+//  InsightHallOfFameCell.swift
 //  Recody
 //
 //  Created by Glory Kim on 2022/11/01.
@@ -8,7 +8,7 @@
 import UIKit
 //5
 //명예의전당
-class InsiteHallOfFameCell: UITableViewCell,ObservingTableCell {
+class InsightHallOfFameCell: UITableViewCell,ObservingTableCell {
     @IBOutlet weak var lbNickName:UILabel!
     @IBOutlet weak var lbMonth:UILabel!
     @IBOutlet weak var imgGold:UIImageView!

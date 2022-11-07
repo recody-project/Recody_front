@@ -1,5 +1,5 @@
 //
-//  InsiteAllUserMostAppreciationCell.swift
+//  InsightAllUserMostAppreciationCell.swift
 //  Recody
 //
 //  Created by Glory Kim on 2022/11/01.
@@ -8,7 +8,7 @@
 import UIKit
 // 7
 // 모든 유저가 가장 많이 감상한 작품
-class InsiteAllUserMostAppreciationCell: UITableViewCell,ObservingTableCell {
+class InsightAllUserMostAppreciationCell: UITableViewCell,ObservingTableCell {
     @IBOutlet weak var lbGenre:UILabel!
     @IBOutlet weak var lbWorkTitle:UILabel!
     @IBOutlet weak var imgWork:UIImageView!

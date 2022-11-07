@@ -1,5 +1,5 @@
 //
-//  InsiteStatisticsCell.swift
+//  InsightStatisticsCell.swift
 //  Recody
 //
 //  Created by Glory Kim on 2022/10/31.
@@ -7,7 +7,7 @@
 
 import UIKit
 //1
-class InsiteStatisticsCell: UITableViewCell,ObservingTableCell {
+class InsightStatisticsCell: UITableViewCell,ObservingTableCell {
     @IBOutlet weak var lbNickName:UILabel!
     @IBOutlet weak var lbMonth:UILabel! //월
     @IBOutlet weak var lbWorkCount:UILabel! //감상작품

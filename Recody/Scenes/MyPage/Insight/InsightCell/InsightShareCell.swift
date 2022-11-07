@@ -1,5 +1,5 @@
 //
-//  InsiteShareCell.swift
+//  InsightShareCell.swift
 //  Recody
 //
 //  Created by Glory Kim on 2022/11/01.
@@ -8,7 +8,7 @@
 import UIKit
 //8
 //공유하기버튼
-class InsiteShareCell: UITableViewCell,ObservingTableCell {
+class InsightShareCell: UITableViewCell,ObservingTableCell {
     @IBOutlet weak var btnShare:UIButton!
     @IBOutlet weak var cellView: UIView?
     var viewmodel:TableCellViewModel?{

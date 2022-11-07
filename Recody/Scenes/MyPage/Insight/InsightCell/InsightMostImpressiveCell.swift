@@ -1,17 +1,18 @@
 //
-//  InsiteFirstRecordCell.swift
+//  InsightMostImpressiveCell.swift
 //  Recody
 //
-//  Created by Glory Kim on 2022/11/01.
+//  Created by Glory Kim on 2022/10/31.
 //
 
 import UIKit
-
-class InsiteFirstRecordCell: UITableViewCell,ObservingTableCell {
-    @IBOutlet weak var lbNickName:UILabel!
-    @IBOutlet weak var lbMonth:UILabel!
+//3
+//가장 길게적은
+class InsightMostImpressiveCell: UITableViewCell,ObservingTableCell {
+    @IBOutlet weak var lbTitle:UILabel!
     @IBOutlet weak var lbGenre:UILabel!
     @IBOutlet weak var lbWorkTitle:UILabel!
+    @IBOutlet weak var lbRecordCount:UILabel!
     @IBOutlet weak var imgWork:UIImageView!
     @IBOutlet weak var btnDetail:UIView!
     @IBOutlet weak var cellView: UIView?
@@ -27,10 +28,10 @@ class InsiteFirstRecordCell: UITableViewCell,ObservingTableCell {
         binding(data: data)
     }
     func binding(data: Dictionary<String, Any>) {
-        lbNickName.text=data.stringValue(key: "nickName")
-        lbMonth.text=data.stringValue(key: "month")
+        lbTitle.text=data.stringValue(key: "month") + "월에 가장 길게 적은 작품은?"
         lbGenre.text=data.stringValue(key: "genre")
         lbWorkTitle.text=data.stringValue(key: "workTitle")
+        lbRecordCount.text=data.stringValue(key: "recordCount")
         let imgPath = data.stringValue(key: "imgPath")
     }
     @objc func sendEventToController(sender : UITapGestureRecognizer){
@@ -47,9 +48,19 @@ class InsiteFirstRecordCell: UITableViewCell,ObservingTableCell {
         btnDetail.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendEventToController(sender:))))
         chageData()
     }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+    }
+}
+
+extension Dictionary<String,Any>{
+    func stringValue(key:String) -> String{
+        let value = self[key]
+        return "\(value ?? "")"
+    }
+    func intValue(key:String) -> Int {
+        let value = self[key] as? Int
+        return value ?? 0
     }
 }

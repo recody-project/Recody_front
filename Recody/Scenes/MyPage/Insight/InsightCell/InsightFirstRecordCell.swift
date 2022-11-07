@@ -1,15 +1,16 @@
 //
-//  InsiteMostAppreciationCell.swift
+//  InsightFirstRecordCell.swift
 //  Recody
 //
 //  Created by Glory Kim on 2022/11/01.
 //
 
 import UIKit
-// 6
-// 내가 가장 많이 감상한 작품
-class InsiteMostAppreciationCell: UITableViewCell,ObservingTableCell {
+
+class InsightFirstRecordCell: UITableViewCell,ObservingTableCell {
+    @IBOutlet weak var lbNickName:UILabel!
     @IBOutlet weak var lbMonth:UILabel!
+    @IBOutlet weak var lbGenre:UILabel!
     @IBOutlet weak var lbWorkTitle:UILabel!
     @IBOutlet weak var imgWork:UIImageView!
     @IBOutlet weak var btnDetail:UIView!
@@ -26,7 +27,9 @@ class InsiteMostAppreciationCell: UITableViewCell,ObservingTableCell {
         binding(data: data)
     }
     func binding(data: Dictionary<String, Any>) {
+        lbNickName.text=data.stringValue(key: "nickName")
         lbMonth.text=data.stringValue(key: "month")
+        lbGenre.text=data.stringValue(key: "genre")
         lbWorkTitle.text=data.stringValue(key: "workTitle")
         let imgPath = data.stringValue(key: "imgPath")
     }
@@ -38,6 +41,8 @@ class InsiteMostAppreciationCell: UITableViewCell,ObservingTableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        lbGenre.layer.masksToBounds = true
+        lbGenre.layer.cornerRadius = lbGenre.frame.height/2
         btnDetail.isUserInteractionEnabled = true
         btnDetail.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendEventToController(sender:))))
         chageData()

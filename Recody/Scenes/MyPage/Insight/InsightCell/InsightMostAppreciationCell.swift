@@ -1,18 +1,16 @@
 //
-//  MostImpressiveCell.swift
+//  InsightMostAppreciationCell.swift
 //  Recody
 //
-//  Created by Glory Kim on 2022/10/31.
+//  Created by Glory Kim on 2022/11/01.
 //
 
 import UIKit
-//3
-//가장 길게적은
-class InsiteMostImpressiveCell: UITableViewCell,ObservingTableCell {
-    @IBOutlet weak var lbTitle:UILabel!
-    @IBOutlet weak var lbGenre:UILabel!
+// 6
+// 내가 가장 많이 감상한 작품
+class InsightMostAppreciationCell: UITableViewCell,ObservingTableCell {
+    @IBOutlet weak var lbMonth:UILabel!
     @IBOutlet weak var lbWorkTitle:UILabel!
-    @IBOutlet weak var lbRecordCount:UILabel!
     @IBOutlet weak var imgWork:UIImageView!
     @IBOutlet weak var btnDetail:UIView!
     @IBOutlet weak var cellView: UIView?
@@ -28,10 +26,8 @@ class InsiteMostImpressiveCell: UITableViewCell,ObservingTableCell {
         binding(data: data)
     }
     func binding(data: Dictionary<String, Any>) {
-        lbTitle.text=data.stringValue(key: "month") + "월에 가장 길게 적은 작품은?"
-        lbGenre.text=data.stringValue(key: "genre")
+        lbMonth.text=data.stringValue(key: "month")
         lbWorkTitle.text=data.stringValue(key: "workTitle")
-        lbRecordCount.text=data.stringValue(key: "recordCount")
         let imgPath = data.stringValue(key: "imgPath")
     }
     @objc func sendEventToController(sender : UITapGestureRecognizer){
@@ -42,25 +38,13 @@ class InsiteMostImpressiveCell: UITableViewCell,ObservingTableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        lbGenre.layer.masksToBounds = true
-        lbGenre.layer.cornerRadius = lbGenre.frame.height/2
         btnDetail.isUserInteractionEnabled = true
         btnDetail.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendEventToController(sender:))))
         chageData()
     }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
-    }
-}
-
-extension Dictionary<String,Any> {
-    func stringValue(key : String) -> String{
-        let value = self[key]
-        return "\(value ?? "")"
-    }
-    func intValue(key : String) -> Int {
-        let value = self[key] as? Int
-        return value ?? 0
     }
 }

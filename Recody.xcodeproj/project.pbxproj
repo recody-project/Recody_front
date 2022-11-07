@@ -35,28 +35,28 @@
 		3A34165A28FF5CF000C4D698 /* MyPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34165428FF5CF000C4D698 /* MyPageInteractor.swift */; };
 		3A34165C28FF5CF900C4D698 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A34165B28FF5CF900C4D698 /* MyPage.storyboard */; };
 		3A6AE88E2918901900A9F520 /* TableCellViewModel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE88D2918901900A9F520 /* TableCellViewModel+.swift */; };
-		3A6AE8902918903700A9F520 /* InsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE88F2918903700A9F520 /* InsiteViewController.swift */; };
-		3A6AE8922918906300A9F520 /* Insite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8912918906300A9F520 /* Insite.storyboard */; };
-		3A6AE8D22918910300A9F520 /* InsiteHallOfFameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8BE2918910200A9F520 /* InsiteHallOfFameCell.xib */; };
-		3A6AE8D32918910300A9F520 /* InsiteMyRankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8BF2918910200A9F520 /* InsiteMyRankCell.xib */; };
-		3A6AE8D42918910300A9F520 /* InsiteShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C02918910200A9F520 /* InsiteShareCell.xib */; };
-		3A6AE8D52918910300A9F520 /* InsiteMostAppreciationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C12918910200A9F520 /* InsiteMostAppreciationCell.swift */; };
-		3A6AE8D62918910300A9F520 /* InsiteFirstRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C22918910200A9F520 /* InsiteFirstRecordCell.swift */; };
-		3A6AE8D72918910300A9F520 /* InsiteMostImpressiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C32918910200A9F520 /* InsiteMostImpressiveCell.swift */; };
-		3A6AE8D82918910300A9F520 /* InsiteHallOfFameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C42918910200A9F520 /* InsiteHallOfFameCell.swift */; };
-		3A6AE8D92918910300A9F520 /* InsiteAllUserMostAppreciationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C52918910200A9F520 /* InsiteAllUserMostAppreciationCell.swift */; };
-		3A6AE8DA2918910300A9F520 /* InsiteShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C62918910200A9F520 /* InsiteShareCell.swift */; };
-		3A6AE8DB2918910300A9F520 /* InsiteStatisticsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C72918910200A9F520 /* InsiteStatisticsCell.xib */; };
-		3A6AE8DC2918910300A9F520 /* InsiteFirstRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C82918910200A9F520 /* InsiteFirstRecordCell.xib */; };
-		3A6AE8DD2918910300A9F520 /* InsiteTop3GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C92918910200A9F520 /* InsiteTop3GenreCell.swift */; };
-		3A6AE8DE2918910300A9F520 /* InsiteAllUserMostAppreciationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8CA2918910200A9F520 /* InsiteAllUserMostAppreciationCell.xib */; };
-		3A6AE8DF2918910300A9F520 /* InsiteMostAppreciationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8CB2918910200A9F520 /* InsiteMostAppreciationCell.xib */; };
-		3A6AE8E02918910300A9F520 /* InsiteStatisticsGraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8CC2918910200A9F520 /* InsiteStatisticsGraphCell.swift */; };
-		3A6AE8E12918910300A9F520 /* InsiteStatisticsGraphCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8CD2918910200A9F520 /* InsiteStatisticsGraphCell.xib */; };
-		3A6AE8E22918910300A9F520 /* InsiteMostImpressiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8CE2918910200A9F520 /* InsiteMostImpressiveCell.xib */; };
+		3A6AE8902918903700A9F520 /* InsightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE88F2918903700A9F520 /* InsightViewController.swift */; };
+		3A6AE8922918906300A9F520 /* Insight.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8912918906300A9F520 /* Insight.storyboard */; };
+		3A6AE8D22918910300A9F520 /* InsightHallOfFameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8BE2918910200A9F520 /* InsightHallOfFameCell.xib */; };
+		3A6AE8D32918910300A9F520 /* InsightMyRankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8BF2918910200A9F520 /* InsightMyRankCell.xib */; };
+		3A6AE8D42918910300A9F520 /* InsightShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C02918910200A9F520 /* InsightShareCell.xib */; };
+		3A6AE8D52918910300A9F520 /* InsightMostAppreciationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C12918910200A9F520 /* InsightMostAppreciationCell.swift */; };
+		3A6AE8D62918910300A9F520 /* InsightFirstRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C22918910200A9F520 /* InsightFirstRecordCell.swift */; };
+		3A6AE8D72918910300A9F520 /* InsightMostImpressiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C32918910200A9F520 /* InsightMostImpressiveCell.swift */; };
+		3A6AE8D82918910300A9F520 /* InsightHallOfFameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C42918910200A9F520 /* InsightHallOfFameCell.swift */; };
+		3A6AE8D92918910300A9F520 /* InsightAllUserMostAppreciationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C52918910200A9F520 /* InsightAllUserMostAppreciationCell.swift */; };
+		3A6AE8DA2918910300A9F520 /* InsightShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C62918910200A9F520 /* InsightShareCell.swift */; };
+		3A6AE8DB2918910300A9F520 /* InsightStatisticsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C72918910200A9F520 /* InsightStatisticsCell.xib */; };
+		3A6AE8DC2918910300A9F520 /* InsightFirstRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C82918910200A9F520 /* InsightFirstRecordCell.xib */; };
+		3A6AE8DD2918910300A9F520 /* InsightTop3GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8C92918910200A9F520 /* InsightTop3GenreCell.swift */; };
+		3A6AE8DE2918910300A9F520 /* InsightAllUserMostAppreciationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8CA2918910200A9F520 /* InsightAllUserMostAppreciationCell.xib */; };
+		3A6AE8DF2918910300A9F520 /* InsightMostAppreciationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8CB2918910200A9F520 /* InsightMostAppreciationCell.xib */; };
+		3A6AE8E02918910300A9F520 /* InsightStatisticsGraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8CC2918910200A9F520 /* InsightStatisticsGraphCell.swift */; };
+		3A6AE8E12918910300A9F520 /* InsightStatisticsGraphCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8CD2918910200A9F520 /* InsightStatisticsGraphCell.xib */; };
+		3A6AE8E22918910300A9F520 /* InsightMostImpressiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8CE2918910200A9F520 /* InsightMostImpressiveCell.xib */; };
 		3A6AE8E32918910300A9F520 /* InsiteStatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8CF2918910200A9F520 /* InsiteStatisticsCell.swift */; };
-		3A6AE8E42918910300A9F520 /* InsiteMyRankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8D02918910200A9F520 /* InsiteMyRankCell.swift */; };
-		3A6AE8E52918910300A9F520 /* InsiteTop3GenreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8D12918910300A9F520 /* InsiteTop3GenreCell.xib */; };
+		3A6AE8E42918910300A9F520 /* InsightMyRankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8D02918910200A9F520 /* InsightMyRankCell.swift */; };
+		3A6AE8E52918910300A9F520 /* InsightTop3GenreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8D12918910300A9F520 /* InsightTop3GenreCell.xib */; };
 		3A6AE8E92918911B00A9F520 /* InsiteChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8E72918911B00A9F520 /* InsiteChartView.swift */; };
 		3A6AE8EA2918911B00A9F520 /* InsiteStatisticsGraphChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8E82918911B00A9F520 /* InsiteStatisticsGraphChartView.swift */; };
 		3A75DBBC28A0EA5700084DB1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A75DBBB28A0EA5700084DB1 /* Home.storyboard */; };
@@ -154,7 +154,7 @@
 		3AEDB71228DE080600C3DB8D /* PreReview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEDB71128DE080600C3DB8D /* PreReview.storyboard */; };
 		3AEDB71728DF3D4500C3DB8D /* StarRatingSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEDB71628DF3D4500C3DB8D /* StarRatingSlider.swift */; };
 		3AF1DF88290C11260095673A /* ReviewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1DF87290C11260095673A /* ReviewModels.swift */; };
-		8039EA3DBDB039D00B51DDDA /* Pods_Recody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5CFE8C6C0E7F279F04902E /* Pods_Recody.framework */; };
+		5378CB535FDA0F3B59555621 /* Pods_Recody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F36BB44ACD79BEDA668B20 /* Pods_Recody.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -186,28 +186,28 @@
 		3A34165428FF5CF000C4D698 /* MyPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageInteractor.swift; sourceTree = "<group>"; };
 		3A34165B28FF5CF900C4D698 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		3A6AE88D2918901900A9F520 /* TableCellViewModel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableCellViewModel+.swift"; sourceTree = "<group>"; };
-		3A6AE88F2918903700A9F520 /* InsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsiteViewController.swift; sourceTree = "<group>"; };
-		3A6AE8912918906300A9F520 /* Insite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Insite.storyboard; sourceTree = "<group>"; };
-		3A6AE8BE2918910200A9F520 /* InsiteHallOfFameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsiteHallOfFameCell.xib; sourceTree = "<group>"; };
-		3A6AE8BF2918910200A9F520 /* InsiteMyRankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsiteMyRankCell.xib; sourceTree = "<group>"; };
-		3A6AE8C02918910200A9F520 /* InsiteShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsiteShareCell.xib; sourceTree = "<group>"; };
-		3A6AE8C12918910200A9F520 /* InsiteMostAppreciationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsiteMostAppreciationCell.swift; sourceTree = "<group>"; };
-		3A6AE8C22918910200A9F520 /* InsiteFirstRecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsiteFirstRecordCell.swift; sourceTree = "<group>"; };
-		3A6AE8C32918910200A9F520 /* InsiteMostImpressiveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsiteMostImpressiveCell.swift; sourceTree = "<group>"; };
-		3A6AE8C42918910200A9F520 /* InsiteHallOfFameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsiteHallOfFameCell.swift; sourceTree = "<group>"; };
-		3A6AE8C52918910200A9F520 /* InsiteAllUserMostAppreciationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsiteAllUserMostAppreciationCell.swift; sourceTree = "<group>"; };
-		3A6AE8C62918910200A9F520 /* InsiteShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsiteShareCell.swift; sourceTree = "<group>"; };
-		3A6AE8C72918910200A9F520 /* InsiteStatisticsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsiteStatisticsCell.xib; sourceTree = "<group>"; };
-		3A6AE8C82918910200A9F520 /* InsiteFirstRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsiteFirstRecordCell.xib; sourceTree = "<group>"; };
-		3A6AE8C92918910200A9F520 /* InsiteTop3GenreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsiteTop3GenreCell.swift; sourceTree = "<group>"; };
-		3A6AE8CA2918910200A9F520 /* InsiteAllUserMostAppreciationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsiteAllUserMostAppreciationCell.xib; sourceTree = "<group>"; };
-		3A6AE8CB2918910200A9F520 /* InsiteMostAppreciationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsiteMostAppreciationCell.xib; sourceTree = "<group>"; };
-		3A6AE8CC2918910200A9F520 /* InsiteStatisticsGraphCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsiteStatisticsGraphCell.swift; sourceTree = "<group>"; };
-		3A6AE8CD2918910200A9F520 /* InsiteStatisticsGraphCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsiteStatisticsGraphCell.xib; sourceTree = "<group>"; };
-		3A6AE8CE2918910200A9F520 /* InsiteMostImpressiveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsiteMostImpressiveCell.xib; sourceTree = "<group>"; };
+		3A6AE88F2918903700A9F520 /* InsightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightViewController.swift; sourceTree = "<group>"; };
+		3A6AE8912918906300A9F520 /* Insight.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Insight.storyboard; sourceTree = "<group>"; };
+		3A6AE8BE2918910200A9F520 /* InsightHallOfFameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsightHallOfFameCell.xib; sourceTree = "<group>"; };
+		3A6AE8BF2918910200A9F520 /* InsightMyRankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsightMyRankCell.xib; sourceTree = "<group>"; };
+		3A6AE8C02918910200A9F520 /* InsightShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsightShareCell.xib; sourceTree = "<group>"; };
+		3A6AE8C12918910200A9F520 /* InsightMostAppreciationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightMostAppreciationCell.swift; sourceTree = "<group>"; };
+		3A6AE8C22918910200A9F520 /* InsightFirstRecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightFirstRecordCell.swift; sourceTree = "<group>"; };
+		3A6AE8C32918910200A9F520 /* InsightMostImpressiveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightMostImpressiveCell.swift; sourceTree = "<group>"; };
+		3A6AE8C42918910200A9F520 /* InsightHallOfFameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightHallOfFameCell.swift; sourceTree = "<group>"; };
+		3A6AE8C52918910200A9F520 /* InsightAllUserMostAppreciationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightAllUserMostAppreciationCell.swift; sourceTree = "<group>"; };
+		3A6AE8C62918910200A9F520 /* InsightShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightShareCell.swift; sourceTree = "<group>"; };
+		3A6AE8C72918910200A9F520 /* InsightStatisticsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsightStatisticsCell.xib; sourceTree = "<group>"; };
+		3A6AE8C82918910200A9F520 /* InsightFirstRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsightFirstRecordCell.xib; sourceTree = "<group>"; };
+		3A6AE8C92918910200A9F520 /* InsightTop3GenreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightTop3GenreCell.swift; sourceTree = "<group>"; };
+		3A6AE8CA2918910200A9F520 /* InsightAllUserMostAppreciationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsightAllUserMostAppreciationCell.xib; sourceTree = "<group>"; };
+		3A6AE8CB2918910200A9F520 /* InsightMostAppreciationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsightMostAppreciationCell.xib; sourceTree = "<group>"; };
+		3A6AE8CC2918910200A9F520 /* InsightStatisticsGraphCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightStatisticsGraphCell.swift; sourceTree = "<group>"; };
+		3A6AE8CD2918910200A9F520 /* InsightStatisticsGraphCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsightStatisticsGraphCell.xib; sourceTree = "<group>"; };
+		3A6AE8CE2918910200A9F520 /* InsightMostImpressiveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsightMostImpressiveCell.xib; sourceTree = "<group>"; };
 		3A6AE8CF2918910200A9F520 /* InsiteStatisticsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsiteStatisticsCell.swift; sourceTree = "<group>"; };
-		3A6AE8D02918910200A9F520 /* InsiteMyRankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsiteMyRankCell.swift; sourceTree = "<group>"; };
-		3A6AE8D12918910300A9F520 /* InsiteTop3GenreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsiteTop3GenreCell.xib; sourceTree = "<group>"; };
+		3A6AE8D02918910200A9F520 /* InsightMyRankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightMyRankCell.swift; sourceTree = "<group>"; };
+		3A6AE8D12918910300A9F520 /* InsightTop3GenreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsightTop3GenreCell.xib; sourceTree = "<group>"; };
 		3A6AE8E72918911B00A9F520 /* InsiteChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsiteChartView.swift; sourceTree = "<group>"; };
 		3A6AE8E82918911B00A9F520 /* InsiteStatisticsGraphChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsiteStatisticsGraphChartView.swift; sourceTree = "<group>"; };
 		3A75DBBB28A0EA5700084DB1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -307,9 +307,9 @@
 		3AEDB71128DE080600C3DB8D /* PreReview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreReview.storyboard; sourceTree = "<group>"; };
 		3AEDB71628DF3D4500C3DB8D /* StarRatingSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingSlider.swift; sourceTree = "<group>"; };
 		3AF1DF87290C11260095673A /* ReviewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModels.swift; sourceTree = "<group>"; };
-		4B2B2FA8C103E15BA2F28873 /* Pods-Recody.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recody.debug.xcconfig"; path = "Target Support Files/Pods-Recody/Pods-Recody.debug.xcconfig"; sourceTree = "<group>"; };
-		CF5CFE8C6C0E7F279F04902E /* Pods_Recody.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5C90FA0A29800679FEAD91C /* Pods-Recody.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recody.release.xcconfig"; path = "Target Support Files/Pods-Recody/Pods-Recody.release.xcconfig"; sourceTree = "<group>"; };
+		91F36BB44ACD79BEDA668B20 /* Pods_Recody.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D3CE433EC2F1321F641EC70 /* Pods-Recody.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recody.debug.xcconfig"; path = "Target Support Files/Pods-Recody/Pods-Recody.debug.xcconfig"; sourceTree = "<group>"; };
+		FF233E43192A2937998758EC /* Pods-Recody.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recody.release.xcconfig"; path = "Target Support Files/Pods-Recody/Pods-Recody.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,7 +317,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8039EA3DBDB039D00B51DDDA /* Pods_Recody.framework in Frameworks */,
+				5378CB535FDA0F3B59555621 /* Pods_Recody.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,8 +402,8 @@
 			children = (
 				3A6AE8BD291890CD00A9F520 /* InsightCell */,
 				3A6AE88D2918901900A9F520 /* TableCellViewModel+.swift */,
-				3A6AE88F2918903700A9F520 /* InsiteViewController.swift */,
-				3A6AE8912918906300A9F520 /* Insite.storyboard */,
+				3A6AE88F2918903700A9F520 /* InsightViewController.swift */,
+				3A6AE8912918906300A9F520 /* Insight.storyboard */,
 			);
 			path = Insight;
 			sourceTree = "<group>";
@@ -411,26 +411,26 @@
 		3A6AE8BD291890CD00A9F520 /* InsightCell */ = {
 			isa = PBXGroup;
 			children = (
-				3A6AE8C52918910200A9F520 /* InsiteAllUserMostAppreciationCell.swift */,
-				3A6AE8CA2918910200A9F520 /* InsiteAllUserMostAppreciationCell.xib */,
-				3A6AE8C22918910200A9F520 /* InsiteFirstRecordCell.swift */,
-				3A6AE8C82918910200A9F520 /* InsiteFirstRecordCell.xib */,
-				3A6AE8C42918910200A9F520 /* InsiteHallOfFameCell.swift */,
-				3A6AE8BE2918910200A9F520 /* InsiteHallOfFameCell.xib */,
-				3A6AE8C12918910200A9F520 /* InsiteMostAppreciationCell.swift */,
-				3A6AE8CB2918910200A9F520 /* InsiteMostAppreciationCell.xib */,
-				3A6AE8C32918910200A9F520 /* InsiteMostImpressiveCell.swift */,
-				3A6AE8CE2918910200A9F520 /* InsiteMostImpressiveCell.xib */,
-				3A6AE8D02918910200A9F520 /* InsiteMyRankCell.swift */,
-				3A6AE8BF2918910200A9F520 /* InsiteMyRankCell.xib */,
-				3A6AE8C62918910200A9F520 /* InsiteShareCell.swift */,
-				3A6AE8C02918910200A9F520 /* InsiteShareCell.xib */,
+				3A6AE8C52918910200A9F520 /* InsightAllUserMostAppreciationCell.swift */,
+				3A6AE8CA2918910200A9F520 /* InsightAllUserMostAppreciationCell.xib */,
+				3A6AE8C22918910200A9F520 /* InsightFirstRecordCell.swift */,
+				3A6AE8C82918910200A9F520 /* InsightFirstRecordCell.xib */,
+				3A6AE8C42918910200A9F520 /* InsightHallOfFameCell.swift */,
+				3A6AE8BE2918910200A9F520 /* InsightHallOfFameCell.xib */,
+				3A6AE8C12918910200A9F520 /* InsightMostAppreciationCell.swift */,
+				3A6AE8CB2918910200A9F520 /* InsightMostAppreciationCell.xib */,
+				3A6AE8C32918910200A9F520 /* InsightMostImpressiveCell.swift */,
+				3A6AE8CE2918910200A9F520 /* InsightMostImpressiveCell.xib */,
+				3A6AE8D02918910200A9F520 /* InsightMyRankCell.swift */,
+				3A6AE8BF2918910200A9F520 /* InsightMyRankCell.xib */,
+				3A6AE8C62918910200A9F520 /* InsightShareCell.swift */,
+				3A6AE8C02918910200A9F520 /* InsightShareCell.xib */,
 				3A6AE8CF2918910200A9F520 /* InsiteStatisticsCell.swift */,
-				3A6AE8C72918910200A9F520 /* InsiteStatisticsCell.xib */,
-				3A6AE8CC2918910200A9F520 /* InsiteStatisticsGraphCell.swift */,
-				3A6AE8CD2918910200A9F520 /* InsiteStatisticsGraphCell.xib */,
-				3A6AE8C92918910200A9F520 /* InsiteTop3GenreCell.swift */,
-				3A6AE8D12918910300A9F520 /* InsiteTop3GenreCell.xib */,
+				3A6AE8C72918910200A9F520 /* InsightStatisticsCell.xib */,
+				3A6AE8CC2918910200A9F520 /* InsightStatisticsGraphCell.swift */,
+				3A6AE8CD2918910200A9F520 /* InsightStatisticsGraphCell.xib */,
+				3A6AE8C92918910200A9F520 /* InsightTop3GenreCell.swift */,
+				3A6AE8D12918910300A9F520 /* InsightTop3GenreCell.xib */,
 			);
 			path = InsightCell;
 			sourceTree = "<group>";
@@ -494,7 +494,7 @@
 				3A8D172A289BBC7700B260D1 /* Recody */,
 				3A8D1729289BBC7700B260D1 /* Products */,
 				D9142FC7474BE90F07FC44D7 /* Pods */,
-				4A925B789139013FD519C155 /* Frameworks */,
+				AA2BD98415DCAE5D5C4AC288 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -793,10 +793,10 @@
 			path = WorkListCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		4A925B789139013FD519C155 /* Frameworks */ = {
+		AA2BD98415DCAE5D5C4AC288 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CF5CFE8C6C0E7F279F04902E /* Pods_Recody.framework */,
+				91F36BB44ACD79BEDA668B20 /* Pods_Recody.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -804,8 +804,8 @@
 		D9142FC7474BE90F07FC44D7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4B2B2FA8C103E15BA2F28873 /* Pods-Recody.debug.xcconfig */,
-				D5C90FA0A29800679FEAD91C /* Pods-Recody.release.xcconfig */,
+				9D3CE433EC2F1321F641EC70 /* Pods-Recody.debug.xcconfig */,
+				FF233E43192A2937998758EC /* Pods-Recody.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -817,12 +817,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A8D173C289BBC7A00B260D1 /* Build configuration list for PBXNativeTarget "Recody" */;
 			buildPhases = (
-				489FBFC50D238FE3FBD08AAA /* [CP] Check Pods Manifest.lock */,
+				7CDE86E56D3E1A0F5A452219 /* [CP] Check Pods Manifest.lock */,
 				3A8D1724289BBC7700B260D1 /* Sources */,
 				3A8D1725289BBC7700B260D1 /* Frameworks */,
 				3A8D1726289BBC7700B260D1 /* Resources */,
 				3A8D176A289BC04500B260D1 /* ShellScript */,
-				4F4BA75BA571D0913FD041C3 /* [CP] Embed Pods Frameworks */,
+				124300BDDE035729446FBED1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -871,37 +871,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A6AE8DC2918910300A9F520 /* InsiteFirstRecordCell.xib in Resources */,
-				3A6AE8E52918910300A9F520 /* InsiteTop3GenreCell.xib in Resources */,
+				3A6AE8DC2918910300A9F520 /* InsightFirstRecordCell.xib in Resources */,
+				3A6AE8E52918910300A9F520 /* InsightTop3GenreCell.xib in Resources */,
 				3A75DBF828A0F5D900084DB1 /* Calendar.storyboard in Resources */,
-				3A6AE8D32918910300A9F520 /* InsiteMyRankCell.xib in Resources */,
+				3A6AE8D32918910300A9F520 /* InsightMyRankCell.xib in Resources */,
 				3AAEE3F228C5CF4500B28582 /* EditCategory.storyboard in Resources */,
 				3A8D176E289BC21400B260D1 /* .gitignore in Resources */,
 				3AEDB70128DD86B100C3DB8D /* WorkInfo.xib in Resources */,
-				3A6AE8E22918910300A9F520 /* InsiteMostImpressiveCell.xib in Resources */,
+				3A6AE8E22918910300A9F520 /* InsightMostImpressiveCell.xib in Resources */,
 				3A34165C28FF5CF900C4D698 /* MyPage.storyboard in Resources */,
 				3AD4F12328C09EB700598D28 /* TabHeader.xib in Resources */,
 				3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */,
 				3AB1432428F76FBC0041C9CC /* MySearchTableViewCell.xib in Resources */,
 				20DBFB0429029366009CEF76 /* README.md in Resources */,
 				3AA56D0728BE743400FB66F5 /* WorkListCollectionViewCell.xib in Resources */,
-				3A6AE8DE2918910300A9F520 /* InsiteAllUserMostAppreciationCell.xib in Resources */,
+				3A6AE8DE2918910300A9F520 /* InsightAllUserMostAppreciationCell.xib in Resources */,
 				3AB80F94290D64E800F032EC /* ModifyProfile.storyboard in Resources */,
 				3ADA9B7528A56AA800EB39F3 /* CustomCategory.xib in Resources */,
-				3A6AE8922918906300A9F520 /* Insite.storyboard in Resources */,
+				3A6AE8922918906300A9F520 /* Insight.storyboard in Resources */,
 				3A8D1738289BBC7A00B260D1 /* LaunchScreen.storyboard in Resources */,
 				3A75DBBC28A0EA5700084DB1 /* Home.storyboard in Resources */,
-				3A6AE8DB2918910300A9F520 /* InsiteStatisticsCell.xib in Resources */,
+				3A6AE8DB2918910300A9F520 /* InsightStatisticsCell.xib in Resources */,
 				3AD4F12128C08C7E00598D28 /* DropDownHeader.xib in Resources */,
 				3A8D1735289BBC7A00B260D1 /* Assets.xcassets in Resources */,
-				3A6AE8DF2918910300A9F520 /* InsiteMostAppreciationCell.xib in Resources */,
+				3A6AE8DF2918910300A9F520 /* InsightMostAppreciationCell.xib in Resources */,
 				3AB1431F28F768080041C9CC /* MySearch.storyboard in Resources */,
-				3A6AE8E12918910300A9F520 /* InsiteStatisticsGraphCell.xib in Resources */,
-				3A6AE8D42918910300A9F520 /* InsiteShareCell.xib in Resources */,
+				3A6AE8E12918910300A9F520 /* InsightStatisticsGraphCell.xib in Resources */,
+				3A6AE8D42918910300A9F520 /* InsightShareCell.xib in Resources */,
 				3A75DBF128A0F41D00084DB1 /* TabBar.storyboard in Resources */,
 				3A8F862D28C625210028B45C /* EditGenre.storyboard in Resources */,
 				3A77BE7928F57B33005AFCAD /* PreReviewCollectionViewCell.xib in Resources */,
-				3A6AE8D22918910300A9F520 /* InsiteHallOfFameCell.xib in Resources */,
+				3A6AE8D22918910300A9F520 /* InsightHallOfFameCell.xib in Resources */,
 				3AEDB71228DE080600C3DB8D /* PreReview.storyboard in Resources */,
 				3A75DBF628A0F5CE00084DB1 /* Record.storyboard in Resources */,
 				3AB9CFC328B4E86100A600DB /* WorkDetailInfo.storyboard in Resources */,
@@ -911,6 +911,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		124300BDDE035729446FBED1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Recody/Pods-Recody-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Recody/Pods-Recody-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Recody/Pods-Recody-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3A8D176A289BC04500B260D1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -928,7 +945,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
-		489FBFC50D238FE3FBD08AAA /* [CP] Check Pods Manifest.lock */ = {
+		7CDE86E56D3E1A0F5A452219 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -950,23 +967,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4F4BA75BA571D0913FD041C3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Recody/Pods-Recody-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Recody/Pods-Recody-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Recody/Pods-Recody-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -978,9 +978,9 @@
 				3AAEE3EB28C5CF3900B28582 /* EditCategoryPresenter.swift in Sources */,
 				3AEDB70F28DE07FC00C3DB8D /* PreReviewViewController.swift in Sources */,
 				3ADA9B7728A56AB600EB39F3 /* CustomCategory.swift in Sources */,
-				3A6AE8E42918910300A9F520 /* InsiteMyRankCell.swift in Sources */,
-				3A6AE8D92918910300A9F520 /* InsiteAllUserMostAppreciationCell.swift in Sources */,
-				3A6AE8D52918910300A9F520 /* InsiteMostAppreciationCell.swift in Sources */,
+				3A6AE8E42918910300A9F520 /* InsightMyRankCell.swift in Sources */,
+				3A6AE8D92918910300A9F520 /* InsightAllUserMostAppreciationCell.swift in Sources */,
+				3A6AE8D52918910300A9F520 /* InsightMostAppreciationCell.swift in Sources */,
 				3ADA9B7B28A5810C00EB39F3 /* Designables.swift in Sources */,
 				3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */,
 				3AAEE3EE28C5CF3900B28582 /* EditCategoryModels.swift in Sources */,
@@ -1001,7 +1001,7 @@
 				3AE6A55A28ED9D0D008ED7DB /* CategoryModels.swift in Sources */,
 				3AAEE3EF28C5CF3900B28582 /* EditCategoryViewController.swift in Sources */,
 				20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */,
-				3A6AE8D82918910300A9F520 /* InsiteHallOfFameCell.swift in Sources */,
+				3A6AE8D82918910300A9F520 /* InsightHallOfFameCell.swift in Sources */,
 				20C6FA012907996E009296E3 /* SampleViewController.swift in Sources */,
 				3AB80FA0290D6C3500F032EC /* ModifyProfileInteractor.swift in Sources */,
 				3AA56D0328BE580000FB66F5 /* WorkListCollectionViewCell.swift in Sources */,
@@ -1010,7 +1010,7 @@
 				3AAEE3ED28C5CF3900B28582 /* EditCategoryRouter.swift in Sources */,
 				3AB80F9B290D6C3500F032EC /* ModifyProfilePresenter.swift in Sources */,
 				3A75DBEE28A0F41000084DB1 /* TabBarController.swift in Sources */,
-				3A6AE8D62918910300A9F520 /* InsiteFirstRecordCell.swift in Sources */,
+				3A6AE8D62918910300A9F520 /* InsightFirstRecordCell.swift in Sources */,
 				20DBFB0529029366009CEF76 /* RoutingLogic.swift in Sources */,
 				3A8D1763289BBEA100B260D1 /* HomeRouter.swift in Sources */,
 				3A8D172C289BBC7700B260D1 /* AppDelegate.swift in Sources */,
@@ -1026,13 +1026,13 @@
 				3A6AE88E2918901900A9F520 /* TableCellViewModel+.swift in Sources */,
 				3AB1431A28F767FC0041C9CC /* MySearchRouter.swift in Sources */,
 				3AAEE3E328C4E30D00B28582 /* UIView+.swift in Sources */,
-				3A6AE8DA2918910300A9F520 /* InsiteShareCell.swift in Sources */,
+				3A6AE8DA2918910300A9F520 /* InsightShareCell.swift in Sources */,
 				3A34165728FF5CF000C4D698 /* MyPageRouter.swift in Sources */,
 				3AB1432628F88F860041C9CC /* MySearchViewController+.swift in Sources */,
-				3A6AE8902918903700A9F520 /* InsiteViewController.swift in Sources */,
+				3A6AE8902918903700A9F520 /* InsightViewController.swift in Sources */,
 				3AEDB70C28DE07FC00C3DB8D /* PreReviewWorker.swift in Sources */,
 				3A8F863828C6277D0028B45C /* EditGenreModels.swift in Sources */,
-				3A6AE8E02918910300A9F520 /* InsiteStatisticsGraphCell.swift in Sources */,
+				3A6AE8E02918910300A9F520 /* InsightStatisticsGraphCell.swift in Sources */,
 				3AB1432328F76FBC0041C9CC /* MySearchTableViewCell.swift in Sources */,
 				3AAEE3F528C5D10100B28582 /* EditCategoryViewController+.swift in Sources */,
 				3A8D1761289BBEA100B260D1 /* HomePresenter.swift in Sources */,
@@ -1061,7 +1061,7 @@
 				20DBFB0229029366009CEF76 /* UIViewController+.swift in Sources */,
 				20DBFB0729029366009CEF76 /* RouterType+.swift in Sources */,
 				3AA56D0528BE627300FB66F5 /* WorkTabCollectionViewCell.swift in Sources */,
-				3A6AE8DD2918910300A9F520 /* InsiteTop3GenreCell.swift in Sources */,
+				3A6AE8DD2918910300A9F520 /* InsightTop3GenreCell.swift in Sources */,
 				3AE6A55828ED9B08008ED7DB /* WorkCollectionViewCellModels.swift in Sources */,
 				3A8F863728C6277D0028B45C /* EditGenreRouter.swift in Sources */,
 				3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */,
@@ -1077,7 +1077,7 @@
 				3A8F863528C6277D0028B45C /* EditGenrePresenter.swift in Sources */,
 				3AEDB71028DE07FC00C3DB8D /* PreReviewInteractor.swift in Sources */,
 				3AB9CFBD28B4E84300A600DB /* WorkDetailInfoWorker.swift in Sources */,
-				3A6AE8D72918910300A9F520 /* InsiteMostImpressiveCell.swift in Sources */,
+				3A6AE8D72918910300A9F520 /* InsightMostImpressiveCell.swift in Sources */,
 				2010987A2900D22800C1B4CE /* ProtocolEx5.swift in Sources */,
 				3AAEE3F028C5CF3900B28582 /* EditCategoryInteractor.swift in Sources */,
 				3A6AE8E92918911B00A9F520 /* InsiteChartView.swift in Sources */,
@@ -1220,7 +1220,7 @@
 		};
 		3A8D173D289BBC7A00B260D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B2B2FA8C103E15BA2F28873 /* Pods-Recody.debug.xcconfig */;
+			baseConfigurationReference = 9D3CE433EC2F1321F641EC70 /* Pods-Recody.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1251,7 +1251,7 @@
 		};
 		3A8D173E289BBC7A00B260D1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5C90FA0A29800679FEAD91C /* Pods-Recody.release.xcconfig */;
+			baseConfigurationReference = FF233E43192A2937998758EC /* Pods-Recody.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

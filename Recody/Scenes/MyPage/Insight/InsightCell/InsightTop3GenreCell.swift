@@ -1,5 +1,5 @@
 //
-//  InsiteTop3GenreCell.swift
+//  InsightTop3GenreCell.swift
 //  Recody
 //
 //  Created by Glory Kim on 2022/11/01.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 //4
-class InsiteTop3GenreCell: UITableViewCell,ObservingTableCell {
+class InsightTop3GenreCell: UITableViewCell,ObservingTableCell {
     @IBOutlet weak var lbTitle:UILabel!
     @IBOutlet weak var svGenre:UIStackView!
     @IBOutlet weak var lbTop1:UILabel!
