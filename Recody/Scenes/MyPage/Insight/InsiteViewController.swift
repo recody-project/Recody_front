@@ -88,8 +88,8 @@ class InsiteViewController : CommonVC,DataPassingType, ObservingTableCellEvent {
         btnNext.tag = UserCace.nextMonth.number
         btnPrevious.tag = UserCace.previousMonth.number
         [btnNext,btnPrevious].forEach({
-            $0.setTitle("", for: .normal)
-            $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(btnClickEvent)))
+            $0?.setTitle("", for: .normal)
+            $0?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(btnClickEvent)))
         })
         
     }

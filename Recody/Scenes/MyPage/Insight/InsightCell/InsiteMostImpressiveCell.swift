@@ -53,6 +53,7 @@ class InsiteMostImpressiveCell: UITableViewCell,ObservingTableCell {
         // Configure the view for the selected state
     }
 }
+
 extension Dictionary<String,Any> {
     func stringValue(key : String) -> String{
         let value = self[key]
