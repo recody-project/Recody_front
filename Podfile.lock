@@ -9,7 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Charts (~> 3.4.0)
+  - Charts
   - DropDown
   - SnapKit
   - SwiftLint
@@ -29,6 +29,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
 
-PODFILE CHECKSUM: a1e55270f3f41027e735b4c1424f0ce566536c86
+PODFILE CHECKSUM: 61c6f52b91c7a5bfd095d47124247e7406427626
 
 COCOAPODS: 1.11.3
