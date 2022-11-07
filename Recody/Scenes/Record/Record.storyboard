@@ -15,7 +15,7 @@
         <scene sceneID="dD5-Bq-ZOH">
             <objects>
                 <navigationController storyboardIdentifier="recordNavigation" id="OWD-AH-gJs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="기록추가" id="A96-Lj-niY"/>
+                    <tabBarItem key="tabBarItem" title="기록추가" image="recordImage" id="A96-Lj-niY"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bgi-ts-dWw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -197,7 +197,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="DcW-8l-wFa">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="k6m-Ad-p2i">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="p9S-Ug-T47">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="p9S-Ug-T47">
                                 <rect key="frame" x="364" y="7.5" width="30" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -242,6 +242,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="recordImage" width="20" height="20"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

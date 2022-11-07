@@ -15,6 +15,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        if let tbc = self.window?.rootViewController as? UITabBarController {
+            // 현재 선택된 아이템 색깔 지정
+            let mainColor = UIColor(named: "Main")
+            tbc.tabBar.tintColor = mainColor
+            let tbItemProxy = UITabBarItem.appearance()
+            tbItemProxy.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: mainColor ?? .black], for: .selected)
+        }
+
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

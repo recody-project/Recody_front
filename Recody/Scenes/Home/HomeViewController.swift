@@ -20,12 +20,17 @@ protocol HomeDisplayLogic: AnyObject {
 class HomeViewController: UIViewController, HomeDisplayLogic {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
+
     let works: [Work] = [
-        Work(id: "1", name: "HUNT", image: "common"),
-        Work(id: "2", name: "EMERGENCY", image: "common (1)"),
-        Work(id: "3", name: "HANSAN", image: "common (2)"),
-        Work(id: "4", name: "TOPGUN", image: "common (3)"),
-        Work(id: "5", name: "MINIUNZ", image: "common (4)")
+        Work(id: "0", name: "Attention", image: "attention"),
+        Work(id: "1", name: "1987", image: "1987"),
+        Work(id: "2", name: "CallMeByYourName", image: "callMeByYourName"),
+        Work(id: "3", name: "her", image: "her"),
+        Work(id: "4", name: "Pink Venom", image: "pinkVenom"),
+        Work(id: "5", name: "마더", image: "mother"),
+        Work(id: "6", name: "블랙 팬서", image: "blackPanther"),
+        Work(id: "7", name: "스파이더맨", image: "spiderman"),
+        Work(id: "8", name: "After Like", image: "afterLike")
     ]
 
     let categories: [Category] = [
@@ -35,8 +40,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         Category(name: "음악", image: "music"),
         Category(name: "공연", image: "show")
     ]
-
-    // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

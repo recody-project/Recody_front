@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--홈-->
         <scene sceneID="bUF-FS-upH">
             <objects>
                 <viewController storyboardIdentifier="home" modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="M7q-gp-fHv" customClass="HomeViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbz-20-4g3">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="911"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="929"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnY-bT-7fl">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="289"/>
@@ -361,11 +362,11 @@ df</string>
                                                     <constraint firstAttribute="height" constant="26" id="RCi-Uo-Obr"/>
                                                 </constraints>
                                             </stackView>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BBB-yM-Btq">
-                                                <rect key="frame" x="20" y="635" width="355" height="146"/>
+                                            <collectionView clipsSubviews="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BBB-yM-Btq">
+                                                <rect key="frame" x="20" y="635" width="355" height="164"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="146" id="cg9-7Z-9wC"/>
+                                                    <constraint firstAttribute="height" constant="164" id="cg9-7Z-9wC"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gNh-FC-vPB">
                                                     <size key="itemSize" width="332" height="146"/>
@@ -374,10 +375,10 @@ df</string>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="workCollectionViewCell" id="ncL-kG-IHS" customClass="WorkCollectionViewCell" customModule="Recody" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="332" height="146"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="workListCollectionViewCell" id="ncL-kG-IHS" customClass="WorkListCollectionViewCell" customModule="Recody" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="9" width="332" height="146"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nTJ-Dg-dhm">
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nTJ-Dg-dhm">
                                                             <rect key="frame" x="0.0" y="0.0" width="332" height="146"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </collectionViewCellContentView>
@@ -436,7 +437,9 @@ df</string>
                             <constraint firstAttribute="trailing" secondItem="ixp-Lb-Fc5" secondAttribute="trailing" id="qKG-dO-WIE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="qFQ-Wb-DeA"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="homeImage" selectedImage="homeImage" id="qFQ-Wb-DeA">
+                        <color key="badgeColor" name="Main"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
@@ -451,8 +454,12 @@ df</string>
     </scenes>
     <resources>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
+        <image name="homeImage" width="20" height="19"/>
         <image name="movie1" width="628" height="900"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <namedColor name="Main">
+            <color red="0.40000000596046448" green="0.43500000238418579" blue="0.75700002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
