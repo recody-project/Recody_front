@@ -15,17 +15,17 @@ class WorkTabCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    let works: [Work] = [
-        Work(id: "0", name: "Attention", image: "attention"),
-        Work(id: "1", name: "1987", image: "1987"),
-        Work(id: "2", name: "CallMeByYourName", image: "callMeByYourName"),
-        Work(id: "3", name: "her", image: "her"),
-        Work(id: "4", name: "Pink Venom", image: "pinkVenom"),
-        Work(id: "5", name: "마더", image: "mother"),
-        Work(id: "6", name: "블랙 팬서", image: "blackPanther"),
-        Work(id: "7", name: "스파이더맨", image: "spiderman"),
-        Work(id: "8", name: "After Like", image: "afterLike")
-    ]
+//    let works: [Work] = [
+//        Work(id: "0", name: "Attention", image: "attention"),
+//        Work(id: "1", name: "1987", image: "1987"),
+//        Work(id: "2", name: "CallMeByYourName", image: "callMeByYourName"),
+//        Work(id: "3", name: "her", image: "her"),
+//        Work(id: "4", name: "Pink Venom", image: "pinkVenom"),
+//        Work(id: "5", name: "마더", image: "mother"),
+//        Work(id: "6", name: "블랙 팬서", image: "blackPanther"),
+//        Work(id: "7", name: "스파이더맨", image: "spiderman"),
+//        Work(id: "8", name: "After Like", image: "afterLike")
+//    ]
 
     func createLayout() -> UICollectionViewCompositionalLayout {
         let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.33), heightDimension: .absolute(182))

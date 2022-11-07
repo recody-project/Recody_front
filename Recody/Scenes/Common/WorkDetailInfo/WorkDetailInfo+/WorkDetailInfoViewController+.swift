@@ -14,7 +14,7 @@ extension WorkDetailInfoViewController: UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "workCollectionViewCell", for: indexPath) as? WorkCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "workListCollectionViewCell", for: indexPath) as? WorkListCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.setData(with: works[indexPath.row])
