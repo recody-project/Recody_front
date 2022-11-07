@@ -15,8 +15,9 @@
 		2010987C2900D23100C1B4CE /* ProtocolEx6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010987B2900D23100C1B4CE /* ProtocolEx6.swift */; };
 		201098802900D43500C1B4CE /* Suggest1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010987F2900D43500C1B4CE /* Suggest1.swift */; };
 		2015B3072918DF1700DB725D /* InsightCellEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015B3062918DF1700DB725D /* InsightCellEvent.swift */; };
+		2015B30A2918F28B00DB725D /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015B3092918F28B00DB725D /* ApiClient.swift */; };
+		2015B30C2918F37500DB725D /* ApiCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015B30B2918F37500DB725D /* ApiCommand.swift */; };
 		20C6F9FE29077B6C009296E3 /* PresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6F9FD29077B6C009296E3 /* PresenterType.swift */; };
-		20C6FA012907996E009296E3 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6FA002907996E009296E3 /* SampleViewController.swift */; };
 		20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */; };
 		20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFAFA29029366009CEF76 /* InteractorType+.swift */; };
 		20DBFB0229029366009CEF76 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFAFB29029366009CEF76 /* UIViewController+.swift */; };
@@ -167,8 +168,9 @@
 		2010987B2900D23100C1B4CE /* ProtocolEx6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolEx6.swift; sourceTree = "<group>"; };
 		2010987F2900D43500C1B4CE /* Suggest1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggest1.swift; sourceTree = "<group>"; };
 		2015B3062918DF1700DB725D /* InsightCellEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightCellEvent.swift; sourceTree = "<group>"; };
+		2015B3092918F28B00DB725D /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		2015B30B2918F37500DB725D /* ApiCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCommand.swift; sourceTree = "<group>"; };
 		20C6F9FD29077B6C009296E3 /* PresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterType.swift; sourceTree = "<group>"; };
-		20C6FA002907996E009296E3 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDataModel.swift; sourceTree = "<group>"; };
 		20DBFAFA29029366009CEF76 /* InteractorType+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InteractorType+.swift"; sourceTree = "<group>"; };
 		20DBFAFB29029366009CEF76 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -364,21 +366,22 @@
 				20DBFAFD29029366009CEF76 /* README.md */,
 				20DBFB0029029366009CEF76 /* RouterType+.swift */,
 				20DBFAFE29029366009CEF76 /* RoutingLogic.swift */,
+				2015B3082918F27B00DB725D /* ApiService */,
 				20C6F9FD29077B6C009296E3 /* PresenterType.swift */,
 				20DBFAFB29029366009CEF76 /* UIViewController+.swift */,
-				20C6F9FF2907995F009296E3 /* SampleViewConrtoller */,
 				20DBFAFF29029366009CEF76 /* WorkerType+.swift */,
 				20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */,
 			);
 			path = YGKim;
 			sourceTree = "<group>";
 		};
-		20C6F9FF2907995F009296E3 /* SampleViewConrtoller */ = {
+		2015B3082918F27B00DB725D /* ApiService */ = {
 			isa = PBXGroup;
 			children = (
-				20C6FA002907996E009296E3 /* SampleViewController.swift */,
+				2015B3092918F28B00DB725D /* ApiClient.swift */,
+				2015B30B2918F37500DB725D /* ApiCommand.swift */,
 			);
-			path = SampleViewConrtoller;
+			path = ApiService;
 			sourceTree = "<group>";
 		};
 		3A34164E28FF5CD200C4D698 /* MyPage */ = {
@@ -1005,13 +1008,13 @@
 				3AAEE3EF28C5CF3900B28582 /* EditCategoryViewController.swift in Sources */,
 				20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */,
 				3A6AE8D82918910300A9F520 /* InsightHallOfFameCell.swift in Sources */,
-				20C6FA012907996E009296E3 /* SampleViewController.swift in Sources */,
 				3AB80FA0290D6C3500F032EC /* ModifyProfileInteractor.swift in Sources */,
 				3AA56D0328BE580000FB66F5 /* WorkListCollectionViewCell.swift in Sources */,
 				3AB9CFBC28B4E84300A600DB /* WorkDetailInfoPresenter.swift in Sources */,
 				3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */,
 				3AAEE3ED28C5CF3900B28582 /* EditCategoryRouter.swift in Sources */,
 				3AB80F9B290D6C3500F032EC /* ModifyProfilePresenter.swift in Sources */,
+				2015B30C2918F37500DB725D /* ApiCommand.swift in Sources */,
 				3A75DBEE28A0F41000084DB1 /* TabBarController.swift in Sources */,
 				3A6AE8D62918910300A9F520 /* InsightFirstRecordCell.swift in Sources */,
 				20DBFB0529029366009CEF76 /* RoutingLogic.swift in Sources */,
@@ -1085,6 +1088,7 @@
 				2010987A2900D22800C1B4CE /* ProtocolEx5.swift in Sources */,
 				3AAEE3F028C5CF3900B28582 /* EditCategoryInteractor.swift in Sources */,
 				3A6AE8E92918911B00A9F520 /* InsiteChartView.swift in Sources */,
+				2015B30A2918F28B00DB725D /* ApiClient.swift in Sources */,
 				3AB80F9D290D6C3500F032EC /* ModifyProfileRouter.swift in Sources */,
 				3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */,
 				3AB1431C28F767FC0041C9CC /* MySearchViewController.swift in Sources */,
