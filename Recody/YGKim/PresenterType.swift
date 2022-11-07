@@ -9,11 +9,13 @@ import Foundation
 protocol PresentationLogicType {
     func displaySuccess( orderNumber: Int, dataStore: DataStoreType? )
     func displayErorr( orderNumber: Int )
+    func display( orderNumber: Int)
 }
 protocol PresenterType {
     var delegate: PresentationLogicType? { get set }
     func responseSuccess( orderNumber: Int, dataStore: DataStoreType? )
     func responseErorr( orderNumber: Int )
+    func drop( orderNumber:Int )
 }
 
 class SimplePresenter: PresenterType {
@@ -25,5 +27,8 @@ class SimplePresenter: PresenterType {
 
     func responseErorr(orderNumber: Int) {
         self.delegate?.displayErorr(orderNumber: orderNumber)
+    }
+    func drop(orderNumber: Int) {
+        self.delegate?.display(orderNumber: orderNumber)
     }
 }

@@ -26,6 +26,10 @@ class SomeVC: CommonVC {
 }
 
 class CommonVC: UIViewController, CommonVCType, PresentationLogicType {
+    func display(orderNumber: Int) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

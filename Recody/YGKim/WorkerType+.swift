@@ -8,12 +8,14 @@
 import Foundation
 
 protocol WorkerDelegate {
+    func drop( orderNumber: Int)
     func complete( orderNumber: Int, result: WorkResult)
     func failed( orderNumber: Int)
 }
 protocol WorkerType {
     var delegate: WorkerDelegate? { get set }
     func recept(_ order: Int) -> Self
+    func drop()
     func send(_ param: [String: String] )
     func send(_ param: [String: String], _ header: [String: String])
 }
@@ -44,6 +46,9 @@ class SimpleWoker: WorkerType {
             self.delegate?.complete(orderNumber: self.order, result: WorkResult(dic))
         }
         self.delegate?.failed(orderNumber: self.order)
+    }
+    func drop() {
+        self.delegate?.drop(orderNumber: self.order)
     }
 }
 

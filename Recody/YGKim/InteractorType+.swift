@@ -78,4 +78,7 @@ class SimpleInteractor: InteractorType, DataStoreType {
         // Presenter에게 알리기 - >orderNumber
         self.presenter.responseErorr(orderNumber: orderNumber)
     }
+    func drop(orderNumber: Int) {
+        self.presenter.drop(orderNumber: orderNumber)
+    }
 }
