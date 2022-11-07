@@ -14,6 +14,7 @@
 		2010987A2900D22800C1B4CE /* ProtocolEx5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201098742900D03700C1B4CE /* ProtocolEx5.swift */; };
 		2010987C2900D23100C1B4CE /* ProtocolEx6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010987B2900D23100C1B4CE /* ProtocolEx6.swift */; };
 		201098802900D43500C1B4CE /* Suggest1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010987F2900D43500C1B4CE /* Suggest1.swift */; };
+		2015B3072918DF1700DB725D /* InsightCellEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015B3062918DF1700DB725D /* InsightCellEvent.swift */; };
 		20C6F9FE29077B6C009296E3 /* PresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6F9FD29077B6C009296E3 /* PresenterType.swift */; };
 		20C6FA012907996E009296E3 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6FA002907996E009296E3 /* SampleViewController.swift */; };
 		20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */; };
@@ -165,6 +166,7 @@
 		201098742900D03700C1B4CE /* ProtocolEx5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolEx5.swift; sourceTree = "<group>"; };
 		2010987B2900D23100C1B4CE /* ProtocolEx6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolEx6.swift; sourceTree = "<group>"; };
 		2010987F2900D43500C1B4CE /* Suggest1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggest1.swift; sourceTree = "<group>"; };
+		2015B3062918DF1700DB725D /* InsightCellEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightCellEvent.swift; sourceTree = "<group>"; };
 		20C6F9FD29077B6C009296E3 /* PresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterType.swift; sourceTree = "<group>"; };
 		20C6FA002907996E009296E3 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDataModel.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				3A6AE8CD2918910200A9F520 /* InsightStatisticsGraphCell.xib */,
 				3A6AE8C92918910200A9F520 /* InsightTop3GenreCell.swift */,
 				3A6AE8D12918910300A9F520 /* InsightTop3GenreCell.xib */,
+				2015B3062918DF1700DB725D /* InsightCellEvent.swift */,
 			);
 			path = InsightCell;
 			sourceTree = "<group>";
@@ -1031,6 +1034,7 @@
 				3AB1432628F88F860041C9CC /* MySearchViewController+.swift in Sources */,
 				3A6AE8902918903700A9F520 /* InsightViewController.swift in Sources */,
 				3AEDB70C28DE07FC00C3DB8D /* PreReviewWorker.swift in Sources */,
+				2015B3072918DF1700DB725D /* InsightCellEvent.swift in Sources */,
 				3A8F863828C6277D0028B45C /* EditGenreModels.swift in Sources */,
 				3A6AE8E02918910300A9F520 /* InsightStatisticsGraphCell.swift in Sources */,
 				3AB1432328F76FBC0041C9CC /* MySearchTableViewCell.swift in Sources */,

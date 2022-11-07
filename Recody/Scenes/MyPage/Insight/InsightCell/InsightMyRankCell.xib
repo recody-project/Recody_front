@@ -94,7 +94,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNQ-3K-Pj4">
-                                <rect key="frame" x="20" y="55" width="280" height="153"/>
+                                <rect key="frame" x="20" y="55" width="280" height="173"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -119,7 +119,7 @@
                             <constraint firstAttribute="bottom" secondItem="SdI-25-D9W" secondAttribute="bottom" constant="29" id="dIh-zL-l6z"/>
                             <constraint firstItem="5Bb-lm-53P" firstAttribute="leading" secondItem="K6G-ey-hh7" secondAttribute="trailing" constant="4" id="gHb-tl-xNe"/>
                             <constraint firstItem="66h-E3-I1H" firstAttribute="leading" secondItem="dE4-3k-98I" secondAttribute="leading" constant="20" id="jrh-AR-BVA"/>
-                            <constraint firstItem="K6G-ey-hh7" firstAttribute="top" secondItem="ZNQ-3K-Pj4" secondAttribute="bottom" constant="34" id="nEf-gh-7mY"/>
+                            <constraint firstItem="K6G-ey-hh7" firstAttribute="top" secondItem="ZNQ-3K-Pj4" secondAttribute="bottom" constant="14" id="nEf-gh-7mY"/>
                             <constraint firstItem="66h-E3-I1H" firstAttribute="top" secondItem="dE4-3k-98I" secondAttribute="top" constant="24" id="rlL-9V-ArA"/>
                             <constraint firstItem="SdI-25-D9W" firstAttribute="centerX" secondItem="dE4-3k-98I" secondAttribute="centerX" id="wuq-cv-19y"/>
                         </constraints>

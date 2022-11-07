@@ -36,7 +36,7 @@ class InsightMostImpressiveCell: UITableViewCell,ObservingTableCell {
     }
     @objc func sendEventToController(sender : UITapGestureRecognizer){
         if let code = sender.view?.tag {
-            eventDelegate?.eventFromTableCell(code: code)
+            eventDelegate?.eventFromTableCell(code: InsightCellEvent.mostImpressiveEvent.rawValue)
         }
     }
     override func awakeFromNib() {

@@ -15,11 +15,8 @@ class InsiteStatisticsGraphChartView : UIView,ChartViewDelegate{
         self.init(frame: CGRect())
         self.backgroundColor = .clear
         self.addSubview(chartView)
-        chartView.snp.makeConstraints({ make in
-            make.top.equalToSuperview()
-            make.right.equalToSuperview()
-            make.left.equalToSuperview()
-            make.height.equalToSuperview()
+        chartView.snp.makeConstraints({
+            $0.edges.equalToSuperview()
         })
         chartView.delegate = self
         chartView.legend.enabled = false
@@ -28,6 +25,7 @@ class InsiteStatisticsGraphChartView : UIView,ChartViewDelegate{
         chartView.drawEntryLabelsEnabled = false
         self.chartView.holeRadiusPercent = 0.7
     }
+ 
     func setDataCount(total:Int,best:Int) {
         let percent = (best * 100) / total
         let percentDouble = Double(percent)

@@ -66,7 +66,7 @@ class InsightMyRankCell: UITableViewCell,ObservingTableCell {
     }
     @objc func sendEventToController(sender : UITapGestureRecognizer){
         if let code = sender.view?.tag {
-            eventDelegate?.eventFromTableCell(code: code)
+            eventDelegate?.eventFromTableCell(code: InsightCellEvent.myRankEvent.rawValue)
         }
     }
     override func awakeFromNib() {

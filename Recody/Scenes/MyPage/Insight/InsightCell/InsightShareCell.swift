@@ -25,7 +25,7 @@ class InsightShareCell: UITableViewCell,ObservingTableCell {
     }
     @objc func sendEventToController(sender : UITapGestureRecognizer){
         if let code = sender.view?.tag {
-            eventDelegate?.eventFromTableCell(code: code)
+            eventDelegate?.eventFromTableCell(code: InsightCellEvent.shareEvent.rawValue)
         }
     }
     override func awakeFromNib() {

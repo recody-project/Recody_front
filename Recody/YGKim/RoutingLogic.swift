@@ -16,7 +16,7 @@ enum RoutingLogic: RoutingLogicType {
         var viewcontroller: UIViewController? {
             switch self {
             case .home:
-                return HomeViewController()
+                return UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "home")
             case .record:
                 return RecordViewController()
             case .workDetailInfo:
@@ -31,6 +31,9 @@ enum RoutingLogic: RoutingLogicType {
         case workDetailInfo
         var segue: UIStoryboardSegue? {
             switch self {
+            case .home:
+           
+                return nil
             default:
                 return nil
             }

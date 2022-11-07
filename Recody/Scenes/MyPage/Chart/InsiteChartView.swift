@@ -25,6 +25,7 @@ class CombinChart : UIView,ChartViewDelegate{
     
     let chartView = CombinedChartView()
     let topView = UIView()
+    var stackView = UIStackView()
     var barItems = [(point :CGPoint,color :UIColor,type : String)]()
     let barColors : [UIColor] = [.red.withAlphaComponent(0.5),
                                  .gray.withAlphaComponent(0.5),
@@ -40,7 +41,7 @@ class CombinChart : UIView,ChartViewDelegate{
         self.addSubview(chartView)
         chartView.snp.makeConstraints({ make in
             make.top.left.right.equalToSuperview()
-            make.height.equalToSuperview()
+            make.height.equalToSuperview().offset(-10)
         })
      
         chartView.delegate = self
@@ -81,6 +82,7 @@ class CombinChart : UIView,ChartViewDelegate{
         rightAxis.spaceTop = 0.3
         rightAxis.axisMinimum = 0
         initTopView()
+        setupStackView()
         setData()
     }
     
@@ -93,6 +95,31 @@ class CombinChart : UIView,ChartViewDelegate{
         
         var strCount = 0
     }
+    func setupStackView(){
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.axis = .horizontal
+        stackView.backgroundColor = .clear
+        
+        self.addSubview(stackView)
+        self.bringSubviewToFront(stackView)
+        stackView.snp.makeConstraints({
+            $0.left.equalToSuperview().offset(10)
+            $0.right.equalToSuperview().offset(-10)
+            $0.bottom.equalToSuperview()
+            $0.height.equalTo(20)
+        })
+        
+        for index in (1...10){
+            let label = UILabel()
+            label.font = .systemFont(ofSize: 14)
+            label.textColor = UIColor.init(hexString: "#666666")
+            label.text = "\(Double(index) * 0.5)"
+            label.textAlignment = .center
+            stackView.addArrangedSubview(label)
+        }
+    }
+    
     func updateChartData(){
         self.chartView.data = nil
         
@@ -134,6 +161,7 @@ class CombinChart : UIView,ChartViewDelegate{
 //        set1.valueFont = .systemFont(ofSize: 15)
         set1.axisDependency = .left
         set1.valueTextColor = UIColor.init(hexString: "#666666")
+        set1.valueFont = .systemFont(ofSize: 14)
         set1.drawValuesEnabled = true
         return set1
     }
@@ -155,9 +183,8 @@ class CombinChart : UIView,ChartViewDelegate{
         leftAxis.labelPosition = .outsideChart
         var rightAxis = chartView.rightAxis
         leftAxis.drawAxisLineEnabled = false
-        rightAxis.drawAxisLineEnabled = false
+        rightAxis.drawAxisLineEnabled = true
         rightAxis.enabled = false
-        
         var xAxis = chartView.xAxis
         xAxis.drawLabelsEnabled = false
         xAxis.labelTextColor = UIColor.init(hexString: "#666666")
@@ -165,8 +192,8 @@ class CombinChart : UIView,ChartViewDelegate{
         xAxis.labelPosition = .bottom
         xAxis.labelCount = 10
         xAxis.gridColor = .white
-        xAxis.axisLineColor = .white
-        xAxis.drawGridLinesEnabled = false
+        xAxis.axisLineColor = UIColor.init(hexString: "#666FC1")
+        xAxis.drawGridLinesEnabled = true
         xAxis.enabled = true
         let numberFormatter = BarNumberFormatter()
         data.setValueFormatter(numberFormatter)

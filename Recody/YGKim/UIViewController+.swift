@@ -12,19 +12,6 @@ protocol CommonVCType {
     var presenter: PresenterType? { get }
     var router: RouterType? { get }
 }
-
-class SomeVC: CommonVC {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-
-    }
-    override func displayErorr(orderNumber: Int) {
-
-    }
-}
-
 class CommonVC: UIViewController, CommonVCType, PresentationLogicType {
     func display(orderNumber: Int) {
         
@@ -62,12 +49,12 @@ extension CommonVC {
 extension CommonVC {
     static var name: String { String(describing: Self.self) }
     var name: String { String(describing: Self.self) }
-    class func swizzleMethod() {
+    static func swizzleMethod() {
         let originalSelector = #selector(viewDidLoad)
         let swizzleSelector = #selector(swizzleViewDidLoad)
         guard
             let originMethod = class_getInstanceMethod(UIViewController.self, originalSelector),
-            let swizzleMethod = class_getInstanceMethod(UIViewController.self, swizzleSelector)
+            let swizzleMethod = class_getInstanceMethod(CommonVC.self, swizzleSelector)
         else { return }
         method_exchangeImplementations(originMethod, swizzleMethod)
     }

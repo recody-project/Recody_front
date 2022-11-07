@@ -35,7 +35,7 @@ class InsightHallOfFameCell: UITableViewCell,ObservingTableCell {
     }
     @objc func sendEventToController(sender : UITapGestureRecognizer){
         if let code = sender.view?.tag {
-            eventDelegate?.eventFromTableCell(code: code)
+            eventDelegate?.eventFromTableCell(code: InsightCellEvent.hallOfFameEvent.rawValue)
         }
     }
     override func awakeFromNib() {

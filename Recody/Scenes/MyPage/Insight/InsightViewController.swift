@@ -12,7 +12,9 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
     func eventFromTableCell(code: Int) {
         //셀 내의 개별적 제스쳐 이벤트를 처리하는 공간
         //interactor를 통해서 처리
-        print(1)
+        guard let cellEvent = InsightCellEvent(rawValue: code) else { return }
+        print(cellEvent)
+//        self.interactor?.just(UserCace.cellClickEvent).drop()
     }
     var viewModel = InsiteViewModel()
     var tableList : [TableCellViewModel] = [TableCellViewModel]()
@@ -20,6 +22,7 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
     enum UserCace : Int,OrderType{
         case nextMonth = 101
         case previousMonth = 102
+        case cellClickEvent = 103
         var number: Int {
             return self.rawValue
         }
@@ -83,7 +86,6 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
         setUpTableView()
     }
     func setup(){
-        
         btnNext.tag = UserCace.nextMonth.number
         btnPrevious.tag = UserCace.previousMonth.number
         [btnNext,btnPrevious].forEach({
@@ -94,17 +96,44 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
     }
     @objc func btnClickEvent(_ sender : UITapGestureRecognizer){
         if let tag = sender.view?.tag {
-//            if let command = UserCace.init(rawValue: tag) {
-//                self.interactor?.just(command).send(["month":"\(self.viewModel.currentMonth - 1)"])
-//            }
+            if let command = UserCace.init(rawValue: tag) {
+                self.interactor?.just(command).drop()
+            }
         }
     }
     override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-        
+        if let command = UserCace.init(rawValue: orderNumber) {
+            switch command {
+                default:
+                    print("Router 커맨드 : \(command)")
+                    break
+            }
+        }
     }
     override func displayErorr(orderNumber: Int) {
-        
+        if let command = UserCace.init(rawValue: orderNumber) {
+            switch command {
+                default:
+                    print("에러발생 커맨드 : \(command)")
+                    break
+            }
+        }
     }
+    override func display(orderNumber: Int) {
+        if let command = UserCace.init(rawValue: orderNumber) {
+            switch command {
+                case .nextMonth:
+                    self.router?.present(RoutingLogic.Navigation.home, nil)
+                    break
+                case .previousMonth:
+                    break
+                default:
+                    print("처리안된 커맨드 : \(command)")
+                    break
+            }
+        }
+    }
+    
     func setUpTableView(){
         tableView.delegate = self
         tableView.dataSource = self
