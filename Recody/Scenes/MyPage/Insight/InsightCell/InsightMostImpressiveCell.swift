@@ -54,7 +54,7 @@ class InsightMostImpressiveCell: UITableViewCell,ObservingTableCell {
     }
 }
 
-extension Dictionary<String,Any>{
+extension Dictionary where Key == String, Value == Any {
     func stringValue(key:String) -> String{
         let value = self[key]
         return "\(value ?? "")"
