@@ -27,7 +27,7 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
             return self.rawValue
         }
     }
-    
+     
     enum InsiteCellType : Int {
         case statistics = 1
         case statisticsGraph = 2
@@ -97,20 +97,27 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
     @objc func btnClickEvent(_ sender : UITapGestureRecognizer){
         if let tag = sender.view?.tag {
             if let command = UserCace.init(rawValue: tag) {
-                self.interactor?.just(command).drop()
+//                self.interactor?.just(command).drop()  // 바로 UI를 업데이트 할경우
+                self.interactor?.just(command).api(.checkValidEmail("ikmujn5@naver.com"))
             }
         }
     }
     override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
         if let command = UserCace.init(rawValue: orderNumber) {
             switch command {
+                case .cellClickEvent:
+                    if let reuslt = dataStore?.data(command)?.fetch(ChildDataModel.self) {
+                        print(reuslt.message)
+                        print(reuslt.data)
+                    }
+                    break
                 default:
                     print("Router 커맨드 : \(command)")
                     break
             }
         }
     }
-    override func displayErorr(orderNumber: Int) {
+    override func displayErorr(orderNumber: Int, msg: String?) {
         if let command = UserCace.init(rawValue: orderNumber) {
             switch command {
                 default:
@@ -119,6 +126,7 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
             }
         }
     }
+    
     override func display(orderNumber: Int) {
         if let command = UserCace.init(rawValue: orderNumber) {
             switch command {
