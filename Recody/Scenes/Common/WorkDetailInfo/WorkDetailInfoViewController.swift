@@ -71,6 +71,10 @@ class WorkDetailInfoViewController: UIViewController, WorkDetailInfoDisplayLogic
 
     // @IBOutlet weak var nameTextField: UITextField!
 
+    @IBAction func tapBackButton(_ sender: UIButton) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     func doSomething() {
         let request = WorkDetailInfo.API.Request()
         interactor?.doSomething(request: request)

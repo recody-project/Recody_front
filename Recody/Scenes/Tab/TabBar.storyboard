@@ -37,10 +37,10 @@
             </objects>
             <point key="canvasLocation" x="259" y="-78"/>
         </scene>
-        <!--myPage-->
+        <!--myPageNavigation-->
         <scene sceneID="ncq-xa-Qqi">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyPage" referencedIdentifier="myPage" id="Cix-aH-EyG" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MyPage" referencedIdentifier="myPageNavigation" id="Cix-aH-EyG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="RYI-E9-VbA"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="riK-z3-6Ab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -60,7 +60,7 @@
         <!--recordNavigation-->
         <scene sceneID="v1D-zd-2Fr">
             <objects>
-                <viewControllerPlaceholder storyboardName="Record" referencedIdentifier="recordNavigation" id="9JG-Yd-4Qo" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MySearch" referencedIdentifier="recordNavigation" id="9JG-Yd-4Qo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="tabImage" id="jeR-a4-v1H"/>
                     <navigationItem key="navigationItem" id="uSd-vy-xRL"/>
                 </viewControllerPlaceholder>
