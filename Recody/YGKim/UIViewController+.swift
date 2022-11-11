@@ -13,6 +13,10 @@ protocol CommonVCType {
     var router: RouterType? { get }
 }
 class CommonVC: UIViewController, CommonVCType, PresentationLogicType {
+    func displayErorr(orderNumber: Int, msg: String?) {
+        
+    }
+    
     func display(orderNumber: Int) {
         
     }
@@ -21,9 +25,6 @@ class CommonVC: UIViewController, CommonVCType, PresentationLogicType {
         super.viewDidLoad()
     }
     func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-
-    }
-    func displayErorr(orderNumber: Int) {
 
     }
 }

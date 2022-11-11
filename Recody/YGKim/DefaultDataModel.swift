@@ -25,17 +25,31 @@ class DefaultDataModel: DefaultDataModelType {
             })
         }
     }
+    func stringValue(_ value:Any ) -> String{
+        return value as? String ?? ""
+    }
+    func intValue(_ value:Any ) -> Int{
+        return value as? Int ?? 0
+    }
+    func doubleValue(_ value:Any ) -> Double{
+        return value as? Double ?? 0.0
+    }
     func build(key: String, value: Any) {
 
     }
 }
 
 class ChildDataModel: DefaultDataModel {
-    var id: String = ""
-
+    var message:String = ""
+    var data = Dictionary<String,Any>()
     override func build(key: String, value: Any) {
-        if key == "id"{
-            self.id = value as? String ?? ""
+        if key == "message"{
+            self.message = stringValue(value)
+        }
+        if key == "data" {
+            if let temp = value as? Dictionary<String,Any> {
+                self.data = temp
+            }
         }
     }
 }
