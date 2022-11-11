@@ -41,6 +41,7 @@ protocol DataStoreType {
 }
 
 class SimpleInteractor: InteractorType, DataStoreType {
+    
     var presenter: PresenterType
     var worker: WorkerType
 
@@ -74,9 +75,8 @@ class SimpleInteractor: InteractorType, DataStoreType {
             self.presenter.responseSuccess(orderNumber: orderNumber, dataStore: nil)
         }
     }
-    func failed(orderNumber: Int) {
-        // Presenter에게 알리기 - >orderNumber
-        self.presenter.responseErorr(orderNumber: orderNumber)
+    func failed(orderNumber: Int, msg: String?) {
+        self.presenter.responseErorr(orderNumber: orderNumber,msg:msg)
     }
     func drop(orderNumber: Int) {
         self.presenter.drop(orderNumber: orderNumber)

@@ -12,7 +12,7 @@
         <!--Insight View Controller-->
         <scene sceneID="Pcc-s9-yC5">
             <objects>
-                <viewController id="nTz-69-sS2" customClass="InsightViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="insight" id="nTz-69-sS2" customClass="InsightViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="01a-Ah-r4F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

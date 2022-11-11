@@ -30,8 +30,8 @@
    개별 작업코드를 Int로 저장 
    설명 : 이 Int 값은 1)에서 해당 작업을 케이스 처리하기위해 필요
    
-   3) WorkerType.send(param,header)
-   Api 호출후 1)로 결과를 반환 
+   3) WorkerType.api(_) 
+   Api 서비스 호출 사용이 아주 간편하게 개편되었습니다. 
    
    4)SimpleWoker
    WorkerType의 샘플입니다. 아직 사용하지마세요!
@@ -57,12 +57,16 @@
 # InteractorType
  작업중
  1) View에서 모든 Action 이벤트는 InteractorType의 Just() 함수를 호출하도록 할예정입니다.
+ 2) just 함수를 호출하면 worker를 반환하여 api(_)를 호출하거나 drop()을 호출 하세요 drop은 따로 작업없이 바로 presneter로 이벤트를 통과시킵니다. 
+ 3) Just 로 전달된 orderNumber 는 presneter 의 delegate를 통해 display-로시작하는 함수들로 반환됩니다.
   
 # BusinessLogicType
- 작업중
- 이 부분은 화면별로 별도 상속(Enum)으로 정의 하도록 개발할예정입니다. ( 통합하고 싶은데 너무 커져서 안될것같습니다. )
-
+ 이 프로토콜은 구현이 필요없습니다. (UseCase와 통합개념) 
 # BasePresenter
-  미구현
+    Delegate 형태로 개발되었습니다. 
 # UseCaseType
-  미구현
+  1) VC 별로 하위 Enum 클래스 (Int,OrderType 상속필수) 를 만들어 관리할 작업 단위를 작성하세요.
+  2) 탭을 포함한 인터렉션 이벤트를 갖는 View에 tag로 UseCase의 RawValue를 넣어주세요.
+  3) 클릭이벤트를 연결합니다. 
+  4) 클릭이벤트를 처리하는 곳에서 전달된 Tag 값을 UseCase로 변환하고 interactor.just 로 해당 값을 전달합니다.
+  

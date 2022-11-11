@@ -10,14 +10,13 @@ import Foundation
 protocol WorkerDelegate {
     func drop( orderNumber: Int)
     func complete( orderNumber: Int, result: WorkResult)
-    func failed( orderNumber: Int)
+    func failed( orderNumber: Int, msg: String?)
 }
 protocol WorkerType {
     var delegate: WorkerDelegate? { get set }
     func recept(_ order: Int) -> Self
     func drop()
-    func send(_ param: [String: String] )
-    func send(_ param: [String: String], _ header: [String: String])
+    func api(_ command: ApiCommand )
 }
 
 class SimpleWoker: WorkerType {
@@ -28,24 +27,12 @@ class SimpleWoker: WorkerType {
         return self
     }
 
-    func send(_ param: [String: String]) {
-        // API 호출
-        // 완료후
-        var data: [String: Any]?
-        if let dic = data {
-            self.delegate?.complete(orderNumber: self.order, result: WorkResult(dic))
-        }
-        self.delegate?.failed(orderNumber: self.order)
-    }
-
-    func send(_ param: [String: String], _ header: [String: String]) {
-        // API 호출
-        // 완료후
-        var data: [String: Any]?
-        if let dic = data {
-            self.delegate?.complete(orderNumber: self.order, result: WorkResult(dic))
-        }
-        self.delegate?.failed(orderNumber: self.order)
+    func api(_ command: ApiCommand ) {
+        ApiClient().request(command: command, { result in
+            self.delegate?.complete(orderNumber: self.order, result: result)
+        }, { msg in
+            self.delegate?.failed(orderNumber: self.order, msg: msg)
+        })
     }
     func drop() {
         self.delegate?.drop(orderNumber: self.order)
