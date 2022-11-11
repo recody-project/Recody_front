@@ -11,6 +11,23 @@
     </dependencies>
     <scenes>
         <!--마이페이지-->
+        <scene sceneID="aYM-kr-mal">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tqa-Ar-FDh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="myPageNavigation" navigationBarHidden="YES" id="MKD-qp-9Mx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="myPageImage" id="s4o-hf-5hf"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YJK-cI-3x3">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Yah-Fa-CCg"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-562" y="75"/>
+        </scene>
+        <!--My Page View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="myPage" id="Y6W-OH-hqX" customClass="MyPageViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
@@ -175,7 +192,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="XC2-5W-uBx" secondAttribute="bottom" id="yzZ-fe-dxC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="마이페이지" image="myPageImage" id="s4o-hf-5hf"/>
+                    <navigationItem key="navigationItem" id="bzJ-TA-3pj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

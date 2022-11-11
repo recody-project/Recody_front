@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YAX-X5-jUA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,15 +9,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Search View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="ncU-os-2kF">
+            <objects>
+                <navigationController storyboardIdentifier="recordNavigation" hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="YAX-X5-jUA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bVL-ag-O9W">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="MaN-Lt-sku"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ly-7i-iIU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-532" y="107"/>
+        </scene>
+        <!--기록추가-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="MySearchViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="record" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="MySearchViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="P1r-c6-Dbs">
+                            <searchBar contentMode="scaleToFill" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1r-c6-Dbs">
                                 <rect key="frame" x="20" y="50" width="374" height="51"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="search"/>
                                 <connections>
@@ -49,13 +64,13 @@
                                 <rect key="frame" x="20" y="117" width="86" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDQ-Tf-0zp">
-                                        <rect key="frame" x="12" y="7.5" width="42" height="15"/>
+                                        <rect key="frame" x="20" y="7.5" width="42" height="15"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="12"/>
                                         <color key="textColor" red="0.31764705879999999" green="0.27058823529999998" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bCl-jb-VQK">
-                                        <rect key="frame" x="66" y="12" width="8" height="6.5"/>
+                                        <rect key="frame" x="74" y="12" width="8" height="6.5"/>
                                         <color key="tintColor" red="0.31764705879999999" green="0.27058823529999998" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="12" id="PIN-IP-a8R"/>
@@ -69,7 +84,7 @@
                                     <constraint firstItem="eDQ-Tf-0zp" firstAttribute="centerY" secondItem="juw-Sx-1uE" secondAttribute="centerY" id="3gx-b7-nLQ"/>
                                     <constraint firstAttribute="height" constant="30" id="4x1-e7-GQP"/>
                                     <constraint firstItem="bCl-jb-VQK" firstAttribute="leading" secondItem="eDQ-Tf-0zp" secondAttribute="trailing" constant="12" id="7UL-rI-LEZ"/>
-                                    <constraint firstItem="eDQ-Tf-0zp" firstAttribute="leading" secondItem="juw-Sx-1uE" secondAttribute="leading" constant="12" id="A10-fj-Cj8"/>
+                                    <constraint firstItem="eDQ-Tf-0zp" firstAttribute="leading" secondItem="juw-Sx-1uE" secondAttribute="leading" constant="20" id="A10-fj-Cj8"/>
                                     <constraint firstItem="bCl-jb-VQK" firstAttribute="centerY" secondItem="juw-Sx-1uE" secondAttribute="centerY" id="Z2X-Kt-gew"/>
                                     <constraint firstAttribute="width" constant="86" id="vn2-GH-pdc"/>
                                 </constraints>
@@ -146,6 +161,9 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bxH-X9-ZXS" secondAttribute="trailing" constant="20" id="yF5-KB-9r7"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="기록추가" image="recordImage" id="2ud-MP-5CE"/>
+                    <navigationItem key="navigationItem" id="ger-La-SxF"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="categoryView" destination="juw-Sx-1uE" id="XSt-nj-bxF"/>
                         <outlet property="genreView" destination="v7f-m6-spS" id="i6i-Md-v9a"/>
@@ -160,6 +178,7 @@
     </scenes>
     <resources>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
+        <image name="recordImage" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

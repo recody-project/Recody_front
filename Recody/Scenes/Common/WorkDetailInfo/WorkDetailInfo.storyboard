@@ -38,6 +38,9 @@
                                                         <buttonConfiguration key="configuration" style="plain">
                                                             <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="large"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="tapBackButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jqA-wB-VfO"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.72941176470588232" green="0.65490196078431373" blue="0.58823529411764708" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
