@@ -18,7 +18,7 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
     }
     var viewModel = InsiteViewModel()
     var tableList : [TableCellViewModel] = [TableCellViewModel]()
-    
+    //화면내의 모든 인터렉션 (탭,스와이프, 롱탭, .... 의 수만큼 작성필요)
     enum UserCace : Int,OrderType{
         case nextMonth = 101
         case previousMonth = 102
@@ -166,6 +166,7 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
                                 (InsightShareCell.Xib,
                                  InsightShareCell.Name)]
         self.tableView.register(cells:registerCellList)
+        // 현재를 데이터가 없어서 Dictionary형태로 제공되고있지만 추후에는 VC의 Viewmodel을 전달하도록 할 계획입니다.
         tableList.append(TableCellViewModel(type: InsiteCellType.statistics.rawValue,
                                             data: ["nickName":"닉네임",
                                                    "month":"9",
@@ -201,6 +202,7 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
                                             data: ["genre":"영화",
                                                    "workTitle":"1987"]))
         tableList.append(TableCellViewModel(type: InsiteCellType.share.rawValue, data: nil))
+        // Padding 값
         tableView.contentInset.top = 10.0
         tableView.contentInset.bottom = 20.0
         tableView.reloadData()
@@ -209,6 +211,7 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
 
 extension InsightViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // visible 값에따라 숨기고 감추고가 가능합니다.
         let list = tableList.filter{ $0.visible }.count
         return list
     }
@@ -218,7 +221,9 @@ extension InsightViewController : UITableViewDelegate,UITableViewDataSource {
         
         guard let type = InsiteCellType(rawValue: list[indexPath.row].type) else { fatalError("CellType Int Out Of Bounds Error") }
         var mCell = tableView.dequeueReusableCell(withIdentifier: type.name) as? UITableViewCell & ObservingTableCell
+            // Viewmodel 주입
             mCell?.viewmodel = list[indexPath.row]
+            // Cell 내의 클릭이벤트 구독 -> eventFromTableCell() 함수로전달
             mCell?.eventDelegate = self
         
         if mCell != nil { cell = mCell! }
@@ -227,6 +232,7 @@ extension InsightViewController : UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // Row 별로 다양한 높이를 제공하기한 코드
         let list = self.tableList.filter{ $0.visible }
         return list[indexPath.row].viewHeight
 //        return list[indexPath.row].viewHeight + 20

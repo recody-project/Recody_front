@@ -70,3 +70,17 @@
   3) 클릭이벤트를 연결합니다. 
   4) 클릭이벤트를 처리하는 곳에서 전달된 Tag 값을 UseCase로 변환하고 interactor.just 로 해당 값을 전달합니다.
   
+#TableCellViewModel + 
+기본적으로 한 TableView의 다수의 UITableViewCell을 사용하기위해 공통 인수를 제공하도록 확장된 코드들로 구성되어있습니다.
+
+1) ObservingTableCell <--상속--> UITableViewCell
+기능 1) TableCellViewModel이 업데이트 될떄마다 UI를 업데이트 합니다.
+기능 2) ObservingTableCellEvent 에게 인터랙션 이벤트를 전달 합니다. ( 이 delegate는 VC로 전달 됩니다. )
+기능 3) binding 함수로 데이터를 전달하고 ChangeData 에서 UI를 갱신합니다.
+기능 4) sendEventToController(sender : UITapGestureRecognizer) 클릭이벤트를 VC로 전달하기위한 공통함수 입니다. 
+
+2) IdentifiableTableCell 
+기능 ) UITableViewCell을 확장하여 nib (UINib) 과 Name(class 명)을 제공 합니다 
+
+3) UITableView.register(cells : [ (UINib,String) ]) 
+기능 2)로 확장된 UITableViewCell을 Array로 다량 등록하기위해 확장한 기능함수 입니다.
