@@ -14,11 +14,11 @@ class InsightShareCell: UITableViewCell,ObservingTableCell {
     var viewmodel:TableCellViewModel?{
         didSet{
             viewmodel?.delegate = self
-            chageData()
+            changeData()
         }
     }
     var eventDelegate: ObservingTableCellEvent?
-    func chageData() {
+    func changeData() {
     }
     func binding(data: Dictionary<String, Any>) {
         
@@ -38,7 +38,7 @@ class InsightShareCell: UITableViewCell,ObservingTableCell {
         btnShare.setTitleColor(UIColor.init(hexString: "#FFFFFF"), for: .normal)
         btnShare.backgroundColor = UIColor.init(hexString: "#666FC1")
         btnShare.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendEventToController(sender: ))))
-        chageData()
+        changeData()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

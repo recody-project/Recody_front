@@ -22,11 +22,11 @@ class InsightMyRankCell: UITableViewCell,ObservingTableCell {
     var viewmodel:TableCellViewModel?{
         didSet{
             viewmodel?.delegate = self
-            chageData()
+            changeData()
         }
     }
     var eventDelegate: ObservingTableCellEvent?
-    func chageData() {
+    func changeData() {
         guard let data = viewmodel?.data else { return }
         binding(data: data)
     }
@@ -72,7 +72,7 @@ class InsightMyRankCell: UITableViewCell,ObservingTableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        chageData()
+        changeData()
         let chart = CombinChart()
          self.chartView.addSubview(chart)
          chart.snp.makeConstraints({ make in
