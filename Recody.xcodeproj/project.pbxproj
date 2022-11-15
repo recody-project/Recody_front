@@ -26,6 +26,7 @@
 		20DBFB0529029366009CEF76 /* RoutingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFAFE29029366009CEF76 /* RoutingLogic.swift */; };
 		20DBFB0629029366009CEF76 /* WorkerType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFAFF29029366009CEF76 /* WorkerType+.swift */; };
 		20DBFB0729029366009CEF76 /* RouterType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFB0029029366009CEF76 /* RouterType+.swift */; };
+		3A13C9A3291F0A7700DC0756 /* MySearchViewController_ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A13C9A2291F0A7700DC0756 /* MySearchViewController_ex.swift */; };
 		3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */; };
 		3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346028D01E0F00C417CB /* UIScrollView+.swift */; };
 		3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */; };
@@ -179,6 +180,7 @@
 		20DBFAFE29029366009CEF76 /* RoutingLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingLogic.swift; sourceTree = "<group>"; };
 		20DBFAFF29029366009CEF76 /* WorkerType+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkerType+.swift"; sourceTree = "<group>"; };
 		20DBFB0029029366009CEF76 /* RouterType+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RouterType+.swift"; sourceTree = "<group>"; };
+		3A13C9A2291F0A7700DC0756 /* MySearchViewController_ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchViewController_ex.swift; sourceTree = "<group>"; };
 		3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditGenreViewController+.swift"; sourceTree = "<group>"; };
 		3A20346028D01E0F00C417CB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -666,6 +668,7 @@
 				3AB1432128F76FBC0041C9CC /* MySearchTableViewCell.swift */,
 				3AB1432228F76FBC0041C9CC /* MySearchTableViewCell.xib */,
 				3AB1432528F88F860041C9CC /* MySearchViewController+.swift */,
+				3A13C9A2291F0A7700DC0756 /* MySearchViewController_ex.swift */,
 			);
 			path = "MySearch+";
 			sourceTree = "<group>";
@@ -1037,6 +1040,7 @@
 				3AB1432628F88F860041C9CC /* MySearchViewController+.swift in Sources */,
 				3A6AE8902918903700A9F520 /* InsightViewController.swift in Sources */,
 				3AEDB70C28DE07FC00C3DB8D /* PreReviewWorker.swift in Sources */,
+				3A13C9A3291F0A7700DC0756 /* MySearchViewController_ex.swift in Sources */,
 				2015B3072918DF1700DB725D /* InsightCellEvent.swift in Sources */,
 				3A8F863828C6277D0028B45C /* EditGenreModels.swift in Sources */,
 				3A6AE8E02918910300A9F520 /* InsightStatisticsGraphCell.swift in Sources */,

@@ -51,4 +51,10 @@ extension MySearchViewController: UISearchBarDelegate {
         searchBar.text = ""
         searchBar.resignFirstResponder()
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // 클릭시 히스토리 업데이트 필요 (이미 있는 기록이면 삭제 후 추가
+        // 히스토리 view 초과시 삭제할건지 스크롤인지 -> 문의하기
+        // 마지막에 꼭 reload 하기
+    }
 }
