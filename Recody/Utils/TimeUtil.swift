@@ -8,17 +8,11 @@
 import Foundation
 
 class TimeUtil {
-//    // 1. current month (yaer, month, day)
-//    static func nowDateComponents() -> DateComponents {
-//        return Calendar.current.dateComponents([.year,.month,.day,.weekday,.weekOfMonth], from: Date())
-//    }
-//    // 2. 첫주 시작 요일
-//    func month(){
-//        let year = 2022
-//        let month = 10
-//        let calendar = Calendar(identifier: .gregorian)
-//        calendar.dateComponents([.year,.month,.weekday], from: DateComponents(calendar: calendar,year: year,month: month).date!)
-//    }
+    // 오늘 연 월 일 날짜를 제공
+    static func nowDateComponent() ->  DateComponents {
+        let date = Calendar.current.dateComponents([.year,.month,.day], from: Date())
+        return date
+    }
     // 필요한 정보
     // 1. 첫주 시작 요일 [ 일,월,화,수,목.금,토 ]
     // 일 = 1 / 토 = 7
@@ -31,18 +25,64 @@ class TimeUtil {
           fatalError("month out of bounds")
         }
     }
-    // 2. 주의 수
-    static func weekCountOfMonth( _ year: Int, _ month: Int) {
+    //첫주에 몇칸 차지하는지 (일-토 기준) / (1 일경우 토요일만 차지)
+    static func firstWeekDaysCount( _ year: Int, _ month: Int) -> Int {
+        let firstWeekDaysCount = 8 - TimeUtil.startWeekDayCount(year, month)
+        return firstWeekDaysCount
+    }
+    //마지막주에 몇칸 차지하는지 (일-토 기준) / (1 일경우 일요일만 차지)
+    static func lastWeekDayCount( _ year: Int, _ month: Int) -> Int {
+        let startWeekDayCount = TimeUtil.startWeekDayCount(year, month) //첫주의 시작일 7
+        var lastDayCount = TimeUtil.lastDayCount(year, month) // 총일수 31
+        let firstWeekDaysCount = 8 - startWeekDayCount // 첫주에 몇칸을 차지하시는지
+        let lastWeekDaysCount = (lastDayCount - firstWeekDaysCount) % 7 // 2
+        return lastWeekDaysCount
+    }
+    // 2. 주의 수 -> 검증완료
+    static func weekCountOfMonth( _ year: Int, _ month: Int) -> Int {
+        if month > 0 && month < 13 {
+            let startWeekDayCount = TimeUtil.startWeekDayCount(year, month) //첫주의 시작일 7
+            var lastDayCount = TimeUtil.lastDayCount(year, month) // 총일수 31
+            let firstWeekDaysCount = 8 - startWeekDayCount // 첫주에 몇칸을 차지하시는지
+            let lastWeekDaysCount = (lastDayCount - firstWeekDaysCount) % 7 // 2
+            var weekCount = 1
+            if lastWeekDaysCount != 0 {
+                weekCount += (lastDayCount - (firstWeekDaysCount + lastWeekDaysCount))/7
+                weekCount += 1
+            }else {
+                weekCount += (lastDayCount - (firstWeekDaysCount))/7
+            }
+            return weekCount
+        }else {
+            fatalError("month out of bounds")
+        }
     }
     // 3. 마지막 일
-    static func lastDayCount( _ year: Int, _ month: Int) {
-//        if month > 12 || month < 1 { fatalError("month out of bounds") }
-//        let calendar = Calendar(identifier: .gregorian)
-//        let nextMonthInt = month == 12 ? 1 : month + 1
-//        let nextMonth = DateComponents(calendar: calendar,year:  nextMonthInt == 1 ? year + 1 : year ,month: nextMonthInt).date
-//        let endOfMonth = calendar.date(byAdding: .day, value: -1, to: nextMonth!)
-//        let date
+    static func lastDayCount( _ year: Int, _ month: Int) -> Int{
+        if month > 0 && month < 13 {
+            let dayCounts = [ -1 ,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
+            if checkLeapYear(year) {
+                if month == 2 {
+                    return dayCounts[month] + 1
+                }
+            }
+            return dayCounts[month]
+        } else {
+            fatalError("month out of bounds")
+        }
     }
-    // 기능 합수
-    // 1. 달 인자를 받아 해당 캘린더 정보를 뽑음
+    // 윤년 검사로직 -> 검증완료
+    static func checkLeapYear(_ year:Int) -> Bool{
+        var isLeapYear = true
+        if year % 4 != 0 {
+            isLeapYear = false
+        }
+        if isLeapYear && year % 100 == 0 {
+            isLeapYear = false
+        }
+        if !isLeapYear && year % 400 == 0 {
+            isLeapYear = true
+        }
+        return isLeapYear
+    }
 }

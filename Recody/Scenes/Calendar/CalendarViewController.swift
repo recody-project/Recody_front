@@ -13,6 +13,12 @@ class CalendarViewController : CommonVC, ObservingTableCellEvent {
     var viewModel = CalendarViewModel()
     var tableList : [TableCellViewModel] = [TableCellViewModel]()
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var lbYear: UILabel!
+    @IBOutlet weak var lbMonth: UILabel!
+    @IBOutlet weak var btnNextMonth: UIButton!
+    @IBOutlet weak var btnPreviousMonth: UIButton!
+    
     enum CalendarTableCellType: Int {
         case week = 1
         var name: String {
@@ -21,12 +27,27 @@ class CalendarViewController : CommonVC, ObservingTableCellEvent {
     }
     enum UseCase: Int,OrderType {
         case some = 100
+        case nextMonth = 101 //다음달
+        case previousMonth = 102 //이전달
+        case download = 103 //다운로드
+        case setting = 104 //셋팅
         var number: Int {
             return self.rawValue
         }
     }
-    override func display(orderNumber: Int) {
-        
+    override func display(orderNumber: Int) { //  self.interactor?.just(useCase).drop() 시 받는콜백
+        guard let useCase = UseCase(rawValue: orderNumber) else { return }
+        switch useCase {
+            case .nextMonth:
+                self.viewModel.nextMonth()
+                break
+            case .previousMonth:
+                self.viewModel.previousMonth()
+                break
+            default:
+                break
+        }
+        update()
     }
     override func displayErorr(orderNumber: Int, msg: String?) {
         
@@ -41,12 +62,31 @@ class CalendarViewController : CommonVC, ObservingTableCellEvent {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
-        
-        self.router?.pushViewController(RoutingLogic.Navigation.home, dataStore: nil)
+        self.navigationController?.isNavigationBarHidden = true
+//        self.router?.pushViewController(RoutingLogic.Navigation.home, dataStore: nil)
     }
+    func setup(){
+        btnNextMonth.setTitle("", for: .normal)
+        btnPreviousMonth.setTitle("", for: .normal)
+        btnNextMonth.tag = UseCase.nextMonth.number
+        btnPreviousMonth.tag = UseCase.previousMonth.number
+        btnNextMonth.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
+        btnPreviousMonth.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
+    }
+    @objc func clickEvent(_ sender: UITapGestureRecognizer){
+        guard let tag = sender.view?.tag else { return }
+        guard let useCase = UseCase(rawValue: tag) else { print("clickEvent : 등록안된 TAG = \(tag)"); return }
+        switch useCase {
+            default:
+                self.interactor?.just(useCase).drop()
+                break
+        }
+    }
+  
     func setUpTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.showsVerticalScrollIndicator = false
         let registerCellList = [(CalendarWeekCell.Xib,
                                  CalendarWeekCell.Name)]
         tableView.register(cells: registerCellList)
@@ -59,6 +99,17 @@ class CalendarViewController : CommonVC, ObservingTableCellEvent {
         tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
         tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
         
+        tableView.reloadData()
+    }
+    
+    func update(){
+        lbYear.text = "\(viewModel.currentYear)"
+        lbMonth.text = "\(viewModel.currentMonth)"
+        tableList.removeAll()
+        for index in 1...viewModel.weekCount {
+            
+            tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
+        }
         tableView.reloadData()
     }
 }
@@ -94,7 +145,68 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
 }
 
 class CalendarViewModel {
-    
+    var currentYear = 0
+    var currentMonth = 0
+    var currentDay = 0
+    //오늘 일수
+    var days = [Int]()
+    var startWeekDay = 0
+    // 첫날이 무슨요일인지
+    var lastDayCount = 0
+    // 기본값 30 / 연 월이 선택되고 결정됨
+    var weekCount = 0
+    // 주의 수
+    var recordImgs = [Int:String]()
+    // key 날의수
+    // value 해당 날짜에 가장 최근에 기록한 작품의 포스터 이미지 url 값
+    var isStartSunday = true
+    //첫주가 일요일로 시작 = true
+    //첫주가 월요일로 시작 = false
+    var lastWeekDayCount = 0
+    //마지막 주 일수
+    init() {
+        let component = TimeUtil.nowDateComponent()
+        self.currentYear = component.year!
+        self.currentMonth = component.month!
+        self.currentDay = component.day!
+        updateState()
+    }
+    func nextMonth(){
+        if self.currentMonth == 12 {
+            self.currentMonth = 1
+            self.currentYear += 1
+        }else {
+            self.currentMonth += 1
+        }
+        updateState()
+    }
+    func previousMonth(){
+        if self.currentMonth == 1 {
+            self.currentMonth = 12
+            self.currentYear -= 1
+        }else {
+            self.currentMonth -= 1
+        }
+        updateState()
+    }
+    func updateState(){
+        self.lastDayCount = TimeUtil.lastDayCount(currentYear, currentMonth)
+        self.startWeekDay = TimeUtil.startWeekDayCount(currentYear, currentMonth)
+        self.weekCount = TimeUtil.weekCountOfMonth(currentYear, currentMonth)
+        self.lastWeekDayCount = TimeUtil.lastWeekDayCount(currentYear, currentMonth)
+        self.days = [Int]()
+        for index in 1...self.lastDayCount {
+            days.append(index)
+        }
+        print(self.currentYear)
+        print(self.currentMonth)
+        print(self.currentDay)
+        print(lastDayCount)
+        print(startWeekDay)
+        print(weekCount)
+        print(lastWeekDayCount)
+        print(days)
+    }
 }
 
 

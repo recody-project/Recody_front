@@ -255,7 +255,7 @@
                 <outlet property="viewDay6" destination="OK7-7e-OJe" id="9hH-nU-GGG"/>
                 <outlet property="viewDay7" destination="wVY-4n-gqX" id="Pxd-YY-uhS"/>
             </connections>
-            <point key="canvasLocation" x="83" y="0.0"/>
+            <point key="canvasLocation" x="81.538461538461533" y="-0.35545023696682465"/>
         </tableViewCell>
     </objects>
     <resources>
