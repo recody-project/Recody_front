@@ -18,11 +18,11 @@ class InsightHallOfFameCell: UITableViewCell,ObservingTableCell {
     var viewmodel:TableCellViewModel?{
         didSet{
             viewmodel?.delegate = self
-            chageData()
+            changeData()
         }
     }
     var eventDelegate: ObservingTableCellEvent?
-    func chageData() {
+    func changeData() {
         guard let data = viewmodel?.data else { return }
         binding(data: data)
     }
@@ -40,7 +40,7 @@ class InsightHallOfFameCell: UITableViewCell,ObservingTableCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        chageData()
+        changeData()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

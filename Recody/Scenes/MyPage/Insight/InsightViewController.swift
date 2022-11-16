@@ -141,8 +141,7 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
             }
         }
     }
-    
-    func setUpTableView(){
+    func setUpTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         let registerCellList = [(InsightStatisticsCell.Xib,
