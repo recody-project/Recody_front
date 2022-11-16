@@ -17,11 +17,11 @@ class InsightAllUserMostAppreciationCell: UITableViewCell,ObservingTableCell {
     var viewmodel:TableCellViewModel?{
         didSet{
             viewmodel?.delegate = self
-            chageData()
+            changeData()
         }
     }
     var eventDelegate: ObservingTableCellEvent?
-    func chageData() {
+    func changeData() {
         guard let data = viewmodel?.data else { return }
         binding(data: data)
     }
@@ -42,7 +42,7 @@ class InsightAllUserMostAppreciationCell: UITableViewCell,ObservingTableCell {
         lbGenre.layer.cornerRadius = lbGenre.frame.height/2
         btnDetail.isUserInteractionEnabled = true
         btnDetail.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendEventToController(sender:))))
-        chageData()
+        changeData()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

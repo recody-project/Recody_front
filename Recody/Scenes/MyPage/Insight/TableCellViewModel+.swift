@@ -17,34 +17,34 @@ class TableCellViewModel {
     var visible : Bool = true
     var delegate : TableCellDelegate? {
         didSet {
-            delegate?.chageData()
+            delegate?.changeData()
         }
     }
     var viewHeight : Double = 50.0
     var data : Dictionary<String,Any>? {
         willSet {
-            delegate?.chageData()
+            delegate?.changeData()
         }
     }
 }
 protocol TableCellDelegate {
-    func chageData()
+    func changeData()
 }
-protocol ObservingTableCell : TableCellDelegate {
-    var viewmodel : TableCellViewModel? { get set }
-    var cellView : UIView? { get set }
-    var eventDelegate : ObservingTableCellEvent? { get set }
-    func binding(data : Dictionary<String,Any>)
-    func sendEventToController(sender : UITapGestureRecognizer)
+protocol ObservingTableCell: TableCellDelegate {
+    var viewmodel: TableCellViewModel? { get set }
+    var cellView: UIView? { get set }
+    var eventDelegate: ObservingTableCellEvent? { get set }
+    func binding(data: Dictionary<String, Any>)
+    func sendEventToController(sender: UITapGestureRecognizer)
 }
 protocol ObservingTableCellEvent {
-    func eventFromTableCell(code : Int)
+    func eventFromTableCell(code: Int)
 }
 protocol IdentifiableTableCell {
-    static var Name : String { get }
-    static var Xib : UINib { get }
+    static var Name: String { get }
+    static var Xib: UINib { get }
 }
-extension UITableViewCell : IdentifiableTableCell {
+extension UITableViewCell: IdentifiableTableCell {
     static var Name: String {
         return String(describing: Self.self)
     }
@@ -53,7 +53,7 @@ extension UITableViewCell : IdentifiableTableCell {
     }
 }
 extension UITableView {
-    func register(cells : [(UINib,String)]){
+    func register(cells: [(UINib, String)]) {
         cells.forEach({ cell in
             self.register(cell.0, forCellReuseIdentifier: cell.1)
         })

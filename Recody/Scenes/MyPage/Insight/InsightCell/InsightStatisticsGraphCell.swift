@@ -19,10 +19,10 @@ class InsightStatisticsGraphCell: UITableViewCell,ObservingTableCell {
     var viewmodel:TableCellViewModel?{
         didSet{
             viewmodel?.delegate = self
-            chageData()
+            changeData()
         }
     }
-    func chageData() {
+    func changeData() {
         guard let data = viewmodel?.data else { return }
         binding(data: data)
     }
@@ -46,7 +46,7 @@ class InsightStatisticsGraphCell: UITableViewCell,ObservingTableCell {
             $0.edges.equalToSuperview()
         })
         setupLabels()
-        chageData()
+        changeData()
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
