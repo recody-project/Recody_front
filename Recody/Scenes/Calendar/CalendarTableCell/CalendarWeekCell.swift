@@ -37,17 +37,62 @@ class CalendarWeekCell: UITableViewCell,ObservingTableCell {
     @IBOutlet weak var imgWork5: UIImageView!
     @IBOutlet weak var imgWork6: UIImageView!
     @IBOutlet weak var imgWork7: UIImageView!
-    
-    var weekCount: Int = -1
-    var startDayCount: Int = 1
-    var endDayCount: Int = 7
     var days = [1,2,3,4,5,6,7]
     var imgs = [1:"",2:"",3:"",4:"",5:"",6:"",7:""]
     var eventDelegate: ObservingTableCellEvent?
+    var month = 0
+    var year = 0
     
     func binding(data: Dictionary<String, Any>) {
-        guard let data = viewmodel?.data else { return }
-        changeData()
+        if let week = data["week"] as? [Int] {
+            self.days = week
+        }
+        if let month = data["month"] as? Int,
+           let year = data["year"] as? Int {
+            self.month = month
+            self.year = year
+        }
+        //오늘날짜를 포함했는지 검사하기위한 플래그
+        var isContainToday = false
+        var containToday = 0
+        if let nowYear = TimeUtil.nowDateComponent().year,
+           let nowMonth = TimeUtil.nowDateComponent().month,
+           let nowDay = TimeUtil.nowDateComponent().day {
+            if year == nowYear && month == nowMonth {
+                if self.days.contains(nowDay) {
+                    isContainToday = true
+                    containToday = nowDay
+                }
+            }
+        }
+        
+        let imgWorks = [imgWork1,imgWork2,imgWork3,imgWork4,imgWork5,imgWork6,imgWork7]
+        for (index,label) in [lbDayCount1, lbDayCount2, lbDayCount3, lbDayCount4, lbDayCount5, lbDayCount6, lbDayCount7].enumerated() {
+            label?.text = "\(days[index])"
+            label?.clipsToBounds = true
+            if days[index] == -1 {
+                label?.isHidden = true
+                imgWorks[index]?.isHidden = false
+            }else {
+                label?.isHidden = false
+                imgWorks[index]?.isHidden = false
+            }
+            if days[index] == containToday {
+                label?.layer.cornerRadius = 11
+                label?.backgroundColor = UIColor(hexString: "#666FC1")
+            }else {
+                label?.layer.cornerRadius = 0
+                label?.backgroundColor = .clear
+            }
+        }
+        for (index,imgSource) in self.imgs.enumerated() {
+            if imgSource.value == "" {
+                imgWorks[index]?.isHidden = true
+            } else {
+                imgWorks[index]?.isHidden = false
+            }
+        }
+        settingClick()
     }
     @objc func sendEventToController(sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
@@ -55,15 +100,15 @@ class CalendarWeekCell: UITableViewCell,ObservingTableCell {
         }
     }
     func changeData() {
-        for (index,label) in [lbDayCount1, lbDayCount2, lbDayCount3, lbDayCount4, lbDayCount5, lbDayCount6, lbDayCount7].enumerated() {
-            label?.text = "\(days[index])"
-        }
-        settingClick()
+        guard let data = viewmodel?.data else { return }
+        binding(data: data)
     }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    // 날짜가 유효값일때만 액션 이벤트를 등록한다.
+    // 유효하지 않을면 (-1) 액션 이벤트를 해제한다.
     func settingClick(){
         for (index,view) in [viewDay1, viewDay2, viewDay3, viewDay4, viewDay5, viewDay6, viewDay7].enumerated(){
             if days[index] > 0 {

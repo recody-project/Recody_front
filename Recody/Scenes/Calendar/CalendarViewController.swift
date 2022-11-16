@@ -57,13 +57,15 @@ class CalendarViewController : CommonVC, ObservingTableCellEvent {
     }
     //테이블 셀 클릭이벤트
     func eventFromTableCell(code: Int) {
-        
+        print("cell Click \(code)")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
+        setup()
         self.navigationController?.isNavigationBarHidden = true
 //        self.router?.pushViewController(RoutingLogic.Navigation.home, dataStore: nil)
+        update()
     }
     func setup(){
         btnNextMonth.setTitle("", for: .normal)
@@ -90,26 +92,27 @@ class CalendarViewController : CommonVC, ObservingTableCellEvent {
         let registerCellList = [(CalendarWeekCell.Xib,
                                  CalendarWeekCell.Name)]
         tableView.register(cells: registerCellList)
-        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
-        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
-        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
-        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
-        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
-        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
-        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
-        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
-        
+//        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
+//        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
+//        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
+//        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
+//        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
+//        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
+//        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
+//        tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
+//
         tableView.reloadData()
     }
     
     func update(){
-        lbYear.text = "\(viewModel.currentYear)"
-        lbMonth.text = "\(viewModel.currentMonth)"
+        lbYear.text = "\(viewModel.selectYear)"
+        lbMonth.text = "\(viewModel.selectMonth)"
         tableList.removeAll()
-        for index in 1...viewModel.weekCount {
-            
-            tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: nil))
-        }
+        viewModel.weeks.forEach({ week in
+            tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: ["week":week,
+                                                                                                  "month":viewModel.selectMonth,
+                                                                                                  "year":viewModel.selectYear]))
+        })
         tableView.reloadData()
     }
 }
@@ -145,11 +148,11 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
 }
 
 class CalendarViewModel {
-    var currentYear = 0
-    var currentMonth = 0
-    var currentDay = 0
-    //오늘 일수
-    var days = [Int]()
+    var selectYear = 0
+    //선택된 년도
+    var selectMonth = 0
+    //선택된 달
+    var weeks = [[Int]]()
     var startWeekDay = 0
     // 첫날이 무슨요일인지
     var lastDayCount = 0
@@ -166,46 +169,68 @@ class CalendarViewModel {
     //마지막 주 일수
     init() {
         let component = TimeUtil.nowDateComponent()
-        self.currentYear = component.year!
-        self.currentMonth = component.month!
-        self.currentDay = component.day!
+        self.selectYear = component.year!
+        self.selectMonth = component.month!
         updateState()
     }
     func nextMonth(){
-        if self.currentMonth == 12 {
-            self.currentMonth = 1
-            self.currentYear += 1
+        if self.selectMonth == 12 {
+            self.selectMonth = 1
+            self.selectYear += 1
         }else {
-            self.currentMonth += 1
+            self.selectMonth += 1
         }
+        print("nextMonth")
+        print("\(selectYear) - \(selectMonth)")
         updateState()
     }
     func previousMonth(){
-        if self.currentMonth == 1 {
-            self.currentMonth = 12
-            self.currentYear -= 1
+        if self.selectMonth == 1 {
+            self.selectMonth = 12
+            self.selectYear -= 1
         }else {
-            self.currentMonth -= 1
+            self.selectMonth -= 1
         }
+        print("previousMonth")
+        print("\(selectYear) - \(selectMonth)")
         updateState()
     }
     func updateState(){
-        self.lastDayCount = TimeUtil.lastDayCount(currentYear, currentMonth)
-        self.startWeekDay = TimeUtil.startWeekDayCount(currentYear, currentMonth)
-        self.weekCount = TimeUtil.weekCountOfMonth(currentYear, currentMonth)
-        self.lastWeekDayCount = TimeUtil.lastWeekDayCount(currentYear, currentMonth)
-        self.days = [Int]()
-        for index in 1...self.lastDayCount {
-            days.append(index)
+        self.lastDayCount = TimeUtil.lastDayCount(selectYear, selectMonth)
+        self.startWeekDay = TimeUtil.startWeekDayCount(selectYear, selectMonth)
+        self.weekCount = TimeUtil.weekCountOfMonth(selectYear, selectMonth)
+        self.lastWeekDayCount = TimeUtil.lastWeekDayCount(selectYear, selectMonth)
+        weeks.removeAll()
+        weeks =  (1...self.weekCount).map({ index -> [Int] in
+            return [-1,-1,-1,-1,-1,-1,-1]
+        })
+        //7 -> 1
+        //6 -> 2
+        //5 -> 3
+        
+        var firstWeekDayCount = 1
+        
+        for index in 0...6 {
+            if index+1 >= startWeekDay {
+                weeks[0][index] = firstWeekDayCount
+                firstWeekDayCount += 1
+            }
         }
-        print(self.currentYear)
-        print(self.currentMonth)
-        print(self.currentDay)
-        print(lastDayCount)
-        print(startWeekDay)
-        print(weekCount)
-        print(lastWeekDayCount)
-        print(days)
+        let firstWeekIndex = 0
+        let lastWeekIndex = weeks.count-1
+        for week in firstWeekIndex+1...lastWeekIndex {
+            if week == lastWeekIndex {
+                for index in 0...6{
+                    if (index+1) <= lastWeekDayCount {
+                        weeks[week][index] = (week-1)*7 + (index ) + firstWeekDayCount
+                    }
+                }
+            }else {
+                for index in 0...6 {
+                    weeks[week][index] = (week-1)*7 + (index ) + firstWeekDayCount
+                }
+            }
+        }
     }
 }
 

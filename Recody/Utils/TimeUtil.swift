@@ -36,7 +36,7 @@ class TimeUtil {
         var lastDayCount = TimeUtil.lastDayCount(year, month) // 총일수 31
         let firstWeekDaysCount = 8 - startWeekDayCount // 첫주에 몇칸을 차지하시는지
         let lastWeekDaysCount = (lastDayCount - firstWeekDaysCount) % 7 // 2
-        return lastWeekDaysCount
+        return lastWeekDaysCount == 0 ? 7 : lastWeekDaysCount // lastWeekDaysCount 가 0 일경우 7칸을 차지하는거임
     }
     // 2. 주의 수 -> 검증완료
     static func weekCountOfMonth( _ year: Int, _ month: Int) -> Int {
@@ -44,14 +44,17 @@ class TimeUtil {
             let startWeekDayCount = TimeUtil.startWeekDayCount(year, month) //첫주의 시작일 7
             var lastDayCount = TimeUtil.lastDayCount(year, month) // 총일수 31
             let firstWeekDaysCount = 8 - startWeekDayCount // 첫주에 몇칸을 차지하시는지
-            let lastWeekDaysCount = (lastDayCount - firstWeekDaysCount) % 7 // 2
+            var lastWeekDaysCount = (lastDayCount - firstWeekDaysCount) % 7 // 2
             var weekCount = 1
-            if lastWeekDaysCount != 0 {
+            if lastWeekDaysCount > 0 {
                 weekCount += (lastDayCount - (firstWeekDaysCount + lastWeekDaysCount))/7
                 weekCount += 1
+            }else if (lastWeekDaysCount == 0 ) {
+                weekCount += (lastDayCount - (firstWeekDaysCount))/7
             }else {
                 weekCount += (lastDayCount - (firstWeekDaysCount))/7
             }
+            
             return weekCount
         }else {
             fatalError("month out of bounds")

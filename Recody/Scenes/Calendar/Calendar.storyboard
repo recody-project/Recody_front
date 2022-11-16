@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hC7-xf-6CI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hC7-xf-6CI">
                                 <rect key="frame" x="20" y="249" width="374" height="564"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -148,7 +148,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hC7-xf-6CI" firstAttribute="top" secondItem="pcs-Ff-zhg" secondAttribute="bottom" id="11b-n3-dmM"/>
                             <constraint firstItem="71q-Sd-5Tc" firstAttribute="leading" secondItem="Ln6-An-w9v" secondAttribute="trailing" constant="18" id="AJG-BR-EXi"/>
@@ -175,6 +175,10 @@
                     <navigationItem key="navigationItem" id="SpS-sh-DGQ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
+                        <outlet property="btnNextMonth" destination="71q-Sd-5Tc" id="5sQ-nF-XEM"/>
+                        <outlet property="btnPreviousMonth" destination="sic-aJ-jQa" id="5B3-zL-Q9a"/>
+                        <outlet property="lbMonth" destination="ERr-AR-VWK" id="R8t-KS-Lt7"/>
+                        <outlet property="lbYear" destination="rn4-Ll-yvr" id="dNA-Y9-deN"/>
                         <outlet property="tableView" destination="hC7-xf-6CI" id="ZNo-M1-gf7"/>
                     </connections>
                 </viewController>

@@ -33,14 +33,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4u-Ij-6A3">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="116"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5r-kw-khN">
-                                                <rect key="frame" x="19" y="10" width="6.6666666666666679" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5r-kw-khN">
+                                                <rect key="frame" x="11.333333333333336" y="10" width="22" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="i5r-kw-khN" secondAttribute="height" multiplier="1:1" id="8ci-We-Ine"/>
+                                                    <constraint firstAttribute="height" constant="22" id="QsK-fE-XM4"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1987" translatesAutoresizingMaskIntoConstraints="NO" id="uXb-wy-O6W">
-                                                <rect key="frame" x="4.3333333333333321" y="39" width="36" height="49.666666666666657"/>
+                                                <rect key="frame" x="4.3333333333333321" y="44" width="36" height="49.666666666666657"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="uXb-wy-O6W" secondAttribute="height" multiplier="44:61" id="NWW-E0-eoN"/>
                                                 </constraints>
@@ -58,14 +62,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jln-AZ-ZQh">
                                         <rect key="frame" x="46" y="0.0" width="44.666666666666657" height="116"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDZ-HP-jKK">
-                                                <rect key="frame" x="19" y="10" width="6.6666666666666679" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDZ-HP-jKK">
+                                                <rect key="frame" x="11.333333333333336" y="10" width="22" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="hDZ-HP-jKK" secondAttribute="height" multiplier="1:1" id="Hx9-gk-wvQ"/>
+                                                    <constraint firstAttribute="height" constant="22" id="dmv-eY-vqP"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1987" translatesAutoresizingMaskIntoConstraints="NO" id="HZS-QI-syO">
-                                                <rect key="frame" x="4.3333333333333357" y="39" width="36" height="49.666666666666657"/>
+                                                <rect key="frame" x="4.3333333333333357" y="44" width="36" height="49.666666666666657"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="HZS-QI-syO" secondAttribute="height" multiplier="44:61" id="Tjy-Zz-fpt"/>
                                                 </constraints>
@@ -83,14 +91,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Qx-Cx-OP4">
                                         <rect key="frame" x="91.666666666666671" y="0.0" width="45.000000000000014" height="116"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI9-U1-gtQ">
-                                                <rect key="frame" x="19" y="10" width="6.6666666666666679" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI9-U1-gtQ">
+                                                <rect key="frame" x="11.333333333333329" y="10" width="22" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="ZlG-1V-xIq"/>
+                                                    <constraint firstAttribute="width" secondItem="zI9-U1-gtQ" secondAttribute="height" multiplier="1:1" id="mqR-G5-9hq"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1987" translatesAutoresizingMaskIntoConstraints="NO" id="Vzp-AS-0Hd">
-                                                <rect key="frame" x="4.6666666666666572" y="39" width="35.666666666666664" height="49.666666666666657"/>
+                                                <rect key="frame" x="4.6666666666666572" y="44" width="35.666666666666664" height="49.666666666666657"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Vzp-AS-0Hd" secondAttribute="height" multiplier="44:61" id="ycX-0c-fpz"/>
                                                 </constraints>
@@ -108,14 +120,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJU-Xu-FnC">
                                         <rect key="frame" x="137.66666666666666" y="0.0" width="44.666666666666657" height="116"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHv-aY-KZ7">
-                                                <rect key="frame" x="19" y="10" width="6.6666666666666679" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHv-aY-KZ7">
+                                                <rect key="frame" x="11.333333333333343" y="10" width="22" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="MEh-94-fiW"/>
+                                                    <constraint firstAttribute="width" secondItem="FHv-aY-KZ7" secondAttribute="height" multiplier="1:1" id="ikI-hb-7iy"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1987" translatesAutoresizingMaskIntoConstraints="NO" id="2qC-xx-1WV">
-                                                <rect key="frame" x="4.3333333333333428" y="39" width="36" height="49.666666666666657"/>
+                                                <rect key="frame" x="4.3333333333333428" y="44" width="36" height="49.666666666666657"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="2qC-xx-1WV" secondAttribute="height" multiplier="44:61" id="ch4-CZ-Psk"/>
                                                 </constraints>
@@ -133,14 +149,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OC-5r-kWJ">
                                         <rect key="frame" x="183.33333333333334" y="0.0" width="45" height="116"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8Q-5B-SLp">
-                                                <rect key="frame" x="19.333333333333314" y="10" width="6.6666666666666679" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8Q-5B-SLp">
+                                                <rect key="frame" x="11.666666666666657" y="10" width="22" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="J6j-W7-aNb"/>
+                                                    <constraint firstAttribute="width" secondItem="t8Q-5B-SLp" secondAttribute="height" multiplier="1:1" id="lJQ-w9-YWd"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1987" translatesAutoresizingMaskIntoConstraints="NO" id="qrq-aw-LHJ">
-                                                <rect key="frame" x="4.6666666666666572" y="39" width="35.666666666666664" height="49.666666666666657"/>
+                                                <rect key="frame" x="4.6666666666666572" y="44" width="35.666666666666664" height="49.666666666666657"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qrq-aw-LHJ" secondAttribute="height" multiplier="44:61" id="Mdd-yi-kUn"/>
                                                 </constraints>
@@ -158,14 +178,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OK7-7e-OJe">
                                         <rect key="frame" x="229.33333333333334" y="0.0" width="44.666666666666657" height="116"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ii0-dJ-pYY">
-                                                <rect key="frame" x="19" y="10" width="6.6666666666666679" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ii0-dJ-pYY">
+                                                <rect key="frame" x="11.333333333333314" y="10" width="22" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ii0-dJ-pYY" secondAttribute="height" multiplier="1:1" id="9PB-rf-lY4"/>
+                                                    <constraint firstAttribute="height" constant="22" id="Ra3-Un-X2o"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1987" translatesAutoresizingMaskIntoConstraints="NO" id="ilh-16-cDS">
-                                                <rect key="frame" x="4.3333333333333144" y="39" width="36" height="49.666666666666657"/>
+                                                <rect key="frame" x="4.3333333333333144" y="44" width="36" height="49.666666666666657"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ilh-16-cDS" secondAttribute="height" multiplier="44:61" id="66o-37-vqh"/>
                                                 </constraints>
@@ -183,14 +207,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVY-4n-gqX">
                                         <rect key="frame" x="275" y="0.0" width="45" height="116"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhh-41-Y3r">
-                                                <rect key="frame" x="19.333333333333314" y="10" width="6.6666666666666679" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhh-41-Y3r">
+                                                <rect key="frame" x="11.666666666666686" y="10" width="22" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="SeV-db-4dm"/>
+                                                    <constraint firstAttribute="width" secondItem="Nhh-41-Y3r" secondAttribute="height" multiplier="1:1" id="xuH-YT-dey"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1987" translatesAutoresizingMaskIntoConstraints="NO" id="Qvw-6m-zXh">
-                                                <rect key="frame" x="4.6666666666666856" y="39" width="36" height="49.666666666666657"/>
+                                                <rect key="frame" x="4.6666666666666856" y="44" width="36" height="49.666666666666657"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Qvw-6m-zXh" secondAttribute="height" multiplier="44:61" id="nc9-uU-9Hl"/>
                                                 </constraints>
