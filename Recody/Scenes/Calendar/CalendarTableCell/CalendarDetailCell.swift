@@ -1,41 +1,44 @@
 //
-//  InsightMyRankCell.swift
+//  CalendarDetailCell.swift
 //  Recody
 //
-//  Created by Glory Kim on 2022/11/01.
+//  Created by Glory Kim on 2022/11/17.
 //
 
 import UIKit
-//6
-class InsightMyRankCell: UITableViewCell,ObservingTableCell {
-    @IBOutlet weak var lbNickName:UILabel!
-    @IBOutlet weak var lbMonth:UILabel!
-    @IBOutlet weak var lbScoreAverage:UILabel!
-    
-    @IBOutlet weak var imgStart1:UIImageView!
-    @IBOutlet weak var imgStart2:UIImageView!
-    @IBOutlet weak var imgStart3:UIImageView!
-    @IBOutlet weak var imgStart4:UIImageView!
-    @IBOutlet weak var imgStart5:UIImageView!
-    @IBOutlet weak var cellView:UIView?
-    @IBOutlet weak var chartView:UIView!
+
+class CalendarDetailCell: UITableViewCell,ObservingTableCell {
     var viewmodel:TableCellViewModel?{
         didSet{
             viewmodel?.delegate = self
             changeData()
         }
     }
+    @IBOutlet weak var cellView: UIView?
+    @IBOutlet weak var lbGenre:UILabel!
+    @IBOutlet weak var lbWorkTitle:UILabel!
+    @IBOutlet weak var imgWork:UIImageView!
+    @IBOutlet weak var imgStart1:UIImageView!
+    @IBOutlet weak var imgStart2:UIImageView!
+    @IBOutlet weak var imgStart3:UIImageView!
+    @IBOutlet weak var imgStart4:UIImageView!
+    @IBOutlet weak var imgStart5:UIImageView!
     var eventDelegate: ObservingTableCellEvent?
+    func sendEventToController(sender: UITapGestureRecognizer) {
+        if let code = sender.view?.tag {
+            eventDelegate?.eventFromTableCell(code: InsightCellEvent.firstRecordEvent.rawValue)
+        }
+    }
     func changeData() {
         guard let data = viewmodel?.data else { return }
         binding(data: data)
     }
     func binding(data: Dictionary<String, Any>) {
-        lbNickName.text=data.stringValue(key: "nickName")
-        lbMonth.text=data.stringValue(key: "month")
+        lbGenre.text=data.stringValue(key: "genre")
+        lbWorkTitle.text=data.stringValue(key: "workTitle")
         let score = data.intValue(key: "score")
-        lbScoreAverage.text = "\(Double(score)/2)"
         settingStar(score)
+        let imgPath = data.stringValue(key: "imgPath")
     }
     private func settingStar(_ score : Int){
         if score > 10 { return }
@@ -63,23 +66,15 @@ class InsightMyRankCell: UITableViewCell,ObservingTableCell {
             startImgs[halfStartPosition]?.image = UIImage(named: "star.half.fill")
         }
     }
-    @objc func sendEventToController(sender : UITapGestureRecognizer){
-        if let code = sender.view?.tag {
-            eventDelegate?.eventFromTableCell(code: InsightCellEvent.myRankEvent.rawValue)
-        }
-    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        changeData()
-        let chart = CombinChart()
-         self.chartView.addSubview(chart)
-         chart.snp.makeConstraints({ make in
-             make.edges.equalToSuperview()
-         })
+        lbGenre.layer.masksToBounds = true
+        lbGenre.layer.cornerRadius = lbGenre.frame.height/2
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
         // Configure the view for the selected state
     }
 }
