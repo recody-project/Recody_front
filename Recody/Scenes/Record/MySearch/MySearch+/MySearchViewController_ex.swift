@@ -10,14 +10,18 @@
 //
 //class MySearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
 //    func eventFromTableCell(code: Int) {
-//        guard let cellEvent = SearchCellEvent() else { return }
+//        guard let cellEvent = SearchCellEvent(rawValue: code) else { return }
 //    }
 //    var viewModel = MySearchViewModel()
 //    var tableList: [TableCellViewModel] = [TableCellViewModel]()
 //
 // 검색, 검색 취소, 비우기, 기록 삭제, 필터
 //    enum UserCase: Int, OrderType {
-//        case
+//        case search
+//        case cancel_search
+//        case empty
+//        case delete
+//        case filter
 //        var number: Int {
 //            return self.rawValue
 //        }
@@ -25,8 +29,23 @@
 //
 // outlet 연결 (검색 기능 활성화)
 //
-
-
+//
+//func bind(_ data: DataStoreType) {
+//
+//}
+//
+//func routing(orderNumber: Int) {
+//    if orderNumber == 1 {
+//
+//    } else {
+//
+//    }
+//}
+//
+//
+//override func viewDidLoad() {
+//    super.viewDidLoad()
+//}
 // cell 클릭 시 검색 바로 이동
 //    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
 //        if let command = UserCase.init(rawValue: orderNumber) {
