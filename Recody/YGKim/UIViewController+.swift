@@ -14,18 +14,13 @@ protocol CommonVCType {
 }
 class CommonVC: UIViewController, CommonVCType, PresentationLogicType {
     func displayErorr(orderNumber: Int, msg: String?) {
-        
     }
-    
     func display(orderNumber: Int) {
-        
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-
     }
 }
 

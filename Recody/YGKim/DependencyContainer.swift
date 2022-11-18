@@ -21,7 +21,7 @@ class DependencyContainer {
         vcArr[name] = [interactor,
                        router,
                        presenter]
-        print("DependencyContainer.ready() :: \(viewController.name)")
+        print("DependencyContainer.ready() :: \(viewController.name) , memory addr: \(viewController)")
     }
     private func checkArr<T: CommonVC >(viewController: T)->[Any]? {
         if let itemArr = self.vcArr[viewController.name] {
