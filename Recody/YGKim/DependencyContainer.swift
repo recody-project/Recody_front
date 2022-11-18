@@ -15,7 +15,9 @@ class DependencyContainer {
 
     func ready<T: CommonVC> (viewController: T, interactor: InteractorType, router: SimpleRouter, presenter: PresenterType) {
         let name = viewController.name
-        if vcArr.contains(where: {$0.key == name}) { return }
+        if vcArr.contains(where: {$0.key == name}) {
+            unbind(name)
+        }
         vcArr[name] = [interactor,
                        router,
                        presenter]
