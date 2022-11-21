@@ -33,7 +33,7 @@ class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
         guard let useCase = UseCase.init(rawValue: orderNumber) else { return }
         switch useCase {
             case .back:
-                self.navigationController?.popViewController(animated: true)
+                self.router?.popViewContoller(animated: true)
             default:
                 break
         }

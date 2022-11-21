@@ -178,6 +178,8 @@
                     <connections>
                         <outlet property="btnNextMonth" destination="71q-Sd-5Tc" id="5sQ-nF-XEM"/>
                         <outlet property="btnPreviousMonth" destination="sic-aJ-jQa" id="5B3-zL-Q9a"/>
+                        <outlet property="imgDonwload" destination="Aeo-vK-FM1" id="OdP-4R-GTA"/>
+                        <outlet property="imgSetting" destination="BzZ-F4-laX" id="Soz-tn-5eI"/>
                         <outlet property="lbMonth" destination="ERr-AR-VWK" id="R8t-KS-Lt7"/>
                         <outlet property="lbYear" destination="rn4-Ll-yvr" id="dNA-Y9-deN"/>
                         <outlet property="tableView" destination="hC7-xf-6CI" id="ZNo-M1-gf7"/>
@@ -201,7 +203,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작품 보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jg-aJ-yua">
                                         <rect key="frame" x="177" y="10" width="60" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hg-YM-rGE">
@@ -250,6 +252,197 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Tm-5H-76x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1854" y="92"/>
+        </scene>
+        <!--Calendar Setting View Controller-->
+        <scene sceneID="FE6-Yh-baT">
+            <objects>
+                <viewController storyboardIdentifier="CalendarSettingViewController" id="SMZ-Mq-iof" customClass="CalendarSettingViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OdJ-cy-V5D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gl5-iz-pQn">
+                                <rect key="frame" x="0.0" y="48" width="414" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="완료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5V6-yA-cgF">
+                                        <rect key="frame" x="354" y="0.0" width="50" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="ErM-p8-d10"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캘린더 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9z-B7-nww">
+                                        <rect key="frame" x="170.5" y="10.5" width="73.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhD-3x-obk">
+                                        <rect key="frame" x="20" y="7.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="AZW-UO-Mn1"/>
+                                            <constraint firstAttribute="width" constant="25" id="QY3-MU-BPm"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="U9z-B7-nww" firstAttribute="centerY" secondItem="gl5-iz-pQn" secondAttribute="centerY" id="4Lb-1a-5wQ"/>
+                                    <constraint firstAttribute="height" constant="40" id="4N4-5F-A16"/>
+                                    <constraint firstItem="5V6-yA-cgF" firstAttribute="top" secondItem="gl5-iz-pQn" secondAttribute="top" id="Ml7-76-KFI"/>
+                                    <constraint firstAttribute="trailing" secondItem="5V6-yA-cgF" secondAttribute="trailing" constant="10" id="Zfc-tx-1hF"/>
+                                    <constraint firstItem="XhD-3x-obk" firstAttribute="centerY" secondItem="U9z-B7-nww" secondAttribute="centerY" id="gPC-o2-uIc"/>
+                                    <constraint firstItem="XhD-3x-obk" firstAttribute="leading" secondItem="gl5-iz-pQn" secondAttribute="leading" constant="20" id="icm-Lc-0in"/>
+                                    <constraint firstAttribute="bottom" secondItem="5V6-yA-cgF" secondAttribute="bottom" id="vFW-JY-28u"/>
+                                    <constraint firstItem="U9z-B7-nww" firstAttribute="centerX" secondItem="gl5-iz-pQn" secondAttribute="centerX" id="x1t-pf-vhq"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBq-uv-iuh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IdE-ow-RFi">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="De8-w4-Eql">
+                                                <rect key="frame" x="0.0" y="10" width="414" height="111"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캘린더 표시 날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb1-i3-DLW">
+                                                        <rect key="frame" x="20" y="20" width="92.5" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tm4-Kr-NNz">
+                                                        <rect key="frame" x="20" y="49" width="374" height="46"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjN-hl-rCQ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="179" height="46"/>
+                                                                <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="감상을 완료한 날짜">
+                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                                                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgg-L3-cG0">
+                                                                <rect key="frame" x="195" y="0.0" width="179" height="46"/>
+                                                                <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="기록을 완료한 날짜">
+                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                                                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="tm4-Kr-NNz" firstAttribute="leading" secondItem="Pb1-i3-DLW" secondAttribute="leading" id="PdU-9L-dd7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="tm4-Kr-NNz" secondAttribute="trailing" constant="20" id="Pfv-lB-azL"/>
+                                                    <constraint firstItem="Pb1-i3-DLW" firstAttribute="top" secondItem="De8-w4-Eql" secondAttribute="top" constant="20" id="f21-c0-jMX"/>
+                                                    <constraint firstItem="tm4-Kr-NNz" firstAttribute="top" secondItem="Pb1-i3-DLW" secondAttribute="bottom" constant="12" id="k7T-gg-92w"/>
+                                                    <constraint firstAttribute="height" constant="111" id="l03-9Q-9YL"/>
+                                                    <constraint firstAttribute="bottom" secondItem="tm4-Kr-NNz" secondAttribute="bottom" constant="16" id="npv-UQ-Yhp"/>
+                                                    <constraint firstItem="Pb1-i3-DLW" firstAttribute="leading" secondItem="De8-w4-Eql" secondAttribute="leading" constant="20" id="yjy-IZ-2my"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1J-ec-oKU">
+                                                <rect key="frame" x="0.0" y="131" width="414" height="111"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캘린더 시작 요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozD-5O-Bci">
+                                                        <rect key="frame" x="20" y="20" width="92.5" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XYa-SI-rp7">
+                                                        <rect key="frame" x="20" y="49" width="374" height="46"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihK-38-yge">
+                                                                <rect key="frame" x="0.0" y="0.0" width="179" height="46"/>
+                                                                <color key="backgroundColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="일요일">
+                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                                                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puK-Zz-nc4">
+                                                                <rect key="frame" x="195" y="0.0" width="179" height="46"/>
+                                                                <color key="backgroundColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="월요일">
+                                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                                                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="XYa-SI-rp7" firstAttribute="leading" secondItem="ozD-5O-Bci" secondAttribute="leading" id="JWF-F7-hgD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="XYa-SI-rp7" secondAttribute="trailing" constant="20" id="bzO-az-lXj"/>
+                                                    <constraint firstItem="ozD-5O-Bci" firstAttribute="top" secondItem="S1J-ec-oKU" secondAttribute="top" constant="20" id="cMw-am-Cfv"/>
+                                                    <constraint firstItem="ozD-5O-Bci" firstAttribute="leading" secondItem="S1J-ec-oKU" secondAttribute="leading" constant="20" id="cQq-nG-VTe"/>
+                                                    <constraint firstAttribute="height" constant="111" id="oWD-vy-e4a"/>
+                                                    <constraint firstAttribute="bottom" secondItem="XYa-SI-rp7" secondAttribute="bottom" constant="16" id="u9B-9Y-Mdh"/>
+                                                    <constraint firstItem="XYa-SI-rp7" firstAttribute="top" secondItem="ozD-5O-Bci" secondAttribute="bottom" constant="12" id="zbm-UB-LAX"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="De8-w4-Eql" secondAttribute="trailing" id="AbV-AM-mcA"/>
+                                            <constraint firstItem="S1J-ec-oKU" firstAttribute="leading" secondItem="IdE-ow-RFi" secondAttribute="leading" id="Ebj-Zg-AuH"/>
+                                            <constraint firstAttribute="trailing" secondItem="S1J-ec-oKU" secondAttribute="trailing" id="PE7-3a-xlR"/>
+                                            <constraint firstItem="De8-w4-Eql" firstAttribute="top" secondItem="IdE-ow-RFi" secondAttribute="top" constant="10" id="UTX-Dr-YiO"/>
+                                            <constraint firstItem="S1J-ec-oKU" firstAttribute="top" secondItem="De8-w4-Eql" secondAttribute="bottom" constant="10" id="Wet-Tv-fNw"/>
+                                            <constraint firstItem="De8-w4-Eql" firstAttribute="leading" secondItem="IdE-ow-RFi" secondAttribute="leading" id="kLc-mM-GKj"/>
+                                            <constraint firstAttribute="height" constant="700" id="xOi-dD-WWe"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="IdE-ow-RFi" firstAttribute="leading" secondItem="LBq-uv-iuh" secondAttribute="leading" id="KRp-1X-1Wv"/>
+                                    <constraint firstAttribute="bottom" secondItem="IdE-ow-RFi" secondAttribute="bottom" id="UPi-hR-u3h"/>
+                                    <constraint firstItem="IdE-ow-RFi" firstAttribute="top" secondItem="LBq-uv-iuh" secondAttribute="top" id="mOd-Li-5Cd"/>
+                                    <constraint firstItem="IdE-ow-RFi" firstAttribute="centerX" secondItem="LBq-uv-iuh" secondAttribute="centerX" id="naS-zQ-P0f"/>
+                                    <constraint firstAttribute="trailing" secondItem="IdE-ow-RFi" secondAttribute="trailing" id="uNV-4v-XG3"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jbq-jM-bRp"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jbq-jM-bRp" firstAttribute="trailing" secondItem="LBq-uv-iuh" secondAttribute="trailing" id="17D-Y8-OJr"/>
+                            <constraint firstItem="jbq-jM-bRp" firstAttribute="trailing" secondItem="gl5-iz-pQn" secondAttribute="trailing" id="JhO-N8-wLH"/>
+                            <constraint firstItem="LBq-uv-iuh" firstAttribute="leading" secondItem="jbq-jM-bRp" secondAttribute="leading" id="R3I-61-Zsn"/>
+                            <constraint firstItem="LBq-uv-iuh" firstAttribute="top" secondItem="gl5-iz-pQn" secondAttribute="bottom" id="UBQ-5s-6ME"/>
+                            <constraint firstItem="gl5-iz-pQn" firstAttribute="leading" secondItem="OdJ-cy-V5D" secondAttribute="leading" id="kH8-oQ-Kmu"/>
+                            <constraint firstItem="jbq-jM-bRp" firstAttribute="bottom" secondItem="LBq-uv-iuh" secondAttribute="bottom" id="oq7-99-DUJ"/>
+                            <constraint firstItem="gl5-iz-pQn" firstAttribute="top" secondItem="jbq-jM-bRp" secondAttribute="top" id="ujA-ZD-AHf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnBack" destination="XhD-3x-obk" id="NMN-4e-kkZ"/>
+                        <outlet property="btnCompleteDate" destination="sjN-hl-rCQ" id="cAy-4v-tBt"/>
+                        <outlet property="btnRecordDate" destination="Bgg-L3-cG0" id="6JS-6u-tTY"/>
+                        <outlet property="btnStartMonday" destination="puK-Zz-nc4" id="2Cv-oV-S3r"/>
+                        <outlet property="btnStartSunday" destination="ihK-38-yge" id="Cef-BH-qVu"/>
+                        <outlet property="lbComplete" destination="5V6-yA-cgF" id="NZI-uw-8Xf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ugc-Bw-ife" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2718.840579710145" y="91.741071428571431"/>
         </scene>
         <!--달력-->
         <scene sceneID="s0P-OP-Wd0">
