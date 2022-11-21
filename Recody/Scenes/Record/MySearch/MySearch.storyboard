@@ -27,18 +27,11 @@
         <!--기록추가-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="record" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="MySearchViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="record" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="SearchViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="scaleToFill" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1r-c6-Dbs">
-                                <rect key="frame" x="20" y="50" width="374" height="51"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="search"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="ngH-gu-Fbc"/>
-                                </connections>
-                            </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 검색어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZR-2O-dAW">
                                 <rect key="frame" x="20" y="179" width="78" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -140,24 +133,34 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="nqC-aX-yM4">
+                                <rect key="frame" x="0.0" y="57" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="za1-KI-5l2"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="Yxn-Nx-iVw"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="v7f-m6-spS" firstAttribute="leading" secondItem="juw-Sx-1uE" secondAttribute="trailing" constant="10" id="97w-mY-xQX"/>
-                            <constraint firstItem="P1r-c6-Dbs" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="6" id="9da-pc-mla"/>
-                            <constraint firstAttribute="trailing" secondItem="P1r-c6-Dbs" secondAttribute="trailing" constant="20" id="CqP-Bg-SyA"/>
-                            <constraint firstItem="juw-Sx-1uE" firstAttribute="top" secondItem="P1r-c6-Dbs" secondAttribute="bottom" constant="16" id="H4R-g9-7ms"/>
+                            <constraint firstItem="nqC-aX-yM4" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Gon-EJ-zTY"/>
+                            <constraint firstItem="juw-Sx-1uE" firstAttribute="top" secondItem="nqC-aX-yM4" secondAttribute="bottom" constant="16" id="Ijk-bh-lao"/>
                             <constraint firstItem="juw-Sx-1uE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="M7s-Gz-6Gu"/>
                             <constraint firstItem="bxH-X9-ZXS" firstAttribute="top" secondItem="xZR-2O-dAW" secondAttribute="bottom" constant="20" id="OfK-fN-h6k"/>
                             <constraint firstItem="Nif-db-OTv" firstAttribute="centerY" secondItem="xZR-2O-dAW" secondAttribute="centerY" id="Oih-Vj-QCP"/>
                             <constraint firstItem="bxH-X9-ZXS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Pwh-d6-0Q0"/>
+                            <constraint firstItem="nqC-aX-yM4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Qg6-2J-8If"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Nif-db-OTv" secondAttribute="trailing" constant="20" id="Zci-OE-2QR"/>
                             <constraint firstItem="xZR-2O-dAW" firstAttribute="top" secondItem="juw-Sx-1uE" secondAttribute="bottom" constant="32" id="bvZ-WE-xF0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bxH-X9-ZXS" secondAttribute="bottom" id="j4R-lm-9jw"/>
                             <constraint firstItem="xZR-2O-dAW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="jgp-cd-NlZ"/>
-                            <constraint firstItem="P1r-c6-Dbs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="sAO-gD-TFJ"/>
                             <constraint firstItem="v7f-m6-spS" firstAttribute="top" secondItem="juw-Sx-1uE" secondAttribute="top" id="vRK-Iu-eQV"/>
+                            <constraint firstItem="nqC-aX-yM4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="13" id="vvf-gA-n02"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bxH-X9-ZXS" secondAttribute="trailing" constant="20" id="yF5-KB-9r7"/>
                         </constraints>
                     </view>
@@ -167,8 +170,8 @@
                     <connections>
                         <outlet property="categoryView" destination="juw-Sx-1uE" id="XSt-nj-bxF"/>
                         <outlet property="genreView" destination="v7f-m6-spS" id="i6i-Md-v9a"/>
-                        <outlet property="searchBar" destination="P1r-c6-Dbs" id="10R-h6-CSZ"/>
-                        <outlet property="tableView" destination="bxH-X9-ZXS" id="g89-Eg-D8N"/>
+                        <outlet property="searchBar" destination="nqC-aX-yM4" id="hCv-hU-HzI"/>
+                        <outlet property="tableView" destination="bxH-X9-ZXS" id="ceu-Lh-gAp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

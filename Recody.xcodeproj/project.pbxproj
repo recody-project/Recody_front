@@ -30,7 +30,11 @@
 		20DBFB0529029366009CEF76 /* RoutingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFAFE29029366009CEF76 /* RoutingLogic.swift */; };
 		20DBFB0629029366009CEF76 /* WorkerType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFAFF29029366009CEF76 /* WorkerType+.swift */; };
 		20DBFB0729029366009CEF76 /* RouterType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFB0029029366009CEF76 /* RouterType+.swift */; };
-		3A13C9A3291F0A7700DC0756 /* MySearchViewController_ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A13C9A2291F0A7700DC0756 /* MySearchViewController_ex.swift */; };
+		20E788422925B1C800B05C8E /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E788412925B1C800B05C8E /* CalendarViewModel.swift */; };
+		20E788442925B53F00B05C8E /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E788432925B53F00B05C8E /* CalendarDetailViewController.swift */; };
+		20E788472925B7E000B05C8E /* CalendarDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E788452925B7E000B05C8E /* CalendarDetailCell.swift */; };
+		20E788482925B7E000B05C8E /* CalendarDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E788462925B7E000B05C8E /* CalendarDetailCell.xib */; };
+		3A13C9A3291F0A7700DC0756 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */; };
 		3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */; };
 		3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346028D01E0F00C417CB /* UIScrollView+.swift */; };
 		3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */; };
@@ -188,7 +192,11 @@
 		20DBFAFE29029366009CEF76 /* RoutingLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingLogic.swift; sourceTree = "<group>"; };
 		20DBFAFF29029366009CEF76 /* WorkerType+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkerType+.swift"; sourceTree = "<group>"; };
 		20DBFB0029029366009CEF76 /* RouterType+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RouterType+.swift"; sourceTree = "<group>"; };
-		3A13C9A2291F0A7700DC0756 /* MySearchViewController_ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchViewController_ex.swift; sourceTree = "<group>"; };
+		20E788412925B1C800B05C8E /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		20E788432925B53F00B05C8E /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
+		20E788452925B7E000B05C8E /* CalendarDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailCell.swift; sourceTree = "<group>"; };
+		20E788462925B7E000B05C8E /* CalendarDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarDetailCell.xib; sourceTree = "<group>"; };
+		3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditGenreViewController+.swift"; sourceTree = "<group>"; };
 		3A20346028D01E0F00C417CB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -379,6 +387,7 @@
 				2015B3082918F27B00DB725D /* ApiService */,
 				20C6F9FD29077B6C009296E3 /* PresenterType.swift */,
 				20DBFAFB29029366009CEF76 /* UIViewController+.swift */,
+				3A6AE88D2918901900A9F520 /* TableCellViewModel+.swift */,
 				20DBFAFF29029366009CEF76 /* WorkerType+.swift */,
 				20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */,
 			);
@@ -399,6 +408,8 @@
 			children = (
 				20BD9CAA2921F90300BDAD13 /* CalendarWeekCell.swift */,
 				20BD9CAB2921F90300BDAD13 /* CalendarWeekCell.xib */,
+				20E788452925B7E000B05C8E /* CalendarDetailCell.swift */,
+				20E788462925B7E000B05C8E /* CalendarDetailCell.xib */,
 			);
 			path = CalendarTableCell;
 			sourceTree = "<group>";
@@ -425,7 +436,6 @@
 			isa = PBXGroup;
 			children = (
 				3A6AE8BD291890CD00A9F520 /* InsightCell */,
-				3A6AE88D2918901900A9F520 /* TableCellViewModel+.swift */,
 				3A6AE88F2918903700A9F520 /* InsightViewController.swift */,
 				3A6AE8912918906300A9F520 /* Insight.storyboard */,
 			);
@@ -501,6 +511,8 @@
 				20BD9CA92921F89900BDAD13 /* CalendarTableCell */,
 				3A75DBF728A0F5D900084DB1 /* Calendar.storyboard */,
 				20BD9CA72921F64B00BDAD13 /* CalendarViewController.swift */,
+				20E788432925B53F00B05C8E /* CalendarDetailViewController.swift */,
+				20E788412925B1C800B05C8E /* CalendarViewModel.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -687,7 +699,7 @@
 				3AB1432128F76FBC0041C9CC /* MySearchTableViewCell.swift */,
 				3AB1432228F76FBC0041C9CC /* MySearchTableViewCell.xib */,
 				3AB1432528F88F860041C9CC /* MySearchViewController+.swift */,
-				3A13C9A2291F0A7700DC0756 /* MySearchViewController_ex.swift */,
+				3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */,
 			);
 			path = "MySearch+";
 			sourceTree = "<group>";
@@ -924,6 +936,7 @@
 				3A6AE8DB2918910300A9F520 /* InsightStatisticsCell.xib in Resources */,
 				3AD4F12128C08C7E00598D28 /* DropDownHeader.xib in Resources */,
 				3A8D1735289BBC7A00B260D1 /* Assets.xcassets in Resources */,
+				20E788482925B7E000B05C8E /* CalendarDetailCell.xib in Resources */,
 				3A6AE8DF2918910300A9F520 /* InsightMostAppreciationCell.xib in Resources */,
 				3AB1431F28F768080041C9CC /* MySearch.storyboard in Resources */,
 				3A6AE8E12918910300A9F520 /* InsightStatisticsGraphCell.xib in Resources */,
@@ -1054,6 +1067,7 @@
 				3A8F863628C6277D0028B45C /* EditGenreWorker.swift in Sources */,
 				3A8D1766289BBEA100B260D1 /* HomeInteractor.swift in Sources */,
 				3A6AE88E2918901900A9F520 /* TableCellViewModel+.swift in Sources */,
+				20E788472925B7E000B05C8E /* CalendarDetailCell.swift in Sources */,
 				3AB1431A28F767FC0041C9CC /* MySearchRouter.swift in Sources */,
 				3AAEE3E328C4E30D00B28582 /* UIView+.swift in Sources */,
 				20BD9CA82921F64B00BDAD13 /* CalendarViewController.swift in Sources */,
@@ -1062,7 +1076,7 @@
 				3AB1432628F88F860041C9CC /* MySearchViewController+.swift in Sources */,
 				3A6AE8902918903700A9F520 /* InsightViewController.swift in Sources */,
 				3AEDB70C28DE07FC00C3DB8D /* PreReviewWorker.swift in Sources */,
-				3A13C9A3291F0A7700DC0756 /* MySearchViewController_ex.swift in Sources */,
+				3A13C9A3291F0A7700DC0756 /* SearchViewController.swift in Sources */,
 				2015B3072918DF1700DB725D /* InsightCellEvent.swift in Sources */,
 				3A8F863828C6277D0028B45C /* EditGenreModels.swift in Sources */,
 				3A6AE8E02918910300A9F520 /* InsightStatisticsGraphCell.swift in Sources */,
@@ -1090,6 +1104,7 @@
 				3A34165828FF5CF000C4D698 /* MyPageModels.swift in Sources */,
 				20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */,
 				3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */,
+				20E788442925B53F00B05C8E /* CalendarDetailViewController.swift in Sources */,
 				3AB1431928F767FC0041C9CC /* MySearchWorker.swift in Sources */,
 				20DBFB0229029366009CEF76 /* UIViewController+.swift in Sources */,
 				20DBFB0729029366009CEF76 /* RouterType+.swift in Sources */,
@@ -1116,6 +1131,7 @@
 				20BD9CB129220BE200BDAD13 /* TimeUtil.swift in Sources */,
 				3AAEE3F028C5CF3900B28582 /* EditCategoryInteractor.swift in Sources */,
 				3A6AE8E92918911B00A9F520 /* InsiteChartView.swift in Sources */,
+				20E788422925B1C800B05C8E /* CalendarViewModel.swift in Sources */,
 				2015B30A2918F28B00DB725D /* ApiClient.swift in Sources */,
 				3AB80F9D290D6C3500F032EC /* ModifyProfileRouter.swift in Sources */,
 				3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */,
