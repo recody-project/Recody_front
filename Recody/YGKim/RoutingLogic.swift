@@ -15,6 +15,7 @@ enum RoutingLogic: RoutingLogicType {
         case record
         case workDetailInfo
         case calendarDetail
+        case calendarSetting
         var viewcontroller: UIViewController? {
             switch self {
             // UIStoryboard( 스토리보드 파일명 )
@@ -29,6 +30,8 @@ enum RoutingLogic: RoutingLogicType {
                 return WorkDetailInfoViewController()
             case .calendarDetail:
                 return UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CalendarDetailViewController")
+            case .calendarSetting:
+                return UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CalendarSettingViewController")
             }
         }
     }

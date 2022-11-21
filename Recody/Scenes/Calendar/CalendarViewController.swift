@@ -16,6 +16,9 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
     @IBOutlet weak var lbMonth: UILabel!
     @IBOutlet weak var btnNextMonth: UIButton!
     @IBOutlet weak var btnPreviousMonth: UIButton!
+    @IBOutlet weak var imgSetting: UIImageView!
+    @IBOutlet weak var imgDonwload: UIImageView!
+    
     enum CalendarTableCellType: Int {
         case week = 1
         var name: String {
@@ -40,6 +43,12 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
             break
             case .previousMonth:
                 self.viewModel.previousMonth()
+            break
+            case .download:
+                print("download")
+            break
+            case .setting:
+                self.router?.pushViewController(RoutingLogic.Navigation.calendarSetting, dataStore: nil)
             break
             default:
             break
@@ -66,10 +75,15 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
     func setup(){
         btnNextMonth.setTitle("", for: .normal)
         btnPreviousMonth.setTitle("", for: .normal)
-        btnNextMonth.tag = UseCase.nextMonth.number
-        btnPreviousMonth.tag = UseCase.previousMonth.number
-        btnNextMonth.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
-        btnPreviousMonth.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
+        btnNextMonth.tag = UseCase.nextMonth.rawValue
+        btnPreviousMonth.tag = UseCase.previousMonth.rawValue
+        imgSetting.isUserInteractionEnabled = true
+        imgDonwload.isUserInteractionEnabled = true
+        imgSetting.tag = UseCase.setting.rawValue
+        imgDonwload.tag = UseCase.download.rawValue
+        [imgSetting, imgDonwload, btnNextMonth, btnPreviousMonth].forEach({
+            $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
+        })
     }
     @objc func clickEvent(_ sender: UITapGestureRecognizer){
         guard let tag = sender.view?.tag else { return }
