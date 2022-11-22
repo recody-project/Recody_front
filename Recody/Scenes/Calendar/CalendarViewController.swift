@@ -60,7 +60,7 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
     override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
     }
     //테이블 셀 클릭이벤트
-    func eventFromTableCell(code: Int) {
+    func eventFromTableCell(code: Int,index: Int) {
 //        self.interactor?.just(UseCase.moveDetail).api(.checkValidEmail("asd"))
         self.router?.pushViewController(RoutingLogic.Navigation.calendarDetail, dataStore: nil)
     }

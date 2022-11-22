@@ -96,7 +96,7 @@ class CalendarWeekCell: UITableViewCell,ObservingTableCell {
     }
     @objc func sendEventToController(sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
-            self.eventDelegate?.eventFromTableCell(code: tag)
+            self.eventDelegate?.eventFromTableCell(code: tag,index: viewmodel!.index)
         }
     }
     func changeData() {

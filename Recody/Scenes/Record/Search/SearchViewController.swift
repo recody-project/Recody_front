@@ -7,6 +7,12 @@
 
 import Foundation
 import UIKit
+import SnapKit
+
+struct MySearchViewModel {
+    var list = [String]()
+    var filterKeyword = ""
+}
 
 class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
     var viewModel = MySearchViewModel()
@@ -14,7 +20,7 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
     var mySearchs: [String] = [
         "블랙핑크", "블랙팬서", "미움 받을 용기", "닥터스트레인지"
     ]
-    
+    var filterKeyword = ""
     var mySearchResults: [Work] = [
         Work(id: "1", name: "Black Panther", image: "1"),
         Work(id: "2", name: "블랙", image: "2"),
@@ -51,17 +57,66 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
         } else {
         }
     }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+        update()
     }
-
     func setUp() {
+        viewModel.list = ["에이핑크","소녀시대","블랙핑크","AOA","라세라핌"]
+        tableView.register(MySearchTableViewCell.Xib, forCellReuseIdentifier: MySearchTableViewCell.Name)
         searchView.addSubview(tableView)
     }
-
+    func eventFromTableCell(code: Int, index: Int) {
+        guard let cellEvent = MySearchTableViewCellEvent(rawValue: code) else { return }
+        switch cellEvent {
+            case .select:
+            print("select \(index)")
+            break
+            case .delete:
+            print("delete \(index)")
+            //삭제시
+            //여기서 index는 tableList의 index를 의미함
+            //tableList 는 viewmodel의 list를 filterKeyword로 필터링하여 생성된 tablecell의 data model임
+            //viewmodel의 list 에서 delete 한후에 update() 를 해야함
+            if let contentName = tableList[index].data?.stringValue(key: "workName") {
+                var removeIndex = -1
+                for index in 0...viewModel.list.count-1 {
+                    if viewModel.list[index] == contentName {
+                        removeIndex = index
+                    }
+                }
+                if removeIndex != -1 {
+                    viewModel.list.remove(at: removeIndex)
+                }
+            }
+            break
+        }
+        update()
+    }
+    func update(){
+        //Data 바인딩
+        // VC.ViewModel 기본형 데이터가 있어야함
+        // tableList는 ViewModel.list를 fillterKeyword로 필터된 리스트를 재료로 생성해야함
+        // update() 함수는 viewModel을 재료로 화면에 data를 바인딩하는 개념으로만 사용해야함
+        // 그외 비지니스 로직도 viewModel의 상태값들을 갱신하여 update() 호출을 통해 다시 바인딩 해야함.
+        // Api통신을 할때도 리스폰을 받은뒤 그것으로 상태값을 갱신하고 update() 호출하여 바인딩 해야함.
+        let list = viewModel.filterKeyword == "" ? viewModel.list : viewModel.list.filter({ $0.contains(viewModel.filterKeyword)})
+        if list.count > 0 {
+            tableList = (0...list.count-1).map({ index -> TableCellViewModel in
+                let viewmodel = TableCellViewModel(type: index, data: ["workName":list[index]])
+                viewmodel.index = index
+                return viewmodel
+            })
+        }else{
+            tableList.removeAll()
+        }
+        tableView.reloadData()
+//        for (index,name) in list.enumerated() {
+//            tableList.append(TableCellViewModel(type: index, data: ["keyword":name]))
+//        }
+        
+    }
     // cell 클릭 시 검색 바로 이동
     // display 쪽에서 router 호출
     override func display(orderNumber: Int) {
@@ -97,13 +152,6 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
 
     override func displayErorr(orderNumber: Int, msg: String?) {
     }
-
-    func eventFromTableCell(code: Int) {
-    }
-}
-
-struct MySearchViewModel {
-
 }
 
 // 이전에 필요한 것 -> 1. empty history view, 2. history view, 3. search view
@@ -157,50 +205,58 @@ struct MySearchViewModel {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredData = []
-        if searchText == "" {
-            filteredData = mySearchs
-        }
-
-        for word in mySearchs {
-            if word.uppercased().contains(searchText.uppercased()) {
-                filteredData.append(word)
-            }
-        }
+        viewModel.filterKeyword = searchText
+        update()
     }
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "mySearchTableViewCell") as? MySearchTableViewCell else {
-            return UITableViewCell()
-        }
-        cell.setData(data: mySearchs[indexPath.row], indexPathRow: indexPath.row)
-        print(cell)
+        var list = tableList.filter({$0.visible})
+        var cell = UITableViewCell()
+        var mCell = tableView.dequeueReusableCell(withIdentifier: MySearchTableViewCell.Name) as? UITableViewCell & ObservingTableCell
+            // Viewmodel 주입
+            mCell?.viewmodel = list[indexPath.row]
+            // Cell 내의 클릭이벤트 구독 -> eventFromTableCell() 함수로전달
+            mCell?.eventDelegate = self
+        if mCell != nil { cell = mCell! }
+        list[indexPath.row].viewHeight = cell.frame.height
         return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mySearchs.count
+        return tableList.filter({$0.visible}).count
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
-
+        let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
         let label = UILabel()
         let button = UIButton()
-
         headerView.addSubview(label)
         headerView.addSubview(button)
-
+        label.snp.makeConstraints({
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview()
+        })
+        label.textColor = .white
+        label.text = "헤더라벨" 
+        button.snp.makeConstraints({
+            $0.left.equalTo(label.snp.right).offset(8.0)
+            $0.centerY.equalToSuperview()
+        })
+        button.setTitle("버튼", for: .normal)
+        button.setTitleColor(UIColor(hexString: "#FFFFFF"), for: .normal)
         return headerView
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
     }
 
     // select 이벤트는 cell 안에 2개 이하의 클릭이벤트가 있을 때만 사용하기
     // cell 안에 이벤트가 많으면 이 함수를 사용하기 불편함
     // select시 view 안의 화면을 tableview에서 collectionview로 바꾸기
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("")
+       return
     }
 }
 

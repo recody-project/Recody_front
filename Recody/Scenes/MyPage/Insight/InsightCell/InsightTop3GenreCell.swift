@@ -34,7 +34,7 @@ class InsightTop3GenreCell: UITableViewCell,ObservingTableCell {
     }
     @objc func sendEventToController(sender : UITapGestureRecognizer){
         if let code = sender.view?.tag {
-            eventDelegate?.eventFromTableCell(code: InsightCellEvent.top3GenreEvent.rawValue)
+            eventDelegate?.eventFromTableCell(code: InsightCellEvent.top3GenreEvent.rawValue,index: viewmodel!.index)
         }
     }
     override func awakeFromNib() {

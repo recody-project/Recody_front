@@ -14,6 +14,7 @@ class TableCellViewModel {
         self.data = data
     }
     var type : Int = -1
+    var index : Int = -1
     var visible : Bool = true
     var delegate : TableCellDelegate? {
         didSet {
@@ -58,7 +59,7 @@ protocol ObservingTableCell: TableCellDelegate {
 }
 //MARK: - VC에서 Cell의 이벤트를 전달받는 함수
 protocol ObservingTableCellEvent {
-    func eventFromTableCell(code: Int)
+    func eventFromTableCell(code: Int,index:Int)
 }
 //MARK: - 편의성 UITableViewCell 등록관련
 //TableView에 셀을 등록하기 편하게 하기위해

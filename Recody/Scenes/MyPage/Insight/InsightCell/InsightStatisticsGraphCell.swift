@@ -33,7 +33,7 @@ class InsightStatisticsGraphCell: UITableViewCell,ObservingTableCell {
     }
     @objc func sendEventToController(sender : UITapGestureRecognizer){
         if let code = sender.view?.tag {
-            eventDelegate?.eventFromTableCell(code: InsightCellEvent.statisticsGraphCellEvent.rawValue)
+            eventDelegate?.eventFromTableCell(code: InsightCellEvent.statisticsGraphCellEvent.rawValue,index: viewmodel!.index)
         }
     }
     override func awakeFromNib() {

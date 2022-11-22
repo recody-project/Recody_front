@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent {
-    func eventFromTableCell(code: Int) {
+    func eventFromTableCell(code: Int,index: Int) {
         //셀 내의 개별적 제스쳐 이벤트를 처리하는 공간
         //interactor를 통해서 처리
         guard let cellEvent = InsightCellEvent(rawValue: code) else { return }
