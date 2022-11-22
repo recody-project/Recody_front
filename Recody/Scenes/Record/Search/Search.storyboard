@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,39 +28,11 @@
         <!--기록추가-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="record" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="MySearchViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="record" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="SearchViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="scaleToFill" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1r-c6-Dbs">
-                                <rect key="frame" x="20" y="50" width="374" height="51"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="search"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="ngH-gu-Fbc"/>
-                                </connections>
-                            </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 검색어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZR-2O-dAW">
-                                <rect key="frame" x="20" y="179" width="78" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bxH-X9-ZXS">
-                                <rect key="frame" x="20" y="220" width="374" height="642"/>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="xOH-fj-iDl"/>
-                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="Abv-bw-iMU"/>
-                                </connections>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nif-db-OTv">
-                                <rect key="frame" x="362" y="176" width="32" height="27"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
-                                <color key="tintColor" red="0.80784313725490198" green="0.80784313725490198" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="비우기"/>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="juw-Sx-1uE">
                                 <rect key="frame" x="20" y="117" width="86" height="30"/>
                                 <subviews>
@@ -140,38 +113,83 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="nqC-aX-yM4">
+                                <rect key="frame" x="0.0" y="57" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="za1-KI-5l2"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="Yxn-Nx-iVw"/>
+                                </connections>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Znh-UQ-1gS">
+                                <rect key="frame" x="0.0" y="177" width="414" height="685"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="v7f-m6-spS" firstAttribute="leading" secondItem="juw-Sx-1uE" secondAttribute="trailing" constant="10" id="97w-mY-xQX"/>
-                            <constraint firstItem="P1r-c6-Dbs" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="6" id="9da-pc-mla"/>
-                            <constraint firstAttribute="trailing" secondItem="P1r-c6-Dbs" secondAttribute="trailing" constant="20" id="CqP-Bg-SyA"/>
-                            <constraint firstItem="juw-Sx-1uE" firstAttribute="top" secondItem="P1r-c6-Dbs" secondAttribute="bottom" constant="16" id="H4R-g9-7ms"/>
+                            <constraint firstItem="nqC-aX-yM4" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Gon-EJ-zTY"/>
+                            <constraint firstItem="juw-Sx-1uE" firstAttribute="top" secondItem="nqC-aX-yM4" secondAttribute="bottom" constant="16" id="Ijk-bh-lao"/>
                             <constraint firstItem="juw-Sx-1uE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="M7s-Gz-6Gu"/>
-                            <constraint firstItem="bxH-X9-ZXS" firstAttribute="top" secondItem="xZR-2O-dAW" secondAttribute="bottom" constant="20" id="OfK-fN-h6k"/>
-                            <constraint firstItem="Nif-db-OTv" firstAttribute="centerY" secondItem="xZR-2O-dAW" secondAttribute="centerY" id="Oih-Vj-QCP"/>
-                            <constraint firstItem="bxH-X9-ZXS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Pwh-d6-0Q0"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Nif-db-OTv" secondAttribute="trailing" constant="20" id="Zci-OE-2QR"/>
-                            <constraint firstItem="xZR-2O-dAW" firstAttribute="top" secondItem="juw-Sx-1uE" secondAttribute="bottom" constant="32" id="bvZ-WE-xF0"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bxH-X9-ZXS" secondAttribute="bottom" id="j4R-lm-9jw"/>
-                            <constraint firstItem="xZR-2O-dAW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="jgp-cd-NlZ"/>
-                            <constraint firstItem="P1r-c6-Dbs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="sAO-gD-TFJ"/>
+                            <constraint firstItem="Znh-UQ-1gS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ow1-E8-OB3"/>
+                            <constraint firstItem="nqC-aX-yM4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Qg6-2J-8If"/>
+                            <constraint firstItem="Znh-UQ-1gS" firstAttribute="top" secondItem="juw-Sx-1uE" secondAttribute="bottom" constant="30" id="cvc-wv-80q"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Znh-UQ-1gS" secondAttribute="trailing" id="iJ2-fu-QJX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Znh-UQ-1gS" secondAttribute="bottom" id="ol8-6L-joU"/>
                             <constraint firstItem="v7f-m6-spS" firstAttribute="top" secondItem="juw-Sx-1uE" secondAttribute="top" id="vRK-Iu-eQV"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bxH-X9-ZXS" secondAttribute="trailing" constant="20" id="yF5-KB-9r7"/>
+                            <constraint firstItem="nqC-aX-yM4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="13" id="vvf-gA-n02"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="기록추가" image="recordImage" id="2ud-MP-5CE"/>
                     <navigationItem key="navigationItem" id="ger-La-SxF"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="categoryView" destination="juw-Sx-1uE" id="XSt-nj-bxF"/>
-                        <outlet property="genreView" destination="v7f-m6-spS" id="i6i-Md-v9a"/>
-                        <outlet property="searchBar" destination="P1r-c6-Dbs" id="10R-h6-CSZ"/>
-                        <outlet property="tableView" destination="bxH-X9-ZXS" id="g89-Eg-D8N"/>
+                        <outlet property="collectionView" destination="R7v-0W-HaN" id="1ZT-yO-hXi"/>
+                        <outlet property="searchBar" destination="nqC-aX-yM4" id="hCv-hU-HzI"/>
+                        <outlet property="searchView" destination="Znh-UQ-1gS" id="fTp-dh-NBh"/>
+                        <outlet property="tableView" destination="bxH-X9-ZXS" id="ceu-Lh-gAp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="R7v-0W-HaN">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9ol-F7-JUY">
+                        <size key="itemSize" width="120" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <cells>
+                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="workListCollectionViewCell" id="pYA-1a-Kfd" customClass="WorkListCollectionViewCell" customModule="Recody" customModuleProvider="target">
+                            <rect key="frame" x="60" y="0.0" width="120" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="E7Z-VQ-yQa">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="128"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </collectionViewCellContentView>
+                            <size key="customSize" width="120" height="128"/>
+                        </collectionViewCell>
+                    </cells>
+                    <connections>
+                        <outlet property="dataSource" destination="Y6W-OH-hqX" id="afn-Zb-zUQ"/>
+                        <outlet property="delegate" destination="Y6W-OH-hqX" id="Deu-uc-lw1"/>
+                    </connections>
+                </collectionView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="bxH-X9-ZXS">
+                    <rect key="frame" x="0.0" y="0.0" width="374" height="642"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <sections/>
+                    <connections>
+                        <outlet property="dataSource" destination="Y6W-OH-hqX" id="xOH-fj-iDl"/>
+                        <outlet property="delegate" destination="Y6W-OH-hqX" id="Abv-bw-iMU"/>
+                    </connections>
+                </tableView>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
         </scene>

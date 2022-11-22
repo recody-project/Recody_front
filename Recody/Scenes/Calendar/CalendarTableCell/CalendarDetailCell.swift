@@ -52,7 +52,7 @@ class CalendarDetailCell: UITableViewCell,ObservingTableCell {
     var eventDelegate: ObservingTableCellEvent?
     func sendEventToController(sender: UITapGestureRecognizer) {
         if let code = sender.view?.tag {
-            eventDelegate?.eventFromTableCell(code: InsightCellEvent.firstRecordEvent.rawValue)
+            eventDelegate?.eventFromTableCell(code: InsightCellEvent.firstRecordEvent.rawValue,index: viewmodel!.index)
         }
     }
     func changeData() {

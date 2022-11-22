@@ -35,6 +35,7 @@
 		20E788442925B53F00B05C8E /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E788432925B53F00B05C8E /* CalendarDetailViewController.swift */; };
 		20E788472925B7E000B05C8E /* CalendarDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E788452925B7E000B05C8E /* CalendarDetailCell.swift */; };
 		20E788482925B7E000B05C8E /* CalendarDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E788462925B7E000B05C8E /* CalendarDetailCell.xib */; };
+		3A13C9A3291F0A7700DC0756 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */; };
 		3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */; };
 		3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346028D01E0F00C417CB /* UIScrollView+.swift */; };
 		3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */; };
@@ -118,13 +119,7 @@
 		3AAEE3F228C5CF4500B28582 /* EditCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AAEE3F128C5CF4500B28582 /* EditCategory.storyboard */; };
 		3AAEE3F528C5D10100B28582 /* EditCategoryViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3F428C5D10100B28582 /* EditCategoryViewController+.swift */; };
 		3AAEE3F928C5DA9900B28582 /* EditCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3F828C5DA9900B28582 /* EditCategoryCollectionViewCell.swift */; };
-		3AB1431828F767FC0041C9CC /* MySearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1431228F767FC0041C9CC /* MySearchPresenter.swift */; };
-		3AB1431928F767FC0041C9CC /* MySearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1431328F767FC0041C9CC /* MySearchWorker.swift */; };
-		3AB1431A28F767FC0041C9CC /* MySearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1431428F767FC0041C9CC /* MySearchRouter.swift */; };
-		3AB1431B28F767FC0041C9CC /* MySearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1431528F767FC0041C9CC /* MySearchModels.swift */; };
-		3AB1431C28F767FC0041C9CC /* MySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1431628F767FC0041C9CC /* MySearchViewController.swift */; };
-		3AB1431D28F767FC0041C9CC /* MySearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1431728F767FC0041C9CC /* MySearchInteractor.swift */; };
-		3AB1431F28F768080041C9CC /* MySearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB1431E28F768080041C9CC /* MySearch.storyboard */; };
+		3AB1431F28F768080041C9CC /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB1431E28F768080041C9CC /* Search.storyboard */; };
 		3AB1432328F76FBC0041C9CC /* MySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1432128F76FBC0041C9CC /* MySearchTableViewCell.swift */; };
 		3AB1432428F76FBC0041C9CC /* MySearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB1432228F76FBC0041C9CC /* MySearchTableViewCell.xib */; };
 		3AB1432628F88F860041C9CC /* MySearchViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1432528F88F860041C9CC /* MySearchViewController+.swift */; };
@@ -197,6 +192,7 @@
 		20E788432925B53F00B05C8E /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
 		20E788452925B7E000B05C8E /* CalendarDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailCell.swift; sourceTree = "<group>"; };
 		20E788462925B7E000B05C8E /* CalendarDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarDetailCell.xib; sourceTree = "<group>"; };
+		3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditGenreViewController+.swift"; sourceTree = "<group>"; };
 		3A20346028D01E0F00C417CB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -282,13 +278,7 @@
 		3AAEE3F128C5CF4500B28582 /* EditCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditCategory.storyboard; sourceTree = "<group>"; };
 		3AAEE3F428C5D10100B28582 /* EditCategoryViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditCategoryViewController+.swift"; sourceTree = "<group>"; };
 		3AAEE3F828C5DA9900B28582 /* EditCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		3AB1431228F767FC0041C9CC /* MySearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchPresenter.swift; sourceTree = "<group>"; };
-		3AB1431328F767FC0041C9CC /* MySearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchWorker.swift; sourceTree = "<group>"; };
-		3AB1431428F767FC0041C9CC /* MySearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchRouter.swift; sourceTree = "<group>"; };
-		3AB1431528F767FC0041C9CC /* MySearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchModels.swift; sourceTree = "<group>"; };
-		3AB1431628F767FC0041C9CC /* MySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchViewController.swift; sourceTree = "<group>"; };
-		3AB1431728F767FC0041C9CC /* MySearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchInteractor.swift; sourceTree = "<group>"; };
-		3AB1431E28F768080041C9CC /* MySearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MySearch.storyboard; sourceTree = "<group>"; };
+		3AB1431E28F768080041C9CC /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		3AB1432128F76FBC0041C9CC /* MySearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchTableViewCell.swift; sourceTree = "<group>"; };
 		3AB1432228F76FBC0041C9CC /* MySearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySearchTableViewCell.xib; sourceTree = "<group>"; };
 		3AB1432528F88F860041C9CC /* MySearchViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySearchViewController+.swift"; sourceTree = "<group>"; };
@@ -492,7 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				3AEDB70428DE07DD00C3DB8D /* PreReview */,
-				3AB1431128F767E40041C9CC /* MySearch */,
+				3AB1431128F767E40041C9CC /* Search */,
 				3AA56CFF28BDE79800FB66F5 /* Record+ */,
 				3A75DBF528A0F5CE00084DB1 /* Record.storyboard */,
 				3AA56CF328BDDDE000FB66F5 /* RecordPresenter.swift */,
@@ -679,29 +669,24 @@
 			path = "EditCategory+";
 			sourceTree = "<group>";
 		};
-		3AB1431128F767E40041C9CC /* MySearch */ = {
+		3AB1431128F767E40041C9CC /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				3AB1432028F76E840041C9CC /* MySearch+ */,
-				3AB1431228F767FC0041C9CC /* MySearchPresenter.swift */,
-				3AB1431328F767FC0041C9CC /* MySearchWorker.swift */,
-				3AB1431428F767FC0041C9CC /* MySearchRouter.swift */,
-				3AB1431528F767FC0041C9CC /* MySearchModels.swift */,
-				3AB1431628F767FC0041C9CC /* MySearchViewController.swift */,
-				3AB1431728F767FC0041C9CC /* MySearchInteractor.swift */,
-				3AB1431E28F768080041C9CC /* MySearch.storyboard */,
+				3AB1432028F76E840041C9CC /* Search+ */,
+				3AB1431E28F768080041C9CC /* Search.storyboard */,
+				3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */,
 			);
-			path = MySearch;
+			path = Search;
 			sourceTree = "<group>";
 		};
-		3AB1432028F76E840041C9CC /* MySearch+ */ = {
+		3AB1432028F76E840041C9CC /* Search+ */ = {
 			isa = PBXGroup;
 			children = (
 				3AB1432128F76FBC0041C9CC /* MySearchTableViewCell.swift */,
 				3AB1432228F76FBC0041C9CC /* MySearchTableViewCell.xib */,
 				3AB1432528F88F860041C9CC /* MySearchViewController+.swift */,
 			);
-			path = "MySearch+";
+			path = "Search+";
 			sourceTree = "<group>";
 		};
 		3AB2F07A29095F2100240E56 /* MyPage+ */ = {
@@ -938,7 +923,7 @@
 				3A8D1735289BBC7A00B260D1 /* Assets.xcassets in Resources */,
 				20E788482925B7E000B05C8E /* CalendarDetailCell.xib in Resources */,
 				3A6AE8DF2918910300A9F520 /* InsightMostAppreciationCell.xib in Resources */,
-				3AB1431F28F768080041C9CC /* MySearch.storyboard in Resources */,
+				3AB1431F28F768080041C9CC /* Search.storyboard in Resources */,
 				3A6AE8E12918910300A9F520 /* InsightStatisticsGraphCell.xib in Resources */,
 				3A6AE8D42918910300A9F520 /* InsightShareCell.xib in Resources */,
 				3A75DBF128A0F41D00084DB1 /* TabBar.storyboard in Resources */,
@@ -1033,11 +1018,9 @@
 				3AB9CFBE28B4E84300A600DB /* WorkDetailInfoRouter.swift in Sources */,
 				3AEDB70328DE03D100C3DB8D /* WorkInfo.swift in Sources */,
 				3A34165A28FF5CF000C4D698 /* MyPageInteractor.swift in Sources */,
-				3AB1431B28F767FC0041C9CC /* MySearchModels.swift in Sources */,
 				3AB9CFC128B4E84300A600DB /* WorkDetailInfoInteractor.swift in Sources */,
 				3AB80F9F290D6C3500F032EC /* ModifyProfileViewController.swift in Sources */,
 				3AA56CFE28BDDDE000FB66F5 /* RecordInteractor.swift in Sources */,
-				3AB1431D28F767FC0041C9CC /* MySearchInteractor.swift in Sources */,
 				3AA56CFC28BDDDE000FB66F5 /* RecordModels.swift in Sources */,
 				3AA56CFA28BDDDE000FB66F5 /* RecordWorker.swift in Sources */,
 				3AAEE3F928C5DA9900B28582 /* EditCategoryCollectionViewCell.swift in Sources */,
@@ -1068,7 +1051,6 @@
 				3A8D1766289BBEA100B260D1 /* HomeInteractor.swift in Sources */,
 				3A6AE88E2918901900A9F520 /* TableCellViewModel+.swift in Sources */,
 				20E788472925B7E000B05C8E /* CalendarDetailCell.swift in Sources */,
-				3AB1431A28F767FC0041C9CC /* MySearchRouter.swift in Sources */,
 				3AAEE3E328C4E30D00B28582 /* UIView+.swift in Sources */,
 				20BD9CA82921F64B00BDAD13 /* CalendarViewController.swift in Sources */,
 				3A6AE8DA2918910300A9F520 /* InsightShareCell.swift in Sources */,
@@ -1077,6 +1059,7 @@
 				3AB1432628F88F860041C9CC /* MySearchViewController+.swift in Sources */,
 				3A6AE8902918903700A9F520 /* InsightViewController.swift in Sources */,
 				3AEDB70C28DE07FC00C3DB8D /* PreReviewWorker.swift in Sources */,
+				3A13C9A3291F0A7700DC0756 /* SearchViewController.swift in Sources */,
 				2015B3072918DF1700DB725D /* InsightCellEvent.swift in Sources */,
 				3A8F863828C6277D0028B45C /* EditGenreModels.swift in Sources */,
 				3A6AE8E02918910300A9F520 /* InsightStatisticsGraphCell.swift in Sources */,
@@ -1100,12 +1083,10 @@
 				3A6AE8E32918910300A9F520 /* InsiteStatisticsCell.swift in Sources */,
 				3A8D1764289BBEA100B260D1 /* HomeModels.swift in Sources */,
 				2010987C2900D23100C1B4CE /* ProtocolEx6.swift in Sources */,
-				3AB1431828F767FC0041C9CC /* MySearchPresenter.swift in Sources */,
 				3A34165828FF5CF000C4D698 /* MyPageModels.swift in Sources */,
 				20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */,
 				3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */,
 				20E788442925B53F00B05C8E /* CalendarDetailViewController.swift in Sources */,
-				3AB1431928F767FC0041C9CC /* MySearchWorker.swift in Sources */,
 				20DBFB0229029366009CEF76 /* UIViewController+.swift in Sources */,
 				20DBFB0729029366009CEF76 /* RouterType+.swift in Sources */,
 				3AA56D0528BE627300FB66F5 /* WorkTabCollectionViewCell.swift in Sources */,
@@ -1135,7 +1116,6 @@
 				2015B30A2918F28B00DB725D /* ApiClient.swift in Sources */,
 				3AB80F9D290D6C3500F032EC /* ModifyProfileRouter.swift in Sources */,
 				3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */,
-				3AB1431C28F767FC0041C9CC /* MySearchViewController.swift in Sources */,
 				3A8F863A28C6277D0028B45C /* EditGenreInteractor.swift in Sources */,
 				3AD4F12628C0A66600598D28 /* UIColor+.swift in Sources */,
 				3A77BE7328F57944005AFCAD /* PreReviewViewController+.swift in Sources */,

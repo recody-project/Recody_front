@@ -60,7 +60,7 @@
         <!--recordNavigation-->
         <scene sceneID="v1D-zd-2Fr">
             <objects>
-                <viewControllerPlaceholder storyboardName="MySearch" referencedIdentifier="recordNavigation" id="9JG-Yd-4Qo" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Search" referencedIdentifier="recordNavigation" id="9JG-Yd-4Qo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="tabImage" id="jeR-a4-v1H"/>
                     <navigationItem key="navigationItem" id="uSd-vy-xRL"/>
                 </viewControllerPlaceholder>

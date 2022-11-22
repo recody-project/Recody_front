@@ -74,7 +74,7 @@ class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
                                                                                                     "workTitle":"1987"]))
         tableView.reloadData()
     }
-    func eventFromTableCell(code: Int) {
+    func eventFromTableCell(code: Int,index: Int) {
     }
 }
 extension CalendarDetailViewController: UITableViewDelegate,UITableViewDataSource {
