@@ -15,11 +15,13 @@ class DependencyContainer {
 
     func ready<T: CommonVC> (viewController: T, interactor: InteractorType, router: SimpleRouter, presenter: PresenterType) {
         let name = viewController.name
-        if vcArr.contains(where: {$0.key == name}) { return }
+        if vcArr.contains(where: {$0.key == name}) {
+            unbind(name)
+        }
         vcArr[name] = [interactor,
                        router,
                        presenter]
-        print("DependencyContainer.ready() :: \(viewController.name)")
+        print("DependencyContainer.ready() :: \(viewController.name) , memory addr: \(viewController)")
     }
     private func checkArr<T: CommonVC >(viewController: T)->[Any]? {
         if let itemArr = self.vcArr[viewController.name] {

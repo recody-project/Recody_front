@@ -30,6 +30,7 @@ class MySearchTableViewCell: UITableViewCell {
 
     func setData(data: String, indexPathRow: Int) {
         contentLabel.text = data
+        print(data)
         indexPath = indexPathRow
     }
 

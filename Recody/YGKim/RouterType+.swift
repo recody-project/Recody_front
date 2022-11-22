@@ -13,6 +13,7 @@ protocol RouterType {
     func present(_ navigation: NavigationType, _ dataStore: DataStoreType?) // UIViewController 에서 직접 Present
     func perform(_ segment: SegmentType, _ dataStore: DataStoreType?) // 세그먼트를 이용한 화면이동
     func pushViewController(_ navigation: NavigationType, dataStore: DataStoreType?) // UINavigationController
+    func popViewContoller(animated:Bool)
 }
 
 protocol DataPassingType {
@@ -60,6 +61,9 @@ class SimpleRouter: RouterType {
                 context.pushViewController(next, animated: true)
             }
         }
+    }
+    func popViewContoller(animated:Bool){
+        self.context.navigationController?.popViewController(animated: animated)
     }
     private func check(_ next: NavigationType) -> Bool {
         if next.viewcontroller != nil {

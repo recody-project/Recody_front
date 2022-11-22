@@ -33,7 +33,7 @@ class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
         guard let useCase = UseCase.init(rawValue: orderNumber) else { return }
         switch useCase {
             case .back:
-                self.navigationController?.popViewController(animated: true)
+                self.router?.popViewContoller(animated: true)
             default:
                 break
         }
@@ -64,13 +64,13 @@ class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
                                                                                                     "genre":"책",
                                                                                                     "workTitle":"1987"]))
         tableList.append(TableCellViewModel(type: CalendarDetailTableCellType.work.rawValue, data: ["score":7,
-                                                                                                    "genre":"뮤지컬",
+                                                                                                    "genre":"음악",
                                                                                                     "workTitle":"1987"]))
         tableList.append(TableCellViewModel(type: CalendarDetailTableCellType.work.rawValue, data: ["score":4,
                                                                                                     "genre":"드라마",
                                                                                                     "workTitle":"1987"]))
         tableList.append(TableCellViewModel(type: CalendarDetailTableCellType.work.rawValue, data: ["score":5,
-                                                                                                    "genre":"연극",
+                                                                                                    "genre":"공연",
                                                                                                     "workTitle":"1987"]))
         tableView.reloadData()
     }
@@ -94,7 +94,7 @@ extension CalendarDetailViewController: UITableViewDelegate,UITableViewDataSourc
             mCell?.eventDelegate = self
             mCell?.cellView?.clipsToBounds = true
             mCell?.cellView?.borderWidth = 1.0
-        mCell?.cellView?.layer.borderColor = UIColor(hexString: "#FFFFFF").withAlphaComponent(0.5).cgColor
+            mCell?.cellView?.layer.borderColor = UIColor(hexString: "#FFFFFF").withAlphaComponent(0.5).cgColor
             mCell?.cellView?.backgroundColor = UIColor(hexString: "#FFFFFF")
             mCell?.cellView?.layer.cornerRadius = 15
         
