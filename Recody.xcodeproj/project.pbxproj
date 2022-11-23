@@ -21,8 +21,11 @@
 		20BD9CAC2921F90300BDAD13 /* CalendarWeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BD9CAA2921F90300BDAD13 /* CalendarWeekCell.swift */; };
 		20BD9CAD2921F90300BDAD13 /* CalendarWeekCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20BD9CAB2921F90300BDAD13 /* CalendarWeekCell.xib */; };
 		20BD9CB129220BE200BDAD13 /* TimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BD9CB029220BE200BDAD13 /* TimeUtil.swift */; };
+		20C161E6292CB739001B2F7F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C161E5292CB739001B2F7F /* SettingViewController.swift */; };
+		20C161E8292CBAFB001B2F7F /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C161E7292CBAFB001B2F7F /* Setting.storyboard */; };
 		20C6F9FE29077B6C009296E3 /* PresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6F9FD29077B6C009296E3 /* PresenterType.swift */; };
 		20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */; };
+		20CE1711292DB67D00D77152 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE1710292DB67D00D77152 /* AlertService.swift */; };
 		20CE3BF629274BBC009539DD /* CalendarSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE3BF529274BBC009539DD /* CalendarSettingViewController.swift */; };
 		20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFAFA29029366009CEF76 /* InteractorType+.swift */; };
 		20DBFB0229029366009CEF76 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBFAFB29029366009CEF76 /* UIViewController+.swift */; };
@@ -178,8 +181,11 @@
 		20BD9CAA2921F90300BDAD13 /* CalendarWeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeekCell.swift; sourceTree = "<group>"; };
 		20BD9CAB2921F90300BDAD13 /* CalendarWeekCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarWeekCell.xib; sourceTree = "<group>"; };
 		20BD9CB029220BE200BDAD13 /* TimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtil.swift; sourceTree = "<group>"; };
+		20C161E5292CB739001B2F7F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		20C161E7292CBAFB001B2F7F /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		20C6F9FD29077B6C009296E3 /* PresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterType.swift; sourceTree = "<group>"; };
 		20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDataModel.swift; sourceTree = "<group>"; };
+		20CE1710292DB67D00D77152 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		20CE3BF529274BBC009539DD /* CalendarSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSettingViewController.swift; sourceTree = "<group>"; };
 		20DBFAFA29029366009CEF76 /* InteractorType+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InteractorType+.swift"; sourceTree = "<group>"; };
 		20DBFAFB29029366009CEF76 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -374,7 +380,6 @@
 				20DBFAFD29029366009CEF76 /* README.md */,
 				20DBFB0029029366009CEF76 /* RouterType+.swift */,
 				20DBFAFE29029366009CEF76 /* RoutingLogic.swift */,
-				2015B3082918F27B00DB725D /* ApiService */,
 				20C6F9FD29077B6C009296E3 /* PresenterType.swift */,
 				20DBFAFB29029366009CEF76 /* UIViewController+.swift */,
 				3A6AE88D2918901900A9F520 /* TableCellViewModel+.swift */,
@@ -404,9 +409,19 @@
 			path = CalendarTableCell;
 			sourceTree = "<group>";
 		};
+		20C161E4292CB72C001B2F7F /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				20C161E5292CB739001B2F7F /* SettingViewController.swift */,
+				20C161E7292CBAFB001B2F7F /* Setting.storyboard */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		3A34164E28FF5CD200C4D698 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				20C161E4292CB72C001B2F7F /* Setting */,
 				3A6AE8E62918910900A9F520 /* Chart */,
 				3A6AE88A29188EF000A9F520 /* Insight */,
 				3AB80F92290D63D200F032EC /* ModifyProfile */,
@@ -587,6 +602,8 @@
 		3A8D1768289BBEB900B260D1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2015B3082918F27B00DB725D /* ApiService */,
+				20CE1710292DB67D00D77152 /* AlertService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -922,6 +939,7 @@
 				3AD4F12128C08C7E00598D28 /* DropDownHeader.xib in Resources */,
 				3A8D1735289BBC7A00B260D1 /* Assets.xcassets in Resources */,
 				20E788482925B7E000B05C8E /* CalendarDetailCell.xib in Resources */,
+				20C161E8292CBAFB001B2F7F /* Setting.storyboard in Resources */,
 				3A6AE8DF2918910300A9F520 /* InsightMostAppreciationCell.xib in Resources */,
 				3AB1431F28F768080041C9CC /* Search.storyboard in Resources */,
 				3A6AE8E12918910300A9F520 /* InsightStatisticsGraphCell.xib in Resources */,
@@ -1032,6 +1050,7 @@
 				3AA56D0328BE580000FB66F5 /* WorkListCollectionViewCell.swift in Sources */,
 				3AB9CFBC28B4E84300A600DB /* WorkDetailInfoPresenter.swift in Sources */,
 				3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */,
+				20CE1711292DB67D00D77152 /* AlertService.swift in Sources */,
 				3AAEE3ED28C5CF3900B28582 /* EditCategoryRouter.swift in Sources */,
 				3AB80F9B290D6C3500F032EC /* ModifyProfilePresenter.swift in Sources */,
 				2015B30C2918F37500DB725D /* ApiCommand.swift in Sources */,
@@ -1061,6 +1080,7 @@
 				3AEDB70C28DE07FC00C3DB8D /* PreReviewWorker.swift in Sources */,
 				3A13C9A3291F0A7700DC0756 /* SearchViewController.swift in Sources */,
 				2015B3072918DF1700DB725D /* InsightCellEvent.swift in Sources */,
+				20C161E6292CB739001B2F7F /* SettingViewController.swift in Sources */,
 				3A8F863828C6277D0028B45C /* EditGenreModels.swift in Sources */,
 				3A6AE8E02918910300A9F520 /* InsightStatisticsGraphCell.swift in Sources */,
 				3AB1432328F76FBC0041C9CC /* MySearchTableViewCell.swift in Sources */,

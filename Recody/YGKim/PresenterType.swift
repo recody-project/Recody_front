@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 protocol PresentationLogicType {
     func displaySuccess( orderNumber: Int, dataStore: DataStoreType? )
     func displayErorr( orderNumber: Int,msg:String?)
@@ -16,10 +17,16 @@ protocol PresenterType {
     func responseSuccess( orderNumber: Int, dataStore: DataStoreType? )
     func responseErorr(orderNumber: Int,msg:String?)
     func drop( orderNumber:Int )
+    var alertService : AlertServiceType { get }
+    init(context: UIViewController)
 }
 
 class SimplePresenter: PresenterType {
+    var alertService: AlertServiceType
     
+    required init(context: UIViewController) {
+        self.alertService = AlertService(context)
+    }
     var delegate: PresentationLogicType?
 
     func responseSuccess(orderNumber: Int, dataStore: DataStoreType?) {

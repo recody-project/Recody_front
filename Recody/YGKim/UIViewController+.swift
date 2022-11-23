@@ -26,19 +26,13 @@ class CommonVC: UIViewController, CommonVCType, PresentationLogicType {
 
 extension CommonVC {
     var interactor: InteractorType? {
-        get {
-            return DependencyContainer.shared.bindInteractor(viewController: self)
-        }
+        get { DependencyContainer.shared.bindInteractor(viewController: self) }
     }
     var presenter: PresenterType? {
-        get {
-            return DependencyContainer.shared.bindPresenter(viewController: self)
-        }
+        get { DependencyContainer.shared.bindPresenter(viewController: self) }
     }
     var router: RouterType? {
-        get {
-            return DependencyContainer.shared.bindRouter(viewController: self)
-        }
+        get { DependencyContainer.shared.bindRouter(viewController: self) }
     }
 }
 
@@ -56,7 +50,7 @@ extension CommonVC {
     }
     @objc public func swizzleViewDidLoad() {
         let router = SimpleRouter(context: self)
-        let presenter = SimplePresenter()
+        let presenter = SimplePresenter(context: self)
         presenter.delegate = self
         let worker = SimpleWoker()
         let interactor = SimpleInteractor(worker, presenter: presenter)

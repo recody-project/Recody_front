@@ -11,14 +11,14 @@ import Alamofire
 class ApiClient {
     let server = "http://recody-dev.ap-northeast-2.elasticbeanstalk.com/api/v1"
 
-    private func getParam(command: ApiCommand) -> Dictionary<String, Any> {
+    private func getParam(command: ApiCommand) ->Dictionary<String, Any> {
         var param = Dictionary<String, Any>()
         switch command {
-            case .login(let id, let pw):
-                param["id"] = id
-                param["pw"] = pw
-            case .checkValidEmail(let email):
-                param["email"] = email
+        case .login(let id, let pw):
+            param["id"] = id
+            param["pw"] = pw
+        case .checkValidEmail(let email):
+            param["email"] = email
         }
         return param
     }
@@ -30,30 +30,29 @@ class ApiClient {
         }
         return HTTPHeaders(headers)
     }
-    func request(command : ApiCommand,
-                _ succesBlock : @escaping (WorkResult)-> Void,
-                _ errorBlock : @escaping (String) -> Void) {
-        
+    func request(command: ApiCommand,
+                _ succesBlock: @escaping (WorkResult)-> Void,
+                _ errorBlock: @escaping (String) -> Void) {
         let headers = getHeaders(command: command)
         let params = getParam(command: command)
         let url = self.server + command.subDomain
         AF.request(url,
                    method: .post,
-                   parameters : params,
+                   parameters: params,
                    encoding: JSONEncoding.default,
-                   headers: headers).responseJSON(completionHandler:{ response in
+                   headers: headers).responseJSON(completionHandler: { response in
             do {
                 switch response.result {
-                    case .success(let data):
-                        if let jsonData = data as? Dictionary<String,Any> {
-                            succesBlock(WorkResult(jsonData))
-                        }else {
-                            errorBlock("data 가 없습니다.")
-                        }
-                    case .failure(let error):
-                        errorBlock(error.localizedDescription)
+                case .success(let data):
+                    if let jsonData = data as? Dictionary<String,Any> {
+                        succesBlock(WorkResult(jsonData))
+                    }else {
+                        errorBlock("data 가 없습니다.")
+                    }
+                case .failure(let error):
+                    errorBlock(error.localizedDescription)
                 }
-            } catch ( let error ){
+            } catch ( let error ) {
                 errorBlock(error.localizedDescription)
             }
         })

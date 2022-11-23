@@ -48,7 +48,7 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
                 print("download")
             break
             case .setting:
-                self.router?.pushViewController(RoutingLogic.Navigation.calendarSetting, dataStore: nil)
+                self.router?.pushViewController(RoutingLogic.Navigation.setting, dataStore: nil)
             break
             default:
             break
