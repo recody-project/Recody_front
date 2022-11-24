@@ -11,78 +11,137 @@
 //
 
 import UIKit
+import SnapKit
 
-protocol MyPageDisplayLogic: AnyObject {
-    func displaySomething(viewModel: MyPage.Something.ViewModel)
-}
-
-class MyPageViewController: UIViewController, MyPageDisplayLogic {
-    var interactor: MyPageBusinessLogic?
-    var router: (NSObjectProtocol & MyPageRoutingLogic & MyPageDataPassing)?
-
-    var reviewingWorks: [Work] = [
-        Work(id: "1", name: "1", image: "1"),
-        Work(id: "2", name: "2", image: "2"),
-        Work(id: "3", name: "3", image: "3")
-    ]
-
-    var favoriteWorks: [Work] = [
-    ]
-    // MARK: Object lifecycle
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup()
+class MyPageViewController: CommonVC {
+  var viewModel = MyPageViewModel()
+    
+  @IBOutlet weak var btnSetting: UIButton!
+  @IBOutlet weak var btnAlarm: UIButton!
+  @IBOutlet weak var btnProfile: UIImageView!
+  @IBOutlet weak var lbNickName: UILabel!
+  @IBOutlet weak var lbRecordCount: UILabel!
+  @IBOutlet weak var lbThisMonthAppreciationWorksTitle: UILabel! // 9월 감상 작품
+  @IBOutlet weak var lbThisMonthAppreciationWorksCount: UILabel! // 9월 감상 작품수
+  @IBOutlet weak var lbMonthNickNameTitle: UILabel! // 9월의 당신은
+  @IBOutlet weak var lbMonthNickName: UILabel! // 영화 매니아
+  @IBOutlet weak var viewMonthInfomation: UIView! // 9월의 당신은,영화 매니아를 포함한 컨테이너뷰, 코너 원형 처리를위해 추가
+    
+  @IBOutlet weak var btnRecordedWorks: UILabel! // 기록 중인 작품
+  @IBOutlet weak var btnDibsOnWorks: UILabel! // 찜한 작품
+  @IBOutlet weak var bottomIndicatorConstraint: NSLayoutConstraint! // 하단 메뉴 강조 블럭
+    
+    var recordedWorksTableList = [String]() //기록 중인 작품리스트
+    var dibsOnWorksTableList = [String]() // 찜한 작품리스트
+    
+    enum UseCase: Int, OrderType {
+        case setting = 100 // 셋팅 버튼 클릭시 -> 화면이동
+        case alarm = 101 // 우상단 알림 버튼 클릭시 -> 화면이동
+        case nextBottomPgae = 102 // 하단 다음 페이지전환
+        case previousBottomPage = 103 // 하단 이전 페이지전환
+        case changeProfileImage = 104 // 프로필 사진 클릭시 -> 화면이동
+        case moveWorkDetail = 105 // 작품 클릭시 상세보기 화면
+        var number: Int {
+            return self.rawValue
+        }
     }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
+    override func display(orderNumber: Int) {
+        guard let useCase = UseCase(rawValue: orderNumber) else { return }
+        switch useCase {
+        case .setting:
+            self.router?.pushViewController(RoutingLogic.Navigation.setting, dataStore: nil)
+        case .nextBottomPgae:
+            self.viewModel.nextPage()
+        case .previousBottomPage:
+            self.viewModel.previousPage()
+        default:
+            self.presenter?.alertService.showToast("\(useCase)")
+        }
+        update()
     }
-
-    // MARK: Setup
-
-    private func setup() {
-        let viewController = self
-        let interactor = MyPageInteractor()
-        let presenter = MyPagePresenter()
-        let router = MyPageRouter()
-        viewController.interactor = interactor
-        viewController.router = router
-        interactor.presenter = presenter
-        presenter.viewController = viewController
-        router.viewController = viewController
-        router.dataStore = interactor
+    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
+        guard let useCase = UseCase(rawValue: orderNumber) else { return }
+        switch useCase {
+        default:
+            self.presenter?.alertService.showToast("\(useCase)")
+        }
+        update()
     }
-
-    // MARK: Routing
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
+    override func displayErorr(orderNumber: Int, msg: String?) {
+        guard let useCase = UseCase(rawValue: orderNumber) else { return }
+        switch useCase {
+        default:
+            self.presenter?.alertService.showToast("\(useCase)")
+        }
+        update()
+    }
+    @objc func clickEvent(_ sender: UITapGestureRecognizer){
+        if let tag = sender.view?.tag {
+            guard let useCase = UseCase(rawValue: tag) else { return }
+            switch useCase {
+            default:
+                self.interactor?.just(useCase).drop()
             }
         }
     }
-
-    // MARK: View lifecycle
-
+    private func setup(){
+        //MARK: - UI
+        viewMonthInfomation.cornerRadius = 15
+        viewMonthInfomation.borderColor = .gray.withAlphaComponent(0.5)
+        viewMonthInfomation.borderWidth = 0.5
+        
+        btnProfile.cornerRadius = 58/2
+        btnProfile.backgroundColor = UIColor(hexString: "#D9D9D9")
+        btnSetting.setTitle("", for: .normal)
+        btnAlarm.setTitle("", for: .normal)
+        //MARK: - ClickEvent
+        btnSetting.setTag(UseCase.setting.rawValue)
+        btnSetting.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
+        btnAlarm.setTag(UseCase.alarm.rawValue)
+        btnAlarm.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
+        btnProfile.setTag(UseCase.changeProfileImage.rawValue)
+        btnProfile.isUserInteractionEnabled = true
+        btnProfile.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
+        
+        btnRecordedWorks.setTag(UseCase.previousBottomPage.rawValue)
+        btnRecordedWorks.isUserInteractionEnabled = true
+        btnRecordedWorks.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
+        btnDibsOnWorks.setTag(UseCase.nextBottomPgae.rawValue)
+        btnDibsOnWorks.isUserInteractionEnabled = true
+        btnDibsOnWorks.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
+        
+        let com = TimeUtil.nowDateComponent()
+        viewModel.month = com.month!
+        viewModel.year = com.year!
+        
+    }
+    private func update(){
+        lbNickName.text = viewModel.nickName
+        lbRecordCount.text = "\(viewModel.totalRecordCount)"
+        lbThisMonthAppreciationWorksTitle.text = "\(viewModel.month)월 감상 작품수"
+        lbThisMonthAppreciationWorksCount.text = "\(viewModel.thisMonthAppreciationWorksCount)"
+        lbMonthNickNameTitle.text = "\(viewModel.month)월의 당신은"
+        lbMonthNickName.text = "\(viewModel.monthNickName)"
+        if viewModel.bottomPageIndex == 0 { // 기록 중인 작품
+            btnRecordedWorks.textColor = UIColor(hexString: "#51453D")
+            btnDibsOnWorks.textColor = UIColor(hexString: "#CECECE")
+            self.bottomIndicatorConstraint.constant = 0
+            UIView.animate(withDuration: 0.3, delay: 0.0,options:[.beginFromCurrentState], animations: {
+                self.view.layoutIfNeeded()
+            })
+        }else if (viewModel.bottomPageIndex == 1){ // 찜한 작품
+            btnDibsOnWorks.textColor = UIColor(hexString: "#51453D")
+            btnRecordedWorks.textColor = UIColor(hexString: "#CECECE")
+            self.bottomIndicatorConstraint.constant = self.view.frame.width/2
+            UIView.animate(withDuration: 0.3, delay: 0.0,options:[.beginFromCurrentState], animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
-    }
-
-    // MARK: Do something
-
-    // @IBOutlet weak var nameTextField: UITextField!
-
-    func doSomething() {
-        let request = MyPage.Something.Request()
-        interactor?.doSomething(request: request)
-    }
-
-    func displaySomething(viewModel: MyPage.Something.ViewModel) {
-        // nameTextField.text = viewModel.name
+        setup()
+        update()
     }
 }
+

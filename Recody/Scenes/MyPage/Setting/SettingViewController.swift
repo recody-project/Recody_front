@@ -24,7 +24,7 @@ class SettingViewController : CommonVC,DataPassingType {
     
     @IBOutlet weak var btnSettingRecordy: UIView!
     @IBOutlet weak var btnOnlineBackup: UIView!
-    @IBOutlet weak var btnAlram: UIView!
+    @IBOutlet weak var btnAlarm: UIView!
     @IBOutlet weak var btnCalendar: UIView!
     @IBOutlet weak var btnFeedBack: UIView!
     @IBOutlet weak var btnGuide: UIView!
@@ -36,7 +36,7 @@ class SettingViewController : CommonVC,DataPassingType {
     enum UseCase : Int, OrderType {
         case back = 100 // 뒤로가기
         case onlineBackup = 101 // 온라인 백업
-        case alram = 102 // 알람 설정
+        case alarm = 102 // 알람 설정
         case calendar = 103 // 달력 설정
         case guide = 104 // 가이드
         case starAndReview = 105 // 별점 & 리뷰 주기
@@ -84,7 +84,7 @@ class SettingViewController : CommonVC,DataPassingType {
     func setup(){
         let btns = [btnSettingRecordy,
                     btnOnlineBackup,
-                    btnAlram,
+                    btnAlarm,
                     btnCalendar,
                     btnFeedBack,
                     btnGuide,
@@ -94,7 +94,7 @@ class SettingViewController : CommonVC,DataPassingType {
                     btnLogout]
         let actions =  [UseCase.settingPageOpen,
                         UseCase.onlineBackup,
-                        UseCase.alram,
+                        UseCase.alarm,
                         UseCase.calendar,
                         UseCase.feedBackPageOpen,
                         UseCase.guide,
@@ -139,7 +139,7 @@ class SettingViewController : CommonVC,DataPassingType {
     }
 }
 extension UIView {
-    func setTag(_ tag:Int){
+    func setTag(_ tag: Int) {
         self.tag = tag
     }
 }
