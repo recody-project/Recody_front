@@ -374,7 +374,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnAlram" destination="Xdh-zx-ZI2" id="9EA-il-6Ky"/>
+                        <outlet property="btnAlarm" destination="Xdh-zx-ZI2" id="9EA-il-6Ky"/>
                         <outlet property="btnBack" destination="xRE-dy-xQn" id="9lZ-fp-o02"/>
                         <outlet property="btnCalendar" destination="xpA-Y7-nqr" id="OPt-m6-yjM"/>
                         <outlet property="btnFeedBack" destination="Epm-wg-tQc" id="EHq-fc-SuP"/>
