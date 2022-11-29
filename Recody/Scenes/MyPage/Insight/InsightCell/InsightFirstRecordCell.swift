@@ -7,16 +7,16 @@
 
 import UIKit
 
-class InsightFirstRecordCell: UITableViewCell,ObservingTableCell {
-    @IBOutlet weak var lbNickName:UILabel!
-    @IBOutlet weak var lbMonth:UILabel!
-    @IBOutlet weak var lbGenre:UILabel!
-    @IBOutlet weak var lbWorkTitle:UILabel!
-    @IBOutlet weak var imgWork:UIImageView!
-    @IBOutlet weak var btnDetail:UIView!
+class InsightFirstRecordCell: UITableViewCell, ObservingTableCell {
+    @IBOutlet weak var lbNickName: UILabel!
+    @IBOutlet weak var lbMonth: UILabel!
+    @IBOutlet weak var lbGenre: UILabel!
+    @IBOutlet weak var lbWorkTitle: UILabel!
+    @IBOutlet weak var imgWork: UIImageView!
+    @IBOutlet weak var btnDetail: UIView!
     @IBOutlet weak var cellView: UIView?
-    var viewmodel:TableCellViewModel?{
-        didSet{
+    var viewmodel: TableCellViewModel? {
+        didSet {
             viewmodel?.delegate = self
             changeData()
         }
@@ -33,9 +33,9 @@ class InsightFirstRecordCell: UITableViewCell,ObservingTableCell {
         lbWorkTitle.text=data.stringValue(key: "workTitle")
         let imgPath = data.stringValue(key: "imgPath")
     }
-    @objc func sendEventToController(sender : UITapGestureRecognizer){
+    @objc func sendEventToController(sender: UITapGestureRecognizer) {
         if let code = sender.view?.tag {
-            eventDelegate?.eventFromTableCell(code: InsightCellEvent.firstRecordEvent.rawValue,index: viewmodel!.index)
+            eventDelegate?.eventFromTableCell(code: InsightCellEvent.firstRecordEvent.rawValue, index: viewmodel!.index)
         }
     }
     override func awakeFromNib() {
@@ -47,7 +47,6 @@ class InsightFirstRecordCell: UITableViewCell,ObservingTableCell {
         btnDetail.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendEventToController(sender:))))
         changeData()
     }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

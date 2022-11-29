@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
     var viewModel = CalendarViewModel()
-    var tableList : [TableCellViewModel] = [TableCellViewModel]()
+    var tableList: [TableCellViewModel] = [TableCellViewModel]()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnBack: UIButton!
     enum CalendarDetailTableCellType: Int {
@@ -18,7 +18,7 @@ class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
             return CalendarDetailCell.Name
         }
     }
-    enum UseCase : Int,OrderType {
+    enum UseCase: Int,OrderType {
         case back = 100
         var number: Int {
             return self.rawValue
@@ -57,21 +57,21 @@ class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
         let registerCellList = [(CalendarDetailCell.Xib,
                                  CalendarDetailCell.Name)]
         tableView.register(cells: registerCellList)
-        tableList.append(TableCellViewModel(type: CalendarDetailTableCellType.work.rawValue, data: ["score":8,
-                                                                                                    "genre":"영화",
-                                                                                                    "workTitle":"1987"]))
-        tableList.append(TableCellViewModel(type: CalendarDetailTableCellType.work.rawValue, data: ["score":6,
-                                                                                                    "genre":"책",
-                                                                                                    "workTitle":"1987"]))
-        tableList.append(TableCellViewModel(type: CalendarDetailTableCellType.work.rawValue, data: ["score":7,
-                                                                                                    "genre":"음악",
-                                                                                                    "workTitle":"1987"]))
-        tableList.append(TableCellViewModel(type: CalendarDetailTableCellType.work.rawValue, data: ["score":4,
-                                                                                                    "genre":"드라마",
-                                                                                                    "workTitle":"1987"]))
-        tableList.append(TableCellViewModel(type: CalendarDetailTableCellType.work.rawValue, data: ["score":5,
-                                                                                                    "genre":"공연",
-                                                                                                    "workTitle":"1987"]))
+        tableList.append(TableCellViewModel(type: CalendarDetailTableCellType.work.rawValue, data: ["score": 8,
+                                                                                                    "genre": "영화",
+                                                                                                    "workTitle": "1987"]))
+        tableList.append(TableCellViewModel(type: CalendarDetailTableCellType.work.rawValue, data: ["score": 6,
+                                                                                                    "genre": "책",
+                                                                                                    "workTitle": "1987"]))
+        tableList.append(TableCellViewModel(type: CalendarDetailTableCellType.work.rawValue, data: ["score": 7,
+                                                                                                    "genre": "음악",
+                                                                                                    "workTitle": "1987"]))
+        tableList.append(TableCellViewModel(type: CalendarDetailTableCellType.work.rawValue, data: ["score": 4,
+                                                                                                    "genre": "드라마",
+                                                                                                    "workTitle": "1987"]))
+        tableList.append(TableCellViewModel(type: CalendarDetailTableCellType.work.rawValue, data: ["score": 5,
+                                                                                                    "genre": "공연",
+                                                                                                    "workTitle": "1987"]))
         tableView.reloadData()
     }
     func eventFromTableCell(code: Int,index: Int) {
@@ -80,11 +80,11 @@ class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
 extension CalendarDetailViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // visible 값에따라 숨기고 감추고가 가능합니다.
-        let list = tableList.filter{ $0.visible }.count
+        let list = tableList.filter { $0.visible }.count
         return list
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var list = self.tableList.filter{ $0.visible }
+        var list = self.tableList.filter { $0.visible }
         var cell = UITableViewCell()
         guard let type = CalendarDetailTableCellType(rawValue: list[indexPath.row].type) else { fatalError("CellType Int Out Of Bounds Error") }
         var mCell = tableView.dequeueReusableCell(withIdentifier: type.name) as? UITableViewCell & ObservingTableCell
@@ -97,7 +97,6 @@ extension CalendarDetailViewController: UITableViewDelegate,UITableViewDataSourc
             mCell?.cellView?.layer.borderColor = UIColor(hexString: "#FFFFFF").withAlphaComponent(0.5).cgColor
             mCell?.cellView?.backgroundColor = UIColor(hexString: "#FFFFFF")
             mCell?.cellView?.layer.cornerRadius = 15
-        
         if mCell != nil { cell = mCell! }
         list[indexPath.row].viewHeight = cell.frame.height
 //        cell.contentView.cornerRadius = 12
@@ -111,5 +110,4 @@ extension CalendarDetailViewController: UITableViewDelegate,UITableViewDataSourc
     }
 }
 class CalendarDetailViewModel {
-    
 }

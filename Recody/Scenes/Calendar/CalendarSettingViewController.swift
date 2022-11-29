@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CalendarSettingViewController : CommonVC {
+class CalendarSettingViewController: CommonVC {
     var viewModel = CalendarSettingViewModel()
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var lbComplete: UILabel!
@@ -16,7 +16,6 @@ class CalendarSettingViewController : CommonVC {
     @IBOutlet weak var btnRecordDate: UIButton!
     @IBOutlet weak var btnStartSunday: UIButton!
     @IBOutlet weak var btnStartMonday: UIButton!
-    
     enum UseCase: Int, OrderType {
         case back = 100
         case complete = 101
@@ -28,7 +27,6 @@ class CalendarSettingViewController : CommonVC {
             return self.rawValue
         }
     }
-     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -43,6 +41,7 @@ class CalendarSettingViewController : CommonVC {
         btnStartSunday.tag = UseCase.flagStartSunday.rawValue
         btnStartMonday.tag = UseCase.flagStartMonday.rawValue
         [ btnCompleteDate, btnRecordDate, btnStartSunday, btnStartMonday ].forEach({
+            $0?.titleLabel?.font = UIFont.fontWithName(type: .medium, size: 14)
             $0?.layer.borderWidth = 1.0
             $0?.layer.cornerRadius = 8.0
         })
@@ -97,7 +96,6 @@ class CalendarSettingViewModel {
     var isStartMunday = false
     var sortCompletedDate = true
     var sortRecordedDate = false
-    
     func toggleStartSunday() {
         isStartMunday = false
         isStartSunday = !isStartMunday

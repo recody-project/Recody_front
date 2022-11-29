@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalendarWeekCell: UITableViewCell,ObservingTableCell {
+class CalendarWeekCell: UITableViewCell, ObservingTableCell {
     var viewmodel:TableCellViewModel?{
         didSet{
             viewmodel?.delegate = self
@@ -37,12 +37,11 @@ class CalendarWeekCell: UITableViewCell,ObservingTableCell {
     @IBOutlet weak var imgWork5: UIImageView!
     @IBOutlet weak var imgWork6: UIImageView!
     @IBOutlet weak var imgWork7: UIImageView!
-    var days = [1,2,3,4,5,6,7]
-    var imgs = [1:"",2:"",3:"",4:"",5:"",6:"",7:""]
+    var days = [1, 2, 3, 4, 5, 6, 7]
+    var imgs = [1: "", 2: "", 3: "", 4: "", 5: "", 6: "", 7: ""]
     var eventDelegate: ObservingTableCellEvent?
     var month = 0
     var year = 0
-    
     func binding(data: Dictionary<String, Any>) {
         if let week = data["week"] as? [Int] {
             self.days = week
@@ -52,7 +51,7 @@ class CalendarWeekCell: UITableViewCell,ObservingTableCell {
             self.month = month
             self.year = year
         }
-        //오늘날짜를 포함했는지 검사하기위한 플래그
+        // 오늘날짜를 포함했는지 검사하기위한 플래그
         var isContainToday = false
         var containToday = 0
         if let nowYear = TimeUtil.nowDateComponent().year,
@@ -65,7 +64,6 @@ class CalendarWeekCell: UITableViewCell,ObservingTableCell {
                 }
             }
         }
-        
         let imgWorks = [imgWork1,imgWork2,imgWork3,imgWork4,imgWork5,imgWork6,imgWork7]
         for (index,label) in [lbDayCount1, lbDayCount2, lbDayCount3, lbDayCount4, lbDayCount5, lbDayCount6, lbDayCount7].enumerated() {
             label?.text = "\(days[index])"
@@ -73,7 +71,7 @@ class CalendarWeekCell: UITableViewCell,ObservingTableCell {
             if days[index] == -1 {
                 label?.isHidden = true
                 imgWorks[index]?.isHidden = false
-            }else {
+            } else {
                 label?.isHidden = false
                 imgWorks[index]?.isHidden = false
             }
@@ -85,7 +83,7 @@ class CalendarWeekCell: UITableViewCell,ObservingTableCell {
                 label?.backgroundColor = .clear
             }
         }
-        for (index,imgSource) in self.imgs.enumerated() {
+        for (index, imgSource) in self.imgs.enumerated() {
             if imgSource.value == "" {
                 imgWorks[index]?.isHidden = true
             } else {
@@ -109,27 +107,24 @@ class CalendarWeekCell: UITableViewCell,ObservingTableCell {
     }
     // 날짜가 유효값일때만 액션 이벤트를 등록한다.
     // 유효하지 않을면 (-1) 액션 이벤트를 해제한다.
-    func settingClick(){
-        for (index,view) in [viewDay1, viewDay2, viewDay3, viewDay4, viewDay5, viewDay6, viewDay7].enumerated(){
+    func settingClick() {
+        for (index,view) in [viewDay1, viewDay2, viewDay3, viewDay4, viewDay5, viewDay6, viewDay7].enumerated() {
             if days[index] > 0 {
                 view?.isUserInteractionEnabled = true
                 view?.tag = days[index]
                 view?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendEventToController(sender: ))))
-            }else {
+            } else {
                 view?.isUserInteractionEnabled = false
                 if let gestures = view?.gestureRecognizers {
-                    gestures.forEach({ it in
-                        view?.removeGestureRecognizer(it)
+                    gestures.forEach({ gesture in
+                        view?.removeGestureRecognizer(gesture)
                     })
                 }
             }
         }
     }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-    
 }

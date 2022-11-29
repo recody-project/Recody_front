@@ -19,7 +19,7 @@ class CalendarViewModel {
     // 기본값 30 / 연 월이 선택되고 결정됨
     var weekCount = 0
     // 주의 수
-    var recordImgs = [Int:String]()
+    var recordImgs = [Int: String]()
     // key 날의수
     // value 해당 날짜에 가장 최근에 기록한 작품의 포스터 이미지 url 값
     var isStartSunday = true
@@ -33,11 +33,11 @@ class CalendarViewModel {
         self.selectMonth = component.month!
         updateState()
     }
-    func nextMonth(){
+    func nextMonth() {
         if self.selectMonth == 12 {
             self.selectMonth = 1
             self.selectYear += 1
-        }else {
+        } else {
             self.selectMonth += 1
         }
         updateState()
@@ -61,7 +61,6 @@ class CalendarViewModel {
             return [-1, -1, -1, -1, -1, -1, -1]
         })
         var firstWeekDayCount = 1
-        
         for index in 0...6 {
             if index+1 >= startWeekDay {
                 weeks[0][index] = firstWeekDayCount

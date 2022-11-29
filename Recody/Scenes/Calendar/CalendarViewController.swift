@@ -10,7 +10,7 @@ import UIKit
 
 class CalendarViewController: CommonVC, ObservingTableCellEvent {
     var viewModel = CalendarViewModel()
-    var tableList : [TableCellViewModel] = [TableCellViewModel]()
+    var tableList: [TableCellViewModel] = [TableCellViewModel]()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lbYear: UILabel!
     @IBOutlet weak var lbMonth: UILabel!
@@ -18,7 +18,6 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
     @IBOutlet weak var btnPreviousMonth: UIButton!
     @IBOutlet weak var imgSetting: UIImageView!
     @IBOutlet weak var imgDonwload: UIImageView!
-    
     enum CalendarTableCellType: Int {
         case week = 1
         var name: String {
@@ -104,15 +103,14 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
         tableView.register(cells: registerCellList)
         tableView.reloadData()
     }
-    
     func update(){
         lbYear.text = "\(viewModel.selectYear)"
         lbMonth.text = "\(viewModel.selectMonth)"
         tableList.removeAll()
         viewModel.weeks.forEach({ week in
-            tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: ["week":week,
-                                                                                                  "month":viewModel.selectMonth,
-                                                                                                  "year":viewModel.selectYear]))
+            tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: ["week": week,
+                                                                                                  "month": viewModel.selectMonth,
+                                                                                                  "year": viewModel.selectYear]))
         })
         tableView.reloadData()
     }
@@ -132,7 +130,6 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
             mCell?.viewmodel = list[indexPath.row]
             // Cell 내의 클릭이벤트 구독 -> eventFromTableCell() 함수로전달
             mCell?.eventDelegate = self
-        
         if mCell != nil { cell = mCell! }
         list[indexPath.row].viewHeight = cell.frame.height
 //        cell.contentView.cornerRadius = 12

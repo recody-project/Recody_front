@@ -6,18 +6,18 @@
 //
 
 import UIKit
-//3
-//가장 길게적은
-class InsightMostImpressiveCell: UITableViewCell,ObservingTableCell {
-    @IBOutlet weak var lbTitle:UILabel!
-    @IBOutlet weak var lbGenre:UILabel!
-    @IBOutlet weak var lbWorkTitle:UILabel!
-    @IBOutlet weak var lbRecordCount:UILabel!
-    @IBOutlet weak var imgWork:UIImageView!
-    @IBOutlet weak var btnDetail:UIView!
+// 3
+// 가장 길게적은
+class InsightMostImpressiveCell: UITableViewCell, ObservingTableCell {
+    @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var lbGenre: UILabel!
+    @IBOutlet weak var lbWorkTitle: UILabel!
+    @IBOutlet weak var lbRecordCount: UILabel!
+    @IBOutlet weak var imgWork: UIImageView!
+    @IBOutlet weak var btnDetail: UIView!
     @IBOutlet weak var cellView: UIView?
-    var viewmodel:TableCellViewModel?{
-        didSet{
+    var viewmodel: TableCellViewModel? {
+        didSet {
             viewmodel?.delegate = self
             changeData()
         }
@@ -34,7 +34,7 @@ class InsightMostImpressiveCell: UITableViewCell,ObservingTableCell {
         lbRecordCount.text=data.stringValue(key: "recordCount")
         let imgPath = data.stringValue(key: "imgPath")
     }
-    @objc func sendEventToController(sender : UITapGestureRecognizer){
+    @objc func sendEventToController(sender: UITapGestureRecognizer) {
         if let code = sender.view?.tag {
             eventDelegate?.eventFromTableCell(code: InsightCellEvent.mostImpressiveEvent.rawValue, index: viewmodel!.index)
         }
@@ -55,11 +55,11 @@ class InsightMostImpressiveCell: UITableViewCell,ObservingTableCell {
 }
 
 extension Dictionary where Key == String, Value == Any {
-    func stringValue(key:String) -> String{
+    func stringValue(key: String) -> String {
         let value = self[key]
         return "\(value ?? "")"
     }
-    func intValue(key:String) -> Int {
+    func intValue(key: String) -> Int {
         let value = self[key] as? Int
         return value ?? 0
     }

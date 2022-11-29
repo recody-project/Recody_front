@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class SettingViewController : CommonVC,DataPassingType {
+class SettingViewController: CommonVC, DataPassingType {
     var viewModel = SettingViewModel()
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
@@ -21,7 +21,6 @@ class SettingViewController : CommonVC,DataPassingType {
     @IBOutlet weak var btnRecordFeedBackPageOpen: UIView!
     @IBOutlet weak var imgRecordFeedBackPageOpen: UIImageView!
     @IBOutlet weak var recordyFeedBackPageHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var btnSettingRecordy: UIView!
     @IBOutlet weak var btnOnlineBackup: UIView!
     @IBOutlet weak var btnAlarm: UIView!
@@ -32,8 +31,7 @@ class SettingViewController : CommonVC,DataPassingType {
     @IBOutlet weak var btnSendOpinion: UIView!
     @IBOutlet weak var btnTermsAndConditions: UIView!
     @IBOutlet weak var btnLogout:UIView!
-    
-    enum UseCase : Int, OrderType {
+    enum UseCase: Int, OrderType{
         case back = 100 // 뒤로가기
         case onlineBackup = 101 // 온라인 백업
         case alarm = 102 // 알람 설정
@@ -51,9 +49,9 @@ class SettingViewController : CommonVC,DataPassingType {
     }
     func bind(_ data: DataStoreType) {
     }
-    @objc func clickEvent(_ sender:UITapGestureRecognizer){
+    @objc func clickEvent(_ sender: UITapGestureRecognizer){
         if let tag = sender.view?.tag {
-            guard let useCase = UseCase(rawValue:tag) else { return }
+            guard let useCase = UseCase(rawValue: tag) else{ return }
             switch useCase {
             default:
                 self.interactor?.just(useCase).drop()
@@ -61,7 +59,7 @@ class SettingViewController : CommonVC,DataPassingType {
         }
     }
     override func display(orderNumber: Int) {
-        guard let useCase = UseCase(rawValue:orderNumber) else { return }
+        guard let useCase = UseCase(rawValue: orderNumber) else { return }
         switch useCase {
         case .settingPageOpen:
             viewModel.recodySettingEnable = !viewModel.recodySettingEnable
@@ -77,11 +75,11 @@ class SettingViewController : CommonVC,DataPassingType {
             }),UIAlertAction(title: "No", style: .default)])
         break
         default:
-            self.presenter?.alertService.showToast("\(useCase)")
+        self.presenter?.alertService.showToast("\(useCase)")
         }
         update()
     }
-    func setup(){
+    func setup() {
         let btns = [btnSettingRecordy,
                     btnOnlineBackup,
                     btnAlarm,
@@ -102,7 +100,7 @@ class SettingViewController : CommonVC,DataPassingType {
                         UseCase.sendOpinion,
                         UseCase.termsAndConditions,
                         UseCase.logout]
-        for (index,btn) in btns.enumerated(){
+        for (index,btn) in btns.enumerated() {
             btn?.setTag(actions[index].rawValue)
             btn?.isUserInteractionEnabled = true
             btn?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
@@ -119,7 +117,7 @@ class SettingViewController : CommonVC,DataPassingType {
         btnRecordFeedBackPageOpen.tag = UseCase.feedBackPageOpen.rawValue
         btnRecordFeedBackPageOpen.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
     }
-    func update(){
+    func update() {
         lbEmail.text = viewModel.emailAddress
         lbAppVersion.text = viewModel.appVersion
         self.imgRecordySettingPageOpen.image = viewModel.recodySettingEnable ? UIImage(systemName: "chevron.down") : UIImage(systemName: "chevron.up")
@@ -132,7 +130,7 @@ class SettingViewController : CommonVC,DataPassingType {
         scrollViewHeight.constant = scrollHeight
         self.view.layoutIfNeeded()
     }
-    override func viewDidLoad(){
+    override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         update()
@@ -149,4 +147,3 @@ struct SettingViewModel {
     var appVersion = "1.0.1"
     var emailAddress = "ikmujn5@naver.com"
 }
-

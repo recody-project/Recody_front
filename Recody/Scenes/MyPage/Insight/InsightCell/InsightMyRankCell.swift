@@ -6,20 +6,19 @@
 //
 
 import UIKit
-//6
-class InsightMyRankCell: UITableViewCell,ObservingTableCell {
-    @IBOutlet weak var lbNickName:UILabel!
-    @IBOutlet weak var lbMonth:UILabel!
-    @IBOutlet weak var lbScoreAverage:UILabel!
-    
-    @IBOutlet weak var imgStart1:UIImageView!
-    @IBOutlet weak var imgStart2:UIImageView!
-    @IBOutlet weak var imgStart3:UIImageView!
-    @IBOutlet weak var imgStart4:UIImageView!
-    @IBOutlet weak var imgStart5:UIImageView!
-    @IBOutlet weak var cellView:UIView?
-    @IBOutlet weak var chartView:UIView!
-    var viewmodel:TableCellViewModel?{
+// 6
+class InsightMyRankCell: UITableViewCell, ObservingTableCell {
+    @IBOutlet weak var lbNickName: UILabel!
+    @IBOutlet weak var lbMonth: UILabel!
+    @IBOutlet weak var lbScoreAverage: UILabel!
+    @IBOutlet weak var imgStart1: UIImageView!
+    @IBOutlet weak var imgStart2: UIImageView!
+    @IBOutlet weak var imgStart3: UIImageView!
+    @IBOutlet weak var imgStart4: UIImageView!
+    @IBOutlet weak var imgStart5: UIImageView!
+    @IBOutlet weak var cellView: UIView?
+    @IBOutlet weak var chartView: UIView!
+    var viewmodel: TableCellViewModel? {
         didSet{
             viewmodel?.delegate = self
             changeData()
@@ -37,7 +36,7 @@ class InsightMyRankCell: UITableViewCell,ObservingTableCell {
         lbScoreAverage.text = "\(Double(score)/2)"
         settingStar(score)
     }
-    private func settingStar(_ score : Int){
+    private func settingStar(_ score : Int) {
         if score > 10 { return }
         let startImgs = [imgStart1,imgStart2,imgStart3,imgStart4,imgStart5]
         [imgStart1,imgStart2,imgStart3,imgStart4,imgStart5].forEach({
@@ -48,7 +47,7 @@ class InsightMyRankCell: UITableViewCell,ObservingTableCell {
         if score%2 == 1 {
             checkStartLastPosition=((score-1)/2) - 1
             halfStartPosition = ((score-1)/2)
-        }else{
+        } else {
             checkStartLastPosition=((score)/2) - 1
             halfStartPosition = ((score)/2)
         }
@@ -63,7 +62,7 @@ class InsightMyRankCell: UITableViewCell,ObservingTableCell {
             startImgs[halfStartPosition]?.image = UIImage(named: "star.half.fill")
         }
     }
-    @objc func sendEventToController(sender : UITapGestureRecognizer){
+    @objc func sendEventToController(sender: UITapGestureRecognizer) {
         if let code = sender.view?.tag {
             eventDelegate?.eventFromTableCell(code: InsightCellEvent.myRankEvent.rawValue,index: viewmodel!.index)
         }

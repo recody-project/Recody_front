@@ -39,7 +39,7 @@
                                                     <constraint firstAttribute="width" secondItem="i5r-kw-khN" secondAttribute="height" multiplier="1:1" id="8ci-We-Ine"/>
                                                     <constraint firstAttribute="height" constant="22" id="QsK-fE-XM4"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -68,7 +68,7 @@
                                                     <constraint firstAttribute="width" secondItem="hDZ-HP-jKK" secondAttribute="height" multiplier="1:1" id="Hx9-gk-wvQ"/>
                                                     <constraint firstAttribute="height" constant="22" id="dmv-eY-vqP"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -97,7 +97,7 @@
                                                     <constraint firstAttribute="height" constant="22" id="ZlG-1V-xIq"/>
                                                     <constraint firstAttribute="width" secondItem="zI9-U1-gtQ" secondAttribute="height" multiplier="1:1" id="mqR-G5-9hq"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -126,7 +126,7 @@
                                                     <constraint firstAttribute="height" constant="22" id="MEh-94-fiW"/>
                                                     <constraint firstAttribute="width" secondItem="FHv-aY-KZ7" secondAttribute="height" multiplier="1:1" id="ikI-hb-7iy"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -155,7 +155,7 @@
                                                     <constraint firstAttribute="height" constant="22" id="J6j-W7-aNb"/>
                                                     <constraint firstAttribute="width" secondItem="t8Q-5B-SLp" secondAttribute="height" multiplier="1:1" id="lJQ-w9-YWd"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -184,7 +184,7 @@
                                                     <constraint firstAttribute="width" secondItem="ii0-dJ-pYY" secondAttribute="height" multiplier="1:1" id="9PB-rf-lY4"/>
                                                     <constraint firstAttribute="height" constant="22" id="Ra3-Un-X2o"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -213,7 +213,7 @@
                                                     <constraint firstAttribute="height" constant="22" id="SeV-db-4dm"/>
                                                     <constraint firstAttribute="width" secondItem="Nhh-41-Y3r" secondAttribute="height" multiplier="1:1" id="xuH-YT-dey"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
