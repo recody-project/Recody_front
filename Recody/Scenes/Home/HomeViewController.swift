@@ -78,19 +78,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeCategoryStackView()
-    }
-
-    @IBOutlet weak var categoryStackView: UIStackView!
-    @IBOutlet weak var workCategoryStackView: UIStackView!
-
-    func makeCategoryStackView() {
-        var index = 0
-        guard let tempArray = categoryStackView.arrangedSubviews as? [CustomCategory] else { return }
-        for value in tempArray {
-            value.setData(with: categories[index])
-            index += 1
-        }
     }
 
     func displayTestCategory(viewModel: Home.TestCategory.ViewModel) {

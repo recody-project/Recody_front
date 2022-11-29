@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-447" y="130"/>
         </scene>
-        <!--home-->
+        <!--homeNavigation-->
         <scene sceneID="BQH-IS-9yM">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="home" id="fHa-fo-NZj" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="homeNavigation" id="fHa-fo-NZj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="jTX-sb-IMQ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5z-Yq-My4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

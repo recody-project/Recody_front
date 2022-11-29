@@ -38,6 +38,9 @@
 		3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */; };
 		3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34165328FF5CF000C4D698 /* MyPageViewController.swift */; };
 		3A34165C28FF5CF900C4D698 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A34165B28FF5CF900C4D698 /* MyPage.storyboard */; };
+		3A56B0E429351B4B0028BF98 /* CategoryButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A56B0E329351B4B0028BF98 /* CategoryButton.xib */; };
+		3A56B0E629351F010028BF98 /* CategoryButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56B0E529351F010028BF98 /* CategoryButtonModel.swift */; };
+		3A56B0E8293520010028BF98 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56B0E7293520010028BF98 /* CategoryButton.swift */; };
 		3A6AE88E2918901900A9F520 /* TableCellViewModel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE88D2918901900A9F520 /* TableCellViewModel+.swift */; };
 		3A6AE8902918903700A9F520 /* InsightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE88F2918903700A9F520 /* InsightViewController.swift */; };
 		3A6AE8922918906300A9F520 /* Insight.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8912918906300A9F520 /* Insight.storyboard */; };
@@ -187,6 +190,9 @@
 		3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A34165328FF5CF000C4D698 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		3A34165B28FF5CF900C4D698 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		3A56B0E329351B4B0028BF98 /* CategoryButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryButton.xib; sourceTree = "<group>"; };
+		3A56B0E529351F010028BF98 /* CategoryButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonModel.swift; sourceTree = "<group>"; };
+		3A56B0E7293520010028BF98 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
 		3A6AE88D2918901900A9F520 /* TableCellViewModel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableCellViewModel+.swift"; sourceTree = "<group>"; };
 		3A6AE88F2918903700A9F520 /* InsightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightViewController.swift; sourceTree = "<group>"; };
 		3A6AE8912918906300A9F520 /* Insight.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Insight.storyboard; sourceTree = "<group>"; };
@@ -379,6 +385,16 @@
 				3A34165B28FF5CF900C4D698 /* MyPage.storyboard */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		3A56B0E229351B360028BF98 /* CategoryButton */ = {
+			isa = PBXGroup;
+			children = (
+				3A56B0E329351B4B0028BF98 /* CategoryButton.xib */,
+				3A56B0E529351F010028BF98 /* CategoryButtonModel.swift */,
+				3A56B0E7293520010028BF98 /* CategoryButton.swift */,
+			);
+			path = CategoryButton;
 			sourceTree = "<group>";
 		};
 		3A6AE88A29188EF000A9F520 /* Insight */ = {
@@ -680,6 +696,7 @@
 		3AB9CFC528B4F05F00A600DB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3A56B0E229351B360028BF98 /* CategoryButton */,
 				3AB9CFB528B4E81500A600DB /* WorkDetailInfo */,
 				3AF1DF86290C0FB90095673A /* WorkListCollectionViewCell */,
 				3AEDB6FF28DD863800C3DB8D /* WorkInfo */,
@@ -882,6 +899,7 @@
 				3A75DBF128A0F41D00084DB1 /* TabBar.storyboard in Resources */,
 				3A8F862D28C625210028B45C /* EditGenre.storyboard in Resources */,
 				3A77BE7928F57B33005AFCAD /* PreReviewCollectionViewCell.xib in Resources */,
+				3A56B0E429351B4B0028BF98 /* CategoryButton.xib in Resources */,
 				3A6AE8D22918910300A9F520 /* InsightHallOfFameCell.xib in Resources */,
 				3AEDB71228DE080600C3DB8D /* PreReview.storyboard in Resources */,
 				3A75DBF628A0F5CE00084DB1 /* Record.storyboard in Resources */,
@@ -981,6 +999,7 @@
 				20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */,
 				3A6AE8D82918910300A9F520 /* InsightHallOfFameCell.swift in Sources */,
 				3AB80FA0290D6C3500F032EC /* ModifyProfileInteractor.swift in Sources */,
+				3A56B0E629351F010028BF98 /* CategoryButtonModel.swift in Sources */,
 				3AA56D0328BE580000FB66F5 /* WorkListCollectionViewCell.swift in Sources */,
 				3AB9CFBC28B4E84300A600DB /* WorkDetailInfoPresenter.swift in Sources */,
 				3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */,
@@ -995,6 +1014,7 @@
 				3A8D172C289BBC7700B260D1 /* AppDelegate.swift in Sources */,
 				3A8D1765289BBEA100B260D1 /* HomeViewController.swift in Sources */,
 				3A8D172E289BBC7700B260D1 /* SceneDelegate.swift in Sources */,
+				3A56B0E8293520010028BF98 /* CategoryButton.swift in Sources */,
 				3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */,
 				3AF1DF88290C11260095673A /* ReviewModels.swift in Sources */,
 				3A6AE8EA2918911B00A9F520 /* InsiteStatisticsGraphChartView.swift in Sources */,
