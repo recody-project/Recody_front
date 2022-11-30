@@ -8,14 +8,14 @@
 import UIKit
 // 7
 // 모든 유저가 가장 많이 감상한 작품
-class InsightAllUserMostAppreciationCell: UITableViewCell,ObservingTableCell {
-    @IBOutlet weak var lbGenre:UILabel!
-    @IBOutlet weak var lbWorkTitle:UILabel!
-    @IBOutlet weak var imgWork:UIImageView!
-    @IBOutlet weak var btnDetail:UIView!
+class InsightAllUserMostAppreciationCell: UITableViewCell, ObservingTableCell {
+    @IBOutlet weak var lbGenre: UILabel!
+    @IBOutlet weak var lbWorkTitle: UILabel!
+    @IBOutlet weak var imgWork: UIImageView!
+    @IBOutlet weak var btnDetail: UIView!
     @IBOutlet weak var cellView: UIView?
-    var viewmodel:TableCellViewModel?{
-        didSet{
+    var viewmodel: TableCellViewModel? {
+        didSet {
             viewmodel?.delegate = self
             changeData()
         }
@@ -30,7 +30,7 @@ class InsightAllUserMostAppreciationCell: UITableViewCell,ObservingTableCell {
         lbWorkTitle.text=data.stringValue(key: "workTitle")
         let imgPath = data.stringValue(key: "imgPath")
     }
-    @objc func sendEventToController(sender : UITapGestureRecognizer){
+    @objc func sendEventToController(sender: UITapGestureRecognizer) {
         if let code = sender.view?.tag {
             eventDelegate?.eventFromTableCell(code: InsightCellEvent.allUserMostAppreciationEvent.rawValue,index: viewmodel!.index)
         }
@@ -44,7 +44,6 @@ class InsightAllUserMostAppreciationCell: UITableViewCell,ObservingTableCell {
         btnDetail.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendEventToController(sender:))))
         changeData()
     }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

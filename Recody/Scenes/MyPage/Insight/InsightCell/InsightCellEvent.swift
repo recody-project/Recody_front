@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum InsightCellEvent : Int {
+enum InsightCellEvent: Int {
     case statisticsEvent  = 1001
     case statisticsGraphCellEvent = 2001
     case mostImpressiveEvent = 3001

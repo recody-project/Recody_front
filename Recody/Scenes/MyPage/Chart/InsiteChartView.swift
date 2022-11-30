@@ -54,7 +54,7 @@ class CombinChart : UIView,ChartViewDelegate{
         
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
-        xAxis.labelFont = .systemFont(ofSize: 10)
+        xAxis.labelFont = UIFont.fontWithName(type: FontType.regular, size: 10)
         xAxis.granularity = 1
         xAxis.labelCount = 10
 //        let formatter = BarNumberFormatter()
@@ -76,7 +76,7 @@ class CombinChart : UIView,ChartViewDelegate{
 //
         let rightAxis = chartView.rightAxis
         rightAxis.enabled = true
-        rightAxis.labelFont = .systemFont(ofSize: 10)
+        rightAxis.labelFont = UIFont.fontWithName(type: FontType.regular, size: 10)
         rightAxis.labelCount = 8
         rightAxis.valueFormatter = DefaultAxisValueFormatter(formatter: leftAxisFormatter)
         rightAxis.spaceTop = 0.3
@@ -112,7 +112,7 @@ class CombinChart : UIView,ChartViewDelegate{
         
         for index in (1...10){
             let label = UILabel()
-            label.font = .systemFont(ofSize: 14)
+            label.font = UIFont.fontWithName(type: FontType.regular, size: 14)
             label.textColor = UIColor.init(hexString: "#666666")
             label.text = "\(Double(index) * 0.5)"
             label.textAlignment = .center
@@ -161,7 +161,7 @@ class CombinChart : UIView,ChartViewDelegate{
 //        set1.valueFont = .systemFont(ofSize: 15)
         set1.axisDependency = .left
         set1.valueTextColor = UIColor.init(hexString: "#666666")
-        set1.valueFont = .systemFont(ofSize: 14)
+        set1.valueFont = UIFont.fontWithName(type: .regular, size: 14)
         set1.drawValuesEnabled = true
         return set1
     }
@@ -188,7 +188,7 @@ class CombinChart : UIView,ChartViewDelegate{
         var xAxis = chartView.xAxis
         xAxis.drawLabelsEnabled = false
         xAxis.labelTextColor = UIColor.init(hexString: "#666666")
-        xAxis.labelFont = .systemFont(ofSize: 14.0)
+        xAxis.labelFont = UIFont.fontWithName(type: FontType.regular, size: 14)
         xAxis.labelPosition = .bottom
         xAxis.labelCount = 10
         xAxis.gridColor = .white

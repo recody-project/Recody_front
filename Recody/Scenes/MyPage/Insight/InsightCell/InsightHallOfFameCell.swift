@@ -6,17 +6,17 @@
 //
 
 import UIKit
-//5
-//명예의전당
-class InsightHallOfFameCell: UITableViewCell,ObservingTableCell {
-    @IBOutlet weak var lbNickName:UILabel!
-    @IBOutlet weak var lbMonth:UILabel!
-    @IBOutlet weak var imgGold:UIImageView!
-    @IBOutlet weak var imgSilver:UIImageView!
-    @IBOutlet weak var imgBronze:UIImageView!
+// 5
+// 명예의전당
+class InsightHallOfFameCell: UITableViewCell, ObservingTableCell {
+    @IBOutlet weak var lbNickName: UILabel!
+    @IBOutlet weak var lbMonth: UILabel!
+    @IBOutlet weak var imgGold: UIImageView!
+    @IBOutlet weak var imgSilver: UIImageView!
+    @IBOutlet weak var imgBronze: UIImageView!
     @IBOutlet weak var cellView: UIView?
-    var viewmodel:TableCellViewModel?{
-        didSet{
+    var viewmodel: TableCellViewModel? {
+        didSet {
             viewmodel?.delegate = self
             changeData()
         }
@@ -33,7 +33,7 @@ class InsightHallOfFameCell: UITableViewCell,ObservingTableCell {
         let silverImgPath = ""
         let bronzeImgPath = ""
     }
-    @objc func sendEventToController(sender : UITapGestureRecognizer){
+    @objc func sendEventToController(sender: UITapGestureRecognizer) {
         if let code = sender.view?.tag {
             eventDelegate?.eventFromTableCell(code: InsightCellEvent.hallOfFameEvent.rawValue, index: viewmodel!.index)
         }
@@ -42,7 +42,6 @@ class InsightHallOfFameCell: UITableViewCell,ObservingTableCell {
         super.awakeFromNib()
         changeData()
     }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

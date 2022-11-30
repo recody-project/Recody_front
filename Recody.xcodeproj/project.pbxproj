@@ -10,6 +10,7 @@
 		2015B3072918DF1700DB725D /* InsightCellEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015B3062918DF1700DB725D /* InsightCellEvent.swift */; };
 		2015B30A2918F28B00DB725D /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015B3092918F28B00DB725D /* ApiClient.swift */; };
 		2015B30C2918F37500DB725D /* ApiCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015B30B2918F37500DB725D /* ApiCommand.swift */; };
+		207C64792935DE3000D4F1FD /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207C64782935DE3000D4F1FD /* UIFont+.swift */; };
 		20BD9CA82921F64B00BDAD13 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BD9CA72921F64B00BDAD13 /* CalendarViewController.swift */; };
 		20BD9CAC2921F90300BDAD13 /* CalendarWeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BD9CAA2921F90300BDAD13 /* CalendarWeekCell.swift */; };
 		20BD9CAD2921F90300BDAD13 /* CalendarWeekCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20BD9CAB2921F90300BDAD13 /* CalendarWeekCell.xib */; };
@@ -32,6 +33,10 @@
 		20E788442925B53F00B05C8E /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E788432925B53F00B05C8E /* CalendarDetailViewController.swift */; };
 		20E788472925B7E000B05C8E /* CalendarDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E788452925B7E000B05C8E /* CalendarDetailCell.swift */; };
 		20E788482925B7E000B05C8E /* CalendarDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E788462925B7E000B05C8E /* CalendarDetailCell.xib */; };
+		20EB8C0B2930406000460521 /* MyPageChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EB8C0A2930406000460521 /* MyPageChartView.swift */; };
+		20F719D72934401100D2EA5D /* MyPageWorkCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F719D52934401100D2EA5D /* MyPageWorkCollectionCell.swift */; };
+		20F719D82934401100D2EA5D /* MyPageWorkCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F719D62934401100D2EA5D /* MyPageWorkCollectionCell.xib */; };
+		20F719DA2934422A00D2EA5D /* CollectionViewModel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F719D92934422A00D2EA5D /* CollectionViewModel+.swift */; };
 		3A13C9A3291F0A7700DC0756 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */; };
 		3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */; };
 		3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346028D01E0F00C417CB /* UIScrollView+.swift */; };
@@ -162,6 +167,7 @@
 		2015B3062918DF1700DB725D /* InsightCellEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightCellEvent.swift; sourceTree = "<group>"; };
 		2015B3092918F28B00DB725D /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		2015B30B2918F37500DB725D /* ApiCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCommand.swift; sourceTree = "<group>"; };
+		207C64782935DE3000D4F1FD /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		20BD9CA72921F64B00BDAD13 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		20BD9CAA2921F90300BDAD13 /* CalendarWeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeekCell.swift; sourceTree = "<group>"; };
 		20BD9CAB2921F90300BDAD13 /* CalendarWeekCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarWeekCell.xib; sourceTree = "<group>"; };
@@ -184,6 +190,10 @@
 		20E788432925B53F00B05C8E /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
 		20E788452925B7E000B05C8E /* CalendarDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailCell.swift; sourceTree = "<group>"; };
 		20E788462925B7E000B05C8E /* CalendarDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarDetailCell.xib; sourceTree = "<group>"; };
+		20EB8C0A2930406000460521 /* MyPageChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageChartView.swift; sourceTree = "<group>"; };
+		20F719D52934401100D2EA5D /* MyPageWorkCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkCollectionCell.swift; sourceTree = "<group>"; };
+		20F719D62934401100D2EA5D /* MyPageWorkCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageWorkCollectionCell.xib; sourceTree = "<group>"; };
+		20F719D92934422A00D2EA5D /* CollectionViewModel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewModel+.swift"; sourceTree = "<group>"; };
 		3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditGenreViewController+.swift"; sourceTree = "<group>"; };
 		3A20346028D01E0F00C417CB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
@@ -365,11 +375,21 @@
 				20DBFAFE29029366009CEF76 /* RoutingLogic.swift */,
 				20C6F9FD29077B6C009296E3 /* PresenterType.swift */,
 				20DBFAFB29029366009CEF76 /* UIViewController+.swift */,
+				20F719D92934422A00D2EA5D /* CollectionViewModel+.swift */,
 				3A6AE88D2918901900A9F520 /* TableCellViewModel+.swift */,
 				20DBFAFF29029366009CEF76 /* WorkerType+.swift */,
 				20CCE772290684FD00BB8F63 /* DefaultDataModel.swift */,
 			);
 			path = CleanArchitecture;
+			sourceTree = "<group>";
+		};
+		20F719D429343FEB00D2EA5D /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				20F719D52934401100D2EA5D /* MyPageWorkCollectionCell.swift */,
+				20F719D62934401100D2EA5D /* MyPageWorkCollectionCell.xib */,
+			);
+			path = CollectionCell;
 			sourceTree = "<group>";
 		};
 		3A34164E28FF5CD200C4D698 /* MyPage */ = {
@@ -381,6 +401,7 @@
 				3AB80F92290D63D200F032EC /* ModifyProfile */,
 				3AB2F07A29095F2100240E56 /* MyPage+ */,
 				3A34165328FF5CF000C4D698 /* MyPageViewController.swift */,
+				20F719D429343FEB00D2EA5D /* CollectionCell */,
 				20CE1712292DFB7300D77152 /* MyPageViewModel.swift */,
 				3A34165B28FF5CF900C4D698 /* MyPage.storyboard */,
 			);
@@ -440,6 +461,7 @@
 			children = (
 				3A6AE8E72918911B00A9F520 /* InsiteChartView.swift */,
 				3A6AE8E82918911B00A9F520 /* InsiteStatisticsGraphChartView.swift */,
+				20EB8C0A2930406000460521 /* MyPageChartView.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -712,6 +734,7 @@
 				3AD4F12728C0AFF900598D28 /* CALayer+.swift */,
 				3AAEE3E228C4E30D00B28582 /* UIView+.swift */,
 				3A20346028D01E0F00C417CB /* UIScrollView+.swift */,
+				207C64782935DE3000D4F1FD /* UIFont+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -879,6 +902,7 @@
 				3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */,
 				3AB1432428F76FBC0041C9CC /* MySearchTableViewCell.xib in Resources */,
 				20DBFB0429029366009CEF76 /* README.md in Resources */,
+				20F719D82934401100D2EA5D /* MyPageWorkCollectionCell.xib in Resources */,
 				3AA56D0728BE743400FB66F5 /* WorkListCollectionViewCell.xib in Resources */,
 				3A6AE8DE2918910300A9F520 /* InsightAllUserMostAppreciationCell.xib in Resources */,
 				3AB80F94290D64E800F032EC /* ModifyProfile.storyboard in Resources */,
@@ -997,6 +1021,7 @@
 				3AE6A55A28ED9D0D008ED7DB /* CategoryModels.swift in Sources */,
 				3AAEE3EF28C5CF3900B28582 /* EditCategoryViewController.swift in Sources */,
 				20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */,
+				207C64792935DE3000D4F1FD /* UIFont+.swift in Sources */,
 				3A6AE8D82918910300A9F520 /* InsightHallOfFameCell.swift in Sources */,
 				3AB80FA0290D6C3500F032EC /* ModifyProfileInteractor.swift in Sources */,
 				3A56B0E629351F010028BF98 /* CategoryButtonModel.swift in Sources */,
@@ -1009,6 +1034,7 @@
 				2015B30C2918F37500DB725D /* ApiCommand.swift in Sources */,
 				3A75DBEE28A0F41000084DB1 /* TabBarController.swift in Sources */,
 				3A6AE8D62918910300A9F520 /* InsightFirstRecordCell.swift in Sources */,
+				20F719D72934401100D2EA5D /* MyPageWorkCollectionCell.swift in Sources */,
 				20DBFB0529029366009CEF76 /* RoutingLogic.swift in Sources */,
 				3A8D1763289BBEA100B260D1 /* HomeRouter.swift in Sources */,
 				3A8D172C289BBC7700B260D1 /* AppDelegate.swift in Sources */,
@@ -1025,6 +1051,7 @@
 				3A6AE88E2918901900A9F520 /* TableCellViewModel+.swift in Sources */,
 				20E788472925B7E000B05C8E /* CalendarDetailCell.swift in Sources */,
 				3AAEE3E328C4E30D00B28582 /* UIView+.swift in Sources */,
+				20EB8C0B2930406000460521 /* MyPageChartView.swift in Sources */,
 				20BD9CA82921F64B00BDAD13 /* CalendarViewController.swift in Sources */,
 				3A6AE8DA2918910300A9F520 /* InsightShareCell.swift in Sources */,
 				20CE3BF629274BBC009539DD /* CalendarSettingViewController.swift in Sources */,
@@ -1082,6 +1109,7 @@
 				3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */,
 				3A8F863A28C6277D0028B45C /* EditGenreInteractor.swift in Sources */,
 				3AD4F12628C0A66600598D28 /* UIColor+.swift in Sources */,
+				20F719DA2934422A00D2EA5D /* CollectionViewModel+.swift in Sources */,
 				3A77BE7328F57944005AFCAD /* PreReviewViewController+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

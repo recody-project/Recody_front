@@ -34,13 +34,13 @@
                                     <constraint firstAttribute="width" constant="61" id="FGn-oM-4lA"/>
                                     <constraint firstAttribute="height" constant="26" id="acI-91-Vzn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1987" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3a1-17-fuu">
-                                <rect key="frame" x="138" y="58.000000000000007" width="36" height="19.333333333333336"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="138" y="58.000000000000007" width="31.333333333333343" height="19.333333333333336"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <color key="textColor" red="0.015686274510000001" green="0.015686274510000001" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -110,8 +110,8 @@
     </objects>
     <resources>
         <image name="1987" width="199" height="280"/>
-        <image name="star" width="76" height="76"/>
-        <image name="star.fill" width="76" height="76"/>
-        <image name="star.half.fill" width="76" height="76"/>
+        <image name="star" width="25.333333969116211" height="25.333333969116211"/>
+        <image name="star.fill" width="25.333333969116211" height="25.333333969116211"/>
+        <image name="star.half.fill" width="25.333333969116211" height="25.333333969116211"/>
     </resources>
 </document>

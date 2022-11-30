@@ -6,15 +6,15 @@
 //
 
 import UIKit
-//1
-class InsightStatisticsCell: UITableViewCell,ObservingTableCell {
-    @IBOutlet weak var lbNickName:UILabel!
-    @IBOutlet weak var lbMonth:UILabel! //월
-    @IBOutlet weak var lbWorkCount:UILabel! //감상작품
-    @IBOutlet weak var lbRecordCount:UILabel! //기록수
+// 1
+class InsightStatisticsCell: UITableViewCell, ObservingTableCell {
+    @IBOutlet weak var lbNickName: UILabel!
+    @IBOutlet weak var lbMonth: UILabel! // 월
+    @IBOutlet weak var lbWorkCount: UILabel! // 감상작품
+    @IBOutlet weak var lbRecordCount: UILabel! // 기록수
     @IBOutlet weak var cellView: UIView?
-    var viewmodel:TableCellViewModel?{
-        didSet{
+    var viewmodel: TableCellViewModel? {
+        didSet {
             viewmodel?.delegate = self
             changeData()
         }
@@ -30,9 +30,9 @@ class InsightStatisticsCell: UITableViewCell,ObservingTableCell {
         lbWorkCount.text=data.stringValue(key: "workCount")
         lbRecordCount.text=data.stringValue(key: "recordCount")
     }
-    @objc func sendEventToController(sender : UITapGestureRecognizer){
+    @objc func sendEventToController(sender: UITapGestureRecognizer) {
         if let code = sender.view?.tag {
-            eventDelegate?.eventFromTableCell(code: InsightCellEvent.statisticsEvent.rawValue,index:viewmodel!.index)
+            eventDelegate?.eventFromTableCell(code: InsightCellEvent.statisticsEvent.rawValue, index: viewmodel!.index)
         }
     }
     override func awakeFromNib() {
@@ -44,6 +44,5 @@ class InsightStatisticsCell: UITableViewCell,ObservingTableCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
-
 }
 

@@ -8,18 +8,18 @@
 import Foundation
 import UIKit
 
-class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent {
+class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
     func eventFromTableCell(code: Int,index: Int) {
-        //셀 내의 개별적 제스쳐 이벤트를 처리하는 공간
-        //interactor를 통해서 처리
+        // 셀 내의 개별적 제스쳐 이벤트를 처리하는 공간
+        // interactor를 통해서 처리
         guard let cellEvent = InsightCellEvent(rawValue: code) else { return }
         print(cellEvent)
 //        self.interactor?.just(UserCace.cellClickEvent).drop()
     }
     var viewModel = InsiteViewModel()
-    var tableList : [TableCellViewModel] = [TableCellViewModel]()
-    //화면내의 모든 인터렉션 (탭,스와이프, 롱탭, .... 의 수만큼 작성필요)
-    enum UserCace : Int,OrderType{
+    var tableList: [TableCellViewModel] = [TableCellViewModel]()
+    // 화면내의 모든 인터렉션 (탭,스와이프, 롱탭, .... 의 수만큼 작성필요)
+    enum UserCace: Int, OrderType {
         case nextMonth = 101
         case previousMonth = 102
         case cellClickEvent = 103
@@ -27,8 +27,7 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
             return self.rawValue
         }
     }
-     
-    enum InsiteCellType : Int {
+    enum InsiteCellType :Int {
         case statistics = 1
         case statisticsGraph = 2
         case mostImpressive = 3
@@ -39,7 +38,7 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
         case mostAppreciation = 8
         case mostAppreciationAll = 9
         case share = 10
-        var name : String {
+        var name: String {
             switch self {
             case .statistics:
                 return InsightStatisticsCell.Name
@@ -64,14 +63,12 @@ class InsightViewController : CommonVC,DataPassingType, ObservingTableCellEvent 
             }
         }
     }
-    
     @IBOutlet weak var lBNickName:UILabel!
     @IBOutlet weak var lBMonthCount:UILabel!
     @IBOutlet weak var tableView:UITableView!
     @IBOutlet weak var btnPrevious:UIButton!
     @IBOutlet weak var btnNext:UIButton!
     func bind(_ data: DataStoreType) {
-        
     }
     func routing(orderNumber : Int){
         if orderNumber == 1 {

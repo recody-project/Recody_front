@@ -6,18 +6,18 @@
 //
 
 import UIKit
-//2
+// 2
 class InsightStatisticsGraphCell: UITableViewCell,ObservingTableCell {
     var eventDelegate: ObservingTableCellEvent?
 //    @IBOutlet weak var lbNickName:UILabel! //닉네임
 //    @IBOutlet weak var analysisTypeName:UILabel! //분석유형이름
-    @IBOutlet weak var lbTop1:UILabel!
-    @IBOutlet weak var lbTop2:UILabel!
+    @IBOutlet weak var lbTop1: UILabel!
+    @IBOutlet weak var lbTop2: UILabel!
     @IBOutlet weak var chartView: UIView!
     var borderViews = [UIView]()
     @IBOutlet weak var cellView: UIView?
-    var viewmodel:TableCellViewModel?{
-        didSet{
+    var viewmodel: TableCellViewModel? {
+        didSet {
             viewmodel?.delegate = self
             changeData()
         }
@@ -31,7 +31,7 @@ class InsightStatisticsGraphCell: UITableViewCell,ObservingTableCell {
         lbTop2.text = "드라마"
         settingBorderViews()
     }
-    @objc func sendEventToController(sender : UITapGestureRecognizer){
+    @objc func sendEventToController(sender :UITapGestureRecognizer) {
         if let code = sender.view?.tag {
             eventDelegate?.eventFromTableCell(code: InsightCellEvent.statisticsGraphCellEvent.rawValue,index: viewmodel!.index)
         }
@@ -40,7 +40,7 @@ class InsightStatisticsGraphCell: UITableViewCell,ObservingTableCell {
         super.awakeFromNib()
         // Initialization code
         let chart1 = InsiteStatisticsGraphChartView()
-        chart1.setDataCount(total:33,best: 26)
+        chart1.setDataCount(total: 33, best: 26)
         self.chartView.addSubview(chart1)
         chart1.snp.makeConstraints({
             $0.edges.equalToSuperview()
@@ -52,18 +52,18 @@ class InsightStatisticsGraphCell: UITableViewCell,ObservingTableCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
-    private func setupLabels(){
+    private func setupLabels() {
         [lbTop1,lbTop2].forEach({ label in
             label?.textColor = UIColor.init(hexString: "#666FC1")
-            label?.font = .systemFont(ofSize: 12)
+            label?.font = UIFont.fontWithName(type: .regular, size: 12)
         })
     }
-    private func settingBorderViews(){
+    private func settingBorderViews() {
         self.borderViews.forEach({
             $0.removeFromSuperview()
         })
         self.borderViews.removeAll()
-        [lbTop1,lbTop2].forEach({ label in
+        [lbTop1, lbTop2].forEach({ label in
             let view = UIView()
             self.cellView?.addSubview(view)
             self.cellView?.bringSubviewToFront(view)

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit
 class MyPageViewModel {
     var nickName = "영화가젤좋아" // 닉네임
     var totalRecordCount = 999 // 총 기록
@@ -22,6 +22,14 @@ class MyPageViewModel {
     var year = 0 // 연
     var maxPageCount = 2
     var bottomPageIndex = 0 // 하단 기록 중인 작품 & 찜한 작품 페이징
+    
+    var cicleChartColorTotal = UIColor(hexString: "#F9C4AF")
+    var cicleChartColorBest = UIColor(hexString: "#F38A5E")
+    let collectionViewCellHorizontalSpacing = 20 // 셀 간 양옆 간격
+    let collectionViewCellVerticalSpacing = 8 // 셀간 수직 간격
+    let collectionViewMaxLineCount = 2 // 라인수
+    let collectionViewMaxHorizontalItemCount = 3
+    
     func nextPage(){
         if bottomPageIndex < maxPageCount-1 {
             bottomPageIndex += 1
