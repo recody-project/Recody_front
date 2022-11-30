@@ -20,26 +20,65 @@
             <rect key="frame" x="0.0" y="0.0" width="74" height="84"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eN6-ot-zJL">
-                    <rect key="frame" x="8.5" y="0.0" width="57" height="57"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8C-NO-dtK">
+                    <rect key="frame" x="9" y="0.0" width="56" height="56"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eN6-ot-zJL">
+                            <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="28"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                    <size key="value" width="0.0" height="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="57" id="Epd-We-RF5"/>
-                        <constraint firstAttribute="width" constant="57" id="Knj-R9-4Zt"/>
+                        <constraint firstItem="eN6-ot-zJL" firstAttribute="leading" secondItem="f8C-NO-dtK" secondAttribute="leading" id="6jY-jE-vCZ"/>
+                        <constraint firstAttribute="trailing" secondItem="eN6-ot-zJL" secondAttribute="trailing" id="7aO-tp-1bd"/>
+                        <constraint firstAttribute="width" constant="56" id="JSO-lm-Bra"/>
+                        <constraint firstAttribute="bottom" secondItem="eN6-ot-zJL" secondAttribute="bottom" id="RFG-ep-Njs"/>
+                        <constraint firstItem="eN6-ot-zJL" firstAttribute="top" secondItem="f8C-NO-dtK" secondAttribute="top" id="WN1-G9-e0i"/>
+                        <constraint firstAttribute="height" constant="56" id="oRd-aT-atg"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="28.5"/>
+                            <real key="value" value="28"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" white="0.0" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
-                </imageView>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="책" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fQ-2i-Oao">
-                    <rect key="frame" x="32" y="63" width="10.5" height="14.5"/>
+                    <rect key="frame" x="32" y="64" width="10.5" height="14.5"/>
                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bj-uD-Cgw">
-                    <rect key="frame" x="48.5" y="62.5" width="16" height="16"/>
+                    <rect key="frame" x="48.5" y="63.5" width="16" height="16"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="16" id="1Iu-6O-MKd"/>
                         <constraint firstAttribute="height" constant="16" id="v3d-uN-5cA"/>
@@ -52,12 +91,17 @@
             <constraints>
                 <constraint firstItem="2fQ-2i-Oao" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0Hw-Oi-bqH"/>
                 <constraint firstItem="4bj-uD-Cgw" firstAttribute="leading" secondItem="2fQ-2i-Oao" secondAttribute="trailing" constant="6" id="1VS-zc-Ctw"/>
-                <constraint firstItem="2fQ-2i-Oao" firstAttribute="top" secondItem="eN6-ot-zJL" secondAttribute="bottom" constant="6" id="73N-fX-bzx"/>
-                <constraint firstItem="eN6-ot-zJL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="E0l-PR-7lB"/>
+                <constraint firstItem="f8C-NO-dtK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7d8-rD-AqK"/>
                 <constraint firstItem="4bj-uD-Cgw" firstAttribute="centerY" secondItem="2fQ-2i-Oao" secondAttribute="centerY" id="XJk-nq-org"/>
-                <constraint firstItem="eN6-ot-zJL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vnz-m8-hkG"/>
+                <constraint firstItem="2fQ-2i-Oao" firstAttribute="top" secondItem="f8C-NO-dtK" secondAttribute="bottom" constant="8" symbolic="YES" id="e4t-ov-jyQ"/>
+                <constraint firstItem="f8C-NO-dtK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nZj-uq-8jH"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                    <real key="value" value="0.0"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="378.26086956521743" y="275.22321428571428"/>
         </view>
     </objects>
