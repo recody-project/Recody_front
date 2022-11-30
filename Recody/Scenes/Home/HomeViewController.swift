@@ -34,11 +34,11 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     ]
 
     let categories: [Category] = [
+        Category(name: "전체", image: "all"),
         Category(name: "책", image: "book"),
         Category(name: "영화", image: "movie"),
         Category(name: "드라마", image: "drama"),
-        Category(name: "음악", image: "music"),
-        Category(name: "공연", image: "show")
+        Category(name: "음악", image: "music")
     ]
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -76,8 +76,20 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         }
     }
 
+    @IBOutlet weak var categoryStackView: UIStackView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setCategoryStackView()
+    }
+
+    func setCategoryStackView() {
+        var index = 0
+        guard let tempArray = categoryStackView.arrangedSubviews as? [CustomCategory] else { return }
+        for value in tempArray {
+            value.setData(with: categories[index])
+            index += 1
+        }
     }
 
     func displayTestCategory(viewModel: Home.TestCategory.ViewModel) {
