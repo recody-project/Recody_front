@@ -190,6 +190,7 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
         tableList.append(TableCellViewModel(type: InsiteCellType.myRank.rawValue,
                                             data: ["nickName":"영화가젤좋아",
                                                    "month":"9",
+                                                   "genre":"영화",
                                                    "score":9]))
         tableList.append(TableCellViewModel(type: InsiteCellType.mostAppreciation.rawValue,
                                             data: ["month":"9",

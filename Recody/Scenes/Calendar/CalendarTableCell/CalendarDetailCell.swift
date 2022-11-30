@@ -75,7 +75,7 @@ class CalendarDetailCell: UITableViewCell, ObservingTableCell {
         [imgStart1, imgStart2, imgStart3, imgStart4, imgStart5].forEach({
             $0?.image = UIImage(named: "star")
             $0?.image?.withRenderingMode(.alwaysOriginal)
-                $0?.tintColor = nil
+            $0?.tintColor = self.genre.color
         })
         var halfStartPosition = -1
         var checkStartLastPosition = -1
@@ -89,6 +89,7 @@ class CalendarDetailCell: UITableViewCell, ObservingTableCell {
         if checkStartLastPosition != -1 {
             for (index,img) in startImgs.enumerated() {
                 if index <= checkStartLastPosition {
+                    img?.image = UIImage(named: "star.fill")
                     img?.tintColor = self.genre.color
                 }
             }

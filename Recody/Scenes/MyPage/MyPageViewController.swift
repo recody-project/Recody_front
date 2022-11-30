@@ -85,8 +85,8 @@ class MyPageViewController: CommonVC, ObservingCollectionCellEvent {
             }
         }
     }
-    func eventFromTableCell(code: Int, index: Int, row: Int) {
-        print("code : \(code) / index : \(index) / row : \(row)")
+    func eventFromTableCell(code: Int, index: Int) {
+        print("code : \(code) / index : \(index)")
     }
     private func setup(){
         //MARK: - UI
