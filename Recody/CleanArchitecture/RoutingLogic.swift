@@ -17,6 +17,7 @@ enum RoutingLogic: RoutingLogicType {
         case workDetailInfo
         case calendarDetail
         case calendarSetting
+        case modifyProfile // 마이페이지 -> 프로필 수정 화면
         var viewcontroller: UIViewController? {
             switch self {
             // UIStoryboard( 스토리보드 파일명 )
@@ -35,6 +36,8 @@ enum RoutingLogic: RoutingLogicType {
                 return UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CalendarDetailViewController")
             case .calendarSetting:
                 return UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CalendarSettingViewController")
+            case .modifyProfile:
+                return UIStoryboard(name: "ModifyProfile", bundle: nil).instantiateViewController(withIdentifier: "modifyProfile")
             }
         }
     }

@@ -55,6 +55,9 @@ class MyPageViewController: CommonVC, ObservingCollectionCellEvent {
             self.viewModel.nextPage()
         case .previousBottomPage:
             self.viewModel.previousPage()
+        case .changeProfileImage:
+//            self.router?.present(RoutingLogic.Navigation.modifyProfile, nil)
+            self.router?.presentWithRootViewcontroller(RoutingLogic.Navigation.modifyProfile, nil,.overCurrentContext)
         default:
             self.presenter?.alertService.showToast("\(useCase)")
         }
