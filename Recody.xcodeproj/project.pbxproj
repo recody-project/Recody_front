@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200F66A8293DC5FF00EB3740 /* ApiTestGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F66A7293DC5FF00EB3740 /* ApiTestGroup.swift */; };
 		2015B3072918DF1700DB725D /* InsightCellEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015B3062918DF1700DB725D /* InsightCellEvent.swift */; };
 		2015B30A2918F28B00DB725D /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015B3092918F28B00DB725D /* ApiClient.swift */; };
 		2015B30C2918F37500DB725D /* ApiCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015B30B2918F37500DB725D /* ApiCommand.swift */; };
@@ -159,6 +160,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		200F66A7293DC5FF00EB3740 /* ApiTestGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTestGroup.swift; sourceTree = "<group>"; };
 		2015B3062918DF1700DB725D /* InsightCellEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightCellEvent.swift; sourceTree = "<group>"; };
 		2015B3092918F28B00DB725D /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		2015B30B2918F37500DB725D /* ApiCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCommand.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			children = (
 				2015B3092918F28B00DB725D /* ApiClient.swift */,
 				2015B30B2918F37500DB725D /* ApiCommand.swift */,
+				200F66A7293DC5FF00EB3740 /* ApiTestGroup.swift */,
 			);
 			path = ApiService;
 			sourceTree = "<group>";
@@ -1060,6 +1063,7 @@
 				3A6AE8E32918910300A9F520 /* InsiteStatisticsCell.swift in Sources */,
 				20CE1713292DFB7300D77152 /* MyPageViewModel.swift in Sources */,
 				3A8D1764289BBEA100B260D1 /* HomeModels.swift in Sources */,
+				200F66A8293DC5FF00EB3740 /* ApiTestGroup.swift in Sources */,
 				20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */,
 				3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */,
 				20E788442925B53F00B05C8E /* CalendarDetailViewController.swift in Sources */,

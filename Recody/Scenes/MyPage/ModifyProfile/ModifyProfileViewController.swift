@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ModifyProfileViewController : CommonVC {
+class ModifyProfileViewController: CommonVC {
     let viewModel = ModifyProfileViewModel()
     @IBOutlet weak var etNickName: UITextField!
     @IBOutlet weak var btnBack: UIButton!
@@ -16,7 +16,7 @@ class ModifyProfileViewController : CommonVC {
     @IBOutlet weak var btnUpdate: UIButton!
     @IBOutlet weak var lbGuide: UILabel!
     @IBOutlet weak var imgProfile: UIImageView!
-    
+    @IBOutlet weak var imgProfileEdit: UIImageView! // 36 x 36
     enum UseCase: Int, OrderType {
         case back = 100 // 뒤로가기
         case changeNickNameText = 101
@@ -57,25 +57,26 @@ class ModifyProfileViewController : CommonVC {
             }
         }
     }
-    func setup(){
+    func setup() {
         self.view.backgroundColor = .black.withAlphaComponent(0.5)
         self.view.tag = UseCase.back.rawValue
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
         btnBack.tag = UseCase.back.rawValue
         btnCancel.tag = UseCase.cancel.rawValue
         btnUpdate.tag = UseCase.update.rawValue
-        imgProfile.tag = UseCase.changeProfileImage.rawValue
-        imgProfile.isUserInteractionEnabled = true
-        [btnBack, btnCancel, btnUpdate,imgProfile].forEach({
+        imgProfileEdit.tag = UseCase.changeProfileImage.rawValue
+        imgProfileEdit.isUserInteractionEnabled = true
+        [btnBack, btnCancel, btnUpdate, imgProfileEdit].forEach({
             $0?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
         })
+        imgProfileEdit.layer.cornerRadius = imgProfileEdit.frame.height / 2.0
         imgProfile.layer.cornerRadius = imgProfile.frame.height / 2.0
         imgProfile.layer.borderColor = UIColor.black.cgColor
         imgProfile.layer.borderWidth = 0.5
         etNickName.resignFirstResponder()
         etNickName.delegate = self
     }
-    func update(){
+    func update() {
         
     }
 }

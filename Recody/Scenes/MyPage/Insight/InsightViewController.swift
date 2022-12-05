@@ -161,44 +161,44 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
                                  InsightAllUserMostAppreciationCell.Name),
                                 (InsightShareCell.Xib,
                                  InsightShareCell.Name)]
-        self.tableView.register(cells:registerCellList)
+        self.tableView.register(cells: registerCellList)
         // 현재를 데이터가 없어서 Dictionary형태로 제공되고있지만 추후에는 VC의 Viewmodel을 전달하도록 할 계획입니다.
         tableList.append(TableCellViewModel(type: InsiteCellType.statistics.rawValue,
-                                            data: ["nickName":"닉네임",
-                                                   "month":"9",
-                                                   "workCount":"99",
-                                                   "recordCount":"999"]))
-        tableList.append(TableCellViewModel(type: InsiteCellType.statisticsGraph.rawValue,
-                                            data: ["temp":""]))
-        tableList.append(TableCellViewModel(type: InsiteCellType.mostImpressive.rawValue,
-                                            data: ["month":"9",
-                                                   "genre":"영화",
-                                                   "workTitle":"1987",
-                                                   "recordCount":"900"]))
-        tableList.append(TableCellViewModel(type: InsiteCellType.top3Genre.rawValue,
-                                            data: ["top1":"코미디",
-                                                   "top2":"로맨스 코미디",
-                                                   "top3":"액션"]))
-        tableList.append(TableCellViewModel(type: InsiteCellType.firstRecord.rawValue,
-                                            data: ["nickName":"코미디",
-                                                   "month":"10",
-                                                   "genre":"액션",
-                                                   "workTitle":"오만과 편견"]))
-        tableList.append(TableCellViewModel(type: InsiteCellType.hallOfFame.rawValue,
-                                            data: ["nickName":"영화가젤좋아",
-                                                   "month":"9"]))
-        tableList.append(TableCellViewModel(type: InsiteCellType.myRank.rawValue,
-                                            data: ["nickName":"영화가젤좋아",
-                                                   "month":"9",
-                                                   "genre":"영화",
-                                                   "score":9]))
-        tableList.append(TableCellViewModel(type: InsiteCellType.mostAppreciation.rawValue,
-                                            data: ["month":"9",
-                                                   "workTitle":"1987"]))
-        tableList.append(TableCellViewModel(type: InsiteCellType.mostAppreciationAll.rawValue,
-                                            data: ["genre":"영화",
-                                                   "workTitle":"1987"]))
-        tableList.append(TableCellViewModel(type: InsiteCellType.share.rawValue, data: nil))
+                                            data: ["nickName" : "닉네임",
+                                                   "month" : "9",
+                                                   "workCount" : "99",
+                                                   "recordCount" : "999"]))
+        tableList.append(TableCellViewModel(type : InsiteCellType.statisticsGraph.rawValue,
+                                            data : ["temp" : ""]))
+        tableList.append(TableCellViewModel(type : InsiteCellType.mostImpressive.rawValue,
+                                            data : ["month" : "9",
+                                                   "genre" : "영화",
+                                                   "workTitle" : "1987",
+                                                   "recordCount" : "900"]))
+        tableList.append(TableCellViewModel(type : InsiteCellType.top3Genre.rawValue,
+                                            data : ["top1" : "코미디",
+                                                   "top2" : "로맨스 코미디",
+                                                   "top3" : "액션"]))
+        tableList.append(TableCellViewModel(type : InsiteCellType.firstRecord.rawValue,
+                                            data : ["nickName" : "코미디",
+                                                   "month" : "10",
+                                                   "genre" : "액션",
+                                                   "workTitle" : "오만과 편견"]))
+        tableList.append(TableCellViewModel(type : InsiteCellType.hallOfFame.rawValue,
+                                            data : ["nickName" : "영화가젤좋아",
+                                                   "month" : "9"]))
+        tableList.append(TableCellViewModel(type : InsiteCellType.myRank.rawValue,
+                                            data : ["nickName" : "영화가젤좋아",
+                                                   "month" : "9",
+                                                   "genre" : "영화",
+                                                   "score" : 9]))
+        tableList.append(TableCellViewModel(type : InsiteCellType.mostAppreciation.rawValue,
+                                            data : ["month" : "9",
+                                                   "workTitle" : "1987"]))
+        tableList.append(TableCellViewModel(type : InsiteCellType.mostAppreciationAll.rawValue,
+                                            data : ["genre" : "영화",
+                                                   "workTitle" : "1987"]))
+        tableList.append(TableCellViewModel(type : InsiteCellType.share.rawValue, data: nil))
         // Padding 값
         tableView.contentInset.top = 10.0
         tableView.contentInset.bottom = 20.0
@@ -222,10 +222,9 @@ extension InsightViewController : UITableViewDelegate,UITableViewDataSource {
             mCell?.viewmodel = list[indexPath.row]
             // Cell 내의 클릭이벤트 구독 -> eventFromTableCell() 함수로전달
             mCell?.eventDelegate = self
-        
+            mCell?.cellView?.cornerRadius = 12
         if mCell != nil { cell = mCell! }
         list[indexPath.row].viewHeight = cell.frame.height
-        cell.contentView.cornerRadius = 12
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -236,8 +235,8 @@ extension InsightViewController : UITableViewDelegate,UITableViewDataSource {
     }
 }
 struct InsiteViewModel {
-    var nickName : String = ""
-    var currentMonth : Int = 1
-    var seenWorks : Int = 0
-    var recordCount : Int = 0
+    var nickName: String = ""
+    var currentMonth: Int = 1
+    var seenWorks: Int = 0
+    var recordCount: Int = 0
 }

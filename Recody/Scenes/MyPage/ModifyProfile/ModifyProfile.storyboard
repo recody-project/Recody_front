@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -28,8 +27,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x2r-V9-bu8">
-                                        <rect key="frame" x="163" y="76.5" width="88" height="88"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="x2r-V9-bu8">
+                                        <rect key="frame" x="163" y="78" width="88" height="85"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="88" id="0Aj-SB-sjH"/>
                                             <constraint firstAttribute="width" constant="88" id="Eyi-VQ-HlD"/>
@@ -111,30 +110,27 @@
                                         <color key="textColor" red="1" green="0.36862745098039218" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3A2-0T-rev">
-                                        <rect key="frame" x="223" y="136.5" width="36" height="36"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TOH-HM-BYG">
+                                        <rect key="frame" x="223" y="137" width="36" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="36" id="cdR-IN-DjR"/>
-                                            <constraint firstAttribute="height" constant="36" id="hBI-Ja-FF2"/>
+                                            <constraint firstAttribute="height" constant="36" id="6Gn-tY-7ZR"/>
+                                            <constraint firstAttribute="width" constant="36" id="xn6-d5-bFw"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal">
-                                            <imageReference key="image" image="pencil.circle.fill" catalog="system" symbolScale="large"/>
-                                        </state>
-                                    </button>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="3A2-0T-rev" firstAttribute="leading" secondItem="x2r-V9-bu8" secondAttribute="leading" constant="60" id="8EB-Ff-DZB"/>
                                     <constraint firstAttribute="trailing" secondItem="8iN-Jy-Kpv" secondAttribute="trailing" constant="16" id="8vn-QL-uXQ"/>
-                                    <constraint firstItem="8iN-Jy-Kpv" firstAttribute="top" secondItem="3A2-0T-rev" secondAttribute="bottom" constant="60.5" id="FFg-J4-72X"/>
+                                    <constraint firstItem="TOH-HM-BYG" firstAttribute="trailing" secondItem="x2r-V9-bu8" secondAttribute="trailing" constant="8" id="9qV-yb-s8S"/>
                                     <constraint firstAttribute="trailing" secondItem="6kz-Fk-Rwh" secondAttribute="trailing" constant="20" id="M2d-xM-j1L"/>
                                     <constraint firstItem="8iN-Jy-Kpv" firstAttribute="leading" secondItem="E6S-ns-61k" secondAttribute="leading" constant="24" id="Mtz-U1-ggN"/>
                                     <constraint firstItem="6kz-Fk-Rwh" firstAttribute="leading" secondItem="E6S-ns-61k" secondAttribute="leading" constant="20" id="O3P-AS-mVA"/>
-                                    <constraint firstItem="3A2-0T-rev" firstAttribute="top" secondItem="x2r-V9-bu8" secondAttribute="top" constant="60" id="OC9-w8-Rvr"/>
                                     <constraint firstItem="8iN-Jy-Kpv" firstAttribute="top" secondItem="wxh-mh-Phd" secondAttribute="bottom" constant="12" id="RQO-PF-CjY"/>
                                     <constraint firstItem="BEI-Yl-JBP" firstAttribute="leading" secondItem="8iN-Jy-Kpv" secondAttribute="leading" id="W36-Zd-TRO"/>
                                     <constraint firstAttribute="height" constant="418" id="WwP-39-oFi"/>
+                                    <constraint firstItem="TOH-HM-BYG" firstAttribute="bottom" secondItem="x2r-V9-bu8" secondAttribute="bottom" constant="8" id="Ye9-ef-7d8"/>
                                     <constraint firstItem="oaA-Kd-aYb" firstAttribute="leading" secondItem="E6S-ns-61k" secondAttribute="leading" constant="20" id="bDT-K2-s24"/>
                                     <constraint firstItem="BEI-Yl-JBP" firstAttribute="top" secondItem="8iN-Jy-Kpv" secondAttribute="bottom" constant="8" id="dBl-ya-sN9"/>
                                     <constraint firstItem="6kz-Fk-Rwh" firstAttribute="top" secondItem="8iN-Jy-Kpv" secondAttribute="bottom" constant="45" id="e62-Zr-7dH"/>
@@ -165,6 +161,7 @@
                         <outlet property="btnUpdate" destination="ZO7-ot-mfB" id="BI7-Mm-T60"/>
                         <outlet property="etNickName" destination="8iN-Jy-Kpv" id="Nr4-9M-4j2"/>
                         <outlet property="imgProfile" destination="x2r-V9-bu8" id="BEW-gN-kEr"/>
+                        <outlet property="imgProfileEdit" destination="TOH-HM-BYG" id="eBk-s0-G00"/>
                         <outlet property="lbGuide" destination="BEI-Yl-JBP" id="xXN-BK-lOO"/>
                     </connections>
                 </viewController>
@@ -174,7 +171,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pencil.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="pencil.circle" catalog="system" width="128" height="123"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="Main">
             <color red="0.40000000596046448" green="0.43500000238418579" blue="0.75700002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

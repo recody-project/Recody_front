@@ -136,7 +136,7 @@ class MyPageViewController: CommonVC, ObservingCollectionCellEvent {
         }
     }
     
-    private func update(){
+    private func update() {
         lbNickName.text = viewModel.nickName
         lbRecordCount.text = "\(viewModel.totalRecordCount)"
         lbThisMonthAppreciationWorksTitle.text = "\(viewModel.month)월 감상 작품수"

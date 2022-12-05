@@ -31,7 +31,7 @@ enum RoutingLogic: RoutingLogicType {
             case .setting:
                 return UIStoryboard(name: "Setting", bundle: nil).instantiateViewController(withIdentifier: "setting")
             case .workDetailInfo:
-                return WorkDetailInfoViewController()
+                return UIStoryboard(name: "WorkDetailInfo", bundle: nil).instantiateViewController(withIdentifier: "workDetailInfo")
             case .calendarDetail:
                 return UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CalendarDetailViewController")
             case .calendarSetting:
