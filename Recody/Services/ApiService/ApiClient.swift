@@ -33,18 +33,51 @@ class ApiClient {
             param["email"] = email
         case .changeNickName(let nickname):
             param["nickname"] = nickname
-        case .search(let catecoriId, let keyword, let language):
-            param["catecoriId"] = catecoriId
+        case .search(let categoriId, let keyword, let language):
+            param["categoriId"] = categoriId
             param["keyword"] = keyword
             param["language"] = language
         case .getMovieDetail(let tmdbId, let language):
             param["tmdbId"] = tmdbId
             param["language"] = language
+        case .addWish(let contentId):
+            param["contentId"] = contentId
+        case .removeWish(let contentId):
+            param["contentId"] = contentId
         case .getStarScore(let contentId):
             param["contentId"] = contentId
         case .setStarScore(let contentId, let score):
             param["contentId"] = contentId
             param["score"] = score
+        case .addCustomCategory(let name, let iconUrl):
+            param["name"] = name
+            param["iconUrl"] = iconUrl
+        case .modifyCustomCategory(let categoriId, let name, let iconUrl):
+            param["name"] = name
+            param["iconUrl"] = iconUrl
+        case .addRecord(let contentId, let title, let note, let appreciationDate, let appreciationNumber):
+            param["contentId"] = contentId
+            param["title"] = title
+            param["note"] = note
+            param["appreciationDate"] = appreciationDate
+            param["appreciationNumber"] = appreciationNumber
+        case .getMyRecordList(let contentId, let categoryId, let page,let size):
+            if contentId != nil {
+                param["contentId"] = contentId!
+            }
+            if categoryId != nil {
+                param["categoryId"] = categoryId!
+            }
+            if page != nil {
+                param["page"] = page!
+            }
+            param["size"] = size
+        case .getMyRecordCount(let thisMonth):
+            param["thisMonth"] = thisMonth
+        case .addCustomGenre(let categoriId, let genreName, let genreIconUrl):
+            param["categoriId"] = categoriId
+            param["genreName"] = genreName
+            param["genreIconUrl"] = genreIconUrl
         default:
         break
         }
