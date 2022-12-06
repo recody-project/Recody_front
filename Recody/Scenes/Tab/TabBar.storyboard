@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CaL-ya-8pY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CaL-ya-8pY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -61,7 +61,7 @@
         <scene sceneID="v1D-zd-2Fr">
             <objects>
                 <viewControllerPlaceholder storyboardName="Search" referencedIdentifier="recordNavigation" id="9JG-Yd-4Qo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="tabImage" id="jeR-a4-v1H"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="homeImage" id="jeR-a4-v1H"/>
                     <navigationItem key="navigationItem" id="uSd-vy-xRL"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Icx-UR-EsY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -70,6 +70,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tabImage" width="27" height="24"/>
+        <image name="homeImage" width="20" height="19"/>
     </resources>
 </document>

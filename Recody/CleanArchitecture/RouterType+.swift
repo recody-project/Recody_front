@@ -10,7 +10,9 @@ import UIKit
 protocol RouterType {
     init(context: UIViewController)
     var context: UIViewController { get }
-    func present(_ navigation: NavigationType, _ dataStore: DataStoreType?) // UIViewController 에서 직접 Present
+    func present(_ navigation: NavigationType, _ dataStore: DataStoreType?)
+    func present(_ navigation: NavigationType, _ dataStore: DataStoreType?,_ presentModalStyle:UIModalPresentationStyle?)  // UIViewController 에서 직접 Present
+    func presentWithRootViewcontroller(_ navigation: NavigationType, _ dataStore: DataStoreType?,_ presentModalStyle:UIModalPresentationStyle?)  // UIViewController 에서 직접 Present
     func perform(_ segment: SegmentType, _ dataStore: DataStoreType?) // 세그먼트를 이용한 화면이동
     func pushViewController(_ navigation: NavigationType, dataStore: DataStoreType?) // UINavigationController
     func popViewContoller(animated:Bool)
@@ -37,13 +39,39 @@ class SimpleRouter: RouterType {
     required init(context: UIViewController) {
         self.context = context
     }
-    func present(_ navigation: NavigationType, _ dataStore: DataStoreType? = nil) {
+    func present(_ navigation: NavigationType, _ dataStore: DataStoreType?) {
         if check(navigation) {
             let next = navigation.viewcontroller!
             if let data = dataStore {
                 (next as? DataPassingType)?.bind(data)
             }
             context.present(next, animated: true)
+        }
+    }
+    func present(_ navigation: NavigationType, _ dataStore: DataStoreType? = nil,_ presentModalStyle: UIModalPresentationStyle? = nil) {
+        if check(navigation) {
+            let next = navigation.viewcontroller!
+            if let data = dataStore {
+                (next as? DataPassingType)?.bind(data)
+            }
+            if let style = presentModalStyle {
+                next.modalPresentationStyle = style
+            }
+            context.present(next, animated: true)
+        }
+    }
+    func presentWithRootViewcontroller(_ navigation: NavigationType, _ dataStore: DataStoreType?, _ presentModalStyle: UIModalPresentationStyle?) {
+        if let rootViewController = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first?.rootViewController {
+            if check(navigation) {
+                let next = navigation.viewcontroller!
+                if let data = dataStore {
+                    (next as? DataPassingType)?.bind(data)
+                }
+                if let style = presentModalStyle {
+                    next.modalPresentationStyle = style
+                }
+                rootViewController.present(next, animated: true)
+            }
         }
     }
     func perform(_ segment: SegmentType, _ dataStore: DataStoreType? = nil) {

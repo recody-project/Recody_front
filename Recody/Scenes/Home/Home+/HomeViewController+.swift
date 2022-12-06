@@ -22,9 +22,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "WorkDetailInfo", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "workDetailInfo") as? WorkDetailInfoViewController else { return }
-        self.present(vc, animated: true)
+        if let vc = RoutingLogic.Navigation.workDetailInfo.viewcontroller {
+            self.present(vc, animated: true)
+        }
     }
 }
 
