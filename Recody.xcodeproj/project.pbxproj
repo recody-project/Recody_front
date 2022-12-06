@@ -12,6 +12,9 @@
 		2015B30A2918F28B00DB725D /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015B3092918F28B00DB725D /* ApiClient.swift */; };
 		2015B30C2918F37500DB725D /* ApiCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015B30B2918F37500DB725D /* ApiCommand.swift */; };
 		203FE54629387113009FDABD /* ModifyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203FE54529387113009FDABD /* ModifyProfileViewController.swift */; };
+		207B2219293F2699009993A6 /* RecodyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B2218293F2699009993A6 /* RecodyUITests.swift */; };
+		207B221B293F2699009993A6 /* RecodyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B221A293F2699009993A6 /* RecodyUITestsLaunchTests.swift */; };
+		207B2228293F29A1009993A6 /* RecodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B2227293F29A1009993A6 /* RecodyTests.swift */; };
 		207C64792935DE3000D4F1FD /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207C64782935DE3000D4F1FD /* UIFont+.swift */; };
 		20BD9CA82921F64B00BDAD13 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BD9CA72921F64B00BDAD13 /* CalendarViewController.swift */; };
 		20BD9CAC2921F90300BDAD13 /* CalendarWeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BD9CAA2921F90300BDAD13 /* CalendarWeekCell.swift */; };
@@ -159,12 +162,34 @@
 		981DE2FA71CB8639568FDE47 /* Pods_Recody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F5474CB0129800D7BF6EF1 /* Pods_Recody.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		207B221C293F2699009993A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A8D1720289BBC7700B260D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A8D1727289BBC7700B260D1;
+			remoteInfo = Recody;
+		};
+		207B2229293F29A1009993A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A8D1720289BBC7700B260D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A8D1727289BBC7700B260D1;
+			remoteInfo = Recody;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		200F66A7293DC5FF00EB3740 /* ApiTestGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTestGroup.swift; sourceTree = "<group>"; };
 		2015B3062918DF1700DB725D /* InsightCellEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightCellEvent.swift; sourceTree = "<group>"; };
 		2015B3092918F28B00DB725D /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		2015B30B2918F37500DB725D /* ApiCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCommand.swift; sourceTree = "<group>"; };
 		203FE54529387113009FDABD /* ModifyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileViewController.swift; sourceTree = "<group>"; };
+		207B2216293F2699009993A6 /* RecodyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecodyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		207B2218293F2699009993A6 /* RecodyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecodyUITests.swift; sourceTree = "<group>"; };
+		207B221A293F2699009993A6 /* RecodyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecodyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		207B2225293F29A1009993A6 /* RecodyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecodyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		207B2227293F29A1009993A6 /* RecodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecodyTests.swift; sourceTree = "<group>"; };
 		207C64782935DE3000D4F1FD /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		20BD9CA72921F64B00BDAD13 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		20BD9CAA2921F90300BDAD13 /* CalendarWeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeekCell.swift; sourceTree = "<group>"; };
@@ -317,6 +342,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		207B2213293F2699009993A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		207B2222293F29A1009993A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A8D1725289BBC7700B260D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,6 +375,23 @@
 				200F66A7293DC5FF00EB3740 /* ApiTestGroup.swift */,
 			);
 			path = ApiService;
+			sourceTree = "<group>";
+		};
+		207B2217293F2699009993A6 /* RecodyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				207B2218293F2699009993A6 /* RecodyUITests.swift */,
+				207B221A293F2699009993A6 /* RecodyUITestsLaunchTests.swift */,
+			);
+			path = RecodyUITests;
+			sourceTree = "<group>";
+		};
+		207B2226293F29A1009993A6 /* RecodyTests */ = {
+			isa = PBXGroup;
+			children = (
+				207B2227293F29A1009993A6 /* RecodyTests.swift */,
+			);
+			path = RecodyTests;
 			sourceTree = "<group>";
 		};
 		20BD9CA92921F89900BDAD13 /* CalendarTableCell */ = {
@@ -512,6 +568,8 @@
 				3A8D176B289BC12200B260D1 /* .swiftlint.yml */,
 				3A8D176D289BC21400B260D1 /* .gitignore */,
 				3A8D172A289BBC7700B260D1 /* Recody */,
+				207B2217293F2699009993A6 /* RecodyUITests */,
+				207B2226293F29A1009993A6 /* RecodyTests */,
 				3A8D1729289BBC7700B260D1 /* Products */,
 				D9142FC7474BE90F07FC44D7 /* Pods */,
 				875466D567F1B4EE075A723A /* Frameworks */,
@@ -522,6 +580,8 @@
 			isa = PBXGroup;
 			children = (
 				3A8D1728289BBC7700B260D1 /* Recody.app */,
+				207B2216293F2699009993A6 /* RecodyUITests.xctest */,
+				207B2225293F29A1009993A6 /* RecodyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -819,6 +879,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		207B2215293F2699009993A6 /* RecodyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 207B2220293F269A009993A6 /* Build configuration list for PBXNativeTarget "RecodyUITests" */;
+			buildPhases = (
+				207B2212293F2699009993A6 /* Sources */,
+				207B2213293F2699009993A6 /* Frameworks */,
+				207B2214293F2699009993A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				207B221D293F2699009993A6 /* PBXTargetDependency */,
+			);
+			name = RecodyUITests;
+			productName = RecodyUITests;
+			productReference = 207B2216293F2699009993A6 /* RecodyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		207B2224293F29A1009993A6 /* RecodyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 207B222B293F29A1009993A6 /* Build configuration list for PBXNativeTarget "RecodyTests" */;
+			buildPhases = (
+				207B2221293F29A1009993A6 /* Sources */,
+				207B2222293F29A1009993A6 /* Frameworks */,
+				207B2223293F29A1009993A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				207B222A293F29A1009993A6 /* PBXTargetDependency */,
+			);
+			name = RecodyTests;
+			productName = RecodyTests;
+			productReference = 207B2225293F29A1009993A6 /* RecodyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3A8D1727289BBC7700B260D1 /* Recody */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A8D173C289BBC7A00B260D1 /* Build configuration list for PBXNativeTarget "Recody" */;
@@ -846,9 +942,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					207B2215293F2699009993A6 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 3A8D1727289BBC7700B260D1;
+					};
+					207B2224293F29A1009993A6 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 3A8D1727289BBC7700B260D1;
+					};
 					3A8D1727289BBC7700B260D1 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -868,11 +972,27 @@
 			projectRoot = "";
 			targets = (
 				3A8D1727289BBC7700B260D1 /* Recody */,
+				207B2215293F2699009993A6 /* RecodyUITests */,
+				207B2224293F29A1009993A6 /* RecodyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		207B2214293F2699009993A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		207B2223293F29A1009993A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A8D1726289BBC7700B260D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -981,6 +1101,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		207B2212293F2699009993A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				207B221B293F2699009993A6 /* RecodyUITestsLaunchTests.swift in Sources */,
+				207B2219293F2699009993A6 /* RecodyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		207B2221293F29A1009993A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				207B2228293F29A1009993A6 /* RecodyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A8D1724289BBC7700B260D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1100,6 +1237,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		207B221D293F2699009993A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A8D1727289BBC7700B260D1 /* Recody */;
+			targetProxy = 207B221C293F2699009993A6 /* PBXContainerItemProxy */;
+		};
+		207B222A293F29A1009993A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A8D1727289BBC7700B260D1 /* Recody */;
+			targetProxy = 207B2229293F29A1009993A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		3A8D1736289BBC7A00B260D1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -1112,6 +1262,88 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		207B221E293F2699009993A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y9Q6SAFX32;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.recody.Recody.RecodyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Recody;
+			};
+			name = Debug;
+		};
+		207B221F293F2699009993A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y9Q6SAFX32;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.recody.Recody.RecodyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Recody;
+			};
+			name = Release;
+		};
+		207B222C293F29A1009993A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y9Q6SAFX32;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.recody.Recody.RecodyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recody.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Recody";
+			};
+			name = Debug;
+		};
+		207B222D293F29A1009993A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y9Q6SAFX32;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.recody.Recody.RecodyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recody.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Recody";
+			};
+			name = Release;
+		};
 		3A8D173A289BBC7A00B260D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1291,6 +1523,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		207B2220293F269A009993A6 /* Build configuration list for PBXNativeTarget "RecodyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				207B221E293F2699009993A6 /* Debug */,
+				207B221F293F2699009993A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		207B222B293F29A1009993A6 /* Build configuration list for PBXNativeTarget "RecodyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				207B222C293F29A1009993A6 /* Debug */,
+				207B222D293F29A1009993A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3A8D1723289BBC7700B260D1 /* Build configuration list for PBXProject "Recody" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
