@@ -77,7 +77,13 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     }
 
     @IBOutlet weak var categoryStackView: UIStackView!
-
+    @IBOutlet weak var workListcollectionView: UICollectionView! {
+        didSet {
+            workListcollectionView.collectionViewLayout = createLayout()
+        }
+    }
+    @IBOutlet weak var headerStackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setCategoryStackView()
@@ -90,6 +96,20 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
             value.setData(with: categories[index])
             index += 1
         }
+    }
+
+    func createLayout() -> UICollectionViewCompositionalLayout {
+        let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: size)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(116), heightDimension: .absolute(170)), subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [
+            .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(26)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
+        ]
+        section.contentInsets.top = 16
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
     }
 
     func displayTestCategory(viewModel: Home.TestCategory.ViewModel) {

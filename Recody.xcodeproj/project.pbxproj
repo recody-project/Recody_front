@@ -41,6 +41,7 @@
 		3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */; };
 		3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346028D01E0F00C417CB /* UIScrollView+.swift */; };
 		3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */; };
+		3A204B432937B7D700EC49D3 /* HedaerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A204B422937B7D700EC49D3 /* HedaerView.swift */; };
 		3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34165328FF5CF000C4D698 /* MyPageViewController.swift */; };
 		3A34165C28FF5CF900C4D698 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A34165B28FF5CF900C4D698 /* MyPage.storyboard */; };
 		3A56B0E429351B4B0028BF98 /* CategoryButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A56B0E329351B4B0028BF98 /* CategoryButton.xib */; };
@@ -198,6 +199,7 @@
 		3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditGenreViewController+.swift"; sourceTree = "<group>"; };
 		3A20346028D01E0F00C417CB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreCollectionViewCell.swift; sourceTree = "<group>"; };
+		3A204B422937B7D700EC49D3 /* HedaerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HedaerView.swift; sourceTree = "<group>"; };
 		3A34165328FF5CF000C4D698 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		3A34165B28FF5CF900C4D698 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		3A56B0E329351B4B0028BF98 /* CategoryButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryButton.xib; sourceTree = "<group>"; };
@@ -743,6 +745,7 @@
 			isa = PBXGroup;
 			children = (
 				3ADA9B6F28A534B300EB39F3 /* HomeViewController+.swift */,
+				3A204B422937B7D700EC49D3 /* HedaerView.swift */,
 			);
 			path = "Home+";
 			sourceTree = "<group>";
@@ -1086,6 +1089,7 @@
 				20DBFB0729029366009CEF76 /* RouterType+.swift in Sources */,
 				3AA56D0528BE627300FB66F5 /* WorkTabCollectionViewCell.swift in Sources */,
 				20BD9CAC2921F90300BDAD13 /* CalendarWeekCell.swift in Sources */,
+				3A204B432937B7D700EC49D3 /* HedaerView.swift in Sources */,
 				3A6AE8DD2918910300A9F520 /* InsightTop3GenreCell.swift in Sources */,
 				3AE6A55828ED9B08008ED7DB /* WorkCollectionViewCellModels.swift in Sources */,
 				3A8F863728C6277D0028B45C /* EditGenreRouter.swift in Sources */,
