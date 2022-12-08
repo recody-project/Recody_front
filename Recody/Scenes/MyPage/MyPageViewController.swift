@@ -55,6 +55,9 @@ class MyPageViewController: CommonVC, ObservingCollectionCellEvent {
             self.viewModel.nextPage()
         case .previousBottomPage:
             self.viewModel.previousPage()
+        case .changeProfileImage:
+//            self.router?.present(RoutingLogic.Navigation.modifyProfile, nil)
+            self.router?.presentWithRootViewcontroller(RoutingLogic.Navigation.modifyProfile, nil,.overCurrentContext)
         default:
             self.presenter?.alertService.showToast("\(useCase)")
         }
@@ -85,8 +88,8 @@ class MyPageViewController: CommonVC, ObservingCollectionCellEvent {
             }
         }
     }
-    func eventFromTableCell(code: Int, index: Int, row: Int) {
-        print("code : \(code) / index : \(index) / row : \(row)")
+    func eventFromTableCell(code: Int, index: Int) {
+        print("code : \(code) / index : \(index)")
     }
     private func setup(){
         //MARK: - UI
@@ -133,7 +136,7 @@ class MyPageViewController: CommonVC, ObservingCollectionCellEvent {
         }
     }
     
-    private func update(){
+    private func update() {
         lbNickName.text = viewModel.nickName
         lbRecordCount.text = "\(viewModel.totalRecordCount)"
         lbThisMonthAppreciationWorksTitle.text = "\(viewModel.month)월 감상 작품수"

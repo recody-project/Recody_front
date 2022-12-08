@@ -28,7 +28,7 @@ class SimpleWoker: WorkerType {
     }
 
     func api(_ command: ApiCommand ) {
-        ApiClient().request(command: command, { result in
+        ApiClient.request(command: command, { result in
             self.delegate?.complete(orderNumber: self.order, result: result)
         }, { msg in
             self.delegate?.failed(orderNumber: self.order, msg: msg)

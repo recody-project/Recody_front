@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
+		<key>RecodyTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>207B2215293F2699009993A6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>207B2224293F29A1009993A6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3A8D1727289BBC7700B260D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

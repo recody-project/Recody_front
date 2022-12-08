@@ -13,9 +13,10 @@ class CollectionCellViewModel {
         self.type = type
         self.data = data
     }
+    // type : 사용하는 Cell의 수가 복수일 경우 ID 값으로 사용
     var type : Int = -1
+    // index 값은 데이터 Array 상의 index를 의미함
     var index : Int = -1
-    var row : Int = -1
     var visible : Bool = true
     var delegate : CollectionCellDelegate? {
         didSet {
@@ -64,7 +65,7 @@ protocol ObservingCollectionCellEvent {
     // index : dataList 상의 index
     // row : 가로의 몇번쨰인가
     // code : Action Code
-    func eventFromTableCell(code: Int,index:Int,row:Int)
+    func eventFromTableCell(code: Int,index:Int)
 }
 
 extension UICollectionViewCell: IdentifiableTableCell {
