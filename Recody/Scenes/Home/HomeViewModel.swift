@@ -1,5 +1,5 @@
 //
-//  HomeWorker.swift
+//  HomeModels.swift
 //  Recody
 //
 //  Created by 마경미 on 2022/08/04.
@@ -10,9 +10,9 @@
 //  see http://clean-swift.com
 //
 
+import Foundation
 import UIKit
 
-class HomeWorker {
-  func doSomeWork() {
-  }
+class HomeViewModel {
+    
 }

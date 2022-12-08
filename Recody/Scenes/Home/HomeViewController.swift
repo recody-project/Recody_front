@@ -12,15 +12,9 @@
 
 import UIKit
 
-protocol HomeDisplayLogic: AnyObject {
-    func displayTestCategory(viewModel: Home.TestCategory.ViewModel)
-    func displayTestWork(viewModel: Home.TestWork.ViewModel)
-}
-
-class HomeViewController: UIViewController, HomeDisplayLogic {
-    var interactor: HomeBusinessLogic?
-    var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
-
+class HomeViewController: CommonVC {
+    var viewModel = HomeViewModel()
+    
     let works: [Work] = [
         Work(id: "0", name: "Attention", image: "attention"),
         Work(id: "1", name: "1987", image: "1987"),
@@ -40,41 +34,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         Category(name: "드라마", image: "drama"),
         Category(name: "음악", image: "music")
     ]
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-    }
-
-    // MARK: Setup
-    private func setup() {
-        let viewController = self
-        let interactor = HomeInteractor()
-        let presenter = HomePresenter()
-        let router = HomeRouter()
-        viewController.interactor = interactor
-        viewController.router = router
-        interactor.presenter = presenter
-        presenter.viewController = viewController
-        router.viewController = viewController
-        router.dataStore = interactor
-    }
-
-    // MARK: Routing
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
 
     @IBOutlet weak var categoryStackView: UIStackView!
     @IBOutlet weak var workListcollectionView: UICollectionView! {
@@ -111,12 +70,52 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
-
-    func displayTestCategory(viewModel: Home.TestCategory.ViewModel) {
-
+    
+    // UseCase 정리
+    // 1. 알림
+    // 2. 기록 중 넘어가기
+    // 3. 카테고리 선택
+    // 4. 작품 카테고리 선택
+    // 5. 작품 선택
+    enum UseCase: Int, OrderType {
+        case setting = 100
+        case notification = 101
+        case moveReviewing = 102
+        case category = 103
+        case workCategory = 104
+        case moveWork = 105
+        var number: Int {
+            return self.rawValue
+        }
     }
-
-    func displayTestWork(viewModel: Home.TestWork.ViewModel) {
-        //
+    
+    override func display(orderNumber: Int) {
+        guard let useCase = UseCase(rawValue: orderNumber) else { return }
+//        switch useCase {
+//        case .setting:
+//            self
+//        }
     }
+    
+    override func displayErorr(orderNumber: Int, msg: String?) {
+        guard let useCase = UseCase(rawValue: orderNumber) else { return }
+        switch useCase {
+        default:
+            self.presenter?.alertService.showToast("\(useCase)")
+        }
+    }
+    
+    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
+        guard let useCase = UseCase(rawValue: orderNumber) else { return }
+        switch useCase {
+        default:
+            self.presenter?.alertService.showToast("\(useCase)")
+        }
+    }
+    
+    // clickevent 정의
+    
+    // setup
+    
+    // viewdidload
 }
