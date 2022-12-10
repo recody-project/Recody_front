@@ -26,6 +26,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             self.present(vc, animated: true)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "workListHeader", for: indexPath)
+        return headerView
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {

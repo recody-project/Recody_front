@@ -140,18 +140,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="exw-0I-gbL">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="exw-0I-gbL">
                                         <rect key="frame" x="0.0" y="36.000000000000014" width="375" height="218.33333333333337"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wOu-Ub-udU">
                                             <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="168" height="40"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="workListCollectionViewCell" id="1cb-gf-HTQ" customClass="WorkListCollectionViewCell" customModule="Recody" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="128" height="128"/>
+                                                <rect key="frame" x="0.0" y="40" width="128" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vfZ-Lc-Bc0">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -159,47 +159,9 @@
                                                 </collectionViewCellContentView>
                                             </collectionViewCell>
                                         </cells>
-                                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6L3-iT-voI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="workListHeader" id="6L3-iT-voI" customClass="HedaerView" customModule="Recody" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIf-D0-9r7">
-                                                    <rect key="frame" x="20" y="0.0" width="335" height="50"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFS-0U-Fhc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="67" height="50"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LF4-PP-AEE">
-                                                            <rect key="frame" x="67" y="0.0" width="67" height="50"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTX-fj-Efd">
-                                                            <rect key="frame" x="134" y="0.0" width="67" height="50"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENI-zX-tBR">
-                                                            <rect key="frame" x="201" y="0.0" width="67" height="50"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vse-yh-lDn">
-                                                            <rect key="frame" x="268" y="0.0" width="67" height="50"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                        </button>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="iIf-D0-9r7" firstAttribute="leading" secondItem="6L3-iT-voI" secondAttribute="leading" constant="20" id="U4y-9N-ICa"/>
-                                                <constraint firstItem="iIf-D0-9r7" firstAttribute="top" secondItem="6L3-iT-voI" secondAttribute="top" id="lrJ-Ex-llS"/>
-                                                <constraint firstAttribute="bottom" secondItem="iIf-D0-9r7" secondAttribute="bottom" id="n5n-qz-zfc"/>
-                                                <constraint firstAttribute="trailing" secondItem="iIf-D0-9r7" secondAttribute="trailing" constant="20" id="uca-Np-6Sw"/>
-                                            </constraints>
                                         </collectionReusableView>
                                         <connections>
                                             <outlet property="dataSource" destination="DEK-sq-TKB" id="bWz-JF-NOQ"/>
@@ -252,6 +214,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="categoryStackView" destination="OXd-lT-s2b" id="9gS-he-72b"/>
+                        <outlet property="workListcollectionView" destination="exw-0I-gbL" id="QeB-Re-Zny"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ts0-xH-YpF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

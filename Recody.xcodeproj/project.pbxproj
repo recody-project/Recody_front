@@ -46,6 +46,7 @@
 		3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */; };
 		3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346028D01E0F00C417CB /* UIScrollView+.swift */; };
 		3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */; };
+		3A204B432937B7D700EC49D3 /* HedaerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A204B422937B7D700EC49D3 /* HedaerView.swift */; };
 		3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34165328FF5CF000C4D698 /* MyPageViewController.swift */; };
 		3A34165C28FF5CF900C4D698 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A34165B28FF5CF900C4D698 /* MyPage.storyboard */; };
 		3A56B0E429351B4B0028BF98 /* CategoryButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A56B0E329351B4B0028BF98 /* CategoryButton.xib */; };
@@ -89,12 +90,8 @@
 		3A8D172E289BBC7700B260D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D172D289BBC7700B260D1 /* SceneDelegate.swift */; };
 		3A8D1735289BBC7A00B260D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D1734289BBC7A00B260D1 /* Assets.xcassets */; };
 		3A8D1738289BBC7A00B260D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D1736289BBC7A00B260D1 /* LaunchScreen.storyboard */; };
-		3A8D1761289BBEA100B260D1 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D175B289BBEA100B260D1 /* HomePresenter.swift */; };
-		3A8D1762289BBEA100B260D1 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D175C289BBEA100B260D1 /* HomeWorker.swift */; };
-		3A8D1763289BBEA100B260D1 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D175D289BBEA100B260D1 /* HomeRouter.swift */; };
-		3A8D1764289BBEA100B260D1 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D175E289BBEA100B260D1 /* HomeModels.swift */; };
+		3A8D1764289BBEA100B260D1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D175E289BBEA100B260D1 /* HomeViewModel.swift */; };
 		3A8D1765289BBEA100B260D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D175F289BBEA100B260D1 /* HomeViewController.swift */; };
-		3A8D1766289BBEA100B260D1 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D1760289BBEA100B260D1 /* HomeInteractor.swift */; };
 		3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D176B289BC12200B260D1 /* .swiftlint.yml */; };
 		3A8D176E289BC21400B260D1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D176D289BC21400B260D1 /* .gitignore */; };
 		3A8F862D28C625210028B45C /* EditGenre.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F862C28C625210028B45C /* EditGenre.storyboard */; };
@@ -221,6 +218,7 @@
 		3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditGenreViewController+.swift"; sourceTree = "<group>"; };
 		3A20346028D01E0F00C417CB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreCollectionViewCell.swift; sourceTree = "<group>"; };
+		3A204B422937B7D700EC49D3 /* HedaerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HedaerView.swift; sourceTree = "<group>"; };
 		3A34165328FF5CF000C4D698 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		3A34165B28FF5CF900C4D698 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		3A56B0E329351B4B0028BF98 /* CategoryButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryButton.xib; sourceTree = "<group>"; };
@@ -266,12 +264,8 @@
 		3A8D1734289BBC7A00B260D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A8D1737289BBC7A00B260D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A8D1739289BBC7A00B260D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A8D175B289BBEA100B260D1 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
-		3A8D175C289BBEA100B260D1 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
-		3A8D175D289BBEA100B260D1 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
-		3A8D175E289BBEA100B260D1 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
+		3A8D175E289BBEA100B260D1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3A8D175F289BBEA100B260D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		3A8D1760289BBEA100B260D1 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		3A8D176B289BC12200B260D1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3A8D176D289BC21400B260D1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3A8F862C28C625210028B45C /* EditGenre.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditGenre.storyboard; sourceTree = "<group>"; };
@@ -621,12 +615,8 @@
 				3A8F862B28C6250C0028B45C /* EditGenre */,
 				3AAEE3E428C5CF1400B28582 /* EditCategory */,
 				3ADA9B7328A5355B00EB39F3 /* Home+ */,
-				3A8D175B289BBEA100B260D1 /* HomePresenter.swift */,
-				3A8D175C289BBEA100B260D1 /* HomeWorker.swift */,
-				3A8D175D289BBEA100B260D1 /* HomeRouter.swift */,
-				3A8D175E289BBEA100B260D1 /* HomeModels.swift */,
+				3A8D175E289BBEA100B260D1 /* HomeViewModel.swift */,
 				3A8D175F289BBEA100B260D1 /* HomeViewController.swift */,
-				3A8D1760289BBEA100B260D1 /* HomeInteractor.swift */,
 				3A75DBBB28A0EA5700084DB1 /* Home.storyboard */,
 			);
 			path = Home;
@@ -791,6 +781,7 @@
 			isa = PBXGroup;
 			children = (
 				3ADA9B6F28A534B300EB39F3 /* HomeViewController+.swift */,
+				3A204B422937B7D700EC49D3 /* HedaerView.swift */,
 			);
 			path = "Home+";
 			sourceTree = "<group>";
@@ -1158,7 +1149,6 @@
 				3A6AE8D62918910300A9F520 /* InsightFirstRecordCell.swift in Sources */,
 				20F719D72934401100D2EA5D /* MyPageWorkCollectionCell.swift in Sources */,
 				20DBFB0529029366009CEF76 /* RoutingLogic.swift in Sources */,
-				3A8D1763289BBEA100B260D1 /* HomeRouter.swift in Sources */,
 				3A8D172C289BBC7700B260D1 /* AppDelegate.swift in Sources */,
 				3A8D1765289BBEA100B260D1 /* HomeViewController.swift in Sources */,
 				3A8D172E289BBC7700B260D1 /* SceneDelegate.swift in Sources */,
@@ -1166,10 +1156,8 @@
 				3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */,
 				3AF1DF88290C11260095673A /* ReviewModels.swift in Sources */,
 				3A6AE8EA2918911B00A9F520 /* InsiteStatisticsGraphChartView.swift in Sources */,
-				3A8D1762289BBEA100B260D1 /* HomeWorker.swift in Sources */,
 				3AA56CF928BDDDE000FB66F5 /* RecordPresenter.swift in Sources */,
 				3A8F863628C6277D0028B45C /* EditGenreWorker.swift in Sources */,
-				3A8D1766289BBEA100B260D1 /* HomeInteractor.swift in Sources */,
 				3A6AE88E2918901900A9F520 /* TableCellViewModel+.swift in Sources */,
 				20E788472925B7E000B05C8E /* CalendarDetailCell.swift in Sources */,
 				3AAEE3E328C4E30D00B28582 /* UIView+.swift in Sources */,
@@ -1187,7 +1175,6 @@
 				3A6AE8E02918910300A9F520 /* InsightStatisticsGraphCell.swift in Sources */,
 				3AB1432328F76FBC0041C9CC /* MySearchTableViewCell.swift in Sources */,
 				3AAEE3F528C5D10100B28582 /* EditCategoryViewController+.swift in Sources */,
-				3A8D1761289BBEA100B260D1 /* HomePresenter.swift in Sources */,
 				3AD4F12828C0AFF900598D28 /* CALayer+.swift in Sources */,
 				3AEDB71728DF3D4500C3DB8D /* StarRatingSlider.swift in Sources */,
 				20DBFB0629029366009CEF76 /* WorkerType+.swift in Sources */,
@@ -1199,7 +1186,7 @@
 				3AEDB70B28DE07FC00C3DB8D /* PreReviewPresenter.swift in Sources */,
 				3A6AE8E32918910300A9F520 /* InsiteStatisticsCell.swift in Sources */,
 				20CE1713292DFB7300D77152 /* MyPageViewModel.swift in Sources */,
-				3A8D1764289BBEA100B260D1 /* HomeModels.swift in Sources */,
+				3A8D1764289BBEA100B260D1 /* HomeViewModel.swift in Sources */,
 				200F66A8293DC5FF00EB3740 /* ApiTestGroup.swift in Sources */,
 				20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */,
 				3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */,
@@ -1208,6 +1195,7 @@
 				20DBFB0729029366009CEF76 /* RouterType+.swift in Sources */,
 				3AA56D0528BE627300FB66F5 /* WorkTabCollectionViewCell.swift in Sources */,
 				20BD9CAC2921F90300BDAD13 /* CalendarWeekCell.swift in Sources */,
+				3A204B432937B7D700EC49D3 /* HedaerView.swift in Sources */,
 				3A6AE8DD2918910300A9F520 /* InsightTop3GenreCell.swift in Sources */,
 				3AE6A55828ED9B08008ED7DB /* WorkCollectionViewCellModels.swift in Sources */,
 				3A8F863728C6277D0028B45C /* EditGenreRouter.swift in Sources */,

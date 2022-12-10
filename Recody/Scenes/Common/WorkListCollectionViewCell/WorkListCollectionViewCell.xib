@@ -31,7 +31,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1987" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5f-WS-O9U">
-                        <rect key="frame" x="0.0" y="150" width="24.5" height="14"/>
+                        <rect key="frame" x="0.0" y="150" width="100" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="ceC-Co-kkY"/>
                         </constraints>
@@ -52,6 +52,7 @@
                 <constraints>
                     <constraint firstItem="Yen-he-jSF" firstAttribute="leading" secondItem="ErH-kQ-i7L" secondAttribute="leading" id="ONt-8R-9ab"/>
                     <constraint firstItem="Yen-he-jSF" firstAttribute="top" secondItem="ErH-kQ-i7L" secondAttribute="top" id="SZ8-qp-acT"/>
+                    <constraint firstItem="b5f-WS-O9U" firstAttribute="width" secondItem="Yen-he-jSF" secondAttribute="width" id="WON-Kb-G8g"/>
                     <constraint firstItem="b5f-WS-O9U" firstAttribute="leading" secondItem="Yen-he-jSF" secondAttribute="leading" id="eGo-DX-git"/>
                     <constraint firstItem="NRR-Z1-UUP" firstAttribute="leading" secondItem="Yen-he-jSF" secondAttribute="leading" id="ndS-9m-HFf"/>
                     <constraint firstItem="NRR-Z1-UUP" firstAttribute="top" secondItem="b5f-WS-O9U" secondAttribute="bottom" constant="4" id="rxS-Zm-8Lv"/>

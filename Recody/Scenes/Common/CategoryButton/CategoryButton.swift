@@ -7,15 +7,24 @@
 
 import UIKit
 
-@IBDesignable
 class CategoryButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    var categories = ["영화":"#F38A5E","책":"#3EABB7","드라마":"#F6D266","음악":"#E77D82","공연":"#89AC5C"]
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
-    */
 
+    func setButton(with title: String) {
+        if let value = categories[title] {
+            self.titleLabel?.text = title
+            self.backgroundColor = UIColor(hexString: value)
+        } else {
+            self.titleLabel?.text = "사용자화"
+            self.backgroundColor = UIColor(hexString: "#666FC1")
+        }
+    }
+    
+    init() {
+        super.init(frame: CGRect.zero)
+    }
 }
