@@ -16,6 +16,7 @@
 		207B221B293F2699009993A6 /* RecodyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B221A293F2699009993A6 /* RecodyUITestsLaunchTests.swift */; };
 		207B2228293F29A1009993A6 /* RecodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B2227293F29A1009993A6 /* RecodyTests.swift */; };
 		207C64792935DE3000D4F1FD /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207C64782935DE3000D4F1FD /* UIFont+.swift */; };
+		208386DB294813BA0012A8E0 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208386DA294813BA0012A8E0 /* PageViewController.swift */; };
 		20BD9CA82921F64B00BDAD13 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BD9CA72921F64B00BDAD13 /* CalendarViewController.swift */; };
 		20BD9CAC2921F90300BDAD13 /* CalendarWeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BD9CAA2921F90300BDAD13 /* CalendarWeekCell.swift */; };
 		20BD9CAD2921F90300BDAD13 /* CalendarWeekCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20BD9CAB2921F90300BDAD13 /* CalendarWeekCell.xib */; };
@@ -184,6 +185,7 @@
 		207B2225293F29A1009993A6 /* RecodyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecodyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		207B2227293F29A1009993A6 /* RecodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecodyTests.swift; sourceTree = "<group>"; };
 		207C64782935DE3000D4F1FD /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		208386DA294813BA0012A8E0 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		20BD9CA72921F64B00BDAD13 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		20BD9CAA2921F90300BDAD13 /* CalendarWeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeekCell.swift; sourceTree = "<group>"; };
 		20BD9CAB2921F90300BDAD13 /* CalendarWeekCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarWeekCell.xib; sourceTree = "<group>"; };
@@ -378,6 +380,14 @@
 				207B2227293F29A1009993A6 /* RecodyTests.swift */,
 			);
 			path = RecodyTests;
+			sourceTree = "<group>";
+		};
+		208386D9294813AF0012A8E0 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				208386DA294813BA0012A8E0 /* PageViewController.swift */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 		20BD9CA92921F89900BDAD13 /* CalendarTableCell */ = {
@@ -575,6 +585,7 @@
 		3A8D172A289BBC7700B260D1 /* Recody */ = {
 			isa = PBXGroup;
 			children = (
+				208386D9294813AF0012A8E0 /* Example */,
 				3ADA9B7828A580F500EB39F3 /* Utils */,
 				20CE1714292E079500D77152 /* CleanArchitecture */,
 				3A8D1768289BBEB900B260D1 /* Services */,
@@ -1185,6 +1196,7 @@
 				3AE6A55828ED9B08008ED7DB /* WorkCollectionViewCellModels.swift in Sources */,
 				3A8F863728C6277D0028B45C /* EditGenreRouter.swift in Sources */,
 				3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */,
+				208386DB294813BA0012A8E0 /* PageViewController.swift in Sources */,
 				3A77BE7828F57B33005AFCAD /* PreReviewCollectionViewCell.swift in Sources */,
 				20DBFB0329029366009CEF76 /* DependencyContainer.swift in Sources */,
 				3AB9CFBF28B4E84300A600DB /* WorkDetailInfoViewModel.swift in Sources */,

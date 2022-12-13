@@ -44,7 +44,7 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
                 self.viewModel.previousMonth()
             break
             case .download:
-                print("download")
+                self.present(SomeViewController(), animated: true)
             break
             case .setting:
                 self.router?.pushViewController(RoutingLogic.Navigation.setting, dataStore: nil)
