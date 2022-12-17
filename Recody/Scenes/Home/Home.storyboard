@@ -211,10 +211,16 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="categoryStackView" destination="OXd-lT-s2b" id="9gS-he-72b"/>
                         <outlet property="workListcollectionView" destination="exw-0I-gbL" id="QeB-Re-Zny"/>
+                        <outletCollection property="customCategories" destination="Cvs-uc-ede" collectionClass="NSMutableArray" id="jIV-lo-qny"/>
+                        <outletCollection property="customCategories" destination="qqI-CY-anE" collectionClass="NSMutableArray" id="inw-eH-cBd"/>
+                        <outletCollection property="customCategories" destination="CpT-NZ-DaP" collectionClass="NSMutableArray" id="bB1-b9-XLC"/>
+                        <outletCollection property="customCategories" destination="55a-Ov-fuK" collectionClass="NSMutableArray" id="IlV-Ar-1fU"/>
+                        <outletCollection property="customCategories" destination="lvz-3E-Qkh" collectionClass="NSMutableArray" id="0yX-Hi-qBA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ts0-xH-YpF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

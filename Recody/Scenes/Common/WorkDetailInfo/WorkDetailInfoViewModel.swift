@@ -12,7 +12,7 @@
 
 import UIKit
 
-enum WorkDetailInfo {
+class WorkDetailInfoViewModel {
   // MARK: Use cases
     struct Genre {
         let genreId: Int

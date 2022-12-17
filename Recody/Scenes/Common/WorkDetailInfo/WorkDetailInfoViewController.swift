@@ -12,75 +12,61 @@
 
 import UIKit
 
-protocol WorkDetailInfoDisplayLogic: AnyObject {
-    func displaySomething(viewModel: WorkDetailInfo.API.ViewModel)
-}
-
-class WorkDetailInfoViewController: UIViewController, WorkDetailInfoDisplayLogic {
-    var interactor: WorkDetailInfoBusinessLogic?
-    var router: (NSObjectProtocol & WorkDetailInfoRoutingLogic & WorkDetailInfoDataPassing)?
-    // MARK: Object lifecycle
+class WorkDetailInfoViewController: CommonVC {
+    var viewModel = WorkDetailInfoViewModel()
+    
     let works: [Work] = [
         Work(id: "1", name: "WANDAVISION", image: "wanda"),
         Work(id: "2", name: "NOWAYHOME", image: "spiderman")
     ]
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-    }
-
-    // MARK: Setup
-
-    private func setup() {
-        let viewController = self
-        let interactor = WorkDetailInfoInteractor()
-        let presenter = WorkDetailInfoPresenter()
-        let router = WorkDetailInfoRouter()
-        viewController.interactor = interactor
-        viewController.router = router
-        interactor.presenter = presenter
-        presenter.viewController = viewController
-        router.viewController = viewController
-        router.dataStore = interactor
-    }
-
-    // MARK: Routing
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-
-    // MARK: View lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
-    }
-    // MARK: Do something
-
-    // @IBOutlet weak var nameTextField: UITextField!
-
-    @IBAction func tapBackButton(_ sender: UIButton) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-    func doSomething() {
-        let request = WorkDetailInfo.API.Request()
-        interactor?.doSomething(request: request)
+    // UseCase 정리
+    // 1. 이전화면
+    // 2. 작품 선택
+    // 3. 좋아요 누르기
+    // 4. 감상평 추가하기 버튼
+    enum UseCase: Int, OrderType {
+        case setting = 100
+        case back = 101
+        case moveWork = 102
+        case dibs = 103
+        case addReview = 104
+        var number: Int {
+            return self.rawValue
+        }
     }
-
-    func displaySomething(viewModel: WorkDetailInfo.API.ViewModel) {
-        // nameTextField.text = viewModel.name
+    
+    override func display(orderNumber: Int) {
+        guard let useCase = UseCase(rawValue: orderNumber) else { return }
+//        switch useCase {
+//        case .setting:
+//            self
+//        }
     }
+    
+    override func displayErorr(orderNumber: Int, msg: String?) {
+        guard let useCase = UseCase(rawValue: orderNumber) else { return }
+        switch useCase {
+        default:
+            self.presenter?.alertService.showToast("\(useCase)")
+        }
+    }
+    
+    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
+        guard let useCase = UseCase(rawValue: orderNumber) else { return }
+        switch useCase {
+        default:
+            self.presenter?.alertService.showToast("\(useCase)")
+        }
+    }
+    
+    // clickevent 정의
+    
+    // setup
+    
+    // viewdidload
 }
