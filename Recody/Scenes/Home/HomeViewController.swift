@@ -36,6 +36,7 @@ class HomeViewController: CommonVC {
     ]
 
     @IBOutlet weak var categoryStackView: UIStackView!
+    @IBOutlet var customCategories: [CustomCategory]!
     @IBOutlet weak var workListcollectionView: UICollectionView! {
         didSet {
             workListcollectionView.collectionViewLayout = createLayout()
@@ -50,10 +51,18 @@ class HomeViewController: CommonVC {
 
     func setCategoryStackView() {
         var index = 0
-        guard let tempArray = categoryStackView.arrangedSubviews as? [CustomCategory] else { return }
-        for value in tempArray {
+        for value in customCategories {
             value.setData(with: categories[index])
+            value.tag = index+100
+            value.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
             index += 1
+        }
+    }
+    
+    @objc func clickEvent(_ sender: UITapGestureRecognizer){
+        print(sender)
+        if let tag = sender.view?.tag {
+            self.router?.present(RoutingLogic.Navigation.workList, nil,.overCurrentContext)
         }
     }
 
@@ -78,12 +87,16 @@ class HomeViewController: CommonVC {
     // 4. 작품 카테고리 선택
     // 5. 작품 선택
     enum UseCase: Int, OrderType {
-        case setting = 100
-        case notification = 101
-        case moveReviewing = 102
-        case category = 103
-        case workCategory = 104
-        case moveWork = 105
+        case moveAll = 100
+        case moveBook = 101
+        case moveMovie = 102
+        case moveDrama = 103
+        case moveMusic = 104
+        case setting = 105
+        case notification = 106
+        case moveReviewing = 107
+        case workCategory = 108
+        case moveWork = 109
         var number: Int {
             return self.rawValue
         }
@@ -108,6 +121,7 @@ class HomeViewController: CommonVC {
     override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
         guard let useCase = UseCase(rawValue: orderNumber) else { return }
         switch useCase {
+
         default:
             self.presenter?.alertService.showToast("\(useCase)")
         }
