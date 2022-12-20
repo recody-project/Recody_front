@@ -137,7 +137,7 @@
                                 <items>
                                     <navigationItem id="As7-Lx-gr4">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="nr8-u4-DfB">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="PV2-4Q-Mlm">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="PV2-4Q-Mlm">
                                                 <rect key="frame" x="302" y="5" width="92" height="34.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
@@ -177,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="811.59420289855075" y="827.67857142857144"/>
         </scene>
-        <!--Page View Controller-->
+        <!--List Page View Controller-->
         <scene sceneID="C6d-2k-Iqn">
             <objects>
-                <pageViewController storyboardIdentifier="listPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Y3Q-lJ-DvU" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="listPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Y3Q-lJ-DvU" customClass="ListPageViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiC-KP-lOS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1475" y="846"/>

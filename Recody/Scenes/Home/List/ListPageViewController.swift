@@ -8,13 +8,10 @@
 import UIKit
 import Foundation
 
-class ListPageViewController : UIPageViewController {
+class ListPageViewController: UIPageViewController {
     var dataViewControllers = [UIViewController]()
     var lastIndex = 0
     
-    //필수 호출
-    //viewController : 부모 뷰컨트롤러
-    //superView : 이 VC 가 들어갈 View
     func setUpLayout(viewController : UIViewController,
                      superView : UIView? = nil) -> Self{
         viewController.addChild(self)
@@ -24,9 +21,6 @@ class ListPageViewController : UIPageViewController {
             viewController.view.addSubview(self.view)
         }
         
-        self.view.snp.makeConstraints({ make in
-            make.top.bottom.right.left.equalToSuperview()
-        })
         self.didMove(toParent: self)
         
         return self
@@ -45,13 +39,9 @@ class ListPageViewController : UIPageViewController {
         self.reloadInputViews()
         return self
     }
-    
-    func initViewController(viewController: UIViewController) {
-        
-    }
 
     // default First
-    func moveSlidePage(index : Int = 0){
+    func moveSlidePage(index: Int = 0){
         if index == 0 {
             if let moveVC = dataViewControllers.first {
                 self.setViewControllers([moveVC], direction: .forward, animated: true, completion: nil)
@@ -69,21 +59,23 @@ class ListPageViewController : UIPageViewController {
     }
     
     func reloadData(){
-        self.delegate = nil
-        self.dataSource = nil
-        self.delegate = self
-        self.dataSource = self
+        delegate = nil
+        dataSource = nil
+        delegate = self
+        dataSource = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.delegate = self
-        self.dataSource = self
+        delegate = self
+        dataSource = self
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    convenience init(){
+
+    convenience init() {
         self.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     }
     
@@ -108,6 +100,10 @@ extension ListPageViewController: UIPageViewControllerDataSource, UIPageViewCont
         } else {
             return dataViewControllers[nextIndex]
         }
+    }
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return dataViewControllers.count
     }
  
 //    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
@@ -135,36 +131,3 @@ extension ListPageViewController: UIPageViewControllerDataSource, UIPageViewCont
 //        }
 //    }
 }
-
-//MARK: - 사용법
-
-//class SomeViewController : UIViewController {
-//
-//    lazy var pageVC: PageViewController = {
-//          let vc = PageViewController()
-//          return vc
-//      }()
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        let vcs = (0...2).map({ index -> UIViewController in
-//            let vc = UIViewController()
-//            vc.view.backgroundColor = .white
-//            let label = UILabel()
-//            label.text = "\(index)"
-//            label.textColor = .black
-//            vc.view.addSubview(label)
-//            vc.view.bringSubviewToFront(label)
-//            label.snp.makeConstraints({
-//                $0.edges.centerX.centerY.equalToSuperview()
-//            })
-//            return vc
-//        })
-//
-//        pageVC.add(viewControlers: vcs)
-//            .setUpLayout(viewController: self, superView: self.view)
-//              .moveSlidePage()
-//    }
-//
-//}
-
-
