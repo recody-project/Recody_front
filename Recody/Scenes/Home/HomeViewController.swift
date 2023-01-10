@@ -62,8 +62,8 @@ class HomeViewController: CommonVC {
     @objc func clickEvent(_ sender: UITapGestureRecognizer){
         print(sender)
         if let tag = sender.view?.tag {
-            self.router?.present(RoutingLogic.Navigation.workList, nil,.overCurrentContext)
-//            self.router?.pushViewController(RoutingLogic.Navigation.workList, dataStore: nil)
+//            self.router?.present(RoutingLogic.Navigation.workList, nil,.overCurrentContext)
+            self.router?.pushViewController(RoutingLogic.Navigation.workList, dataStore: nil)
         }
     }
 
