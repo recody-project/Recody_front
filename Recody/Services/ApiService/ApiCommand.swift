@@ -21,18 +21,13 @@ enum ApiCommand {
     case resetPasswordToEmail ( _ email: String) // 1-3 비밀번호 재설정 이메일 인증
     case changePassword ( _ email: String,
                           _ password: String,
-                          _ passwordConfirm: String,
-                          _ verificationCode: String) // 1-4 비밀번호 재설정 ( 1-3 다음절차) - 재설정을 위한 인증과정은 현재 없음
+                          _ passwordConfirm: String) // 1-4 비밀번호 재설정 ( 1-3 다음절차) - 재설정을 위한 인증과정은 현재 없음
     case login(_ email: String, _ password: String) // 2-1 유저 로그인
     case getUserInfomation // 2-2 유저 정보 가져오기
     case changeNickName(_ nickname: String) // 2-3 닉네임 수정하기
-    case search(_ categoryId: String,
-                _ keyword: String,
-                _ language: String = "ko") // 3-1 작품 통합 검색 - 삭제 예정
     case search(_ categroyId: String, _ keyword: String, _ genreId: String, _size: String, _page: String) // 3-1 작품 통합 검색 v3
-    case getMovieDetail(_ moviedId: String, _ language: String = "ko") // 4-1 영화 상세정보 가져오기 v2
-    case getDramaDetail( _ dramaId: String,
-                         _ language: String = "ko") // 4-2 드라마 상세정보 가져오기
+    case getMovieDetail(_ moviedId: String) // 4-1 영화 상세정보 가져오기 v2
+    case getDramaDetail( _ dramaId: String) // 4-2 드라마 상세정보 가져오기
     case addWish(_ contentId: String) // 5-1 위시 등록하기(찜하기)
     case removeWish(_ contentId: String) // 5-2 위시 제거하기(찜 제거하기)
     case getWishList // 5-3 위시 리스트 가져오기(찜한 작품 가져오기)
@@ -48,8 +43,8 @@ enum ApiCommand {
                               _ iconUrl: String) // 7-3 커스텀 카테고리 수정하기
     case getCategoryList // 7-4 카테고리 목록 가져오기
     case getGenreListWithCategory(_ categoryId: String) // 7-5 특정 카테고리에 해당하는 장르들 가져오기
-    case setCustomCategory(_ contentId: String, _categoryId: String) // 8-1 특정 작품의 상세정보 수정하기(카테고리)
-    case setCustomGenre(_ contentId: String, _genreIds: Array<String>) // 8-2 특정 작품의 상세정보 수정하기(장르)
+    case modifyContentCategory(_ contentId: String, _categoryId: String) // 8-1 특정 작품의 상세정보 수정하기(카테고리)
+    case modifytContentGenre(_ contentId: String, _genreIds: Array<String>) // 8-2 특정 작품의 상세정보 수정하기(장르)
     case addRecord(_ contentId: String,
                    _ title: String,
                    _ note: String,
@@ -71,7 +66,7 @@ enum ApiCommand {
     // size 가져올 개수 기본 10
     case getMyRecentContinuingRecord // 9-7 유저의 가장 최근 작성중인 감상평 가져오기 => 8번 api 사용
     case getMyRecordCount(_ thisMonth: Bool = false) // 9-8. 유저의 총 기록 개수
-    case getAllRecord(_ size: Int = 10, _ page: Int = 0, apprciationDate: String = "") // 10-1 유저가 감상평을 쓴 작품 정보들 가져오기(작성중, 완료 포함)
+    case getAllRecord(_ size: Int = 10, _ page: Int = 0, order: String = "") // 10-1 유저가 감상평을 쓴 작품 정보들 가져오기(작성중, 완료 포함)
     case getAllContinuingRecord(_ size: Int = 10, _ page: Int = 0, _ order: String = "") // 10-2 감상평을 작성중인 작품들 가져오기
     case getRecentContinuingRecord // 10-3 유저가 가장 최근에 감상평을 작성하고 있는 작품 정보 1개 가져오기
     case addCustomGenre(_ categoryId: String,
@@ -82,7 +77,7 @@ enum ApiCommand {
     case getCategoryChart(_ yearMonth: String) // 14-2 카테고리 도표 보여주기
     case getLongestRecord(_ yearMonth: String) // 14-3 유저가 가장 길게 적은 작품 정보 가져오기
     case getGenreTop3(_yearMonth: String) // 14-4 유저 기록의 장르 TOP3 가져오기
-    case getFristRecord(_ yearMonth: String) // 14-5 유저 첫 기록 가져오기
+    case getFirstRecord(_ yearMonth: String) // 14-5 유저 첫 기록 가져오기
     case getTop3 // 14-6 유저 기록 명예의 전당 보여주기
     case getRatingChart(_yearMonth: String) // 14-7 유저 기록 작품 랭킹 보여주기
     case getReWatching(_yearMonth: String) // 14-8 유저의 재감상 기록 가져오기
@@ -194,20 +189,30 @@ enum ApiCommand {
         switch self {
         case .getUserInfomation:
             return .get
+        case .changeNickName:
+            return .put
         case .search:
             return .get
         case .getMovieDetail:
             return .get
         case .getDramaDetail:
             return .get
+        case .removeWish:
+            return .delete
         case .getWishList:
             return .get
         case .getStarScore:
             return .get
+        case .removeCustomCategory:
+            return .delete
+        case .modifyCustomCategory:
+            return .put
         case .getCategoryList:
             return .get
         case .getGenreListWithCategory:
             return .get
+        case .removeRecord:
+            return .delete
         case .getRecordWithId:
             return .get
         case .getMyRecordList:
@@ -240,7 +245,7 @@ enum ApiCommand {
             return .get
         case .getReWatching:
             return .get
-        case .getMostPopularContent:
+        case .             getMostPopularContent:
             return .get
         default:
             return .post

@@ -24,60 +24,92 @@ class ApiClient {
             param["name"] = name
             param["nickname"] = nickname
             param["pictureUrl"] = pictureUrl
-        case .login(let email, let password):
-            param["email"] = email
-            param["password"] = password
         case .checkValidEmail(let email):
             param["email"] = email
         case .resetPasswordToEmail(let email):
             param["email"] = email
+        case .changePassword(let email, let password, let passwordConfirm):
+            param["email"] = email
+            param["password"] = password
+            param["passwordConfirm"] = passwordConfirm
+        case .login(let email, let password):
+            param["email"] = email
+            param["password"] = password
         case .changeNickName(let nickname):
             param["nickname"] = nickname
-        case .search(let categoriId, let keyword, let language):
+        case .search(let categoriId, let keyword, let genreId, let size, let page):
             param["categoriId"] = categoriId
             param["keyword"] = keyword
-            param["language"] = language
-        case .getMovieDetail(let tmdbId, let language):
-            param["tmdbId"] = tmdbId
-            param["language"] = language
+            param["genreId"] = genreId
+            param["size"] = size
+            param["page"] = page
+        case .getMovieDetail(let movieId):
+            param["movieId"] = movieId
+        case .getDramaDetail(let dramaId):
+            param["dramaId"] = dramaId
         case .addWish(let contentId):
             param["contentId"] = contentId
         case .removeWish(let contentId):
             param["contentId"] = contentId
-        case .getStarScore(let contentId):
-            param["contentId"] = contentId
         case .setStarScore(let contentId, let score):
             param["contentId"] = contentId
             param["score"] = score
+        case .getStarScore(let contentId):
+            param["contentId"] = contentId
         case .addCustomCategory(let name, let iconUrl):
             param["name"] = name
             param["iconUrl"] = iconUrl
-        case .modifyCustomCategory(let categoriId, let name, let iconUrl):
+        case .removeCustomCategory(let categoryId):
+            param["categoryId"] = categoryId
+        case .modifyCustomCategory(let categoryId, let name, let iconUrl):
+            param["categoryId"] = categoryId
             param["name"] = name
             param["iconUrl"] = iconUrl
+        case .getGenreListWithCategory(let categoryId):
+            param["categoryId"] = categoryId
+        case .modifyContentCategory(let contentId, let categoryId):
+            param["contentId"] = contentId
+            param["categoryId"] = categoryId
+        case .modifytContentGenre(let contentId, let genreIds):
+            param["contentId"] = contentId
+            param["genreIds"] = genreIds
         case .addRecord(let contentId, let title, let note, let appreciationDate, let appreciationNumber):
             param["contentId"] = contentId
             param["title"] = title
             param["note"] = note
             param["appreciationDate"] = appreciationDate
             param["appreciationNumber"] = appreciationNumber
-        case .getMyRecordList(let contentId, let categoryId, let page,let size):
-            if contentId != nil {
-                param["contentId"] = contentId!
-            }
-            if categoryId != nil {
-                param["categoryId"] = categoryId!
-            }
-            if page != nil {
-                param["page"] = page!
-            }
+        case .removeRecord(let recordId):
+            param["recordId"] = recordId
+        case .completeRecord(let recordId):
+            param["recordId"] = recordId
+        case .continueRecord(let recordId):
+            param["recordId"] = recordId
+        case .getRecordWithId(let recordId):
+            param["recordId"] = recordId
+        case .getMyRecordList(let contentId, let categoryId, let page, let size):
+            param["contentId"] = contentId
+            param["categoryId"] = categoryId
+            param["page"] = page
             param["size"] = size
         case .getMyRecordCount(let thisMonth):
             param["thisMonth"] = thisMonth
-        case .addCustomGenre(let categoriId, let genreName, let genreIconUrl):
-            param["categoriId"] = categoriId
+        case .getAllRecord(let size, let page, let order):
+            param["size"] = size
+            param["page"] = page
+            param["order"] = order
+        case .getAllContinuingRecord(let size, let page, let order):
+            param["size"] = size
+            param["page"] = page
+            param["order"] = order
+        case .addCustomGenre(let categoryId, let genreName, let genreIconUrl):
+            param["categoryId"] = categoryId
             param["genreName"] = genreName
             param["genreIconUrl"] = genreIconUrl
+        case .getRecommendationList(let categoryId):
+            param["cateogryId"] = categoryId
+        case .getRecordCountWithMonth(let yearMonth), .getCategoryChart(let yearMonth), .getLongestRecord(let yearMonth), .getGenreTop3(let yearMonth), .getFirstRecord(let yearMonth), .getRatingChart(let yearMonth), .getReWatching(let yearMonth), . getMostPopularContent(let yearMonth):
+            param["yearMonth"] = yearMonth
         default:
         break
         }
