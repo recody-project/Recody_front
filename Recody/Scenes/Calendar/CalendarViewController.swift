@@ -115,14 +115,14 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
         tableView.reloadData()
     }
 }
-extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
+extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // visible 값에따라 숨기고 감추고가 가능합니다.
-        let list = tableList.filter{ $0.visible }.count
+        let list = tableList.filter { $0.visible }.count
         return list
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var list = self.tableList.filter{ $0.visible }
+        let list = self.tableList.filter { $0.visible }
         var cell = UITableViewCell()
         guard let type = CalendarTableCellType(rawValue: list[indexPath.row].type) else { fatalError("CellType Int Out Of Bounds Error") }
         var mCell = tableView.dequeueReusableCell(withIdentifier: type.name) as? UITableViewCell & ObservingTableCell
@@ -137,11 +137,8 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         // Row 별로 다양한 높이를 제공하기한 코드
-        let list = self.tableList.filter{ $0.visible }
+        let list = self.tableList.filter { $0.visible }
         return list[indexPath.row].viewHeight
 //        return list[indexPath.row].viewHeight + 20
     }
 }
-
-
-

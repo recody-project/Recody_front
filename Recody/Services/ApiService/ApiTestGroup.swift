@@ -10,6 +10,6 @@ import Foundation
 class ApiTestGroup {
     static let worker = SimpleWoker()
     static func doTest() {
-        worker.api(.search("123", "ddd"))
+        worker.api(.search("cat-1", "joy", "mg-1" ))
     }
 }

@@ -50,15 +50,15 @@ class CalendarDetailCell: UITableViewCell, ObservingTableCell {
     }
     var eventDelegate: ObservingTableCellEvent?
     func sendEventToController(sender: UITapGestureRecognizer) {
-        if let code = sender.view?.tag {
-            eventDelegate?.eventFromTableCell(code: InsightCellEvent.firstRecordEvent.rawValue,index: viewmodel!.index)
+        if (sender.view?.tag) != nil {
+            eventDelegate?.eventFromTableCell(code: InsightCellEvent.firstRecordEvent.rawValue, index: viewmodel!.index)
         }
     }
     func changeData() {
         guard let data = viewmodel?.data else { return }
         binding(data: data)
     }
-    func binding(data: Dictionary<String, Any>) {
+    func binding(data: [String: Any]) {
         lbGenre.text=data.stringValue(key: "genre")
         if let genre = WorkGenre(rawValue: data.stringValue(key: "genre")) {
             self.genre = genre
@@ -67,7 +67,7 @@ class CalendarDetailCell: UITableViewCell, ObservingTableCell {
         lbWorkTitle.text=data.stringValue(key: "workTitle")
         let score = data.intValue(key: "score")
         settingStar(score)
-        let imgPath = data.stringValue(key: "imgPath")
+        _ = data.stringValue(key: "imgPath")
     }
     private func settingStar(_ score: Int) {
         if score > 10 { return }
@@ -87,11 +87,9 @@ class CalendarDetailCell: UITableViewCell, ObservingTableCell {
             halfStartPosition = ((score)/2)
         }
         if checkStartLastPosition != -1 {
-            for (index,img) in startImgs.enumerated() {
-                if index <= checkStartLastPosition {
+            for (index, img) in startImgs.enumerated()  where index <= checkStartLastPosition {
                     img?.image = UIImage(named: "star.fill")
                     img?.tintColor = self.genre.color
-                }
             }
         }
         if halfStartPosition != -1 {

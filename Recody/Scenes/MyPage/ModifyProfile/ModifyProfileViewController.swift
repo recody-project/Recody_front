@@ -48,7 +48,7 @@ class ModifyProfileViewController: CommonVC {
     override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
         update()
     }
-    @objc func clickEvent(_ sender: UITapGestureRecognizer){
+    @objc func clickEvent(_ sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
             guard let useCase = UseCase(rawValue: tag) else { return }
             switch useCase {
@@ -80,7 +80,7 @@ class ModifyProfileViewController: CommonVC {
         
     }
 }
-extension ModifyProfileViewController : UITextFieldDelegate {
+extension ModifyProfileViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         print("textFieldDidChangeSelection  \(textField.text)")
     }

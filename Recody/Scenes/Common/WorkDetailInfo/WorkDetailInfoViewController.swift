@@ -42,10 +42,10 @@ class WorkDetailInfoViewController: CommonVC {
     
     override func display(orderNumber: Int) {
         guard let useCase = UseCase(rawValue: orderNumber) else { return }
-//        switch useCase {
-//        case .setting:
-//            self
-//        }
+        switch useCase {
+        default:
+            break
+        }
     }
     
     override func displayErorr(orderNumber: Int, msg: String?) {

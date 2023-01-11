@@ -59,9 +59,9 @@ class HomeViewController: CommonVC {
         }
     }
     
-    @objc func clickEvent(_ sender: UITapGestureRecognizer){
+    @objc func clickEvent(_ sender: UITapGestureRecognizer) {
         print(sender)
-        if let tag = sender.view?.tag {
+        if (sender.view?.tag) != nil {
 //            self.router?.present(RoutingLogic.Navigation.workList, nil,.overCurrentContext)
             self.router?.pushViewController(RoutingLogic.Navigation.workList, dataStore: nil)
         }
@@ -105,10 +105,10 @@ class HomeViewController: CommonVC {
     
     override func display(orderNumber: Int) {
         guard let useCase = UseCase(rawValue: orderNumber) else { return }
-//        switch useCase {
-//        case .setting:
-//            self
-//        }
+        switch useCase {
+        default:
+            break
+        }
     }
     
     override func displayErorr(orderNumber: Int, msg: String?) {
