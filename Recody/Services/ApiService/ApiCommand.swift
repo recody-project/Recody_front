@@ -25,7 +25,7 @@ enum ApiCommand {
     case login(_ email: String, _ password: String) // 2-1 유저 로그인
     case getUserInfomation // 2-2 유저 정보 가져오기
     case changeNickName(_ nickname: String) // 2-3 닉네임 수정하기
-    case search(_ categroyId: String, _ keyword: String, _ genreId: String, _size: String, _page: String) // 3-1 작품 통합 검색 v3
+    case search(_ categroyId: String, _ keyword: String, _ genreId: String, _ size: String = "10", _ page: String = "1") // 3-1 작품 통합 검색 v3
     case getMovieDetail(_ moviedId: String) // 4-1 영화 상세정보 가져오기 v2
     case getDramaDetail( _ dramaId: String) // 4-2 드라마 상세정보 가져오기
     case addWish(_ contentId: String) // 5-1 위시 등록하기(찜하기)
@@ -43,8 +43,8 @@ enum ApiCommand {
                               _ iconUrl: String) // 7-3 커스텀 카테고리 수정하기
     case getCategoryList // 7-4 카테고리 목록 가져오기
     case getGenreListWithCategory(_ categoryId: String) // 7-5 특정 카테고리에 해당하는 장르들 가져오기
-    case modifyContentCategory(_ contentId: String, _categoryId: String) // 8-1 특정 작품의 상세정보 수정하기(카테고리)
-    case modifytContentGenre(_ contentId: String, _genreIds: Array<String>) // 8-2 특정 작품의 상세정보 수정하기(장르)
+    case modifyContentCategory(_ contentId: String, _ categoryId: String) // 8-1 특정 작품의 상세정보 수정하기(카테고리)
+    case modifytContentGenre(_ contentId: String, _ genreIds: [String]) // 8-2 특정 작품의 상세정보 수정하기(장르)
     case addRecord(_ contentId: String,
                    _ title: String,
                    _ note: String,
@@ -76,12 +76,12 @@ enum ApiCommand {
     case getRecordCountWithMonth(_ yearMonth: String) // 14-1 월 별 기록수 가져오기
     case getCategoryChart(_ yearMonth: String) // 14-2 카테고리 도표 보여주기
     case getLongestRecord(_ yearMonth: String) // 14-3 유저가 가장 길게 적은 작품 정보 가져오기
-    case getGenreTop3(_yearMonth: String) // 14-4 유저 기록의 장르 TOP3 가져오기
+    case getGenreTop3(_ yearMonth: String) // 14-4 유저 기록의 장르 TOP3 가져오기
     case getFirstRecord(_ yearMonth: String) // 14-5 유저 첫 기록 가져오기
     case getTop3 // 14-6 유저 기록 명예의 전당 보여주기
-    case getRatingChart(_yearMonth: String) // 14-7 유저 기록 작품 랭킹 보여주기
-    case getReWatching(_yearMonth: String) // 14-8 유저의 재감상 기록 가져오기
-    case getMostPopularContent(_yearMonth: String) // 14-9 레코디 전체에서 가장 인기있었던 작품 가져오기
+    case getRatingChart(_ yearMonth: String) // 14-7 유저 기록 작품 랭킹 보여주기
+    case getReWatching(_ yearMonth: String) // 14-8 유저의 재감상 기록 가져오기
+    case getMostPopularContent(_ yearMonth: String) // 14-9 레코디 전체에서 가장 인기있었던 작품 가져오기
 
     var headers: Dictionary<String, Any> {
         var header = Dictionary<String, Any>()
@@ -109,10 +109,10 @@ enum ApiCommand {
             return "/v1/users/nickname"
         case .search(let categoryId, let keyword, _, _, _):
             return "/v2/catalog/search?categoryId=\(categoryId)&keyword=\(keyword)"
-        case .getMovieDetail(let movieId,_):
+        case .getMovieDetail(let movieId):
             return "/v1/catalog/movie/\(movieId)"
-        case .getDramaDetail(let dramaId, let language):
-            return "/v1/catalog/drama/\(dramaId)?language=\(language)"
+        case .getDramaDetail(let dramaId):
+            return "/v1/catalog/drama/\(dramaId)"
         case .addWish:
             return "/v1/catalog/wish"
         case .removeWish:
@@ -133,9 +133,9 @@ enum ApiCommand {
             return "/v1/catalog/categories"
         case .getGenreListWithCategory(let categoryId):
             return "/v1/catalog/genres?categoryId=\(categoryId)"
-        case .setCustomCategory(let contentId,_):
+        case .modifyContentCategory(let contentId, _):
             return "/v1/catalog/content/\(contentId)/category"
-        case .setCustomGenre(let contentId, _):
+        case .modifytContentGenre(let contentId, _):
             return "/v1/catalog/content/\(contentId)/genres"
         case .addRecord:
             return "/v1/record"
@@ -171,7 +171,7 @@ enum ApiCommand {
             return "/v1/insight/records/longest?yearMonth=\(yearMonth)"
         case .getGenreTop3(let yearMonth):
             return "/v1/insight/records/genreTop3?yearMonth=\(yearMonth)"
-        case .getFristRecord(let yearMonth):
+        case .getFirstRecord(let yearMonth):
             return "/v1/insight/records/first?yearMonth=\(yearMonth)"
         case .getTop3:
             return "/v1/insight/records/yearMonth/top3"
@@ -237,7 +237,7 @@ enum ApiCommand {
             return .get
         case .getGenreTop3:
             return .get
-        case .getFristRecord:
+        case .getFirstRecord:
             return .get
         case .getTop3:
             return .get
