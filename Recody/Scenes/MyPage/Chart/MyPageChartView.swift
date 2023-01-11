@@ -36,30 +36,32 @@ class MyPageChartView : UIView, ChartViewDelegate {
             $0.centerX.centerY.equalToSuperview()
         })
     }
-    func setColor(totalColor : UIColor,bestColor : UIColor){
+    func setColor(totalColor: UIColor, bestColor: UIColor) {
         self.totalColor = totalColor
         self.bestColor = bestColor
     }
-    func setDataCount(total: Int,best: Int) {
+    func setDataCount(total: Int, best: Int) {
         labelPercent.text = "\(best)%"
         let percent = (best * 100) / total
         let percentDouble = Double(percent)
         let remaindPercent = 100.0 - percentDouble
-        let pInt = Int(percent) ?? 0
+        // pInt
+        _ = Int(percent)
         var itemColors = [UIColor]()
-        let list :[Double] = (0...1).map { idx -> Double in
+        let list: [Double] = (0...1).map { idx -> Double in
             if idx == 1 {
                 itemColors.append(self.totalColor)
                 return remaindPercent
-            }else{
+            } else {
                 itemColors.append(self.bestColor)
                 return percentDouble
             }
         }
-        let count = list.count
+        // count_
+        _ = list.count
         var total = 0.0
-        list.forEach({ it in
-            total += it
+        list.forEach({ its in
+            total += its
         })
         var index = 0
         let entries = list.map { (idx) -> PieChartDataEntry in

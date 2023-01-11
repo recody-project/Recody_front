@@ -18,7 +18,7 @@ class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
             return CalendarDetailCell.Name
         }
     }
-    enum UseCase: Int,OrderType {
+    enum UseCase: Int, OrderType {
         case back = 100
         var number: Int {
             return self.rawValue
@@ -32,13 +32,11 @@ class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
     override func display(orderNumber: Int) {
         guard let useCase = UseCase.init(rawValue: orderNumber) else { return }
         switch useCase {
-            case .back:
-                self.router?.popViewContoller(animated: true)
-            default:
-                break
+        case .back:
+            self.router?.popViewContoller(animated: true)
         }
     }
-    func setup(){
+    func setup() {
         btnBack.setTitle("", for: .normal)
         btnBack.tag = UseCase.back.rawValue
         btnBack.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
@@ -74,17 +72,17 @@ class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
                                                                                                     "workTitle": "1987"]))
         tableView.reloadData()
     }
-    func eventFromTableCell(code: Int,index: Int) {
+    func eventFromTableCell(code: Int, index: Int) {
     }
 }
-extension CalendarDetailViewController: UITableViewDelegate,UITableViewDataSource {
+extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // visible 값에따라 숨기고 감추고가 가능합니다.
         let list = tableList.filter { $0.visible }.count
         return list
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var list = self.tableList.filter { $0.visible }
+        let list = self.tableList.filter { $0.visible }
         var cell = UITableViewCell()
         guard let type = CalendarDetailTableCellType(rawValue: list[indexPath.row].type) else { fatalError("CellType Int Out Of Bounds Error") }
         var mCell = tableView.dequeueReusableCell(withIdentifier: type.name) as? UITableViewCell & ObservingTableCell
@@ -104,7 +102,7 @@ extension CalendarDetailViewController: UITableViewDelegate,UITableViewDataSourc
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         // Row 별로 다양한 높이를 제공하기한 코드
-        let list = self.tableList.filter{ $0.visible }
+        let list = self.tableList.filter { $0.visible }
 //        return list[indexPath.row].viewHeight
         return list[indexPath.row].viewHeight + 20
     }

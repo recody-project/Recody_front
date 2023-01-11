@@ -26,26 +26,28 @@ class InsiteStatisticsGraphChartView : UIView,ChartViewDelegate{
         self.chartView.holeRadiusPercent = 0.7
     }
  
-    func setDataCount(total:Int,best:Int) {
+    func setDataCount(total: Int, best: Int) {
         let percent = (best * 100) / total
         let percentDouble = Double(percent)
         let remaindPercent = 100.0 - percentDouble
-        let pInt = Int(percent) ?? 0
+        // pInt
+        _ = Int(percent) 
         
         var itemColors = [UIColor]()
-        let list :[Double] = (0...1).map { idx -> Double in
+        let list: [Double] = (0...1).map { idx -> Double in
             if idx == 1 {
                 itemColors.append(UIColor(hexString: "#9FA5D6"))
                 return remaindPercent
-            }else{
+            } else {
                 itemColors.append(UIColor(hexString: "#666FC1"))
                 return percentDouble
             }
         }
-        let count = list.count
+        // count
+        _ = list.count
         var total = 0.0
-        list.forEach({ it in
-            total += it
+        list.forEach({ its in
+            total += its
         })
         
         var index = 0

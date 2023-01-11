@@ -86,16 +86,17 @@ class CombinChart : UIView,ChartViewDelegate{
         setData()
     }
     
-    func initTopView(){
+    func initTopView() {
         self.addSubview(topView)
         topView.snp.makeConstraints({ make in
             make.top.right.left.equalToSuperview()
             make.height.equalToSuperview().multipliedBy(0.1)
         })
         
-        var strCount = 0
+        // strCount
+        _ = 0
     }
-    func setupStackView(){
+    func setupStackView() {
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
         stackView.axis = .horizontal
@@ -110,7 +111,7 @@ class CombinChart : UIView,ChartViewDelegate{
             $0.height.equalTo(20)
         })
         
-        for index in (1...10){
+        for index in (1...10) {
             let label = UILabel()
             label.font = UIFont.fontWithName(type: FontType.regular, size: 14)
             label.textColor = UIColor.init(hexString: "#666666")
@@ -120,23 +121,23 @@ class CombinChart : UIView,ChartViewDelegate{
         }
     }
     
-    func updateChartData(){
+    func updateChartData() {
         self.chartView.data = nil
         
         self.setChartData()
     }
 
-    func setData(){
-        barItems.append((CGPoint(x: 0.0, y: 3.0),barColor,""))
-        barItems.append((CGPoint(x: 0.0, y: 1.5),barColor,""))
-        barItems.append((CGPoint(x: 0.0, y: 0.5),barColor,""))
-        barItems.append((CGPoint(x: 0.0, y: 3.0),barColor,""))
-        barItems.append((CGPoint(x: 0.0, y: 3.5),barColor,""))
-        barItems.append((CGPoint(x: 0.0, y: 5.0),barColor,""))
-        barItems.append((CGPoint(x: 0.0, y: 4.0),barColor,""))
-        barItems.append((CGPoint(x: 0.0, y: 3.0),barColor,""))
-        barItems.append((CGPoint(x: 0.0, y: 4.0),barColor,""))
-        barItems.append((CGPoint(x: 0.0, y: 2.0),barColor,""))
+    func setData() {
+        barItems.append((CGPoint(x: 0.0, y: 3.0), barColor, ""))
+        barItems.append((CGPoint(x: 0.0, y: 1.5), barColor, ""))
+        barItems.append((CGPoint(x: 0.0, y: 0.5), barColor, ""))
+        barItems.append((CGPoint(x: 0.0, y: 3.0), barColor, ""))
+        barItems.append((CGPoint(x: 0.0, y: 3.5), barColor, ""))
+        barItems.append((CGPoint(x: 0.0, y: 5.0), barColor, ""))
+        barItems.append((CGPoint(x: 0.0, y: 4.0), barColor, ""))
+        barItems.append((CGPoint(x: 0.0, y: 3.0), barColor, ""))
+        barItems.append((CGPoint(x: 0.0, y: 4.0), barColor, ""))
+        barItems.append((CGPoint(x: 0.0, y: 2.0), barColor, ""))
         updateChartData()
     }
     func setChartData() {
@@ -150,11 +151,12 @@ class CombinChart : UIView,ChartViewDelegate{
         self.chartView.data = data
     }
     
-    func generateBarChartDataSet(_ barName :String,
-                                  _ color:UIColor,
-                                  _ point :CGPoint) -> BarChartDataSet{
+    func generateBarChartDataSet(
+        _ barName: String,
+        _ color: UIColor,
+        _ point: CGPoint) -> BarChartDataSet {
         
-        let entries = [BarChartDataEntry(x:point.x,y: point.y )]
+        let entries = [BarChartDataEntry(x: point.x, y: point.y )]
         let set1 = BarChartDataSet(entries: entries, label: barName )
         set1.setColor(color)
 //        set1.valueTextColor = .black
@@ -171,21 +173,21 @@ class CombinChart : UIView,ChartViewDelegate{
         let barSpace = 0.2 // x2 dataset
         let barWidth = 0.25 // x2 dataset
         
-        var index : CGFloat = 0.0
-        let dataSet = barItems.map({ it -> BarChartDataSet in
-            let item = generateBarChartDataSet("1", it.color,CGPoint(x: index, y: it.point.y))
+        var index: CGFloat = 0.0
+        let dataSet = barItems.map({ its -> BarChartDataSet in
+            let item = generateBarChartDataSet("1", its.color, CGPoint(x: index, y: its.point.y))
             index += 1
             return item
         })
         let data: BarChartData = BarChartData(dataSets: dataSet )
         
-        var leftAxis = chartView.leftAxis
+        let leftAxis = chartView.leftAxis
         leftAxis.labelPosition = .outsideChart
-        var rightAxis = chartView.rightAxis
+        let rightAxis = chartView.rightAxis
         leftAxis.drawAxisLineEnabled = false
         rightAxis.drawAxisLineEnabled = true
         rightAxis.enabled = false
-        var xAxis = chartView.xAxis
+        let xAxis = chartView.xAxis
         xAxis.drawLabelsEnabled = false
         xAxis.labelTextColor = UIColor.init(hexString: "#666666")
         xAxis.labelFont = UIFont.fontWithName(type: FontType.regular, size: 14)
@@ -206,7 +208,7 @@ class CombinChart : UIView,ChartViewDelegate{
     
 }
 
-class BarNumberFormatter : ValueFormatter {
+class BarNumberFormatter: ValueFormatter {
     
     func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String {
         let valueInt = Int(value)

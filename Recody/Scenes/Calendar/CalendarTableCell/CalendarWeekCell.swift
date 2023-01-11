@@ -8,8 +8,8 @@
 import UIKit
 
 class CalendarWeekCell: UITableViewCell, ObservingTableCell {
-    var viewmodel:TableCellViewModel?{
-        didSet{
+    var viewmodel:TableCellViewModel? {
+        didSet {
             viewmodel?.delegate = self
             changeData()
         }
@@ -42,7 +42,7 @@ class CalendarWeekCell: UITableViewCell, ObservingTableCell {
     var eventDelegate: ObservingTableCellEvent?
     var month = 0
     var year = 0
-    func binding(data: Dictionary<String, Any>) {
+    func binding(data: [String: Any]) {
         if let week = data["week"] as? [Int] {
             self.days = week
         }
@@ -64,8 +64,8 @@ class CalendarWeekCell: UITableViewCell, ObservingTableCell {
                 }
             }
         }
-        let imgWorks = [imgWork1,imgWork2,imgWork3,imgWork4,imgWork5,imgWork6,imgWork7]
-        for (index,label) in [lbDayCount1, lbDayCount2, lbDayCount3, lbDayCount4, lbDayCount5, lbDayCount6, lbDayCount7].enumerated() {
+        let imgWorks = [imgWork1, imgWork2, imgWork3, imgWork4, imgWork5, imgWork6, imgWork7]
+        for (index, label) in [lbDayCount1, lbDayCount2, lbDayCount3, lbDayCount4, lbDayCount5, lbDayCount6, lbDayCount7].enumerated() {
             label?.text = "\(days[index])"
             label?.clipsToBounds = true
             if days[index] == -1 {
@@ -78,7 +78,7 @@ class CalendarWeekCell: UITableViewCell, ObservingTableCell {
             if days[index] == containToday {
                 label?.layer.cornerRadius = 11
                 label?.backgroundColor = UIColor(hexString: "#666FC1")
-            }else {
+            } else {
                 label?.layer.cornerRadius = 0
                 label?.backgroundColor = .clear
             }
@@ -94,7 +94,7 @@ class CalendarWeekCell: UITableViewCell, ObservingTableCell {
     }
     @objc func sendEventToController(sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
-            self.eventDelegate?.eventFromTableCell(code: tag,index: viewmodel!.index)
+            self.eventDelegate?.eventFromTableCell(code: tag, index: viewmodel!.index)
         }
     }
     func changeData() {
@@ -108,7 +108,7 @@ class CalendarWeekCell: UITableViewCell, ObservingTableCell {
     // 날짜가 유효값일때만 액션 이벤트를 등록한다.
     // 유효하지 않을면 (-1) 액션 이벤트를 해제한다.
     func settingClick() {
-        for (index,view) in [viewDay1, viewDay2, viewDay3, viewDay4, viewDay5, viewDay6, viewDay7].enumerated() {
+        for (index, view) in [viewDay1, viewDay2, viewDay3, viewDay4, viewDay5, viewDay6, viewDay7].enumerated() {
             if days[index] > 0 {
                 view?.isUserInteractionEnabled = true
                 view?.tag = days[index]

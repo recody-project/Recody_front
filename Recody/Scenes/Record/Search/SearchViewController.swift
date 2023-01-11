@@ -72,30 +72,26 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
         switch cellEvent {
             case .select:
             print("select \(index)")
-            break
             case .delete:
             print("delete \(index)")
-            //삭제시
-            //여기서 index는 tableList의 index를 의미함
-            //tableList 는 viewmodel의 list를 filterKeyword로 필터링하여 생성된 tablecell의 data model임
-            //viewmodel의 list 에서 delete 한후에 update() 를 해야함
+            // 삭제시
+            // 여기서 index는 tableList의 index를 의미함
+            // tableList 는 viewmodel의 list를 filterKeyword로 필터링하여 생성된 tablecell의 data model임
+            // viewmodel의 list 에서 delete 한후에 update() 를 해야함
             if let contentName = tableList[index].data?.stringValue(key: "workName") {
                 var removeIndex = -1
-                for index in 0...viewModel.list.count-1 {
-                    if viewModel.list[index] == contentName {
+                for index in 0...viewModel.list.count-1  where viewModel.list[index] == contentName {
                         removeIndex = index
-                    }
                 }
                 if removeIndex != -1 {
                     viewModel.list.remove(at: removeIndex)
                 }
             }
-            break
         }
         update()
     }
-    func update(){
-        //Data 바인딩
+    func update() {
+        // Data 바인딩
         // VC.ViewModel 기본형 데이터가 있어야함
         // tableList는 ViewModel.list를 fillterKeyword로 필터된 리스트를 재료로 생성해야함
         // update() 함수는 viewModel을 재료로 화면에 data를 바인딩하는 개념으로만 사용해야함
@@ -104,11 +100,11 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
         let list = viewModel.filterKeyword == "" ? viewModel.list : viewModel.list.filter({ $0.contains(viewModel.filterKeyword)})
         if list.count > 0 {
             tableList = (0...list.count-1).map({ index -> TableCellViewModel in
-                let viewmodel = TableCellViewModel(type: index, data: ["workName":list[index]])
+                let viewmodel = TableCellViewModel(type: index, data: ["workName": list[index]])
                 viewmodel.index = index
                 return viewmodel
             })
-        }else{
+        } else {
             tableList.removeAll()
         }
         tableView.reloadData()
@@ -139,8 +135,8 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
         case .empty: break
         case .history:
             // 검색 history api 호출 (success시에 하나?)
-            guard let history = UseCase.init(rawValue: orderNumber) else { return }
-            let worker = self.interactor?.just(UseCase.history)
+            guard UseCase.init(rawValue: orderNumber) != nil else { return }
+            _ = self.interactor?.just(UseCase.history)
 //            worker?.api(<#T##command: ApiCommand##ApiCommand#>)
         default:
             break
@@ -159,7 +155,7 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
 
 // 검색을 버튼 눌렀을 때만 업데이트할 것 인지, 타이핑할 때 마다 업데이트해야 할 것인지 서버팀과 상의하기 (기억속엔 전자였던 것 같음)
 // 타이핑 중 search bar에 취소 버튼 나타나기
-//extension SearchViewController: UISearchResultsUpdating {
+// extension SearchViewController: UISearchResultsUpdating {
 //    func updateSearchResults(for searchController: UISearchController) {
 //        guard let text = searchController.searchBar.text else {
 //            return
@@ -171,9 +167,9 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
 //        searchBar.showsCancelButton = true
 //        self.tableView.reloadData()
 //    }
-//}
+// }
 
-//extension SearchViewController: UISearchControllerDelegate, UISearchBarDelegate {
+// extension SearchViewController: UISearchControllerDelegate, UISearchBarDelegate {
 //
 //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 //        <#code#>
@@ -201,7 +197,7 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
 //        searchBar.text = ""
 //        searchBar.resignFirstResponder()
 //    }
-//}
+// }
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -212,7 +208,7 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var list = tableList.filter({$0.visible})
+        let list = tableList.filter({$0.visible})
         var cell = UITableViewCell()
         var mCell = tableView.dequeueReusableCell(withIdentifier: MySearchTableViewCell.Name) as? UITableViewCell & ObservingTableCell
             // Viewmodel 주입

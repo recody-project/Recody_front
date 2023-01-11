@@ -11,11 +11,11 @@ protocol RouterType {
     init(context: UIViewController)
     var context: UIViewController { get }
     func present(_ navigation: NavigationType, _ dataStore: DataStoreType?)
-    func present(_ navigation: NavigationType, _ dataStore: DataStoreType?,_ presentModalStyle:UIModalPresentationStyle?)  // UIViewController 에서 직접 Present
-    func presentWithRootViewcontroller(_ navigation: NavigationType, _ dataStore: DataStoreType?,_ presentModalStyle:UIModalPresentationStyle?)  // UIViewController 에서 직접 Present
+    func present(_ navigation: NavigationType, _ dataStore: DataStoreType?, _ presentModalStyle: UIModalPresentationStyle?)  // UIViewController 에서 직접 Present
+    func presentWithRootViewcontroller(_ navigation: NavigationType, _ dataStore: DataStoreType?, _ presentModalStyle: UIModalPresentationStyle?)  // UIViewController 에서 직접 Present
     func perform(_ segment: SegmentType, _ dataStore: DataStoreType?) // 세그먼트를 이용한 화면이동
     func pushViewController(_ navigation: NavigationType, dataStore: DataStoreType?) // UINavigationController
-    func popViewContoller(animated:Bool)
+    func popViewContoller(animated: Bool)
 }
 
 protocol DataPassingType {
@@ -48,7 +48,7 @@ class SimpleRouter: RouterType {
             context.present(next, animated: true)
         }
     }
-    func present(_ navigation: NavigationType, _ dataStore: DataStoreType? = nil,_ presentModalStyle: UIModalPresentationStyle? = nil) {
+    func present(_ navigation: NavigationType, _ dataStore: DataStoreType? = nil, _ presentModalStyle: UIModalPresentationStyle? = nil) {
         if check(navigation) {
             let next = navigation.viewcontroller!
             if let data = dataStore {
@@ -76,7 +76,7 @@ class SimpleRouter: RouterType {
     }
     func perform(_ segment: SegmentType, _ dataStore: DataStoreType? = nil) {
         if check(segment) {
-            let segue = segment.segue!
+            _ = segment.segue!
         }
     }
     func pushViewController(_ navigation: NavigationType, dataStore: DataStoreType? = nil) {
@@ -90,7 +90,7 @@ class SimpleRouter: RouterType {
             }
         }
     }
-    func popViewContoller(animated:Bool){
+    func popViewContoller(animated: Bool) {
         self.context.navigationController?.popViewController(animated: animated)
     }
     private func check(_ next: NavigationType) -> Bool {
