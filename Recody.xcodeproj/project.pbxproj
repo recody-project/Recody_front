@@ -156,6 +156,9 @@
 		3AEDB71728DF3D4500C3DB8D /* StarRatingSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEDB71628DF3D4500C3DB8D /* StarRatingSlider.swift */; };
 		3AF1DF88290C11260095673A /* ReviewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1DF87290C11260095673A /* ReviewModels.swift */; };
 		981DE2FA71CB8639568FDE47 /* Pods_Recody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F5474CB0129800D7BF6EF1 /* Pods_Recody.framework */; };
+		AEB50ABF2993263B00181BEC /* TestApi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB50ABE2993263B00181BEC /* TestApi.storyboard */; };
+		AEB50AC129932A4200181BEC /* TestApiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB50AC029932A4200181BEC /* TestApiViewController.swift */; };
+		AEFDD746299B422E00A5EB77 /* TestApiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFDD745299B422E00A5EB77 /* TestApiDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -329,6 +332,9 @@
 		3AEDB71628DF3D4500C3DB8D /* StarRatingSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingSlider.swift; sourceTree = "<group>"; };
 		3AF1DF87290C11260095673A /* ReviewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModels.swift; sourceTree = "<group>"; };
 		8049CB087E9F5BA11A8F193B /* Pods-Recody.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recody.release.xcconfig"; path = "Target Support Files/Pods-Recody/Pods-Recody.release.xcconfig"; sourceTree = "<group>"; };
+		AEB50ABE2993263B00181BEC /* TestApi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestApi.storyboard; sourceTree = "<group>"; };
+		AEB50AC029932A4200181BEC /* TestApiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApiViewController.swift; sourceTree = "<group>"; };
+		AEFDD745299B422E00A5EB77 /* TestApiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApiDetailViewController.swift; sourceTree = "<group>"; };
 		E7392853386696D3443F7302 /* Pods-Recody.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recody.debug.xcconfig"; path = "Target Support Files/Pods-Recody/Pods-Recody.debug.xcconfig"; sourceTree = "<group>"; };
 		F7F5474CB0129800D7BF6EF1 /* Pods_Recody.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -390,6 +396,9 @@
 			isa = PBXGroup;
 			children = (
 				208386DA294813BA0012A8E0 /* PageViewController.swift */,
+				AEB50ABE2993263B00181BEC /* TestApi.storyboard */,
+				AEB50AC029932A4200181BEC /* TestApiViewController.swift */,
+				AEFDD745299B422E00A5EB77 /* TestApiDetailViewController.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -1020,6 +1029,7 @@
 				3A8D1735289BBC7A00B260D1 /* Assets.xcassets in Resources */,
 				20E788482925B7E000B05C8E /* CalendarDetailCell.xib in Resources */,
 				20C161E8292CBAFB001B2F7F /* Setting.storyboard in Resources */,
+				AEB50ABF2993263B00181BEC /* TestApi.storyboard in Resources */,
 				3A6AE8DF2918910300A9F520 /* InsightMostAppreciationCell.xib in Resources */,
 				3AB1431F28F768080041C9CC /* Search.storyboard in Resources */,
 				3A6AE8E12918910300A9F520 /* InsightStatisticsGraphCell.xib in Resources */,
@@ -1186,6 +1196,7 @@
 				20C6F9FE29077B6C009296E3 /* PresenterType.swift in Sources */,
 				3AD4F11F28C08BA800598D28 /* TabHeader.swift in Sources */,
 				3AEDB70B28DE07FC00C3DB8D /* PreReviewPresenter.swift in Sources */,
+				AEFDD746299B422E00A5EB77 /* TestApiDetailViewController.swift in Sources */,
 				3A6AE8E32918910300A9F520 /* InsiteStatisticsCell.swift in Sources */,
 				20CE1713292DFB7300D77152 /* MyPageViewModel.swift in Sources */,
 				3A8D1764289BBEA100B260D1 /* HomeViewModel.swift in Sources */,
@@ -1221,6 +1232,7 @@
 				2015B30A2918F28B00DB725D /* ApiClient.swift in Sources */,
 				3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */,
 				3A8F863A28C6277D0028B45C /* EditGenreInteractor.swift in Sources */,
+				AEB50AC129932A4200181BEC /* TestApiViewController.swift in Sources */,
 				3AD4F12628C0A66600598D28 /* UIColor+.swift in Sources */,
 				20F719DA2934422A00D2EA5D /* CollectionViewModel+.swift in Sources */,
 				3A77BE7328F57944005AFCAD /* PreReviewViewController+.swift in Sources */,

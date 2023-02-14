@@ -43,12 +43,16 @@ class HomeViewController: CommonVC {
         }
     }
     @IBOutlet weak var headerStackView: UIStackView!
-    
+    @IBOutlet weak var btnMenu: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         setCategoryStackView()
+        setup()
     }
-
+    func setup(){
+        btnMenu.tag = UseCase.testMenu.rawValue
+        btnMenu.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
+    }
     func setCategoryStackView() {
         var index = 0
         for value in customCategories {
@@ -61,8 +65,14 @@ class HomeViewController: CommonVC {
     
     @objc func clickEvent(_ sender: UITapGestureRecognizer) {
         print(sender)
-        if (sender.view?.tag) != nil {
-//            self.router?.present(RoutingLogic.Navigation.workList, nil,.overCurrentContext)
+        guard let tag = sender.view?.tag else { return }
+        guard let useCase = UseCase(rawValue: tag) else { return }
+        switch useCase {
+        case .testMenu:
+            let storyboard = UIStoryboard(name: "TestApi", bundle: nil)
+            let next = storyboard.instantiateViewController(withIdentifier: "TestApiViewController")
+            self.navigationController?.pushViewController(next, animated: true)
+        default:
             self.router?.pushViewController(RoutingLogic.Navigation.workList, dataStore: nil)
         }
     }
@@ -98,6 +108,7 @@ class HomeViewController: CommonVC {
         case moveReviewing = 107
         case workCategory = 108
         case moveWork = 109
+        case testMenu = 999 // 테스트 메뉴
         var number: Int {
             return self.rawValue
         }
