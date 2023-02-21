@@ -7,11 +7,10 @@
 
 import Foundation
 import UIKit
-
-class PageViewController : UIPageViewController {
+class PageViewController: UIPageViewController {
     
     var dataViewControllers = [UIViewController]()
-    
+//    var delegate: PageViewControllerDelegate?
     var lastIndex = 0
     
     //필수 호출
@@ -48,20 +47,20 @@ class PageViewController : UIPageViewController {
     }
     // default First
     func moveSlidePage(index : Int = 0){
-        if index == 0 {
-            if let moveVC = dataViewControllers.first {
-                self.setViewControllers([moveVC], direction: .forward, animated: true, completion: nil)
-            }
-        } else {
-            if index < dataViewControllers.count {
+            
+        if index < dataViewControllers.count {
+            if index > lastIndex {
                 let moveVC = dataViewControllers[index]
                 self.setViewControllers([moveVC], direction: .forward, animated: true, completion: nil)
-            } else {
-                fatalError("SlideContentViewController index out of range / index : \(index) / dataViewControllers.count : \(dataViewControllers.count)")
+            }else {
+                let moveVC = dataViewControllers[index]
+                self.setViewControllers([moveVC], direction: .reverse, animated: true, completion: nil)
             }
-            
+        } else {
+            fatalError("SlideContentViewController index out of range / index : \(index) / dataViewControllers.count : \(dataViewControllers.count)")
         }
-        
+    
+        lastIndex = index
     }
     
     func reloadData(){
@@ -97,7 +96,6 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
 //            vc.setUpLayout(viewController: self, superView: self.view)
 //                .moveSlidePage()
 //        }
-        
         return dataViewControllers[previousIndex]
     }
 
@@ -118,7 +116,6 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
         
         return dataViewControllers[nextIndex]
     }
- 
 }
 
 //MARK: - 사용법

@@ -158,6 +158,9 @@
 		981DE2FA71CB8639568FDE47 /* Pods_Recody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F5474CB0129800D7BF6EF1 /* Pods_Recody.framework */; };
 		AEB50ABF2993263B00181BEC /* TestApi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB50ABE2993263B00181BEC /* TestApi.storyboard */; };
 		AEB50AC129932A4200181BEC /* TestApiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB50AC029932A4200181BEC /* TestApiViewController.swift */; };
+		AED00E7529A3438600A60D86 /* TestApiSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED00E7429A3438600A60D86 /* TestApiSetupViewController.swift */; };
+		AED00E7829A4501700A60D86 /* TestApiSetupTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED00E7629A4501700A60D86 /* TestApiSetupTableCell.swift */; };
+		AED00E7929A4501700A60D86 /* TestApiSetupTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED00E7729A4501700A60D86 /* TestApiSetupTableCell.xib */; };
 		AEFDD746299B422E00A5EB77 /* TestApiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFDD745299B422E00A5EB77 /* TestApiDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -334,6 +337,9 @@
 		8049CB087E9F5BA11A8F193B /* Pods-Recody.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recody.release.xcconfig"; path = "Target Support Files/Pods-Recody/Pods-Recody.release.xcconfig"; sourceTree = "<group>"; };
 		AEB50ABE2993263B00181BEC /* TestApi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestApi.storyboard; sourceTree = "<group>"; };
 		AEB50AC029932A4200181BEC /* TestApiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApiViewController.swift; sourceTree = "<group>"; };
+		AED00E7429A3438600A60D86 /* TestApiSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApiSetupViewController.swift; sourceTree = "<group>"; };
+		AED00E7629A4501700A60D86 /* TestApiSetupTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApiSetupTableCell.swift; sourceTree = "<group>"; };
+		AED00E7729A4501700A60D86 /* TestApiSetupTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestApiSetupTableCell.xib; sourceTree = "<group>"; };
 		AEFDD745299B422E00A5EB77 /* TestApiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApiDetailViewController.swift; sourceTree = "<group>"; };
 		E7392853386696D3443F7302 /* Pods-Recody.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recody.debug.xcconfig"; path = "Target Support Files/Pods-Recody/Pods-Recody.debug.xcconfig"; sourceTree = "<group>"; };
 		F7F5474CB0129800D7BF6EF1 /* Pods_Recody.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -396,8 +402,11 @@
 			isa = PBXGroup;
 			children = (
 				208386DA294813BA0012A8E0 /* PageViewController.swift */,
+				AED00E7629A4501700A60D86 /* TestApiSetupTableCell.swift */,
+				AED00E7729A4501700A60D86 /* TestApiSetupTableCell.xib */,
 				AEB50ABE2993263B00181BEC /* TestApi.storyboard */,
 				AEB50AC029932A4200181BEC /* TestApiViewController.swift */,
+				AED00E7429A3438600A60D86 /* TestApiSetupViewController.swift */,
 				AEFDD745299B422E00A5EB77 /* TestApiDetailViewController.swift */,
 			);
 			path = Example;
@@ -1026,6 +1035,7 @@
 				3A75DBBC28A0EA5700084DB1 /* Home.storyboard in Resources */,
 				3A6AE8DB2918910300A9F520 /* InsightStatisticsCell.xib in Resources */,
 				3AD4F12128C08C7E00598D28 /* DropDownHeader.xib in Resources */,
+				AED00E7929A4501700A60D86 /* TestApiSetupTableCell.xib in Resources */,
 				3A8D1735289BBC7A00B260D1 /* Assets.xcassets in Resources */,
 				20E788482925B7E000B05C8E /* CalendarDetailCell.xib in Resources */,
 				20C161E8292CBAFB001B2F7F /* Setting.storyboard in Resources */,
@@ -1149,6 +1159,7 @@
 				3AAEE3EF28C5CF3900B28582 /* EditCategoryViewController.swift in Sources */,
 				20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */,
 				207C64792935DE3000D4F1FD /* UIFont+.swift in Sources */,
+				AED00E7529A3438600A60D86 /* TestApiSetupViewController.swift in Sources */,
 				3A6AE8D82918910300A9F520 /* InsightHallOfFameCell.swift in Sources */,
 				3A56B0E629351F010028BF98 /* CategoryButtonModel.swift in Sources */,
 				3AA56D0328BE580000FB66F5 /* WorkListCollectionViewCell.swift in Sources */,
@@ -1204,6 +1215,7 @@
 				3ADDAD62294B746000BC15D4 /* ListViewController.swift in Sources */,
 				20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */,
 				3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */,
+				AED00E7829A4501700A60D86 /* TestApiSetupTableCell.swift in Sources */,
 				20E788442925B53F00B05C8E /* CalendarDetailViewController.swift in Sources */,
 				20DBFB0229029366009CEF76 /* UIViewController+.swift in Sources */,
 				20DBFB0729029366009CEF76 /* RouterType+.swift in Sources */,

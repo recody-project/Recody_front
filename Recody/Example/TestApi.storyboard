@@ -9,6 +9,96 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Test Api Setup View Controller-->
+        <scene sceneID="XAl-qS-zEj">
+            <objects>
+                <viewController storyboardIdentifier="TestApiSetupViewController" id="Xn2-9q-gEd" customClass="TestApiSetupViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AbG-xU-QVJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dh8-80-Geg">
+                                <rect key="frame" x="0.0" y="758" width="393" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vav-7L-vWI">
+                                        <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="60"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="초기화"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5m1-gy-Opi">
+                                        <rect key="frame" x="196.66666666666663" y="0.0" width="196.33333333333337" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="전송">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="nlV-yW-jCM"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B9V-Sk-kPJ">
+                                <rect key="frame" x="0.0" y="59" width="393" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLa-4t-EzI">
+                                        <rect key="frame" x="0.0" y="0.0" width="131" height="60"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="파라미터"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMe-QG-aI6">
+                                        <rect key="frame" x="131" y="0.0" width="131" height="60"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="헤더"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcn-T8-WbH">
+                                        <rect key="frame" x="262" y="0.0" width="131" height="60"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="전송방식"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="11h-F6-rTV"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgS-MW-ymZ">
+                                <rect key="frame" x="0.0" y="119" width="393" height="639"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TAJ-4e-ViT"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TAJ-4e-ViT" firstAttribute="trailing" secondItem="Dh8-80-Geg" secondAttribute="trailing" id="2yj-HU-oXc"/>
+                            <constraint firstItem="B9V-Sk-kPJ" firstAttribute="top" secondItem="TAJ-4e-ViT" secondAttribute="top" id="ClY-S6-NIV"/>
+                            <constraint firstItem="B9V-Sk-kPJ" firstAttribute="leading" secondItem="TAJ-4e-ViT" secondAttribute="leading" id="Eel-zj-X5o"/>
+                            <constraint firstItem="TAJ-4e-ViT" firstAttribute="bottom" secondItem="Dh8-80-Geg" secondAttribute="bottom" id="JG5-xW-AM8"/>
+                            <constraint firstItem="TAJ-4e-ViT" firstAttribute="trailing" secondItem="B9V-Sk-kPJ" secondAttribute="trailing" id="KIs-8t-i8g"/>
+                            <constraint firstItem="qgS-MW-ymZ" firstAttribute="leading" secondItem="TAJ-4e-ViT" secondAttribute="leading" id="cwy-n7-RCb"/>
+                            <constraint firstItem="qgS-MW-ymZ" firstAttribute="top" secondItem="B9V-Sk-kPJ" secondAttribute="bottom" id="poH-fg-IXe"/>
+                            <constraint firstItem="Dh8-80-Geg" firstAttribute="top" secondItem="qgS-MW-ymZ" secondAttribute="bottom" id="qVW-a3-xuc"/>
+                            <constraint firstItem="TAJ-4e-ViT" firstAttribute="trailing" secondItem="qgS-MW-ymZ" secondAttribute="trailing" id="st6-c7-y4c"/>
+                            <constraint firstItem="Dh8-80-Geg" firstAttribute="leading" secondItem="TAJ-4e-ViT" secondAttribute="leading" id="txh-QJ-cXQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnHeader" destination="oMe-QG-aI6" id="PXS-OJ-RER"/>
+                        <outlet property="btnMethod" destination="dcn-T8-WbH" id="TFF-gc-P0P"/>
+                        <outlet property="btnParam" destination="NLa-4t-EzI" id="TFQ-wz-idN"/>
+                        <outlet property="btnReset" destination="Vav-7L-vWI" id="wkF-L9-7M8"/>
+                        <outlet property="btnSend" destination="5m1-gy-Opi" id="n5P-ZS-aTR"/>
+                        <outlet property="container" destination="qgS-MW-ymZ" id="ffD-vn-92V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9T2-6t-olz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="294" y="5"/>
+        </scene>
         <!--Test Api View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -22,14 +112,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TestApiTalbeCell" id="7of-lh-BYX" customClass="TestApiTalbeCell" customModule="Recody" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7of-lh-BYX" id="kjI-pX-1IR">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDR-eS-n3m">
-                                                    <rect key="frame" x="36" y="11" width="41.333333333333343" height="21"/>
+                                                    <rect key="frame" x="36" y="10.999999999999998" width="41.333333333333343" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -63,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.64122137404578" y="4.9295774647887329"/>
+            <point key="canvasLocation" x="-399" y="5"/>
         </scene>
         <!--Test Api Detail View Controller-->
         <scene sceneID="xRd-is-9m3">
@@ -97,12 +187,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NwF-B2-Uix" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010" y="5"/>
+            <point key="canvasLocation" x="984" y="5"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

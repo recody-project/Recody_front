@@ -36,8 +36,8 @@ class TestApiViewController: UIViewController{
     }
     func moveDetail(_ index: Int){
         let storyboard = UIStoryboard(name: "TestApi", bundle: nil)
-        if let next = storyboard.instantiateViewController(withIdentifier: "TestApiDetailViewController") as? TestApiDetailViewController {
-            next.viewmodel = TestApiDetailViewModel(request: self.viewmodel.list[index])
+        if let next = storyboard.instantiateViewController(withIdentifier: "TestApiSetupViewController") as? TestApiSetupViewController {
+//            next.viewmodel = TestApiDetailViewModel(request: self.viewmodel.list[index])
             self.navigationController?.pushViewController(next, animated: true)
         }
     }

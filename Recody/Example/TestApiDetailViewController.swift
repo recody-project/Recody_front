@@ -17,7 +17,6 @@ class TestApiDetailViewController : UIViewController {
     }
     func setup(){
         ApiClient.request(command: viewmodel.request.command, { data in
-            
             self.viewmodel.content += "ApiName : \(self.viewmodel.request.name) \n"
             if let obj = data.obj {
                 self.viewmodel.content += "Response \n"
