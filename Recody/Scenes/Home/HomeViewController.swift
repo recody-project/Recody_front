@@ -26,7 +26,7 @@ class HomeViewController: CommonVC {
         Work(id: "7", name: "스파이더맨", image: "spiderman"),
         Work(id: "8", name: "After Like", image: "afterLike")
     ]
-
+    
     let categories: [Category] = [
         Category(name: "전체", image: "all"),
         Category(name: "책", image: "book"),
@@ -34,7 +34,7 @@ class HomeViewController: CommonVC {
         Category(name: "드라마", image: "drama"),
         Category(name: "음악", image: "music")
     ]
-
+    
     @IBOutlet weak var categoryStackView: UIStackView!
     @IBOutlet var customCategories: [CustomCategory]!
     @IBOutlet weak var workListcollectionView: UICollectionView! {
@@ -46,9 +46,14 @@ class HomeViewController: CommonVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUp()
         setCategoryStackView()
     }
-
+    
+    func setUp() {
+        self.interactor?.just(UseCase.setting).drop()
+    }
+    
     func setCategoryStackView() {
         var index = 0
         for value in customCategories {
@@ -62,11 +67,11 @@ class HomeViewController: CommonVC {
     @objc func clickEvent(_ sender: UITapGestureRecognizer) {
         print(sender)
         if (sender.view?.tag) != nil {
-//            self.router?.present(RoutingLogic.Navigation.workList, nil,.overCurrentContext)
+            //            self.router?.present(RoutingLogic.Navigation.workList, nil,.overCurrentContext)
             self.router?.pushViewController(RoutingLogic.Navigation.workList, dataStore: nil)
         }
     }
-
+    
     func createLayout() -> UICollectionViewCompositionalLayout {
         let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: size)
@@ -106,6 +111,14 @@ class HomeViewController: CommonVC {
     override func display(orderNumber: Int) {
         guard let useCase = UseCase(rawValue: orderNumber) else { return }
         switch useCase {
+        case .setting:
+            let email = "Emelia_Harvey@hotmail.com"
+            let password = "newPassword"
+            self.interactor?.just(useCase).api(.login(email, password))
+    
+            self.interactor?.just(useCase).api(.getUserInfomation)
+            self.interactor?.just(useCase).api(.getMyRecentContinuingRecord)
+            self.interactor?.just(useCase).api(.getMovies)
         default:
             break
         }
@@ -122,7 +135,16 @@ class HomeViewController: CommonVC {
     override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
         guard let useCase = UseCase(rawValue: orderNumber) else { return }
         switch useCase {
-
+        case .setting:
+            if let data = dataStore?.data(useCase)?.fetch(UserDataModel.self) {
+                let temp = data.data["signInInfo"] as? [String: String]
+                guard let accessToken = temp?["accessToken"] else { return }
+                guard let refreshToken = temp?["refreshToken"] else { return }
+                KeyChain.create(key: "accessToken", token: accessToken)
+                KeyChain.create(key: "refreshToken", token: refreshToken)
+                print("요깅깅교익요긱")
+                print(data)
+            }
         default:
             self.presenter?.alertService.showToast("\(useCase)")
         }

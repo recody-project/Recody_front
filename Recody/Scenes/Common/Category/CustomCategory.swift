@@ -16,7 +16,6 @@ class CustomCategory: UIView {
     var isBorder = false
 
     func setData(with data: Category) {
-        print(data)
         categoryImage.image = UIImage(named: data.image)
         categoryName.text = data.name
     }
