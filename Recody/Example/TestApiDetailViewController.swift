@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 class TestApiDetailViewController : UIViewController {
     @IBOutlet weak var textView : UITextView!
     var viewmodel : TestApiDetailViewModel!
@@ -15,8 +16,17 @@ class TestApiDetailViewController : UIViewController {
         setup()
         update()
     }
+    /***
+     TODO
+     viewmodel.request.server
+     viewmodel.request.Encoding
+     */
     func setup(){
-        ApiClient.request(command: viewmodel.request.command, { data in
+        ApiClient.requestTEST(viewmodel.request.headers,
+                              viewmodel.request.params,
+                              viewmodel.request.subDomain,
+                              viewmodel.request.subDomain, viewmodel.request.method,
+                              JSONEncoding.default, { data in
             self.viewmodel.content += "ApiName : \(self.viewmodel.request.name) \n"
             if let obj = data.obj {
                 self.viewmodel.content += "Response \n"
@@ -28,18 +38,11 @@ class TestApiDetailViewController : UIViewController {
                 self.update()
             }
         }, { error in
-//            let alert = UIAlertController(title: "알림", message: "\(error)", preferredStyle: .alert)
-//            let ok = UIAlertAction(title: "확인", style: .default,handler: { _ in
-//                self.navigationController?.popViewController(animated: true)
-//            })
-//            alert.addAction(ok)
-//            self.present(alert, animated: true)
             self.viewmodel.content = ""
             self.viewmodel.content += "통신실패 \n"
             self.viewmodel.content += error
             self.update()
         })
-        
     }
     func update(){
         self.textView.text =  viewmodel.content

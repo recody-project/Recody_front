@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Alamofire
 
-class TestApiSetupViewController: UIViewController{
+class TestApiSetupViewController: UIViewController {
     @IBOutlet weak var btnHeader: UIButton!
     @IBOutlet weak var btnParam: UIButton!
     @IBOutlet weak var btnMethod: UIButton!
@@ -20,9 +20,21 @@ class TestApiSetupViewController: UIViewController{
     
     lazy var viewControllers : [UIViewController] = {
         return (0...2).map({ index -> UIViewController in
-            let vc = UIViewController()
-            vc.view.backgroundColor = .white
-            return vc
+            if index == 2 {
+                let sb = UIStoryboard(name: "TestApi", bundle: nil)
+            
+                if let vc = sb.instantiateViewController(withIdentifier: "TestApiSettingViewController") as? TestApiSettingViewController{
+                    vc.delegate = self
+                    return vc
+                }else{
+                    return UIViewController()
+                }
+            }else{
+                let vc = UIViewController()
+                vc.view.backgroundColor = .white
+                return vc
+            }
+            
         })
     }()
     lazy var tableViews : [UITableView] = {
@@ -156,8 +168,15 @@ class TestApiSetupViewModel {
     var tap = PageType.param
     var params = [Dictionary<String,String>]()
     var headers = [Dictionary<String,String>]()
-    var method = HTTPMethod.post
-    var server = ApiClient.server
+    var method : HTTPMethod
+    var server = ""
+    var subDomain = ""
+    init(){
+        method = HTTPMethod.post
+        server = ApiClient.server
+        headers = [Dictionary<String,String>]()
+        params = [Dictionary<String,String>]()
+    }
     enum PageType : Int {
         case header // 1
         case param // 2
@@ -215,5 +234,15 @@ extension TestApiSetupViewController: TestApiSetupTableCellDelegate {
             viewModel.headers.remove(at: index)
         }
         update()
+    }
+}
+extension TestApiSetupViewController: TestApiSettingDelegate {
+    func dataChanged(viewModel: TestApiSettingViewModel) {
+//        viewModel.server
+//        viewModel.subDomain
+//        viewModel.isPost
+        print("valueChanged")
+        self.viewModel.method = viewModel.isPost ? HTTPMethod.post : HTTPMethod.get
+        self.viewModel.server = viewModel.server + viewModel.subDomain
     }
 }

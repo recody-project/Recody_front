@@ -244,6 +244,76 @@ class ApiClient {
             }
         })
     }
+    static func requestTEST(_ headers: [Dictionary<String,String>],
+                            _ params: [Dictionary<String,String>],
+                            _ server: String,
+                            _ subDomain: String,
+                            _ method: HTTPMethod,
+                            _ encoding: ParameterEncoding,
+                            _ succesBlock: @escaping (WorkResult) -> Void,
+                            _ errorBlock: @escaping (String) -> Void) {
+        
+        let header = HTTPHeaders(headers.map({ dic -> HTTPHeader in
+            if let head = dic.first {
+                return HTTPHeader(name: head.key, value: head.value)
+            } else {
+                fatalError("empty header")
+            }
+        }))
+        var param = Dictionary<String,String>()
+        params.forEach({
+            if let dic = $0.first {
+                param[dic.key] = dic.value
+            }
+        })
+        let url = server + subDomain
+        
+        print("========== API Request ==========")
+        print("url : \(url)")
+        print("header : \(headers)")
+        print("param : \(params)")
+        print("====== API Request END ==========")
+        AF.request(url,
+                   method: method,
+                   parameters: param,
+                   encoding: encoding,
+                   headers: header).responseJSON(completionHandler: { response in
+            do {
+                switch response.result {
+                case .success(let data):
+                    if let jsonData = data as? [String: Any] {
+                        print("========== API Success ==========")
+                        print("url : \(url)")
+                        print("statusCode : \(String(describing: response.response?.statusCode))")
+                        print("Data : \(jsonData)")
+                        print("====== API Success END ==========")
+                        succesBlock(WorkResult(jsonData))
+                    } else {
+                        errorBlock("data 가 없습니다.")
+                        print("========== API Failed ==========")
+                        print("url : \(url)")
+                        print("statusCode : \(String(describing: response.response?.statusCode))")
+                        print("error msg = \(String(describing: response.error?.localizedDescription))")
+                        print("====== API Request END ==========")
+                    }
+                case .failure(let error):
+                    print("========== API Failed ==========")
+                    print("url : \(url)")
+                    print("statusCode : \(String(describing: response.response?.statusCode))")
+                    print("error msg = \(String(describing: response.error?.localizedDescription))")
+                    print("====== API Request END ==========")
+                    errorBlock(error.localizedDescription)
+                }
+            } catch( let error ) {
+                print("========== API Failed ==========")
+                print("url : \(url)")
+                print("statusCode : \(String(describing: response.response?.statusCode))")
+                print("error msg = \(String(describing: response.error?.localizedDescription))")
+                print("====== API Request END ==========")
+                errorBlock(error.localizedDescription)
+            }
+        })
+    }
 }
 
 // TEST CODE

@@ -161,6 +161,7 @@
 		AED00E7529A3438600A60D86 /* TestApiSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED00E7429A3438600A60D86 /* TestApiSetupViewController.swift */; };
 		AED00E7829A4501700A60D86 /* TestApiSetupTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED00E7629A4501700A60D86 /* TestApiSetupTableCell.swift */; };
 		AED00E7929A4501700A60D86 /* TestApiSetupTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED00E7729A4501700A60D86 /* TestApiSetupTableCell.xib */; };
+		AEF6963629B1A91D00C02396 /* TestApiSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6963529B1A91D00C02396 /* TestApiSettingViewController.swift */; };
 		AEFDD746299B422E00A5EB77 /* TestApiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFDD745299B422E00A5EB77 /* TestApiDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -340,6 +341,7 @@
 		AED00E7429A3438600A60D86 /* TestApiSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApiSetupViewController.swift; sourceTree = "<group>"; };
 		AED00E7629A4501700A60D86 /* TestApiSetupTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApiSetupTableCell.swift; sourceTree = "<group>"; };
 		AED00E7729A4501700A60D86 /* TestApiSetupTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestApiSetupTableCell.xib; sourceTree = "<group>"; };
+		AEF6963529B1A91D00C02396 /* TestApiSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApiSettingViewController.swift; sourceTree = "<group>"; };
 		AEFDD745299B422E00A5EB77 /* TestApiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApiDetailViewController.swift; sourceTree = "<group>"; };
 		E7392853386696D3443F7302 /* Pods-Recody.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recody.debug.xcconfig"; path = "Target Support Files/Pods-Recody/Pods-Recody.debug.xcconfig"; sourceTree = "<group>"; };
 		F7F5474CB0129800D7BF6EF1 /* Pods_Recody.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -408,6 +410,7 @@
 				AEB50AC029932A4200181BEC /* TestApiViewController.swift */,
 				AED00E7429A3438600A60D86 /* TestApiSetupViewController.swift */,
 				AEFDD745299B422E00A5EB77 /* TestApiDetailViewController.swift */,
+				AEF6963529B1A91D00C02396 /* TestApiSettingViewController.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -1159,6 +1162,7 @@
 				3AAEE3EF28C5CF3900B28582 /* EditCategoryViewController.swift in Sources */,
 				20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */,
 				207C64792935DE3000D4F1FD /* UIFont+.swift in Sources */,
+				AEF6963629B1A91D00C02396 /* TestApiSettingViewController.swift in Sources */,
 				AED00E7529A3438600A60D86 /* TestApiSetupViewController.swift in Sources */,
 				3A6AE8D82918910300A9F520 /* InsightHallOfFameCell.swift in Sources */,
 				3A56B0E629351F010028BF98 /* CategoryButtonModel.swift in Sources */,
@@ -1482,7 +1486,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y9Q6SAFX32;
+				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1513,7 +1517,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y9Q6SAFX32;
+				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

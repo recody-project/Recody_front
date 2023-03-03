@@ -82,7 +82,7 @@ enum ApiCommand {
     case getRatingChart(_ yearMonth: String) // 14-7 유저 기록 작품 랭킹 보여주기
     case getReWatching(_ yearMonth: String) // 14-8 유저의 재감상 기록 가져오기
     case getMostPopularContent(_ yearMonth: String) // 14-9 레코디 전체에서 가장 인기있었던 작품 가져오기
-
+    
     var headers: Dictionary<String, Any> {
         var header = Dictionary<String, Any>()
         header["ContentType"] = "application/x-www-form-urlencoded;charset=utf-8"
