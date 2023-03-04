@@ -138,6 +138,8 @@
 		3AD4F12328C09EB700598D28 /* TabHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD4F12228C09EB700598D28 /* TabHeader.xib */; };
 		3AD4F12628C0A66600598D28 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4F12528C0A66600598D28 /* UIColor+.swift */; };
 		3AD4F12828C0AFF900598D28 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4F12728C0AFF900598D28 /* CALayer+.swift */; };
+		3AD7147D29B0F61B00E9FF65 /* WorkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD7147C29B0F61B00E9FF65 /* WorkView.xib */; };
+		3AD7147F29B0F8DC00E9FF65 /* WorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7147E29B0F8DC00E9FF65 /* WorkView.swift */; };
 		3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA9B6F28A534B300EB39F3 /* HomeViewController+.swift */; };
 		3ADA9B7528A56AA800EB39F3 /* CustomCategory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADA9B7428A56AA800EB39F3 /* CustomCategory.xib */; };
 		3ADA9B7728A56AB600EB39F3 /* CustomCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA9B7628A56AB600EB39F3 /* CustomCategory.swift */; };
@@ -313,6 +315,8 @@
 		3AD4F12228C09EB700598D28 /* TabHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabHeader.xib; sourceTree = "<group>"; };
 		3AD4F12528C0A66600598D28 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		3AD4F12728C0AFF900598D28 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
+		3AD7147C29B0F61B00E9FF65 /* WorkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkView.xib; sourceTree = "<group>"; };
+		3AD7147E29B0F8DC00E9FF65 /* WorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkView.swift; sourceTree = "<group>"; };
 		3ADA9B6F28A534B300EB39F3 /* HomeViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+.swift"; sourceTree = "<group>"; };
 		3ADA9B7428A56AA800EB39F3 /* CustomCategory.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCategory.xib; sourceTree = "<group>"; };
 		3ADA9B7628A56AB600EB39F3 /* CustomCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategory.swift; sourceTree = "<group>"; };
@@ -865,6 +869,8 @@
 				3AA56D0228BE580000FB66F5 /* WorkListCollectionViewCell.swift */,
 				3AF1DF87290C11260095673A /* ReviewModels.swift */,
 				3AE6A55728ED9B08008ED7DB /* WorkCollectionViewCellModels.swift */,
+				3AD7147C29B0F61B00E9FF65 /* WorkView.xib */,
+				3AD7147E29B0F8DC00E9FF65 /* WorkView.swift */,
 			);
 			path = WorkListCollectionViewCell;
 			sourceTree = "<group>";
@@ -1034,6 +1040,7 @@
 				3A8D1735289BBC7A00B260D1 /* Assets.xcassets in Resources */,
 				20E788482925B7E000B05C8E /* CalendarDetailCell.xib in Resources */,
 				20C161E8292CBAFB001B2F7F /* Setting.storyboard in Resources */,
+				3AD7147D29B0F61B00E9FF65 /* WorkView.xib in Resources */,
 				3A6AE8DF2918910300A9F520 /* InsightMostAppreciationCell.xib in Resources */,
 				3AB1431F28F768080041C9CC /* Search.storyboard in Resources */,
 				3A6AE8E12918910300A9F520 /* InsightStatisticsGraphCell.xib in Resources */,
@@ -1134,6 +1141,7 @@
 			files = (
 				3A8F863928C6277D0028B45C /* EditGenreViewController.swift in Sources */,
 				3AAEE3EB28C5CF3900B28582 /* EditCategoryPresenter.swift in Sources */,
+				3AD7147F29B0F8DC00E9FF65 /* WorkView.swift in Sources */,
 				3AEDB70F28DE07FC00C3DB8D /* PreReviewViewController.swift in Sources */,
 				3ADA9B7728A56AB600EB39F3 /* CustomCategory.swift in Sources */,
 				3A6AE8E42918910300A9F520 /* InsightMyRankCell.swift in Sources */,
