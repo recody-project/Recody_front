@@ -26,7 +26,7 @@ class HomeViewController: CommonVC {
         Work(id: "7", name: "스파이더맨", image: "spiderman"),
         Work(id: "8", name: "After Like", image: "afterLike")
     ]
-
+    
     let categories: [Category] = [
         Category(name: "전체", image: "all"),
         Category(name: "책", image: "book"),
@@ -34,21 +34,58 @@ class HomeViewController: CommonVC {
         Category(name: "드라마", image: "drama"),
         Category(name: "음악", image: "music")
     ]
-
+    
+    var indexSelected: Int = 0
+    
     @IBOutlet weak var categoryStackView: UIStackView!
     @IBOutlet var customCategories: [CustomCategory]!
-    @IBOutlet weak var workListcollectionView: UICollectionView! {
-        didSet {
-            workListcollectionView.collectionViewLayout = createLayout()
+    @IBOutlet weak var workScrollView: UIScrollView!
+    @IBOutlet weak var workStackView: UIStackView!
+    @IBOutlet var workFilterButton: [UIButton]!
+    let buttonArray: [UIColor] = [UIColor(hexString: "#3EABB7"), UIColor(hexString: "#F38A5E"), UIColor(hexString: "#F6D266"), UIColor(hexString: "#E77D82"), UIColor(hexString: "#89AC5C")]
+    
+    @IBAction func touchButton(_ sender: UIButton) {
+        if indexSelected != nil {
+            if !sender.isSelected {
+                for index in workFilterButton.indices {
+                    workFilterButton[index].isSelected = false
+                    workFilterButton[index].backgroundColor = .clear
+                    workFilterButton[index].borderWidth = 1
+                }
+                sender.isSelected = true
+                sender.borderWidth = 0
+                sender.backgroundColor = buttonArray[sender.tag]
+                indexSelected = workFilterButton.firstIndex(of: sender) ?? 0
+            } else {
+                sender.isSelected = false
+                indexSelected = 0
+            }
+        } else {
+            sender.isSelected = true
+            indexSelected = workFilterButton.firstIndex(of: sender) ?? 0
         }
     }
-    @IBOutlet weak var headerStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUp()
         setCategoryStackView()
+        setWorkView()
     }
-
+    
+    func setUp() {
+        self.interactor?.just(UseCase.setting).drop()
+        
+        for index in workFilterButton.indices {
+            workFilterButton[index].setTitleColor(.white, for: .selected)
+            workFilterButton[index].setTitleColor(UIColor(hexString: "#CECECE"), for: .normal)
+        }
+        
+        workFilterButton[0].isSelected = true
+        workFilterButton[0].backgroundColor = buttonArray[0]
+        workFilterButton[0].borderWidth = 0
+    }
+    
     func setCategoryStackView() {
         var index = 0
         for value in customCategories {
@@ -59,34 +96,22 @@ class HomeViewController: CommonVC {
         }
     }
     
+    func setWorkView() {
+        for work in works {
+            let view = WorkView()
+            view.setView(work: work)
+            workStackView.addArrangedSubview(view)
+        }
+    }
+    
     @objc func clickEvent(_ sender: UITapGestureRecognizer) {
         print(sender)
         if (sender.view?.tag) != nil {
-//            self.router?.present(RoutingLogic.Navigation.workList, nil,.overCurrentContext)
+            //            self.router?.present(RoutingLogic.Navigation.workList, nil,.overCurrentContext)
             self.router?.pushViewController(RoutingLogic.Navigation.workList, dataStore: nil)
         }
     }
 
-    func createLayout() -> UICollectionViewCompositionalLayout {
-        let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: size)
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(116), heightDimension: .absolute(170)), subitems: [item])
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
-        section.boundarySupplementaryItems = [
-            .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(26)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
-        ]
-        section.contentInsets.top = 16
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        return layout
-    }
-    
-    // UseCase 정리
-    // 1. 알림
-    // 2. 기록 중 넘어가기
-    // 3. 카테고리 선택
-    // 4. 작품 카테고리 선택
-    // 5. 작품 선택
     enum UseCase: Int, OrderType {
         case moveAll = 100
         case moveBook = 101
@@ -106,6 +131,14 @@ class HomeViewController: CommonVC {
     override func display(orderNumber: Int) {
         guard let useCase = UseCase(rawValue: orderNumber) else { return }
         switch useCase {
+        case .setting:
+            let email = "Emelia_Harvey@hotmail.com"
+            let password = "newPassword"
+            self.interactor?.just(useCase).api(.login(email, password))
+    
+            self.interactor?.just(useCase).api(.getUserInfomation)
+            self.interactor?.just(useCase).api(.getMyRecentContinuingRecord)
+            self.interactor?.just(useCase).api(.getMovies)
         default:
             break
         }
@@ -122,15 +155,18 @@ class HomeViewController: CommonVC {
     override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
         guard let useCase = UseCase(rawValue: orderNumber) else { return }
         switch useCase {
-
+        case .setting:
+            if let data = dataStore?.data(useCase)?.fetch(UserDataModel.self) {
+                let temp = data.data["signInInfo"] as? [String: String]
+                guard let accessToken = temp?["accessToken"] else { return }
+                guard let refreshToken = temp?["refreshToken"] else { return }
+                KeyChain.create(key: "accessToken", token: accessToken)
+                KeyChain.create(key: "refreshToken", token: refreshToken)
+                print("요깅깅교익요긱")
+                print(data)
+            }
         default:
             self.presenter?.alertService.showToast("\(useCase)")
         }
     }
-    
-    // clickevent 정의
-    
-    // setup
-    
-    // viewdidload
 }

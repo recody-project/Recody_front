@@ -52,3 +52,43 @@ struct WorkResult {
         return nil
     }
 }
+
+class UserDataModel: DefaultDataModel {
+    
+    var message: String = ""
+    var data = [String: Any]()
+    override func build(key: String, value: Any) {
+        if key == "message"{
+            self.message = stringValue(value)
+        }
+        if key == "data" {
+            if let temp = value as? [String: Any] {
+                self.data = temp
+            }
+        }
+    }
+//    var userId: String = ""
+//    var email: String = ""
+//    var name: String = ""
+//    var socialType: String = ""
+//    var nickname: String = ""
+//    var role: String = ""
+//    var pictureUrl: String = ""
+//    override func build(key: String, value: Any) {
+//        if key == "userId" {
+//            userId = value
+//        } else if key == "email" {
+//            email = value
+//        } else if key == "name" {
+//            name = value
+//        } else if key == "socialType" {
+//            socialType = value
+//        } else if key == "role" {
+//            role = value
+//        } else if key == "pictureUrl" {
+//            pictureUrl = value
+//        } else {
+//            print("해당하는 key가 존재하지 않습니다")
+//        }
+//    }
+}
