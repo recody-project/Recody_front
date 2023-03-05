@@ -90,7 +90,7 @@ class HomeViewController: CommonVC {
         var index = 0
         for value in customCategories {
             value.setData(with: categories[index])
-            value.tag = index+100
+            value.tag = 100
             value.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
             index += 1
         }
@@ -100,29 +100,29 @@ class HomeViewController: CommonVC {
         for work in works {
             let view = WorkView()
             view.setView(work: work)
+            view.tag = 109
+            view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent(_:))))
             workStackView.addArrangedSubview(view)
         }
     }
     
     @objc func clickEvent(_ sender: UITapGestureRecognizer) {
-        print(sender)
-        if (sender.view?.tag) != nil {
-            //            self.router?.present(RoutingLogic.Navigation.workList, nil,.overCurrentContext)
-            self.router?.pushViewController(RoutingLogic.Navigation.workList, dataStore: nil)
+        if let tag = sender.view?.tag {
+            guard let useCase = UseCase(rawValue: tag) else { return }
+            switch useCase {
+            default:
+                self.interactor?.just(useCase).drop()
+            }
         }
     }
 
     enum UseCase: Int, OrderType {
-        case moveAll = 100
-        case moveBook = 101
-        case moveMovie = 102
-        case moveDrama = 103
-        case moveMusic = 104
+        case pushContinueRecord = 100
         case setting = 105
         case notification = 106
         case moveReviewing = 107
         case workCategory = 108
-        case moveWork = 109
+        case pushWorkDetailInfo = 109
         var number: Int {
             return self.rawValue
         }
@@ -139,6 +139,10 @@ class HomeViewController: CommonVC {
             self.interactor?.just(useCase).api(.getUserInfomation)
             self.interactor?.just(useCase).api(.getMyRecentContinuingRecord)
             self.interactor?.just(useCase).api(.getMovies)
+        case .pushContinueRecord:
+            router?.pushViewController(RoutingLogic.Navigation.workList, dataStore: nil)
+        case .pushWorkDetailInfo:
+            router?.pushViewController(RoutingLogic.Navigation.workDetailInfo, dataStore: nil)
         default:
             break
         }
