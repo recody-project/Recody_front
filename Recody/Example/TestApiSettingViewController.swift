@@ -13,44 +13,63 @@ class TestApiSettingViewController: UIViewController {
     @IBOutlet weak var lbMethod: UILabel!
     @IBOutlet weak var textServer: UITextField!
     @IBOutlet weak var isMethod: UISwitch!
-    
+    @IBOutlet weak var lbEncoding: UILabel!
+    @IBOutlet weak var isJson: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         update()
     }
     func setup(){
-        self.viewModel.server = ApiClient.server
         self.textServer.delegate = self
+        isMethod.tag = 1
+        isJson.tag = 2
     }
     
     @IBAction func swichValueChanged(_ sender: Any) {
-        viewModel.isPost = isMethod.isOn
+        if let sw = sender as? UISwitch  {
+            let tag = sw.tag
+            if tag == 1 {
+                viewModel.isPost = isMethod.isOn
+            }else if (tag == 2){
+                viewModel.isJson = isJson.isOn
+            }
+        }
+        dataChanged()
         update()
     }
-    func update(){
-        lbMethod.text = viewModel.isPost ? "Method : Post" : "Method : Get"
-        textServer.text = viewModel.server
+    func dataChanged(){
         delegate?.dataChanged(viewModel: viewModel)
+    }
+    func update(){
+        isMethod.setOn(viewModel.isPost, animated: true)
+        isJson.setOn(viewModel.isJson, animated: true)
+        lbMethod.text = viewModel.isPost ? "Method : Post" : "Method : Get"
+        lbEncoding.text = viewModel.isJson ? "Encoding : JSON" : "Encoding : URL"
+        textServer.text = viewModel.subDomain
     }
 }
 class TestApiSettingViewModel {
     var server = ""
     var subDomain = ""
-    var isPost = true
+    var isPost = true // method
+    var isJson = true // encoding
 }
 extension TestApiSettingViewController: UITextFieldDelegate{
     func textFieldDidChangeSelection(_ textField: UITextField) {
         self.viewModel.server = textField.text!
+        dataChanged()
         update()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        dataChanged()
         update()
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
+        dataChanged()
         update()
     }
 }

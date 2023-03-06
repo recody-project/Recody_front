@@ -36,10 +36,14 @@ class TestApiViewController: UIViewController{
                                                 ["passwordConfirm":""],
                                                 ["name":""],
                                                 ["nickname":""],
-                                                ["pictureUrl":""]], subDomain: "/v2/users/signup"),
-                          ApiCellModel(name: "1-2 이메일 체크",
-                                                         headers: getHeaders(),
-                                                         params: [["email":""]], subDomain: "/v1/users/signup/check-duplicate")]
+                                                ["pictureUrl":""]],
+                                       subDomain: "/v2/users/signup",
+                                       encoding: JSONEncoding.default),
+                          ApiCellModel(name: "1-2 이메일 체크", 
+                                       headers: getHeaders(),
+                                       params: [["email":""]],
+                                       subDomain: "/v1/users/signup/check-duplicate",
+                                       encoding: JSONEncoding.default)]
     }
     func getHeaders()-> [Dictionary<String,String>]{
         var arr = [Dictionary<String,String>]()
@@ -58,6 +62,8 @@ class TestApiViewController: UIViewController{
             next.viewModel.method = viewmodel.list[index].method
             next.viewModel.headers = viewmodel.list[index].headers
             next.viewModel.params = viewmodel.list[index].params
+            next.viewModel.encoding = viewmodel.list[index].encoding
+            next.viewModel.name = viewmodel.list[index].name
             self.navigationController?.pushViewController(next, animated: true)
         }
     }
@@ -92,4 +98,13 @@ struct ApiCellModel {
     var params : [Dictionary<String,String>]
     var method = HTTPMethod.post
     var subDomain: String
+    var encoding : ParameterEncoding = JSONEncoding.default
+    init(name: String, headers: [Dictionary<String, String>], params: [Dictionary<String, String>], method: HTTPMethod = HTTPMethod.post, subDomain: String, encoding: ParameterEncoding) {
+        self.name = name
+        self.headers = headers
+        self.params = params
+        self.method = method
+        self.subDomain = subDomain
+        self.encoding = encoding
+    }
 }

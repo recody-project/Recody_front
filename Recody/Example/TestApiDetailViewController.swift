@@ -24,9 +24,9 @@ class TestApiDetailViewController : UIViewController {
     func setup(){
         ApiClient.requestTEST(viewmodel.request.headers,
                               viewmodel.request.params,
-                              viewmodel.request.subDomain,
+                              ApiClient.server,
                               viewmodel.request.subDomain, viewmodel.request.method,
-                              JSONEncoding.default, { data in
+                              viewmodel.request.encoding, { data in
             self.viewmodel.content += "ApiName : \(self.viewmodel.request.name) \n"
             if let obj = data.obj {
                 self.viewmodel.content += "Response \n"

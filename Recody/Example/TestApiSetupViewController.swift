@@ -17,7 +17,7 @@ class TestApiSetupViewController: UIViewController {
     @IBOutlet weak var btnSend: UIButton!
     @IBOutlet weak var btnReset: UIButton!
     @IBOutlet weak var container: UIView!
-    
+    var origin = TestApiSetupViewModel()
     lazy var viewControllers : [UIViewController] = {
         return (0...2).map({ index -> UIViewController in
             if index == 2 {
@@ -92,7 +92,7 @@ class TestApiSetupViewController: UIViewController {
         pageVC.add(viewControlers: viewControllers)
             .setUpLayout(viewController: self, superView: container)
               .moveSlidePage()
-        setData()
+        origin.update(self.viewModel)
         update()
     }
     func setupTaps(){
@@ -107,14 +107,15 @@ class TestApiSetupViewController: UIViewController {
                     $0.edges.equalToSuperview()
                 })
             } else {
-                
+                if let vc = viewcontroller as? TestApiSettingViewController {
+                    vc.viewModel.isPost = viewModel.method == .post
+                    vc.viewModel.subDomain = viewModel.subDomain
+                    vc.viewModel.isJson = viewModel.encoding is JSONEncoding
+                    vc.viewModel.server = ApiClient.server
+                }
             }
             
         }
-    }
-    func setData(){
-        viewModel.params.append(["key1":"value1"])
-        viewModel.headers.append(["key1":"value1"])
     }
     func update(){
         tableViews.forEach({
@@ -152,12 +153,31 @@ class TestApiSetupViewController: UIViewController {
             case .param:
                 changeTap(.param)
             case .send:
-                print("send")
+            if let vc = UIStoryboard(name: "TestApi", bundle: nil).instantiateViewController(withIdentifier: "TestApiDetailViewController") as? TestApiDetailViewController {
+                var request = ApiCellModel(name: viewModel.name,
+                             headers: viewModel.headers,
+                             params: viewModel.params,
+                             subDomain: viewModel.subDomain,
+                             encoding: viewModel.encoding)
+                request.method = viewModel.method
+                vc.viewmodel = TestApiDetailViewModel(request: request)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
             case .reset:
-                print("reset")
+                reset()
         }
     }
-    
+    func reset(){
+        self.viewModel.update(self.origin)
+        if let vc = viewControllers.last as? TestApiSettingViewController {
+            vc.viewModel.isPost = viewModel.method == .post
+            vc.viewModel.subDomain = viewModel.subDomain
+            vc.viewModel.isJson = true
+            vc.viewModel.server = ApiClient.server
+            vc.update()
+        }
+        update()
+    }
     func changeTap(_ type:TestApiSetupViewModel.PageType){
         viewModel.tap = type
         update()
@@ -165,18 +185,28 @@ class TestApiSetupViewController: UIViewController {
     
 }
 class TestApiSetupViewModel {
+    var name = ""
     var tap = PageType.param
     var params = [Dictionary<String,String>]()
     var headers = [Dictionary<String,String>]()
     var method : HTTPMethod
     var server = ""
     var subDomain = ""
+    var encoding : ParameterEncoding = JSONEncoding.default
     init(){
         method = HTTPMethod.post
         server = ApiClient.server
         headers = [Dictionary<String,String>]()
         params = [Dictionary<String,String>]()
     }
+    func update(_ viewModel : TestApiSetupViewModel){
+        method = viewModel.method
+        subDomain = viewModel.subDomain
+        params = viewModel.params
+        headers = viewModel.headers
+        server = viewModel.server
+    }
+    
     enum PageType : Int {
         case header // 1
         case param // 2
@@ -238,11 +268,8 @@ extension TestApiSetupViewController: TestApiSetupTableCellDelegate {
 }
 extension TestApiSetupViewController: TestApiSettingDelegate {
     func dataChanged(viewModel: TestApiSettingViewModel) {
-//        viewModel.server
-//        viewModel.subDomain
-//        viewModel.isPost
-        print("valueChanged")
         self.viewModel.method = viewModel.isPost ? HTTPMethod.post : HTTPMethod.get
-        self.viewModel.server = viewModel.server + viewModel.subDomain
+        self.viewModel.subDomain = viewModel.subDomain
+        self.viewModel.encoding = viewModel.isJson ? JSONEncoding.default : URLEncoding.default
     }
 }
