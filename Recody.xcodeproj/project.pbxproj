@@ -86,7 +86,6 @@
 		3A77BE7328F57944005AFCAD /* PreReviewViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A77BE7228F57944005AFCAD /* PreReviewViewController+.swift */; };
 		3A77BE7828F57B33005AFCAD /* PreReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A77BE7628F57B33005AFCAD /* PreReviewCollectionViewCell.swift */; };
 		3A77BE7928F57B33005AFCAD /* PreReviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A77BE7728F57B33005AFCAD /* PreReviewCollectionViewCell.xib */; };
-		3A79685428B5DAA20054DF5A /* WorkDetailInfoViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79685328B5DAA20054DF5A /* WorkDetailInfoViewController+.swift */; };
 		3A8D172C289BBC7700B260D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D172B289BBC7700B260D1 /* AppDelegate.swift */; };
 		3A8D172E289BBC7700B260D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D172D289BBC7700B260D1 /* SceneDelegate.swift */; };
 		3A8D1735289BBC7A00B260D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D1734289BBC7A00B260D1 /* Assets.xcassets */; };
@@ -261,7 +260,6 @@
 		3A77BE7228F57944005AFCAD /* PreReviewViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreReviewViewController+.swift"; sourceTree = "<group>"; };
 		3A77BE7628F57B33005AFCAD /* PreReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A77BE7728F57B33005AFCAD /* PreReviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreReviewCollectionViewCell.xib; sourceTree = "<group>"; };
-		3A79685328B5DAA20054DF5A /* WorkDetailInfoViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkDetailInfoViewController+.swift"; sourceTree = "<group>"; };
 		3A8D1728289BBC7700B260D1 /* Recody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8D172B289BBC7700B260D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A8D172D289BBC7700B260D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -569,14 +567,6 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		3A79685228B5DA860054DF5A /* WorkDetailInfo+ */ = {
-			isa = PBXGroup;
-			children = (
-				3A79685328B5DAA20054DF5A /* WorkDetailInfoViewController+.swift */,
-			);
-			path = "WorkDetailInfo+";
-			sourceTree = "<group>";
-		};
 		3A8D171F289BBC7700B260D1 = {
 			isa = PBXGroup;
 			children = (
@@ -775,7 +765,6 @@
 		3AB9CFB528B4E81500A600DB /* WorkDetailInfo */ = {
 			isa = PBXGroup;
 			children = (
-				3A79685228B5DA860054DF5A /* WorkDetailInfo+ */,
 				3AB9CFB928B4E84300A600DB /* WorkDetailInfoViewModel.swift */,
 				3AB9CFBA28B4E84300A600DB /* WorkDetailInfoViewController.swift */,
 				3AB9CFC228B4E86100A600DB /* WorkDetailInfo.storyboard */,
@@ -1241,7 +1230,6 @@
 				3AB9CFBF28B4E84300A600DB /* WorkDetailInfoViewModel.swift in Sources */,
 				3AEDB70D28DE07FC00C3DB8D /* PreReviewRouter.swift in Sources */,
 				3AA56D0128BDE7A600FB66F5 /* RecordViewController+.swift in Sources */,
-				3A79685428B5DAA20054DF5A /* WorkDetailInfoViewController+.swift in Sources */,
 				3A8F863528C6277D0028B45C /* EditGenrePresenter.swift in Sources */,
 				3AEDB71028DE07FC00C3DB8D /* PreReviewInteractor.swift in Sources */,
 				3A6AE8D72918910300A9F520 /* InsightMostImpressiveCell.swift in Sources */,
@@ -1490,7 +1478,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y9Q6SAFX32;
+				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1521,7 +1509,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y9Q6SAFX32;
+				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

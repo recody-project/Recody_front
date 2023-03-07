@@ -11,13 +11,11 @@ class WorkListView: UIScrollView {
 
     @IBOutlet weak var workListStackView: UIStackView!
     
-    let workView = WorkView()
-    
     func setView(work: [Work]) {
         for work in work {
-            
+            let workView = WorkView()
             workView.setView(work: work)
-            workListStackView.addArrangedSubview(<#T##view: UIView##UIView#>)
+            workListStackView.addArrangedSubview(workView)
         }
     }
 
@@ -37,7 +35,7 @@ class WorkListView: UIScrollView {
     }
 
     func xibSetup() {
-        guard let view = loadViewFromNib(nib: "WorkView") else {
+        guard let view = loadViewFromNib(nib: "WorkListView") else {
             return
         }
         view.frame = bounds
@@ -45,9 +43,9 @@ class WorkListView: UIScrollView {
         addSubview(view)
     }
 
-    func loadViewFromNib(nib: String) -> UIView? {
+    func loadViewFromNib(nib: String) -> UIScrollView? {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nib, bundle: bundle)
-        return nib.instantiate(withOwner: self, options: nil).first as? UIView
+        return nib.instantiate(withOwner: self, options: nil).first as? UIScrollView
     }
 }
