@@ -121,16 +121,18 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDR-eS-n3m">
                                                     <rect key="frame" x="36" y="11.000000000000002" width="41.333333333333343" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="sDR-eS-n3m" secondAttribute="bottom" id="1rs-SS-4Wz"/>
                                                 <constraint firstItem="sDR-eS-n3m" firstAttribute="leading" secondItem="kjI-pX-1IR" secondAttribute="leadingMargin" constant="16" id="OrD-ns-8pS"/>
                                                 <constraint firstItem="sDR-eS-n3m" firstAttribute="top" secondItem="kjI-pX-1IR" secondAttribute="topMargin" id="Vjc-Ji-uvM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="lbTItle" destination="sDR-eS-n3m" id="6Yx-ga-4EB"/>
                                         </connections>

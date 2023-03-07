@@ -25,13 +25,21 @@ class TestApiSettingViewController: UIViewController {
         isMethod.tag = 1
         isJson.tag = 2
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewModel.viewControllerIsRun = true
+        update()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.viewModel.viewControllerIsRun = false
+    }
     @IBAction func swichValueChanged(_ sender: Any) {
         if let sw = sender as? UISwitch  {
             let tag = sw.tag
             if tag == 1 {
                 viewModel.isPost = isMethod.isOn
-            }else if (tag == 2){
+            } else if (tag == 2){
                 viewModel.isJson = isJson.isOn
             }
         }
@@ -42,11 +50,13 @@ class TestApiSettingViewController: UIViewController {
         delegate?.dataChanged(viewModel: viewModel)
     }
     func update(){
-        isMethod.setOn(viewModel.isPost, animated: true)
-        isJson.setOn(viewModel.isJson, animated: true)
-        lbMethod.text = viewModel.isPost ? "Method : Post" : "Method : Get"
-        lbEncoding.text = viewModel.isJson ? "Encoding : JSON" : "Encoding : URL"
-        textServer.text = viewModel.subDomain
+        if self.viewModel.viewControllerIsRun {
+            isMethod.setOn(viewModel.isPost, animated: true)
+            isJson.setOn(viewModel.isJson, animated: true)
+            lbMethod.text = viewModel.isPost ? "Method : Post" : "Method : Get"
+            lbEncoding.text = viewModel.isJson ? "Encoding : JSON" : "Encoding : URL"
+            textServer.text = viewModel.subDomain
+        }
     }
 }
 class TestApiSettingViewModel {
@@ -54,6 +64,7 @@ class TestApiSettingViewModel {
     var subDomain = ""
     var isPost = true // method
     var isJson = true // encoding
+    var viewControllerIsRun = false
 }
 extension TestApiSettingViewController: UITextFieldDelegate{
     func textFieldDidChangeSelection(_ textField: UITextField) {

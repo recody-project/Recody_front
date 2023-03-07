@@ -187,8 +187,8 @@ class TestApiSetupViewController: UIViewController {
 class TestApiSetupViewModel {
     var name = ""
     var tap = PageType.param
-    var params = [Dictionary<String,String>]()
-    var headers = [Dictionary<String,String>]()
+    var params = [Dictionary<String,Any>]()
+    var headers = [Dictionary<String,Any>]()
     var method : HTTPMethod
     var server = ""
     var subDomain = ""
@@ -196,8 +196,8 @@ class TestApiSetupViewModel {
     init(){
         method = HTTPMethod.post
         server = ApiClient.server
-        headers = [Dictionary<String,String>]()
-        params = [Dictionary<String,String>]()
+        headers = [Dictionary<String,Any>]()
+        params = [Dictionary<String,Any>]()
     }
     func update(_ viewModel : TestApiSetupViewModel){
         method = viewModel.method
@@ -218,8 +218,10 @@ extension TestApiSetupViewController : UITableViewDelegate,UITableViewDataSource
         guard let useCase = UseCase.init(rawValue: tableView.tag) else { return 0 }
         switch useCase {
         case .header:
+            print("header count = \(viewModel.headers.count)")
             return viewModel.headers.count
         case .param:
+            print("param count = \(viewModel.params.count)")
             return viewModel.params.count
         default:
             return 0
@@ -237,12 +239,12 @@ extension TestApiSetupViewController : UITableViewDelegate,UITableViewDataSource
         if useCase == .header {
             if let dic = viewModel.headers[indexPath.row].first {
                 vm.key = dic.key
-                vm.value = dic.value
+                vm.value = "\(dic.value)"
             }
         }else if (useCase == .param){
             if let dic = viewModel.params[indexPath.row].first {
                 vm.key = dic.key
-                vm.value = dic.value
+                vm.value = "\(dic.value)"
             }
         }
         cell.setViewModel(vm: vm)

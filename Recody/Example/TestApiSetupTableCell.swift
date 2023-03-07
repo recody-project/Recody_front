@@ -38,7 +38,7 @@ class TestApiSetupTableCell: UITableViewCell, UITextFieldDelegate {
     func setViewModel(vm: TestApiSetupTableCellViewModel){
         self.viewModel = vm
         keyText.text = vm.key
-        valueText.text = vm.value
+        valueText.text =  (vm.value as? String) ?? ""
         keyText.delegate = self
         valueText.delegate = self
         keyText.tag = 1
@@ -68,7 +68,7 @@ protocol TestApiSetupTableCellDelegate{
 }
 class TestApiSetupTableCellViewModel {
     var key = ""
-    var value = ""
+    var value : Any = ""
     var cellIndex = -1
     var tapIndex = -1
 }

@@ -244,8 +244,8 @@ class ApiClient {
             }
         })
     }
-    static func requestTEST(_ headers: [Dictionary<String,String>],
-                            _ params: [Dictionary<String,String>],
+    static func requestTEST(_ headers: [Dictionary<String,Any>],
+                            _ params: [Dictionary<String,Any>],
                             _ server: String,
                             _ subDomain: String,
                             _ method: HTTPMethod,
@@ -255,7 +255,7 @@ class ApiClient {
         
         let header = HTTPHeaders(headers.map({ dic -> HTTPHeader in
             if let head = dic.first {
-                return HTTPHeader(name: head.key, value: head.value)
+                return HTTPHeader(name: head.key, value: (head.value as? String) ?? "")
             } else {
                 fatalError("empty header")
             }
@@ -263,7 +263,7 @@ class ApiClient {
         var param = Dictionary<String,String>()
         params.forEach({
             if let dic = $0.first {
-                param[dic.key] = dic.value
+                param[dic.key] = (dic.value as? String) ?? ""
             }
         })
         let url = server + subDomain
