@@ -47,7 +47,6 @@
 		3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */; };
 		3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346028D01E0F00C417CB /* UIScrollView+.swift */; };
 		3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */; };
-		3A204B432937B7D700EC49D3 /* HedaerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A204B422937B7D700EC49D3 /* HedaerView.swift */; };
 		3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34165328FF5CF000C4D698 /* MyPageViewController.swift */; };
 		3A34165C28FF5CF900C4D698 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A34165B28FF5CF900C4D698 /* MyPage.storyboard */; };
 		3A56B0E429351B4B0028BF98 /* CategoryButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A56B0E329351B4B0028BF98 /* CategoryButton.xib */; };
@@ -87,7 +86,6 @@
 		3A77BE7328F57944005AFCAD /* PreReviewViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A77BE7228F57944005AFCAD /* PreReviewViewController+.swift */; };
 		3A77BE7828F57B33005AFCAD /* PreReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A77BE7628F57B33005AFCAD /* PreReviewCollectionViewCell.swift */; };
 		3A77BE7928F57B33005AFCAD /* PreReviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A77BE7728F57B33005AFCAD /* PreReviewCollectionViewCell.xib */; };
-		3A79685428B5DAA20054DF5A /* WorkDetailInfoViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79685328B5DAA20054DF5A /* WorkDetailInfoViewController+.swift */; };
 		3A8D172C289BBC7700B260D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D172B289BBC7700B260D1 /* AppDelegate.swift */; };
 		3A8D172E289BBC7700B260D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D172D289BBC7700B260D1 /* SceneDelegate.swift */; };
 		3A8D1735289BBC7A00B260D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D1734289BBC7A00B260D1 /* Assets.xcassets */; };
@@ -103,6 +101,8 @@
 		3A8F863828C6277D0028B45C /* EditGenreModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863228C6277D0028B45C /* EditGenreModels.swift */; };
 		3A8F863928C6277D0028B45C /* EditGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863328C6277D0028B45C /* EditGenreViewController.swift */; };
 		3A8F863A28C6277D0028B45C /* EditGenreInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863428C6277D0028B45C /* EditGenreInteractor.swift */; };
+		3A9D6F2A29B4733900F4C2F4 /* WorkListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D6F2929B4733900F4C2F4 /* WorkListView.xib */; };
+		3A9D6F2C29B4789A00F4C2F4 /* WorkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9D6F2B29B4789A00F4C2F4 /* WorkListView.swift */; };
 		3AA56CF928BDDDE000FB66F5 /* RecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56CF328BDDDE000FB66F5 /* RecordPresenter.swift */; };
 		3AA56CFA28BDDDE000FB66F5 /* RecordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56CF428BDDDE000FB66F5 /* RecordWorker.swift */; };
 		3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56CF528BDDDE000FB66F5 /* RecordRouter.swift */; };
@@ -140,7 +140,6 @@
 		3AD4F12828C0AFF900598D28 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4F12728C0AFF900598D28 /* CALayer+.swift */; };
 		3AD7147D29B0F61B00E9FF65 /* WorkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD7147C29B0F61B00E9FF65 /* WorkView.xib */; };
 		3AD7147F29B0F8DC00E9FF65 /* WorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7147E29B0F8DC00E9FF65 /* WorkView.swift */; };
-		3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA9B6F28A534B300EB39F3 /* HomeViewController+.swift */; };
 		3ADA9B7528A56AA800EB39F3 /* CustomCategory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADA9B7428A56AA800EB39F3 /* CustomCategory.xib */; };
 		3ADA9B7728A56AB600EB39F3 /* CustomCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA9B7628A56AB600EB39F3 /* CustomCategory.swift */; };
 		3ADA9B7B28A5810C00EB39F3 /* Designables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA9B7A28A5810C00EB39F3 /* Designables.swift */; };
@@ -222,7 +221,6 @@
 		3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditGenreViewController+.swift"; sourceTree = "<group>"; };
 		3A20346028D01E0F00C417CB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreCollectionViewCell.swift; sourceTree = "<group>"; };
-		3A204B422937B7D700EC49D3 /* HedaerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HedaerView.swift; sourceTree = "<group>"; };
 		3A34165328FF5CF000C4D698 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		3A34165B28FF5CF900C4D698 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		3A56B0E329351B4B0028BF98 /* CategoryButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryButton.xib; sourceTree = "<group>"; };
@@ -262,7 +260,6 @@
 		3A77BE7228F57944005AFCAD /* PreReviewViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreReviewViewController+.swift"; sourceTree = "<group>"; };
 		3A77BE7628F57B33005AFCAD /* PreReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A77BE7728F57B33005AFCAD /* PreReviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreReviewCollectionViewCell.xib; sourceTree = "<group>"; };
-		3A79685328B5DAA20054DF5A /* WorkDetailInfoViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkDetailInfoViewController+.swift"; sourceTree = "<group>"; };
 		3A8D1728289BBC7700B260D1 /* Recody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8D172B289BBC7700B260D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A8D172D289BBC7700B260D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -280,6 +277,8 @@
 		3A8F863228C6277D0028B45C /* EditGenreModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreModels.swift; sourceTree = "<group>"; };
 		3A8F863328C6277D0028B45C /* EditGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreViewController.swift; sourceTree = "<group>"; };
 		3A8F863428C6277D0028B45C /* EditGenreInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreInteractor.swift; sourceTree = "<group>"; };
+		3A9D6F2929B4733900F4C2F4 /* WorkListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkListView.xib; sourceTree = "<group>"; };
+		3A9D6F2B29B4789A00F4C2F4 /* WorkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkListView.swift; sourceTree = "<group>"; };
 		3AA56CF328BDDDE000FB66F5 /* RecordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPresenter.swift; sourceTree = "<group>"; };
 		3AA56CF428BDDDE000FB66F5 /* RecordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWorker.swift; sourceTree = "<group>"; };
 		3AA56CF528BDDDE000FB66F5 /* RecordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordRouter.swift; sourceTree = "<group>"; };
@@ -317,7 +316,6 @@
 		3AD4F12728C0AFF900598D28 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		3AD7147C29B0F61B00E9FF65 /* WorkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkView.xib; sourceTree = "<group>"; };
 		3AD7147E29B0F8DC00E9FF65 /* WorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkView.swift; sourceTree = "<group>"; };
-		3ADA9B6F28A534B300EB39F3 /* HomeViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+.swift"; sourceTree = "<group>"; };
 		3ADA9B7428A56AA800EB39F3 /* CustomCategory.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCategory.xib; sourceTree = "<group>"; };
 		3ADA9B7628A56AB600EB39F3 /* CustomCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategory.swift; sourceTree = "<group>"; };
 		3ADA9B7A28A5810C00EB39F3 /* Designables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Designables.swift; sourceTree = "<group>"; };
@@ -569,14 +567,6 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		3A79685228B5DA860054DF5A /* WorkDetailInfo+ */ = {
-			isa = PBXGroup;
-			children = (
-				3A79685328B5DAA20054DF5A /* WorkDetailInfoViewController+.swift */,
-			);
-			path = "WorkDetailInfo+";
-			sourceTree = "<group>";
-		};
 		3A8D171F289BBC7700B260D1 = {
 			isa = PBXGroup;
 			children = (
@@ -634,12 +624,11 @@
 		3A8D175A289BBE9500B260D1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3AB9CFB528B4E81500A600DB /* WorkDetailInfo */,
 				3ADDAD5E294B725500BC15D4 /* List */,
 				3A8F862B28C6250C0028B45C /* EditGenre */,
 				3AAEE3E428C5CF1400B28582 /* EditCategory */,
 				3A8D175E289BBEA100B260D1 /* HomeViewModel.swift */,
-				3ADA9B6F28A534B300EB39F3 /* HomeViewController+.swift */,
-				3A204B422937B7D700EC49D3 /* HedaerView.swift */,
 				3A8D175F289BBEA100B260D1 /* HomeViewController.swift */,
 				3A75DBBB28A0EA5700084DB1 /* Home.storyboard */,
 			);
@@ -678,6 +667,15 @@
 				3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */,
 			);
 			path = "EditGenre+";
+			sourceTree = "<group>";
+		};
+		3A9D6F2829B4732000F4C2F4 /* WorkListView */ = {
+			isa = PBXGroup;
+			children = (
+				3A9D6F2929B4733900F4C2F4 /* WorkListView.xib */,
+				3A9D6F2B29B4789A00F4C2F4 /* WorkListView.swift */,
+			);
+			path = WorkListView;
 			sourceTree = "<group>";
 		};
 		3AA56CE628BDDD9800FB66F5 /* Category */ = {
@@ -767,7 +765,6 @@
 		3AB9CFB528B4E81500A600DB /* WorkDetailInfo */ = {
 			isa = PBXGroup;
 			children = (
-				3A79685228B5DA860054DF5A /* WorkDetailInfo+ */,
 				3AB9CFB928B4E84300A600DB /* WorkDetailInfoViewModel.swift */,
 				3AB9CFBA28B4E84300A600DB /* WorkDetailInfoViewController.swift */,
 				3AB9CFC228B4E86100A600DB /* WorkDetailInfo.storyboard */,
@@ -778,8 +775,8 @@
 		3AB9CFC528B4F05F00A600DB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3A9D6F2829B4732000F4C2F4 /* WorkListView */,
 				3A56B0E229351B360028BF98 /* CategoryButton */,
-				3AB9CFB528B4E81500A600DB /* WorkDetailInfo */,
 				3AF1DF86290C0FB90095673A /* WorkListCollectionViewCell */,
 				3AEDB6FF28DD863800C3DB8D /* WorkInfo */,
 				3AA56CE628BDDD9800FB66F5 /* Category */,
@@ -1017,6 +1014,7 @@
 				3A6AE8E52918910300A9F520 /* InsightTop3GenreCell.xib in Resources */,
 				3A75DBF828A0F5D900084DB1 /* Calendar.storyboard in Resources */,
 				3A6AE8D32918910300A9F520 /* InsightMyRankCell.xib in Resources */,
+				3A9D6F2A29B4733900F4C2F4 /* WorkListView.xib in Resources */,
 				3AAEE3F228C5CF4500B28582 /* EditCategory.storyboard in Resources */,
 				3A8D176E289BC21400B260D1 /* .gitignore in Resources */,
 				3AEDB70128DD86B100C3DB8D /* WorkInfo.xib in Resources */,
@@ -1206,6 +1204,7 @@
 				3AEDB70E28DE07FC00C3DB8D /* PreReviewModels.swift in Sources */,
 				3AAEE3EC28C5CF3900B28582 /* EditCategoryWorker.swift in Sources */,
 				20C6F9FE29077B6C009296E3 /* PresenterType.swift in Sources */,
+				3A9D6F2C29B4789A00F4C2F4 /* WorkListView.swift in Sources */,
 				3AD4F11F28C08BA800598D28 /* TabHeader.swift in Sources */,
 				3AEDB70B28DE07FC00C3DB8D /* PreReviewPresenter.swift in Sources */,
 				3A6AE8E32918910300A9F520 /* InsiteStatisticsCell.swift in Sources */,
@@ -1214,14 +1213,12 @@
 				200F66A8293DC5FF00EB3740 /* ApiTestGroup.swift in Sources */,
 				3ADDAD62294B746000BC15D4 /* ListViewController.swift in Sources */,
 				20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */,
-				3ADA9B7028A534B300EB39F3 /* HomeViewController+.swift in Sources */,
 				20E788442925B53F00B05C8E /* CalendarDetailViewController.swift in Sources */,
 				20DBFB0229029366009CEF76 /* UIViewController+.swift in Sources */,
 				20DBFB0729029366009CEF76 /* RouterType+.swift in Sources */,
 				3A645E8B297209BC00F4BD9A /* KeyChain.swift in Sources */,
 				3AA56D0528BE627300FB66F5 /* WorkTabCollectionViewCell.swift in Sources */,
 				20BD9CAC2921F90300BDAD13 /* CalendarWeekCell.swift in Sources */,
-				3A204B432937B7D700EC49D3 /* HedaerView.swift in Sources */,
 				3A6AE8DD2918910300A9F520 /* InsightTop3GenreCell.swift in Sources */,
 				3AE6A55828ED9B08008ED7DB /* WorkCollectionViewCellModels.swift in Sources */,
 				3A8F863728C6277D0028B45C /* EditGenreRouter.swift in Sources */,
@@ -1233,7 +1230,6 @@
 				3AB9CFBF28B4E84300A600DB /* WorkDetailInfoViewModel.swift in Sources */,
 				3AEDB70D28DE07FC00C3DB8D /* PreReviewRouter.swift in Sources */,
 				3AA56D0128BDE7A600FB66F5 /* RecordViewController+.swift in Sources */,
-				3A79685428B5DAA20054DF5A /* WorkDetailInfoViewController+.swift in Sources */,
 				3A8F863528C6277D0028B45C /* EditGenrePresenter.swift in Sources */,
 				3AEDB71028DE07FC00C3DB8D /* PreReviewInteractor.swift in Sources */,
 				3A6AE8D72918910300A9F520 /* InsightMostImpressiveCell.swift in Sources */,
@@ -1482,7 +1478,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y9Q6SAFX32;
+				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1513,7 +1509,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y9Q6SAFX32;
+				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

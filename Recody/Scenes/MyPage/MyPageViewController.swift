@@ -79,7 +79,7 @@ class MyPageViewController: CommonVC, ObservingCollectionCellEvent {
         }
         update()
     }
-    @objc func clickEvent(_ sender: UITapGestureRecognizer){
+    @objc func clickEvent(_ sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
             guard let useCase = UseCase(rawValue: tag) else { return }
             switch useCase {
