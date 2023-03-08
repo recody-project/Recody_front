@@ -15,13 +15,24 @@ class CategoryButton: UIButton {
     }
 
     func setButton(with title: String) {
+        self.translatesAutoresizingMaskIntoConstraints = false
         if let value = categories[title] {
-            self.titleLabel?.text = title
             self.backgroundColor = UIColor(hexString: value)
         } else {
-            self.titleLabel?.text = "사용자화"
             self.backgroundColor = UIColor(hexString: "#666FC1")
         }
+        self.setTitle(title, for: .normal)
+        self.tintColor = .white
+        layer.cornerRadius = 13
+        isUserInteractionEnabled = false
+        if title == "책" {
+            self.widthAnchor.constraint(equalToConstant: 51).isActive = true
+        } else if title == "드라마" {
+            self.widthAnchor.constraint(equalToConstant: 72).isActive = true
+        } else {
+            self.widthAnchor.constraint(equalToConstant: 61).isActive = true
+        }
+        self.heightAnchor.constraint(equalToConstant: 26).isActive = true
     }
     
     init() {

@@ -14,5 +14,42 @@ import Foundation
 import UIKit
 
 class HomeViewModel {
+    var userName: String = ""
+    var recentContinuingRecord: ContinuingRecord?
+    var content: Content?
     
+    init?() {
+        
+    }
+    
+    func setUserName(name: String) {
+        userName = name
+    }
+    
+    func setRecentContinuingRecord(record: ContinuingRecord) {
+        recentContinuingRecord = record
+    }
+    
+    func setContent(content: Content) {
+        self.content = content
+    }
+}
+
+class ContinuingRecord {
+    var contentTag: String?
+    var contentName: String?
+    var lastModifyDate: String?
+    
+    init?() {
+        
+    }
+}
+
+class Content {
+    var contentId: String?
+    var contentImage: String?
+    
+    init?() {
+        
+    }
 }

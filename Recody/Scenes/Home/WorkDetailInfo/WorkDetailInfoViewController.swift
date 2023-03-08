@@ -14,6 +14,13 @@ import UIKit
 
 class WorkDetailInfoViewController: CommonVC {
     var viewModel = WorkDetailInfoViewModel()
+    @IBOutlet weak var workListView: WorkListView!
+    @IBOutlet weak var categoryButton: CategoryButton! {
+        didSet {
+            // api 코드 작성 한 후 useCase로 변경
+            categoryButton.setButton(with: "영화")
+        }
+    }
     
     let works: [Work] = [
         Work(id: "1", name: "WANDAVISION", image: "wanda"),
@@ -22,6 +29,7 @@ class WorkDetailInfoViewController: CommonVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        workListView.setView(work: works)
     }
     
     // UseCase 정리
