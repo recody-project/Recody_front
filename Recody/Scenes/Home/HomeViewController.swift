@@ -65,7 +65,6 @@ class HomeViewController: CommonVC {
             indexSelected = workFilterButton.firstIndex(of: sender) ?? 0
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
@@ -85,7 +84,6 @@ class HomeViewController: CommonVC {
         workFilterButton[0].backgroundColor = buttonArray[0]
         workFilterButton[0].borderWidth = 0
     }
-    
     func setCategoryStackView() {
         var index = 0
         for value in customCategories {
