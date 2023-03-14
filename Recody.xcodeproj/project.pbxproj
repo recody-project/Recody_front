@@ -92,7 +92,7 @@
 		3A8D1764289BBEA100B260D1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D175E289BBEA100B260D1 /* HomeViewModel.swift */; };
 		3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D176B289BC12200B260D1 /* .swiftlint.yml */; };
 		3A8D176E289BC21400B260D1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D176D289BC21400B260D1 /* .gitignore */; };
-		3A8F862D28C625210028B45C /* EditGenre.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F862C28C625210028B45C /* EditGenre.storyboard */; };
+		3A8F862D28C625210028B45C /* CategorySetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F862C28C625210028B45C /* CategorySetting.storyboard */; };
 		3A8F863528C6277D0028B45C /* EditGenrePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F862F28C6277D0028B45C /* EditGenrePresenter.swift */; };
 		3A8F863628C6277D0028B45C /* EditGenreWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863028C6277D0028B45C /* EditGenreWorker.swift */; };
 		3A8F863728C6277D0028B45C /* EditGenreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863128C6277D0028B45C /* EditGenreRouter.swift */; };
@@ -112,15 +112,6 @@
 		3AA56D0528BE627300FB66F5 /* WorkTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56D0428BE627300FB66F5 /* WorkTabCollectionViewCell.swift */; };
 		3AA56D0728BE743400FB66F5 /* WorkListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA56D0628BE743400FB66F5 /* WorkListCollectionViewCell.xib */; };
 		3AAEE3E328C4E30D00B28582 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3E228C4E30D00B28582 /* UIView+.swift */; };
-		3AAEE3EB28C5CF3900B28582 /* EditCategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3E528C5CF3900B28582 /* EditCategoryPresenter.swift */; };
-		3AAEE3EC28C5CF3900B28582 /* EditCategoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3E628C5CF3900B28582 /* EditCategoryWorker.swift */; };
-		3AAEE3ED28C5CF3900B28582 /* EditCategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3E728C5CF3900B28582 /* EditCategoryRouter.swift */; };
-		3AAEE3EE28C5CF3900B28582 /* EditCategoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3E828C5CF3900B28582 /* EditCategoryModels.swift */; };
-		3AAEE3EF28C5CF3900B28582 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3E928C5CF3900B28582 /* EditCategoryViewController.swift */; };
-		3AAEE3F028C5CF3900B28582 /* EditCategoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3EA28C5CF3900B28582 /* EditCategoryInteractor.swift */; };
-		3AAEE3F228C5CF4500B28582 /* EditCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AAEE3F128C5CF4500B28582 /* EditCategory.storyboard */; };
-		3AAEE3F528C5D10100B28582 /* EditCategoryViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3F428C5D10100B28582 /* EditCategoryViewController+.swift */; };
-		3AAEE3F928C5DA9900B28582 /* EditCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEE3F828C5DA9900B28582 /* EditCategoryCollectionViewCell.swift */; };
 		3AB1431F28F768080041C9CC /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB1431E28F768080041C9CC /* Search.storyboard */; };
 		3AB1432328F76FBC0041C9CC /* MySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1432128F76FBC0041C9CC /* MySearchTableViewCell.swift */; };
 		3AB1432428F76FBC0041C9CC /* MySearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB1432228F76FBC0041C9CC /* MySearchTableViewCell.xib */; };
@@ -275,7 +266,7 @@
 		3A8D175E289BBEA100B260D1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3A8D176B289BC12200B260D1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3A8D176D289BC21400B260D1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		3A8F862C28C625210028B45C /* EditGenre.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditGenre.storyboard; sourceTree = "<group>"; };
+		3A8F862C28C625210028B45C /* CategorySetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategorySetting.storyboard; sourceTree = "<group>"; };
 		3A8F862F28C6277D0028B45C /* EditGenrePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenrePresenter.swift; sourceTree = "<group>"; };
 		3A8F863028C6277D0028B45C /* EditGenreWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreWorker.swift; sourceTree = "<group>"; };
 		3A8F863128C6277D0028B45C /* EditGenreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreRouter.swift; sourceTree = "<group>"; };
@@ -295,15 +286,6 @@
 		3AA56D0428BE627300FB66F5 /* WorkTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AA56D0628BE743400FB66F5 /* WorkListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkListCollectionViewCell.xib; sourceTree = "<group>"; };
 		3AAEE3E228C4E30D00B28582 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
-		3AAEE3E528C5CF3900B28582 /* EditCategoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryPresenter.swift; sourceTree = "<group>"; };
-		3AAEE3E628C5CF3900B28582 /* EditCategoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryWorker.swift; sourceTree = "<group>"; };
-		3AAEE3E728C5CF3900B28582 /* EditCategoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryRouter.swift; sourceTree = "<group>"; };
-		3AAEE3E828C5CF3900B28582 /* EditCategoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryModels.swift; sourceTree = "<group>"; };
-		3AAEE3E928C5CF3900B28582 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
-		3AAEE3EA28C5CF3900B28582 /* EditCategoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryInteractor.swift; sourceTree = "<group>"; };
-		3AAEE3F128C5CF4500B28582 /* EditCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditCategory.storyboard; sourceTree = "<group>"; };
-		3AAEE3F428C5D10100B28582 /* EditCategoryViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditCategoryViewController+.swift"; sourceTree = "<group>"; };
-		3AAEE3F828C5DA9900B28582 /* EditCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AB1431E28F768080041C9CC /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		3AB1432128F76FBC0041C9CC /* MySearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchTableViewCell.swift; sourceTree = "<group>"; };
 		3AB1432228F76FBC0041C9CC /* MySearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -648,7 +630,6 @@
 				3AB9CFB528B4E81500A600DB /* WorkDetailInfo */,
 				3ADDAD5E294B725500BC15D4 /* List */,
 				3A8F862B28C6250C0028B45C /* EditGenre */,
-				3AAEE3E428C5CF1400B28582 /* EditCategory */,
 				3A8D175E289BBEA100B260D1 /* HomeViewModel.swift */,
 				AE9832DC29B8176E00892C26 /* Home.storyboard */,
 				AE9832DB29B8176E00892C26 /* HomeViewController.swift */,
@@ -676,7 +657,7 @@
 				3A8F863228C6277D0028B45C /* EditGenreModels.swift */,
 				3A8F863328C6277D0028B45C /* EditGenreViewController.swift */,
 				3A8F863428C6277D0028B45C /* EditGenreInteractor.swift */,
-				3A8F862C28C625210028B45C /* EditGenre.storyboard */,
+				3A8F862C28C625210028B45C /* CategorySetting.storyboard */,
 			);
 			path = EditGenre;
 			sourceTree = "<group>";
@@ -720,30 +701,6 @@
 				3AD4F12028C08C7E00598D28 /* DropDownHeader.xib */,
 			);
 			path = "Record+";
-			sourceTree = "<group>";
-		};
-		3AAEE3E428C5CF1400B28582 /* EditCategory */ = {
-			isa = PBXGroup;
-			children = (
-				3AAEE3F328C5D0DF00B28582 /* EditCategory+ */,
-				3AAEE3E528C5CF3900B28582 /* EditCategoryPresenter.swift */,
-				3AAEE3E628C5CF3900B28582 /* EditCategoryWorker.swift */,
-				3AAEE3E728C5CF3900B28582 /* EditCategoryRouter.swift */,
-				3AAEE3E828C5CF3900B28582 /* EditCategoryModels.swift */,
-				3AAEE3E928C5CF3900B28582 /* EditCategoryViewController.swift */,
-				3AAEE3EA28C5CF3900B28582 /* EditCategoryInteractor.swift */,
-				3AAEE3F128C5CF4500B28582 /* EditCategory.storyboard */,
-			);
-			path = EditCategory;
-			sourceTree = "<group>";
-		};
-		3AAEE3F328C5D0DF00B28582 /* EditCategory+ */ = {
-			isa = PBXGroup;
-			children = (
-				3AAEE3F428C5D10100B28582 /* EditCategoryViewController+.swift */,
-				3AAEE3F828C5DA9900B28582 /* EditCategoryCollectionViewCell.swift */,
-			);
-			path = "EditCategory+";
 			sourceTree = "<group>";
 		};
 		3AB1431128F767E40041C9CC /* Search */ = {
@@ -1037,7 +994,6 @@
 				AE9832DE29B8176E00892C26 /* Home.storyboard in Resources */,
 				3A6AE8D32918910300A9F520 /* InsightMyRankCell.xib in Resources */,
 				3A9D6F2A29B4733900F4C2F4 /* WorkListView.xib in Resources */,
-				3AAEE3F228C5CF4500B28582 /* EditCategory.storyboard in Resources */,
 				3A8D176E289BC21400B260D1 /* .gitignore in Resources */,
 				3AEDB70128DD86B100C3DB8D /* WorkInfo.xib in Resources */,
 				3A6AE8E22918910300A9F520 /* InsightMostImpressiveCell.xib in Resources */,
@@ -1067,7 +1023,7 @@
 				3A6AE8E12918910300A9F520 /* InsightStatisticsGraphCell.xib in Resources */,
 				3A6AE8D42918910300A9F520 /* InsightShareCell.xib in Resources */,
 				3A75DBF128A0F41D00084DB1 /* TabBar.storyboard in Resources */,
-				3A8F862D28C625210028B45C /* EditGenre.storyboard in Resources */,
+				3A8F862D28C625210028B45C /* CategorySetting.storyboard in Resources */,
 				3A77BE7928F57B33005AFCAD /* PreReviewCollectionViewCell.xib in Resources */,
 				3A56B0E429351B4B0028BF98 /* CategoryButton.xib in Resources */,
 				3A6AE8D22918910300A9F520 /* InsightHallOfFameCell.xib in Resources */,
@@ -1161,7 +1117,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A8F863928C6277D0028B45C /* EditGenreViewController.swift in Sources */,
-				3AAEE3EB28C5CF3900B28582 /* EditCategoryPresenter.swift in Sources */,
 				3AD7147F29B0F8DC00E9FF65 /* WorkView.swift in Sources */,
 				3AEDB70F28DE07FC00C3DB8D /* PreReviewViewController.swift in Sources */,
 				3ADA9B7728A56AB600EB39F3 /* CustomCategory.swift in Sources */,
@@ -1170,16 +1125,13 @@
 				3A6AE8D52918910300A9F520 /* InsightMostAppreciationCell.swift in Sources */,
 				3ADA9B7B28A5810C00EB39F3 /* Designables.swift in Sources */,
 				3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */,
-				3AAEE3EE28C5CF3900B28582 /* EditCategoryModels.swift in Sources */,
 				3AB9CFC028B4E84300A600DB /* WorkDetailInfoViewController.swift in Sources */,
 				3AA56CFD28BDDDE000FB66F5 /* RecordViewController.swift in Sources */,
 				3AEDB70328DE03D100C3DB8D /* WorkInfo.swift in Sources */,
 				3AA56CFE28BDDDE000FB66F5 /* RecordInteractor.swift in Sources */,
 				3AA56CFC28BDDDE000FB66F5 /* RecordModels.swift in Sources */,
 				3AA56CFA28BDDDE000FB66F5 /* RecordWorker.swift in Sources */,
-				3AAEE3F928C5DA9900B28582 /* EditCategoryCollectionViewCell.swift in Sources */,
 				3AE6A55A28ED9D0D008ED7DB /* CategoryModels.swift in Sources */,
-				3AAEE3EF28C5CF3900B28582 /* EditCategoryViewController.swift in Sources */,
 				20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */,
 				207C64792935DE3000D4F1FD /* UIFont+.swift in Sources */,
 				AEF6963629B1A91D00C02396 /* TestApiSettingViewController.swift in Sources */,
@@ -1190,7 +1142,6 @@
 				203FE54629387113009FDABD /* ModifyProfileViewController.swift in Sources */,
 				3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */,
 				20CE1711292DB67D00D77152 /* AlertService.swift in Sources */,
-				3AAEE3ED28C5CF3900B28582 /* EditCategoryRouter.swift in Sources */,
 				2015B30C2918F37500DB725D /* ApiCommand.swift in Sources */,
 				3A75DBEE28A0F41000084DB1 /* TabBarController.swift in Sources */,
 				3A6AE8D62918910300A9F520 /* InsightFirstRecordCell.swift in Sources */,
@@ -1220,13 +1171,11 @@
 				3A8F863828C6277D0028B45C /* EditGenreModels.swift in Sources */,
 				3A6AE8E02918910300A9F520 /* InsightStatisticsGraphCell.swift in Sources */,
 				3AB1432328F76FBC0041C9CC /* MySearchTableViewCell.swift in Sources */,
-				3AAEE3F528C5D10100B28582 /* EditCategoryViewController+.swift in Sources */,
 				3AD4F12828C0AFF900598D28 /* CALayer+.swift in Sources */,
 				3AEDB71728DF3D4500C3DB8D /* StarRatingSlider.swift in Sources */,
 				20DBFB0629029366009CEF76 /* WorkerType+.swift in Sources */,
 				3AD4F11D28C0808200598D28 /* DropDownHeader.swift in Sources */,
 				3AEDB70E28DE07FC00C3DB8D /* PreReviewModels.swift in Sources */,
-				3AAEE3EC28C5CF3900B28582 /* EditCategoryWorker.swift in Sources */,
 				20C6F9FE29077B6C009296E3 /* PresenterType.swift in Sources */,
 				3A9D6F2C29B4789A00F4C2F4 /* WorkListView.swift in Sources */,
 				3AD4F11F28C08BA800598D28 /* TabHeader.swift in Sources */,
@@ -1261,7 +1210,6 @@
 				3AEDB71028DE07FC00C3DB8D /* PreReviewInteractor.swift in Sources */,
 				3A6AE8D72918910300A9F520 /* InsightMostImpressiveCell.swift in Sources */,
 				20BD9CB129220BE200BDAD13 /* TimeUtil.swift in Sources */,
-				3AAEE3F028C5CF3900B28582 /* EditCategoryInteractor.swift in Sources */,
 				3A6AE8E92918911B00A9F520 /* InsiteChartView.swift in Sources */,
 				20E788422925B1C800B05C8E /* CalendarViewModel.swift in Sources */,
 				2015B30A2918F28B00DB725D /* ApiClient.swift in Sources */,

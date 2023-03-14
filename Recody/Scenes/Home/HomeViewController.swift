@@ -105,7 +105,7 @@ class HomeViewController: CommonVC {
             workStackView.addArrangedSubview(view)
         }
     }
-    
+
     @objc func clickEvent(_ sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
             guard let useCase = UseCase(rawValue: tag) else { return }
@@ -117,7 +117,7 @@ class HomeViewController: CommonVC {
     }
 
     enum UseCase: Int, OrderType {
-        case pushContinueRecord = 100
+        case pushRecordList = 100
         case setting = 105
         case notification = 106
         case moveReviewing = 107
@@ -139,8 +139,8 @@ class HomeViewController: CommonVC {
             self.interactor?.just(useCase).api(.getUserInfomation)
             self.interactor?.just(useCase).api(.getMyRecentContinuingRecord)
             self.interactor?.just(useCase).api(.getMovies)
-        case .pushContinueRecord:
-            router?.pushViewController(RoutingLogic.Navigation.workList, dataStore: nil)
+        case .pushRecordList:
+            router?.pushViewController(RoutingLogic.Navigation.recordList, dataStore: nil)
         case .pushWorkDetailInfo:
             router?.pushViewController(RoutingLogic.Navigation.workDetailInfo, dataStore: nil)
         default:

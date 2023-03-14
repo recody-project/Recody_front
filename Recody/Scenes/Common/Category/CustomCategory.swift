@@ -22,8 +22,6 @@ class CustomCategory: UIView {
 
     func setDataForAdd() {
         categoryImage.image = UIImage(named: "plus")
-        categoryImage.layer.borderWidth = 1.0
-        categoryImage.layer.borderColor = UIColor(hexString: "#51453D").cgColor
         categoryImage.contentMode = .center
         categoryName.text = "추가하기"
     }
