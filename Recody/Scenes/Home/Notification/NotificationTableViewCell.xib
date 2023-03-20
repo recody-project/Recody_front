@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationTableViewCell" customModule="Recody" customModuleProvider="target">
+            <connections>
+                <outlet property="message" destination="Fi9-XG-QVz" id="WwC-ZJ-ZIp"/>
+                <outlet property="time" destination="tTc-yO-GYm" id="ebC-tX-kKF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="notificationTableViewCell" rowHeight="68" id="PRA-tN-LRg">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PRA-tN-LRg" id="kG1-jt-r0z">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="책사랑함님을 위한 추천작이 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fi9-XG-QVz">
+                        <rect key="frame" x="0.0" y="17.5" width="205" height="17"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="14"/>
+                        <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1시간전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTc-yO-GYm">
+                        <rect key="frame" x="0.0" y="38.5" width="30" height="12"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Fi9-XG-QVz" firstAttribute="top" secondItem="kG1-jt-r0z" secondAttribute="top" constant="17.5" id="Ipm-4Q-0YE"/>
+                    <constraint firstItem="tTc-yO-GYm" firstAttribute="top" secondItem="Fi9-XG-QVz" secondAttribute="bottom" constant="4" id="J3E-V8-NUu"/>
+                    <constraint firstItem="Fi9-XG-QVz" firstAttribute="leading" secondItem="kG1-jt-r0z" secondAttribute="leading" id="h5U-n2-Blw"/>
+                    <constraint firstItem="tTc-yO-GYm" firstAttribute="leading" secondItem="kG1-jt-r0z" secondAttribute="leading" id="ijC-9g-brn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-259.4202898550725" y="141.96428571428569"/>
+        </tableViewCell>
+    </objects>
+</document>

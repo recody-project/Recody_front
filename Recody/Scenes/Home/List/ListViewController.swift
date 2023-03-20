@@ -101,7 +101,7 @@ class ListViewController: CommonVC {
         case .pushAddCategory:
             router?.pushViewController(RoutingLogic.Navigation.categorySetting, dataStore: nil)
         case .moveIndicator:
-            
+            print("")
         default:
             break
         }
