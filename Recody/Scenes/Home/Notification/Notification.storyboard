@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="notification" id="Y6W-OH-hqX" customClass="NotificationViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vym-I3-dov">
+                                <rect key="frame" x="0.0" y="108" width="414" height="38"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14일이 지난 알림은 자동 삭제됩니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9T-2W-ICQ">
+                                        <rect key="frame" x="121" y="12" width="172" height="14.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="l9T-2W-ICQ" firstAttribute="centerY" secondItem="vym-I3-dov" secondAttribute="centerY" id="CPp-tH-05c"/>
+                                    <constraint firstItem="l9T-2W-ICQ" firstAttribute="centerX" secondItem="vym-I3-dov" secondAttribute="centerX" id="FHE-U8-ZwV"/>
+                                    <constraint firstAttribute="height" constant="38" id="UpW-GQ-4vS"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="w0S-lA-N03">
+                                <rect key="frame" x="20" y="176" width="374" height="686"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="wdC-VZ-8jc"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="cuG-yW-7t3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vym-I3-dov" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="52p-lp-VT7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="w0S-lA-N03" secondAttribute="bottom" id="Oh1-y5-4oO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vym-I3-dov" secondAttribute="trailing" id="RTb-0C-seF"/>
+                            <constraint firstItem="vym-I3-dov" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="SdT-Qx-Crs"/>
+                            <constraint firstItem="w0S-lA-N03" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="dea-WC-zSf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="w0S-lA-N03" secondAttribute="trailing" constant="20" id="g8W-hg-nnW"/>
+                            <constraint firstItem="w0S-lA-N03" firstAttribute="top" secondItem="vym-I3-dov" secondAttribute="bottom" constant="30" id="niy-qU-UNE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="qZI-9n-t5L">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" style="plain" id="ZXg-Ue-EyB"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="w0S-lA-N03" id="X6M-dc-uW6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="43"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

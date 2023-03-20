@@ -20,6 +20,8 @@ enum RoutingLogic: RoutingLogicType {
         case modifyProfile // 마이페이지 -> 프로필 수정 화면
         case recordList
         case categorySetting
+        case addRecord
+        case searchResult
         var viewcontroller: UIViewController? {
             switch self {
             // UIStoryboard( 스토리보드 파일명 )
@@ -44,6 +46,10 @@ enum RoutingLogic: RoutingLogicType {
                 return UIStoryboard(name: "List", bundle: nil).instantiateViewController(withIdentifier: "listView")
             case .categorySetting:
                 return UIStoryboard(name: "CategorySetting", bundle: nil).instantiateViewController(withIdentifier: "CategorySetting")
+            case .addRecord:
+                return UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "addRecord")
+            case .searchResult:
+                return UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "searchResult")
             }
         }
     }

@@ -1,22 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CaL-ya-8pY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aq2-TL-LDL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="uPp-jJ-YVt">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rIk-jj-e9D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController navigationBarHidden="YES" id="aq2-TL-LDL" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jzc-bR-efm">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CaL-ya-8pY" kind="relationship" relationship="rootViewController" id="7gC-dv-P3E"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1168" y="130"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tku-bQ-Bbp">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="CaL-ya-8pY" customClass="TabBarController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="CaL-ya-8pY" customClass="TabBarController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="QAm-wx-ghf"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vzf-VP-4Oc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tabBar>
                     <connections>
+                        <outlet property="tabBar" destination="Vzf-VP-4Oc" id="0Ef-16-GFF"/>
                         <segue destination="fHa-fo-NZj" kind="relationship" relationship="viewControllers" id="7po-w5-xTj"/>
                         <segue destination="9JG-Yd-4Qo" kind="relationship" relationship="viewControllers" id="QIX-Kn-FXM"/>
                         <segue destination="ngO-pG-uBm" kind="relationship" relationship="viewControllers" id="LSs-uT-ctc"/>
