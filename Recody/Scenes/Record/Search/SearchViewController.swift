@@ -204,17 +204,3 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
        return
     }
 }
-
-extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        mySearchResults.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "workListCollectionViewCell", for: indexPath) as? WorkListCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        cell.setData(with: mySearchResults[indexPath.row])
-        return cell
-    }
-}
