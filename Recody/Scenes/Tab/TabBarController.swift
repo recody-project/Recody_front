@@ -17,7 +17,7 @@ class TabBarController: UITabBarController {
 //                         viewController2,
 //                         UIViewController()),
 //                         viewController4], animated: true)
-    private var previousTabIndex: Int = 0
+    public var previousTabIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()

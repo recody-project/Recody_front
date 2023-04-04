@@ -65,20 +65,22 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
     func setUp() {
         self.navigationItem.titleView = searchBar
         backToTap.tag = 107
-//        backToTap.addGestureRecognizer/x(clickEvent(<#T##sender: UITapGestureRecognizer##UITapGestureRecognizer#>))
+        backToTap.action = #selector(barBtnClickEvent)
+        backToTap.target = self
+        
         viewModel.list = ["에이핑크","소녀시대","블랙핑크","AOA","르세라핌"]
         tableView.tableHeaderView = nil
         tableView.tableFooterView = nil
         tableView.register(MySearchTableViewCell.Xib, forCellReuseIdentifier: MySearchTableViewCell.Name)
     }
-    
+    @objc func barBtnClickEvent(_ sender:UIBarButtonItem){
+        guard let useCase = UseCase(rawValue: sender.tag) else { return }
+        self.interactor?.just(useCase).drop()
+    }
     @objc func clickEvent(_ sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
             guard let useCase = UseCase(rawValue: tag) else { return }
-            switch useCase {
-            default:
-                self.interactor?.just(useCase).drop()
-            }
+            self.interactor?.just(useCase).drop()
         }
     }
 
@@ -155,7 +157,7 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
 //            worker?.api(<#T##command: ApiCommand##ApiCommand#>)
         case .backToTap:
             print("whoeiwraoirjweoi")
-                self.navigationController?.popViewController(animated: true)
+            self.router?.tabbarMovePreviousPage(nil)
         default:
             break
         }
