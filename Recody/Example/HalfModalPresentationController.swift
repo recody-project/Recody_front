@@ -45,11 +45,12 @@ class HalfModalPresentationController: UIPresentationController {
         backgroundView.frame = self.containerView!.frame
 //        self.presentedView?.makeRoundedSpecificCorner(corners: [.topLeft, .topRight], cornerRadius: 15)
     }
-    
-    @objc func dismissController(_ handler: @escaping () -> Void) {
-        backgroundView.removeFromSuperview()
-        self.presentedViewController.dismiss(animated: true, completion: {
-            handler()
-        })
+    @objc func dismissController() {
+        self.backgroundView.removeFromSuperview()
+        self.presentedViewController.dismiss(animated: true)
+    }
+    @objc func dismissController(_  handler:(() -> Void)? = nil) {
+        self.backgroundView.removeFromSuperview()
+        self.presentedViewController.dismiss(animated: true, completion: handler)
     }
 }
