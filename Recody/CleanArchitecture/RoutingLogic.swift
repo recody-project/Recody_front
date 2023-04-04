@@ -10,6 +10,8 @@ import UIKit
 
 enum RoutingLogic: RoutingLogicType {
     enum Navigation: NavigationType {
+        case main
+        case login
         case home
         case insight
         case record
@@ -26,6 +28,10 @@ enum RoutingLogic: RoutingLogicType {
             switch self {
             // UIStoryboard( 스토리보드 파일명 )
             // .instantiateViewController(withIdentifier: 스토리보드ID )
+            case .main:
+                return UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController()
+            case .login:
+                return UIStoryboard(name: "login", bundle: nil).instantiateInitialViewController()
             case .home:
                 return UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "home")
             case .insight:
