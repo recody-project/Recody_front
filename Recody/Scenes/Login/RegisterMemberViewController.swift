@@ -129,6 +129,8 @@ class RegisterMemberViewController: CommonVC {
     override func displayErorr(orderNumber: Int, msg: String?) {
         guard let useCase = UseCase(rawValue: orderNumber) else { return }
         switch useCase {
+//        case .register:
+//            self.presenter?.alertService.show(title: "알림", msg: "\(msg)", actions: <#T##[UIAlertAction]#>)
         default:
             print("\(useCase)  :: \(msg)")
         }
