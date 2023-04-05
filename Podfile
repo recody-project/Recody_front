@@ -10,6 +10,7 @@ target 'Recody' do
   pod 'Charts'
   pod 'SnapKit'
   pod 'Alamofire'
+  pod 'IQKeyboardManagerSwift'
   # Pods for Recody
 
 end

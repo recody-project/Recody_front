@@ -11,6 +11,9 @@ import Alamofire
 class TestApiDetailViewController : UIViewController {
     @IBOutlet weak var textView : UITextView!
     var viewmodel : TestApiDetailViewModel!
+    @IBAction func actionBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()

@@ -76,7 +76,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="roo-aU-Ipf">
                                 <rect key="frame" x="25.666666666666657" y="95.333333333333314" width="324" height="66"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common (1)" translatesAutoresizingMaskIntoConstraints="NO" id="OrQ-Zg-7ck">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_kakao" translatesAutoresizingMaskIntoConstraints="NO" id="OrQ-Zg-7ck">
                                         <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -84,7 +84,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common (2)" translatesAutoresizingMaskIntoConstraints="NO" id="HrQ-OG-VpB">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_facebook" translatesAutoresizingMaskIntoConstraints="NO" id="HrQ-OG-VpB">
                                         <rect key="frame" x="86" y="0.0" width="66" height="66"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="HrQ-OG-VpB" secondAttribute="height" multiplier="1:1" id="VSK-pC-109"/>
@@ -95,7 +95,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common (3)" translatesAutoresizingMaskIntoConstraints="NO" id="wBe-Gp-Cs4">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_naver" translatesAutoresizingMaskIntoConstraints="NO" id="wBe-Gp-Cs4">
                                         <rect key="frame" x="172" y="0.0" width="66" height="66"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="wBe-Gp-Cs4" secondAttribute="height" multiplier="1:1" id="CdU-pa-klE"/>
@@ -106,7 +106,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common (4)" translatesAutoresizingMaskIntoConstraints="NO" id="qV2-Wg-IC0">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_email" translatesAutoresizingMaskIntoConstraints="NO" id="qV2-Wg-IC0">
                                         <rect key="frame" x="258" y="0.0" width="66" height="66"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="qV2-Wg-IC0" secondAttribute="height" multiplier="1:1" id="VIb-2E-dk2"/>
@@ -241,10 +241,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="common (1)" width="172" height="246"/>
-        <image name="common (2)" width="172" height="246"/>
-        <image name="common (3)" width="172" height="246"/>
-        <image name="common (4)" width="172" height="246"/>
+        <image name="ic_login_email" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="ic_login_facebook" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="ic_login_kakao" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="ic_login_naver" width="26.666666030883789" height="26.666666030883789"/>
         <image name="mail" catalog="system" width="128" height="93"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>

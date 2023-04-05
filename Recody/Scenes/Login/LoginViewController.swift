@@ -35,6 +35,7 @@ class LoginViewController :CommonVC {
         case findID = 1
         case login = 2
         case registerMemeber = 3
+        case slideImageClick = 4
         var number: Int {
             return self.rawValue
         }
@@ -60,6 +61,10 @@ class LoginViewController :CommonVC {
                 methodVC.modalPresentationStyle = .custom
                 methodVC.delegate = self
                 self.present(methodVC, animated: true)
+            case .slideImageClick:
+                self.router?.pushViewController(RoutingLogic.Navigation.testApi, dataStore: nil)
+            case .registerMemeber:
+                self.router?.pushViewController(RoutingLogic.Navigation.registerMember, dataStore: nil)
             default:
                 self.presenter?.alertService.showToast("\(useCase)")
             break
@@ -100,6 +105,9 @@ class LoginViewController :CommonVC {
             imgV.snp.makeConstraints({
                 $0.edges.equalToSuperview()
             })
+            imgV.isUserInteractionEnabled = true
+            imgV.tag = UseCase.slideImageClick.rawValue
+            imgV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
             return vc
         })
         self.pageViewController.dataViewControllers = vcs
@@ -156,7 +164,7 @@ extension LoginViewController: LoginMethodViewControllerDelegate {
         self.presenter?.alertService.showToast("findID")
     }
     func loginEmail() {
-        self.router?.pushViewController(RoutingLogic.Navigation.main, dataStore: nil)
+        self.router?.pushViewController(RoutingLogic.Navigation.loginEmail, dataStore: nil)
     }
     func loginSNS(index:Int) {
         self.presenter?.alertService.showToast("SNS Login(\(index))")

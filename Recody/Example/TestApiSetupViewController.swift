@@ -18,6 +18,10 @@ class TestApiSetupViewController: UIViewController {
     @IBOutlet weak var btnReset: UIButton!
     @IBOutlet weak var container: UIView!
     var origin = TestApiSetupViewModel()
+    @IBAction func actionBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     lazy var viewControllers : [UIViewController] = {
         return (0...2).map({ index -> UIViewController in
             if index == 2 {

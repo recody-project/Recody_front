@@ -160,6 +160,11 @@
 		AE556A3029DC068100611F18 /* LoginMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE556A2F29DC068100611F18 /* LoginMethodViewController.swift */; };
 		AE556A3229DC06B200611F18 /* LoginMethodViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE556A3129DC06B100611F18 /* LoginMethodViewController.storyboard */; };
 		AE6E7EAB29DC0E5F00EDC669 /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E7EAA29DC0E5F00EDC669 /* HalfModalPresentationController.swift */; };
+		AE7B1E6B29DD124F00954BBC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B1E6A29DD124E00954BBC /* String+.swift */; };
+		AE7B1E6D29DD260200954BBC /* RegisterMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B1E6C29DD260200954BBC /* RegisterMemberViewController.swift */; };
+		AE7B1E6F29DD266600954BBC /* registerMember.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7B1E6E29DD266600954BBC /* registerMember.storyboard */; };
+		AE8BBFAA29DCF7E600B817F6 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8BBFA929DCF7E600B817F6 /* EmailLoginViewController.swift */; };
+		AE8BBFAC29DCFA5700B817F6 /* EmailLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8BBFAB29DCFA5700B817F6 /* EmailLogin.storyboard */; };
 		AE9832DD29B8176E00892C26 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9832DB29B8176E00892C26 /* HomeViewController.swift */; };
 		AE9832DE29B8176E00892C26 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9832DC29B8176E00892C26 /* Home.storyboard */; };
 		AEB50ABF2993263B00181BEC /* TestApi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB50ABE2993263B00181BEC /* TestApi.storyboard */; };
@@ -346,6 +351,11 @@
 		AE556A2F29DC068100611F18 /* LoginMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodViewController.swift; sourceTree = "<group>"; };
 		AE556A3129DC06B100611F18 /* LoginMethodViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginMethodViewController.storyboard; sourceTree = "<group>"; };
 		AE6E7EAA29DC0E5F00EDC669 /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
+		AE7B1E6A29DD124E00954BBC /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		AE7B1E6C29DD260200954BBC /* RegisterMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMemberViewController.swift; sourceTree = "<group>"; };
+		AE7B1E6E29DD266600954BBC /* registerMember.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = registerMember.storyboard; sourceTree = "<group>"; };
+		AE8BBFA929DCF7E600B817F6 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
+		AE8BBFAB29DCFA5700B817F6 /* EmailLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailLogin.storyboard; sourceTree = "<group>"; };
 		AE9832DB29B8176E00892C26 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AE9832DC29B8176E00892C26 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		AEB50ABE2993263B00181BEC /* TestApi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestApi.storyboard; sourceTree = "<group>"; };
@@ -798,6 +808,7 @@
 				3AD4F12728C0AFF900598D28 /* CALayer+.swift */,
 				AE556A2D29DC012B00611F18 /* UILabel+.swift */,
 				3AAEE3E228C4E30D00B28582 /* UIView+.swift */,
+				AE7B1E6A29DD124E00954BBC /* String+.swift */,
 				3A20346028D01E0F00C417CB /* UIScrollView+.swift */,
 				207C64782935DE3000D4F1FD /* UIFont+.swift */,
 			);
@@ -904,6 +915,10 @@
 			children = (
 				AE556A2929DBFEAE00611F18 /* LoginViewController.swift */,
 				AE556A2F29DC068100611F18 /* LoginMethodViewController.swift */,
+				AE8BBFA929DCF7E600B817F6 /* EmailLoginViewController.swift */,
+				AE8BBFAB29DCFA5700B817F6 /* EmailLogin.storyboard */,
+				AE7B1E6C29DD260200954BBC /* RegisterMemberViewController.swift */,
+				AE7B1E6E29DD266600954BBC /* registerMember.storyboard */,
 				AE556A3129DC06B100611F18 /* LoginMethodViewController.storyboard */,
 				AE556A2B29DBFEC700611F18 /* login.storyboard */,
 			);
@@ -1053,6 +1068,7 @@
 				3A34165C28FF5CF900C4D698 /* MyPage.storyboard in Resources */,
 				3AD4F12328C09EB700598D28 /* TabHeader.xib in Resources */,
 				3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */,
+				AE7B1E6F29DD266600954BBC /* registerMember.storyboard in Resources */,
 				3AB1432428F76FBC0041C9CC /* MySearchTableViewCell.xib in Resources */,
 				20DBFB0429029366009CEF76 /* README.md in Resources */,
 				20F719D82934401100D2EA5D /* MyPageWorkCollectionCell.xib in Resources */,
@@ -1061,6 +1077,7 @@
 				3AB80F94290D64E800F032EC /* ModifyProfile.storyboard in Resources */,
 				20BD9CAD2921F90300BDAD13 /* CalendarWeekCell.xib in Resources */,
 				3AEED25A29C8A67300D02F3F /* Notification.storyboard in Resources */,
+				AE8BBFAC29DCFA5700B817F6 /* EmailLogin.storyboard in Resources */,
 				3ADA9B7528A56AA800EB39F3 /* CustomCategory.xib in Resources */,
 				3A6AE8922918906300A9F520 /* Insight.storyboard in Resources */,
 				3A8D1738289BBC7A00B260D1 /* LaunchScreen.storyboard in Resources */,
@@ -1196,6 +1213,7 @@
 				3A6AE8D82918910300A9F520 /* InsightHallOfFameCell.swift in Sources */,
 				3A56B0E629351F010028BF98 /* CategoryButtonModel.swift in Sources */,
 				3AA56D0328BE580000FB66F5 /* WorkListCollectionViewCell.swift in Sources */,
+				AE7B1E6D29DD260200954BBC /* RegisterMemberViewController.swift in Sources */,
 				3A5076DA29C6D54600C7A5E9 /* AddRecordViewController.swift in Sources */,
 				203FE54629387113009FDABD /* ModifyProfileViewController.swift in Sources */,
 				3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */,
@@ -1272,6 +1290,7 @@
 				3AEDB71028DE07FC00C3DB8D /* PreReviewInteractor.swift in Sources */,
 				3A6AE8D72918910300A9F520 /* InsightMostImpressiveCell.swift in Sources */,
 				20BD9CB129220BE200BDAD13 /* TimeUtil.swift in Sources */,
+				AE7B1E6B29DD124F00954BBC /* String+.swift in Sources */,
 				3A6AE8E92918911B00A9F520 /* InsiteChartView.swift in Sources */,
 				20E788422925B1C800B05C8E /* CalendarViewModel.swift in Sources */,
 				2015B30A2918F28B00DB725D /* ApiClient.swift in Sources */,
@@ -1282,6 +1301,7 @@
 				AEB50AC129932A4200181BEC /* TestApiViewController.swift in Sources */,
 				3AEED25729C8A66100D02F3F /* NotificationViewController.swift in Sources */,
 				3AD4F12628C0A66600598D28 /* UIColor+.swift in Sources */,
+				AE8BBFAA29DCF7E600B817F6 /* EmailLoginViewController.swift in Sources */,
 				20F719DA2934422A00D2EA5D /* CollectionViewModel+.swift in Sources */,
 				3A77BE7328F57944005AFCAD /* PreReviewViewController+.swift in Sources */,
 			);
@@ -1517,10 +1537,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = login;
@@ -1551,10 +1572,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = login;

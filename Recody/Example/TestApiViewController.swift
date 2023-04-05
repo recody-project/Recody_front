@@ -11,12 +11,17 @@ import Alamofire
 class TestApiViewController: UIViewController{
     @IBOutlet weak var tableview: UITableView!
     var viewmodel = TestApiViewModel()
+    
+    @IBAction func actionBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     enum ApiEncoding {
         case JSON
         case URL
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationItem.titleView?.isHidden = false
         setup()
         update()
     }
