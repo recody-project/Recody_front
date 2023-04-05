@@ -122,8 +122,15 @@ class SettingViewController: CommonVC, DataPassingType {
         lbAppVersion.text = viewModel.appVersion
         self.imgRecordySettingPageOpen.image = viewModel.recodySettingEnable ? UIImage(systemName: "chevron.down") : UIImage(systemName: "chevron.up")
         self.imgRecordFeedBackPageOpen.image = viewModel.recodyFeedbackEnable ? UIImage(systemName: "chevron.down") : UIImage(systemName: "chevron.up")
-        recordySettingPageHeight.constant = viewModel.recodySettingEnable ? 52 : 1
-        recordyFeedBackPageHeight.constant = viewModel.recodyFeedbackEnable ? 52 : 1
+        recordySettingPageHeight.constant = viewModel.recodySettingEnable ? 156 : 1
+        btnOnlineBackup.isHidden = !viewModel.recodySettingEnable
+        btnAlarm.isHidden = !viewModel.recodySettingEnable
+        btnCalendar.isHidden = !viewModel.recodySettingEnable
+        
+        recordyFeedBackPageHeight.constant = viewModel.recodyFeedbackEnable ? 104 : 1
+        btnSendOpinion.isHidden = !viewModel.recodyFeedbackEnable
+        btnStarAndReview.isHidden = !viewModel.recodyFeedbackEnable
+        
         var scrollHeight = 616.0
         if viewModel.recodySettingEnable { scrollHeight += 52.0 }
         if viewModel.recodyFeedbackEnable { scrollHeight += 52.0 }
