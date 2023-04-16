@@ -16,6 +16,7 @@ protocol RouterType {
     func perform(_ segment: SegmentType, _ dataStore: DataStoreType?) // 세그먼트를 이용한 화면이동
     func pushViewController(_ navigation: NavigationType, dataStore: DataStoreType?) // UINavigationController
     func popViewContoller(animated: Bool)
+    func tabbarMovePreviousPage(_ index:Int?) // 호출 VC의 상위스택에 탭바가 존재해야함 index = nil 이전페이지 이동 / index 번쨰 Tab으로 이동
 }
 
 protocol DataPassingType {
@@ -34,6 +35,7 @@ protocol RoutingLogicType {
 }
 
 class SimpleRouter: RouterType {
+    
     var context: UIViewController
 
     required init(context: UIViewController) {
@@ -114,4 +116,23 @@ class SimpleRouter: RouterType {
         print("serachNavigationController :: UINavigationController is nil  ")
         return nil
     }
+    func tabbarMovePreviousPage(_ index:Int?){
+        if let index = index {
+            if let tabbar = self.context.tabBarController,
+               let maxCount = tabbar.viewControllers?.count{
+                if index < maxCount {
+                    tabbar.selectedIndex = index
+                } else {
+                   fatalError("tabbar.viewControllers.count(\(maxCount)) 범위를 넘었습니다. index : \(index)")
+                }
+            }
+        } else {
+            if let tabbar = self.context.tabBarController {
+                if let tabbarVC = (tabbar as? TabBarController){
+                    tabbarVC.selectedIndex = tabbarVC.previousTabIndex
+                }
+            }
+        }
+    }
+    
 }

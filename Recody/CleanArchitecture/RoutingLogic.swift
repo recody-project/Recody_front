@@ -10,6 +10,10 @@ import UIKit
 
 enum RoutingLogic: RoutingLogicType {
     enum Navigation: NavigationType {
+        case main
+        case login
+        case loginEmail
+        case registerMember
         case home
         case insight
         case record
@@ -22,10 +26,19 @@ enum RoutingLogic: RoutingLogicType {
         case categorySetting
         case addRecord
         case searchResult
+        case testApi // 테스트 api
         var viewcontroller: UIViewController? {
             switch self {
             // UIStoryboard( 스토리보드 파일명 )
             // .instantiateViewController(withIdentifier: 스토리보드ID )
+            case .main:
+                return UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController()
+            case .login:
+                return UIStoryboard(name: "login", bundle: nil).instantiateInitialViewController()
+            case .loginEmail:
+                return UIStoryboard(name: "EmailLogin", bundle: nil).instantiateInitialViewController()
+            case .registerMember:
+                return UIStoryboard(name: "registerMember", bundle: nil).instantiateInitialViewController()
             case .home:
                 return UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "home")
             case .insight:
@@ -50,6 +63,8 @@ enum RoutingLogic: RoutingLogicType {
                 return UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "addRecord")
             case .searchResult:
                 return UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "searchResult")
+            case .testApi:
+                return UIStoryboard(name: "TestApi", bundle: nil).instantiateViewController(withIdentifier: "TestApiViewController")
             }
         }
     }

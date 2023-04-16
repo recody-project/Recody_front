@@ -156,6 +156,17 @@
 		3AEED26029C8AD6800D02F3F /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEED25F29C8AD6800D02F3F /* NotificationTableViewCell.swift */; };
 		3AF1DF88290C11260095673A /* ReviewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1DF87290C11260095673A /* ReviewModels.swift */; };
 		981DE2FA71CB8639568FDE47 /* Pods_Recody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F5474CB0129800D7BF6EF1 /* Pods_Recody.framework */; };
+		AE556A2A29DBFEAE00611F18 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE556A2929DBFEAE00611F18 /* LoginViewController.swift */; };
+		AE556A2C29DBFEC700611F18 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE556A2B29DBFEC700611F18 /* login.storyboard */; };
+		AE556A2E29DC012B00611F18 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE556A2D29DC012B00611F18 /* UILabel+.swift */; };
+		AE556A3029DC068100611F18 /* LoginMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE556A2F29DC068100611F18 /* LoginMethodViewController.swift */; };
+		AE556A3229DC06B200611F18 /* LoginMethodViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE556A3129DC06B100611F18 /* LoginMethodViewController.storyboard */; };
+		AE6E7EAB29DC0E5F00EDC669 /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E7EAA29DC0E5F00EDC669 /* HalfModalPresentationController.swift */; };
+		AE7B1E6B29DD124F00954BBC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B1E6A29DD124E00954BBC /* String+.swift */; };
+		AE7B1E6D29DD260200954BBC /* RegisterMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B1E6C29DD260200954BBC /* RegisterMemberViewController.swift */; };
+		AE7B1E6F29DD266600954BBC /* registerMember.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7B1E6E29DD266600954BBC /* registerMember.storyboard */; };
+		AE8BBFAA29DCF7E600B817F6 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8BBFA929DCF7E600B817F6 /* EmailLoginViewController.swift */; };
+		AE8BBFAC29DCFA5700B817F6 /* EmailLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8BBFAB29DCFA5700B817F6 /* EmailLogin.storyboard */; };
 		AE9832DD29B8176E00892C26 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9832DB29B8176E00892C26 /* HomeViewController.swift */; };
 		AE9832DE29B8176E00892C26 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9832DC29B8176E00892C26 /* Home.storyboard */; };
 		AEB50ABF2993263B00181BEC /* TestApi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB50ABE2993263B00181BEC /* TestApi.storyboard */; };
@@ -338,6 +349,17 @@
 		3AEED25F29C8AD6800D02F3F /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		3AF1DF87290C11260095673A /* ReviewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModels.swift; sourceTree = "<group>"; };
 		8049CB087E9F5BA11A8F193B /* Pods-Recody.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recody.release.xcconfig"; path = "Target Support Files/Pods-Recody/Pods-Recody.release.xcconfig"; sourceTree = "<group>"; };
+		AE556A2929DBFEAE00611F18 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AE556A2B29DBFEC700611F18 /* login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
+		AE556A2D29DC012B00611F18 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		AE556A2F29DC068100611F18 /* LoginMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodViewController.swift; sourceTree = "<group>"; };
+		AE556A3129DC06B100611F18 /* LoginMethodViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginMethodViewController.storyboard; sourceTree = "<group>"; };
+		AE6E7EAA29DC0E5F00EDC669 /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
+		AE7B1E6A29DD124E00954BBC /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		AE7B1E6C29DD260200954BBC /* RegisterMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMemberViewController.swift; sourceTree = "<group>"; };
+		AE7B1E6E29DD266600954BBC /* registerMember.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = registerMember.storyboard; sourceTree = "<group>"; };
+		AE8BBFA929DCF7E600B817F6 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
+		AE8BBFAB29DCFA5700B817F6 /* EmailLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailLogin.storyboard; sourceTree = "<group>"; };
 		AE9832DB29B8176E00892C26 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AE9832DC29B8176E00892C26 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		AEB50ABE2993263B00181BEC /* TestApi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestApi.storyboard; sourceTree = "<group>"; };
@@ -413,6 +435,7 @@
 				AEB50ABE2993263B00181BEC /* TestApi.storyboard */,
 				AEB50AC029932A4200181BEC /* TestApiViewController.swift */,
 				AED00E7429A3438600A60D86 /* TestApiSetupViewController.swift */,
+				AE6E7EAA29DC0E5F00EDC669 /* HalfModalPresentationController.swift */,
 				AEFDD745299B422E00A5EB77 /* TestApiDetailViewController.swift */,
 				AEF6963529B1A91D00C02396 /* TestApiSettingViewController.swift */,
 			);
@@ -631,6 +654,7 @@
 		3A8D1759289BBE7E00B260D1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				AE556A2829DBFEA000611F18 /* Login */,
 				3A34164E28FF5CD200C4D698 /* MyPage */,
 				3AB9CFC528B4F05F00A600DB /* Common */,
 				3A75DBDF28A0F3D400084DB1 /* Tab */,
@@ -788,7 +812,9 @@
 			children = (
 				3AD4F12528C0A66600598D28 /* UIColor+.swift */,
 				3AD4F12728C0AFF900598D28 /* CALayer+.swift */,
+				AE556A2D29DC012B00611F18 /* UILabel+.swift */,
 				3AAEE3E228C4E30D00B28582 /* UIView+.swift */,
+				AE7B1E6A29DD124E00954BBC /* String+.swift */,
 				3A20346028D01E0F00C417CB /* UIScrollView+.swift */,
 				207C64782935DE3000D4F1FD /* UIFont+.swift */,
 			);
@@ -888,6 +914,21 @@
 				F7F5474CB0129800D7BF6EF1 /* Pods_Recody.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE556A2829DBFEA000611F18 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AE556A2929DBFEAE00611F18 /* LoginViewController.swift */,
+				AE556A2F29DC068100611F18 /* LoginMethodViewController.swift */,
+				AE8BBFA929DCF7E600B817F6 /* EmailLoginViewController.swift */,
+				AE8BBFAB29DCFA5700B817F6 /* EmailLogin.storyboard */,
+				AE7B1E6C29DD260200954BBC /* RegisterMemberViewController.swift */,
+				AE7B1E6E29DD266600954BBC /* registerMember.storyboard */,
+				AE556A3129DC06B100611F18 /* LoginMethodViewController.storyboard */,
+				AE556A2B29DBFEC700611F18 /* login.storyboard */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		D9142FC7474BE90F07FC44D7 /* Pods */ = {
@@ -1024,6 +1065,7 @@
 				3A6AE8E52918910300A9F520 /* InsightTop3GenreCell.xib in Resources */,
 				3A75DBF828A0F5D900084DB1 /* Calendar.storyboard in Resources */,
 				AE9832DE29B8176E00892C26 /* Home.storyboard in Resources */,
+				AE556A3229DC06B200611F18 /* LoginMethodViewController.storyboard in Resources */,
 				3A6AE8D32918910300A9F520 /* InsightMyRankCell.xib in Resources */,
 				3A9D6F2A29B4733900F4C2F4 /* WorkListView.xib in Resources */,
 				3A8D176E289BC21400B260D1 /* .gitignore in Resources */,
@@ -1032,6 +1074,7 @@
 				3A34165C28FF5CF900C4D698 /* MyPage.storyboard in Resources */,
 				3AD4F12328C09EB700598D28 /* TabHeader.xib in Resources */,
 				3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */,
+				AE7B1E6F29DD266600954BBC /* registerMember.storyboard in Resources */,
 				3AB1432428F76FBC0041C9CC /* MySearchTableViewCell.xib in Resources */,
 				20DBFB0429029366009CEF76 /* README.md in Resources */,
 				20F719D82934401100D2EA5D /* MyPageWorkCollectionCell.xib in Resources */,
@@ -1040,6 +1083,7 @@
 				3AB80F94290D64E800F032EC /* ModifyProfile.storyboard in Resources */,
 				20BD9CAD2921F90300BDAD13 /* CalendarWeekCell.xib in Resources */,
 				3AEED25A29C8A67300D02F3F /* Notification.storyboard in Resources */,
+				AE8BBFAC29DCFA5700B817F6 /* EmailLogin.storyboard in Resources */,
 				3ADA9B7528A56AA800EB39F3 /* CustomCategory.xib in Resources */,
 				3A6AE8922918906300A9F520 /* Insight.storyboard in Resources */,
 				3A8D1738289BBC7A00B260D1 /* LaunchScreen.storyboard in Resources */,
@@ -1060,6 +1104,7 @@
 				3A8F862D28C625210028B45C /* CategorySetting.storyboard in Resources */,
 				3A77BE7928F57B33005AFCAD /* PreReviewCollectionViewCell.xib in Resources */,
 				3A56B0E429351B4B0028BF98 /* CategoryButton.xib in Resources */,
+				AE556A2C29DBFEC700611F18 /* login.storyboard in Resources */,
 				3A6AE8D22918910300A9F520 /* InsightHallOfFameCell.xib in Resources */,
 				3AEDB71228DE080600C3DB8D /* PreReview.storyboard in Resources */,
 				3A75DBF628A0F5CE00084DB1 /* List.storyboard in Resources */,
@@ -1176,6 +1221,7 @@
 				3A6AE8D82918910300A9F520 /* InsightHallOfFameCell.swift in Sources */,
 				3A56B0E629351F010028BF98 /* CategoryButtonModel.swift in Sources */,
 				3AA56D0328BE580000FB66F5 /* WorkListCollectionViewCell.swift in Sources */,
+				AE7B1E6D29DD260200954BBC /* RegisterMemberViewController.swift in Sources */,
 				3A5076DA29C6D54600C7A5E9 /* AddRecordViewController.swift in Sources */,
 				203FE54629387113009FDABD /* ModifyProfileViewController.swift in Sources */,
 				3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */,
@@ -1183,6 +1229,7 @@
 				2015B30C2918F37500DB725D /* ApiCommand.swift in Sources */,
 				3A75DBEE28A0F41000084DB1 /* TabBarController.swift in Sources */,
 				3A6AE8D62918910300A9F520 /* InsightFirstRecordCell.swift in Sources */,
+				AE556A3029DC068100611F18 /* LoginMethodViewController.swift in Sources */,
 				20F719D72934401100D2EA5D /* MyPageWorkCollectionCell.swift in Sources */,
 				20DBFB0529029366009CEF76 /* RoutingLogic.swift in Sources */,
 				3A8D172C289BBC7700B260D1 /* AppDelegate.swift in Sources */,
@@ -1204,6 +1251,7 @@
 				20CE3BF629274BBC009539DD /* CalendarSettingViewController.swift in Sources */,
 				3A6AE8902918903700A9F520 /* InsightViewController.swift in Sources */,
 				3AEDB70C28DE07FC00C3DB8D /* PreReviewWorker.swift in Sources */,
+				AE556A2E29DC012B00611F18 /* UILabel+.swift in Sources */,
 				3A13C9A3291F0A7700DC0756 /* SearchViewController.swift in Sources */,
 				2015B3072918DF1700DB725D /* InsightCellEvent.swift in Sources */,
 				20C161E6292CB739001B2F7F /* SettingViewController.swift in Sources */,
@@ -1228,6 +1276,7 @@
 				3ADDAD62294B746000BC15D4 /* ListViewController.swift in Sources */,
 				20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */,
 				AED00E7829A4501700A60D86 /* TestApiSetupTableCell.swift in Sources */,
+				AE556A2A29DBFEAE00611F18 /* LoginViewController.swift in Sources */,
 				20E788442925B53F00B05C8E /* CalendarDetailViewController.swift in Sources */,
 				20DBFB0229029366009CEF76 /* UIViewController+.swift in Sources */,
 				20DBFB0729029366009CEF76 /* RouterType+.swift in Sources */,
@@ -1249,15 +1298,18 @@
 				3AEDB71028DE07FC00C3DB8D /* PreReviewInteractor.swift in Sources */,
 				3A6AE8D72918910300A9F520 /* InsightMostImpressiveCell.swift in Sources */,
 				20BD9CB129220BE200BDAD13 /* TimeUtil.swift in Sources */,
+				AE7B1E6B29DD124F00954BBC /* String+.swift in Sources */,
 				3A6AE8E92918911B00A9F520 /* InsiteChartView.swift in Sources */,
 				20E788422925B1C800B05C8E /* CalendarViewModel.swift in Sources */,
 				2015B30A2918F28B00DB725D /* ApiClient.swift in Sources */,
 				3AC934C8297779CF00868C33 /* FilterViewController.swift in Sources */,
+				AE6E7EAB29DC0E5F00EDC669 /* HalfModalPresentationController.swift in Sources */,
 				3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */,
 				3A8F863A28C6277D0028B45C /* EditGenreInteractor.swift in Sources */,
 				AEB50AC129932A4200181BEC /* TestApiViewController.swift in Sources */,
 				3AEED25729C8A66100D02F3F /* NotificationViewController.swift in Sources */,
 				3AD4F12628C0A66600598D28 /* UIColor+.swift in Sources */,
+				AE8BBFAA29DCF7E600B817F6 /* EmailLoginViewController.swift in Sources */,
 				20F719DA2934422A00D2EA5D /* CollectionViewModel+.swift in Sources */,
 				3A77BE7328F57944005AFCAD /* PreReviewViewController+.swift in Sources */,
 			);
@@ -1493,13 +1545,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+
+				CURRENT_PROJECT_VERSION = 6;
+
 				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = TabBar;
+				INFOPLIST_KEY_UIMainStoryboardFile = login;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1508,7 +1563,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+<<<<<<< HEAD
 				MARKETING_VERSION = 1.2.0;
+=======
+				MARKETING_VERSION = 1.0.1;
+>>>>>>> develop
 				PRODUCT_BUNDLE_IDENTIFIER = com.recody.Recody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1527,13 +1586,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
 				CURRENT_PROJECT_VERSION = 2;
+=======
+				CURRENT_PROJECT_VERSION = 6;
+>>>>>>> develop
 				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = TabBar;
+				INFOPLIST_KEY_UIMainStoryboardFile = login;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1542,7 +1606,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+<<<<<<< HEAD
 				MARKETING_VERSION = 1.2.0;
+=======
+				MARKETING_VERSION = 1.0.1;
+>>>>>>> develop
 				PRODUCT_BUNDLE_IDENTIFIER = com.recody.Recody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Method View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="LoginMethodViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="368"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2i-JT-7Nr">
+                                <rect key="frame" x="135" y="24" width="105.33333333333331" height="19.333333333333329"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="로그인">
+                                        <attributes>
+                                            <color key="NSColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="방법">
+                                        <attributes>
+                                            <color key="NSColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="선택">
+                                        <attributes>
+                                            <color key="NSColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Rw0-cm-dcl">
+                                <rect key="frame" x="25" y="26.333333333333332" width="17.333333333333329" height="15.333333333333339"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MzK-eK-560">
+                                <rect key="frame" x="8.6666666666666643" y="8.6666666666666643" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MzK-eK-560" secondAttribute="height" multiplier="1:1" id="85U-gM-Ns6"/>
+                                    <constraint firstAttribute="width" constant="50" id="Y62-V4-gjG"/>
+                                    <constraint firstAttribute="height" constant="50" id="scp-y1-0Dg"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="roo-aU-Ipf">
+                                <rect key="frame" x="25.666666666666657" y="95.333333333333314" width="324" height="66"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_kakao" translatesAutoresizingMaskIntoConstraints="NO" id="OrQ-Zg-7ck">
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="33"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_facebook" translatesAutoresizingMaskIntoConstraints="NO" id="HrQ-OG-VpB">
+                                        <rect key="frame" x="86" y="0.0" width="66" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="HrQ-OG-VpB" secondAttribute="height" multiplier="1:1" id="VSK-pC-109"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="33"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_naver" translatesAutoresizingMaskIntoConstraints="NO" id="wBe-Gp-Cs4">
+                                        <rect key="frame" x="172" y="0.0" width="66" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wBe-Gp-Cs4" secondAttribute="height" multiplier="1:1" id="CdU-pa-klE"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="33"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_email" translatesAutoresizingMaskIntoConstraints="NO" id="qV2-Wg-IC0">
+                                        <rect key="frame" x="258" y="0.0" width="66" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="qV2-Wg-IC0" secondAttribute="height" multiplier="1:1" id="VIb-2E-dk2"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="33"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="0jU-l6-Ft9"/>
+                                    <constraint firstItem="qV2-Wg-IC0" firstAttribute="width" secondItem="qV2-Wg-IC0" secondAttribute="height" multiplier="1:1" id="Mbz-Wu-oXT"/>
+                                    <constraint firstItem="wBe-Gp-Cs4" firstAttribute="width" secondItem="wBe-Gp-Cs4" secondAttribute="height" multiplier="1:1" id="Y7e-Us-dRV"/>
+                                    <constraint firstItem="HrQ-OG-VpB" firstAttribute="width" secondItem="HrQ-OG-VpB" secondAttribute="height" multiplier="1:1" id="YJ2-LB-zNY"/>
+                                    <constraint firstAttribute="width" secondItem="roo-aU-Ipf" secondAttribute="height" multiplier="4:1" constant="60" id="azp-x9-hb6"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ljg-9p-4Ma">
+                                <rect key="frame" x="93.333333333333329" y="273.33333333333331" width="188.66666666666669" height="17"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계정이 기억나지 않나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdg-Rk-q5K">
+                                        <rect key="frame" x="0.0" y="0.0" width="136" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSi-xA-7sD">
+                                        <rect key="frame" x="140" y="0.0" width="48.666666666666657" height="17"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="계정찾기">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7AD-5W-ABS">
+                                <rect key="frame" x="57.666666666666657" y="205.33333333333334" width="260" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7AD-5W-ABS" secondAttribute="height" multiplier="260:44" id="A7Z-a6-B6f"/>
+                                    <constraint firstAttribute="height" constant="44" id="Foo-uT-KYM"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4tq-YL-iSw">
+                                <rect key="frame" x="83.666666666666671" y="219" width="23.666666666666671" height="17.333333333333343"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-VX-EQh">
+                                <rect key="frame" x="137" y="217.66666666666666" width="101.33333333333331" height="19.333333333333343"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="이메일로">
+                                        <attributes>
+                                            <color key="NSColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="로그인">
+                                        <attributes>
+                                            <color key="NSColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ljg-9p-4Ma" firstAttribute="centerX" secondItem="7AD-5W-ABS" secondAttribute="centerX" id="4gZ-gs-uUS"/>
+                            <constraint firstItem="7AD-5W-ABS" firstAttribute="top" secondItem="roo-aU-Ipf" secondAttribute="bottom" constant="44" id="5qg-rH-Seg"/>
+                            <constraint firstItem="Ljg-9p-4Ma" firstAttribute="top" secondItem="7AD-5W-ABS" secondAttribute="bottom" constant="24" id="FDi-aK-Pvd"/>
+                            <constraint firstItem="h1I-VX-EQh" firstAttribute="centerY" secondItem="7AD-5W-ABS" secondAttribute="centerY" id="QKV-ZM-TQz"/>
+                            <constraint firstItem="Rw0-cm-dcl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="UnI-cf-Oar"/>
+                            <constraint firstItem="h1I-VX-EQh" firstAttribute="centerX" secondItem="7AD-5W-ABS" secondAttribute="centerX" id="UwP-U1-NX7"/>
+                            <constraint firstItem="f2i-JT-7Nr" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Xd7-UD-7Ln"/>
+                            <constraint firstItem="MzK-eK-560" firstAttribute="centerX" secondItem="Rw0-cm-dcl" secondAttribute="centerX" id="YhW-UX-qM1"/>
+                            <constraint firstItem="Rw0-cm-dcl" firstAttribute="centerY" secondItem="f2i-JT-7Nr" secondAttribute="centerY" id="b9M-wI-Ypt"/>
+                            <constraint firstItem="f2i-JT-7Nr" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="24" id="cGB-hK-W0B"/>
+                            <constraint firstItem="roo-aU-Ipf" firstAttribute="centerX" secondItem="f2i-JT-7Nr" secondAttribute="centerX" id="cHA-Fh-eK5"/>
+                            <constraint firstItem="7AD-5W-ABS" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="cQT-XW-04j"/>
+                            <constraint firstItem="roo-aU-Ipf" firstAttribute="top" secondItem="f2i-JT-7Nr" secondAttribute="bottom" constant="52" id="dgo-PP-VP9"/>
+                            <constraint firstItem="MzK-eK-560" firstAttribute="centerY" secondItem="Rw0-cm-dcl" secondAttribute="centerY" id="fVY-DG-Amj"/>
+                            <constraint firstItem="4tq-YL-iSw" firstAttribute="centerY" secondItem="7AD-5W-ABS" secondAttribute="centerY" id="noz-Ha-AS0"/>
+                            <constraint firstItem="4tq-YL-iSw" firstAttribute="leading" secondItem="7AD-5W-ABS" secondAttribute="leading" constant="26" id="zT3-C6-Dkr"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="22"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <size key="freeformSize" width="375" height="368"/>
+                    <connections>
+                        <outlet property="btnEmail" destination="7AD-5W-ABS" id="vGI-zc-CSS"/>
+                        <outlet property="btnFindID" destination="Ljg-9p-4Ma" id="wnT-T8-8hZ"/>
+                        <outlet property="btnSNS1" destination="OrQ-Zg-7ck" id="IfD-Q9-qxr"/>
+                        <outlet property="btnSNS2" destination="HrQ-OG-VpB" id="hz9-Xt-zNV"/>
+                        <outlet property="btnSNS3" destination="wBe-Gp-Cs4" id="fGK-xz-fKj"/>
+                        <outlet property="btnSNS4" destination="qV2-Wg-IC0" id="6C2-Ea-oqZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-63.358778625954194" y="4.9295774647887329"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_login_email" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="ic_login_facebook" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="ic_login_kakao" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="ic_login_naver" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="mail" catalog="system" width="128" height="93"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
