@@ -19,11 +19,6 @@ class NotificationViewController: CommonVC {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    func registerXib() {
-        let nibName = UINib(nibName: "NotificationTableViewCell", bundle: nil)
-        tableView.register(nibName, forCellReuseIdentifier: "notificationTableViewCell")
-    }
 }
 
 extension NotificationViewController: UITableViewDelegate, UITableViewDataSource {
@@ -37,12 +32,15 @@ extension NotificationViewController: UITableViewDelegate, UITableViewDataSource
         }
 
         cell.setData(data: notifications[indexPath.row])
-        cell.backgroundColor = UIColor.clear.withAlphaComponent(0)
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(notifications[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 68
     }
 }

@@ -57,14 +57,4 @@ class MySearchTableViewCell: UITableViewCell,ObservingTableCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
-
-//    func setData(data: String, indexPathRow: Int) {
-//        contentLabel.text = data
-//        print(data)
-//        indexPath = indexPathRow
-//    }
-//    @IBAction func removeSearch(_ sender: UIButton) {
-////        delegate?.deleteButton(indexPathRow: indexPath)
-//        eventDelegate?.eventFromTableCell(code: indexPath)
-//    }
 }

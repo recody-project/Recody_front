@@ -80,6 +80,9 @@
 		3A6AE8E52918910300A9F520 /* InsightTop3GenreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AE8D12918910300A9F520 /* InsightTop3GenreCell.xib */; };
 		3A6AE8E92918911B00A9F520 /* InsiteChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8E72918911B00A9F520 /* InsiteChartView.swift */; };
 		3A6AE8EA2918911B00A9F520 /* InsiteStatisticsGraphChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AE8E82918911B00A9F520 /* InsiteStatisticsGraphChartView.swift */; };
+		3A731B3029CECB9C00C5EE5E /* SearchFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A731B2F29CECB9C00C5EE5E /* SearchFilterViewController.swift */; };
+		3A731B3229CEDA0800C5EE5E /* FilterCtaegoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A731B3129CEDA0800C5EE5E /* FilterCtaegoryCollectionViewCell.swift */; };
+		3A731B3429CEDA1200C5EE5E /* FilterGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A731B3329CEDA1200C5EE5E /* FilterGenreCollectionViewCell.swift */; };
 		3A75DBEE28A0F41000084DB1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A75DBEC28A0F41000084DB1 /* TabBarController.swift */; };
 		3A75DBF128A0F41D00084DB1 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A75DBF028A0F41D00084DB1 /* TabBar.storyboard */; };
 		3A75DBF628A0F5CE00084DB1 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A75DBF528A0F5CE00084DB1 /* List.storyboard */; };
@@ -117,7 +120,6 @@
 		3AB1431F28F768080041C9CC /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB1431E28F768080041C9CC /* Search.storyboard */; };
 		3AB1432328F76FBC0041C9CC /* MySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1432128F76FBC0041C9CC /* MySearchTableViewCell.swift */; };
 		3AB1432428F76FBC0041C9CC /* MySearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB1432228F76FBC0041C9CC /* MySearchTableViewCell.xib */; };
-		3AB1432628F88F860041C9CC /* MySearchViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1432528F88F860041C9CC /* MySearchViewController+.swift */; };
 		3AB80F94290D64E800F032EC /* ModifyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB80F93290D64E800F032EC /* ModifyProfile.storyboard */; };
 		3AB9CFBF28B4E84300A600DB /* WorkDetailInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFB928B4E84300A600DB /* WorkDetailInfoViewModel.swift */; };
 		3AB9CFC028B4E84300A600DB /* WorkDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFBA28B4E84300A600DB /* WorkDetailInfoViewController.swift */; };
@@ -269,6 +271,9 @@
 		3A6AE8D12918910300A9F520 /* InsightTop3GenreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsightTop3GenreCell.xib; sourceTree = "<group>"; };
 		3A6AE8E72918911B00A9F520 /* InsiteChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsiteChartView.swift; sourceTree = "<group>"; };
 		3A6AE8E82918911B00A9F520 /* InsiteStatisticsGraphChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsiteStatisticsGraphChartView.swift; sourceTree = "<group>"; };
+		3A731B2F29CECB9C00C5EE5E /* SearchFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterViewController.swift; sourceTree = "<group>"; };
+		3A731B3129CEDA0800C5EE5E /* FilterCtaegoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCtaegoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		3A731B3329CEDA1200C5EE5E /* FilterGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterGenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A75DBEC28A0F41000084DB1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3A75DBF028A0F41D00084DB1 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		3A75DBF528A0F5CE00084DB1 /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
@@ -308,7 +313,6 @@
 		3AB1431E28F768080041C9CC /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		3AB1432128F76FBC0041C9CC /* MySearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchTableViewCell.swift; sourceTree = "<group>"; };
 		3AB1432228F76FBC0041C9CC /* MySearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySearchTableViewCell.xib; sourceTree = "<group>"; };
-		3AB1432528F88F860041C9CC /* MySearchViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySearchViewController+.swift"; sourceTree = "<group>"; };
 		3AB80F93290D64E800F032EC /* ModifyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifyProfile.storyboard; sourceTree = "<group>"; };
 		3AB9CFB928B4E84300A600DB /* WorkDetailInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoViewModel.swift; sourceTree = "<group>"; };
 		3AB9CFBA28B4E84300A600DB /* WorkDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoViewController.swift; sourceTree = "<group>"; };
@@ -748,6 +752,7 @@
 				3AB1431E28F768080041C9CC /* Search.storyboard */,
 				3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */,
 				3A5076DB29C6EEE900C7A5E9 /* SearchResultViewController.swift */,
+				3A731B2F29CECB9C00C5EE5E /* SearchFilterViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -757,8 +762,9 @@
 			children = (
 				3AB1432128F76FBC0041C9CC /* MySearchTableViewCell.swift */,
 				3AB1432228F76FBC0041C9CC /* MySearchTableViewCell.xib */,
-				3AB1432528F88F860041C9CC /* MySearchViewController+.swift */,
 				3AC934C7297779CF00868C33 /* FilterViewController.swift */,
+				3A731B3129CEDA0800C5EE5E /* FilterCtaegoryCollectionViewCell.swift */,
+				3A731B3329CEDA1200C5EE5E /* FilterGenreCollectionViewCell.swift */,
 			);
 			path = "Search+";
 			sourceTree = "<group>";
@@ -1201,10 +1207,12 @@
 				3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */,
 				3AB9CFC028B4E84300A600DB /* WorkDetailInfoViewController.swift in Sources */,
 				3AA56CFD28BDDDE000FB66F5 /* RecordViewController.swift in Sources */,
+				3A731B3429CEDA1200C5EE5E /* FilterGenreCollectionViewCell.swift in Sources */,
 				3AEDB70328DE03D100C3DB8D /* WorkInfo.swift in Sources */,
 				3AA56CFE28BDDDE000FB66F5 /* RecordInteractor.swift in Sources */,
 				3AA56CFC28BDDDE000FB66F5 /* RecordModels.swift in Sources */,
 				3AA56CFA28BDDDE000FB66F5 /* RecordWorker.swift in Sources */,
+				3A731B3229CEDA0800C5EE5E /* FilterCtaegoryCollectionViewCell.swift in Sources */,
 				3AE6A55A28ED9D0D008ED7DB /* CategoryModels.swift in Sources */,
 				20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */,
 				207C64792935DE3000D4F1FD /* UIFont+.swift in Sources */,
@@ -1231,6 +1239,7 @@
 				3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */,
 				3AF1DF88290C11260095673A /* ReviewModels.swift in Sources */,
 				3A6AE8EA2918911B00A9F520 /* InsiteStatisticsGraphChartView.swift in Sources */,
+				3A731B3029CECB9C00C5EE5E /* SearchFilterViewController.swift in Sources */,
 				3AA56CF928BDDDE000FB66F5 /* RecordPresenter.swift in Sources */,
 				3A8F863628C6277D0028B45C /* EditGenreWorker.swift in Sources */,
 				3A6AE88E2918901900A9F520 /* TableCellViewModel+.swift in Sources */,
@@ -1240,7 +1249,6 @@
 				20BD9CA82921F64B00BDAD13 /* CalendarViewController.swift in Sources */,
 				3A6AE8DA2918910300A9F520 /* InsightShareCell.swift in Sources */,
 				20CE3BF629274BBC009539DD /* CalendarSettingViewController.swift in Sources */,
-				3AB1432628F88F860041C9CC /* MySearchViewController+.swift in Sources */,
 				3A6AE8902918903700A9F520 /* InsightViewController.swift in Sources */,
 				3AEDB70C28DE07FC00C3DB8D /* PreReviewWorker.swift in Sources */,
 				AE556A2E29DC012B00611F18 /* UILabel+.swift in Sources */,
@@ -1537,7 +1545,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+
 				CURRENT_PROJECT_VERSION = 6;
+
 				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
@@ -1553,6 +1563,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+
 				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.recody.Recody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1572,7 +1583,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+
 				CURRENT_PROJECT_VERSION = 6;
+
 				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
@@ -1589,6 +1602,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.1;
+
 				PRODUCT_BUNDLE_IDENTIFIER = com.recody.Recody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

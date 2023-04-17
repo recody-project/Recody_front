@@ -27,6 +27,7 @@ enum RoutingLogic: RoutingLogicType {
         case addRecord
         case searchResult
         case testApi // 테스트 api
+        case notification
         var viewcontroller: UIViewController? {
             switch self {
             // UIStoryboard( 스토리보드 파일명 )
@@ -65,6 +66,8 @@ enum RoutingLogic: RoutingLogicType {
                 return UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "searchResult")
             case .testApi:
                 return UIStoryboard(name: "TestApi", bundle: nil).instantiateViewController(withIdentifier: "TestApiViewController")
+            case .notification:
+                return UIStoryboard(name: "Notification", bundle: nil).instantiateViewController(withIdentifier: "notification")
             }
         }
     }
