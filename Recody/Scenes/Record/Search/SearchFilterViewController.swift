@@ -30,13 +30,12 @@ extension SearchFilterViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoryCollectionView {
-            guard let collectionView = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCtaegoryCollectionViewCell.id, for: indexPath) as? FilterCategoryCollectionViewCell else { return UICollectionViewCell() }
+//            guard let collectionView = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCtaegoryCollectionViewCell.id, for: indexPath) as? FilterCategoryCollectionViewCell else { return UICollectionViewCell() }
         } else {
             guard let collectionView = collectionView.dequeueReusableCell(withReuseIdentifier: FilterGenreCollectionViewCell.id, for: indexPath) as? FilterGenreCollectionViewCell else { return UICollectionViewCell() }
         }
+        return UICollectionViewCell()
     }
-    
-    
 }
 
 class SearchFilterViewModel {

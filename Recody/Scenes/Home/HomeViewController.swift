@@ -26,74 +26,20 @@ class HomeViewController: CommonVC {
         Work(id: "7", name: "스파이더맨", image: "spiderman"),
         Work(id: "8", name: "After Like", image: "afterLike")
     ]
-    
-    let categories: [Category] = [
-        Category(name: "전체", image: "all"),
-        Category(name: "책", image: "book"),
-        Category(name: "영화", image: "movie"),
-        Category(name: "드라마", image: "drama"),
-        Category(name: "음악", image: "music")
-    ]
-    
-    var indexSelected: Int = 0
-    
-    @IBOutlet weak var categoryStackView: UIStackView!
-    @IBOutlet var customCategories: [CustomCategory]!
+
     @IBOutlet weak var workScrollView: UIScrollView!
     @IBOutlet weak var workStackView: UIStackView!
-    @IBOutlet var workFilterButton: [UIButton]!
-    let buttonArray: [UIColor] = [UIColor(hexString: "#3EABB7"), UIColor(hexString: "#F38A5E"), UIColor(hexString: "#F6D266"), UIColor(hexString: "#E77D82"), UIColor(hexString: "#89AC5C")]
-    
-    @IBAction func touchButton(_ sender: UIButton) {
-        if indexSelected != nil {
-            if !sender.isSelected {
-                for index in workFilterButton.indices {
-                    workFilterButton[index].isSelected = false
-                    workFilterButton[index].backgroundColor = .clear
-                    workFilterButton[index].borderWidth = 1
-                }
-                sender.isSelected = true
-                sender.borderWidth = 0
-                sender.backgroundColor = buttonArray[sender.tag]
-                indexSelected = workFilterButton.firstIndex(of: sender) ?? 0
-            } else {
-                sender.isSelected = false
-                indexSelected = 0
-            }
-        } else {
-            sender.isSelected = true
-            indexSelected = workFilterButton.firstIndex(of: sender) ?? 0
-        }
-    }
+    @IBOutlet weak var notificationButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        setCategoryStackView()
         setWorkView()
     }
     
     func setUp() {
         self.interactor?.just(UseCase.setting).drop()
-        
-        for index in workFilterButton.indices {
-            workFilterButton[index].setTitleColor(.white, for: .selected)
-            workFilterButton[index].setTitleColor(UIColor(hexString: "#CECECE"), for: .normal)
-        }
-        
-        workFilterButton[0].isSelected = true
-        workFilterButton[0].backgroundColor = buttonArray[0]
-        workFilterButton[0].borderWidth = 0
-    }
-    
-    func setCategoryStackView() {
-        var index = 0
-        for value in customCategories {
-            value.setData(with: categories[index])
-            value.tag = 100
-            value.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
-            index += 1
-        }
+        self.notificationButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
     }
     
     func setWorkView() {
@@ -123,6 +69,7 @@ class HomeViewController: CommonVC {
         case moveReviewing = 107
         case workCategory = 108
         case pushWorkDetailInfo = 109
+        case pushNotification = 110
         var number: Int {
             return self.rawValue
         }
@@ -132,9 +79,9 @@ class HomeViewController: CommonVC {
         guard let useCase = UseCase(rawValue: orderNumber) else { return }
         switch useCase {
         case .setting:
-            let email = "Emelia_Harvey@hotmail.com"
-            let password = "newPassword"
-            self.interactor?.just(useCase).api(.login(email, password))
+//            let email = "Emelia_Harvey@hotmail.com"
+//            let password = "newPassword"
+//            self.interactor?.just(useCase).api(.login(email, password))
     
             self.interactor?.just(useCase).api(.getUserInfomation)
             self.interactor?.just(useCase).api(.getMyRecentContinuingRecord)
@@ -143,6 +90,8 @@ class HomeViewController: CommonVC {
             router?.pushViewController(RoutingLogic.Navigation.recordList, dataStore: nil)
         case .pushWorkDetailInfo:
             router?.pushViewController(RoutingLogic.Navigation.workDetailInfo, dataStore: nil)
+        case .pushNotification:
+            router?.pushViewController(RoutingLogic.Navigation.notification, dataStore: nil)
         default:
             break
         }

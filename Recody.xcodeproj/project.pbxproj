@@ -1563,11 +1563,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-<<<<<<< HEAD
-				MARKETING_VERSION = 1.2.0;
-=======
+
 				MARKETING_VERSION = 1.0.1;
->>>>>>> develop
 				PRODUCT_BUNDLE_IDENTIFIER = com.recody.Recody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1586,11 +1583,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-<<<<<<< HEAD
-				CURRENT_PROJECT_VERSION = 2;
-=======
+
 				CURRENT_PROJECT_VERSION = 6;
->>>>>>> develop
+
 				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
@@ -1606,11 +1601,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-<<<<<<< HEAD
-				MARKETING_VERSION = 1.2.0;
-=======
 				MARKETING_VERSION = 1.0.1;
->>>>>>> develop
+
 				PRODUCT_BUNDLE_IDENTIFIER = com.recody.Recody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

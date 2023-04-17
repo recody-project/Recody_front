@@ -29,7 +29,7 @@ class FilterGenreCollectionViewCell: UICollectionViewCell {
             button.isSelected = false
         } else {
             button.isSelected = true
-            button.backgroundColor = UIColor(red: 0.996, green: 0.953, blue: 0.937, alpha: 1).cgColor
+            button.backgroundColor = UIColor(red: 0.996, green: 0.953, blue: 0.937, alpha: 1)
             button.layer.borderColor = UIColor(red: 0.953, green: 0.541, blue: 0.369, alpha: 1).cgColor
         }
     }
