@@ -11,7 +11,7 @@ import UIKit
 protocol LoginMethodViewControllerDelegate{
     func findID()
     func loginEmail()
-    func loginSNS(index:Int)
+    func loginSNS(_ method:LoginMethodViewController.LoginMethod)
 }
 
 class LoginMethodViewController: UIViewController {
@@ -24,6 +24,13 @@ class LoginMethodViewController: UIViewController {
     @IBOutlet weak var btnSNS4: UIImageView!
     @IBOutlet weak var btnEmail: UIView!
     @IBOutlet weak var btnFindID: UIStackView!
+    
+    enum LoginMethod : Int {
+        case kakao = 0
+        case facebook = 1
+        case naver = 2
+        case apple = 3
+    }
     
     static func getInstanse() -> LoginMethodViewController{
         guard let vc = UIStoryboard(name: "LoginMethodViewController", bundle: nil).instantiateInitialViewController() as? LoginMethodViewController
@@ -52,11 +59,11 @@ class LoginMethodViewController: UIViewController {
         btnFindID.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(actionFindID)))
     }
     @objc func loginSNS(_ sender:UITapGestureRecognizer){
-        if let tag = sender.view?.tag {
-            modal?.dismissController({
-                self.delegate?.loginSNS(index: tag)
-            })
-        }
+        guard let tag = sender.view?.tag ,
+              let method = LoginMethod(rawValue: tag) else { return }
+        modal?.dismissController({
+            self.delegate?.loginSNS(method)
+        })
     }
     @objc func loginEmail(){
         modal?.dismissController({

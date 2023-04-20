@@ -29,7 +29,7 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
         case nextMonth = 101 // 다음달
         case previousMonth = 102 // 이전달
         case download = 103 // 다운로드
-        case setting = 104 // 셋팅
+        case insight = 104 // 인사이트
         var number: Int {
             return self.rawValue
         }
@@ -43,11 +43,11 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
             case .previousMonth:
                 self.viewModel.previousMonth()
             break
-            case .download:
-                self.present(SomeViewController(), animated: true)
+//            case .download:
+//                self.present(SomeViewController(), animated: true)
             break
-            case .setting:
-                self.router?.pushViewController(RoutingLogic.Navigation.setting, dataStore: nil)
+            case .insight:
+                self.router?.pushViewController(RoutingLogic.Navigation.insight, dataStore: nil)
             break
             default:
             break
@@ -78,7 +78,7 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
         btnPreviousMonth.tag = UseCase.previousMonth.rawValue
         imgSetting.isUserInteractionEnabled = true
         imgDonwload.isUserInteractionEnabled = true
-        imgSetting.tag = UseCase.setting.rawValue
+        imgSetting.tag = UseCase.insight.rawValue
         imgDonwload.tag = UseCase.download.rawValue
         [imgSetting, imgDonwload, btnNextMonth, btnPreviousMonth].forEach({
             $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))

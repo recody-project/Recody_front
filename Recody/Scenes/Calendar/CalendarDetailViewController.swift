@@ -12,6 +12,8 @@ class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
     var tableList: [TableCellViewModel] = [TableCellViewModel]()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var btnDate: UILabel!
+    
     enum CalendarDetailTableCellType: Int {
         case work = 1
         var name: String {
@@ -23,6 +25,9 @@ class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
         var number: Int {
             return self.rawValue
         }
+    }
+    func bind(_ data: DataStoreType) {
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

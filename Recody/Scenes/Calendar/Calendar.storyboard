@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wCM-NB-JGj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,17 +12,17 @@
         <!--Calendar View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="CalendarViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="calendar" id="Y6W-OH-hqX" customClass="CalendarViewController" customModule="Recody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hC7-xf-6CI">
-                                <rect key="frame" x="20" y="249" width="374" height="564"/>
+                                <rect key="frame" x="20" y="205" width="374" height="608"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYU-gd-kto">
-                                <rect key="frame" x="0.0" y="92" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캘린더" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AF9-jE-gP2">
                                         <rect key="frame" x="186" y="10.5" width="42" height="19.5"/>
@@ -30,7 +30,7 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BzZ-F4-laX">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_insight" translatesAutoresizingMaskIntoConstraints="NO" id="BzZ-F4-laX">
                                         <rect key="frame" x="372" y="10" width="20" height="20"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -38,8 +38,8 @@
                                             <constraint firstAttribute="height" constant="20" id="tel-6P-DF4"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="laptopcomputer.and.arrow.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Aeo-vK-FM1">
-                                        <rect key="frame" x="332" y="9.5" width="20" height="18.5"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_download" translatesAutoresizingMaskIntoConstraints="NO" id="Aeo-vK-FM1">
+                                        <rect key="frame" x="332" y="10" width="20" height="20"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Aeo-vK-FM1" secondAttribute="height" multiplier="1:1" id="Dmn-jX-jsJ"/>
@@ -60,25 +60,25 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn4-Ll-yvr">
-                                <rect key="frame" x="63" y="157" width="35.5" height="19.5"/>
+                                <rect key="frame" x="63" y="113" width="35.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERr-AR-VWK">
-                                <rect key="frame" x="106.5" y="152.5" width="11.5" height="24"/>
+                                <rect key="frame" x="106.5" y="108.5" width="11.5" height="24"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ln6-An-w9v">
-                                <rect key="frame" x="120" y="157" width="14" height="19.5"/>
+                                <rect key="frame" x="120" y="113" width="14" height="19.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sic-aJ-jQa">
-                                <rect key="frame" x="20" y="154" width="25" height="25"/>
+                                <rect key="frame" x="20" y="110" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="AGa-fe-s3v"/>
                                     <constraint firstAttribute="height" constant="25" id="JG2-WL-c3V"/>
@@ -88,7 +88,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71q-Sd-5Tc">
-                                <rect key="frame" x="152" y="154" width="25" height="25"/>
+                                <rect key="frame" x="152" y="110" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="ZgH-zQ-Tev"/>
                                     <constraint firstAttribute="width" constant="25" id="zSU-1s-Fkw"/>
@@ -98,7 +98,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pcs-Ff-zhg">
-                                <rect key="frame" x="20" y="205" width="374" height="44"/>
+                                <rect key="frame" x="20" y="161" width="374" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqq-rP-LaZ">
                                         <rect key="frame" x="0.0" y="0.0" width="53.5" height="44"/>
@@ -246,6 +246,7 @@
                     </view>
                     <connections>
                         <outlet property="btnBack" destination="1hg-YM-rGE" id="jp2-qt-avy"/>
+                        <outlet property="btnDate" destination="1jg-aJ-yua" id="vPG-7c-2uo"/>
                         <outlet property="tableView" destination="oWu-hH-S5X" id="ko7-Kq-oVn"/>
                     </connections>
                 </viewController>
@@ -444,32 +445,12 @@
             </objects>
             <point key="canvasLocation" x="2718.840579710145" y="91.741071428571431"/>
         </scene>
-        <!--달력-->
-        <scene sceneID="s0P-OP-Wd0">
-            <objects>
-                <navigationController storyboardIdentifier="calendar" automaticallyAdjustsScrollViewInsets="NO" id="wCM-NB-JGj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="달력" image="calendarImage" id="6eH-lq-Ec5"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="abb-aV-sVj">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Uio-Rs-SIf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QQ9-i5-2HC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="60.869565217391312" y="91.741071428571431"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="calendarImage" width="20" height="20"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
-        <image name="gearshape" catalog="system" width="128" height="123"/>
-        <image name="laptopcomputer.and.arrow.down" catalog="system" width="128" height="83"/>
+        <image name="ic_download" width="20" height="18"/>
+        <image name="ic_insight" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

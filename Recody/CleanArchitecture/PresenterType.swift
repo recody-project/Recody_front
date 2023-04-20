@@ -17,15 +17,18 @@ protocol PresenterType {
     func responseSuccess( orderNumber: Int, dataStore: DataStoreType? )
     func responseErorr(orderNumber: Int,msg:String?)
     func drop( orderNumber:Int )
-    var alertService : AlertServiceType { get }
+    var alertService: AlertServiceType { get }
+    var animator: AnimatorType { get }
     init(context: UIViewController)
 }
 
 class SimplePresenter: PresenterType {
     var alertService: AlertServiceType
+    var animator: AnimatorType
     
     required init(context: UIViewController) {
         self.alertService = AlertService(context)
+        self.animator = Animator(context)
     }
     var delegate: PresentationLogicType?
 

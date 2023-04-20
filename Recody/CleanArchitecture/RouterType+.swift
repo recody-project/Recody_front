@@ -110,11 +110,12 @@ class SimpleRouter: RouterType {
         return false
     }
     private func serachNavigationController() -> UINavigationController? {
-        if context.parent is UINavigationController {
-            return context.parent as? UINavigationController
-        }
+        return context.navigationController
+//        if context.parent is UINavigationController {
+//            return context.parent as? UINavigationController
+//        }
         print("serachNavigationController :: UINavigationController is nil  ")
-        return nil
+//        return nil
     }
     func tabbarMovePreviousPage(_ index:Int?){
         if let index = index {

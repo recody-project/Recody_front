@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import SnapKit
+import AuthenticationServices
+
 class LoginViewController :CommonVC {
     @IBOutlet weak var lbFindId: UILabel!
     @IBOutlet weak var btnLogin: UIButton!
@@ -166,8 +168,20 @@ extension LoginViewController: LoginMethodViewControllerDelegate {
     func loginEmail() {
         self.router?.pushViewController(RoutingLogic.Navigation.loginEmail, dataStore: nil)
     }
-    func loginSNS(index:Int) {
-        self.presenter?.alertService.showToast("SNS Login(\(index))")
+    func loginSNS(_ method: LoginMethodViewController.LoginMethod) {
+        switch method {
+//        case .kakao:
+//        break
+//        case .facebook:
+//        break
+//        case .naver:
+//        break
+//        case .apple:
+//            self.presenter?.alertService.showToast("SNS Login(\(index))")
+//        break
+        default:
+            self.presenter?.alertService.showToast("SNS Login(\(method))")
+        }
     }
 }
 

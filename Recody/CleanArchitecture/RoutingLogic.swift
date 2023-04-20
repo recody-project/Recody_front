@@ -16,6 +16,7 @@ enum RoutingLogic: RoutingLogicType {
         case registerMember
         case home
         case insight
+        case insightMonthReport // insight -> 타이틀 햄버거 버튼으로 접근
         case record
         case setting
         case workDetailInfo
@@ -44,6 +45,9 @@ enum RoutingLogic: RoutingLogicType {
                 return UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "home")
             case .insight:
                 return UIStoryboard(name: "Insight", bundle: nil).instantiateViewController(withIdentifier: "insight")
+            case .insightMonthReport:
+                let vc = UIStoryboard(name: "Insight", bundle: nil).instantiateViewController(withIdentifier: "monthReport")
+                return vc
             case .record:
                 return RecordViewController()
             case .setting:
