@@ -45,10 +45,10 @@ class LoginMethodViewController: UIViewController {
         setup()
     }
     func setup() {
-        btnSNS1.tag = 1
-        btnSNS2.tag = 2
-        btnSNS3.tag = 3
-        btnSNS4.tag = 4
+        btnSNS1.tag = 0
+        btnSNS2.tag = 1
+        btnSNS3.tag = 2
+        btnSNS4.tag = 3
         [btnSNS1,btnSNS2,btnSNS3,btnSNS4].forEach({
             $0?.isUserInteractionEnabled = true
             $0?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(loginSNS)))

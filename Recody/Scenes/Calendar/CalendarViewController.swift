@@ -61,6 +61,9 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
     //테이블 셀 클릭이벤트
     func eventFromTableCell(code: Int,index: Int) {
 //        self.interactor?.just(UseCase.moveDetail).api(.checkValidEmail("asd"))
+        let vc = RoutingLogic.Navigation.calendarDetail.viewcontroller as? CalendarDetailViewController
+//        vc?.viewModel.data
+        
         self.router?.pushViewController(RoutingLogic.Navigation.calendarDetail, dataStore: nil)
     }
     override func viewDidLoad() {
@@ -83,6 +86,12 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
         [imgSetting, imgDonwload, btnNextMonth, btnPreviousMonth].forEach({
             $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
         })
+        
+        self.viewModel.recordImgs[1] = "common (1)"
+        self.viewModel.recordImgs[11] = "common (2)"
+        self.viewModel.recordImgs[15] = "common (3)"
+        self.viewModel.recordImgs[16] = "common (4)"
+        self.viewModel.recordImgs[20] = "common (1)"
     }
     @objc func clickEvent(_ sender: UITapGestureRecognizer){
         guard let tag = sender.view?.tag else { return }
@@ -107,10 +116,14 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
         lbYear.text = "\(viewModel.selectYear)"
         lbMonth.text = "\(viewModel.selectMonth)"
         tableList.removeAll()
+        
+        
+        
         viewModel.weeks.forEach({ week in
             tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: ["week": week,
                                                                                                   "month": viewModel.selectMonth,
-                                                                                                  "year": viewModel.selectYear]))
+                                                                                                  "year": viewModel.selectYear,
+                                                                                                  "img":viewModel.recordImgs]))
         })
         tableView.reloadData()
     }

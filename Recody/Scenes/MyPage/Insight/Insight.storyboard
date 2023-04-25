@@ -123,7 +123,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="O5C-hl-vKw" firstAttribute="centerX" secondItem="HuI-dY-MrM" secondAttribute="centerX" id="El3-7W-3gh"/>
                                     <constraint firstItem="NVO-aq-b4a" firstAttribute="width" secondItem="NVO-aq-b4a" secondAttribute="height" multiplier="1:1" id="JwF-BJ-Ehy"/>
@@ -163,6 +163,7 @@
                         <outlet property="lBNickName" destination="eGq-Kp-gCk" id="wXs-Nj-U3f"/>
                         <outlet property="lcInfoViewHeight" destination="fKo-ET-I6E" id="B5Z-SS-Qkz"/>
                         <outlet property="tableView" destination="Xyo-7w-c8H" id="eyF-Ou-zlg"/>
+                        <outlet property="vwInfo" destination="gXd-BO-Yxe" id="Ew5-HO-pwS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ly5-FU-bI4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

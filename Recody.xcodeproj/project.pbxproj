@@ -156,6 +156,10 @@
 		3AEED26029C8AD6800D02F3F /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEED25F29C8AD6800D02F3F /* NotificationTableViewCell.swift */; };
 		3AF1DF88290C11260095673A /* ReviewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1DF87290C11260095673A /* ReviewModels.swift */; };
 		981DE2FA71CB8639568FDE47 /* Pods_Recody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F5474CB0129800D7BF6EF1 /* Pods_Recody.framework */; };
+		AE1D357C29F791A5008DEB48 /* DatePickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D357B29F791A5008DEB48 /* DatePickerService.swift */; };
+		AE1D357E29F7B022008DEB48 /* DatePcikerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE1D357D29F7B022008DEB48 /* DatePcikerView.xib */; };
+		AE1D358029F7B029008DEB48 /* DatePcikerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D357F29F7B029008DEB48 /* DatePcikerView.swift */; };
+		AE4A0E0C29F24E5D003F7283 /* SNSLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4A0E0B29F24E5D003F7283 /* SNSLoginService.swift */; };
 		AE556A2A29DBFEAE00611F18 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE556A2929DBFEAE00611F18 /* LoginViewController.swift */; };
 		AE556A2C29DBFEC700611F18 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE556A2B29DBFEC700611F18 /* login.storyboard */; };
 		AE556A2E29DC012B00611F18 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE556A2D29DC012B00611F18 /* UILabel+.swift */; };
@@ -351,6 +355,10 @@
 		3AEED25F29C8AD6800D02F3F /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		3AF1DF87290C11260095673A /* ReviewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModels.swift; sourceTree = "<group>"; };
 		8049CB087E9F5BA11A8F193B /* Pods-Recody.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recody.release.xcconfig"; path = "Target Support Files/Pods-Recody/Pods-Recody.release.xcconfig"; sourceTree = "<group>"; };
+		AE1D357B29F791A5008DEB48 /* DatePickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerService.swift; sourceTree = "<group>"; };
+		AE1D357D29F7B022008DEB48 /* DatePcikerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePcikerView.xib; sourceTree = "<group>"; };
+		AE1D357F29F7B029008DEB48 /* DatePcikerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePcikerView.swift; sourceTree = "<group>"; };
+		AE4A0E0B29F24E5D003F7283 /* SNSLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSLoginService.swift; sourceTree = "<group>"; };
 		AE556A2929DBFEAE00611F18 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AE556A2B29DBFEC700611F18 /* login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		AE556A2D29DC012B00611F18 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
@@ -689,7 +697,9 @@
 		3A8D1768289BBEB900B260D1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AE4A0E0A29F24E47003F7283 /* SNSLogin */,
 				3A645E89297209AF00F4BD9A /* KeyChain */,
+				AE1D357A29F79174008DEB48 /* Dialog */,
 				AE5C21F929F10793009ACD27 /* Animation */,
 				2015B3082918F27B00DB725D /* ApiService */,
 				20CE1710292DB67D00D77152 /* AlertService.swift */,
@@ -924,6 +934,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AE1D357A29F79174008DEB48 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				AE1D357B29F791A5008DEB48 /* DatePickerService.swift */,
+				AE1D357D29F7B022008DEB48 /* DatePcikerView.xib */,
+				AE1D357F29F7B029008DEB48 /* DatePcikerView.swift */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
+		AE4A0E0A29F24E47003F7283 /* SNSLogin */ = {
+			isa = PBXGroup;
+			children = (
+				AE4A0E0B29F24E5D003F7283 /* SNSLoginService.swift */,
+			);
+			path = SNSLogin;
+			sourceTree = "<group>";
+		};
 		AE556A2829DBFEA000611F18 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -1124,6 +1152,7 @@
 				3A6AE8D22918910300A9F520 /* InsightHallOfFameCell.xib in Resources */,
 				3AEDB71228DE080600C3DB8D /* PreReview.storyboard in Resources */,
 				3A75DBF628A0F5CE00084DB1 /* List.storyboard in Resources */,
+				AE1D357E29F7B022008DEB48 /* DatePcikerView.xib in Resources */,
 				3AB9CFC328B4E86100A600DB /* WorkDetailInfo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1225,6 +1254,7 @@
 				3AA56CFD28BDDDE000FB66F5 /* RecordViewController.swift in Sources */,
 				3A731B3429CEDA1200C5EE5E /* FilterGenreCollectionViewCell.swift in Sources */,
 				3AEDB70328DE03D100C3DB8D /* WorkInfo.swift in Sources */,
+				AE4A0E0C29F24E5D003F7283 /* SNSLoginService.swift in Sources */,
 				3AA56CFE28BDDDE000FB66F5 /* RecordInteractor.swift in Sources */,
 				3AA56CFC28BDDDE000FB66F5 /* RecordModels.swift in Sources */,
 				3AA56CFA28BDDDE000FB66F5 /* RecordWorker.swift in Sources */,
@@ -1243,6 +1273,7 @@
 				3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */,
 				20CE1711292DB67D00D77152 /* AlertService.swift in Sources */,
 				2015B30C2918F37500DB725D /* ApiCommand.swift in Sources */,
+				AE1D357C29F791A5008DEB48 /* DatePickerService.swift in Sources */,
 				3A75DBEE28A0F41000084DB1 /* TabBarController.swift in Sources */,
 				3A6AE8D62918910300A9F520 /* InsightFirstRecordCell.swift in Sources */,
 				AE556A3029DC068100611F18 /* LoginMethodViewController.swift in Sources */,
@@ -1283,6 +1314,7 @@
 				3AEDB70E28DE07FC00C3DB8D /* PreReviewModels.swift in Sources */,
 				20C6F9FE29077B6C009296E3 /* PresenterType.swift in Sources */,
 				3A9D6F2C29B4789A00F4C2F4 /* WorkListView.swift in Sources */,
+				AE1D358029F7B029008DEB48 /* DatePcikerView.swift in Sources */,
 				3AD4F11F28C08BA800598D28 /* TabHeader.swift in Sources */,
 				3AEDB70B28DE07FC00C3DB8D /* PreReviewPresenter.swift in Sources */,
 				AEFDD746299B422E00A5EB77 /* TestApiDetailViewController.swift in Sources */,
@@ -1564,7 +1596,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Recody/Recody.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;
@@ -1600,7 +1632,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Recody/Recody.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = QQJGJ3398X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recody/Info.plist;

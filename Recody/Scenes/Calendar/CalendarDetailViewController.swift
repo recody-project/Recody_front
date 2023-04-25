@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
-    var viewModel = CalendarViewModel()
+    var viewModel = CalendarDetailViewModel()
     var tableList: [TableCellViewModel] = [TableCellViewModel]()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnBack: UIButton!
@@ -113,4 +113,5 @@ extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSour
     }
 }
 class CalendarDetailViewModel {
+    var date = Date()
 }

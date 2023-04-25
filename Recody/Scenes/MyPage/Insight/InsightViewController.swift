@@ -78,6 +78,7 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
     @IBOutlet weak var btnHambuger: UIImageView!
     
     @IBOutlet weak var lcInfoViewHeight: NSLayoutConstraint! // 90.0 , 0.1
+    @IBOutlet weak var vwInfo:UIView!
     func bind(_ data: DataStoreType) {
     }
     func routing(orderNumber: Int) {
@@ -149,10 +150,34 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
             case .hambuger:
                 self.router?.pushViewController(RoutingLogic.Navigation.insightMonthReport, dataStore: nil)
             case .foldEnable:
-//                self.presenter?.animator.fold(changeHeight: 0.1, heightConstraint: lcInfoViewHeight)
+                //중복 실행을 방지하기위한 플래그
+                //반드시 한 애니메이션당 한개씩 만들것
+                if self.viewModel.isAnimateFold { return }
+                //단순 길이 변화 를 할떄 constant값을 조절할것
+                self.lcInfoViewHeight.constant = 0.1
+                self.presenter?.animator.animate(0.3, animationBlock: {
+                    // 애니메이션이 실행되고 실행 플래그 true
+                    self.viewModel.isAnimateFold = true
+                    // animationBlock에서는 frame 속성에 대한 변화값을 설정할것
+                    self.vwInfo.alpha = 0.0
+                    // 반드시 호출해야 애니메이션이 실행됨
+                    self.view.layoutIfNeeded()
+                }, { _ in
+                    // 실행이 끝나고 난 시점
+                    // 실행 플래그 false
+                    self.viewModel.isAnimateFold = false
+                })
                 break
             case .foldDisable:
-                print("foldAnimation")
+                if self.viewModel.isAnimateFold { return }
+                self.lcInfoViewHeight.constant = 90.0
+                self.presenter?.animator.animate(0.3, animationBlock: {
+                    self.viewModel.isAnimateFold = true
+                    self.vwInfo.alpha = 1.0
+                    self.view.layoutIfNeeded()
+                }, { _ in
+                    self.viewModel.isAnimateFold = false
+                })
             default:
                 print("처리안된 커맨드 : \(command)")
             }
@@ -225,42 +250,11 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
         tableView.reloadData()
     }
     
-    
-    func foldView(_ isActive:Bool){
-////        vwHead
-////        vwHeadBackground
-////        vw1Height
-//        if isActive {
-//            if isAnimateFold { return }
-//            isAnimateFold = true
-//            bannerHeight.constant = 0.1
-//            UIView.animate(withDuration: 0.3) {
-////                self.vwHead.alpha = 0.0
-////                self.vwHeadBackground.alpha = 0.0
-//                self.pageControl.alpha = 0.0
-//                self.view.layoutIfNeeded()
-//            }completion: { act in
-//                self.isAnimateFold = false
-//            }
-//
-//        }else {
-//            if isAnimateFold { return }
-//            isAnimateFold = true
-//            bannerHeight.constant = 175
-//            UIView.animate(withDuration: 0.3) {
-////                self.vwHead.alpha = 1.0
-//                self.pageControl.alpha = 1.0
-//                self.view.layoutIfNeeded()
-//            }completion: { act in
-//                self.isAnimateFold = false
-//            }
-//        }
-    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y <= 0 {
            interactor?.just(UserCace.foldDisable).drop()
         } else {
-            interactor?.just(UserCace.foldDisable).drop()
+           interactor?.just(UserCace.foldEnable).drop()
         }
     }
 }
