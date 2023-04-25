@@ -26,7 +26,9 @@ class SimpleWoker: WorkerType {
         self.order = order
         return self
     }
-
+//    func loginService()->SNSLoginServiceType{
+        
+//    }
     func api(_ command: ApiCommand ) {
         ApiClient.request(command: command, { result in
             self.delegate?.complete(orderNumber: self.order, result: result)

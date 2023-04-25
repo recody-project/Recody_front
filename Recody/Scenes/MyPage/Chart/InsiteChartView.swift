@@ -33,7 +33,7 @@ class CombinChart : UIView,ChartViewDelegate{
                                  .green.withAlphaComponent(0.5),
                                  .yellow.withAlphaComponent(0.5),
                                  .purple.withAlphaComponent(0.5)]
-    let barColor : UIColor = UIColor.init(hexString: "#666FC1")
+    let barColor : UIColor = UIColor.init(hexString: "#000000")
     
     convenience init() {
         self.init(frame: CGRect())
@@ -107,7 +107,7 @@ class CombinChart : UIView,ChartViewDelegate{
         stackView.snp.makeConstraints({
             $0.left.equalToSuperview().offset(10)
             $0.right.equalToSuperview().offset(-10)
-            $0.bottom.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(10)
             $0.height.equalTo(20)
         })
         

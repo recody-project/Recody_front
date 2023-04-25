@@ -29,7 +29,7 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
         case nextMonth = 101 // 다음달
         case previousMonth = 102 // 이전달
         case download = 103 // 다운로드
-        case setting = 104 // 셋팅
+        case insight = 104 // 인사이트
         var number: Int {
             return self.rawValue
         }
@@ -43,11 +43,11 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
             case .previousMonth:
                 self.viewModel.previousMonth()
             break
-            case .download:
-                self.present(SomeViewController(), animated: true)
+//            case .download:
+//                self.present(SomeViewController(), animated: true)
             break
-            case .setting:
-                self.router?.pushViewController(RoutingLogic.Navigation.setting, dataStore: nil)
+            case .insight:
+                self.router?.pushViewController(RoutingLogic.Navigation.insight, dataStore: nil)
             break
             default:
             break
@@ -61,6 +61,9 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
     //테이블 셀 클릭이벤트
     func eventFromTableCell(code: Int,index: Int) {
 //        self.interactor?.just(UseCase.moveDetail).api(.checkValidEmail("asd"))
+        let vc = RoutingLogic.Navigation.calendarDetail.viewcontroller as? CalendarDetailViewController
+//        vc?.viewModel.data
+        
         self.router?.pushViewController(RoutingLogic.Navigation.calendarDetail, dataStore: nil)
     }
     override func viewDidLoad() {
@@ -78,11 +81,17 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
         btnPreviousMonth.tag = UseCase.previousMonth.rawValue
         imgSetting.isUserInteractionEnabled = true
         imgDonwload.isUserInteractionEnabled = true
-        imgSetting.tag = UseCase.setting.rawValue
+        imgSetting.tag = UseCase.insight.rawValue
         imgDonwload.tag = UseCase.download.rawValue
         [imgSetting, imgDonwload, btnNextMonth, btnPreviousMonth].forEach({
             $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
         })
+        
+        self.viewModel.recordImgs[1] = "common (1)"
+        self.viewModel.recordImgs[11] = "common (2)"
+        self.viewModel.recordImgs[15] = "common (3)"
+        self.viewModel.recordImgs[16] = "common (4)"
+        self.viewModel.recordImgs[20] = "common (1)"
     }
     @objc func clickEvent(_ sender: UITapGestureRecognizer){
         guard let tag = sender.view?.tag else { return }
@@ -107,10 +116,14 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
         lbYear.text = "\(viewModel.selectYear)"
         lbMonth.text = "\(viewModel.selectMonth)"
         tableList.removeAll()
+        
+        
+        
         viewModel.weeks.forEach({ week in
             tableList.append(TableCellViewModel(type: CalendarTableCellType.week.rawValue, data: ["week": week,
                                                                                                   "month": viewModel.selectMonth,
-                                                                                                  "year": viewModel.selectYear]))
+                                                                                                  "year": viewModel.selectYear,
+                                                                                                  "img":viewModel.recordImgs]))
         })
         tableView.reloadData()
     }
