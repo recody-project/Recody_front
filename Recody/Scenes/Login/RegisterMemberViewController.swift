@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-class RegisterMemberViewController: CommonVC {
+class RegisterMemberViewController: UIViewController {
     let viewModel = RegisterMemberViewModel()
     
     private enum UseCase: Int,OrderType {
@@ -72,16 +72,23 @@ class RegisterMemberViewController: CommonVC {
     @IBOutlet weak var btnRegister: UIButton!
     
     @IBAction func backAction(_ sender: Any) {
-        self.router?.popViewContoller(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         update()
     }
-    override func display(orderNumber: Int) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        
+    static func getInstanse() -> RegisterMemberViewController{
+        guard let vc =  UIStoryboard(name: "registerMember", bundle: nil).instantiateInitialViewController() as? RegisterMemberViewController
+        else {
+            fatalError()
+        }
+        return vc
+    }
+    @objc func clickEvent(_ sender: UITapGestureRecognizer) {
+        guard let tag = sender.view?.tag,
+              let useCase = UseCase(rawValue: tag) else { return }
         switch useCase {
         case .inputEmailShow:
             viewModel.showEmailText = true
@@ -109,36 +116,11 @@ class RegisterMemberViewController: CommonVC {
                 let passwordConfirm = viewModel.passwordConfirmText
                 let name = ""
                 let nickName = viewModel.nickNameText
-                self.interactor?.just(useCase).api(.registerMemeber(email,password,passwordConfirm,name,nickName))
+                ServiceProvider.shaerd.apiService.send(.registerMemeber(email,password,passwordConfirm,name,nickName))
             }
         default:
-            self.presenter?.alertService.showToast("\(useCase)")
+        break
         }
-        update()
-    }
-    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        
-        switch useCase {
-        default:
-            if let data = dataStore?.data(useCase)?.fetch(DefaultDataModel.self) {
-                print(dataStore)
-            }
-        }
-    }
-    override func displayErorr(orderNumber: Int, msg: String?) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-//        case .register:
-//            self.presenter?.alertService.show(title: "알림", msg: "\(msg)", actions: <#T##[UIAlertAction]#>)
-        default:
-            print("\(useCase)  :: \(msg)")
-        }
-    }
-    @objc func clickEvent(_ sender: UITapGestureRecognizer) {
-        guard let tag = sender.view?.tag,
-              let useCase = UseCase(rawValue: tag) else { return }
-        self.interactor?.just(useCase).drop()
     }
     func setup() {
 //        btnLogin.tag = UseCase.loginAction.rawValue
@@ -203,23 +185,23 @@ class RegisterMemberViewController: CommonVC {
     }
     func checkInput() -> Bool {
         if viewModel.helpEmailText != "" {
-            self.presenter?.alertService.show(title: "알림", msg: viewModel.helpEmailText, actions: [UIAlertAction(title: "확인", style: .default)])
+            ServiceProvider.shaerd.alertService(self).show(title: "알림", msg: viewModel.helpEmailText, actions: [UIAlertAction(title: "확인", style: .default)])
             return false
         }
         if viewModel.helpPwText != "" {
-            self.presenter?.alertService.show(title: "알림", msg: viewModel.helpPwText, actions: [UIAlertAction(title: "확인", style: .default)])
+            ServiceProvider.shaerd.alertService(self).show(title: "알림", msg: viewModel.helpPwText, actions: [UIAlertAction(title: "확인", style: .default)])
             return false
         }
         if viewModel.helpPwConfirmText != "" {
-            self.presenter?.alertService.show(title: "알림", msg: viewModel.helpPwConfirmText, actions: [UIAlertAction(title: "확인", style: .default)])
+            ServiceProvider.shaerd.alertService(self).show(title: "알림", msg: viewModel.helpPwConfirmText, actions: [UIAlertAction(title: "확인", style: .default)])
             return false
         }
         if viewModel.helpNickNameText != "" {
-            self.presenter?.alertService.show(title: "알림", msg: viewModel.helpNickNameText, actions: [UIAlertAction(title: "확인", style: .default)])
+            ServiceProvider.shaerd.alertService(self).show(title: "알림", msg: viewModel.helpNickNameText, actions: [UIAlertAction(title: "확인", style: .default)])
             return false
         }
         if viewModel.helpPhoneText != "" {
-            self.presenter?.alertService.show(title: "알림", msg: viewModel.helpPhoneText, actions: [UIAlertAction(title: "확인", style: .default)])
+            ServiceProvider.shaerd.alertService(self).show(title: "알림", msg: viewModel.helpPhoneText, actions: [UIAlertAction(title: "확인", style: .default)])
             return false
         }
         return true
@@ -235,10 +217,10 @@ class RegisterMemberViewModel {
     var passwordHidden = true
     var passwordConfirmHidden = true
     
-    var helpEmailText = ""
-    var helpPwText = ""
-    var helpPwConfirmText = ""
-    var helpNickNameText = ""
+    var helpEmailText = "올바르지 않은 유형의 이메일입니다."
+    var helpPwText = "패스워드는 6자이상 입력해주세요."
+    var helpPwConfirmText = "패스워드가 일치하지 않습니다."
+    var helpNickNameText = "닉네임은 1~5자 사이로 입력해주세요."
     var helpPhoneText = ""
     
     var emailText = ""
@@ -296,7 +278,10 @@ extension RegisterMemberViewController: UITextFieldDelegate {
         let next = tag + 1
         if next != 5 {
             guard let useCase = UseCase(rawValue: next) else { return true }
-            self.interactor?.just(useCase).drop()
+            textField.tag = useCase.rawValue
+            if let gesture = textField.gestureRecognizers?.filter({$0 is UITapGestureRecognizer}).first as? UITapGestureRecognizer{
+                self.clickEvent(gesture)
+            }
         }
         update()
         return true

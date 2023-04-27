@@ -14,7 +14,7 @@ struct MySearchViewModel {
     var filterKeyword = ""
 }
 
-class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
+class SearchViewController: UIViewController, ObservingTableCellEvent {
     var viewModel = MySearchViewModel()
     var tableList: [TableCellViewModel] = [TableCellViewModel]()
     var filterKeyword = ""
@@ -27,7 +27,7 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
     var filteredData: [String]!
     
     // 검색, 검색 취소, 비우기, 기록 삭제, 필터
-    enum UseCase: Int, OrderType {
+    enum UseCase: Int {
         case search = 100
         case cancelSearch = 101
         case empty = 102
@@ -46,10 +46,6 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var backToTap: UIBarButtonItem!
     
-    func bind(_ data: DataStoreType) {
-        
-    }
-    
     func routing(orderNumber: Int) {
         if orderNumber == 1 {
         } else {
@@ -61,7 +57,13 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
         setUp()
         update()
     }
-
+    static func getInstanse() -> SearchViewController{
+        guard let vc =  UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "addRecord") as? SearchViewController
+        else {
+            fatalError()
+        }
+        return vc
+    }
     func setUp() {
         self.navigationItem.titleView = searchBar
         backToTap.tag = 107
@@ -75,12 +77,59 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
     }
     @objc func barBtnClickEvent(_ sender:UIBarButtonItem){
         guard let useCase = UseCase(rawValue: sender.tag) else { return }
-        self.interactor?.just(useCase).drop()
+        switch useCase {
+        case .filter:
+//            self.router?.pushViewController(RoutingLogic.Navigation., dataStore: nil)
+            break
+        // 검색 취소는 searchDelegate에서 하기
+        case .cancelSearch: break
+        // delete는 cell 안에서
+        case .delete: break
+        case .empty: break
+        case .history:
+            // 검색 history api 호출 (success시에 하나?)
+//            worker?.api(<#T##command: ApiCommand##ApiCommand#>)
+        break
+        case .backToTap:
+//            self.router?.tabbarMovePreviousPage(nil)
+            if let tabbar = self.tabBarController {
+                if let tabbarVC = (tabbar as? TabBarController){
+                    tabbarVC.selectedIndex = tabbarVC.previousTabIndex
+                }
+            }
+        default:
+            break
+        }
     }
     @objc func clickEvent(_ sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
             guard let useCase = UseCase(rawValue: tag) else { return }
-            self.interactor?.just(useCase).drop()
+            // search는 검색버튼 눌렀을 때 api 호출
+            // filter는 누르면 modal창 띄우기
+            switch useCase {
+            case .filter:
+    //            self.router?.pushViewController(RoutingLogic.Navigation., dataStore: nil)
+                break
+            // 검색 취소는 searchDelegate에서 하기
+            case .cancelSearch: break
+            // delete는 cell 안에서
+            case .delete: break
+            case .empty: break
+            case .history:
+                // 검색 history api 호출 (success시에 하나?)
+    //            worker?.api(<#T##command: ApiCommand##ApiCommand#>)
+            break
+            case .backToTap:
+//                self.router?.tabbarMovePreviousPage(nil)
+                if let tabbar = self.tabBarController {
+                    if let tabbarVC = (tabbar as? TabBarController){
+                        tabbarVC.selectedIndex = tabbarVC.previousTabIndex
+                    }
+                }
+             
+            default:
+                break
+            }
         }
     }
 
@@ -132,42 +181,6 @@ class SearchViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
     }
     // cell 클릭 시 검색 바로 이동
     // display 쪽에서 router 호출
-    override func display(orderNumber: Int) {
-//        guard let test = UseCase.init(rawValue: orderNumber) else { return } // search -> interactor가 받음
-//        let worker = self.interactor?.just(UseCase.search) // worker가 반환
-//        worker?.drop() // api 호출 x
-//        // worker?.api(.) - api 호출
-
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        // search는 검색버튼 눌렀을 때 api 호출
-        // filter는 누르면 modal창 띄우기
-        case .filter:
-//            self.router?.pushViewController(RoutingLogic.Navigation., dataStore: nil)
-            break
-        // 검색 취소는 searchDelegate에서 하기
-        case .cancelSearch: break
-        // delete는 cell 안에서
-        case .delete: break
-        case .empty: break
-        case .history:
-            // 검색 history api 호출 (success시에 하나?)
-            guard UseCase.init(rawValue: orderNumber) != nil else { return }
-            _ = self.interactor?.just(UseCase.history)
-//            worker?.api(<#T##command: ApiCommand##ApiCommand#>)
-        case .backToTap:
-            print("whoeiwraoirjweoi")
-            self.router?.tabbarMovePreviousPage(nil)
-        default:
-            break
-        }
-    }
-
-    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-    }
-
-    override func displayErorr(orderNumber: Int, msg: String?) {
-    }
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -177,7 +190,7 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.router?.pushViewController(RoutingLogic.Navigation.searchResult, dataStore: nil)
+//        self.router?.pushViewController(RoutingLogic.Navigation.searchResult, dataStore: nil)
     }
 }
 

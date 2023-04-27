@@ -12,7 +12,7 @@
 
 import UIKit
 
-class HomeViewController: CommonVC {
+class HomeViewController: UIViewController {
     var viewModel = HomeViewModel()
     
     let works: [Work] = [
@@ -36,9 +36,15 @@ class HomeViewController: CommonVC {
         setUp()
         setWorkView()
     }
-    
+    static func getInstanse() -> HomeViewController{
+        guard let vc =  UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "home") as? HomeViewController
+        else {
+            fatalError()
+        }
+        return vc
+    }
     func setUp() {
-        self.interactor?.just(UseCase.setting).drop()
+//        self.interactor?.just(UseCase.setting).drop()
         self.notificationButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
     }
     
@@ -56,13 +62,41 @@ class HomeViewController: CommonVC {
         if let tag = sender.view?.tag {
             guard let useCase = UseCase(rawValue: tag) else { return }
             switch useCase {
+            case .setting:
+                ServiceProvider.shaerd.apiService.send(.getUserInfomation)
+                ServiceProvider.shaerd.apiService.send(.getMyRecentContinuingRecord)
+                ServiceProvider.shaerd.apiService.send(.getMovies)
+            break
+            case .pushRecordList:
+                if #available(iOS 14.0, *) {
+                    self.navigationController?.pushViewController(ListViewController.getInstanse(), animated: true)
+                } else {
+                   fatalError("iOS14 미만은 사용할수없습니다.")
+                }
+            case .pushWorkDetailInfo:
+                let vc = UIStoryboard(name: "WorkDetailInfo", bundle: nil).instantiateViewController(withIdentifier: "workDetailInfo")
+                self.navigationController?.pushViewController(vc, animated: true)
+            case .pushNotification:
+                let vc = UIStoryboard(name: "Notification", bundle: nil).instantiateViewController(withIdentifier: "notification")
+                self.navigationController?.pushViewController(vc, animated: true)
+            case .pushRecordList:
+                if #available(iOS 14.0, *) {
+                    let vc =
+                    self.navigationController?.pushViewController(ListViewController.getInstanse(), animated: true)
+                } else {
+                    fatalError("iOS 14.0 이상 사용가능")
+                }
+            case .pushWorkDetailInfo:
+                self.navigationController?.pushViewController(WorkDetailInfoViewController.getInstanse(), animated: true)
+            case .pushNotification:
+                self.navigationController?.pushViewController(NotificationViewController.getInstanse(), animated: true)
             default:
-                self.interactor?.just(useCase).drop()
+                break
             }
         }
     }
 
-    enum UseCase: Int, OrderType {
+    enum UseCase: Int {
         case pushRecordList = 100
         case setting = 105
         case notification = 106
@@ -74,52 +108,21 @@ class HomeViewController: CommonVC {
             return self.rawValue
         }
     }
-    
-    override func display(orderNumber: Int) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        case .setting:
-//            let email = "Emelia_Harvey@hotmail.com"
-//            let password = "newPassword"
-//            self.interactor?.just(useCase).api(.login(email, password))
-    
-            self.interactor?.just(useCase).api(.getUserInfomation)
-            self.interactor?.just(useCase).api(.getMyRecentContinuingRecord)
-            self.interactor?.just(useCase).api(.getMovies)
-        case .pushRecordList:
-            router?.pushViewController(RoutingLogic.Navigation.recordList, dataStore: nil)
-        case .pushWorkDetailInfo:
-            router?.pushViewController(RoutingLogic.Navigation.workDetailInfo, dataStore: nil)
-        case .pushNotification:
-            router?.pushViewController(RoutingLogic.Navigation.notification, dataStore: nil)
-        default:
-            break
-        }
-    }
-    
-    override func displayErorr(orderNumber: Int, msg: String?) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        default:
-            self.presenter?.alertService.showToast("\(useCase)")
-        }
-    }
-    
-    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        case .setting:
-            if let data = dataStore?.data(useCase)?.fetch(UserDataModel.self) {
-                let temp = data.data["signInInfo"] as? [String: String]
-                guard let accessToken = temp?["accessToken"] else { return }
-                guard let refreshToken = temp?["refreshToken"] else { return }
-                KeyChain.create(key: "accessToken", token: accessToken)
-                KeyChain.create(key: "refreshToken", token: refreshToken)
-                print("요깅깅교익요긱")
-                print(data)
-            }
-        default:
-            self.presenter?.alertService.showToast("\(useCase)")
-        }
-    }
+//    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
+//        guard let useCase = UseCase(rawValue: orderNumber) else { return }
+//        switch useCase {
+//        case .setting:
+//            if let data = dataStore?.data(useCase)?.fetch(UserDataModel.self) {
+//                let temp = data.data["signInInfo"] as? [String: String]
+//                guard let accessToken = temp?["accessToken"] else { return }
+//                guard let refreshToken = temp?["refreshToken"] else { return }
+//                KeyChain.create(key: "accessToken", token: accessToken)
+//                KeyChain.create(key: "refreshToken", token: refreshToken)
+//                print("요깅깅교익요긱")
+//                print(data)
+//            }
+//        default:
+//            self.presenter?.alertService.showToast("\(useCase)")
+//        }
+//    }
 }

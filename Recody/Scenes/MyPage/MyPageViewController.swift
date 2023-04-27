@@ -13,7 +13,7 @@
 import UIKit
 import SnapKit
 
-class MyPageViewController: CommonVC, ObservingCollectionCellEvent {
+class MyPageViewController: UIViewController, ObservingCollectionCellEvent {
 
     var viewModel = MyPageViewModel()
     
@@ -35,7 +35,7 @@ class MyPageViewController: CommonVC, ObservingCollectionCellEvent {
     
     var recordedWorksList = [CollectionCellViewModel]() //기록 중인 작품리스트
     var dibsOnWorksList = [CollectionCellViewModel]() // 찜한 작품리스트
-    enum UseCase: Int, OrderType {
+    enum UseCase: Int {
         case setting = 100 // 셋팅 버튼 클릭시 -> 화면이동
         case alarm = 101 // 우상단 알림 버튼 클릭시 -> 화면이동
         case nextBottomPgae = 102 // 하단 다음 페이지전환
@@ -46,46 +46,25 @@ class MyPageViewController: CommonVC, ObservingCollectionCellEvent {
             return self.rawValue
         }
     }
-    override func display(orderNumber: Int) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        case .setting:
-            self.router?.pushViewController(RoutingLogic.Navigation.insight, dataStore: nil)
-        case .nextBottomPgae:
-            self.viewModel.nextPage()
-        case .previousBottomPage:
-            self.viewModel.previousPage()
-        case .changeProfileImage:
-//            self.router?.present(RoutingLogic.Navigation.modifyProfile, nil)
-            self.router?.presentWithRootViewcontroller(RoutingLogic.Navigation.modifyProfile, nil,.overCurrentContext)
-        default:
-            self.presenter?.alertService.showToast("\(useCase)")
-        }
-        update()
-    }
-    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        default:
-            self.presenter?.alertService.showToast("\(useCase)")
-        }
-        update()
-    }
-    override func displayErorr(orderNumber: Int, msg: String?) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        default:
-            self.presenter?.alertService.showToast("\(useCase)")
-        }
-        update()
-    }
     @objc func clickEvent(_ sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
             guard let useCase = UseCase(rawValue: tag) else { return }
             switch useCase {
+            case .setting:
+                self.navigationController?.pushViewController(InsightViewController.getInstanse(), animated: true)
+            case .nextBottomPgae:
+                self.viewModel.nextPage()
+            case .previousBottomPage:
+                self.viewModel.previousPage()
+            case .changeProfileImage:
+//                self.navigationController?.pushViewController(ModifyProfileViewController.getInstanse(), animated: true)
+                //todo
+//                self.router?.presentWithRootViewcontroller(RoutingLogic.Navigation.modifyProfile, nil,.overCurrentContext)
+            break
             default:
-                self.interactor?.just(useCase).drop()
+            break
             }
+            update()
         }
     }
     func eventFromTableCell(code: Int, index: Int) {

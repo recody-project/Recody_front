@@ -67,7 +67,13 @@ class EditGenreViewController: UIViewController, EditGenreDisplayLogic {
         super.viewDidLoad()
         doSomething()
     }
-
+    static func getInstanse() -> EditGenreViewController{
+        guard let vc =  UIStoryboard(name: "CategorySetting", bundle: nil).instantiateViewController(withIdentifier: "CategorySetting") as? EditGenreViewController
+        else {
+            fatalError()
+        }
+        return vc
+    }
     // MARK: Do something
     func doSomething() {
         let request = EditGenre.Something.Request()

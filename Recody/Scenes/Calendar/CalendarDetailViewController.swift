@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
+class CalendarDetailViewController: UIViewController, ObservingTableCellEvent {
     var viewModel = CalendarDetailViewModel()
     var tableList: [TableCellViewModel] = [TableCellViewModel]()
     @IBOutlet weak var tableView: UITableView!
@@ -20,26 +20,23 @@ class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
             return CalendarDetailCell.Name
         }
     }
-    enum UseCase: Int, OrderType {
+    enum UseCase: Int {
         case back = 100
         var number: Int {
             return self.rawValue
         }
-    }
-    func bind(_ data: DataStoreType) {
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         setUpTableView()
     }
-    override func display(orderNumber: Int) {
-        guard let useCase = UseCase.init(rawValue: orderNumber) else { return }
-        switch useCase {
-        case .back:
-            self.router?.popViewContoller(animated: true)
+    static func getInstanse() -> CalendarDetailViewController{
+        guard let vc =  UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CalendarDetailViewController") as? CalendarDetailViewController
+        else {
+            fatalError()
         }
+        return vc
     }
     func setup() {
         btnBack.setTitle("", for: .normal)
@@ -49,7 +46,10 @@ class CalendarDetailViewController: CommonVC, ObservingTableCellEvent {
     @objc func clickEvent(_ sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
             guard let useCase = UseCase.init(rawValue: tag) else { return }
-            self.interactor?.just(useCase).drop()
+            switch useCase {
+            case .back:
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     func setUpTableView() {

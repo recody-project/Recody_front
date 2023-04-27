@@ -7,14 +7,20 @@
 
 import UIKit
 
-class SearchResultViewController: CommonVC {
+class SearchResultViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.titleView = searchBar
     }
-    
+    static func getInstanse() -> SearchResultViewController{
+        guard let vc =  UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "searchResult") as? SearchResultViewController
+        else {
+            fatalError()
+        }
+        return vc
+    }
 }
 
 extension SearchResultViewController: UICollectionViewDelegate, UICollectionViewDataSource {

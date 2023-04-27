@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-class EmailLoginViewController: CommonVC {
+class EmailLoginViewController: UIViewController {
     let viewModel = EmailLoginViewModel()
     
     enum UseCase: Int,OrderType {
@@ -40,23 +40,30 @@ class EmailLoginViewController: CommonVC {
     @IBOutlet weak var btnRegisterMember: UIView!
     
     @IBAction func backAction(_ sender: Any) {
-        self.router?.popViewContoller(animated: true)
+//        self.router?.popViewContoller(animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         update()
     }
-    override func display(orderNumber: Int) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        
+    static func getInstanse() -> EmailLoginViewController{
+        guard let vc = UIStoryboard(name: "EmailLogin", bundle: nil).instantiateInitialViewController() as? EmailLoginViewController
+        else {
+            fatalError()
+        }
+        return vc
+    }
+    @objc func clickEvent(_ sender: UITapGestureRecognizer) {
+        guard let tag = sender.view?.tag,
+              let useCase = UseCase(rawValue: tag) else { return }
         switch useCase {
         case .loginAction:
-            self.router?.pushViewController(RoutingLogic.Navigation.main, dataStore: nil)
+            self.navigationController?.pushViewController(TabBarController.getInstanse(), animated: true)
 //        case .findIdAction:
 //        case .findPwAction:
         case .registerMemberAction:
-            self.router?.pushViewController(RoutingLogic.Navigation.registerMember, dataStore: nil)
+            self.navigationController?.pushViewController(RegisterMemberViewController.getInstanse(), animated: true)
         case .inputEmailShow:
             viewModel.showEmailText = true
             inputEmail.becomeFirstResponder()
@@ -66,14 +73,10 @@ class EmailLoginViewController: CommonVC {
         case .togglePassword:
             viewModel.passwordHidden = !viewModel.passwordHidden
         default:
-            self.presenter?.alertService.showToast("\(useCase)")
+        break
+//            self.presenter?.alertService.showToast("\(useCase)")
         }
         update()
-    }
-    @objc func clickEvent(_ sender: UITapGestureRecognizer) {
-        guard let tag = sender.view?.tag,
-              let useCase = UseCase(rawValue: tag) else { return }
-        self.interactor?.just(useCase).drop()
     }
     func setup() {
         btnLogin.tag = UseCase.loginAction.rawValue

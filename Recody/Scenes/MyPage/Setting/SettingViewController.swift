@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class SettingViewController: CommonVC, DataPassingType {
+class SettingViewController: UIViewController {
     var viewModel = SettingViewModel()
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
@@ -31,7 +31,7 @@ class SettingViewController: CommonVC, DataPassingType {
     @IBOutlet weak var btnSendOpinion: UIView!
     @IBOutlet weak var btnTermsAndConditions: UIView!
     @IBOutlet weak var btnLogout:UIView!
-    enum UseCase: Int, OrderType{
+    enum UseCase: Int{
         case back = 100 // 뒤로가기
         case onlineBackup = 101 // 온라인 백업
         case alarm = 102 // 알람 설정
@@ -47,37 +47,35 @@ class SettingViewController: CommonVC, DataPassingType {
             return self.rawValue
         }
     }
-    func bind(_ data: DataStoreType) {
-    }
     @objc func clickEvent(_ sender: UITapGestureRecognizer){
         if let tag = sender.view?.tag {
             guard let useCase = UseCase(rawValue: tag) else{ return }
             switch useCase {
+            case .settingPageOpen:
+                viewModel.recodySettingEnable = !viewModel.recodySettingEnable
+            case .feedBackPageOpen:
+                viewModel.recodyFeedbackEnable = !viewModel.recodyFeedbackEnable
+            case .back:
+                self.navigationController?.popViewController(animated: true)
+            case .calendar:
+                self.navigationController?.pushViewController(CalendarSettingViewController.getInstanse(), animated: true)
+            case .logout:
+                ServiceProvider.shaerd.alertService(self).show(title: "알림", msg: "로그아웃 하시겠습니까?", actions: [UIAlertAction(title: "로그아웃", style: .destructive,handler: { _ in
+                    self.navigationController?.popViewController(animated: true)
+                }),UIAlertAction(title: "No", style: .default)])
+            break
             default:
-                self.interactor?.just(useCase).drop()
+            break
             }
         }
-    }
-    override func display(orderNumber: Int) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        case .settingPageOpen:
-            viewModel.recodySettingEnable = !viewModel.recodySettingEnable
-        case .feedBackPageOpen:
-            viewModel.recodyFeedbackEnable = !viewModel.recodyFeedbackEnable
-        case .back:
-            router?.popViewContoller(animated: true)
-        case .calendar:
-            router?.pushViewController(RoutingLogic.Navigation.calendarSetting, dataStore: nil)
-        case .logout:
-            presenter?.alertService.show(title: "알림", msg: "로그아웃 하시겠습니까?", actions: [UIAlertAction(title: "로그아웃", style: .destructive,handler: { _ in
-                self.router?.popViewContoller(animated: true)
-            }),UIAlertAction(title: "No", style: .default)])
-        break
-        default:
-        self.presenter?.alertService.showToast("\(useCase)")
-        }
         update()
+    }
+    static func getInstanse() -> SettingViewController{
+        guard let vc = UIStoryboard(name: "Setting", bundle: nil).instantiateViewController(withIdentifier: "setting") as? SettingViewController
+        else {
+            fatalError()
+        }
+        return vc
     }
     func setup() {
         let btns = [btnSettingRecordy,

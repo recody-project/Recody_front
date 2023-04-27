@@ -15,7 +15,13 @@ class TabBarController: UITabBarController {
 
         // Do any additional setup after loading the view.
     }
-
+    static func getInstanse() -> TabBarController{
+        guard let vc =  UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController() as? TabBarController
+        else {
+            fatalError()
+        }
+        return vc
+    }
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         print(item)
         guard let items = tabBar.items else { return }

@@ -31,18 +31,16 @@ class LoginMethodViewController: UIViewController {
         case naver = 2
         case apple = 3
     }
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
     static func getInstanse() -> LoginMethodViewController{
         guard let vc = UIStoryboard(name: "LoginMethodViewController", bundle: nil).instantiateInitialViewController() as? LoginMethodViewController
         else {
             fatalError()
         }
         return vc
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setup()
     }
     func setup() {
         btnSNS1.tag = 0

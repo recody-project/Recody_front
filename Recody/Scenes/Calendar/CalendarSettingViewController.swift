@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CalendarSettingViewController: CommonVC {
+class CalendarSettingViewController: UIViewController {
     var viewModel = CalendarSettingViewModel()
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var lbComplete: UILabel!
@@ -16,7 +16,7 @@ class CalendarSettingViewController: CommonVC {
     @IBOutlet weak var btnRecordDate: UIButton!
     @IBOutlet weak var btnStartSunday: UIButton!
     @IBOutlet weak var btnStartMonday: UIButton!
-    enum UseCase: Int, OrderType {
+    enum UseCase: Int {
         case back = 100
         case complete = 101
         case flagCompleteDate = 102
@@ -31,6 +31,13 @@ class CalendarSettingViewController: CommonVC {
         super.viewDidLoad()
         setup()
         update()
+    }
+    static func getInstanse() -> CalendarSettingViewController{
+        guard let vc =  UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CalendarSettingViewController") as? CalendarSettingViewController
+        else {
+            fatalError()
+        }
+        return vc
     }
     func setup() {
         btnBack.setTitle("", for: .normal)
@@ -52,30 +59,26 @@ class CalendarSettingViewController: CommonVC {
     @objc func clickEvent(_ sender: UITapGestureRecognizer ) {
         if let tag = sender.view?.tag {
             guard let useCase = UseCase(rawValue: tag) else { return }
-            self.interactor?.just(useCase).drop()
+            switch useCase {
+                case .back:
+                    self.navigationController?.popViewController(animated: true)
+                case .complete:
+                /* TODO
+                   saveAPi 호출 -> 완료 -> 팝업 -> popViewController
+                               -> 실패 -> 팝업
+                 */
+                break
+                case .flagCompleteDate:
+                    viewModel.toggleCompletedDate()
+                case .flagRecordDate:
+                    viewModel.toggleRecordedDate()
+                case .flagStartSunday:
+                    viewModel.toggleStartSunday()
+                case .flagStartMonday:
+                    viewModel.toggleStartMunday()
+            }
+            update()
         }
-    }
-    override func display(orderNumber: Int) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-            case .back:
-                self.router?.popViewContoller(animated: true)
-            case .complete:
-            /* TODO
-               saveAPi 호출 -> 완료 -> 팝업 -> popViewController
-                           -> 실패 -> 팝업
-             */
-            break
-            case .flagCompleteDate:
-                viewModel.toggleCompletedDate()
-            case .flagRecordDate:
-                viewModel.toggleRecordedDate()
-            case .flagStartSunday:
-                viewModel.toggleStartSunday()
-            case .flagStartMonday:
-                viewModel.toggleStartMunday()
-        }
-        update()
     }
     func update() {
         let btns = [ btnStartSunday, btnStartMonday, btnRecordDate, btnCompleteDate ]
