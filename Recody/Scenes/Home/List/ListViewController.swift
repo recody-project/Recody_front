@@ -137,15 +137,13 @@ class ListViewController: CommonVC {
             return
         }
         pageViewController.setUpLayout(viewController: self, superView: listPageSuperView)
-        let colors: [UIColor] = [UIColor.red,UIColor.blue,UIColor.green]
+        let colors: [UIColor] = [UIColor.red, UIColor.blue, UIColor.green]
         for (index, _) in genres.enumerated() {
             let viewController = UIViewController()
-            let collectionView = UICollectionView()
+            
             viewController.view.backgroundColor = colors[index % 3]
         }
         pageViewController.moveSlidePage()
         pageViewController.didMove(toParent: self)
     }
 }
-
-

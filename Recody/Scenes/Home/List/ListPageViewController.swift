@@ -11,8 +11,6 @@ import Foundation
 class ListPageViewController: UIPageViewController {
     var dataViewControllers = [UIViewController]()
     var lastIndex = 0
-
-    
     
     func setUpLayout(viewController : UIViewController,
                      superView : UIView? = nil) -> Self {
@@ -22,7 +20,19 @@ class ListPageViewController: UIPageViewController {
         } else {
             viewController.view.addSubview(self.view)
         }
-        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        let nib = UINib(nibName: "WorkListCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "workListCollectionView")
+//        collectionView.register(WorkListCollectionViewCell.self, forCellWithReuseIdentifier: "workListCollectionView")
+        viewController.view.addSubview(collectionView)
+
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         self.didMove(toParent: self)
         
         return self
@@ -109,18 +119,18 @@ extension ListPageViewController: UIPageViewControllerDataSource, UIPageViewCont
     }
 }
 
-extension ListPageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ListPageViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // genre수만큼
         return 10
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .blue
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "workListCollectionView", for: indexPath) as? WorkListCollectionViewCell else { return UICollectionViewCell() }
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return collectionView.bounds.size
+        return CGSize(width: 100, height: 164)
     }
 }
