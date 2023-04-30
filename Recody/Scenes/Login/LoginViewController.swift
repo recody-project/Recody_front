@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 import SnapKit
-class LoginViewController :CommonVC {
+
+
+class LoginViewController: CommonVC {
     @IBOutlet weak var lbFindId: UILabel!
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnRegisterMemeber: UIButton!
@@ -31,11 +33,12 @@ class LoginViewController :CommonVC {
         super.viewWillDisappear(animated)
         slideAnimation(start: false)
     }
-    enum UseCase: Int,OrderType {
+    enum UseCase: Int, OrderType {
         case findID = 1
         case login = 2
         case registerMemeber = 3
         case slideImageClick = 4
+        case loginApple = 201
         var number: Int {
             return self.rawValue
         }
@@ -152,7 +155,6 @@ class LoginViewController :CommonVC {
 extension LoginViewController: UIViewControllerTransitioningDelegate{
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         let modal =  HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
-        
         if let vc = presented as? LoginMethodViewController {
             vc.modal = modal
         }
@@ -166,9 +168,25 @@ extension LoginViewController: LoginMethodViewControllerDelegate {
     func loginEmail() {
         self.router?.pushViewController(RoutingLogic.Navigation.loginEmail, dataStore: nil)
     }
-    func loginSNS(index:Int) {
-        self.presenter?.alertService.showToast("SNS Login(\(index))")
+    func loginSNS(_ method: LoginMethodViewController.LoginMethod) {
+        switch method {
+//        case .kakao:
+//        break
+//        case .facebook:
+//        break
+//        case .naver:
+//        break
+        case .apple:
+//            onAppleID()
+            self.interactor?.just(UseCase.loginApple)
+//            self.presenter?.alertService.showToast("SNS Login(\(index))")
+//        break
+        default:
+            self.presenter?.alertService.showToast("SNS Login(\(method))")
+        }
     }
+    
+
 }
 
 class LoginViewModel {

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePcikerView" customModule="Recody" customModuleProvider="target">
+            <connections>
+                <outlet property="btnDone" destination="jDb-EY-hb7" id="JZZ-yq-oXn"/>
+                <outlet property="datePicker" destination="RTY-pV-BAT" id="1pD-mS-Y6z"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0c-9I-vKY">
+                    <rect key="frame" x="0.0" y="477" width="393" height="341"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="RTY-pV-BAT">
+                            <rect key="frame" x="0.0" y="40" width="393" height="301"/>
+                            <connections>
+                                <action selector="datePickerValueChanged:" destination="-1" eventType="valueChanged" id="3RE-AI-fKG"/>
+                            </connections>
+                        </datePicker>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDb-EY-hb7">
+                            <rect key="frame" x="353" y="0.0" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="Dju-Kx-ZIi"/>
+                                <constraint firstAttribute="height" constant="40" id="eE5-W6-3nv"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="RTY-pV-BAT" firstAttribute="leading" secondItem="r0c-9I-vKY" secondAttribute="leading" id="5a4-gK-rn1"/>
+                        <constraint firstAttribute="height" constant="341" id="FCP-wB-phG"/>
+                        <constraint firstItem="RTY-pV-BAT" firstAttribute="top" secondItem="jDb-EY-hb7" secondAttribute="bottom" id="KlW-BL-B1w"/>
+                        <constraint firstAttribute="trailing" secondItem="jDb-EY-hb7" secondAttribute="trailing" id="R9E-i2-6yL"/>
+                        <constraint firstAttribute="trailing" secondItem="RTY-pV-BAT" secondAttribute="trailing" id="Ya8-ls-o2h"/>
+                        <constraint firstItem="jDb-EY-hb7" firstAttribute="top" secondItem="r0c-9I-vKY" secondAttribute="top" id="axD-wa-biu"/>
+                        <constraint firstAttribute="bottom" secondItem="RTY-pV-BAT" secondAttribute="bottom" id="hat-V9-40F"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="r0c-9I-vKY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8zM-kR-NBq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="r0c-9I-vKY" secondAttribute="bottom" id="R3P-FO-7kG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="r0c-9I-vKY" secondAttribute="trailing" id="Z0P-h6-TnZ"/>
+            </constraints>
+            <point key="canvasLocation" x="126" y="21"/>
+        </view>
+    </objects>
+</document>

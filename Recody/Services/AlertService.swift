@@ -16,7 +16,7 @@ protocol AlertServiceType {
     func showActionSheet(title: String, msg: String, actions: [UIAlertAction])
     func showToast(_ msg:String)
 }
-class AlertService : AlertServiceType {
+class AlertService: AlertServiceType {
     var context: UIViewController
     var toastViews = [UIView?]()
     required init(_ context: UIViewController) {

@@ -20,9 +20,14 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
     var tableList: [TableCellViewModel] = [TableCellViewModel]()
     // 화면내의 모든 인터렉션 (탭,스와이프, 롱탭, .... 의 수만큼 작성필요)
     enum UserCace: Int, OrderType {
+        case back = 100
         case nextMonth = 101
         case previousMonth = 102
         case cellClickEvent = 103
+        case download = 104
+        case hambuger = 105
+        case foldEnable = 200
+        case foldDisable = 201
         var number: Int {
             return self.rawValue
         }
@@ -68,6 +73,12 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnPrevious: UIButton!
     @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var btnDownload: UIImageView!
+    @IBOutlet weak var btnHambuger: UIImageView!
+    
+    @IBOutlet weak var lcInfoViewHeight: NSLayoutConstraint! // 90.0 , 0.1
+    @IBOutlet weak var vwInfo:UIView!
     func bind(_ data: DataStoreType) {
     }
     func routing(orderNumber: Int) {
@@ -85,7 +96,14 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
     func setup(){
         btnNext.tag = UserCace.nextMonth.number
         btnPrevious.tag = UserCace.previousMonth.number
-        [btnNext, btnPrevious].forEach({
+        btnBack.tag = UserCace.back.number
+        btnDownload.tag = UserCace.download.number
+        btnHambuger.tag = UserCace.hambuger.number
+        [btnDownload,btnHambuger].forEach({
+            $0?.isUserInteractionEnabled = true
+            $0?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(btnClickEvent)))
+        })
+        [btnNext, btnPrevious,btnBack].forEach({
             $0?.setTitle("", for: .normal)
             $0?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(btnClickEvent)))
         })
@@ -94,8 +112,7 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
     @objc func btnClickEvent(_ sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
             if let command = UserCace.init(rawValue: tag) {
-//                self.interactor?.just(command).drop()  // 바로 UI를 업데이트 할경우
-                self.interactor?.just(command).api(.checkValidEmail("ikmujn5@naver.com"))
+                self.interactor?.just(command).drop()  // 바로 UI를 업데이트 할경우
             }
         }
     }
@@ -124,10 +141,43 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
     override func display(orderNumber: Int) {
         if let command = UserCace.init(rawValue: orderNumber) {
             switch command {
+            case .back:
+                self.router?.popViewContoller(animated: true)
             case .nextMonth:
                 self.router?.present(RoutingLogic.Navigation.home, nil)
             case .previousMonth:
                 break
+            case .hambuger:
+                self.router?.pushViewController(RoutingLogic.Navigation.insightMonthReport, dataStore: nil)
+            case .foldEnable:
+                //중복 실행을 방지하기위한 플래그
+                //반드시 한 애니메이션당 한개씩 만들것
+                if self.viewModel.isAnimateFold { return }
+                //단순 길이 변화 를 할떄 constant값을 조절할것
+                self.lcInfoViewHeight.constant = 0.1
+                self.presenter?.animator.animate(0.3, animationBlock: {
+                    // 애니메이션이 실행되고 실행 플래그 true
+                    self.viewModel.isAnimateFold = true
+                    // animationBlock에서는 frame 속성에 대한 변화값을 설정할것
+                    self.vwInfo.alpha = 0.0
+                    // 반드시 호출해야 애니메이션이 실행됨
+                    self.view.layoutIfNeeded()
+                }, { _ in
+                    // 실행이 끝나고 난 시점
+                    // 실행 플래그 false
+                    self.viewModel.isAnimateFold = false
+                })
+                break
+            case .foldDisable:
+                if self.viewModel.isAnimateFold { return }
+                self.lcInfoViewHeight.constant = 90.0
+                self.presenter?.animator.animate(0.3, animationBlock: {
+                    self.viewModel.isAnimateFold = true
+                    self.vwInfo.alpha = 1.0
+                    self.view.layoutIfNeeded()
+                }, { _ in
+                    self.viewModel.isAnimateFold = false
+                })
             default:
                 print("처리안된 커맨드 : \(command)")
             }
@@ -199,6 +249,14 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
         tableView.contentInset.bottom = 20.0
         tableView.reloadData()
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y <= 0 {
+           interactor?.just(UserCace.foldDisable).drop()
+        } else {
+           interactor?.just(UserCace.foldEnable).drop()
+        }
+    }
 }
 
 extension InsightViewController: UITableViewDelegate, UITableViewDataSource {
@@ -234,4 +292,5 @@ struct InsiteViewModel {
     var currentMonth: Int = 1
     var seenWorks: Int = 0
     var recordCount: Int = 0
+    var isAnimateFold = false
 }

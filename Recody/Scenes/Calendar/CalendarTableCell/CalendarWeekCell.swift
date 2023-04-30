@@ -38,7 +38,7 @@ class CalendarWeekCell: UITableViewCell, ObservingTableCell {
     @IBOutlet weak var imgWork6: UIImageView!
     @IBOutlet weak var imgWork7: UIImageView!
     var days = [1, 2, 3, 4, 5, 6, 7]
-    var imgs = [1: "", 2: "", 3: "", 4: "", 5: "", 6: "", 7: ""]
+    var imgs = [Int:String]()
     var eventDelegate: ObservingTableCellEvent?
     var month = 0
     var year = 0
@@ -50,6 +50,9 @@ class CalendarWeekCell: UITableViewCell, ObservingTableCell {
            let year = data["year"] as? Int {
             self.month = month
             self.year = year
+        }
+        if let regImg = data["img"] as? [Int:String]{
+            self.imgs = regImg
         }
         // 오늘날짜를 포함했는지 검사하기위한 플래그
         var isContainToday = false
@@ -82,6 +85,14 @@ class CalendarWeekCell: UITableViewCell, ObservingTableCell {
                 label?.layer.cornerRadius = 0
                 label?.backgroundColor = .clear
             }
+            print("days[index]  \(days[index])")
+            print("days[index]  \(self.imgs[days[index]])")
+            if let imgName =  self.imgs[days[index]] {
+                imgWorks[index]?.image = UIImage(named: imgName)
+            }else {
+                imgWorks[index]?.image = nil
+            }
+            
         }
         for (index, imgSource) in self.imgs.enumerated() {
             if imgSource.value == "" {
