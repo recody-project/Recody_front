@@ -9,14 +9,16 @@ import UIKit
 import SnapKit
 
 @available(iOS 14.0, *)
-@available(iOS 14.0, *)
 class ListViewController: CommonVC {
     @IBOutlet weak var listPageSuperView: UIView!
     @IBOutlet weak var categoryScrollView: UIScrollView!
     @IBOutlet weak var categoryStackView: UIStackView!
     @IBOutlet weak var genreScrollView: UIScrollView!
+    @IBOutlet weak var hiddenView: UIView!
     @IBOutlet weak var genreStackView: UIStackView!
+    @IBOutlet weak var foldViewHeight: NSLayoutConstraint!
     var currentViewController = 0
+    var isAnimateFold = false
     // 장르 배열 - api 필요
     let categories = [ Category(name: "전체", image: "전체"), Category(name: "책", image: "책"), Category(name: "영화", image: "영화"), Category(name: "드라마", image: "드라마"), Category(name: "음악", image: "음악"), Category(name: "공연", image: "공연") ]
     let genres = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"]
@@ -133,35 +135,45 @@ class ListViewController: CommonVC {
         }
     }
     
-//    @IBAction func addCategory(sender: UIView) {
-//        let index = categoryStackView.arrangedSubviews.count - 1
-//        let addView = categoryStackView.arrangedSubviews[index]
-//
-//        let offset = CGPoint(x: categoryScrollView.contentOffset.x, y: categoryScrollView.contentOffset.y + addView.frame.size.width)
-//        let newView = CustomCategory()
-//        newView.isHidden = true
-//        categoryStackView.insertArrangedSubview(newView, at: index)
-//
-//        UIView.animate(withDuration: 0.25, animations: {
-//            newView.isHidden = false
-//            self.categoryScrollView.contentOffset = offset
-//        }, completion: nil)
-//    }
-    
     func configurePageViewController() {
-        // 여기 가드문에서 이미 팅겨져 나가고있었습니다.
         guard let pageViewController = UIStoryboard(name: "List", bundle: nil).instantiateViewController(withIdentifier: "listPageViewController") as? ListPageViewController else {
             return
         }
         pageViewController.setUpLayout(viewController: self, superView: listPageSuperView)
-        let colors: [UIColor] = [UIColor.red,UIColor.blue,UIColor.green]
+        let colors: [UIColor] = [UIColor.red, UIColor.blue, UIColor.green]
         for (index, _) in genres.enumerated() {
             let viewController = UIViewController()
+            
             viewController.view.backgroundColor = colors[index % 3]
-//            pageViewController.add(viewController: viewController).setUpLayout(viewController: self, superView: self.view)
         }
-//        addChild(pageViewController) -> setUpLayout() 에서 이미 하고있는동작
         pageViewController.moveSlidePage()
         pageViewController.didMove(toParent: self)
+    }
+}
+
+@available(iOS 14.0, *)
+extension ListViewController {
+    func foldView(_ isActive:Bool){
+        if isActive {
+            if isAnimateFold { return }
+            isAnimateFold = true
+            foldViewHeight.constant = 0.1
+            UIView.animate(withDuration: 0.3) {
+                self.hiddenView.alpha = 0.0 // 알파를 적용할경우
+                self.view.layoutIfNeeded()
+            }completion: { act in
+                self.isAnimateFold = false
+            }
+        }else {
+            if isAnimateFold { return }
+            isAnimateFold = true
+            foldViewHeight.constant = 160 //원래 높이
+            UIView.animate(withDuration: 0.3) {
+                self.hiddenView.alpha = 1.0 // 알파를 적용할경우
+                self.view.layoutIfNeeded()
+            }completion: { act in
+                self.isAnimateFold = false
+            }
+        }
     }
 }
