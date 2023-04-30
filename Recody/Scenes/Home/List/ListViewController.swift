@@ -14,8 +14,11 @@ class ListViewController: CommonVC {
     @IBOutlet weak var categoryScrollView: UIScrollView!
     @IBOutlet weak var categoryStackView: UIStackView!
     @IBOutlet weak var genreScrollView: UIScrollView!
+    @IBOutlet weak var hiddenView: UIView!
     @IBOutlet weak var genreStackView: UIStackView!
+    @IBOutlet weak var foldViewHeight: NSLayoutConstraint!
     var currentViewController = 0
+    var isAnimateFold = false
     // 장르 배열 - api 필요
     let categories = [ Category(name: "전체", image: "전체"), Category(name: "책", image: "책"), Category(name: "영화", image: "영화"), Category(name: "드라마", image: "드라마"), Category(name: "음악", image: "음악"), Category(name: "공연", image: "공연") ]
     let genres = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"]
@@ -145,5 +148,32 @@ class ListViewController: CommonVC {
         }
         pageViewController.moveSlidePage()
         pageViewController.didMove(toParent: self)
+    }
+}
+
+@available(iOS 14.0, *)
+extension ListViewController {
+    func foldView(_ isActive:Bool){
+        if isActive {
+            if isAnimateFold { return }
+            isAnimateFold = true
+            foldViewHeight.constant = 0.1
+            UIView.animate(withDuration: 0.3) {
+                self.hiddenView.alpha = 0.0 // 알파를 적용할경우
+                self.view.layoutIfNeeded()
+            }completion: { act in
+                self.isAnimateFold = false
+            }
+        }else {
+            if isAnimateFold { return }
+            isAnimateFold = true
+            foldViewHeight.constant = 160 //원래 높이
+            UIView.animate(withDuration: 0.3) {
+                self.hiddenView.alpha = 1.0 // 알파를 적용할경우
+                self.view.layoutIfNeeded()
+            }completion: { act in
+                self.isAnimateFold = false
+            }
+        }
     }
 }

@@ -17,24 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDn-v3-tZS">
-                                <rect key="frame" x="0.0" y="121" width="414" height="78"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="center" ambiguous="YES" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Nxm-LX-Un7">
-                                        <rect key="frame" x="20" y="0.0" width="71" height="78"/>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Nxm-LX-Un7" firstAttribute="leading" secondItem="abD-wL-R6K" secondAttribute="leading" constant="20" id="4wB-zg-CSR"/>
-                                    <constraint firstItem="Nxm-LX-Un7" firstAttribute="height" secondItem="MyN-QU-fyE" secondAttribute="height" id="72d-E9-ZTj"/>
-                                    <constraint firstItem="Nxm-LX-Un7" firstAttribute="top" secondItem="abD-wL-R6K" secondAttribute="top" id="HJx-En-IKc"/>
-                                    <constraint firstItem="Nxm-LX-Un7" firstAttribute="bottom" secondItem="abD-wL-R6K" secondAttribute="bottom" id="Q55-9r-6qo"/>
-                                    <constraint firstAttribute="height" constant="78" id="fcs-lY-V9L"/>
-                                    <constraint firstItem="Nxm-LX-Un7" firstAttribute="trailing" secondItem="abD-wL-R6K" secondAttribute="trailing" constant="20" id="hyv-1Q-sBK"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="abD-wL-R6K"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="MyN-QU-fyE"/>
-                            </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Re-f0-6wd">
                                 <rect key="frame" x="0.0" y="281" width="414" height="41"/>
                                 <subviews>
@@ -114,46 +96,79 @@
                                     <constraint firstAttribute="height" constant="48" id="EaT-bH-QYz"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Pfc-q1-8dq">
-                                <rect key="frame" x="20" y="220" width="374" height="44"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygS-0g-35M">
+                                <rect key="frame" x="0.0" y="121" width="414" height="160"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDn-v3-tZS">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="78"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="center" ambiguous="YES" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Nxm-LX-Un7">
+                                                <rect key="frame" x="20" y="0.0" width="71" height="78"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Nxm-LX-Un7" firstAttribute="leading" secondItem="abD-wL-R6K" secondAttribute="leading" constant="20" id="4wB-zg-CSR"/>
+                                            <constraint firstItem="Nxm-LX-Un7" firstAttribute="height" secondItem="MyN-QU-fyE" secondAttribute="height" id="72d-E9-ZTj"/>
+                                            <constraint firstItem="Nxm-LX-Un7" firstAttribute="top" secondItem="abD-wL-R6K" secondAttribute="top" id="HJx-En-IKc"/>
+                                            <constraint firstItem="Nxm-LX-Un7" firstAttribute="bottom" secondItem="abD-wL-R6K" secondAttribute="bottom" id="Q55-9r-6qo"/>
+                                            <constraint firstAttribute="height" constant="78" id="fcs-lY-V9L"/>
+                                            <constraint firstItem="Nxm-LX-Un7" firstAttribute="trailing" secondItem="abD-wL-R6K" secondAttribute="trailing" constant="20" id="hyv-1Q-sBK"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="abD-wL-R6K"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="MyN-QU-fyE"/>
+                                    </scrollView>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Pfc-q1-8dq">
+                                        <rect key="frame" x="20" y="99" width="374" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="EJI-tA-Y2w"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="CSG-Vj-g1m" id="owM-df-EWf"/>
+                                        </connections>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="EJI-tA-Y2w"/>
+                                    <constraint firstItem="sDn-v3-tZS" firstAttribute="top" secondItem="ygS-0g-35M" secondAttribute="top" id="7Wp-6i-FgE"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pfc-q1-8dq" secondAttribute="bottom" constant="17" id="HOL-sw-0JQ"/>
+                                    <constraint firstItem="Pfc-q1-8dq" firstAttribute="leading" secondItem="ygS-0g-35M" secondAttribute="leading" constant="20" id="HZc-BT-1RS"/>
+                                    <constraint firstItem="Pfc-q1-8dq" firstAttribute="top" secondItem="sDn-v3-tZS" secondAttribute="bottom" constant="21" id="RjC-uR-ov7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pfc-q1-8dq" secondAttribute="trailing" constant="20" id="TTq-cQ-4jP"/>
+                                    <constraint firstAttribute="trailing" secondItem="sDn-v3-tZS" secondAttribute="trailing" id="Z63-0u-2nH"/>
+                                    <constraint firstAttribute="height" constant="160" id="ajY-h0-ZP6"/>
+                                    <constraint firstItem="sDn-v3-tZS" firstAttribute="leading" secondItem="ygS-0g-35M" secondAttribute="leading" id="fSj-du-IHX"/>
                                 </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="CSG-Vj-g1m" id="owM-df-EWf"/>
-                                </connections>
-                            </searchBar>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="klu-m6-Pl7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="IOY-LN-YJ6" firstAttribute="leading" secondItem="klu-m6-Pl7" secondAttribute="leading" id="237-tb-Gcd"/>
                             <constraint firstItem="klu-m6-Pl7" firstAttribute="trailing" secondItem="6sc-rG-zh3" secondAttribute="trailing" constant="20" id="4K8-AJ-Yak"/>
-                            <constraint firstItem="sDn-v3-tZS" firstAttribute="top" secondItem="IOY-LN-YJ6" secondAttribute="bottom" constant="25" id="64i-Cx-BlS"/>
                             <constraint firstItem="klu-m6-Pl7" firstAttribute="trailing" secondItem="bhQ-E2-Z4O" secondAttribute="trailing" id="7jb-MA-ZDl"/>
                             <constraint firstItem="bhQ-E2-Z4O" firstAttribute="top" secondItem="6sc-rG-zh3" secondAttribute="bottom" constant="26" id="8tw-Id-0mr"/>
-                            <constraint firstItem="klu-m6-Pl7" firstAttribute="trailing" secondItem="Pfc-q1-8dq" secondAttribute="trailing" constant="20" id="Fcy-Ho-pGr"/>
-                            <constraint firstItem="sDn-v3-tZS" firstAttribute="trailing" secondItem="klu-m6-Pl7" secondAttribute="trailing" id="GeV-aF-UgF"/>
                             <constraint firstItem="bhQ-E2-Z4O" firstAttribute="leading" secondItem="klu-m6-Pl7" secondAttribute="leading" id="HS8-gh-qTD"/>
-                            <constraint firstItem="Pfc-q1-8dq" firstAttribute="top" secondItem="sDn-v3-tZS" secondAttribute="bottom" constant="21" id="J2L-zm-ePG"/>
+                            <constraint firstItem="klu-m6-Pl7" firstAttribute="trailing" secondItem="ygS-0g-35M" secondAttribute="trailing" id="LaX-8p-GAM"/>
                             <constraint firstItem="IOY-LN-YJ6" firstAttribute="trailing" secondItem="klu-m6-Pl7" secondAttribute="trailing" id="UFt-s3-maE"/>
-                            <constraint firstItem="Pfc-q1-8dq" firstAttribute="leading" secondItem="klu-m6-Pl7" secondAttribute="leading" constant="20" id="VIH-7y-ZcU"/>
                             <constraint firstItem="IOY-LN-YJ6" firstAttribute="top" secondItem="klu-m6-Pl7" secondAttribute="top" id="VXU-jp-QDc"/>
+                            <constraint firstItem="ygS-0g-35M" firstAttribute="top" secondItem="IOY-LN-YJ6" secondAttribute="bottom" constant="25" id="Wf8-9h-b28"/>
+                            <constraint firstItem="ygS-0g-35M" firstAttribute="leading" secondItem="klu-m6-Pl7" secondAttribute="leading" id="Y1J-If-xvm"/>
                             <constraint firstItem="4Re-f0-6wd" firstAttribute="trailing" secondItem="klu-m6-Pl7" secondAttribute="trailing" id="gki-ox-ew1"/>
                             <constraint firstItem="klu-m6-Pl7" firstAttribute="bottom" secondItem="bhQ-E2-Z4O" secondAttribute="bottom" id="hmJ-42-Oam"/>
+                            <constraint firstItem="4Re-f0-6wd" firstAttribute="top" secondItem="ygS-0g-35M" secondAttribute="bottom" id="i5A-mw-Mud"/>
                             <constraint firstItem="6sc-rG-zh3" firstAttribute="top" secondItem="4Re-f0-6wd" secondAttribute="bottom" constant="26" id="nXF-Ma-vbw"/>
-                            <constraint firstItem="4Re-f0-6wd" firstAttribute="top" secondItem="Pfc-q1-8dq" secondAttribute="bottom" constant="17" id="te7-ga-dRG"/>
                             <constraint firstItem="4Re-f0-6wd" firstAttribute="leading" secondItem="klu-m6-Pl7" secondAttribute="leading" id="trY-Ny-1ef"/>
-                            <constraint firstItem="sDn-v3-tZS" firstAttribute="leading" secondItem="klu-m6-Pl7" secondAttribute="leading" id="uxf-R5-Rfs"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="categoryScrollView" destination="sDn-v3-tZS" id="fye-LP-wdF"/>
                         <outlet property="categoryStackView" destination="Nxm-LX-Un7" id="AIP-T8-g5V"/>
+                        <outlet property="foldViewHeight" destination="ajY-h0-ZP6" id="0x2-TQ-fGB"/>
                         <outlet property="genreScrollView" destination="4Re-f0-6wd" id="x5Z-6M-Ugu"/>
                         <outlet property="genreStackView" destination="bdS-Xs-0JH" id="U2Q-81-hlm"/>
+                        <outlet property="hiddenView" destination="ygS-0g-35M" id="npR-ei-X7U"/>
                         <outlet property="listPageSuperView" destination="bhQ-E2-Z4O" id="E2r-OD-9yV"/>
                     </connections>
                 </viewController>

@@ -133,4 +133,17 @@ extension ListPageViewController: UICollectionViewDelegateFlowLayout, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 164)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if #available(iOS 14.0, *) {
+            let vc = ListViewController()
+            if scrollView.contentOffset.y <= 0 {
+                vc.foldView(false)
+            } else {
+                vc.foldView(true)
+            }
+        } else {
+            print("14.0 이상만 가능합니다.")
+        }
+    }
 }
