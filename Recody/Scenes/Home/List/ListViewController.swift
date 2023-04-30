@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 @available(iOS 14.0, *)
-@available(iOS 14.0, *)
 class ListViewController: CommonVC {
     @IBOutlet weak var listPageSuperView: UIView!
     @IBOutlet weak var categoryScrollView: UIScrollView!
@@ -133,23 +132,7 @@ class ListViewController: CommonVC {
         }
     }
     
-//    @IBAction func addCategory(sender: UIView) {
-//        let index = categoryStackView.arrangedSubviews.count - 1
-//        let addView = categoryStackView.arrangedSubviews[index]
-//
-//        let offset = CGPoint(x: categoryScrollView.contentOffset.x, y: categoryScrollView.contentOffset.y + addView.frame.size.width)
-//        let newView = CustomCategory()
-//        newView.isHidden = true
-//        categoryStackView.insertArrangedSubview(newView, at: index)
-//
-//        UIView.animate(withDuration: 0.25, animations: {
-//            newView.isHidden = false
-//            self.categoryScrollView.contentOffset = offset
-//        }, completion: nil)
-//    }
-    
     func configurePageViewController() {
-        // 여기 가드문에서 이미 팅겨져 나가고있었습니다.
         guard let pageViewController = UIStoryboard(name: "List", bundle: nil).instantiateViewController(withIdentifier: "listPageViewController") as? ListPageViewController else {
             return
         }
@@ -157,11 +140,12 @@ class ListViewController: CommonVC {
         let colors: [UIColor] = [UIColor.red,UIColor.blue,UIColor.green]
         for (index, _) in genres.enumerated() {
             let viewController = UIViewController()
+            let collectionView = UICollectionView()
             viewController.view.backgroundColor = colors[index % 3]
-//            pageViewController.add(viewController: viewController).setUpLayout(viewController: self, superView: self.view)
         }
-//        addChild(pageViewController) -> setUpLayout() 에서 이미 하고있는동작
         pageViewController.moveSlidePage()
         pageViewController.didMove(toParent: self)
     }
 }
+
+

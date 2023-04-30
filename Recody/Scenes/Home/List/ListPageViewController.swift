@@ -11,9 +11,11 @@ import Foundation
 class ListPageViewController: UIPageViewController {
     var dataViewControllers = [UIViewController]()
     var lastIndex = 0
+
+    
     
     func setUpLayout(viewController : UIViewController,
-                     superView : UIView? = nil) -> Self{
+                     superView : UIView? = nil) -> Self {
         viewController.addChild(self)
         if superView != nil {
             superView?.addSubview(self.view)
@@ -41,7 +43,7 @@ class ListPageViewController: UIPageViewController {
     }
 
     // default First
-    func moveSlidePage(index: Int = 0){
+    func moveSlidePage(index: Int = 0) {
         if index == 0 {
             if let moveVC = dataViewControllers.first {
                 self.setViewControllers([moveVC], direction: .forward, animated: true, completion: nil)
@@ -57,8 +59,8 @@ class ListPageViewController: UIPageViewController {
         }
         
     }
-    
-    func reloadData(){
+
+    func reloadData() {
         delegate = nil
         dataSource = nil
         delegate = self
@@ -105,29 +107,20 @@ extension ListPageViewController: UIPageViewControllerDataSource, UIPageViewCont
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return dataViewControllers.count
     }
- 
-//    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-//
-//        if completed {
-//            previousPage = previousViewControllers[0]
-//            realNextPage = nextPage
-//            print(realNextPage)
-//            if realNextPage is Mongle.OnboardingFirstVC {
-//                self.keyValue.curPresentViewIndex = 0
-//                onboardingDelegate?.toNextPage(next: 0)
-//            }
-//            else if realNextPage is Mongle.OnboardingSecondVC{
-//                self.keyValue.curPresentViewIndex = 1
-//                onboardingDelegate?.toNextPage(next: 1)
-//            }
-//            else if realNextPage is Mongle.OnboardingThirdVC{
-//                self.keyValue.curPresentViewIndex = 2
-//                onboardingDelegate?.toNextPage(next: 2)
-//            }
-//            else{
-//                self.keyValue.curPresentViewIndex = 3
-//                onboardingDelegate?.toNextPage(next: 3)
-//            }
-//        }
-//    }
+}
+
+extension ListPageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = .blue
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.bounds.size
+    }
 }
