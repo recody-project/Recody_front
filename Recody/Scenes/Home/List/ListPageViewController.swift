@@ -13,14 +13,26 @@ class ListPageViewController: UIPageViewController {
     var lastIndex = 0
     
     func setUpLayout(viewController : UIViewController,
-                     superView : UIView? = nil) -> Self{
+                     superView : UIView? = nil) -> Self {
         viewController.addChild(self)
         if superView != nil {
             superView?.addSubview(self.view)
         } else {
             viewController.view.addSubview(self.view)
         }
-        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        let nib = UINib(nibName: "WorkListCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "workListCollectionView")
+//        collectionView.register(WorkListCollectionViewCell.self, forCellWithReuseIdentifier: "workListCollectionView")
+        viewController.view.addSubview(collectionView)
+
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         self.didMove(toParent: self)
         
         return self
@@ -41,7 +53,7 @@ class ListPageViewController: UIPageViewController {
     }
 
     // default First
-    func moveSlidePage(index: Int = 0){
+    func moveSlidePage(index: Int = 0) {
         if index == 0 {
             if let moveVC = dataViewControllers.first {
                 self.setViewControllers([moveVC], direction: .forward, animated: true, completion: nil)
@@ -57,8 +69,8 @@ class ListPageViewController: UIPageViewController {
         }
         
     }
-    
-    func reloadData(){
+
+    func reloadData() {
         delegate = nil
         dataSource = nil
         delegate = self
@@ -105,29 +117,33 @@ extension ListPageViewController: UIPageViewControllerDataSource, UIPageViewCont
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return dataViewControllers.count
     }
- 
-//    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-//
-//        if completed {
-//            previousPage = previousViewControllers[0]
-//            realNextPage = nextPage
-//            print(realNextPage)
-//            if realNextPage is Mongle.OnboardingFirstVC {
-//                self.keyValue.curPresentViewIndex = 0
-//                onboardingDelegate?.toNextPage(next: 0)
-//            }
-//            else if realNextPage is Mongle.OnboardingSecondVC{
-//                self.keyValue.curPresentViewIndex = 1
-//                onboardingDelegate?.toNextPage(next: 1)
-//            }
-//            else if realNextPage is Mongle.OnboardingThirdVC{
-//                self.keyValue.curPresentViewIndex = 2
-//                onboardingDelegate?.toNextPage(next: 2)
-//            }
-//            else{
-//                self.keyValue.curPresentViewIndex = 3
-//                onboardingDelegate?.toNextPage(next: 3)
-//            }
-//        }
-//    }
+}
+
+extension ListPageViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // genre수만큼
+        return 10
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "workListCollectionView", for: indexPath) as? WorkListCollectionViewCell else { return UICollectionViewCell() }
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 164)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if #available(iOS 14.0, *) {
+            let vc = ListViewController()
+            if scrollView.contentOffset.y <= 0 {
+                vc.foldView(false)
+            } else {
+                vc.foldView(true)
+            }
+        } else {
+            print("14.0 이상만 가능합니다.")
+        }
+    }
 }
