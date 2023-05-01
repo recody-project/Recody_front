@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddRecordViewController: CommonVC {
+class AddRecordViewController: UIViewController {
 //    var viewModel = AddRecordViewModel()
     
     override func viewDidLoad() {
@@ -20,15 +20,15 @@ class AddRecordViewController: CommonVC {
     
     @objc func clickEvent(_ sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
-            guard let useCase = UseCase(rawValue: tag) else { return }
-            switch useCase {
-            default:
-                self.interactor?.just(useCase).drop()
-            }
+//            guard let useCase = UseCase(rawValue: tag) else { return }
+//            switch useCase {
+//            default:
+//            break
+//            }
         }
     }
     
-    enum UseCase: Int, OrderType {
+    enum UseCase: Int {
 //        case pushRecordList = 100
 //        case setting = 105
 //        case notification = 106
@@ -37,30 +37,6 @@ class AddRecordViewController: CommonVC {
         case pushWorkDetailInfo = 109
         var number: Int {
             return self.rawValue
-        }
-    }
-    
-    override func display(orderNumber: Int) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        default:
-            break
-        }
-    }
-    
-    override func displayErorr(orderNumber: Int, msg: String?) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        default:
-            self.presenter?.alertService.showToast("\(useCase)")
-        }
-    }
-    
-    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        default:
-            self.presenter?.alertService.showToast("\(useCase)")
         }
     }
 }

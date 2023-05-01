@@ -25,6 +25,13 @@ class TestApiViewController: UIViewController{
         setup()
         update()
     }
+    static func getInstanse() -> TestApiViewController{
+        guard let vc =  UIStoryboard(name: "TestApi", bundle: nil).instantiateViewController(withIdentifier: "TestApiViewController") as? TestApiViewController
+        else {
+            fatalError()
+        }
+        return vc
+    }
     func setup(){
         tableview.backgroundColor = .white
         tableview.delegate = self

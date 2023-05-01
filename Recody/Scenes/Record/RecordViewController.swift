@@ -78,7 +78,9 @@ class RecordViewController: UIViewController, RecordDisplayLogic {
         super.viewDidLoad()
         doSomething()
     }
-
+    static func getInstanse() -> RecordViewController{
+        return RecordViewController()
+    }
     // MARK: Do something
 
     @IBOutlet weak var workTabCollectionView: UICollectionView! {

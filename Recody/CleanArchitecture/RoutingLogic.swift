@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-enum RoutingLogic: RoutingLogicType {
-    enum Navigation: NavigationType {
+enum RoutingLogic {
+    enum Navigation {
         case main
         case login
         case loginEmail
@@ -34,49 +34,68 @@ enum RoutingLogic: RoutingLogicType {
             // UIStoryboard( 스토리보드 파일명 )
             // .instantiateViewController(withIdentifier: 스토리보드ID )
             case .main:
+//                TabBarController.getInstanse()
                 return UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController()
             case .login:
+//                LoginViewController.getInstanse()
                 return UIStoryboard(name: "login", bundle: nil).instantiateInitialViewController()
             case .loginEmail:
+//                EmailLoginViewController.getInstanse()
                 return UIStoryboard(name: "EmailLogin", bundle: nil).instantiateInitialViewController()
             case .registerMember:
+//                RegisterMemberViewController.getInstanse()
                 return UIStoryboard(name: "registerMember", bundle: nil).instantiateInitialViewController()
             case .home:
+//                HomeViewController.getInstanse()
                 return UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "home")
             case .insight:
+//                InsightViewController.getInstanse()
                 return UIStoryboard(name: "Insight", bundle: nil).instantiateViewController(withIdentifier: "insight")
             case .insightMonthReport:
+//                InsightViewController.getInstanse()
                 let vc = UIStoryboard(name: "Insight", bundle: nil).instantiateViewController(withIdentifier: "monthReport")
                 return vc
             case .record:
+//                RecordViewController.getInstanse()
                 return RecordViewController()
             case .setting:
+//                SettingViewController.getInstanse()
                 return UIStoryboard(name: "Setting", bundle: nil).instantiateViewController(withIdentifier: "setting")
             case .workDetailInfo:
+//                WorkDetailInfoViewController.getInstanse()
                 return UIStoryboard(name: "WorkDetailInfo", bundle: nil).instantiateViewController(withIdentifier: "workDetailInfo")
             case .calendarDetail:
+//                CalendarDetailViewController.getInstanse()
                 return UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CalendarDetailViewController")
             case .calendarSetting:
+//                CalendarSettingViewController.getInstanse()
                 return UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CalendarSettingViewController")
             case .modifyProfile:
+//                ModifyProfileViewController.getInstanse()
                 return UIStoryboard(name: "ModifyProfile", bundle: nil).instantiateViewController(withIdentifier: "modifyProfile")
             case .recordList:
+//                ListViewController.getInstanse()
                 return UIStoryboard(name: "List", bundle: nil).instantiateViewController(withIdentifier: "listView")
             case .categorySetting:
+//                EditGenreViewController.getInstanse()
                 return UIStoryboard(name: "CategorySetting", bundle: nil).instantiateViewController(withIdentifier: "CategorySetting")
             case .addRecord:
+//                SearchViewController.getInstanse()
                 return UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "addRecord")
             case .searchResult:
+//                SearchResultViewController.getInstanse()
                 return UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "searchResult")
             case .testApi:
+//                TestApiViewController.getInstanse()
                 return UIStoryboard(name: "TestApi", bundle: nil).instantiateViewController(withIdentifier: "TestApiViewController")
             case .notification:
+//                NotificationViewController.getInstanse()
                 return UIStoryboard(name: "Notification", bundle: nil).instantiateViewController(withIdentifier: "notification")
             }
         }
     }
 
-    enum Segment: SegmentType {
+    enum Segment {
         case home
         case record
         case workDetailInfo

@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 @available(iOS 14.0, *)
-class ListViewController: CommonVC {
+class ListViewController: UIViewController {
     @IBOutlet weak var listPageSuperView: UIView!
     @IBOutlet weak var categoryScrollView: UIScrollView!
     @IBOutlet weak var categoryStackView: UIStackView!
@@ -30,7 +30,14 @@ class ListViewController: CommonVC {
         setGenreStackView()
         configurePageViewController()
     }
-    
+    //.recordList
+    static func getInstanse() -> ListViewController{
+        guard let vc =  UIStoryboard(name: "List", bundle: nil).instantiateViewController(withIdentifier: "listView") as? ListViewController
+        else {
+            fatalError()
+        }
+        return vc
+    }
     func setCategoryStackView() {
         for category in categories {
             let view = CustomCategory()
@@ -80,13 +87,17 @@ class ListViewController: CommonVC {
         if let tag = sender.view?.tag {
             guard let useCase = UseCase(rawValue: tag) else { return }
             switch useCase {
+            case .pushAddCategory:
+                self.navigationController?.pushViewController(EditGenreViewController.getInstanse(),animated: true)
+            case .moveIndicator:
+            break
             default:
-                self.interactor?.just(useCase).drop()
+            break
             }
         }
     }
 
-    enum UseCase: Int, OrderType {
+    enum UseCase: Int {
         case setting = 100
         case pushAddCategory = 101
         case pushCategorySetting = 102
@@ -96,45 +107,38 @@ class ListViewController: CommonVC {
             return self.rawValue
         }
     }
-    
-    override func display(orderNumber: Int) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        case .pushAddCategory:
-            router?.pushViewController(RoutingLogic.Navigation.categorySetting, dataStore: nil)
-        case .moveIndicator:
-            print("")
-        default:
-            break
-        }
-    }
-    
-    override func displayErorr(orderNumber: Int, msg: String?) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        default:
-            self.presenter?.alertService.showToast("\(useCase)")
-        }
-    }
-    
-    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        case .setting:
-            if let data = dataStore?.data(useCase)?.fetch(UserDataModel.self) {
-                let temp = data.data["signInInfo"] as? [String: String]
-                guard let accessToken = temp?["accessToken"] else { return }
-                guard let refreshToken = temp?["refreshToken"] else { return }
-                KeyChain.create(key: "accessToken", token: accessToken)
-                KeyChain.create(key: "refreshToken", token: refreshToken)
-                print("요깅깅교익요긱")
-                print(data)
-            }
-        default:
-            self.presenter?.alertService.showToast("\(useCase)")
-        }
-    }
-    
+//    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
+//        guard let useCase = UseCase(rawValue: orderNumber) else { return }
+//        switch useCase {
+//        case .setting:
+//            if let data = dataStore?.data(useCase)?.fetch(UserDataModel.self) {
+//                let temp = data.data["signInInfo"] as? [String: String]
+//                guard let accessToken = temp?["accessToken"] else { return }
+//                guard let refreshToken = temp?["refreshToken"] else { return }
+//                KeyChain.create(key: "accessToken", token: accessToken)
+//                KeyChain.create(key: "refreshToken", token: refreshToken)
+//                print("요깅깅교익요긱")
+//                print(data)
+//            }
+//        default:
+//            self.presenter?.alertService.showToast("\(useCase)")
+//        }
+//    }
+//
+//    @IBAction func addCategory(sender: UIView) {
+//        let index = categoryStackView.arrangedSubviews.count - 1
+//        let addView = categoryStackView.arrangedSubviews[index]
+//
+//        let offset = CGPoint(x: categoryScrollView.contentOffset.x, y: categoryScrollView.contentOffset.y + addView.frame.size.width)
+//        let newView = CustomCategory()
+//        newView.isHidden = true
+//        categoryStackView.insertArrangedSubview(newView, at: index)
+//
+//        UIView.animate(withDuration: 0.25, animations: {
+//            newView.isHidden = false
+//            self.categoryScrollView.contentOffset = offset
+//        }, completion: nil)
+//    }
     func configurePageViewController() {
         guard let pageViewController = UIStoryboard(name: "List", bundle: nil).instantiateViewController(withIdentifier: "listPageViewController") as? ListPageViewController else {
             return

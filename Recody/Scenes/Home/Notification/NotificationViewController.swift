@@ -12,12 +12,19 @@ struct Notification {
     var time: String
 }
 
-class NotificationViewController: CommonVC {
+class NotificationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var notifications = [Notification(message: "안녕", time: "1시간전"), Notification(message: "안녕", time: "2시간전"), Notification(message: "안녕", time: "3시간전")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    static func getInstanse() -> NotificationViewController{
+        guard let vc =  UIStoryboard(name: "Notification", bundle: nil).instantiateViewController(withIdentifier: "notification") as? NotificationViewController
+        else {
+            fatalError()
+        }
+        return vc
     }
 }
 

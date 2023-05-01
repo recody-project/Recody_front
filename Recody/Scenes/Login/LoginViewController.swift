@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 
-class LoginViewController: CommonVC {
+class LoginViewController: UIViewController {
     @IBOutlet weak var lbFindId: UILabel!
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnRegisterMemeber: UIButton!
@@ -25,6 +25,13 @@ class LoginViewController: CommonVC {
         setup()
         update()
     }
+    static func getInstanse() -> LoginViewController{
+        guard let vc =  UIStoryboard(name: "login", bundle: nil).instantiateInitialViewController() as? LoginViewController
+        else {
+            fatalError()
+        }
+        return vc
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         slideAnimation(start: true)
@@ -33,7 +40,7 @@ class LoginViewController: CommonVC {
         super.viewWillDisappear(animated)
         slideAnimation(start: false)
     }
-    enum UseCase: Int, OrderType {
+    enum UseCase: Int {
         case findID = 1
         case login = 2
         case registerMemeber = 3
@@ -47,36 +54,21 @@ class LoginViewController: CommonVC {
         guard let tag = sender.view?.tag else { return }
         guard let useCase = UseCase(rawValue: tag) else { print("clickEvent : 등록안된 TAG = \(tag)"); return }
         switch useCase {
-            default:
-                self.interactor?.just(useCase).drop()
-                break
+        case .login:
+            let methodVC = LoginMethodViewController.getInstanse()
+            methodVC.transitioningDelegate = self
+            methodVC.modalPresentationStyle = .custom
+            methodVC.delegate = self
+            self.present(methodVC, animated: true)
+        case .slideImageClick:
+            
+            self.navigationController?.pushViewController(TestApiViewController.getInstanse(), animated: true)
+        case .registerMemeber:
+            self.navigationController?.pushViewController(RegisterMemberViewController.getInstanse(), animated: true)
+        default:
+        break
         }
-    }
-  
-    override func display(orderNumber: Int) { //  self.interactor?.just(useCase).drop() 시 받는콜백
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-            switch useCase {
-//            case .findID:
-//                self.router?.pushViewController(<#T##navigation: NavigationType##NavigationType#>, dataStore: <#T##DataStoreType?#>)
-            case .login:
-                let methodVC = LoginMethodViewController.getInstanse()
-                methodVC.transitioningDelegate = self
-                methodVC.modalPresentationStyle = .custom
-                methodVC.delegate = self
-                self.present(methodVC, animated: true)
-            case .slideImageClick:
-                self.router?.pushViewController(RoutingLogic.Navigation.testApi, dataStore: nil)
-            case .registerMemeber:
-                self.router?.pushViewController(RoutingLogic.Navigation.registerMember, dataStore: nil)
-            default:
-                self.presenter?.alertService.showToast("\(useCase)")
-            break
-            }
-            update()
-    }
-    override func displayErorr(orderNumber: Int, msg: String?) {
-    }
-    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
+        update()
     }
     func setup(){
         pageControl.currentPage = 0
@@ -163,10 +155,11 @@ extension LoginViewController: UIViewControllerTransitioningDelegate{
 }
 extension LoginViewController: LoginMethodViewControllerDelegate {
     func findID() {
-        self.presenter?.alertService.showToast("findID")
+//        self.presenter?.alertService.showToast("findID")
     }
     func loginEmail() {
-        self.router?.pushViewController(RoutingLogic.Navigation.loginEmail, dataStore: nil)
+        
+        self.navigationController?.pushViewController(EmailLoginViewController.getInstanse(), animated: true)
     }
     func loginSNS(_ method: LoginMethodViewController.LoginMethod) {
         switch method {
@@ -176,13 +169,14 @@ extension LoginViewController: LoginMethodViewControllerDelegate {
 //        break
 //        case .naver:
 //        break
-        case .apple:
+//        case .apple:
 //            onAppleID()
-            self.interactor?.just(UseCase.loginApple)
+//            self.interactor?.just(UseCase.loginApple)
 //            self.presenter?.alertService.showToast("SNS Login(\(index))")
 //        break
         default:
-            self.presenter?.alertService.showToast("SNS Login(\(method))")
+        break
+//            self.presenter?.alertService.showToast("SNS Login(\(method))")
         }
     }
     

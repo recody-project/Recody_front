@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CalendarViewController: CommonVC, ObservingTableCellEvent {
+class CalendarViewController: UIViewController, ObservingTableCellEvent {
     var viewModel = CalendarViewModel()
     var tableList: [TableCellViewModel] = [TableCellViewModel]()
     @IBOutlet weak var tableView: UITableView!
@@ -34,37 +34,10 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
             return self.rawValue
         }
     }
-    override func display(orderNumber: Int) { //  self.interactor?.just(useCase).drop() 시 받는콜백
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-            switch useCase {
-            case .nextMonth:
-                self.viewModel.nextMonth()
-            break
-            case .previousMonth:
-                self.viewModel.previousMonth()
-            break
-//            case .download:
-//                self.present(SomeViewController(), animated: true)
-            break
-            case .insight:
-                self.router?.pushViewController(RoutingLogic.Navigation.insight, dataStore: nil)
-            break
-            default:
-            break
-            }
-            update()
-    }
-    override func displayErorr(orderNumber: Int, msg: String?) {
-    }
-    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-    }
     //테이블 셀 클릭이벤트
     func eventFromTableCell(code: Int,index: Int) {
 //        self.interactor?.just(UseCase.moveDetail).api(.checkValidEmail("asd"))
-        let vc = RoutingLogic.Navigation.calendarDetail.viewcontroller as? CalendarDetailViewController
-//        vc?.viewModel.data
-        
-        self.router?.pushViewController(RoutingLogic.Navigation.calendarDetail, dataStore: nil)
+        self.navigationController?.pushViewController(CalendarDetailViewController.getInstanse(), animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,10 +70,22 @@ class CalendarViewController: CommonVC, ObservingTableCellEvent {
         guard let tag = sender.view?.tag else { return }
         guard let useCase = UseCase(rawValue: tag) else { print("clickEvent : 등록안된 TAG = \(tag)"); return }
         switch useCase {
-            default:
-                self.interactor?.just(useCase).drop()
-                break
+        case .nextMonth:
+            self.viewModel.nextMonth()
+        break
+        case .previousMonth:
+            self.viewModel.previousMonth()
+        break
+//            case .download:
+//                self.present(SomeViewController(), animated: true)
+        break
+        case .insight:
+            self.navigationController?.pushViewController(InsightViewController.getInstanse(), animated: true)
+        break
+        default:
+        break
         }
+        update()
     }
   
     func setUpTableView() {

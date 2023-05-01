@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ModifyProfileViewController: CommonVC {
+class ModifyProfileViewController: UIViewController {
     let viewModel = ModifyProfileViewModel()
     @IBOutlet weak var etNickName: UITextField!
     @IBOutlet weak var btnBack: UIButton!
@@ -17,7 +17,7 @@ class ModifyProfileViewController: CommonVC {
     @IBOutlet weak var lbGuide: UILabel!
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var imgProfileEdit: UIImageView! // 36 x 36
-    enum UseCase: Int, OrderType {
+    enum UseCase: Int {
         case back = 100 // 뒤로가기
         case changeNickNameText = 101
         case changeProfileImage = 102
@@ -32,28 +32,21 @@ class ModifyProfileViewController: CommonVC {
         setup()
         update()
     }
-    override func display(orderNumber: Int) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        case .back:
-            self.dismiss(animated: true)
-        default:
-            self.presenter?.alertService.showToast("\(useCase)")
+    static func getInstanse() -> ModifyProfileViewController{
+        guard let vc =  UIStoryboard(name: "ModifyProfile", bundle: nil).instantiateViewController(withIdentifier: "modifyProfile") as? ModifyProfileViewController
+        else {
+            fatalError()
         }
-        update()
-    }
-    override func displayErorr(orderNumber: Int, msg: String?) {
-        update()
-    }
-    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-        update()
+        return vc
     }
     @objc func clickEvent(_ sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
             guard let useCase = UseCase(rawValue: tag) else { return }
             switch useCase {
+            case .back:
+                self.dismiss(animated: true)
             default:
-                self.interactor?.just(useCase).drop()
+            break
             }
         }
     }

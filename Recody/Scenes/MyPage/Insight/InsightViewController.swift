@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent {
+class InsightViewController: UIViewController, ObservingTableCellEvent {
     func eventFromTableCell(code: Int,index: Int) {
         // 셀 내의 개별적 제스쳐 이벤트를 처리하는 공간
         // interactor를 통해서 처리
@@ -19,7 +19,7 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
     var viewModel = InsiteViewModel()
     var tableList: [TableCellViewModel] = [TableCellViewModel]()
     // 화면내의 모든 인터렉션 (탭,스와이프, 롱탭, .... 의 수만큼 작성필요)
-    enum UserCace: Int, OrderType {
+    enum UserCace: Int {
         case back = 100
         case nextMonth = 101
         case previousMonth = 102
@@ -79,19 +79,17 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
     
     @IBOutlet weak var lcInfoViewHeight: NSLayoutConstraint! // 90.0 , 0.1
     @IBOutlet weak var vwInfo:UIView!
-    func bind(_ data: DataStoreType) {
-    }
-    func routing(orderNumber: Int) {
-        if orderNumber == 1 {
-            
-        } else {
-            
-        }
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         setUpTableView()
+    }
+    static func getInstanse() -> InsightViewController{
+        guard let vc = UIStoryboard(name: "Insight", bundle: nil).instantiateViewController(withIdentifier: "insight") as? InsightViewController
+        else {
+            fatalError()
+        }
+        return vc
     }
     func setup(){
         btnNext.tag = UserCace.nextMonth.number
@@ -112,74 +110,47 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
     @objc func btnClickEvent(_ sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
             if let command = UserCace.init(rawValue: tag) {
-                self.interactor?.just(command).drop()  // 바로 UI를 업데이트 할경우
-            }
-        }
-    }
-    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-        if let command = UserCace.init(rawValue: orderNumber) {
-            switch command {
-            case .cellClickEvent:
-                if let reuslt = dataStore?.data(command)?.fetch(ChildDataModel.self) {
-                    print(reuslt.message)
-                    print(reuslt.data)
+                switch command {
+                case .back:
+                    self.navigationController?.popViewController(animated: true)
+                case .nextMonth:
+                    self.navigationController?.pushViewController(HomeViewController.getInstanse(), animated: true)
+                case .previousMonth:
+                    break
+                case .hambuger:
+                    self.navigationController?.pushViewController(InsightViewController.getInstanse(), animated: true)
+                case .foldEnable:
+                    //중복 실행을 방지하기위한 플래그
+                    //반드시 한 애니메이션당 한개씩 만들것
+                    if self.viewModel.isAnimateFold { return }
+                    //단순 길이 변화 를 할떄 constant값을 조절할것
+                    self.lcInfoViewHeight.constant = 0.1
+                    ServiceProvider.shaerd.animator(self).animate(0.3, animationBlock: {
+                        // 애니메이션이 실행되고 실행 플래그 true
+                        self.viewModel.isAnimateFold = true
+                        // animationBlock에서는 frame 속성에 대한 변화값을 설정할것
+                        self.vwInfo.alpha = 0.0
+                        // 반드시 호출해야 애니메이션이 실행됨
+                        self.view.layoutIfNeeded()
+                    }, { _ in
+                        // 실행이 끝나고 난 시점
+                        // 실행 플래그 false
+                        self.viewModel.isAnimateFold = false
+                    })
+                    break
+                case .foldDisable:
+                    if self.viewModel.isAnimateFold { return }
+                    self.lcInfoViewHeight.constant = 90.0
+                    ServiceProvider.shaerd.animator(self).animate(0.3, animationBlock: {
+                        self.viewModel.isAnimateFold = true
+                        self.vwInfo.alpha = 1.0
+                        self.view.layoutIfNeeded()
+                    }, { _ in
+                        self.viewModel.isAnimateFold = false
+                    })
+                default:
+                    print("처리안된 커맨드 : \(command)")
                 }
-            default:
-                print("Router 커맨드 : \(command)")
-            }
-        }
-    }
-    override func displayErorr(orderNumber: Int, msg: String?) {
-        if let command = UserCace.init(rawValue: orderNumber) {
-            switch command {
-            default:
-                print("에러발생 커맨드 : \(command)")
-            }
-        }
-    }
-    
-    override func display(orderNumber: Int) {
-        if let command = UserCace.init(rawValue: orderNumber) {
-            switch command {
-            case .back:
-                self.router?.popViewContoller(animated: true)
-            case .nextMonth:
-                self.router?.present(RoutingLogic.Navigation.home, nil)
-            case .previousMonth:
-                break
-            case .hambuger:
-                self.router?.pushViewController(RoutingLogic.Navigation.insightMonthReport, dataStore: nil)
-            case .foldEnable:
-                //중복 실행을 방지하기위한 플래그
-                //반드시 한 애니메이션당 한개씩 만들것
-                if self.viewModel.isAnimateFold { return }
-                //단순 길이 변화 를 할떄 constant값을 조절할것
-                self.lcInfoViewHeight.constant = 0.1
-                self.presenter?.animator.animate(0.3, animationBlock: {
-                    // 애니메이션이 실행되고 실행 플래그 true
-                    self.viewModel.isAnimateFold = true
-                    // animationBlock에서는 frame 속성에 대한 변화값을 설정할것
-                    self.vwInfo.alpha = 0.0
-                    // 반드시 호출해야 애니메이션이 실행됨
-                    self.view.layoutIfNeeded()
-                }, { _ in
-                    // 실행이 끝나고 난 시점
-                    // 실행 플래그 false
-                    self.viewModel.isAnimateFold = false
-                })
-                break
-            case .foldDisable:
-                if self.viewModel.isAnimateFold { return }
-                self.lcInfoViewHeight.constant = 90.0
-                self.presenter?.animator.animate(0.3, animationBlock: {
-                    self.viewModel.isAnimateFold = true
-                    self.vwInfo.alpha = 1.0
-                    self.view.layoutIfNeeded()
-                }, { _ in
-                    self.viewModel.isAnimateFold = false
-                })
-            default:
-                print("처리안된 커맨드 : \(command)")
             }
         }
     }
@@ -252,9 +223,15 @@ class InsightViewController: CommonVC, DataPassingType, ObservingTableCellEvent 
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y <= 0 {
-           interactor?.just(UserCace.foldDisable).drop()
+            scrollView.tag = UserCace.foldDisable.rawValue
+            if let gesture = scrollView.gestureRecognizers?.filter({$0 is UITapGestureRecognizer}).first as? UITapGestureRecognizer{
+                self.btnClickEvent(gesture)
+            }
         } else {
-           interactor?.just(UserCace.foldEnable).drop()
+            scrollView.tag = UserCace.foldEnable.rawValue
+            if let gesture = scrollView.gestureRecognizers?.filter({$0 is UITapGestureRecognizer}).first as? UITapGestureRecognizer{
+                self.btnClickEvent(gesture)
+            }
         }
     }
 }

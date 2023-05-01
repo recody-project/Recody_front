@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-class InsightMonthReportViewController: CommonVC {
+class InsightMonthReportViewController: UIViewController {
  
     var viewModel = InsightMonthReportViewModel()
     var tableList: [TableCellViewModel] = [TableCellViewModel]()
     // 화면내의 모든 인터렉션 (탭,스와이프, 롱탭, .... 의 수만큼 작성필요)
-    enum UserCace: Int, OrderType {
+    enum UserCace: Int {
         case back = 100
         case nextMonth = 101
         case previousMonth = 102
@@ -28,8 +28,6 @@ class InsightMonthReportViewController: CommonVC {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnBack: UIButton!
     
-    func bind(_ data: DataStoreType) {
-    }
     func routing(orderNumber: Int) {
         if orderNumber == 1 {
             
@@ -42,6 +40,14 @@ class InsightMonthReportViewController: CommonVC {
         setup()
         setUpTableView()
     }
+    static func getInstanse() -> InsightMonthReportViewController{
+        guard let vc =   UIStoryboard(name: "Insight", bundle: nil).instantiateViewController(withIdentifier: "monthReport") as? InsightMonthReportViewController
+        else {
+            fatalError()
+        }
+        return vc
+    }
+//    UIStoryboard(name: "Insight", bundle: nil).instantiateViewController(withIdentifier: "monthReport")
     func setup(){
         btnBack.tag = UserCace.back.number
         [btnBack].forEach({
@@ -53,40 +59,12 @@ class InsightMonthReportViewController: CommonVC {
     @objc func btnClickEvent(_ sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
             if let command = UserCace.init(rawValue: tag) {
-                self.interactor?.just(command).drop()  // 바로 UI를 업데이트 할경우
-            }
-        }
-    }
-    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-        if let command = UserCace.init(rawValue: orderNumber) {
-            switch command {
- 
-//            case .cellClickEvent:
-//                if let reuslt = dataStore?.data(command)?.fetch(ChildDataModel.self) {
-//                    print(reuslt.message)
-//                    print(reuslt.data)
-//                }
-            default:
-                print("Router 커맨드 : \(command)")
-            }
-        }
-    }
-    override func displayErorr(orderNumber: Int, msg: String?) {
-        if let command = UserCace.init(rawValue: orderNumber) {
-            switch command {
-            default:
-                print("에러발생 커맨드 : \(command)")
-            }
-        }
-    }
-    
-    override func display(orderNumber: Int) {
-        if let command = UserCace.init(rawValue: orderNumber) {
-            switch command {
-            case .back:
-                self.router?.popViewContoller(animated: true)
-            default:
-                print("처리안된 커맨드 : \(command)")
+                switch command {
+                case .back:
+                    self.navigationController?.popViewController(animated: true)
+                default:
+                    print("처리안된 커맨드 : \(command)")
+                }
             }
         }
     }

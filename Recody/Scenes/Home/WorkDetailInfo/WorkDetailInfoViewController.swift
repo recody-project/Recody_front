@@ -12,7 +12,7 @@
 
 import UIKit
 
-class WorkDetailInfoViewController: CommonVC {
+class WorkDetailInfoViewController: UIViewController {
     var viewModel = WorkDetailInfoViewModel()
     @IBOutlet weak var workListView: WorkListView!
     @IBOutlet weak var categoryButton: CategoryButton! {
@@ -31,13 +31,19 @@ class WorkDetailInfoViewController: CommonVC {
         super.viewDidLoad()
         workListView.setView(work: works)
     }
-    
+    static func getInstanse() -> WorkDetailInfoViewController{
+        guard let vc =  UIStoryboard(name: "WorkDetailInfo", bundle: nil).instantiateViewController(withIdentifier: "workDetailInfo") as? WorkDetailInfoViewController
+        else {
+            fatalError()
+        }
+        return vc
+    }
     // UseCase 정리
     // 1. 이전화면
     // 2. 작품 선택
     // 3. 좋아요 누르기
     // 4. 감상평 추가하기 버튼
-    enum UseCase: Int, OrderType {
+    enum UseCase: Int {
         case setting = 100
         case back = 101
         case moveWork = 102
@@ -45,30 +51,6 @@ class WorkDetailInfoViewController: CommonVC {
         case addReview = 104
         var number: Int {
             return self.rawValue
-        }
-    }
-    
-    override func display(orderNumber: Int) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        default:
-            break
-        }
-    }
-    
-    override func displayErorr(orderNumber: Int, msg: String?) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        default:
-            self.presenter?.alertService.showToast("\(useCase)")
-        }
-    }
-    
-    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-        switch useCase {
-        default:
-            self.presenter?.alertService.showToast("\(useCase)")
         }
     }
     

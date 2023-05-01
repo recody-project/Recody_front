@@ -8,8 +8,8 @@
 import Foundation
 
 class ApiTestGroup {
-    static let worker = SimpleWoker()
+//    static let worker = SimpleWoker()
     static func doTest() {
-        worker.api(.search("cat-1", "joy", "mg-1" ))
+//        worker.api(.search("cat-1", "joy", "mg-1" ))
     }
 }
