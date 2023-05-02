@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import SnapKit
-
+import AuthenticationServices
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var lbFindId: UILabel!
@@ -142,6 +142,18 @@ class LoginViewController: UIViewController {
         pageControl.currentPage = next
         pageViewController.moveSlidePage(index: next)
     }
+    func loginAppleAction() {
+        if #available(iOS 13.0, *) {
+            let appleIDProvider = ASAuthorizationAppleIDProvider()
+            let request = appleIDProvider.createRequest()
+            request.requestedScopes = [.fullName, .email]
+            
+            let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+            authorizationController.delegate = self
+            authorizationController.presentationContextProvider = self
+            authorizationController.performRequests()
+        }
+    }
 }
 
 extension LoginViewController: UIViewControllerTransitioningDelegate{
@@ -169,12 +181,11 @@ extension LoginViewController: LoginMethodViewControllerDelegate {
 //        break
 //        case .naver:
 //        break
-//        case .apple:
-//            onAppleID()
-//            self.interactor?.just(UseCase.loginApple)
-//            self.presenter?.alertService.showToast("SNS Login(\(index))")
-//        break
+        case .apple:
+            self.loginAppleAction()
+        break
         default:
+            ServiceProvider.shaerd.alertService(self).showToast("\(method)")
         break
 //            self.presenter?.alertService.showToast("SNS Login(\(method))")
         }
@@ -183,13 +194,44 @@ extension LoginViewController: LoginMethodViewControllerDelegate {
 
 }
 
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            // Create an account in your system.
+            let userIdentifier = appleIDCredential.user
+            let userFirstName = appleIDCredential.fullName?.givenName == nil ? "" : appleIDCredential.fullName?.givenName
+            let userLastName = appleIDCredential.fullName?.familyName == nil ? "" : appleIDCredential.fullName?.familyName
+            let userEmail = appleIDCredential.email == nil ? "" : appleIDCredential.email
+            ServiceProvider.shaerd.alertService(self).show(title: "성공", msg: "userIdentifier : \(userIdentifier)", actions: [UIAlertAction(title: "확인", style: .default)])
+        } else if let passwordCredential = authorization.credential as? ASPasswordCredential {
+            // Sign in using an existing iCloud Keychain credential.
+            let username = passwordCredential.user
+            let password = passwordCredential.password
+            print("username \(username)")
+            print("password \(password)")
+            //Navigate to other view controller
+        }
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        // handle Error.
+        
+    }
+}
+
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+}
+
+
 class LoginViewModel {
     var imgs = [UIImage]()
     var animating = false
     var currentPageIndex = 0
     var maxPageIndex = 3
     var isMoveRight = true
-    
     init(){
         let imgNames = ["common (1)","common (2)","common (3)","common (4)"]
         imgNames.forEach({
