@@ -22,6 +22,7 @@ class CalendarDetailViewController: UIViewController, ObservingTableCellEvent {
     }
     enum UseCase: Int {
         case back = 100
+        case selectDate = 101
         var number: Int {
             return self.rawValue
         }
@@ -30,6 +31,7 @@ class CalendarDetailViewController: UIViewController, ObservingTableCellEvent {
         super.viewDidLoad()
         setup()
         setUpTableView()
+        update()
     }
     static func getInstanse() -> CalendarDetailViewController{
         guard let vc =  UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CalendarDetailViewController") as? CalendarDetailViewController
@@ -39,6 +41,9 @@ class CalendarDetailViewController: UIViewController, ObservingTableCellEvent {
         return vc
     }
     func setup() {
+        btnDate.tag = UseCase.selectDate.rawValue
+        btnDate.isUserInteractionEnabled = true
+        btnDate.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
         btnBack.setTitle("", for: .normal)
         btnBack.tag = UseCase.back.rawValue
         btnBack.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
@@ -49,7 +54,14 @@ class CalendarDetailViewController: UIViewController, ObservingTableCellEvent {
             switch useCase {
             case .back:
                 self.navigationController?.popViewController(animated: true)
+            case .selectDate:
+                let date = self.viewModel.date
+                ServiceProvider.shaerd.datePicker(self).showDatePicker(selectDate: date!, completion: { result in
+                    self.viewModel.date = result
+                    self.update()
+                })
             }
+           
         }
     }
     func setUpTableView() {
@@ -78,6 +90,9 @@ class CalendarDetailViewController: UIViewController, ObservingTableCellEvent {
         tableView.reloadData()
     }
     func eventFromTableCell(code: Int, index: Int) {
+    }
+    func update(){
+        btnDate.text = viewModel.date.toString()
     }
 }
 extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -113,5 +128,7 @@ extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSour
     }
 }
 class CalendarDetailViewModel {
-    var date = Date()
+    var date: Date!
+    init() {
+    }
 }

@@ -8,6 +8,7 @@
 import UIKit
 
 class CalendarWeekCell: UITableViewCell, ObservingTableCell {
+
     var viewmodel:TableCellViewModel? {
         didSet {
             viewmodel?.delegate = self
@@ -39,6 +40,7 @@ class CalendarWeekCell: UITableViewCell, ObservingTableCell {
     @IBOutlet weak var imgWork7: UIImageView!
     var days = [1, 2, 3, 4, 5, 6, 7]
     var imgs = [Int:String]()
+    var delegate: CalendarWeekCellDelegate?
     var eventDelegate: ObservingTableCellEvent?
     var month = 0
     var year = 0
@@ -105,7 +107,8 @@ class CalendarWeekCell: UITableViewCell, ObservingTableCell {
     }
     @objc func sendEventToController(sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
-            self.eventDelegate?.eventFromTableCell(code: tag, index: viewmodel!.index)
+            self.delegate?.selectDay(dateStr: "\(self.year)-\(self.month)-\(tag)")
+//            self.eventDelegate?.eventFromTableCell(code: tag, index: viewmodel!.index)
         }
     }
     func changeData() {
@@ -138,4 +141,8 @@ class CalendarWeekCell: UITableViewCell, ObservingTableCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
+}
+
+protocol CalendarWeekCellDelegate {
+    func selectDay(dateStr:String)
 }

@@ -20,13 +20,15 @@ class DatePickerService: DatePickerServiceType, DatePcikerViewDelegate {
         self.context = context
     }
     func showDatePicker(selectDate: Date, completion: ((Date) -> Void)?) {
-       let picker = DatePcikerView()
+       let picker = DatePickerView()
         self.context.view.addSubview(picker)
         self.context.view.bringSubviewToFront(picker)
         picker.snp.makeConstraints({
             $0.edges.equalToSuperview()
         })
         picker.delegate = self
+        picker.setDate(selectDate: selectDate)
+        self.completion = completion
     }
     func showDatePicker(selectDate: Date) {
         self.completion?(selectDate)

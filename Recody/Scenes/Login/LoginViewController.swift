@@ -61,7 +61,6 @@ class LoginViewController: UIViewController {
             methodVC.delegate = self
             self.present(methodVC, animated: true)
         case .slideImageClick:
-            
             self.navigationController?.pushViewController(TestApiViewController.getInstanse(), animated: true)
         case .registerMemeber:
             self.navigationController?.pushViewController(RegisterMemberViewController.getInstanse(), animated: true)

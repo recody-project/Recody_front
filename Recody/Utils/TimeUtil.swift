@@ -89,3 +89,28 @@ class TimeUtil {
         return isLeapYear
     }
 }
+extension Date {
+    init(_ yyyyMMdd:String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        guard let date = dateFormatter.date(from: yyyyMMdd) else {
+            fatalError("포맷에 맞지않는 시간 형식")
+        }
+        self = date
+    }
+    func toString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        return dateFormatter.string(from: self)
+    }
+    // date 인자와 자신을 비교해 자신이 미래시간인지 여부 반환
+    func isFuture(_ date:Date) -> Bool {
+        return self.timeIntervalSince1970 > date.timeIntervalSince1970
+    }
+    // date 인자와 자신을 비교해 자신이 과거시간인지 여부 반환
+    func isPast(_ date:Date) -> Bool {
+            return self.timeIntervalSince1970 < date.timeIntervalSince1970
+        }
+}

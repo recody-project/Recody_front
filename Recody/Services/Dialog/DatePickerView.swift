@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 
-class DatePcikerView: UIView {
+class DatePickerView: UIView {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var btnDone: UILabel!
-    var selectDate = Date()
+    var selectDate : Date!
     var delegate: DatePcikerViewDelegate?
     var animating = false
     required init?(coder aDecoder: NSCoder) {
@@ -29,11 +29,16 @@ class DatePcikerView: UIView {
         guard let customView = nibs?.first as? UIView else { return }
         customView.frame = self.bounds
         self.addSubview(customView)
-        
-        btnDone.isUserInteractionEnabled = true
-        btnDone.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(doneAction)))
+        self.datePicker.setValue(UIColor.black, forKey: "textColor")
+        self.datePicker.setValue(false, forKey: "highlightsToday")
+        self.datePicker.timeZone = .current
+        self.btnDone.isUserInteractionEnabled = true
+        self.btnDone.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.doneAction)))
         self.backgroundColor = .black.withAlphaComponent(0.5)
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismiss)))
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismiss)))
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
     }
     @objc func dismiss() {
         if !animating {
@@ -64,7 +69,7 @@ class DatePcikerView: UIView {
     
     @IBAction func datePickerValueChanged(_ sender: Any) {
         if let picker = sender as? UIDatePicker {
-            self.selectDate = picker.date
+                                self.selectDate = picker.date
         }
         
     }

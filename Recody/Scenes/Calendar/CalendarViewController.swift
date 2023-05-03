@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CalendarViewController: UIViewController, ObservingTableCellEvent {
+class CalendarViewController: UIViewController, CalendarWeekCellDelegate {
     var viewModel = CalendarViewModel()
     var tableList: [TableCellViewModel] = [TableCellViewModel]()
     @IBOutlet weak var tableView: UITableView!
@@ -34,11 +34,12 @@ class CalendarViewController: UIViewController, ObservingTableCellEvent {
             return self.rawValue
         }
     }
-    //테이블 셀 클릭이벤트
-    func eventFromTableCell(code: Int,index: Int) {
-//        self.interactor?.just(UseCase.moveDetail).api(.checkValidEmail("asd"))
-        self.navigationController?.pushViewController(CalendarDetailViewController.getInstanse(), animated: true)
+    func selectDay(dateStr: String) {
+        let vc = CalendarDetailViewController.getInstanse()
+        vc.viewModel.date = Date(dateStr)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
@@ -123,11 +124,11 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
         let list = self.tableList.filter { $0.visible }
         var cell = UITableViewCell()
         guard let type = CalendarTableCellType(rawValue: list[indexPath.row].type) else { fatalError("CellType Int Out Of Bounds Error") }
-        var mCell = tableView.dequeueReusableCell(withIdentifier: type.name) as? UITableViewCell & ObservingTableCell
+        var mCell = tableView.dequeueReusableCell(withIdentifier: type.name) as? CalendarWeekCell
             // Viewmodel 주입
             mCell?.viewmodel = list[indexPath.row]
             // Cell 내의 클릭이벤트 구독 -> eventFromTableCell() 함수로전달
-            mCell?.eventDelegate = self
+            mCell?.delegate = self
         if mCell != nil { cell = mCell! }
         list[indexPath.row].viewHeight = cell.frame.height
 //        cell.contentView.cornerRadius = 12

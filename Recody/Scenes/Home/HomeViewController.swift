@@ -44,6 +44,9 @@ class HomeViewController: UIViewController {
         return vc
     }
     func setUp() {
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
 //        self.interactor?.just(UseCase.setting).drop()
         self.notificationButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
     }
