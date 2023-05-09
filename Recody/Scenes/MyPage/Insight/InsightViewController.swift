@@ -13,13 +13,19 @@ class InsightViewController: UIViewController, ObservingTableCellEvent {
         // 셀 내의 개별적 제스쳐 이벤트를 처리하는 공간
         // interactor를 통해서 처리
         guard let cellEvent = InsightCellEvent(rawValue: code) else { return }
-        print(cellEvent)
-//        self.interactor?.just(UserCace.cellClickEvent).drop()
+        switch cellEvent {
+        case .shareEvent:
+            ServiceProvider.shaerd.alertService(self).showToast("shareEvent")
+        default:
+        break
+            
+        }
+//        self.interactor?.just(UseCase.cellClickEvent).drop()
     }
     var viewModel = InsiteViewModel()
     var tableList: [TableCellViewModel] = [TableCellViewModel]()
     // 화면내의 모든 인터렉션 (탭,스와이프, 롱탭, .... 의 수만큼 작성필요)
-    enum UserCace: Int {
+    enum UseCase: Int {
         case back = 100
         case nextMonth = 101
         case previousMonth = 102
@@ -92,11 +98,11 @@ class InsightViewController: UIViewController, ObservingTableCellEvent {
         return vc
     }
     func setup(){
-        btnNext.tag = UserCace.nextMonth.number
-        btnPrevious.tag = UserCace.previousMonth.number
-        btnBack.tag = UserCace.back.number
-        btnDownload.tag = UserCace.download.number
-        btnHambuger.tag = UserCace.hambuger.number
+        btnNext.tag = UseCase.nextMonth.number
+        btnPrevious.tag = UseCase.previousMonth.number
+        btnBack.tag = UseCase.back.number
+        btnDownload.tag = UseCase.download.number
+        btnHambuger.tag = UseCase.hambuger.number
         [btnDownload,btnHambuger].forEach({
             $0?.isUserInteractionEnabled = true
             $0?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(btnClickEvent)))
@@ -109,51 +115,62 @@ class InsightViewController: UIViewController, ObservingTableCellEvent {
     }
     @objc func btnClickEvent(_ sender: UITapGestureRecognizer) {
         if let tag = sender.view?.tag {
-            if let command = UserCace.init(rawValue: tag) {
+            if let command = UseCase.init(rawValue: tag) {
                 switch command {
                 case .back:
                     self.navigationController?.popViewController(animated: true)
                 case .nextMonth:
-                    self.navigationController?.pushViewController(HomeViewController.getInstanse(), animated: true)
+//                    self.navigationController?.pushViewController(HomeViewController.getInstanse(), animated: true)
+                    ServiceProvider.shaerd.alertService(self).showToast("nextMonth")
                 case .previousMonth:
-                    break
+                    ServiceProvider.shaerd.alertService(self).showToast("previousMonth")
                 case .hambuger:
-                    self.navigationController?.pushViewController(InsightViewController.getInstanse(), animated: true)
-                case .foldEnable:
-                    //중복 실행을 방지하기위한 플래그
-                    //반드시 한 애니메이션당 한개씩 만들것
-                    if self.viewModel.isAnimateFold { return }
-                    //단순 길이 변화 를 할떄 constant값을 조절할것
-                    self.lcInfoViewHeight.constant = 0.1
-                    ServiceProvider.shaerd.animator(self).animate(0.3, animationBlock: {
-                        // 애니메이션이 실행되고 실행 플래그 true
-                        self.viewModel.isAnimateFold = true
-                        // animationBlock에서는 frame 속성에 대한 변화값을 설정할것
-                        self.vwInfo.alpha = 0.0
-                        // 반드시 호출해야 애니메이션이 실행됨
-                        self.view.layoutIfNeeded()
-                    }, { _ in
-                        // 실행이 끝나고 난 시점
-                        // 실행 플래그 false
-                        self.viewModel.isAnimateFold = false
-                    })
-                    break
-                case .foldDisable:
-                    if self.viewModel.isAnimateFold { return }
-                    self.lcInfoViewHeight.constant = 90.0
-                    ServiceProvider.shaerd.animator(self).animate(0.3, animationBlock: {
-                        self.viewModel.isAnimateFold = true
-                        self.vwInfo.alpha = 1.0
-                        self.view.layoutIfNeeded()
-                    }, { _ in
-                        self.viewModel.isAnimateFold = false
-                    })
+//                    self.navigationController?.pushViewController(InsightViewController.getInstanse(), animated: true)
+                    ServiceProvider.shaerd.alertService(self).showToast("hambuger")
+                case .download:
+                    ServiceProvider.shaerd.alertService(self).showToast("download")
                 default:
                     print("처리안된 커맨드 : \(command)")
                 }
             }
         }
     }
+    func doAction(_ actionCase:InsightViewController.UseCase){
+        switch actionCase{
+        case .foldEnable:
+            //중복 실행을 방지하기위한 플래그
+            //반드시 한 애니메이션당 한개씩 만들것
+            if self.viewModel.isAnimateFold { return }
+            //단순 길이 변화 를 할떄 constant값을 조절할것
+            self.lcInfoViewHeight.constant = 0.1
+            ServiceProvider.shaerd.animator(self).animate(0.3, animationBlock: {
+                // 애니메이션이 실행되고 실행 플래그 true
+                self.viewModel.isAnimateFold = true
+                // animationBlock에서는 frame 속성에 대한 변화값을 설정할것
+                self.vwInfo.alpha = 0.0
+                // 반드시 호출해야 애니메이션이 실행됨
+                self.view.layoutIfNeeded()
+            }, { _ in
+                // 실행이 끝나고 난 시점
+                // 실행 플래그 false
+                self.viewModel.isAnimateFold = false
+            })
+            break
+        case .foldDisable:
+            if self.viewModel.isAnimateFold { return }
+            self.lcInfoViewHeight.constant = 90.0
+            ServiceProvider.shaerd.animator(self).animate(0.3, animationBlock: {
+                self.viewModel.isAnimateFold = true
+                self.vwInfo.alpha = 1.0
+                self.view.layoutIfNeeded()
+            }, { _ in
+                self.viewModel.isAnimateFold = false
+            })
+        default:
+        break
+        }
+    }
+    
     func setUpTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -223,15 +240,9 @@ class InsightViewController: UIViewController, ObservingTableCellEvent {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y <= 0 {
-            scrollView.tag = UserCace.foldDisable.rawValue
-            if let gesture = scrollView.gestureRecognizers?.filter({$0 is UITapGestureRecognizer}).first as? UITapGestureRecognizer{
-                self.btnClickEvent(gesture)
-            }
+            doAction(UseCase.foldDisable)
         } else {
-            scrollView.tag = UserCace.foldEnable.rawValue
-            if let gesture = scrollView.gestureRecognizers?.filter({$0 is UITapGestureRecognizer}).first as? UITapGestureRecognizer{
-                self.btnClickEvent(gesture)
-            }
+            doAction(UseCase.foldEnable)
         }
     }
 }

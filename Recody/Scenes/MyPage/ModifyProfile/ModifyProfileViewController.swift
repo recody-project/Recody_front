@@ -7,13 +7,17 @@
 
 import Foundation
 import UIKit
-
+protocol ModifyProfileViewControllerDelegate {
+    func changeData(model:ModifyProfileViewModel)
+}
 class ModifyProfileViewController: UIViewController {
     let viewModel = ModifyProfileViewModel()
+    var modal: HalfModalPresentationController?
+    var delegate: ModifyProfileViewControllerDelegate?
     @IBOutlet weak var etNickName: UITextField!
     @IBOutlet weak var btnBack: UIButton!
-    @IBOutlet weak var btnCancel: UIButton!
-    @IBOutlet weak var btnUpdate: UIButton!
+//    @IBOutlet weak var btnCancel: UIButton!
+//    @IBOutlet weak var btnUpdate: UIButton!
     @IBOutlet weak var lbGuide: UILabel!
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var imgProfileEdit: UIImageView! // 36 x 36
@@ -44,22 +48,30 @@ class ModifyProfileViewController: UIViewController {
             guard let useCase = UseCase(rawValue: tag) else { return }
             switch useCase {
             case .back:
-                self.dismiss(animated: true)
+                self.modal?.dismissController()
+//                self.dismiss(animated: true)
+            case .update:
+                self.modal?.dismissController({
+                    self.delegate?.changeData(model: self.viewModel)
+                })
             default:
             break
             }
         }
     }
+    
     func setup() {
-        self.view.backgroundColor = .black.withAlphaComponent(0.5)
+        if let subV = self.view.subviews.first {
+            subV.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
+        }
         self.view.tag = UseCase.back.rawValue
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
         btnBack.tag = UseCase.back.rawValue
-        btnCancel.tag = UseCase.cancel.rawValue
-        btnUpdate.tag = UseCase.update.rawValue
+//        btnCancel.tag = UseCase.cancel.rawValue
+//        btnUpdate.tag = UseCase.update.rawValue
         imgProfileEdit.tag = UseCase.changeProfileImage.rawValue
         imgProfileEdit.isUserInteractionEnabled = true
-        [btnBack, btnCancel, btnUpdate, imgProfileEdit].forEach({
+        [btnBack, imgProfileEdit].forEach({
             $0?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
         })
         imgProfileEdit.layer.cornerRadius = imgProfileEdit.frame.height / 2.0

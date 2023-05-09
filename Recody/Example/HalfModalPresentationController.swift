@@ -10,22 +10,33 @@ import Foundation
 import UIKit
 class HalfModalPresentationController: UIPresentationController {
     
+    var contentHegihtPer = 0.5
     let backgroundView = UIView()
     var tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
     var check: Bool = false
+    var windowHeghit = 1080.0
+    convenience init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?,contentHegihtPer: CGFloat = 0.5) {
+        self.init(presentedViewController: presentedViewController, presenting: presentingViewController)
+        self.contentHegihtPer = contentHegihtPer
+    }
     
     override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         super.init(presentedViewController: presentedViewController, presenting: presentedViewController)
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissController))
         backgroundView.addGestureRecognizer(tapGestureRecognizer)
         backgroundView.backgroundColor = .black.withAlphaComponent(0.5)
+        if let window = UIApplication.shared.windows.first {
+            self.windowHeghit = window.frame.height
+        }
     }
     
     override var frameOfPresentedViewInContainerView: CGRect {
-        CGRect(origin: CGPoint(x: 0,
-                               y: self.containerView!.frame.height * 0.5 ),
+        let contentHeight = self.windowHeghit * contentHegihtPer
+        let yPosition = self.windowHeghit - contentHeight
+        return CGRect(origin: CGPoint(x: 0,
+                               y: yPosition ),
                size: CGSize(width: self.containerView!.frame.width,
-                            height: self.containerView!.frame.height * 0.5))
+                            height: contentHeight))
     }
     
     // 모달이 올라갈 때 뒤에 있는 배경을 검은색 처리해주는 용도

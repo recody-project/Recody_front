@@ -51,15 +51,18 @@ class MyPageViewController: UIViewController, ObservingCollectionCellEvent {
             guard let useCase = UseCase(rawValue: tag) else { return }
             switch useCase {
             case .setting:
-                self.navigationController?.pushViewController(InsightViewController.getInstanse(), animated: true)
+//                self.navigationController?.pushViewController(InsightViewController.getInstanse(), animated: true)
+                self.navigationController?.pushViewController(SettingViewController.getInstanse(), animated: true)
             case .nextBottomPgae:
                 self.viewModel.nextPage()
             case .previousBottomPage:
                 self.viewModel.previousPage()
             case .changeProfileImage:
-//                self.navigationController?.pushViewController(ModifyProfileViewController.getInstanse(), animated: true)
-                //todo
-//                self.router?.presentWithRootViewcontroller(RoutingLogic.Navigation.modifyProfile, nil,.overCurrentContext)
+                let methodVC = ModifyProfileViewController.getInstanse()
+                methodVC.transitioningDelegate = self
+                methodVC.modalPresentationStyle = .custom
+                methodVC.delegate = self
+                self.present(methodVC, animated: true)
             break
             default:
             break
@@ -216,4 +219,20 @@ extension MyPageViewController : UICollectionViewDelegate,UICollectionViewDataSo
 //        return viewModel.collectionViewMaxLineCount
 //    }
     
+}
+extension MyPageViewController: UIViewControllerTransitioningDelegate{
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        let totalHeight = self.view.frame.height
+        let vcHeight: CGFloat = 350.0
+        let modal =  HalfModalPresentationController(presentedViewController: presented, presenting: presenting,contentHegihtPer: vcHeight  / totalHeight)
+        if let vc = presented as? LoginMethodViewController {
+            vc.modal = modal
+        }
+          return modal
+      }
+}
+extension MyPageViewController: ModifyProfileViewControllerDelegate {
+    func changeData(model:ModifyProfileViewModel){
+        ServiceProvider.shaerd.alertService(self).showToast("model.newNickName : \(model.newNickName)\nmodel.profileImg : \(model.profileImg)")
+    }
 }
