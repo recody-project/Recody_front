@@ -12,8 +12,8 @@ class ListPageViewController: UIPageViewController {
     var dataViewControllers = [UIViewController]()
     var lastIndex = 0
     
-    func setUpLayout(viewController : UIViewController,
-                     superView : UIView? = nil) -> Self {
+    func setUpLayout(viewController: UIViewController,
+                     superView: UIView? = nil) -> Self {
         viewController.addChild(self)
         if superView != nil {
             superView?.addSubview(self.view)

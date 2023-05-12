@@ -12,7 +12,7 @@ class CustomCategory: UIView {
 
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryName: UILabel!
-    @IBOutlet weak var editButton: UIButton!
+
     var isBorder = false
 
     func setData(with data: Category) {
@@ -39,10 +39,6 @@ class CustomCategory: UIView {
 
     func returnIsBorder() -> Bool {
         return isBorder
-    }
-
-    func toggleEditButtonHidden() {
-        editButton.isHidden = false
     }
 
     override init(frame: CGRect) {

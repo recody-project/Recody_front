@@ -98,12 +98,7 @@
 		3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D176B289BC12200B260D1 /* .swiftlint.yml */; };
 		3A8D176E289BC21400B260D1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D176D289BC21400B260D1 /* .gitignore */; };
 		3A8F862D28C625210028B45C /* CategorySetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F862C28C625210028B45C /* CategorySetting.storyboard */; };
-		3A8F863528C6277D0028B45C /* EditGenrePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F862F28C6277D0028B45C /* EditGenrePresenter.swift */; };
-		3A8F863628C6277D0028B45C /* EditGenreWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863028C6277D0028B45C /* EditGenreWorker.swift */; };
-		3A8F863728C6277D0028B45C /* EditGenreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863128C6277D0028B45C /* EditGenreRouter.swift */; };
-		3A8F863828C6277D0028B45C /* EditGenreModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863228C6277D0028B45C /* EditGenreModels.swift */; };
 		3A8F863928C6277D0028B45C /* EditGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863328C6277D0028B45C /* EditGenreViewController.swift */; };
-		3A8F863A28C6277D0028B45C /* EditGenreInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863428C6277D0028B45C /* EditGenreInteractor.swift */; };
 		3A9D6F2A29B4733900F4C2F4 /* WorkListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D6F2929B4733900F4C2F4 /* WorkListView.xib */; };
 		3A9D6F2C29B4789A00F4C2F4 /* WorkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9D6F2B29B4789A00F4C2F4 /* WorkListView.swift */; };
 		3AA56CF928BDDDE000FB66F5 /* RecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA56CF328BDDDE000FB66F5 /* RecordPresenter.swift */; };
@@ -299,12 +294,7 @@
 		3A8D176B289BC12200B260D1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3A8D176D289BC21400B260D1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3A8F862C28C625210028B45C /* CategorySetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategorySetting.storyboard; sourceTree = "<group>"; };
-		3A8F862F28C6277D0028B45C /* EditGenrePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenrePresenter.swift; sourceTree = "<group>"; };
-		3A8F863028C6277D0028B45C /* EditGenreWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreWorker.swift; sourceTree = "<group>"; };
-		3A8F863128C6277D0028B45C /* EditGenreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreRouter.swift; sourceTree = "<group>"; };
-		3A8F863228C6277D0028B45C /* EditGenreModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreModels.swift; sourceTree = "<group>"; };
 		3A8F863328C6277D0028B45C /* EditGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreViewController.swift; sourceTree = "<group>"; };
-		3A8F863428C6277D0028B45C /* EditGenreInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreInteractor.swift; sourceTree = "<group>"; };
 		3A9D6F2929B4733900F4C2F4 /* WorkListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkListView.xib; sourceTree = "<group>"; };
 		3A9D6F2B29B4789A00F4C2F4 /* WorkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkListView.swift; sourceTree = "<group>"; };
 		3AA56CF328BDDDE000FB66F5 /* RecordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPresenter.swift; sourceTree = "<group>"; };
@@ -677,6 +667,7 @@
 				3A34164E28FF5CD200C4D698 /* MyPage */,
 				3AB9CFC528B4F05F00A600DB /* Common */,
 				3A75DBDF28A0F3D400084DB1 /* Tab */,
+				3ADDAD5E294B725500BC15D4 /* List */,
 				3A8D175A289BBE9500B260D1 /* Home */,
 				3A75DBF228A0F5A000084DB1 /* Record */,
 				3A75DBF328A0F5AA00084DB1 /* Calendar */,
@@ -689,7 +680,6 @@
 			children = (
 				3AEED25429C8A63800D02F3F /* Notification */,
 				3AB9CFB528B4E81500A600DB /* WorkDetailInfo */,
-				3ADDAD5E294B725500BC15D4 /* List */,
 				3A8F862B28C6250C0028B45C /* EditGenre */,
 				3A8D175E289BBEA100B260D1 /* HomeViewModel.swift */,
 				AE9832DC29B8176E00892C26 /* Home.storyboard */,
@@ -717,12 +707,7 @@
 			isa = PBXGroup;
 			children = (
 				3A8F862E28C6276C0028B45C /* EditGenre+ */,
-				3A8F862F28C6277D0028B45C /* EditGenrePresenter.swift */,
-				3A8F863028C6277D0028B45C /* EditGenreWorker.swift */,
-				3A8F863128C6277D0028B45C /* EditGenreRouter.swift */,
-				3A8F863228C6277D0028B45C /* EditGenreModels.swift */,
 				3A8F863328C6277D0028B45C /* EditGenreViewController.swift */,
-				3A8F863428C6277D0028B45C /* EditGenreInteractor.swift */,
 				3A8F862C28C625210028B45C /* CategorySetting.storyboard */,
 			);
 			path = EditGenre;
@@ -1296,7 +1281,6 @@
 				3A6AE8EA2918911B00A9F520 /* InsiteStatisticsGraphChartView.swift in Sources */,
 				3A731B3029CECB9C00C5EE5E /* SearchFilterViewController.swift in Sources */,
 				3AA56CF928BDDDE000FB66F5 /* RecordPresenter.swift in Sources */,
-				3A8F863628C6277D0028B45C /* EditGenreWorker.swift in Sources */,
 				AE5C21FB29F107A5009ACD27 /* Animator.swift in Sources */,
 				3A6AE88E2918901900A9F520 /* TableCellViewModel+.swift in Sources */,
 				20E788472925B7E000B05C8E /* CalendarDetailCell.swift in Sources */,
@@ -1312,7 +1296,6 @@
 				3A13C9A3291F0A7700DC0756 /* SearchViewController.swift in Sources */,
 				2015B3072918DF1700DB725D /* InsightCellEvent.swift in Sources */,
 				20C161E6292CB739001B2F7F /* SettingViewController.swift in Sources */,
-				3A8F863828C6277D0028B45C /* EditGenreModels.swift in Sources */,
 				3A6AE8E02918910300A9F520 /* InsightStatisticsGraphCell.swift in Sources */,
 				3AB1432328F76FBC0041C9CC /* MySearchTableViewCell.swift in Sources */,
 				3AD4F12828C0AFF900598D28 /* CALayer+.swift in Sources */,
@@ -1343,7 +1326,6 @@
 				20BD9CAC2921F90300BDAD13 /* CalendarWeekCell.swift in Sources */,
 				3A6AE8DD2918910300A9F520 /* InsightTop3GenreCell.swift in Sources */,
 				3AE6A55828ED9B08008ED7DB /* WorkCollectionViewCellModels.swift in Sources */,
-				3A8F863728C6277D0028B45C /* EditGenreRouter.swift in Sources */,
 				3ADDAD60294B72A700BC15D4 /* ListPageViewController.swift in Sources */,
 				3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */,
 				208386DB294813BA0012A8E0 /* PageViewController.swift in Sources */,
@@ -1352,7 +1334,6 @@
 				3AB9CFBF28B4E84300A600DB /* WorkDetailInfoViewModel.swift in Sources */,
 				3AEDB70D28DE07FC00C3DB8D /* PreReviewRouter.swift in Sources */,
 				3AA56D0128BDE7A600FB66F5 /* RecordViewController+.swift in Sources */,
-				3A8F863528C6277D0028B45C /* EditGenrePresenter.swift in Sources */,
 				3AEDB71028DE07FC00C3DB8D /* PreReviewInteractor.swift in Sources */,
 				3A6AE8D72918910300A9F520 /* InsightMostImpressiveCell.swift in Sources */,
 				20BD9CB129220BE200BDAD13 /* TimeUtil.swift in Sources */,
@@ -1363,7 +1344,6 @@
 				3AC934C8297779CF00868C33 /* FilterViewController.swift in Sources */,
 				AE6E7EAB29DC0E5F00EDC669 /* HalfModalPresentationController.swift in Sources */,
 				3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */,
-				3A8F863A28C6277D0028B45C /* EditGenreInteractor.swift in Sources */,
 				AEB50AC129932A4200181BEC /* TestApiViewController.swift in Sources */,
 				3AEED25729C8A66100D02F3F /* NotificationViewController.swift in Sources */,
 				3AD4F12628C0A66600598D28 /* UIColor+.swift in Sources */,

@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
         setUp()
         setWorkView()
     }
-    static func getInstanse() -> HomeViewController{
+    static func getInstanse() -> HomeViewController {
         guard let vc =  UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "home") as? HomeViewController
         else {
             fatalError()
@@ -67,25 +67,6 @@ class HomeViewController: UIViewController {
                 ServiceProvider.shaerd.apiService.send(.getMyRecentContinuingRecord)
                 ServiceProvider.shaerd.apiService.send(.getMovies)
             break
-            case .pushRecordList:
-                if #available(iOS 14.0, *) {
-                    self.navigationController?.pushViewController(ListViewController.getInstanse(), animated: true)
-                } else {
-                   fatalError("iOS14 미만은 사용할수없습니다.")
-                }
-            case .pushWorkDetailInfo:
-                let vc = UIStoryboard(name: "WorkDetailInfo", bundle: nil).instantiateViewController(withIdentifier: "workDetailInfo")
-                self.navigationController?.pushViewController(vc, animated: true)
-            case .pushNotification:
-                let vc = UIStoryboard(name: "Notification", bundle: nil).instantiateViewController(withIdentifier: "notification")
-                self.navigationController?.pushViewController(vc, animated: true)
-            case .pushRecordList:
-                if #available(iOS 14.0, *) {
-                    let vc =
-                    self.navigationController?.pushViewController(ListViewController.getInstanse(), animated: true)
-                } else {
-                    fatalError("iOS 14.0 이상 사용가능")
-                }
             case .pushWorkDetailInfo:
                 self.navigationController?.pushViewController(WorkDetailInfoViewController.getInstanse(), animated: true)
             case .pushNotification:
@@ -97,7 +78,6 @@ class HomeViewController: UIViewController {
     }
 
     enum UseCase: Int {
-        case pushRecordList = 100
         case setting = 105
         case notification = 106
         case moveReviewing = 107
