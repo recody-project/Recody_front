@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 import Foundation
 
 class ListPageViewController: UIPageViewController {
@@ -20,24 +21,24 @@ class ListPageViewController: UIPageViewController {
         } else {
             viewController.view.addSubview(self.view)
         }
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        let nib = UINib(nibName: "WorkListCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "workListCollectionView")
-//        collectionView.register(WorkListCollectionViewCell.self, forCellWithReuseIdentifier: "workListCollectionView")
-        viewController.view.addSubview(collectionView)
-
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        self.didMove(toParent: self)
+//        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
+//        let nib = UINib(nibName: "WorkListCollectionViewCell", bundle: nil)
+//        collectionView.register(nib, forCellWithReuseIdentifier: "workListCollectionView")
+////        collectionView.register(WorkListCollectionViewCell.self, forCellWithReuseIdentifier: "workListCollectionView")
+//        viewController.view.addSubview(collectionView)
+//
+//        collectionView.translatesAutoresizingMaskIntoConstraints = false
+//        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//        self.didMove(toParent: self)
         
         return self
     }
-    
+       
     func add(viewControllers: [UIViewController]) -> Self {
         for (vc) in viewControllers.enumerated() {
             dataViewControllers.append(vc.element)
@@ -81,6 +82,30 @@ class ListPageViewController: UIPageViewController {
         super.viewDidLoad()
         delegate = self
         dataSource = self
+        
+        
+        
+        let vc = UIViewController()
+        vc.view.backgroundColor = .white
+        self.add(viewController: vc)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        let nib = UINib(nibName: "WorkListCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "workListCollectionView")
+        collectionView.register(WorkListCollectionViewCell.self, forCellWithReuseIdentifier: "workListCollectionView")
+        vc.view.addSubview(collectionView)
+        collectionView.snp.makeConstraints({
+            $0.edges.equalToSuperview()
+        })
+//        collectionView.translatesAutoresizingMaskIntoConstraints = false
+//        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+//        self.didMove(toParent: self)
+                
     }
 
     override func viewWillAppear(_ animated: Bool) {
