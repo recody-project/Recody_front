@@ -29,7 +29,8 @@ class MyPageViewModel {
     let collectionViewCellVerticalSpacing = 8 // 셀간 수직 간격
     let collectionViewMaxLineCount = 2 // 라인수
     let collectionViewMaxHorizontalItemCount = 3
-    
+    var recordedWorksList = [CollectionCellViewModel]() //기록 중인 작품리스트
+    var dibsOnWorksList = [CollectionCellViewModel]() // 찜한 작품리스트
     func nextPage(){
         if bottomPageIndex < maxPageCount-1 {
             bottomPageIndex += 1

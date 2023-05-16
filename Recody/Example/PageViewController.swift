@@ -7,12 +7,15 @@
 
 import Foundation
 import UIKit
+protocol PageChagenDelegate {
+    func pageChanged(currentIndex:Int)
+}
 class PageViewController: UIPageViewController {
     
     var dataViewControllers = [UIViewController]()
 //    var delegate: PageViewControllerDelegate?
     var lastIndex = 0
-    
+    var pageDelegate : PageChagenDelegate?
     //필수 호출
     //viewController : 부모 뷰컨트롤러
     //superView : 이 VC 가 들어갈 View
@@ -62,7 +65,13 @@ class PageViewController: UIPageViewController {
     
         lastIndex = index
     }
-    
+    func removeSwipeGesture(){
+        for view in self.view.subviews {
+            if let subView = view as? UIScrollView {
+                subView.isScrollEnabled = false
+            }
+        }
+    }
     func reloadData(){
         self.delegate = nil
         self.dataSource = nil
@@ -115,6 +124,16 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
 //        }
         
         return dataViewControllers[nextIndex]
+    }
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if (!completed)
+         {
+           return
+         }
+        if let currentIndex = pageViewController.viewControllers?.first?.view.tag {
+            self.pageDelegate?.pageChanged(currentIndex: currentIndex)
+        }
+         
     }
 }
 

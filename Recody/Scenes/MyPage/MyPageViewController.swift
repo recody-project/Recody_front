@@ -30,11 +30,13 @@ class MyPageViewController: UIViewController, ObservingCollectionCellEvent {
     @IBOutlet weak var btnRecordedWorks: UILabel! // 기록 중인 작품
     @IBOutlet weak var btnDibsOnWorks: UILabel! // 찜한 작품
     @IBOutlet weak var bottomIndicatorConstraint: NSLayoutConstraint! // 하단 메뉴 강조 블럭
-    @IBOutlet weak var viewChart:UIView!
-    @IBOutlet weak var collectionView : UICollectionView!
-    
-    var recordedWorksList = [CollectionCellViewModel]() //기록 중인 작품리스트
+    @IBOutlet weak var viewChart: UIView!
+    @IBOutlet weak var collectionContainer: UIView!
+    var pageVC = PageViewController()
+    var collectionViews = [UICollectionView]()
+    var recordedWorksList = [CollectionCellViewModel]() // 기록 중인 작품리스트
     var dibsOnWorksList = [CollectionCellViewModel]() // 찜한 작품리스트
+    var chartView: MyPageChartView?
     enum UseCase: Int {
         case setting = 100 // 셋팅 버튼 클릭시 -> 화면이동
         case alarm = 101 // 우상단 알림 버튼 클릭시 -> 화면이동
@@ -102,20 +104,59 @@ class MyPageViewController: UIViewController, ObservingCollectionCellEvent {
         let com = TimeUtil.nowDateComponent()
         viewModel.month = com.month!
         viewModel.year = com.year!
-        
+        chartView = MyPageChartView()
+        chartView?.setColor(totalColor: viewModel.cicleChartColorTotal, bestColor: viewModel.cicleChartColorBest)
+        chartView?.setDataCount(total:100,best: viewModel.mostAppreciationGenrePer)
+        self.viewChart.addSubview(chartView ?? MyPageChartView())
+        chartView?.snp.makeConstraints({
+            $0.edges.equalToSuperview()
+        })
     }
     private func setupCollectionView(){
-        self.collectionView.backgroundColor = .clear
-        self.collectionView.register(cells: [(MyPageWorkCollectionCell.Xib,MyPageWorkCollectionCell.Name)])
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 20, right: 20)
-        recordedWorksList = (0...10).map { idx -> CollectionCellViewModel in
+        let collectionV =  UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionV.tag = 1
+        collectionViews.append(collectionV)
+        let collectionV2 =  UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionV2.tag = 2
+        collectionViews.append(collectionV2)
+        
+        let vc1 = UIViewController()
+        vc1.view.backgroundColor = .white
+        vc1.view.addSubview(collectionV)
+        collectionV.snp.makeConstraints({
+            $0.edges.equalToSuperview()
+        })
+        let vc2 = UIViewController()
+        vc2.view.backgroundColor = .white
+        vc2.view.addSubview(collectionV2)
+        collectionV2.snp.makeConstraints({
+            $0.edges.equalToSuperview()
+        })
+        viewModel.recordedWorksList = (0...10).map { idx -> CollectionCellViewModel in
             return CollectionCellViewModel(type: -1, data: nil)
         }
-        dibsOnWorksList = (0...8).map { idx -> CollectionCellViewModel in
+        viewModel.dibsOnWorksList = (0...8).map { idx -> CollectionCellViewModel in
             return CollectionCellViewModel(type: -1, data: nil)
         }
+        
+        collectionViews.forEach({
+            $0.backgroundColor = .clear
+            $0.register(cells: [(MyPageWorkCollectionCell.Xib,MyPageWorkCollectionCell.Name)])
+            $0.delegate = self
+            $0.dataSource = self
+            $0.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 20, right: 20)
+        })
+       
+        
+        pageVC.setUpLayout(viewController: self,superView: collectionContainer)
+        pageVC.add(viewControlers: [vc1,vc2])
+        pageVC.removeSwipeGesture()
+        pageVC.reloadInputViews()
+        
+        collectionViews.forEach({
+            $0.reloadData()
+        })
+        
     }
     
     private func update() {
@@ -140,21 +181,20 @@ class MyPageViewController: UIViewController, ObservingCollectionCellEvent {
                 self.view.layoutIfNeeded()
             })
         }
-        
-        let chart1 = MyPageChartView()
-        chart1.setColor(totalColor: viewModel.cicleChartColorTotal, bestColor: viewModel.cicleChartColorBest)
-        chart1.setDataCount(total:100,best: viewModel.mostAppreciationGenrePer)
-        self.viewChart.addSubview(chart1)
-        chart1.snp.makeConstraints({
-            $0.edges.equalToSuperview()
+        collectionViews.forEach({
+            $0.reloadData()
         })
+        viewModel.cicleChartColorBest = .red
+        viewModel.mostAppreciationGenrePer = 30
+        chartView?.setColor(totalColor: viewModel.cicleChartColorTotal, bestColor: viewModel.cicleChartColorBest)
+        chartView?.setDataCount(total:100,best: viewModel.mostAppreciationGenrePer)
         
-        collectionView.reloadData()
+        pageVC.moveSlidePage(index: viewModel.bottomPageIndex)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         setupCollectionView()
+        setup()
         update()
     }
 }
@@ -162,12 +202,11 @@ class MyPageViewController: UIViewController, ObservingCollectionCellEvent {
 extension MyPageViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var list = [CollectionCellViewModel]()
-        if viewModel.bottomPageIndex == 0 {
-            list = recordedWorksList
-        } else if ( viewModel.bottomPageIndex == 1 ) {
-            list = dibsOnWorksList
+        if collectionView.tag == 1 {
+            list = viewModel.recordedWorksList
+        }else if(collectionView.tag == 2){
+            list = viewModel.dibsOnWorksList
         }
-        print("count = \(list.filter({$0.visible}).count)")
         
         return list.filter({$0.visible}).count
     }
@@ -175,12 +214,12 @@ extension MyPageViewController : UICollectionViewDelegate,UICollectionViewDataSo
         var list = [CollectionCellViewModel]()
         var cell = UICollectionViewCell()
         
-        if viewModel.bottomPageIndex == 0 {
-            list = recordedWorksList.filter({$0.visible})
-        } else if ( viewModel.bottomPageIndex == 1 ) {
-            list = dibsOnWorksList.filter({$0.visible})
+        if collectionView.tag == 1{
+            list = viewModel.recordedWorksList.filter({$0.visible})
+        } else if ( collectionView.tag == 2 ) {
+            list = viewModel.dibsOnWorksList.filter({$0.visible})
         }
-        
+        print("=> collectionView.tag \(collectionView.tag)")
         var mCell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageWorkCollectionCell.Name, for: indexPath) as? UICollectionViewCell & ObservingCollectionCell
             // Viewmodel 주입x
             mCell?.viewmodel = list[indexPath.row]
