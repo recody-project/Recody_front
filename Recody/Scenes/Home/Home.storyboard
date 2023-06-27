@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWT-HS-Ira">
-                                <rect key="frame" x="0.0" y="526.66666666666663" width="375" height="202.33333333333337"/>
+                                <rect key="frame" x="0.0" y="513" width="375" height="216"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="책 사랑함" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcy-aj-4WF">
                                         <rect key="frame" x="20.999999999999996" y="0.0" width="59.666666666666657" height="20"/>
@@ -49,10 +49,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dws-lA-IRS">
-                                        <rect key="frame" x="35" y="32" width="240" height="156"/>
+                                        <rect key="frame" x="35" y="32" width="240" height="164"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dw0-3X-zdx">
-                                                <rect key="frame" x="27" y="0.0" width="200" height="156"/>
+                                                <rect key="frame" x="27" y="0.0" width="200" height="164"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="164" id="sfe-PX-PTu"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <constraints>
@@ -77,7 +80,7 @@
                                     <constraint firstItem="FS3-5a-tbT" firstAttribute="top" secondItem="Vcy-aj-4WF" secondAttribute="top" id="6Ys-BY-sF8"/>
                                     <constraint firstItem="Vcy-aj-4WF" firstAttribute="top" secondItem="rWT-HS-Ira" secondAttribute="top" id="Fcl-Ll-Dkb"/>
                                     <constraint firstItem="Vcy-aj-4WF" firstAttribute="leading" secondItem="rWT-HS-Ira" secondAttribute="leading" constant="21" id="IDw-wK-qsy"/>
-                                    <constraint firstAttribute="bottom" secondItem="Dws-lA-IRS" secondAttribute="bottom" priority="250" constant="14.33" id="JLG-Tu-p51"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dws-lA-IRS" secondAttribute="bottom" constant="20" id="R4D-PJ-ixu"/>
                                     <constraint firstItem="Dws-lA-IRS" firstAttribute="top" secondItem="Vcy-aj-4WF" secondAttribute="bottom" constant="12" id="hkm-61-Hq0"/>
                                     <constraint firstAttribute="trailing" secondItem="Dws-lA-IRS" secondAttribute="trailing" id="i67-rN-htt"/>
                                     <constraint firstItem="FS3-5a-tbT" firstAttribute="leading" secondItem="Vcy-aj-4WF" secondAttribute="trailing" constant="4" id="ibl-eL-59k"/>
@@ -201,14 +204,20 @@
                                     <constraint firstItem="2ac-DZ-uGf" firstAttribute="top" secondItem="CHn-LB-CEv" secondAttribute="top" constant="10" id="mJJ-Ts-glk"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" tag="111" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UeZ-pc-Cv1">
+                                <rect key="frame" x="20" y="349.66666666666669" width="335" height="114.66666666666669"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FJY-Ci-CkF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rWT-HS-Ira" firstAttribute="top" secondItem="B3u-Kk-mbo" secondAttribute="bottom" constant="209" id="1eb-dO-MWn"/>
                             <constraint firstItem="B3u-Kk-mbo" firstAttribute="leading" secondItem="FJY-Ci-CkF" secondAttribute="leading" constant="20" id="8M7-aI-VaL"/>
+                            <constraint firstItem="UeZ-pc-Cv1" firstAttribute="top" secondItem="B3u-Kk-mbo" secondAttribute="bottom" constant="32" id="F1f-6e-iGf"/>
+                            <constraint firstItem="UeZ-pc-Cv1" firstAttribute="leading" secondItem="FJY-Ci-CkF" secondAttribute="leading" constant="20" id="GZZ-Nu-jQV"/>
                             <constraint firstItem="FJY-Ci-CkF" firstAttribute="trailing" secondItem="B3u-Kk-mbo" secondAttribute="trailing" constant="20" id="JwJ-dq-anR"/>
+                            <constraint firstItem="rWT-HS-Ira" firstAttribute="top" secondItem="UeZ-pc-Cv1" secondAttribute="bottom" constant="48.670000000000002" id="MgB-bG-ZT5"/>
                             <constraint firstAttribute="trailing" secondItem="CHn-LB-CEv" secondAttribute="trailing" id="Q2C-Gy-4V1"/>
+                            <constraint firstItem="FJY-Ci-CkF" firstAttribute="trailing" secondItem="UeZ-pc-Cv1" secondAttribute="trailing" constant="20" id="ZYm-XJ-yp1"/>
                             <constraint firstItem="FJY-Ci-CkF" firstAttribute="bottom" secondItem="rWT-HS-Ira" secondAttribute="bottom" id="a8a-1M-EMW"/>
                             <constraint firstItem="FJY-Ci-CkF" firstAttribute="trailing" secondItem="rWT-HS-Ira" secondAttribute="trailing" id="fTp-aJ-dHd"/>
                             <constraint firstItem="rWT-HS-Ira" firstAttribute="leading" secondItem="FJY-Ci-CkF" secondAttribute="leading" id="gTd-vj-6h4"/>
@@ -220,7 +229,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="Dmo-pt-GCX"/>
                     <navigationItem key="navigationItem" id="cmp-T8-oVb">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="8iZ-Ay-1Ao">
-                            <button key="customView" opaque="NO" tag="110" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="GeE-Z1-8ap">
+                            <button key="customView" opaque="NO" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="GeE-Z1-8ap">
                                 <rect key="frame" x="276" y="5.6666666666666679" width="83" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -231,6 +240,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="galleryImage" destination="UeZ-pc-Cv1" id="H90-f5-xYN"/>
                         <outlet property="notificationButton" destination="GeE-Z1-8ap" id="j8C-QY-N5Z"/>
                         <outlet property="workScrollView" destination="Dws-lA-IRS" id="xaK-RR-oOC"/>
                         <outlet property="workStackView" destination="Dw0-3X-zdx" id="viF-Wm-mG2"/>

@@ -14,7 +14,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     var viewModel = HomeViewModel()
-    
+    let picker = UIImagePickerController()
     let works: [Work] = [
         Work(id: "0", name: "Attention", image: "attention"),
         Work(id: "1", name: "1987", image: "1987"),
@@ -30,7 +30,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var workScrollView: UIScrollView!
     @IBOutlet weak var workStackView: UIStackView!
     @IBOutlet weak var notificationButton: UIButton!
-    
+    @IBOutlet weak var galleryImage: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
@@ -44,7 +45,8 @@ class HomeViewController: UIViewController {
         return vc
     }
     func setUp() {
-//        self.interactor?.just(UseCase.setting).drop()
+        picker.delegate = self
+        self.galleryImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
         self.notificationButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
     }
     
@@ -66,15 +68,38 @@ class HomeViewController: UIViewController {
                 ServiceProvider.shaerd.apiService.send(.getUserInfomation)
                 ServiceProvider.shaerd.apiService.send(.getMyRecentContinuingRecord)
                 ServiceProvider.shaerd.apiService.send(.getMovies)
-            break
             case .pushWorkDetailInfo:
                 self.navigationController?.pushViewController(WorkDetailInfoViewController.getInstanse(), animated: true)
             case .pushNotification:
                 self.navigationController?.pushViewController(NotificationViewController.getInstanse(), animated: true)
+            case .gallery:
+                let alert =  UIAlertController(title: "갤러리", message: "사진을 골라주세요.", preferredStyle: .actionSheet)
+                let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()
+                }
+                let camera =  UIAlertAction(title: "카메라", style: .default) { (action) in
+                self.openCamera()
+                }
+        
+                let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+
+                alert.addAction(library)
+                alert.addAction(camera)
+                alert.addAction(cancel)
+                present(alert, animated: true, completion: nil)
             default:
                 break
             }
         }
+    }
+    
+    func openLibrary() {
+      picker.sourceType = .photoLibrary
+      present(picker, animated: false, completion: nil)
+    }
+
+    func openCamera() {
+      picker.sourceType = .camera
+      present(picker, animated: false, completion: nil)
     }
 
     enum UseCase: Int {
@@ -84,25 +109,19 @@ class HomeViewController: UIViewController {
         case workCategory = 108
         case pushWorkDetailInfo = 109
         case pushNotification = 110
+        case gallery = 111
         var number: Int {
             return self.rawValue
         }
     }
-//    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-//        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-//        switch useCase {
-//        case .setting:
-//            if let data = dataStore?.data(useCase)?.fetch(UserDataModel.self) {
-//                let temp = data.data["signInInfo"] as? [String: String]
-//                guard let accessToken = temp?["accessToken"] else { return }
-//                guard let refreshToken = temp?["refreshToken"] else { return }
-//                KeyChain.create(key: "accessToken", token: accessToken)
-//                KeyChain.create(key: "refreshToken", token: refreshToken)
-//                print("요깅깅교익요긱")
-//                print(data)
-//            }
-//        default:
-//            self.presenter?.alertService.showToast("\(useCase)")
-//        }
-//    }
+}
+
+extension HomeViewController: UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            galleryImage.image = image
+        }
+        dismiss(animated: true, completion: nil)
+        
+    }
 }
