@@ -26,12 +26,11 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setCategoryStackView()
-        setNavigationBar()
         setGenreStackView()
         configurePageViewController()
     }
     //.recordList
-    static func getInstanse() -> ListViewController{
+    static func getInstanse() -> ListViewController {
         guard let vc =  UIStoryboard(name: "List", bundle: nil).instantiateViewController(withIdentifier: "listView") as? ListViewController
         else {
             fatalError()
@@ -52,17 +51,6 @@ class ListViewController: UIViewController {
         view.widthAnchor.constraint(equalToConstant: 56).isActive = true
         categoryStackView.addArrangedSubview(view)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
-    }
-    
-    func setNavigationBar() {
-        let searchBar: UISearchBar = {
-           let searchBar = UISearchBar()
-            searchBar.placeholder = ""
-            return searchBar
-        }()
-        self.navigationItem.titleView = searchBar
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.topItem?.title = ""
     }
     
     func setGenreStackView() {
@@ -157,7 +145,7 @@ class ListViewController: UIViewController {
 
 @available(iOS 14.0, *)
 extension ListViewController {
-    func foldView(_ isActive:Bool){
+    func foldView(_ isActive: Bool) {
         if isActive {
             if isAnimateFold { return }
             isAnimateFold = true
@@ -165,10 +153,10 @@ extension ListViewController {
             UIView.animate(withDuration: 0.3) {
                 self.hiddenView.alpha = 0.0 // 알파를 적용할경우
                 self.view.layoutIfNeeded()
-            }completion: { act in
+            } completion: { act in
                 self.isAnimateFold = false
             }
-        }else {
+        } else {
             if isAnimateFold { return }
             isAnimateFold = true
             foldViewHeight.constant = 160 //원래 높이

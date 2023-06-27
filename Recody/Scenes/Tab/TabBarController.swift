@@ -27,7 +27,7 @@ class TabBarController: UITabBarController {
         guard let items = tabBar.items else { return }
         for (index, tabBarItem) in items.enumerated() where tabBarItem == item {
         // viewController3의 index는 2입니다!
-            if index == 1 {
+            if index == 2 {
                 selectedIndex = previousTabIndex
                             
                 let baseNavigationController = UIApplication.shared.keyWindow?.rootViewController
