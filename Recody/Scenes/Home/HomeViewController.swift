@@ -48,6 +48,19 @@ class HomeViewController: UIViewController {
         picker.delegate = self
         self.galleryImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
         self.notificationButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
+        
+        if let imageData = UserDefaultsManager.shared.loadData(key: UserDefautlsKeys.homeImage) as? Data {
+            if let image = UIImage(data: imageData) {
+                // 이미지 데이터가 있을 경우에는 해당 이미지를 표시합니다.
+                galleryImage.image = image
+            } else {
+                // 이미지 데이터가 있지만 UIImage로 변환에 실패한 경우, 기본 이미지를 표시합니다.
+                galleryImage.image = UIImage(named: "NoneImage")
+            }
+        } else {
+            // 이미지 데이터가 저장되어 있지 않은 경우, 기본 이미지를 표시합니다.
+            galleryImage.image = UIImage(named: "NoneImage")
+        }
     }
     
     func setWorkView() {
@@ -76,14 +89,9 @@ class HomeViewController: UIViewController {
                 let alert =  UIAlertController(title: "갤러리", message: "사진을 골라주세요.", preferredStyle: .actionSheet)
                 let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()
                 }
-                let camera =  UIAlertAction(title: "카메라", style: .default) { (action) in
-                self.openCamera()
-                }
-        
                 let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
 
                 alert.addAction(library)
-                alert.addAction(camera)
                 alert.addAction(cancel)
                 present(alert, animated: true, completion: nil)
             default:
@@ -117,11 +125,23 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            galleryImage.image = image
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            return
         }
         dismiss(animated: true, completion: nil)
         
+        // 이미지를 자르는 viewcontroller를 호출
+        let cropViewController = CropViewController()
+        cropViewController.image = image
+        cropViewController.delegate = self
+        present(cropViewController, animated: true, completion: nil)
+    }
+}
+
+extension HomeViewController: CropViewControllerDelegate {
+    func cropViewControllerDidCropImage(_ image: UIImage) {
+        galleryImage.image = image
+        UserDefaultsManager.shared.saveData(key: UserDefautlsKeys.homeImage, image.jpegData(compressionQuality: 1.0)!)
     }
 }
