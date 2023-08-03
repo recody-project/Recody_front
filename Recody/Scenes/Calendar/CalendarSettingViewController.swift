@@ -48,7 +48,6 @@ class CalendarSettingViewController: UIViewController {
         btnStartSunday.tag = UseCase.flagStartSunday.rawValue
         btnStartMonday.tag = UseCase.flagStartMonday.rawValue
         [ btnCompleteDate, btnRecordDate, btnStartSunday, btnStartMonday ].forEach({
-            $0?.titleLabel?.font = UIFont.fontWithName(type: .medium, size: 14)
             $0?.layer.borderWidth = 1.0
             $0?.layer.cornerRadius = 8.0
         })
