@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0919F22E2A7A4D8B00E67E66 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F22D2A7A4D8B00E67E66 /* LoginViewController.swift */; };
+		095401532A7B66240078B894 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095401522A7B66240078B894 /* EmailLoginViewController.swift */; };
+		095401582A7B689D0078B894 /* loginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095401572A7B689D0078B894 /* loginService.swift */; };
+		0954015A2A7B68A90078B894 /* registerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095401592A7B68A90078B894 /* registerService.swift */; };
+		09F7D6A92A7BB032001645AA /* registerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F7D6A82A7BB032001645AA /* registerViewModel.swift */; };
+		09F7D6AB2A7BB1BA001645AA /* registerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F7D6AA2A7BB1BA001645AA /* registerModel.swift */; };
+		09FB361B2A7A5A7E00875618 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FB361A2A7A5A7E00875618 /* LoginViewModel.swift */; };
+		09FB361D2A7A5A8F00875618 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FB361C2A7A5A8F00875618 /* LoginModel.swift */; };
+		09FB36202A7A79E200875618 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FB361F2A7A79E200875618 /* RegisterViewController.swift */; };
+		09FB36222A7A8A5600875618 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FB36212A7A8A5600875618 /* NavigationController.swift */; };
 		200F66A8293DC5FF00EB3740 /* ApiTestGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F66A7293DC5FF00EB3740 /* ApiTestGroup.swift */; };
 		2015B3072918DF1700DB725D /* InsightCellEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015B3062918DF1700DB725D /* InsightCellEvent.swift */; };
 		2015B30A2918F28B00DB725D /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015B3092918F28B00DB725D /* ApiClient.swift */; };
@@ -157,19 +167,12 @@
 		AE1D357E29F7B022008DEB48 /* DatePcikerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE1D357D29F7B022008DEB48 /* DatePcikerView.xib */; };
 		AE1D358029F7B029008DEB48 /* DatePcikerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D357F29F7B029008DEB48 /* DatePcikerView.swift */; };
 		AE4A0E0C29F24E5D003F7283 /* SNSLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4A0E0B29F24E5D003F7283 /* SNSLoginService.swift */; };
-		AE556A2A29DBFEAE00611F18 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE556A2929DBFEAE00611F18 /* LoginViewController.swift */; };
 		AE556A2C29DBFEC700611F18 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE556A2B29DBFEC700611F18 /* login.storyboard */; };
 		AE556A2E29DC012B00611F18 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE556A2D29DC012B00611F18 /* UILabel+.swift */; };
-		AE556A3029DC068100611F18 /* LoginMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE556A2F29DC068100611F18 /* LoginMethodViewController.swift */; };
-		AE556A3229DC06B200611F18 /* LoginMethodViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE556A3129DC06B100611F18 /* LoginMethodViewController.storyboard */; };
 		AE5C21F829F0FB9E009ACD27 /* InsightMonthReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C21F729F0FB9E009ACD27 /* InsightMonthReportViewController.swift */; };
 		AE5C21FB29F107A5009ACD27 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C21FA29F107A5009ACD27 /* Animator.swift */; };
 		AE6E7EAB29DC0E5F00EDC669 /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E7EAA29DC0E5F00EDC669 /* HalfModalPresentationController.swift */; };
 		AE7B1E6B29DD124F00954BBC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B1E6A29DD124E00954BBC /* String+.swift */; };
-		AE7B1E6D29DD260200954BBC /* RegisterMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B1E6C29DD260200954BBC /* RegisterMemberViewController.swift */; };
-		AE7B1E6F29DD266600954BBC /* registerMember.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7B1E6E29DD266600954BBC /* registerMember.storyboard */; };
-		AE8BBFAA29DCF7E600B817F6 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8BBFA929DCF7E600B817F6 /* EmailLoginViewController.swift */; };
-		AE8BBFAC29DCFA5700B817F6 /* EmailLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8BBFAB29DCFA5700B817F6 /* EmailLogin.storyboard */; };
 		AE9832DD29B8176E00892C26 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9832DB29B8176E00892C26 /* HomeViewController.swift */; };
 		AE9832DE29B8176E00892C26 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9832DC29B8176E00892C26 /* Home.storyboard */; };
 		AEB50ABF2993263B00181BEC /* TestApi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB50ABE2993263B00181BEC /* TestApi.storyboard */; };
@@ -199,6 +202,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0919F22D2A7A4D8B00E67E66 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		095401522A7B66240078B894 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
+		095401572A7B689D0078B894 /* loginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginService.swift; sourceTree = "<group>"; };
+		095401592A7B68A90078B894 /* registerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerService.swift; sourceTree = "<group>"; };
+		09F7D6A82A7BB032001645AA /* registerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewModel.swift; sourceTree = "<group>"; };
+		09F7D6AA2A7BB1BA001645AA /* registerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerModel.swift; sourceTree = "<group>"; };
+		09FB361A2A7A5A7E00875618 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		09FB361C2A7A5A8F00875618 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		09FB361F2A7A79E200875618 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		09FB36212A7A8A5600875618 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		200F66A7293DC5FF00EB3740 /* ApiTestGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTestGroup.swift; sourceTree = "<group>"; };
 		2015B3062918DF1700DB725D /* InsightCellEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightCellEvent.swift; sourceTree = "<group>"; };
 		2015B3092918F28B00DB725D /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -353,19 +366,12 @@
 		AE1D357D29F7B022008DEB48 /* DatePcikerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePcikerView.xib; sourceTree = "<group>"; };
 		AE1D357F29F7B029008DEB48 /* DatePcikerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePcikerView.swift; sourceTree = "<group>"; };
 		AE4A0E0B29F24E5D003F7283 /* SNSLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSLoginService.swift; sourceTree = "<group>"; };
-		AE556A2929DBFEAE00611F18 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AE556A2B29DBFEC700611F18 /* login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		AE556A2D29DC012B00611F18 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
-		AE556A2F29DC068100611F18 /* LoginMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodViewController.swift; sourceTree = "<group>"; };
-		AE556A3129DC06B100611F18 /* LoginMethodViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginMethodViewController.storyboard; sourceTree = "<group>"; };
 		AE5C21F729F0FB9E009ACD27 /* InsightMonthReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightMonthReportViewController.swift; sourceTree = "<group>"; };
 		AE5C21FA29F107A5009ACD27 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		AE6E7EAA29DC0E5F00EDC669 /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
 		AE7B1E6A29DD124E00954BBC /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
-		AE7B1E6C29DD260200954BBC /* RegisterMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMemberViewController.swift; sourceTree = "<group>"; };
-		AE7B1E6E29DD266600954BBC /* registerMember.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = registerMember.storyboard; sourceTree = "<group>"; };
-		AE8BBFA929DCF7E600B817F6 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
-		AE8BBFAB29DCFA5700B817F6 /* EmailLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailLogin.storyboard; sourceTree = "<group>"; };
 		AE9832DB29B8176E00892C26 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AE9832DC29B8176E00892C26 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		AEB50ABE2993263B00181BEC /* TestApi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestApi.storyboard; sourceTree = "<group>"; };
@@ -406,6 +412,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		095401542A7B66610078B894 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				09FB361A2A7A5A7E00875618 /* LoginViewModel.swift */,
+				09F7D6A82A7BB032001645AA /* registerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		095401552A7B68750078B894 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				095401572A7B689D0078B894 /* loginService.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		095401562A7B68800078B894 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				095401592A7B68A90078B894 /* registerService.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		09FB361E2A7A5AA100875618 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				09FB361C2A7A5A8F00875618 /* LoginModel.swift */,
+				09F7D6AA2A7BB1BA001645AA /* registerModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		2015B3082918F27B00DB725D /* ApiService */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,6 +685,7 @@
 		3A8D172A289BBC7700B260D1 /* Recody */ = {
 			isa = PBXGroup;
 			children = (
+				09FB361E2A7A5AA100875618 /* Entity */,
 				AEDF9E7729EFAA58006DED8A /* Recody.entitlements */,
 				208386D9294813AF0012A8E0 /* Example */,
 				3ADA9B7828A580F500EB39F3 /* Utils */,
@@ -691,6 +732,8 @@
 		3A8D1768289BBEB900B260D1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				095401562A7B68800078B894 /* Register */,
+				095401552A7B68750078B894 /* Login */,
 				AE4A0E0A29F24E47003F7283 /* SNSLogin */,
 				3A645E89297209AF00F4BD9A /* KeyChain */,
 				AE1D357A29F79174008DEB48 /* Dialog */,
@@ -946,14 +989,12 @@
 		AE556A2829DBFEA000611F18 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				AE556A2929DBFEAE00611F18 /* LoginViewController.swift */,
-				AE556A2F29DC068100611F18 /* LoginMethodViewController.swift */,
-				AE8BBFA929DCF7E600B817F6 /* EmailLoginViewController.swift */,
-				AE8BBFAB29DCFA5700B817F6 /* EmailLogin.storyboard */,
-				AE7B1E6C29DD260200954BBC /* RegisterMemberViewController.swift */,
-				AE7B1E6E29DD266600954BBC /* registerMember.storyboard */,
-				AE556A3129DC06B100611F18 /* LoginMethodViewController.storyboard */,
+				095401542A7B66610078B894 /* ViewModel */,
 				AE556A2B29DBFEC700611F18 /* login.storyboard */,
+				0919F22D2A7A4D8B00E67E66 /* LoginViewController.swift */,
+				09FB361F2A7A79E200875618 /* RegisterViewController.swift */,
+				095401522A7B66240078B894 /* EmailLoginViewController.swift */,
+				09FB36212A7A8A5600875618 /* NavigationController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1100,7 +1141,6 @@
 				3A6AE8E52918910300A9F520 /* InsightTop3GenreCell.xib in Resources */,
 				3A75DBF828A0F5D900084DB1 /* Calendar.storyboard in Resources */,
 				AE9832DE29B8176E00892C26 /* Home.storyboard in Resources */,
-				AE556A3229DC06B200611F18 /* LoginMethodViewController.storyboard in Resources */,
 				3A6AE8D32918910300A9F520 /* InsightMyRankCell.xib in Resources */,
 				3A9D6F2A29B4733900F4C2F4 /* WorkListView.xib in Resources */,
 				3A8D176E289BC21400B260D1 /* .gitignore in Resources */,
@@ -1109,7 +1149,6 @@
 				3A34165C28FF5CF900C4D698 /* MyPage.storyboard in Resources */,
 				3AD4F12328C09EB700598D28 /* TabHeader.xib in Resources */,
 				3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */,
-				AE7B1E6F29DD266600954BBC /* registerMember.storyboard in Resources */,
 				3AB1432428F76FBC0041C9CC /* MySearchTableViewCell.xib in Resources */,
 				20DBFB0429029366009CEF76 /* README.md in Resources */,
 				20F719D82934401100D2EA5D /* MyPageWorkCollectionCell.xib in Resources */,
@@ -1118,7 +1157,6 @@
 				3AB80F94290D64E800F032EC /* ModifyProfile.storyboard in Resources */,
 				20BD9CAD2921F90300BDAD13 /* CalendarWeekCell.xib in Resources */,
 				3AEED25A29C8A67300D02F3F /* Notification.storyboard in Resources */,
-				AE8BBFAC29DCFA5700B817F6 /* EmailLogin.storyboard in Resources */,
 				3ADA9B7528A56AA800EB39F3 /* CustomCategory.xib in Resources */,
 				3A6AE8922918906300A9F520 /* Insight.storyboard in Resources */,
 				3A8D1738289BBC7A00B260D1 /* LaunchScreen.storyboard in Resources */,
@@ -1258,9 +1296,10 @@
 				AED00E7529A3438600A60D86 /* TestApiSetupViewController.swift in Sources */,
 				3A6AE8D82918910300A9F520 /* InsightHallOfFameCell.swift in Sources */,
 				AE19A11F29FA10C60035D420 /* ApiService.swift in Sources */,
+				09F7D6AB2A7BB1BA001645AA /* registerModel.swift in Sources */,
+				09FB361B2A7A5A7E00875618 /* LoginViewModel.swift in Sources */,
 				3A56B0E629351F010028BF98 /* CategoryButtonModel.swift in Sources */,
 				3AA56D0328BE580000FB66F5 /* WorkListCollectionViewCell.swift in Sources */,
-				AE7B1E6D29DD260200954BBC /* RegisterMemberViewController.swift in Sources */,
 				3A5076DA29C6D54600C7A5E9 /* AddRecordViewController.swift in Sources */,
 				203FE54629387113009FDABD /* ModifyProfileViewController.swift in Sources */,
 				3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */,
@@ -1269,7 +1308,6 @@
 				AE1D357C29F791A5008DEB48 /* DatePickerService.swift in Sources */,
 				3A75DBEE28A0F41000084DB1 /* TabBarController.swift in Sources */,
 				3A6AE8D62918910300A9F520 /* InsightFirstRecordCell.swift in Sources */,
-				AE556A3029DC068100611F18 /* LoginMethodViewController.swift in Sources */,
 				20F719D72934401100D2EA5D /* MyPageWorkCollectionCell.swift in Sources */,
 				20DBFB0529029366009CEF76 /* RoutingLogic.swift in Sources */,
 				3A8D172C289BBC7700B260D1 /* AppDelegate.swift in Sources */,
@@ -1300,6 +1338,7 @@
 				3AB1432328F76FBC0041C9CC /* MySearchTableViewCell.swift in Sources */,
 				3AD4F12828C0AFF900598D28 /* CALayer+.swift in Sources */,
 				3AEDB71728DF3D4500C3DB8D /* StarRatingSlider.swift in Sources */,
+				09FB36222A7A8A5600875618 /* NavigationController.swift in Sources */,
 				20DBFB0629029366009CEF76 /* WorkerType+.swift in Sources */,
 				3AD4F11D28C0808200598D28 /* DropDownHeader.swift in Sources */,
 				3AEDB70E28DE07FC00C3DB8D /* PreReviewModels.swift in Sources */,
@@ -1310,18 +1349,23 @@
 				3AEDB70B28DE07FC00C3DB8D /* PreReviewPresenter.swift in Sources */,
 				AEFDD746299B422E00A5EB77 /* TestApiDetailViewController.swift in Sources */,
 				3A6AE8E32918910300A9F520 /* InsiteStatisticsCell.swift in Sources */,
+				095401582A7B689D0078B894 /* loginService.swift in Sources */,
+				0954015A2A7B68A90078B894 /* registerService.swift in Sources */,
 				20CE1713292DFB7300D77152 /* MyPageViewModel.swift in Sources */,
 				3A8D1764289BBEA100B260D1 /* HomeViewModel.swift in Sources */,
 				AE9832DD29B8176E00892C26 /* HomeViewController.swift in Sources */,
 				200F66A8293DC5FF00EB3740 /* ApiTestGroup.swift in Sources */,
+				0919F22E2A7A4D8B00E67E66 /* LoginViewController.swift in Sources */,
 				3ADDAD62294B746000BC15D4 /* ListViewController.swift in Sources */,
+				09FB361D2A7A5A8F00875618 /* LoginModel.swift in Sources */,
 				20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */,
 				AED00E7829A4501700A60D86 /* TestApiSetupTableCell.swift in Sources */,
-				AE556A2A29DBFEAE00611F18 /* LoginViewController.swift in Sources */,
 				20E788442925B53F00B05C8E /* CalendarDetailViewController.swift in Sources */,
+				09FB36202A7A79E200875618 /* RegisterViewController.swift in Sources */,
 				20DBFB0229029366009CEF76 /* UIViewController+.swift in Sources */,
 				20DBFB0729029366009CEF76 /* RouterType+.swift in Sources */,
 				3A645E8B297209BC00F4BD9A /* KeyChain.swift in Sources */,
+				09F7D6A92A7BB032001645AA /* registerViewModel.swift in Sources */,
 				3AA56D0528BE627300FB66F5 /* WorkTabCollectionViewCell.swift in Sources */,
 				20BD9CAC2921F90300BDAD13 /* CalendarWeekCell.swift in Sources */,
 				3A6AE8DD2918910300A9F520 /* InsightTop3GenreCell.swift in Sources */,
@@ -1344,10 +1388,10 @@
 				3AC934C8297779CF00868C33 /* FilterViewController.swift in Sources */,
 				AE6E7EAB29DC0E5F00EDC669 /* HalfModalPresentationController.swift in Sources */,
 				3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */,
+				095401532A7B66240078B894 /* EmailLoginViewController.swift in Sources */,
 				AEB50AC129932A4200181BEC /* TestApiViewController.swift in Sources */,
 				3AEED25729C8A66100D02F3F /* NotificationViewController.swift in Sources */,
 				3AD4F12628C0A66600598D28 /* UIColor+.swift in Sources */,
-				AE8BBFAA29DCF7E600B817F6 /* EmailLoginViewController.swift in Sources */,
 				20F719DA2934422A00D2EA5D /* CollectionViewModel+.swift in Sources */,
 				3A77BE7328F57944005AFCAD /* PreReviewViewController+.swift in Sources */,
 			);
