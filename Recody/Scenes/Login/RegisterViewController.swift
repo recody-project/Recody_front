@@ -40,34 +40,8 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configure()
-        self.bindViewModel()
     }
     @IBAction func backBtnClick(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
-    }
-    private func bindViewModel(){
-        // Input binding
-           viewModel.email.bind(to: emailTextField.rx.text).disposed(by: disposeBag)
-           viewModel.password.bind(to: pwTextField.rx.text).disposed(by: disposeBag)
-           viewModel.passwordConfirm.bind(to: checkpwTextField.rx.text).disposed(by: disposeBag)
-
-        registerBtn.rx.tap
-               .bind(to: viewModel.signUpButtonTapped)
-               .disposed(by: disposeBag)
-
-           // Output binding
-           viewModel.userInfo
-               .subscribe(onNext: { [weak self] userInfo in
-                   // Handle userInfo data here (e.g., show success message, navigate to the next screen)
-                   print("User Info: \(userInfo)")
-               })
-               .disposed(by: disposeBag)
-
-           viewModel.error
-               .subscribe(onNext: { error in
-                   // Handle error here (e.g., show error message)
-                   print("Error: \(error)")
-               })
-               .disposed(by: disposeBag)
     }
 }

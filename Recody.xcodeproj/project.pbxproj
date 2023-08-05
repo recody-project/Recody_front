@@ -991,9 +991,9 @@
 			children = (
 				095401542A7B66610078B894 /* ViewModel */,
 				AE556A2B29DBFEC700611F18 /* login.storyboard */,
+				095401522A7B66240078B894 /* EmailLoginViewController.swift */,
 				0919F22D2A7A4D8B00E67E66 /* LoginViewController.swift */,
 				09FB361F2A7A79E200875618 /* RegisterViewController.swift */,
-				095401522A7B66240078B894 /* EmailLoginViewController.swift */,
 				09FB36212A7A8A5600875618 /* NavigationController.swift */,
 			);
 			path = Login;

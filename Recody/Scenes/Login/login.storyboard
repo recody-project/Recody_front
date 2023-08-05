@@ -379,6 +379,7 @@
                         <outlet property="emailTextField" destination="l0Z-4v-aL7" id="A1q-YC-22Q"/>
                         <outlet property="findEmailBtn" destination="eUU-8g-sKk" id="VR4-mZ-LYV"/>
                         <outlet property="findPwBtn" destination="txp-wM-pvJ" id="qwL-X7-iGL"/>
+                        <outlet property="loginBtn" destination="dqU-0V-Plf" id="vrW-8L-EDb"/>
                         <outlet property="pwLabel" destination="gQO-A7-DRh" id="Brg-xh-W8A"/>
                         <outlet property="pwTextField" destination="fbh-c4-oDH" id="QJ3-J3-esc"/>
                         <outlet property="registerBtn" destination="y5W-Yj-NOG" id="GGh-Eb-YEq"/>
