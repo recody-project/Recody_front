@@ -53,8 +53,12 @@
 		20F719D72934401100D2EA5D /* MyPageWorkCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F719D52934401100D2EA5D /* MyPageWorkCollectionCell.swift */; };
 		20F719D82934401100D2EA5D /* MyPageWorkCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F719D62934401100D2EA5D /* MyPageWorkCollectionCell.xib */; };
 		20F719DA2934422A00D2EA5D /* CollectionViewModel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F719D92934422A00D2EA5D /* CollectionViewModel+.swift */; };
+		2708EDDE2A810E3E00A010FA /* CategorySetting2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2708EDDD2A810E3E00A010FA /* CategorySetting2.storyboard */; };
+		2708EDE02A817BB500A010FA /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708EDDF2A817BB500A010FA /* UIButton+.swift */; };
+		278589C72A7E3945008A3B6B /* SampleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278589C62A7E3945008A3B6B /* SampleCategory.swift */; };
+		278589CB2A7E3AE2008A3B6B /* EditGenreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278589CA2A7E3AE2008A3B6B /* EditGenreViewModel.swift */; };
+		278589CD2A7E5702008A3B6B /* SampleCategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278589CC2A7E5702008A3B6B /* SampleCategoryManager.swift */; };
 		3A13C9A3291F0A7700DC0756 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */; };
-		3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */; };
 		3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346028D01E0F00C417CB /* UIScrollView+.swift */; };
 		3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */; };
 		3A34165928FF5CF000C4D698 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34165328FF5CF000C4D698 /* MyPageViewController.swift */; };
@@ -107,7 +111,6 @@
 		3A8D1764289BBEA100B260D1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D175E289BBEA100B260D1 /* HomeViewModel.swift */; };
 		3A8D176C289BC12200B260D1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D176B289BC12200B260D1 /* .swiftlint.yml */; };
 		3A8D176E289BC21400B260D1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3A8D176D289BC21400B260D1 /* .gitignore */; };
-		3A8F862D28C625210028B45C /* CategorySetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F862C28C625210028B45C /* CategorySetting.storyboard */; };
 		3A8F863928C6277D0028B45C /* EditGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F863328C6277D0028B45C /* EditGenreViewController.swift */; };
 		3A9D6F2A29B4733900F4C2F4 /* WorkListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D6F2929B4733900F4C2F4 /* WorkListView.xib */; };
 		3A9D6F2C29B4789A00F4C2F4 /* WorkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9D6F2B29B4789A00F4C2F4 /* WorkListView.swift */; };
@@ -250,8 +253,12 @@
 		20F719D52934401100D2EA5D /* MyPageWorkCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkCollectionCell.swift; sourceTree = "<group>"; };
 		20F719D62934401100D2EA5D /* MyPageWorkCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageWorkCollectionCell.xib; sourceTree = "<group>"; };
 		20F719D92934422A00D2EA5D /* CollectionViewModel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewModel+.swift"; sourceTree = "<group>"; };
+		2708EDDD2A810E3E00A010FA /* CategorySetting2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CategorySetting2.storyboard; sourceTree = "<group>"; };
+		2708EDDF2A817BB500A010FA /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		278589C62A7E3945008A3B6B /* SampleCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCategory.swift; sourceTree = "<group>"; };
+		278589CA2A7E3AE2008A3B6B /* EditGenreViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGenreViewModel.swift; sourceTree = "<group>"; };
+		278589CC2A7E5702008A3B6B /* SampleCategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCategoryManager.swift; sourceTree = "<group>"; };
 		3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditGenreViewController+.swift"; sourceTree = "<group>"; };
 		3A20346028D01E0F00C417CB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A34165328FF5CF000C4D698 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
@@ -306,7 +313,6 @@
 		3A8D175E289BBEA100B260D1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3A8D176B289BC12200B260D1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3A8D176D289BC21400B260D1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		3A8F862C28C625210028B45C /* CategorySetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategorySetting.storyboard; sourceTree = "<group>"; };
 		3A8F863328C6277D0028B45C /* EditGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreViewController.swift; sourceTree = "<group>"; };
 		3A9D6F2929B4733900F4C2F4 /* WorkListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkListView.xib; sourceTree = "<group>"; };
 		3A9D6F2B29B4789A00F4C2F4 /* WorkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkListView.swift; sourceTree = "<group>"; };
@@ -536,6 +542,23 @@
 			path = CollectionCell;
 			sourceTree = "<group>";
 		};
+		278589C82A7E3948008A3B6B /* SampleManager */ = {
+			isa = PBXGroup;
+			children = (
+				278589C62A7E3945008A3B6B /* SampleCategory.swift */,
+				278589CC2A7E5702008A3B6B /* SampleCategoryManager.swift */,
+			);
+			path = SampleManager;
+			sourceTree = "<group>";
+		};
+		278589C92A7E3AE2008A3B6B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				278589CA2A7E3AE2008A3B6B /* EditGenreViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		3A34164E28FF5CD200C4D698 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,6 +765,7 @@
 				20CE1710292DB67D00D77152 /* AlertService.swift */,
 				AE19A11E29FA10C60035D420 /* ApiService.swift */,
 				AE19A11C29FA0DBD0035D420 /* ServiceProvider.swift */,
+				278589C82A7E3948008A3B6B /* SampleManager */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -749,9 +773,10 @@
 		3A8F862B28C6250C0028B45C /* EditGenre */ = {
 			isa = PBXGroup;
 			children = (
+				278589C92A7E3AE2008A3B6B /* ViewModel */,
 				3A8F862E28C6276C0028B45C /* EditGenre+ */,
 				3A8F863328C6277D0028B45C /* EditGenreViewController.swift */,
-				3A8F862C28C625210028B45C /* CategorySetting.storyboard */,
+				2708EDDD2A810E3E00A010FA /* CategorySetting2.storyboard */,
 			);
 			path = EditGenre;
 			sourceTree = "<group>";
@@ -759,7 +784,6 @@
 		3A8F862E28C6276C0028B45C /* EditGenre+ */ = {
 			isa = PBXGroup;
 			children = (
-				3A20345E28D01ABC00C417CB /* EditGenreViewController+.swift */,
 				3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */,
 			);
 			path = "EditGenre+";
@@ -867,6 +891,7 @@
 				AE556A2D29DC012B00611F18 /* UILabel+.swift */,
 				3AAEE3E228C4E30D00B28582 /* UIView+.swift */,
 				AE7B1E6A29DD124E00954BBC /* String+.swift */,
+				2708EDDF2A817BB500A010FA /* UIButton+.swift */,
 				3A20346028D01E0F00C417CB /* UIScrollView+.swift */,
 				207C64782935DE3000D4F1FD /* UIFont+.swift */,
 			);
@@ -1154,6 +1179,7 @@
 				20F719D82934401100D2EA5D /* MyPageWorkCollectionCell.xib in Resources */,
 				3AA56D0728BE743400FB66F5 /* WorkListCollectionViewCell.xib in Resources */,
 				3A6AE8DE2918910300A9F520 /* InsightAllUserMostAppreciationCell.xib in Resources */,
+				2708EDDE2A810E3E00A010FA /* CategorySetting2.storyboard in Resources */,
 				3AB80F94290D64E800F032EC /* ModifyProfile.storyboard in Resources */,
 				20BD9CAD2921F90300BDAD13 /* CalendarWeekCell.xib in Resources */,
 				3AEED25A29C8A67300D02F3F /* Notification.storyboard in Resources */,
@@ -1174,7 +1200,6 @@
 				3A6AE8D42918910300A9F520 /* InsightShareCell.xib in Resources */,
 				3A75DBF128A0F41D00084DB1 /* TabBar.storyboard in Resources */,
 				3AEED25C29C8A7F900D02F3F /* NotificationTableViewCell.xib in Resources */,
-				3A8F862D28C625210028B45C /* CategorySetting.storyboard in Resources */,
 				3A77BE7928F57B33005AFCAD /* PreReviewCollectionViewCell.xib in Resources */,
 				3A56B0E429351B4B0028BF98 /* CategoryButton.xib in Resources */,
 				AE556A2C29DBFEC700611F18 /* login.storyboard in Resources */,
@@ -1288,6 +1313,7 @@
 				3AA56CFE28BDDDE000FB66F5 /* RecordInteractor.swift in Sources */,
 				3AA56CFC28BDDDE000FB66F5 /* RecordModels.swift in Sources */,
 				3AA56CFA28BDDDE000FB66F5 /* RecordWorker.swift in Sources */,
+				278589C72A7E3945008A3B6B /* SampleCategory.swift in Sources */,
 				3A731B3229CEDA0800C5EE5E /* FilterCtaegoryCollectionViewCell.swift in Sources */,
 				3AE6A55A28ED9D0D008ED7DB /* CategoryModels.swift in Sources */,
 				20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */,
@@ -1314,7 +1340,6 @@
 				3A8D172E289BBC7700B260D1 /* SceneDelegate.swift in Sources */,
 				3A56B0E8293520010028BF98 /* CategoryButton.swift in Sources */,
 				3AEED26029C8AD6800D02F3F /* NotificationTableViewCell.swift in Sources */,
-				3A20345F28D01ABC00C417CB /* EditGenreViewController+.swift in Sources */,
 				3AF1DF88290C11260095673A /* ReviewModels.swift in Sources */,
 				3A6AE8EA2918911B00A9F520 /* InsiteStatisticsGraphChartView.swift in Sources */,
 				3A731B3029CECB9C00C5EE5E /* SearchFilterViewController.swift in Sources */,
@@ -1349,6 +1374,7 @@
 				3AEDB70B28DE07FC00C3DB8D /* PreReviewPresenter.swift in Sources */,
 				AEFDD746299B422E00A5EB77 /* TestApiDetailViewController.swift in Sources */,
 				3A6AE8E32918910300A9F520 /* InsiteStatisticsCell.swift in Sources */,
+				278589CD2A7E5702008A3B6B /* SampleCategoryManager.swift in Sources */,
 				095401582A7B689D0078B894 /* loginService.swift in Sources */,
 				0954015A2A7B68A90078B894 /* registerService.swift in Sources */,
 				20CE1713292DFB7300D77152 /* MyPageViewModel.swift in Sources */,
@@ -1358,11 +1384,13 @@
 				0919F22E2A7A4D8B00E67E66 /* LoginViewController.swift in Sources */,
 				3ADDAD62294B746000BC15D4 /* ListViewController.swift in Sources */,
 				09FB361D2A7A5A8F00875618 /* LoginModel.swift in Sources */,
+				2708EDE02A817BB500A010FA /* UIButton+.swift in Sources */,
 				20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */,
 				AED00E7829A4501700A60D86 /* TestApiSetupTableCell.swift in Sources */,
 				20E788442925B53F00B05C8E /* CalendarDetailViewController.swift in Sources */,
 				09FB36202A7A79E200875618 /* RegisterViewController.swift in Sources */,
 				20DBFB0229029366009CEF76 /* UIViewController+.swift in Sources */,
+				278589CB2A7E3AE2008A3B6B /* EditGenreViewModel.swift in Sources */,
 				20DBFB0729029366009CEF76 /* RouterType+.swift in Sources */,
 				3A645E8B297209BC00F4BD9A /* KeyChain.swift in Sources */,
 				09F7D6A92A7BB032001645AA /* registerViewModel.swift in Sources */,

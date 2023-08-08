@@ -45,6 +45,10 @@ class CustomCategory: UIView {
         super.init(frame: frame)
         xibSetup()
     }
+    
+    func setInEditView() {
+        categoryImage.backgroundColor = UIColor(hexString: "#F38A5E")
+    }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
