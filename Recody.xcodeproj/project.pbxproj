@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0919F22E2A7A4D8B00E67E66 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F22D2A7A4D8B00E67E66 /* LoginViewController.swift */; };
+		091C8D4E2A80DCFF009539D7 /* SnsLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091C8D4D2A80DCFF009539D7 /* SnsLoginService.swift */; };
+		091C8D562A80F19F009539D7 /* SNSLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091C8D552A80F19F009539D7 /* SNSLoginViewModel.swift */; };
 		095401532A7B66240078B894 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095401522A7B66240078B894 /* EmailLoginViewController.swift */; };
 		095401582A7B689D0078B894 /* loginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095401572A7B689D0078B894 /* loginService.swift */; };
 		0954015A2A7B68A90078B894 /* registerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095401592A7B68A90078B894 /* registerService.swift */; };
+		09CFE55E2A8320CA00073405 /* google.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09CFE55D2A8320CA00073405 /* google.plist */; };
 		09F7D6A92A7BB032001645AA /* registerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F7D6A82A7BB032001645AA /* registerViewModel.swift */; };
 		09F7D6AB2A7BB1BA001645AA /* registerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F7D6AA2A7BB1BA001645AA /* registerModel.swift */; };
+		09F7D6C12A7DF827001645AA /* GooglLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F7D6C02A7DF827001645AA /* GooglLoginModel.swift */; };
+		09F7D6C32A7DF833001645AA /* AppleLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F7D6C22A7DF833001645AA /* AppleLoginModel.swift */; };
 		09FB361B2A7A5A7E00875618 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FB361A2A7A5A7E00875618 /* LoginViewModel.swift */; };
 		09FB361D2A7A5A8F00875618 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FB361C2A7A5A8F00875618 /* LoginModel.swift */; };
 		09FB36202A7A79E200875618 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FB361F2A7A79E200875618 /* RegisterViewController.swift */; };
@@ -203,11 +208,16 @@
 
 /* Begin PBXFileReference section */
 		0919F22D2A7A4D8B00E67E66 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		091C8D4D2A80DCFF009539D7 /* SnsLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnsLoginService.swift; sourceTree = "<group>"; };
+		091C8D552A80F19F009539D7 /* SNSLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSLoginViewModel.swift; sourceTree = "<group>"; };
 		095401522A7B66240078B894 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		095401572A7B689D0078B894 /* loginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginService.swift; sourceTree = "<group>"; };
 		095401592A7B68A90078B894 /* registerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerService.swift; sourceTree = "<group>"; };
+		09CFE55D2A8320CA00073405 /* google.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = google.plist; sourceTree = "<group>"; };
 		09F7D6A82A7BB032001645AA /* registerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewModel.swift; sourceTree = "<group>"; };
 		09F7D6AA2A7BB1BA001645AA /* registerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerModel.swift; sourceTree = "<group>"; };
+		09F7D6C02A7DF827001645AA /* GooglLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglLoginModel.swift; sourceTree = "<group>"; };
+		09F7D6C22A7DF833001645AA /* AppleLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginModel.swift; sourceTree = "<group>"; };
 		09FB361A2A7A5A7E00875618 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		09FB361C2A7A5A8F00875618 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		09FB361F2A7A79E200875618 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -416,6 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				09FB361A2A7A5A7E00875618 /* LoginViewModel.swift */,
+				091C8D552A80F19F009539D7 /* SNSLoginViewModel.swift */,
 				09F7D6A82A7BB032001645AA /* registerViewModel.swift */,
 			);
 			path = ViewModel;
@@ -425,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				095401572A7B689D0078B894 /* loginService.swift */,
+				091C8D4D2A80DCFF009539D7 /* SnsLoginService.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -441,7 +453,9 @@
 			isa = PBXGroup;
 			children = (
 				09FB361C2A7A5A8F00875618 /* LoginModel.swift */,
+				09F7D6C02A7DF827001645AA /* GooglLoginModel.swift */,
 				09F7D6AA2A7BB1BA001645AA /* registerModel.swift */,
+				09F7D6C22A7DF833001645AA /* AppleLoginModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -696,6 +710,7 @@
 				3A8D172D289BBC7700B260D1 /* SceneDelegate.swift */,
 				3A8D1734289BBC7A00B260D1 /* Assets.xcassets */,
 				3A8D1736289BBC7A00B260D1 /* LaunchScreen.storyboard */,
+				09CFE55D2A8320CA00073405 /* google.plist */,
 				3A8D1739289BBC7A00B260D1 /* Info.plist */,
 			);
 			path = Recody;
@@ -1145,6 +1160,7 @@
 				3A9D6F2A29B4733900F4C2F4 /* WorkListView.xib in Resources */,
 				3A8D176E289BC21400B260D1 /* .gitignore in Resources */,
 				3AEDB70128DD86B100C3DB8D /* WorkInfo.xib in Resources */,
+				09CFE55E2A8320CA00073405 /* google.plist in Resources */,
 				3A6AE8E22918910300A9F520 /* InsightMostImpressiveCell.xib in Resources */,
 				3A34165C28FF5CF900C4D698 /* MyPage.storyboard in Resources */,
 				3AD4F12328C09EB700598D28 /* TabHeader.xib in Resources */,
@@ -1295,11 +1311,13 @@
 				AEF6963629B1A91D00C02396 /* TestApiSettingViewController.swift in Sources */,
 				AED00E7529A3438600A60D86 /* TestApiSetupViewController.swift in Sources */,
 				3A6AE8D82918910300A9F520 /* InsightHallOfFameCell.swift in Sources */,
+				091C8D4E2A80DCFF009539D7 /* SnsLoginService.swift in Sources */,
 				AE19A11F29FA10C60035D420 /* ApiService.swift in Sources */,
 				09F7D6AB2A7BB1BA001645AA /* registerModel.swift in Sources */,
 				09FB361B2A7A5A7E00875618 /* LoginViewModel.swift in Sources */,
 				3A56B0E629351F010028BF98 /* CategoryButtonModel.swift in Sources */,
 				3AA56D0328BE580000FB66F5 /* WorkListCollectionViewCell.swift in Sources */,
+				09F7D6C32A7DF833001645AA /* AppleLoginModel.swift in Sources */,
 				3A5076DA29C6D54600C7A5E9 /* AddRecordViewController.swift in Sources */,
 				203FE54629387113009FDABD /* ModifyProfileViewController.swift in Sources */,
 				3AA56CFB28BDDDE000FB66F5 /* RecordRouter.swift in Sources */,
@@ -1342,6 +1360,7 @@
 				20DBFB0629029366009CEF76 /* WorkerType+.swift in Sources */,
 				3AD4F11D28C0808200598D28 /* DropDownHeader.swift in Sources */,
 				3AEDB70E28DE07FC00C3DB8D /* PreReviewModels.swift in Sources */,
+				091C8D562A80F19F009539D7 /* SNSLoginViewModel.swift in Sources */,
 				20C6F9FE29077B6C009296E3 /* PresenterType.swift in Sources */,
 				3A9D6F2C29B4789A00F4C2F4 /* WorkListView.swift in Sources */,
 				AE1D358029F7B029008DEB48 /* DatePcikerView.swift in Sources */,
@@ -1359,6 +1378,7 @@
 				3ADDAD62294B746000BC15D4 /* ListViewController.swift in Sources */,
 				09FB361D2A7A5A8F00875618 /* LoginModel.swift in Sources */,
 				20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */,
+				09F7D6C12A7DF827001645AA /* GooglLoginModel.swift in Sources */,
 				AED00E7829A4501700A60D86 /* TestApiSetupTableCell.swift in Sources */,
 				20E788442925B53F00B05C8E /* CalendarDetailViewController.swift in Sources */,
 				09FB36202A7A79E200875618 /* RegisterViewController.swift in Sources */,
@@ -1636,6 +1656,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = login;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1672,6 +1693,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = login;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -26,6 +26,7 @@ class EmailLoginViewController: UIViewController {
     
     private let viewModel = LoginViewModel()
     private let disposeBag = DisposeBag()
+    
     private func setup()
     {
 
