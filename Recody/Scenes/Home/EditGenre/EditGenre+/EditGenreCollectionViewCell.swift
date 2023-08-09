@@ -12,11 +12,12 @@ import SnapKit
 
 class EditGenreCollectionViewCell: UICollectionViewCell {
     static let cellID = "editGenreCollectionViewCell"
-    private let cellDisposeBag = DisposeBag()
-    var disposeBag = DisposeBag()
     
     let cellDataObs = PublishSubject<SampleCategory.Genre>()
     var button = UIButton()
+    
+    private let cellDisposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     
     override func awakeFromNib() {
         button.setTitleColor(UIColor(hexString: "#999999"), for: .normal)
@@ -34,6 +35,12 @@ class EditGenreCollectionViewCell: UICollectionViewCell {
             .bind { [weak self] genre in
                 self?.setData(with: genre)
             }
+            .disposed(by: cellDisposeBag)
+        
+        button.rx.tap
+            .bind(onNext: { [weak self] _ in
+                self?.touchToggleBtn()
+            })
             .disposed(by: cellDisposeBag)
     }
     
@@ -64,7 +71,7 @@ class EditGenreCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func touchToggleBtn2() {
+    func touchToggleBtn() {
         if button.isSelected {
            button.borderColor = UIColor(hexString: "#CECECE")
             button.borderWidth = 1

@@ -12,16 +12,15 @@ import RxSwift
 class EditGenreViewModel {
     private let disposeBag = DisposeBag()
     
-    var categorys = BehaviorRelay<[SampleCategory]>(value: [])
+    var categorys = BehaviorSubject<[SampleCategory]>(value: [])
     let nowState = BehaviorRelay<Int>(value: 0)
     let customCategory = PublishRelay<SampleCategory>()
     let genres = PublishRelay<[SampleCategory.Genre]>()
     let toggleGenre = PublishRelay<Int>()
-    
     let save = PublishSubject<Void>()
     
     init(categorys: [SampleCategory] = SampleCategoryManager.getManager.categorys) {
-        self.categorys.accept(categorys)
+        self.categorys.onNext(categorys)
     }
     
     struct Input {
@@ -65,7 +64,7 @@ class EditGenreViewModel {
                 result[state].genres.append(sampleGenre)
                 return result
             }
-            .bind(onNext: categorys.accept(_:))
+            .bind(onNext: categorys.onNext(_:))
             .disposed(by: disposeBag)
         
         input.addGenreTapped
@@ -74,8 +73,7 @@ class EditGenreViewModel {
             .disposed(by: disposeBag)
         
         nowState
-            .withLatestFrom(Observable.combineLatest(nowState, categorys))
-            .map { (index, categorys) -> SampleCategory in
+            .withLatestFrom(categorys) { (index, categorys) -> SampleCategory in
                 if index < 0 {
                     self.nowState.accept(categorys.count - 1)
                     return categorys.last!
@@ -99,13 +97,13 @@ class EditGenreViewModel {
             .disposed(by: disposeBag)
         
         customCategory
-            .withLatestFrom(categorys, resultSelector: { category, categorys -> [SampleCategory] in
+            .withLatestFrom(categorys) { category, categorys -> [SampleCategory] in
                 let index = categorys.firstIndex(where: { $0.name == category.name})
                 var result = categorys
                 result[index!] = category
                 return result
-            })
-            .bind(onNext: categorys.accept(_:))
+            }
+            .bind(onNext: categorys.onNext(_:))
             .disposed(by: disposeBag)
         
         customCategory
