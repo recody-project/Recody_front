@@ -26,9 +26,9 @@ class EditGenreViewController: UIViewController {
     @IBOutlet weak var nextCategotyBtn: UIButton!
     @IBOutlet weak var beforeCategotyBtn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var addGenreBtn: UIButton!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var backBarBtn: UIBarButtonItem!
-    @IBOutlet weak var addGenreBtn: UIButton!
     @IBOutlet weak var saveBarBtn: UIBarButtonItem!
 
     private var editViewModel = EditGenreViewModel()
@@ -43,14 +43,15 @@ class EditGenreViewController: UIViewController {
     }
     
     static func getInstanse() -> EditGenreViewController {
-        guard let vc =  UIStoryboard(name: "CategorySetting2", bundle: nil).instantiateViewController(withIdentifier: "CategorySetting") as? EditGenreViewController else {
+        guard let eidtVC =  UIStoryboard(name: "CategorySetting", bundle: nil).instantiateViewController(withIdentifier: "CategorySetting") as? EditGenreViewController else {
             fatalError()
         }
-        return vc
+        return eidtVC
     }
 }
 
 extension EditGenreViewController: EditGenreViewControllerAttribute {
+    
     func bind() {
         let input = EditGenreViewModel.Input(nextBtnTapped: nextCategotyBtn.rx.tap,
                                              beforeBtnTapped: beforeCategotyBtn.rx.tap,
@@ -75,12 +76,11 @@ extension EditGenreViewController: EditGenreViewControllerAttribute {
         
         output.customCategory
             .bind { [weak self] item in
-                //                self?.category.categoryImage.image = UIImage(named: item.imageStr)
-                self?.category.categoryName.text = item.name
-                self?.category.setInEditView()
                 let image = UIImage(named: item.imageStr)?.withRenderingMode(.alwaysTemplate)
                 self?.category.categoryImage.image = image
                 self?.category.categoryImage.tintColor = UIColor.white
+                self?.category.categoryName.text = item.name
+                self?.category.setInEditView()
             }
             .disposed(by: disposeBag)
         
@@ -93,12 +93,6 @@ extension EditGenreViewController: EditGenreViewControllerAttribute {
                     .subscribe(onNext: { [weak self] in
                         self?.editViewModel.toggleGenre.accept(index)
                     }).disposed(by: cell.disposeBag)
-                
-                cell.button.rx.tap
-                    .bind(onNext: { _ in
-                        cell.touchToggleBtn2()
-                    })
-                    .disposed(by: cell.disposeBag)
             }
             .disposed(by: disposeBag)
         

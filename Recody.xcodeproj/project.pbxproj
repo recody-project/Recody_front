@@ -53,9 +53,8 @@
 		20F719D72934401100D2EA5D /* MyPageWorkCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F719D52934401100D2EA5D /* MyPageWorkCollectionCell.swift */; };
 		20F719D82934401100D2EA5D /* MyPageWorkCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F719D62934401100D2EA5D /* MyPageWorkCollectionCell.xib */; };
 		20F719DA2934422A00D2EA5D /* CollectionViewModel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F719D92934422A00D2EA5D /* CollectionViewModel+.swift */; };
-		2708EDDE2A810E3E00A010FA /* CategorySetting2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2708EDDD2A810E3E00A010FA /* CategorySetting2.storyboard */; };
+		2708EDDE2A810E3E00A010FA /* CategorySetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2708EDDD2A810E3E00A010FA /* CategorySetting.storyboard */; };
 		2708EDE02A817BB500A010FA /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708EDDF2A817BB500A010FA /* UIButton+.swift */; };
-		278589C72A7E3945008A3B6B /* SampleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278589C62A7E3945008A3B6B /* SampleCategory.swift */; };
 		278589CB2A7E3AE2008A3B6B /* EditGenreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278589CA2A7E3AE2008A3B6B /* EditGenreViewModel.swift */; };
 		278589CD2A7E5702008A3B6B /* SampleCategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278589CC2A7E5702008A3B6B /* SampleCategoryManager.swift */; };
 		3A13C9A3291F0A7700DC0756 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */; };
@@ -253,9 +252,8 @@
 		20F719D52934401100D2EA5D /* MyPageWorkCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkCollectionCell.swift; sourceTree = "<group>"; };
 		20F719D62934401100D2EA5D /* MyPageWorkCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageWorkCollectionCell.xib; sourceTree = "<group>"; };
 		20F719D92934422A00D2EA5D /* CollectionViewModel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewModel+.swift"; sourceTree = "<group>"; };
-		2708EDDD2A810E3E00A010FA /* CategorySetting2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CategorySetting2.storyboard; sourceTree = "<group>"; };
+		2708EDDD2A810E3E00A010FA /* CategorySetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CategorySetting.storyboard; sourceTree = "<group>"; };
 		2708EDDF2A817BB500A010FA /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
-		278589C62A7E3945008A3B6B /* SampleCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCategory.swift; sourceTree = "<group>"; };
 		278589CA2A7E3AE2008A3B6B /* EditGenreViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGenreViewModel.swift; sourceTree = "<group>"; };
 		278589CC2A7E5702008A3B6B /* SampleCategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCategoryManager.swift; sourceTree = "<group>"; };
 		3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -545,7 +543,6 @@
 		278589C82A7E3948008A3B6B /* SampleManager */ = {
 			isa = PBXGroup;
 			children = (
-				278589C62A7E3945008A3B6B /* SampleCategory.swift */,
 				278589CC2A7E5702008A3B6B /* SampleCategoryManager.swift */,
 			);
 			path = SampleManager;
@@ -776,7 +773,7 @@
 				278589C92A7E3AE2008A3B6B /* ViewModel */,
 				3A8F862E28C6276C0028B45C /* EditGenre+ */,
 				3A8F863328C6277D0028B45C /* EditGenreViewController.swift */,
-				2708EDDD2A810E3E00A010FA /* CategorySetting2.storyboard */,
+				2708EDDD2A810E3E00A010FA /* CategorySetting.storyboard */,
 			);
 			path = EditGenre;
 			sourceTree = "<group>";
@@ -1179,7 +1176,7 @@
 				20F719D82934401100D2EA5D /* MyPageWorkCollectionCell.xib in Resources */,
 				3AA56D0728BE743400FB66F5 /* WorkListCollectionViewCell.xib in Resources */,
 				3A6AE8DE2918910300A9F520 /* InsightAllUserMostAppreciationCell.xib in Resources */,
-				2708EDDE2A810E3E00A010FA /* CategorySetting2.storyboard in Resources */,
+				2708EDDE2A810E3E00A010FA /* CategorySetting.storyboard in Resources */,
 				3AB80F94290D64E800F032EC /* ModifyProfile.storyboard in Resources */,
 				20BD9CAD2921F90300BDAD13 /* CalendarWeekCell.xib in Resources */,
 				3AEED25A29C8A67300D02F3F /* Notification.storyboard in Resources */,
@@ -1313,7 +1310,6 @@
 				3AA56CFE28BDDDE000FB66F5 /* RecordInteractor.swift in Sources */,
 				3AA56CFC28BDDDE000FB66F5 /* RecordModels.swift in Sources */,
 				3AA56CFA28BDDDE000FB66F5 /* RecordWorker.swift in Sources */,
-				278589C72A7E3945008A3B6B /* SampleCategory.swift in Sources */,
 				3A731B3229CEDA0800C5EE5E /* FilterCtaegoryCollectionViewCell.swift in Sources */,
 				3AE6A55A28ED9D0D008ED7DB /* CategoryModels.swift in Sources */,
 				20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */,

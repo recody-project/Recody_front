@@ -195,10 +195,10 @@
                                 <rect key="frame" x="20" y="242" width="374" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFE-nd-et4">
-                                        <rect key="frame" x="271" y="8" width="103" height="34"/>
+                                        <rect key="frame" x="304" y="8" width="70" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="103" id="tsM-bp-r17"/>
+                                            <constraint firstAttribute="width" constant="70" id="ACH-tV-N23"/>
                                             <constraint firstAttribute="height" constant="34" id="uAF-XV-DGl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="12"/>
