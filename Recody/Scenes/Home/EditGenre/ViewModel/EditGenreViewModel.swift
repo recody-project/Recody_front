@@ -12,10 +12,13 @@ import RxSwift
 class EditGenreViewModel {
     private let disposeBag = DisposeBag()
     
+    let editedCategotySubject = PublishRelay<SampleCategory>()
+    
     var categorys = BehaviorSubject<[SampleCategory]>(value: [])
     let nowState = BehaviorRelay<Int>(value: 0)
     let customCategory = PublishRelay<SampleCategory>()
     let genres = PublishRelay<[SampleCategory.Genre]>()
+    let editedCategory = PublishRelay<SampleCategory>()
     let toggleGenre = PublishRelay<Int>()
     let save = PublishSubject<Void>()
     
@@ -45,14 +48,30 @@ class EditGenreViewModel {
             .disposed(by: disposeBag)
 
         input.nextBtnTapped
-            .withLatestFrom(nowState)
-            .map { $0 + 1 }
+            .withLatestFrom(Observable.combineLatest(nowState, categorys) { (index, categorys) -> Int in
+                var index = index + 1
+                if index < 0 {
+                    index = categorys.count - 1
+                } else if index > categorys.count - 1 {
+                    index = 0
+                }
+                print("index =? \(index)")
+                return index
+            })
             .bind(onNext: nowState.accept(_:))
             .disposed(by: disposeBag)
 
         input.beforeBtnTapped
-            .withLatestFrom(nowState)
-            .map { $0 - 1 }
+            .withLatestFrom(Observable.combineLatest(nowState, categorys) { (index, categorys) -> Int in
+                var index = index - 1
+                if index < 0 {
+                    index = categorys.count - 1
+                } else if index > categorys.count - 1 {
+                    index = 0
+                }
+                print("index =? \(index)")
+                return index
+            })
             .bind(onNext: nowState.accept(_:))
             .disposed(by: disposeBag)
         
@@ -74,15 +93,7 @@ class EditGenreViewModel {
         
         nowState
             .withLatestFrom(categorys) { (index, categorys) -> SampleCategory in
-                if index < 0 {
-                    self.nowState.accept(categorys.count - 1)
-                    return categorys.last!
-                } else if index > categorys.count - 1 {
-                    self.nowState.accept(0)
-                    return categorys[0]
-                } else {
-                    return categorys[index]
-                }
+                return categorys[index]
             }
             .subscribe(onNext: customCategory.accept(_:))
             .disposed(by: disposeBag)
@@ -96,9 +107,19 @@ class EditGenreViewModel {
             .bind(onNext: customCategory.accept(_:))
             .disposed(by: disposeBag)
         
+        editedCategory
+            .withLatestFrom(customCategory) { edited, category -> SampleCategory in
+                var editedCategory = category
+                editedCategory.name = edited.name
+                editedCategory.imageStr = edited.imageStr
+                return editedCategory
+            }
+            .bind(onNext: customCategory.accept(_:))
+            .disposed(by: disposeBag)
+        
         customCategory
             .withLatestFrom(categorys) { category, categorys -> [SampleCategory] in
-                let index = categorys.firstIndex(where: { $0.name == category.name})
+                let index = categorys.firstIndex(where: { $0.id == category.id })
                 var result = categorys
                 result[index!] = category
                 return result

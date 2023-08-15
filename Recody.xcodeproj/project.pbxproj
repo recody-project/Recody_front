@@ -57,6 +57,9 @@
 		2708EDE02A817BB500A010FA /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708EDDF2A817BB500A010FA /* UIButton+.swift */; };
 		278589CB2A7E3AE2008A3B6B /* EditGenreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278589CA2A7E3AE2008A3B6B /* EditGenreViewModel.swift */; };
 		278589CD2A7E5702008A3B6B /* SampleCategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278589CC2A7E5702008A3B6B /* SampleCategoryManager.swift */; };
+		2798F5D02A8554BC005FFF16 /* AddCategoryModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798F5CF2A8554BC005FFF16 /* AddCategoryModalViewController.swift */; };
+		2798F5D32A8554E2005FFF16 /* AddCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798F5D22A8554E2005FFF16 /* AddCategoryViewModel.swift */; };
+		2798F5D62A85554A005FFF16 /* AddCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2798F5D52A85554A005FFF16 /* AddCategory.storyboard */; };
 		3A13C9A3291F0A7700DC0756 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */; };
 		3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346028D01E0F00C417CB /* UIScrollView+.swift */; };
 		3A20346328D01E3A00C417CB /* EditGenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */; };
@@ -256,6 +259,9 @@
 		2708EDDF2A817BB500A010FA /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		278589CA2A7E3AE2008A3B6B /* EditGenreViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGenreViewModel.swift; sourceTree = "<group>"; };
 		278589CC2A7E5702008A3B6B /* SampleCategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCategoryManager.swift; sourceTree = "<group>"; };
+		2798F5CF2A8554BC005FFF16 /* AddCategoryModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryModalViewController.swift; sourceTree = "<group>"; };
+		2798F5D22A8554E2005FFF16 /* AddCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewModel.swift; sourceTree = "<group>"; };
+		2798F5D52A85554A005FFF16 /* AddCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddCategory.storyboard; sourceTree = "<group>"; };
 		3A13C9A2291F0A7700DC0756 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3A20346028D01E0F00C417CB /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		3A20346228D01E3A00C417CB /* EditGenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenreCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -556,6 +562,24 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		2798F5D12A8554C4005FFF16 /* AddCatrgory */ = {
+			isa = PBXGroup;
+			children = (
+				2798F5D42A8554E7005FFF16 /* ViewModel */,
+				2798F5CF2A8554BC005FFF16 /* AddCategoryModalViewController.swift */,
+				2798F5D52A85554A005FFF16 /* AddCategory.storyboard */,
+			);
+			path = AddCatrgory;
+			sourceTree = "<group>";
+		};
+		2798F5D42A8554E7005FFF16 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2798F5D22A8554E2005FFF16 /* AddCategoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		3A34164E28FF5CD200C4D698 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -741,6 +765,7 @@
 			children = (
 				3AEED25429C8A63800D02F3F /* Notification */,
 				3AB9CFB528B4E81500A600DB /* WorkDetailInfo */,
+				2798F5D12A8554C4005FFF16 /* AddCatrgory */,
 				3A8F862B28C6250C0028B45C /* EditGenre */,
 				3A8D175E289BBEA100B260D1 /* HomeViewModel.swift */,
 				AE9832DC29B8176E00892C26 /* Home.storyboard */,
@@ -1164,6 +1189,7 @@
 				3A75DBF828A0F5D900084DB1 /* Calendar.storyboard in Resources */,
 				AE9832DE29B8176E00892C26 /* Home.storyboard in Resources */,
 				3A6AE8D32918910300A9F520 /* InsightMyRankCell.xib in Resources */,
+				2798F5D62A85554A005FFF16 /* AddCategory.storyboard in Resources */,
 				3A9D6F2A29B4733900F4C2F4 /* WorkListView.xib in Resources */,
 				3A8D176E289BC21400B260D1 /* .gitignore in Resources */,
 				3AEDB70128DD86B100C3DB8D /* WorkInfo.xib in Resources */,
@@ -1309,6 +1335,7 @@
 				AE4A0E0C29F24E5D003F7283 /* SNSLoginService.swift in Sources */,
 				3AA56CFE28BDDDE000FB66F5 /* RecordInteractor.swift in Sources */,
 				3AA56CFC28BDDDE000FB66F5 /* RecordModels.swift in Sources */,
+				2798F5D02A8554BC005FFF16 /* AddCategoryModalViewController.swift in Sources */,
 				3AA56CFA28BDDDE000FB66F5 /* RecordWorker.swift in Sources */,
 				3A731B3229CEDA0800C5EE5E /* FilterCtaegoryCollectionViewCell.swift in Sources */,
 				3AE6A55A28ED9D0D008ED7DB /* CategoryModels.swift in Sources */,
@@ -1368,6 +1395,7 @@
 				AE1D358029F7B029008DEB48 /* DatePcikerView.swift in Sources */,
 				3AD4F11F28C08BA800598D28 /* TabHeader.swift in Sources */,
 				3AEDB70B28DE07FC00C3DB8D /* PreReviewPresenter.swift in Sources */,
+				2798F5D32A8554E2005FFF16 /* AddCategoryViewModel.swift in Sources */,
 				AEFDD746299B422E00A5EB77 /* TestApiDetailViewController.swift in Sources */,
 				3A6AE8E32918910300A9F520 /* InsiteStatisticsCell.swift in Sources */,
 				278589CD2A7E5702008A3B6B /* SampleCategoryManager.swift in Sources */,
