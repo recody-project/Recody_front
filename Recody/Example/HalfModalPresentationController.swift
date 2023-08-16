@@ -23,7 +23,7 @@ class HalfModalPresentationController: UIPresentationController {
     
     override var frameOfPresentedViewInContainerView: CGRect {
         CGRect(origin: CGPoint(x: 0,
-                               y: self.containerView!.frame.height * 0.5 ),
+                               y: self.containerView!.frame.height * 0.5),
                size: CGSize(width: self.containerView!.frame.width,
                             height: self.containerView!.frame.height * 0.5))
     }
@@ -43,13 +43,13 @@ class HalfModalPresentationController: UIPresentationController {
     override func containerViewDidLayoutSubviews() {
         super.containerViewDidLayoutSubviews()
         backgroundView.frame = self.containerView!.frame
-//        self.presentedView?.makeRoundedSpecificCorner(corners: [.topLeft, .topRight], cornerRadius: 15)
+        self.presentedView?.roundCorners([.topLeft, .topRight], radius: 20)
     }
     @objc func dismissController() {
         self.backgroundView.removeFromSuperview()
         self.presentedViewController.dismiss(animated: true)
     }
-    @objc func dismissController(_  handler:(() -> Void)? = nil) {
+    @objc func dismissController(_ handler: (() -> Void)? = nil) {
         self.backgroundView.removeFromSuperview()
         self.presentedViewController.dismiss(animated: true, completion: handler)
     }

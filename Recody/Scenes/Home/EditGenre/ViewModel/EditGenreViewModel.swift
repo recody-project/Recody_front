@@ -55,7 +55,6 @@ class EditGenreViewModel {
                 } else if index > categorys.count - 1 {
                     index = 0
                 }
-                print("index =? \(index)")
                 return index
             })
             .bind(onNext: nowState.accept(_:))
@@ -69,7 +68,6 @@ class EditGenreViewModel {
                 } else if index > categorys.count - 1 {
                     index = 0
                 }
-                print("index =? \(index)")
                 return index
             })
             .bind(onNext: nowState.accept(_:))

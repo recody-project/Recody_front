@@ -108,7 +108,7 @@ extension AddCategoryModalViewController: AddCategoryModalViewControllerAttrubut
     func configure() {
         
         // textField
-        nameTextField.placeholder = "1~4글자 특수문자 금지"
+        nameTextField.placeholder = "1~4글자 특수문자 제외"
         
         // Icon Stack View
         iconStackView.distribution = .fillEqually

@@ -19,8 +19,8 @@ class SampleCategoryManager {
         return Observable.just(categorys)
     }
     
-    func fetchCategory(index: Int) -> SampleCategory {
-        return categorys[index]
+    func fetchCategory(index: Int) -> Observable<SampleCategory> {
+        return Observable.just(categorys[index])
     }
     
     func saveData(categorys: [SampleCategory]) {

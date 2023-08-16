@@ -24,7 +24,7 @@ class AddCategoryViewModel {
     var isValid: Observable<Bool> {
         return Observable.combineLatest(nameRelay, iconState)
             .map { (name, state) in
-                return name.count > 0 && name.count < 5 && state > -1
+                return name.count > 0 && name.count < 5 && state > -1 && name.isExcludedSpecialCharacters()
             }
     }
     
@@ -44,7 +44,6 @@ class AddCategoryViewModel {
         let saveBtnTap = input.saveTap
         
         let isValid = isValid.asDriver(onErrorJustReturn: true)
-        
         
         // 추가 - 현재 VC에서 저장
         saveBtnTap
@@ -66,11 +65,17 @@ class AddCategoryViewModel {
             .subscribe(onNext: savedData.onNext(_:))
             .disposed(by: disposeBag)
         
-        // 저장된 배열의 index를 통해 받은 데이터들을 View의 textField와 titleLabel, iconImage에 보내줌 보내줌
+        // 저장된 배열의 index를 통해 받은 데이터들을 View의 textField와 titleLabel, iconImage에 보내줌
         categotyIndex
-            .map { [weak self] idx -> String in
+            .flatMap { idx -> Observable<SampleCategory> in
                 if idx > -1 {
-                    let category = SampleCategoryManager.getManager.fetchCategory(index: idx)
+                    return SampleCategoryManager.getManager.fetchCategory(index: idx)
+                } else {
+                    return Observable.just(SampleCategory(name: "", imageStr: "", genres: []))
+                }
+            }
+            .map { [weak self] category -> String in
+                if category.name != "" {
                     let imgIndex = SampleCategory.imageStr.firstIndex(where: { $0 == category.imageStr })
                     self?.iconState.accept(imgIndex ?? 0)
                     return category.name

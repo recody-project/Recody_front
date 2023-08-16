@@ -81,7 +81,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JPJ-wJ-YHR">
-                    <rect key="frame" x="48" y="65" width="13" height="13"/>
+                    <rect key="frame" x="48" y="64" width="13" height="13"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -95,8 +95,8 @@
                 <constraint firstItem="2fQ-2i-Oao" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0Hw-Oi-bqH"/>
                 <constraint firstItem="f8C-NO-dtK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7d8-rD-AqK"/>
                 <constraint firstItem="JPJ-wJ-YHR" firstAttribute="leading" secondItem="2fQ-2i-Oao" secondAttribute="trailing" constant="5.5" id="UDE-e8-cdb"/>
+                <constraint firstItem="JPJ-wJ-YHR" firstAttribute="top" secondItem="2fQ-2i-Oao" secondAttribute="top" id="dE6-U8-KKb"/>
                 <constraint firstItem="2fQ-2i-Oao" firstAttribute="top" secondItem="f8C-NO-dtK" secondAttribute="bottom" constant="8" symbolic="YES" id="e4t-ov-jyQ"/>
-                <constraint firstItem="JPJ-wJ-YHR" firstAttribute="centerY" secondItem="2fQ-2i-Oao" secondAttribute="centerY" id="eLW-9b-Mrh"/>
                 <constraint firstItem="f8C-NO-dtK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nZj-uq-8jH"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
