@@ -14,18 +14,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
     var viewModel = HomeViewModel()
-    
-    let works: [Work] = [
-        Work(id: "0", name: "Attention", image: "attention"),
-        Work(id: "1", name: "1987", image: "1987"),
-        Work(id: "2", name: "CallMeByYourName", image: "callMeByYourName"),
-        Work(id: "3", name: "her", image: "her"),
-        Work(id: "4", name: "Pink Venom", image: "pinkVenom"),
-        Work(id: "5", name: "마더", image: "mother"),
-        Work(id: "6", name: "블랙 팬서", image: "blackPanther"),
-        Work(id: "7", name: "스파이더맨", image: "spiderman"),
-        Work(id: "8", name: "After Like", image: "afterLike")
-    ]
 
     @IBOutlet weak var workScrollView: UIScrollView!
     @IBOutlet weak var workStackView: UIStackView!
@@ -36,6 +24,7 @@ class HomeViewController: UIViewController {
         setUp()
         setWorkView()
     }
+
     static func getInstanse() -> HomeViewController {
         guard let vc =  UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "home") as? HomeViewController
         else {
@@ -43,13 +32,14 @@ class HomeViewController: UIViewController {
         }
         return vc
     }
+
     func setUp() {
 //        self.interactor?.just(UseCase.setting).drop()
         self.notificationButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
     }
     
     func setWorkView() {
-        for work in works {
+        for work in viewModel.works {
             let view = WorkView()
             view.setView(work: work)
             view.tag = 109

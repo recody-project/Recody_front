@@ -6,7 +6,8 @@
 //
 
 import Foundation
-struct UserInfo: Codable {
+
+struct SignUpRequest: Codable {
     let userId: Int
     let email: String
     let name: String?

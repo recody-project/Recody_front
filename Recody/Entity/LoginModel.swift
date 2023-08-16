@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct LoginResponse: Codable {
     let message: String
     let data: LoginData

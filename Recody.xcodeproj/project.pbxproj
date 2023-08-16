@@ -127,6 +127,9 @@
 		3AB1431F28F768080041C9CC /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB1431E28F768080041C9CC /* Search.storyboard */; };
 		3AB1432328F76FBC0041C9CC /* MySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1432128F76FBC0041C9CC /* MySearchTableViewCell.swift */; };
 		3AB1432428F76FBC0041C9CC /* MySearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB1432228F76FBC0041C9CC /* MySearchTableViewCell.xib */; };
+		3AB213292A8D08120035EA56 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB213282A8D08120035EA56 /* APIManager.swift */; };
+		3AB2132E2A8D0C170035EA56 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2132D2A8D0C170035EA56 /* UserService.swift */; };
+		3AB213302A8D0DB20035EA56 /* UserInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2132F2A8D0DB20035EA56 /* UserInfoResponse.swift */; };
 		3AB80F94290D64E800F032EC /* ModifyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB80F93290D64E800F032EC /* ModifyProfile.storyboard */; };
 		3AB9CFBF28B4E84300A600DB /* WorkDetailInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFB928B4E84300A600DB /* WorkDetailInfoViewModel.swift */; };
 		3AB9CFC028B4E84300A600DB /* WorkDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFBA28B4E84300A600DB /* WorkDetailInfoViewController.swift */; };
@@ -328,6 +331,9 @@
 		3AB1431E28F768080041C9CC /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		3AB1432128F76FBC0041C9CC /* MySearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchTableViewCell.swift; sourceTree = "<group>"; };
 		3AB1432228F76FBC0041C9CC /* MySearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySearchTableViewCell.xib; sourceTree = "<group>"; };
+		3AB213282A8D08120035EA56 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		3AB2132D2A8D0C170035EA56 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		3AB2132F2A8D0DB20035EA56 /* UserInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoResponse.swift; sourceTree = "<group>"; };
 		3AB80F93290D64E800F032EC /* ModifyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifyProfile.storyboard; sourceTree = "<group>"; };
 		3AB9CFB928B4E84300A600DB /* WorkDetailInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoViewModel.swift; sourceTree = "<group>"; };
 		3AB9CFBA28B4E84300A600DB /* WorkDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoViewController.swift; sourceTree = "<group>"; };
@@ -739,12 +745,12 @@
 		3A8D175A289BBE9500B260D1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3AB2132B2A8D09D90035EA56 /* ViewController */,
+				3AB2132A2A8D09AF0035EA56 /* ViewModel */,
 				3AEED25429C8A63800D02F3F /* Notification */,
 				3AB9CFB528B4E81500A600DB /* WorkDetailInfo */,
 				3A8F862B28C6250C0028B45C /* EditGenre */,
-				3A8D175E289BBEA100B260D1 /* HomeViewModel.swift */,
 				AE9832DC29B8176E00892C26 /* Home.storyboard */,
-				AE9832DB29B8176E00892C26 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -752,6 +758,7 @@
 		3A8D1768289BBEB900B260D1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3AB2132C2A8D0BAD0035EA56 /* User */,
 				095401562A7B68800078B894 /* Register */,
 				095401552A7B68750078B894 /* Login */,
 				AE4A0E0A29F24E47003F7283 /* SNSLogin */,
@@ -763,6 +770,7 @@
 				AE19A11E29FA10C60035D420 /* ApiService.swift */,
 				AE19A11C29FA0DBD0035D420 /* ServiceProvider.swift */,
 				278589C82A7E3948008A3B6B /* SampleManager */,
+				3AB213282A8D08120035EA56 /* APIManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -840,6 +848,31 @@
 				3A731B3329CEDA1200C5EE5E /* FilterGenreCollectionViewCell.swift */,
 			);
 			path = "Search+";
+			sourceTree = "<group>";
+		};
+		3AB2132A2A8D09AF0035EA56 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3A8D175E289BBEA100B260D1 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3AB2132B2A8D09D90035EA56 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AE9832DB29B8176E00892C26 /* HomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3AB2132C2A8D0BAD0035EA56 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				3AB2132D2A8D0C170035EA56 /* UserService.swift */,
+				3AB2132F2A8D0DB20035EA56 /* UserInfoResponse.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		3AB2F07A29095F2100240E56 /* MyPage+ */ = {
@@ -1291,6 +1324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB213292A8D08120035EA56 /* APIManager.swift in Sources */,
 				3A8F863928C6277D0028B45C /* EditGenreViewController.swift in Sources */,
 				3AD7147F29B0F8DC00E9FF65 /* WorkView.swift in Sources */,
 				3A5076DC29C6EEE900C7A5E9 /* SearchResultViewController.swift in Sources */,
@@ -1329,6 +1363,7 @@
 				2015B30C2918F37500DB725D /* ApiCommand.swift in Sources */,
 				AE1D357C29F791A5008DEB48 /* DatePickerService.swift in Sources */,
 				3A75DBEE28A0F41000084DB1 /* TabBarController.swift in Sources */,
+				3AB213302A8D0DB20035EA56 /* UserInfoResponse.swift in Sources */,
 				3A6AE8D62918910300A9F520 /* InsightFirstRecordCell.swift in Sources */,
 				20F719D72934401100D2EA5D /* MyPageWorkCollectionCell.swift in Sources */,
 				20DBFB0529029366009CEF76 /* RoutingLogic.swift in Sources */,
@@ -1394,6 +1429,7 @@
 				20BD9CAC2921F90300BDAD13 /* CalendarWeekCell.swift in Sources */,
 				3A6AE8DD2918910300A9F520 /* InsightTop3GenreCell.swift in Sources */,
 				3AE6A55828ED9B08008ED7DB /* WorkCollectionViewCellModels.swift in Sources */,
+				3AB2132E2A8D0C170035EA56 /* UserService.swift in Sources */,
 				3ADDAD60294B72A700BC15D4 /* ListPageViewController.swift in Sources */,
 				3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */,
 				208386DB294813BA0012A8E0 /* PageViewController.swift in Sources */,
