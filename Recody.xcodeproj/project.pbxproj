@@ -134,6 +134,8 @@
 		3AB9CFBF28B4E84300A600DB /* WorkDetailInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFB928B4E84300A600DB /* WorkDetailInfoViewModel.swift */; };
 		3AB9CFC028B4E84300A600DB /* WorkDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFBA28B4E84300A600DB /* WorkDetailInfoViewController.swift */; };
 		3AB9CFC328B4E86100A600DB /* WorkDetailInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB9CFC228B4E86100A600DB /* WorkDetailInfo.storyboard */; };
+		3AC2047D2A6D0FD00005709A /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2047C2A6D0FD00005709A /* CropViewController.swift */; };
+		3AC2047F2A6D24350005709A /* UserDefautlsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2047E2A6D24350005709A /* UserDefautlsManager.swift */; };
 		3AC934C8297779CF00868C33 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC934C7297779CF00868C33 /* FilterViewController.swift */; };
 		3AD4F11D28C0808200598D28 /* DropDownHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4F11C28C0808200598D28 /* DropDownHeader.swift */; };
 		3AD4F11F28C08BA800598D28 /* TabHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4F11E28C08BA800598D28 /* TabHeader.swift */; };
@@ -338,6 +340,8 @@
 		3AB9CFB928B4E84300A600DB /* WorkDetailInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoViewModel.swift; sourceTree = "<group>"; };
 		3AB9CFBA28B4E84300A600DB /* WorkDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoViewController.swift; sourceTree = "<group>"; };
 		3AB9CFC228B4E86100A600DB /* WorkDetailInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkDetailInfo.storyboard; sourceTree = "<group>"; };
+		3AC2047C2A6D0FD00005709A /* CropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropViewController.swift; sourceTree = "<group>"; };
+		3AC2047E2A6D24350005709A /* UserDefautlsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefautlsManager.swift; sourceTree = "<group>"; };
 		3AC934C7297779CF00868C33 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		3AD4F11C28C0808200598D28 /* DropDownHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownHeader.swift; sourceTree = "<group>"; };
 		3AD4F11E28C08BA800598D28 /* TabHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHeader.swift; sourceTree = "<group>"; };
@@ -770,6 +774,7 @@
 				3A8D175E289BBEA100B260D1 /* HomeViewModel.swift */,
 				AE9832DC29B8176E00892C26 /* Home.storyboard */,
 				AE9832DB29B8176E00892C26 /* HomeViewController.swift */,
+				3AC2047C2A6D0FD00005709A /* CropViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -926,6 +931,7 @@
 				3AD4F12428C0A5B400598D28 /* Extension */,
 				3ADA9B7928A580FA00EB39F3 /* Designable */,
 				20BD9CB029220BE200BDAD13 /* TimeUtil.swift */,
+				3AC2047E2A6D24350005709A /* UserDefautlsManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1337,6 +1343,7 @@
 				3AA56CFC28BDDDE000FB66F5 /* RecordModels.swift in Sources */,
 				2798F5D02A8554BC005FFF16 /* AddCategoryModalViewController.swift in Sources */,
 				3AA56CFA28BDDDE000FB66F5 /* RecordWorker.swift in Sources */,
+				3AC2047F2A6D24350005709A /* UserDefautlsManager.swift in Sources */,
 				3A731B3229CEDA0800C5EE5E /* FilterCtaegoryCollectionViewCell.swift in Sources */,
 				3AE6A55A28ED9D0D008ED7DB /* CategoryModels.swift in Sources */,
 				20CCE773290684FD00BB8F63 /* DefaultDataModel.swift in Sources */,
@@ -1411,6 +1418,7 @@
 				2708EDE02A817BB500A010FA /* UIButton+.swift in Sources */,
 				20DBFB0129029366009CEF76 /* InteractorType+.swift in Sources */,
 				AED00E7829A4501700A60D86 /* TestApiSetupTableCell.swift in Sources */,
+				3AC2047D2A6D0FD00005709A /* CropViewController.swift in Sources */,
 				20E788442925B53F00B05C8E /* CalendarDetailViewController.swift in Sources */,
 				09FB36202A7A79E200875618 /* RegisterViewController.swift in Sources */,
 				20DBFB0229029366009CEF76 /* UIViewController+.swift in Sources */,
