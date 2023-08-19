@@ -2,176 +2,115 @@
 //  EmailLoginViewController.swift
 //  Recody
 //
-//  Created by Snuh_Mobile on 2023/04/05.
+//  Created by 최지철 on 2023/08/03.
 //
 
-import Foundation
 import UIKit
-class EmailLoginViewController: UIViewController {
-    let viewModel = EmailLoginViewModel()
-    
-    enum UseCase: Int,OrderType {
-        case loginAction = 1
-        case findIdAction = 2
-        case findPwAction = 3
-        case registerMemberAction = 4
-        case inputEmailShow = 5
-        case inputPwShow = 6
-        case togglePassword = 7
-        var number: Int {
-            return self.rawValue
-        }
-    }
+import RxSwift
+import RxCocoa
 
-    @IBOutlet weak var vwEmail: UIView!
-    @IBOutlet weak var vwPw: UIView!
-    @IBOutlet weak var imgPwHidden: UIImageView!
-    @IBOutlet weak var inputEmail: UITextField! // tag = 0
-    @IBOutlet weak var helpEmail: UILabel! //
-    @IBOutlet weak var helpPw: UILabel! //
+protocol baseViewControllerAttrubute
+{
+    func bind()
+    func configure()
+}
+class EmailLoginViewController: UIViewController {
+    @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var findEmailBtn: UIButton!
+    @IBOutlet weak var findPwBtn: UIButton!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var pwTextField: UITextField!
+    @IBOutlet weak var pwLabel: UILabel!
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var emailLabel: UILabel!
     
-    @IBOutlet weak var inputPw: UITextField! // tag = 1
-    @IBOutlet weak var inputEmailTitlePosition: NSLayoutConstraint! // disable 30 enable 12
-    @IBOutlet weak var inputPwTitlePosition: NSLayoutConstraint! // disable 30 enable 12
-    
-    @IBOutlet weak var btnLogin: UIView!
-    @IBOutlet weak var btnFindId: UILabel!
-    @IBOutlet weak var btnFindPw: UILabel!
-    @IBOutlet weak var btnRegisterMember: UIView!
-    
-    @IBAction func backAction(_ sender: Any) {
-//        self.router?.popViewContoller(animated: true)
+    private let viewModel = LoginViewModel()
+    private let disposeBag = DisposeBag()
+    private func setup()
+    {
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
-        update()
-    }
-    static func getInstanse() -> EmailLoginViewController{
-        guard let vc = UIStoryboard(name: "EmailLogin", bundle: nil).instantiateInitialViewController() as? EmailLoginViewController
-        else {
-            fatalError()
-        }
-        return vc
-    }
-    @objc func clickEvent(_ sender: UITapGestureRecognizer) {
-        guard let tag = sender.view?.tag,
-              let useCase = UseCase(rawValue: tag) else { return }
-        switch useCase {
-        case .loginAction:
-            self.navigationController?.pushViewController(TabBarController.getInstanse(), animated: true)
-//        case .findIdAction:
-//        case .findPwAction:
-        case .registerMemberAction:
-            self.navigationController?.pushViewController(RegisterMemberViewController.getInstanse(), animated: true)
-        case .inputEmailShow:
-            viewModel.showEmailText = true
-            inputEmail.becomeFirstResponder()
-        case .inputPwShow:
-            viewModel.showPwText = true
-            inputPw.becomeFirstResponder()
-        case .togglePassword:
-            viewModel.passwordHidden = !viewModel.passwordHidden
-        default:
-        break
-//            self.presenter?.alertService.showToast("\(useCase)")
-        }
-        update()
-    }
-    func setup() {
-        btnLogin.tag = UseCase.loginAction.rawValue
-        btnFindId.tag = UseCase.findIdAction.rawValue
-        btnFindPw.tag = UseCase.findPwAction.rawValue
-        vwEmail.tag = UseCase.inputEmailShow.rawValue
-        vwPw.tag = UseCase.inputPwShow.rawValue
-        imgPwHidden.tag = UseCase.togglePassword.rawValue
-        
-        btnRegisterMember.tag = UseCase.registerMemberAction.rawValue
-        [btnLogin, btnFindId, btnFindPw, btnRegisterMember, vwEmail, vwPw, imgPwHidden].forEach({
-            $0?.isUserInteractionEnabled = true
-            $0?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
-        })
-        inputEmail.delegate = self
-        inputEmail.tag = 1
-        inputEmail.keyboardType = .emailAddress
-        inputPw.delegate = self
-        inputPw.tag = 2
-        inputPw.keyboardType = .emailAddress
-        
-    }
-    func update() {
-        inputEmail.isHidden = !viewModel.showEmailText
-        inputPw.isHidden = !viewModel.showPwText
-        inputEmailTitlePosition.constant = viewModel.showEmailText ? 12.0 : 30.0
-//        if viewModel.showEmailText {
-//            inputEmail.becomeFirstResponder()
-//        }else{
-//            inputEmail.resignFirstResponder()
-//        }
-//        if viewModel.showPwText {
-//            inputPw.becomeFirstResponder()
-//        }else{
-//            inputPw.resignFirstResponder()
-//        }
-        inputPwTitlePosition.constant = viewModel.showPwText ? 12.0 : 30.0
-        imgPwHidden.image = viewModel.passwordHidden ?  UIImage(systemName: "eye.slash") : UIImage(systemName: "eye")
-        helpEmail.text = viewModel.helpEmailText
-        helpPw.text = viewModel.helpPwText
-        inputPw.isSecureTextEntry = viewModel.passwordHidden
-    }
-}
-class EmailLoginViewModel {
-    var showEmailText = false
-    var showPwText = false
-    var passwordHidden = true
-    var helpEmailText = ""
-    var helpPwText = ""
-    var emailText = ""
-    var passwordText = ""
-}
-
-extension EmailLoginViewController: UITextFieldDelegate {
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        let tag = textField.tag
-        guard let text = textField.text else { return }
-        
-        if tag == 1 {
-            self.viewModel.helpEmailText = text.isValidEmail() ? "" : "올바르지 않은 유형의 이메일입니다."
-            self.viewModel.emailText = text
-        } else if (tag == 2) {
-            self.viewModel.helpPwText =  text.count < 8 ? "패스워드는 8자이상 입력해주세요." : ""
-            self.viewModel.passwordText = text
-        }
-        update()
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        let tag = textField.tag
-        guard let text = textField.text else { return }
-        if tag == 1 {
-            self.viewModel.showEmailText = !(text.count == 0)
-        } else if (tag == 2) {
-            self.viewModel.showPwText = !(text.count == 0)
-        }
-        update()
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let tag = textField.tag
-        if tag == 1 {
-            self.viewModel.showPwText = true
-            self.inputPw.becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder()
-        }
-        update()
-        return true
+        self.setup()
+        bind()
+        configure()
     }
     
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        let tag = textField.tag
-//
-//        if tag == 1 {
-//            textField.text?.isValidEmail()
-//        }
-//         return true
-//     }
+    @IBAction func backBtnClick(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+
+    }
+    @IBAction func loginBtnClick(_ sender: Any) {
+        
+    }
+}
+extension EmailLoginViewController: baseViewControllerAttrubute {
+    func bind()
+    {
+        let input = LoginViewModel.Input(loginID: emailTextField.rx.text, loginPW: pwTextField.rx.text, loginTap: loginBtn.rx.tap)
+        let output = viewModel.transform(from: input)
+        output.emailRelay
+            .bind(to: emailTextField.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.passwordRelay
+            .bind(to: pwTextField.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.emailText
+            .bind(to: viewModel.emailRelay)
+            .disposed(by: disposeBag)
+        
+        output.passwordText
+            .bind(to: viewModel.passwordRelay)
+            .disposed(by: disposeBag)
+        
+        output.isValid
+            .drive(loginBtn.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        output.isValid
+            .map { $0 == true ? UIColor(hexString: "#373737") : UIColor.white }
+            .drive(loginBtn.rx.backgroundColor)
+            .disposed(by: disposeBag)
+        output.isValid
+            .map { $0 == true ? UIColor.white : UIColor.black }
+            .drive(loginBtn.rx.tintColor)
+            .disposed(by: disposeBag)
+
+        
+        output.isLoginSucceed
+            .withUnretained(self)
+            .subscribe { [weak self] vc, response in
+                guard let self = self else { return }
+                vc.presentAlert(response.message, response.data.signInInfo.accessExpireTime)
+            } onError: { [weak self] error in
+                guard let self = self else { return }
+                self.presentAlert("로그인 실패", "\(error)")
+            } onCompleted: {
+                print("완료")
+            } onDisposed: {
+                print("버려")
+            }
+            .disposed(by: disposeBag)
+    }
+    func configure(){
+        let underlineText = "회원가입"
+        let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
+        let underlineAttributedString = NSAttributedString(string: underlineText, attributes: underlineAttribute)
+        registerBtn.setAttributedTitle(underlineAttributedString, for: .normal)
+        registerBtn.tintColor = UIColor.darkGray
+        findPwBtn.titleLabel?.font = UIFont.fontWithName(type: FontType.regular, size: 12)
+        findEmailBtn.titleLabel?.font = UIFont.fontWithName(type: FontType.regular, size: 12)
+        findPwBtn.titleLabel?.textColor = UIColor(hexString: "#999999")
+        findEmailBtn.titleLabel?.textColor = UIColor(hexString: "#999999")
+    }
+    private func presentAlert(_ title: String, _ message: String)
+    {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okBtn = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(okBtn)
+        self.present(alert, animated: true, completion: nil)
+    }
 }

@@ -146,9 +146,9 @@ class RegisterMemberViewController: UIViewController {
             btn?.tag = showInputAction[index].rawValue
             btn?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
         }
-        btnRegister.tag = UseCase.register.rawValue
-        btnRegister.isUserInteractionEnabled = true
-        btnRegister.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
+//        btnRegister.tag = UseCase.register.rawValue
+//        btnRegister.isUserInteractionEnabled = true
+//        btnRegister.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickEvent)))
         
         imgPwHidden.tag = UseCase.togglePassword.rawValue
         imgPwHidden.isUserInteractionEnabled = true

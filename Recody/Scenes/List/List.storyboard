@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -156,7 +156,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Szy-ML-9ap">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="UPB-DK-TZF">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Vpl-BN-nHg">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Vpl-BN-nHg">
                                 <rect key="frame" x="302" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -168,6 +168,7 @@
                     <connections>
                         <outlet property="categoryScrollView" destination="sDn-v3-tZS" id="fye-LP-wdF"/>
                         <outlet property="categoryStackView" destination="Nxm-LX-Un7" id="AIP-T8-g5V"/>
+                        <outlet property="editGenreBarBtn" destination="UPB-DK-TZF" id="8as-SL-ae0"/>
                         <outlet property="foldViewHeight" destination="ajY-h0-ZP6" id="0x2-TQ-fGB"/>
                         <outlet property="genreScrollView" destination="4Re-f0-6wd" id="x5Z-6M-Ugu"/>
                         <outlet property="genreStackView" destination="bdS-Xs-0JH" id="U2Q-81-hlm"/>

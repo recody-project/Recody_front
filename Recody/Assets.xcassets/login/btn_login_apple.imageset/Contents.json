@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "btn_login_apple.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -9,7 +10,6 @@
       "scale" : "2x"
     },
     {
-      "filename" : "ic_login_email.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

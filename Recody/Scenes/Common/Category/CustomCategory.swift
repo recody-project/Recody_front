@@ -12,12 +12,18 @@ class CustomCategory: UIView {
 
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryName: UILabel!
-
+    @IBOutlet weak var editIconImage: UIImageView!
+    
     var isBorder = false
 
     func setData(with data: Category) {
         categoryImage.image = UIImage(named: data.image)
         categoryName.text = data.name
+    }
+    
+    func setRenderedImage(imgName: String) {
+        let image = UIImage(named: imgName)?.withRenderingMode(.alwaysTemplate)
+        categoryImage.image = image
     }
 
     func setDataForAdd() {
@@ -44,6 +50,11 @@ class CustomCategory: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
+    }
+    
+    func setInEditView() {
+        categoryImage.backgroundColor = UIColor(hexString: "#F38A5E")
+        editIconImage.image = UIImage(named: "icon_pencil")
     }
 
     required init?(coder: NSCoder) {

@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "wind.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -9,7 +10,6 @@
       "scale" : "2x"
     },
     {
-      "filename" : "ic_login_naver.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
