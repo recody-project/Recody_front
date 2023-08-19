@@ -6,10 +6,19 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import SnapKit
+
+protocol ListViewControllerAttribute {
+    func bind()
+    func configure()
+}
 
 @available(iOS 14.0, *)
 class ListViewController: UIViewController {
+    @IBOutlet weak var editGenreBarBtn: UIBarButtonItem!
+    
     @IBOutlet weak var listPageSuperView: UIView!
     @IBOutlet weak var categoryScrollView: UIScrollView!
     @IBOutlet weak var categoryStackView: UIStackView!
@@ -23,19 +32,24 @@ class ListViewController: UIViewController {
     let categories = [ Category(name: "전체", image: "전체"), Category(name: "책", image: "책"), Category(name: "영화", image: "영화"), Category(name: "드라마", image: "드라마"), Category(name: "음악", image: "음악"), Category(name: "공연", image: "공연") ]
     let genres = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"]
     
+    
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setCategoryStackView()
         setGenreStackView()
         configurePageViewController()
+        bind()
     }
-    //.recordList
+    
+    // recordList
     static func getInstanse() -> ListViewController {
-        guard let vc =  UIStoryboard(name: "List", bundle: nil).instantiateViewController(withIdentifier: "listView") as? ListViewController
+        guard let listVC =  UIStoryboard(name: "List", bundle: nil).instantiateViewController(withIdentifier: "listView") as? ListViewController
         else {
             fatalError()
         }
-        return vc
+        return listVC
     }
     func setCategoryStackView() {
         for category in categories {
@@ -76,7 +90,11 @@ class ListViewController: UIViewController {
             guard let useCase = UseCase(rawValue: tag) else { return }
             switch useCase {
             case .pushAddCategory:
-                self.navigationController?.pushViewController(EditGenreViewController.getInstanse(),animated: true)
+                self.navigationController?.pushViewController(EditGenreViewController.getInstanse(), animated: true)
+//                let addCategoryView = AddCategoryModalViewController.getInstance()
+//                addCategoryView.modalPresentationStyle = .custom
+//                addCategoryView.transitioningDelegate = self
+//                self.present(addCategoryView, animated: true)
             case .moveIndicator:
             break
             default:
@@ -167,5 +185,29 @@ extension ListViewController {
                 self.isAnimateFold = false
             }
         }
+    }
+}
+
+
+@available(iOS 14.0, *)
+extension ListViewController: ListViewControllerAttribute {
+    func bind() {
+        editGenreBarBtn.rx.tap
+            .bind { [weak self] _ in
+                print("---->")
+                self?.navigationController?.pushViewController(EditGenreViewController.getInstanse(), animated: true)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    func configure() {
+        
+    }
+}
+
+@available(iOS 14.0, *)
+extension ListViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

@@ -23,6 +23,7 @@ protocol EditGenreViewControllerAttribute {
 class EditGenreViewController: UIViewController {
     
     @IBOutlet weak var category: CustomCategory!
+    @IBOutlet weak var editCategotyBtn: UIButton!
     @IBOutlet weak var nextCategotyBtn: UIButton!
     @IBOutlet weak var beforeCategotyBtn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -33,7 +34,7 @@ class EditGenreViewController: UIViewController {
 
     private var editViewModel = EditGenreViewModel()
     private let disposeBag = DisposeBag()
-
+    
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,8 +77,7 @@ extension EditGenreViewController: EditGenreViewControllerAttribute {
         
         output.customCategory
             .bind { [weak self] item in
-                let image = UIImage(named: item.imageStr)?.withRenderingMode(.alwaysTemplate)
-                self?.category.categoryImage.image = image
+                self?.category.setRenderedImage(imgName: item.imageStr)
                 self?.category.categoryImage.tintColor = UIColor.white
                 self?.category.categoryName.text = item.name
                 self?.category.setInEditView()
@@ -104,6 +104,23 @@ extension EditGenreViewController: EditGenreViewControllerAttribute {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         navigationBar.shadowImage = UIImage()
         navigationBar.topItem?.title = "편집"
+        
+        // CustomCategory
+        let tapGesture = UITapGestureRecognizer()
+        category.addGestureRecognizer(tapGesture)
+        tapGesture.rx.event
+            .withLatestFrom(editViewModel.nowState)
+            .bind { [weak self] idx in
+                let addCategoryView = AddCategoryModalViewController.getInstance()
+                addCategoryView.listIndex = idx
+                addCategoryView.modalPresentationStyle = .custom
+                addCategoryView.transitioningDelegate = self
+                addCategoryView.dataSource
+                    .bind(onNext: (self?.editViewModel.editedCategory.accept(_:))!)
+                    .disposed(by: self!.disposeBag)
+                self?.present(addCategoryView, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     func setFlowlayout() {
@@ -113,5 +130,11 @@ extension EditGenreViewController: EditGenreViewControllerAttribute {
         let cellWidth = (width) / itemsPerRow
         flowlayout.itemSize = CGSize(width: cellWidth - 20, height: 46)
         collectionView.collectionViewLayout = flowlayout
+    }
+}
+
+extension EditGenreViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

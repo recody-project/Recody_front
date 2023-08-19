@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="categoryImage" destination="eN6-ot-zJL" id="Aup-by-Dti"/>
                 <outlet property="categoryName" destination="2fQ-2i-Oao" id="35Z-se-gVZ"/>
+                <outlet property="editIconImage" destination="JPJ-wJ-YHR" id="wFF-08-U9U"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -79,11 +80,22 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JPJ-wJ-YHR">
+                    <rect key="frame" x="48" y="64" width="13" height="13"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="13" id="Cwv-z6-cVx"/>
+                        <constraint firstAttribute="height" constant="13" id="PSX-pL-nXc"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="2fQ-2i-Oao" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0Hw-Oi-bqH"/>
                 <constraint firstItem="f8C-NO-dtK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7d8-rD-AqK"/>
+                <constraint firstItem="JPJ-wJ-YHR" firstAttribute="leading" secondItem="2fQ-2i-Oao" secondAttribute="trailing" constant="5.5" id="UDE-e8-cdb"/>
+                <constraint firstItem="JPJ-wJ-YHR" firstAttribute="top" secondItem="2fQ-2i-Oao" secondAttribute="top" id="dE6-U8-KKb"/>
                 <constraint firstItem="2fQ-2i-Oao" firstAttribute="top" secondItem="f8C-NO-dtK" secondAttribute="bottom" constant="8" symbolic="YES" id="e4t-ov-jyQ"/>
                 <constraint firstItem="f8C-NO-dtK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nZj-uq-8jH"/>
             </constraints>

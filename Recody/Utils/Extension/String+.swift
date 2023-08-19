@@ -7,11 +7,18 @@
 
 import Foundation
 
-extension String{
+extension String {
     func isValidEmail() -> Bool {
-            var str = self
+        let str = self
             let emailRegEx = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,}$"
-            let pred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            let pred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
             return pred.evaluate(with: str)
+    }
+    
+    func isExcludedSpecialCharacters() -> Bool {
+        let str = self
+        let regEx = "^[가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9]{0,}$"
+        let pred = NSPredicate(format: "SELF MATCHES %@", regEx)
+        return pred.evaluate(with: str)
     }
 }
