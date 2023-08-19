@@ -11,17 +11,24 @@
 //
 
 import UIKit
+import RxSwift
 
 class HomeViewController: UIViewController {
     var viewModel = HomeViewModel()
+    let disposeBag = DisposeBag()
 
     @IBOutlet weak var workScrollView: UIScrollView!
     @IBOutlet weak var workStackView: UIStackView!
+    @IBOutlet weak var nickNameLabel: UILabel!
+    @IBOutlet weak var nickNameLabel2: UILabel!
+    @IBOutlet weak var currentRecordView: UIView!
     @IBOutlet weak var notificationButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+        viewModel.getUserInfo.accept(())
+        bind()
         setWorkView()
     }
 
@@ -49,22 +56,7 @@ class HomeViewController: UIViewController {
     }
 
     @objc func clickEvent(_ sender: UITapGestureRecognizer) {
-        if let tag = sender.view?.tag {
-            guard let useCase = UseCase(rawValue: tag) else { return }
-            switch useCase {
-            case .setting:
-                ServiceProvider.shaerd.apiService.send(.getUserInfomation)
-                ServiceProvider.shaerd.apiService.send(.getMyRecentContinuingRecord)
-                ServiceProvider.shaerd.apiService.send(.getMovies)
-            break
-            case .pushWorkDetailInfo:
-                self.navigationController?.pushViewController(WorkDetailInfoViewController.getInstanse(), animated: true)
-            case .pushNotification:
-                self.navigationController?.pushViewController(NotificationViewController.getInstanse(), animated: true)
-            default:
-                break
-            }
-        }
+        
     }
 
     enum UseCase: Int {
@@ -78,21 +70,36 @@ class HomeViewController: UIViewController {
             return self.rawValue
         }
     }
-//    override func displaySuccess(orderNumber: Int, dataStore: DataStoreType?) {
-//        guard let useCase = UseCase(rawValue: orderNumber) else { return }
-//        switch useCase {
-//        case .setting:
-//            if let data = dataStore?.data(useCase)?.fetch(UserDataModel.self) {
-//                let temp = data.data["signInInfo"] as? [String: String]
-//                guard let accessToken = temp?["accessToken"] else { return }
-//                guard let refreshToken = temp?["refreshToken"] else { return }
-//                KeyChain.create(key: "accessToken", token: accessToken)
-//                KeyChain.create(key: "refreshToken", token: refreshToken)
-//                print("요깅깅교익요긱")
-//                print(data)
-//            }
-//        default:
-//            self.presenter?.alertService.showToast("\(useCase)")
-//        }
-//    }
+}
+
+extension HomeViewController: baseViewControllerAttrubute {
+    func bind() {
+        notificationButton.rx.tap
+            .subscribe(onNext: {
+                // 알림창으로 뷰 넘기면 되고
+            }).disposed(by: disposeBag)
+        viewModel.isUserInfoGet
+            .bind(to: nickNameLabel.rx.text)
+            .disposed(by: disposeBag)
+        viewModel.isUserInfoGet
+            .bind(to: nickNameLabel2.rx.text)
+            .disposed(by: disposeBag)
+        viewModel.isCurrentRecordGet
+            .bind(onNext: { _ in
+                // 처리
+            }).disposed(by: disposeBag)
+        viewModel.error
+            .bind(onNext: { error in
+                print(error.localizedDescription)
+            }).disposed(by: disposeBag)
+    }
+    
+    func configure() {
+        let tapGesture = UITapGestureRecognizer()
+        currentRecordView.addGestureRecognizer(tapGesture)
+        tapGesture.rx.event
+            .bind { [weak self] _ in
+                // record view 그리기
+            }.disposed(by: disposeBag)
+    }
 }

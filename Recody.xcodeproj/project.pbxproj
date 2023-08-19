@@ -128,8 +128,10 @@
 		3AB1432328F76FBC0041C9CC /* MySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1432128F76FBC0041C9CC /* MySearchTableViewCell.swift */; };
 		3AB1432428F76FBC0041C9CC /* MySearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB1432228F76FBC0041C9CC /* MySearchTableViewCell.xib */; };
 		3AB213292A8D08120035EA56 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB213282A8D08120035EA56 /* APIManager.swift */; };
-		3AB2132E2A8D0C170035EA56 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2132D2A8D0C170035EA56 /* UserService.swift */; };
+		3AB2132E2A8D0C170035EA56 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2132D2A8D0C170035EA56 /* HomeService.swift */; };
 		3AB213302A8D0DB20035EA56 /* UserInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2132F2A8D0DB20035EA56 /* UserInfoResponse.swift */; };
+		3AB213352A8D207F0035EA56 /* CurrentRecordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB213342A8D207F0035EA56 /* CurrentRecordResponse.swift */; };
+		3AB213372A8D2A200035EA56 /* RecommendWorkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB213362A8D2A200035EA56 /* RecommendWorkResponse.swift */; };
 		3AB80F94290D64E800F032EC /* ModifyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB80F93290D64E800F032EC /* ModifyProfile.storyboard */; };
 		3AB9CFBF28B4E84300A600DB /* WorkDetailInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFB928B4E84300A600DB /* WorkDetailInfoViewModel.swift */; };
 		3AB9CFC028B4E84300A600DB /* WorkDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9CFBA28B4E84300A600DB /* WorkDetailInfoViewController.swift */; };
@@ -332,8 +334,10 @@
 		3AB1432128F76FBC0041C9CC /* MySearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchTableViewCell.swift; sourceTree = "<group>"; };
 		3AB1432228F76FBC0041C9CC /* MySearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySearchTableViewCell.xib; sourceTree = "<group>"; };
 		3AB213282A8D08120035EA56 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		3AB2132D2A8D0C170035EA56 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		3AB2132D2A8D0C170035EA56 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		3AB2132F2A8D0DB20035EA56 /* UserInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoResponse.swift; sourceTree = "<group>"; };
+		3AB213342A8D207F0035EA56 /* CurrentRecordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentRecordResponse.swift; sourceTree = "<group>"; };
+		3AB213362A8D2A200035EA56 /* RecommendWorkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendWorkResponse.swift; sourceTree = "<group>"; };
 		3AB80F93290D64E800F032EC /* ModifyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifyProfile.storyboard; sourceTree = "<group>"; };
 		3AB9CFB928B4E84300A600DB /* WorkDetailInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoViewModel.swift; sourceTree = "<group>"; };
 		3AB9CFBA28B4E84300A600DB /* WorkDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailInfoViewController.swift; sourceTree = "<group>"; };
@@ -758,7 +762,7 @@
 		3A8D1768289BBEB900B260D1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				3AB2132C2A8D0BAD0035EA56 /* User */,
+				3AB2132C2A8D0BAD0035EA56 /* Home */,
 				095401562A7B68800078B894 /* Register */,
 				095401552A7B68750078B894 /* Login */,
 				AE4A0E0A29F24E47003F7283 /* SNSLogin */,
@@ -866,13 +870,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		3AB2132C2A8D0BAD0035EA56 /* User */ = {
+		3AB2132C2A8D0BAD0035EA56 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3AB2132D2A8D0C170035EA56 /* UserService.swift */,
+				3AB2132D2A8D0C170035EA56 /* HomeService.swift */,
 				3AB2132F2A8D0DB20035EA56 /* UserInfoResponse.swift */,
+				3AB213342A8D207F0035EA56 /* CurrentRecordResponse.swift */,
+				3AB213362A8D2A200035EA56 /* RecommendWorkResponse.swift */,
 			);
-			path = User;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		3AB2F07A29095F2100240E56 /* MyPage+ */ = {
@@ -1342,6 +1348,7 @@
 				3AEDB70328DE03D100C3DB8D /* WorkInfo.swift in Sources */,
 				AE4A0E0C29F24E5D003F7283 /* SNSLoginService.swift in Sources */,
 				3AA56CFE28BDDDE000FB66F5 /* RecordInteractor.swift in Sources */,
+				3AB213372A8D2A200035EA56 /* RecommendWorkResponse.swift in Sources */,
 				3AA56CFC28BDDDE000FB66F5 /* RecordModels.swift in Sources */,
 				3AA56CFA28BDDDE000FB66F5 /* RecordWorker.swift in Sources */,
 				3A731B3229CEDA0800C5EE5E /* FilterCtaegoryCollectionViewCell.swift in Sources */,
@@ -1382,6 +1389,7 @@
 				AE5C21F829F0FB9E009ACD27 /* InsightMonthReportViewController.swift in Sources */,
 				20EB8C0B2930406000460521 /* MyPageChartView.swift in Sources */,
 				20BD9CA82921F64B00BDAD13 /* CalendarViewController.swift in Sources */,
+				3AB213352A8D207F0035EA56 /* CurrentRecordResponse.swift in Sources */,
 				3A6AE8DA2918910300A9F520 /* InsightShareCell.swift in Sources */,
 				20CE3BF629274BBC009539DD /* CalendarSettingViewController.swift in Sources */,
 				3A6AE8902918903700A9F520 /* InsightViewController.swift in Sources */,
@@ -1429,7 +1437,7 @@
 				20BD9CAC2921F90300BDAD13 /* CalendarWeekCell.swift in Sources */,
 				3A6AE8DD2918910300A9F520 /* InsightTop3GenreCell.swift in Sources */,
 				3AE6A55828ED9B08008ED7DB /* WorkCollectionViewCellModels.swift in Sources */,
-				3AB2132E2A8D0C170035EA56 /* UserService.swift in Sources */,
+				3AB2132E2A8D0C170035EA56 /* HomeService.swift in Sources */,
 				3ADDAD60294B72A700BC15D4 /* ListPageViewController.swift in Sources */,
 				3A20346128D01E0F00C417CB /* UIScrollView+.swift in Sources */,
 				208386DB294813BA0012A8E0 /* PageViewController.swift in Sources */,

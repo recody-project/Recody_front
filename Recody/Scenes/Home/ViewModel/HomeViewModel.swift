@@ -15,30 +15,33 @@ import RxCocoa
 import RxSwift
 
 class HomeViewModel {
-    private let api = UserService()
+    private let api = HomeService()
+    
+    // 유저 정보 가져오기
     let getUserInfo = PublishRelay<Void>()
-    var isUserInfoGet = PublishSubject<UserInfoResponse>()
+    let isUserInfoGet = PublishSubject<String>()
     let userInfo = PublishRelay<UserInfo>()
+    
+    // 기록중인 작품 가져오기
+    let getCurrentRecord = PublishRelay<Void>()
+    let isCurrentRecordGet = PublishSubject<CurrentRecordResponse>()
+    let currentRecord = PublishRelay<CurrentRecord>()
+    
+    // 추천 작품 가져오기 => 서버쪽에서 api 미완성
+    let getRecommendWork = PublishRelay<Void>()
+    let isRecommendWorkGet = PublishSubject<RecommendWorkResponse>()
+    let recommendWork = PublishRelay<RecommendWorkResponse>()
+
     let error = PublishRelay<Error>()
     let disposeBag = DisposeBag()
 
-    struct Input {
-    }
-
     struct Output {
-        
-        // 알림창 event
-        
-        // 카테고리 선택 event
-        
-        // 이미지 선택 event
-        
-        // 기록중인 작품 event
-        
-        // 추천 작품 event
-        
+        // 기록중인 작품 가져오기 성공 유무
+        let isCurrentRecordGet: PublishSubject<CurrentRecordResponse>
+        // 추천 작품 가져오기 성공 유무
+//        let isRecommendsGet: PublishSubject<>()
         // 유저 정보 가져오기 성공 유무
-        let isUserInfoGet = PublishSubject<UserInfoResponse>()
+        let isUserInfoGet: PublishSubject<String>
     }
 
     // 임시 데이터
@@ -63,10 +66,25 @@ class HomeViewModel {
             }
             .subscribe(onNext: { [weak self] response in
                 guard let self = self else { return }
-                self.isUserInfoGet.onNext(response) // API 호출 결과를 옵저버블에 방출합니다.
-                self.userInfo.accept(response.data.userInfo)
+                self.isUserInfoGet.onNext(response.data.userInfo.nickname) // API 호출 결과를 옵저버블에 방출합니다.
             }, onError: { [weak self] error in
-                self?.isUserInfoGet.onError(error) // 에러 처리
+                guard let self = self else { return }
+                self.error.accept(error)
+            })
+            .disposed(by: disposeBag)
+        getCurrentRecord
+            .flatMapLatest { [weak self] _ -> Observable<CurrentRecordResponse> in
+                guard let self = self else { return Observable.empty() }
+                return self.api.currentRecordRequest()
+                    .asObservable()
+            }
+            .subscribe(onNext: { [weak self] response in
+                guard let self = self else { return }
+                self.isCurrentRecordGet.onNext(response) // API 호출 결과를 옵저버블에 방출합니다.
+                self.currentRecord.accept(response.data.record)
+            }, onError: { [weak self] error in
+                guard let self = self else { return }
+                self.error.accept(error)
             })
             .disposed(by: disposeBag)
     }
